@@ -18,6 +18,12 @@ a:active {
   text-decoration: none;
 }
 
+input {
+  outline: none;
+  border: none;
+}
+
+
 .clickable {
   cursor: pointer;
 }
