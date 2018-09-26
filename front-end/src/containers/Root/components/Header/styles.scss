@@ -1,0 +1,27 @@
+.app-header {
+  .img-logo {
+    float: left;
+    height: 55px;
+    margin-left: 136px;
+    margin-top: 32px;
+  }
+
+  .div-auth-buttons {
+    display: flex;
+    float: right;
+    margin-top: 26px;
+    margin-right: 100px;
+
+    .button {
+      width: 209px;
+      height: 67px;
+    }
+
+    .div-signup {
+      width: 209px;
+      height: 67px;
+      line-height: 67px;
+      text-align: center;
+    }
+  }
+}

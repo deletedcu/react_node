@@ -1,6 +1,8 @@
 import React from 'react'
-
 import routes from './routes'
+import Header from './components/Header'
+
+import './styles/styles.css'
 
 /**
  * Root component, containing routes
@@ -8,8 +10,11 @@ import routes from './routes'
 
 const Root = (props) => {
   return (
-    <div>
-      { routes }
+    <div className='app header-fixed'>
+      <Header/>
+      <div className='app-body'>
+        { routes }
+      </div>
     </div>
   )
 }

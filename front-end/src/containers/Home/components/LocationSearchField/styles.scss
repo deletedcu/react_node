@@ -1,0 +1,44 @@
+@import "../../../../styles/variables/variables";
+
+.div-location-search-container {
+  background-color: white;
+  border: 1px solid #E1E1E1;
+  border-radius: 3px;
+  height: 76px;
+  margin-top: 50px;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: row;
+
+  input {
+    flex-grow: 100;
+    padding: 0 5px;
+  }
+
+  .div-locateme {
+    width: 151px;
+    text-align: center;
+    background-color: $bg-gray;
+    border: 1px solid $border-gray;
+    border-radius: 4px;
+    margin-right: 6px;
+
+    img {
+      width: 19.25px;
+      height: 19.25px;
+      margin-right: 5px;
+    }
+
+    span {
+      font-family: 'Lato-Bold';
+      font-size: 17px;
+      color: $text-gray;
+      line-height: 66px;
+    }
+  }
+
+  .button {
+    width: 173px;
+  }
+}

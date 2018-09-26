@@ -1,0 +1,30 @@
+@import "../../styles/variables/variables";
+
+.div-home-container {
+  .div-banner-container {
+    position: relative;
+    background: url('../../assets/images/banner.png') no-repeat center/cover;
+    height: calc(100vh - 60px);
+
+    .div-banner-center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      .div-title {
+        text-align: center;
+        font-size: $large-font-size;
+      }
+
+      .div-location-search-container {
+        width: 120%;
+        margin-left: -10%;
+      }
+    }
+  }
+
+  .div-featured-menu-container {
+    height: 1000px;
+  }
+}
