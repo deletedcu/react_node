@@ -1,0 +1,26 @@
+@import "../../styles/variables/variables";
+
+.button {
+  background: $bg-green;
+  border: 1px solid #108915;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  outline: 0;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button:hover {
+  box-shadow: 0px 0px 6px darken($bg-green, 20%);
+}
+
+.button:active {
+  box-shadow: none;
+}
