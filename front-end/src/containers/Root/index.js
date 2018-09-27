@@ -1,6 +1,7 @@
 import React from 'react'
 import routes from './routes'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 import './styles/styles.css'
 
@@ -15,6 +16,7 @@ const Root = (props) => {
       <div className='app-body'>
         { routes }
       </div>
+      <Footer/>
     </div>
   )
 }
