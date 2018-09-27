@@ -12,10 +12,15 @@ import './styles/styles.css'
 const Root = (props) => {
   return (
     <div className='app header-fixed'>
+      {/* Header */}
       <Header/>
+
+      {/* Body */}
       <div className='app-body'>
         { routes }
       </div>
+
+      {/* Footer */}
       <Footer/>
     </div>
   )

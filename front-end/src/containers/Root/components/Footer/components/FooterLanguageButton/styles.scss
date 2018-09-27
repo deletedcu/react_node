@@ -1,0 +1,15 @@
+.div-footer-language-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  img {
+    height: 29px;
+    margin-right: 60px;
+  }
+
+  span {
+    color: #AFAFAF;
+    margin: 0 50px;
+  }
+}

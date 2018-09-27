@@ -1,0 +1,21 @@
+.div-footer-top-section-button-container {
+  color: #AFAFAF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .div-footer-top-section-button {
+    display: flex;
+    align-items: center;
+    margin: 0px 68px;
+
+    img {
+      height: 25px;
+      margin-right: 18px;
+    }
+  }
+
+  .div-footer-top-section-button-separator {
+    font-size: 17px;
+  }
+}
