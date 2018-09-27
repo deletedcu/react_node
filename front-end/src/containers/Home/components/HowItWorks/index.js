@@ -7,10 +7,6 @@ import imgArrowRight from '../../../../assets/images/arrow-right.svg'
 
 class HowItWorks extends Component {
 
-  constructor (props) {
-    super(props)
-  }
-
   render () {
     const imageFirst = this.props.imageFirst
     const image = this.props.image
