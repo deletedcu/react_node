@@ -1,6 +1,11 @@
 @import "../../styles/variables/variables";
 
 .div-home-container {
+
+  .div-location-search-container {
+    width: 775px;
+  }
+
   .div-banner-container {
     position: relative;
     background: url('../../assets/images/banner.png') no-repeat center/cover;
@@ -16,15 +21,84 @@
         text-align: center;
         font-size: $large-font-size;
       }
+    }
+  }
 
-      .div-location-search-container {
-        width: 120%;
-        margin-left: -10%;
+  .div-section-title {
+    text-align: center;
+    margin-top: 140px;
+    font-size: $large-font-size;
+  }
+
+  .div-featured-menu-container {
+    display: flex;
+    flex-direction: column;
+
+    .div-featured-menus {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    .div-all-products-container {
+      text-align: center;
+      margin-top: 60px;
+
+      .btn-all-products {
+        width: 294px;
+        height: 69px;
+        border-radius: 8px;
+        
+        img {
+          width: 26px;
+          height: 26px;
+          margin-left: 20px;
+        }
       }
     }
   }
 
-  .div-featured-menu-container {
-    height: 1000px;
+  .div-how-it-works-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    text-align: center;
+    font-size: $large-font-size;
+  }
+
+  .div-feedback-container {
+    position: relative;
+
+    .div-feedbacks {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1400px;
+      margin-top: 100px;
+      text-align: center;
+
+      .div-feedback {
+        display: inline-block;
+        margin: 20px;
+      }
+    }
+  }
+
+  .div-location-search {
+    position: relative;
+    height: 228px;
+    background-color: $bg-gray;
+    border: 1px solid #EBE2E2;
+    margin-top: 100px;
+   
+    .div-location-search-container {
+      position: relative;
+      left: 50%;
+      top: calc(50% - 50px);
+      transform: translateX(-50%) translateY(-50%);
+    }
   }
 }

@@ -1,0 +1,68 @@
+@import "../../../../styles/variables/variables";
+
+.div-featured-menu {
+  position: relative;
+  background-color: white;
+  border: 1px solid $border-gray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+
+  .img-featured-menu {
+    max-width: 396px;
+    height: 295px;
+    background-color: lightgray;
+    margin-top: 3px;
+  }
+
+  .div-featured-menu-details {
+    padding: 16px;
+
+    .div-featured-menu-name {
+      text-align: left;
+    }
+
+    .div-featured-menu-more-detail {
+      display: flex;
+      margin-top: 10px;
+      color: $text-light-gray;
+      text-align: left;
+
+      .div-featured-menu-detail-column-1 {
+        flex-grow: 1;
+      }
+
+      .div-featured-menu-detail-column-2 {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  .div-order {
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+    padding: 5px;
+
+    .div-price {
+      background-color: $bg-gray;
+      color: #4c4e4c;
+      text-align: center;
+      line-height: 55px;
+      font-size: $small-font-size;
+      font-family: 'Lato-Bold';
+      border-radius: 4px;
+      width: calc(50% - 2.5px);
+    }
+
+    .div-quick-order {
+      background-color: #EAFEEB;
+      color: $bg-green;
+      text-align: center;
+      line-height: 55px;
+      border-radius: 4px;
+      width: calc(50% - 2.5px);
+    }
+  }
+}

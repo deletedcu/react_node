@@ -1,0 +1,62 @@
+@import "../../../../styles/variables/variables";
+
+.div-feedback {
+  position: relative;
+  width: 574px;
+  height: 197px;
+
+  .img-feedback-user {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 74px;
+    height: 74px;
+    border-radius: 37px;
+    background-color: lightgray;
+    border: 1px solid #DBDBDB;
+    z-index: 1;
+  }
+
+  .div-feedback-box {
+    position: absolute;
+    left: 37px;
+    top: 37px;
+    bottom: 0px;
+    right: 0px;
+    background-color: $bg-gray;
+    border: 1px solid $border-gray;
+    border-radius: 4px;
+    padding: 40px 40px 30px 40px;
+    display: flex;
+    flex-direction: column;
+
+    .div-feedback-name-star {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 30px;
+      
+      .div-feedback-name {
+        color: $text-light-gray;
+        font-size: 19px;
+      }
+
+      .div-feedback-star {
+        display: flex;
+        .img-star {
+          width: 12px;
+          margin: 2px;
+        }
+      }
+    }
+
+    .div-feedback-content {
+      color: $text-light-gray;
+      font-size: 14px;
+      margin-right: 30px;
+      margin-top: 20px;
+      overflow: hidden;
+      text-align: left;
+    }
+  }
+}
