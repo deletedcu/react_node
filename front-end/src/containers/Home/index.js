@@ -54,7 +54,7 @@ class Home extends Component {
           <HowItWorks
             step='Step 1'
             title='Order'
-            description='Place order through mediapost app from wide range of restaurants near to you.'
+            description='Place order through mealpost app from wide range of restaurants near to you.'
             image={ imgOrders }
             imageFirst={ false }
           />
