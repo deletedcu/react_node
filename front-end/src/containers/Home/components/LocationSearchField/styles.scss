@@ -13,7 +13,10 @@
 
   input {
     flex-grow: 100;
-    padding: 0 5px;
+    padding: 0 16px;
+    font-size: $small-font-size;
+    font-family: 'Lato-Bold'; 
+    caret-color: $bg-green;
   }
 
   .div-locateme {
