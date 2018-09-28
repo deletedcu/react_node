@@ -14,6 +14,10 @@ import imgReceive from '../../assets/images/deliver.png'
 
 class Home extends Component {
 
+  onViewAllProducts = () => {
+    this.props.history.push('/menus')
+  }
+
   render () {
     return (
       <div className='div-home-container'>
@@ -40,7 +44,7 @@ class Home extends Component {
             <FeaturedMenu />
           </div>
           <div className='div-all-products-container'>
-            <Button className='btn-all-products'>
+            <Button className='btn-all-products' onClick={ this.onViewAllProducts }>
               <span>View All Products</span><img src={imgArrowRight} alt='arrow_right'/>
             </Button>
           </div>
@@ -57,6 +61,7 @@ class Home extends Component {
             description='Place order through mealpost app from wide range of restaurants near to you.'
             image={ imgOrders }
             imageFirst={ false }
+            onViewAllProducts={ this.onViewAllProducts }
           />
           <HowItWorks
             step='Step 2'
@@ -64,6 +69,7 @@ class Home extends Component {
             description='Track your order with mealpost app. First you will see order preparing then it is sent to via a mealpostman.'
             image={ imgTrack }
             imageFirst={ true }
+            onViewAllProducts={ this.onViewAllProducts }
           />
           <HowItWorks
             step='Step 3'
@@ -71,6 +77,7 @@ class Home extends Component {
             description='Recieve your meal within sometime in your doorstep.'
             image={ imgReceive }
             imageFirst={ false }
+            onViewAllProducts={ this.onViewAllProducts }
           />
         </div>
 

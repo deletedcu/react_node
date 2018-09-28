@@ -14,29 +14,37 @@ class HowItWorks extends Component {
     const title = this.props.title
     const description = this.props.description
 
+    const textAndButtonContent = (
+      <div className='div-how-it-works-center'>
+        <div className='div-how-it-works-step'>
+          { step }
+        </div>
+        <div className='div-how-it-works-title'>
+          { title }
+        </div>
+        <div className='div-how-it-works-description'>
+          { description }
+        </div>
+        <div className='div-how-it-works-view-all-products'>
+          <Button className='btn-all-products' onClick={ this.props.onViewAllProducts }>
+            <span>View All Products</span><img src={imgArrowRight} alt='arrow_right'/>
+          </Button>
+        </div>
+      </div>
+    )
+
+    const imageContent = (
+      <img className='img-how-it-works img-responsive' src={image} alt='how-it-works'/>
+    )
+
     if (imageFirst) {
       return (
         <div className='div-how-it-works'>
           <div className='div-how-it-works-left'>
-            <img className='img-how-it-works img-responsive' src={image} alt='how-it-works'/>
+            { imageContent }
           </div>
           <div className='div-how-it-works-right'>
-            <div className='div-how-it-works-center'>
-              <div className='div-how-it-works-step'>
-                { step }
-              </div>
-              <div className='div-how-it-works-title'>
-                { title }
-              </div>
-              <div className='div-how-it-works-description'>
-                { description }
-              </div>
-              <div className='div-how-it-works-view-all-products'>
-                <Button className='btn-all-products'>
-                  <span>View All Products</span><img src={imgArrowRight} alt='arrow_right'/>
-                </Button>
-              </div>
-            </div>
+            { textAndButtonContent }
           </div>
         </div>
       )
@@ -44,25 +52,10 @@ class HowItWorks extends Component {
       return (
         <div className='div-how-it-works'>
           <div className='div-how-it-works-left'>
-            <div className='div-how-it-works-center'>
-              <div className='div-how-it-works-step'>
-                { step }
-              </div>
-              <div className='div-how-it-works-title'>
-                { title }
-              </div>
-              <div className='div-how-it-works-description'>
-                { description }
-              </div>
-              <div className='div-how-it-works-view-all-products'>
-                <Button className='btn-all-products'>
-                  <span>View All Products</span><img src={imgArrowRight} alt='arrow_right'/>
-                </Button>
-              </div>
-            </div>
+            { textAndButtonContent }
           </div>
           <div className='div-how-it-works-right'>
-            <img className='img-how-it-works img-responsive' src={image} alt='how-it-works'/>
+            { imageContent }
           </div>
         </div>
       ) 
