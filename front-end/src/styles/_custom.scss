@@ -23,6 +23,19 @@ input {
   border: none;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #D0D0D0;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #D0D0D0;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #D0D0D0;
+}
+
 
 .clickable {
   cursor: pointer;
