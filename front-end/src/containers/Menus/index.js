@@ -32,7 +32,7 @@ class Menus extends Component {
             {/* Grid */}
             <div className='row'>
               {data.map((val, index) => 
-                <div key={index} className='div-menu-wrapper col-12 col-md-6 col-lg-4'>
+                <div key={index} className='div-menu-wrapper col-12 col-md-6 col-lg-6 col-xl-4'>
                   <MenuItem/>
                 </div>
               )}
