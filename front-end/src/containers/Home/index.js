@@ -37,11 +37,21 @@ class Home extends Component {
           <div className='div-section-title'>
             FEATURED MENU
           </div>
-          <div className='div-featured-menus'>
-            <FeaturedMenu />
-            <FeaturedMenu />
-            <FeaturedMenu />
-            <FeaturedMenu />
+          <div className='div-featured-menus container'>
+            <div className='row'>
+              <div className='div-featured-menu-wrapper col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3'>
+                <FeaturedMenu />
+              </div>
+              <div className='div-featured-menu-wrapper col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3'>
+                <FeaturedMenu />
+              </div>
+              <div className='div-featured-menu-wrapper col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3'>
+                <FeaturedMenu />
+              </div>
+              <div className='div-featured-menu-wrapper col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3'>
+                <FeaturedMenu />
+              </div>
+            </div>
           </div>
           <div className='div-all-products-container'>
             <Button className='btn-all-products' onClick={ this.onViewAllProducts }>
