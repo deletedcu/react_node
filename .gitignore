@@ -22,3 +22,4 @@ yarn-error.log*
 front-end/node_modules
 
 front-end/**/*.css
+front-end/build
