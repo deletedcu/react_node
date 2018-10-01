@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import './styles.css'
 
 import imgSearch from '../../../../assets/images/search.svg'
-import imgDownArrow from '../../../../assets/images/down_arrow.png'
+import imgDownArrow from '../../../../assets/images/down_arrow.svg'
 
 const MenuTypes = {
   'fresh': 1,
