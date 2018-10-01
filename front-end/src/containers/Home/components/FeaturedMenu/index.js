@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import './styles.css'
 
+import { showMenuModal } from '../../../../redux/actions/menuModal'
+
 class FeaturedMenu extends Component {
+
+  onShowMenuModal = () => {
+    this.props.dispatch(showMenuModal({}))
+  }
 
   render () {
     return (
       <div className='div-featured-menu'>
-        <img className='img-featured-menu' alt='Placeholder'/>
+        <img className='img-featured-menu clickable' alt='Placeholder' onClick={ this.onShowMenuModal }/>
         <div className='div-featured-menu-details'>
           <div className='div-featured-menu-name'>
             English Breakfast Frittata x 5
@@ -44,4 +51,9 @@ class FeaturedMenu extends Component {
   }
 }
 
-export default FeaturedMenu
+function mapStateToProps(state) {
+  return {
+  }
+}
+
+export default connect(mapStateToProps)(FeaturedMenu)

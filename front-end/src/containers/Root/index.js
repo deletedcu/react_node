@@ -1,9 +1,14 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import routes from './routes'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import asyncComponent from '../../components/AsyncComponent'
 
 import './styles/styles.css'
+
+
+const AsyncMenuModal = asyncComponent(() => import('../MenuModal')) 
 
 /**
  * Root component, containing routes
@@ -22,8 +27,17 @@ const Root = (props) => {
 
       {/* Footer */}
       <Footer/>
+
+      {/* Menu Modal */}
+      { props.menuModal.visible && <AsyncMenuModal /> }
     </div>
   )
 }
 
-export default Root
+function mapStateToProps(state) {
+  return {
+    menuModal: state.menuModal,
+  }
+}
+
+export default connect(mapStateToProps)(Root)
