@@ -1,0 +1,21 @@
+@import "../../../../styles/variables/variables";
+
+.div-thumbnails-list {
+  width: 77px;
+  display: flex;
+  flex-direction: column;
+  
+  .green-border {
+    border: 2px solid #56B05A;
+  }
+
+  .gray-border {
+    border: 1px solid $text-light-gray;
+  }
+
+  .img-menu-thumbnail {
+    width: 77px;
+    height: 77px;
+    margin-bottom: 10px;
+  }
+}

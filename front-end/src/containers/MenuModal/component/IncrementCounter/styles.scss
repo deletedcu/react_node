@@ -1,0 +1,26 @@
+@import "../../../../styles/variables/variables";
+
+$increment-color: #D3D3D3;
+
+.div-increment-counter {
+  border-radius: 8px;
+  border: 1px solid $increment-color;
+  padding: 20px 30px;
+  color: $increment-color;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  span {
+    font-size: $medium-font-size;
+  }
+
+  input {
+    text-align: center;
+    font-size: 28px;
+    color: $increment-color;
+    flex-grow: 1;
+    min-width: 40px;
+  }
+}
