@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 
 import './styles.css'
 
@@ -20,7 +21,7 @@ class MenuThumbnailList extends Component {
     })
 
     return (
-      <div className={ `div-thumbnails-list ${this.props.className}` }>
+      <div className={ classNames('div-thumbnails-list', this.props.className) }>
         { images }
       </div>
     )

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import ShowMore from 'react-show-more';
 import MenuThumbnailList from './component/MenuThumbnailList'
 import IncrementCounter from './component/IncrementCounter'
 import Button from '../../components/Button'
+import Checkbox from '../../components/Checkbox'
 
 import './styles.css'
 
@@ -20,7 +22,17 @@ class MenuModal extends Component {
 
     this.state = {
       descriptionScrolled: false,
+      
+      specialInstructions: '',
     }
+  }
+
+  componentDidMount () {
+    window.document.body.style.overflow = 'hidden'
+  }
+
+  componentWillUnmount() {
+    window.document.body.removeAttribute('style')
   }
 
   onClose = () => {
@@ -41,8 +53,22 @@ class MenuModal extends Component {
     }
   }
 
+  onChange = (e) => {
+    var name = e.target.name
+    this.setState({
+      [name]: e.target.value,
+    })
+  }
+
+  onItemCountChange = (count) => {
+
+  }
+
+  onAddToCart = () => {
+
+  }
+
   render () {
-    console.log('render');
     return (
       <div className='div-menu-modal-container'>
         <div className='div-menu-modal-center'>
@@ -98,15 +124,39 @@ class MenuModal extends Component {
                 </div>
               </div>
               <div className='div-description-text'>
+                <ShowMore
+                  lines={5}
+                  more='Read More'
+                  less=''
+                >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.
+                </ShowMore>
+              </div>
+
+              <div className='div-additional-info'>
+                <div className='div-additional-info-title'> 
+                  Additional Information
+                </div>
+                <Checkbox onCheckChange={ () => {} }>a) Fries</Checkbox>
+                <Checkbox onCheckChange={ () => {} }>b) Sour Cream & Chive Potato</Checkbox>
+                <Checkbox onCheckChange={ () => {} }>c) Potato</Checkbox>
+                <Checkbox onCheckChange={ () => {} }>d) Sour Cream & Chive Potato</Checkbox>
+                <Checkbox onCheckChange={ () => {} }>e) Fries </Checkbox>
+              </div>
+
+              <div className='div-special-instructions'>
+                <div className='div-special-instructions-title'>
+                  Special Instructions
+                </div>
+                <input type='text' name='specialInstructions' className='input-special-instructions' placeholder='I am alergic to banana' value={this.state.specialInstructions} onChange={ this.onChange }/>
               </div>
 
               { !this.state.descriptionScrolled && <div className='div-opacity-layer-bottom'/> }
             </div>
             
             <div className='div-menu-modal-cart'>
-              <IncrementCounter className='increment-counter'/>
-              <Button className='btn-add-to-cart'>ADD TO CART</Button>
+              <IncrementCounter className='increment-counter' onChange={ this.onItemCountChange }/>
+              <Button className='btn-add-to-cart' onClick={ this.onAddToCart }>ADD TO CART</Button>
             </div>
 
             { this.state.descriptionScrolled && <div className='div-opacity-layer-top'/> }

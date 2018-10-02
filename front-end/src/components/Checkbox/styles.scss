@@ -1,0 +1,16 @@
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+
+  .img-checkbox {
+    height: 25px;
+    margin-right: 10px;
+  }
+
+  span {
+    color: #A0A0A0;
+    font-size: 21px;
+  }
+}

@@ -142,6 +142,45 @@
 
         .div-description-text {
           opacity: 0.58;
+
+          a {
+            color: $bg-green;
+          }
+        }
+
+        .div-additional-info {
+          display: flex;
+          flex-direction: column;
+          margin-top: 40px;
+
+          .div-additional-info-title {
+            color: #080808;
+            font-size: 21px;
+          }
+
+          .checkbox {
+            margin-top: 20px;
+          }
+        }
+
+        .div-special-instructions {
+          display: flex;
+          flex-direction: column;
+          margin-top: 30px;
+          margin-bottom: 30px;
+
+          .div-special-instructions-title {
+            color: #080808;
+            font-size: 21px;
+          }
+
+          .input-special-instructions {
+            border-radius: 9px;
+            border: 1px solid #A0A0A0;
+            height: 57px;
+            margin-top: 20px;
+            padding: 0 20px;
+          }
         }
 
         .div-opacity-layer-bottom {

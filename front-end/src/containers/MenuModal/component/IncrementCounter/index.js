@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 
 import './styles.css'
 
@@ -15,6 +16,8 @@ class IncrementCounter extends Component {
   onChange = (e) => {
     this.setState({
       value: (e.target.value === '' || e.target.value > 0) ? e.target.value : 1,
+    }, () => {
+      this.props.onChange(this.state.value)
     })
   }
 
@@ -32,7 +35,7 @@ class IncrementCounter extends Component {
 
   render () {
     return (
-      <div className={ `div-increment-counter ${this.props.className}` }>
+      <div className={ classNames('div-increment-counter', this.props.className) }>
         <span className='clickable' onClick={ this.onDecrement }>-</span>
         <input type='number' min='1' step='1' value={ this.state.value } onChange={ this.onChange }/>
         <span className='clickable' onClick={ this.onIncrement }>+</span>
