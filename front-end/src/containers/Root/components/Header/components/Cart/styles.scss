@@ -1,0 +1,25 @@
+@import "../../../../../../styles/variables/variables";
+
+.div-cart {
+  position: relative;
+
+  img {
+    height: 38px;
+  }
+
+  span {
+    position: absolute;
+    box-sizing: content-box;
+    top: -18px;
+    left: 24px;
+    width: 28px;
+    height: 28px;
+    color: white;
+    background-color: $bg-green;
+    border: 4px solid white;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 28px;
+    font-size: $small-font-size;
+  }
+}

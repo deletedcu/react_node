@@ -6,9 +6,10 @@
     margin-top: 32px;
   }
 
-  .div-auth-buttons {
+  .div-buttons {
     display: flex;
     float: right;
+    align-items: center;
     margin-top: 26px;
     margin-right: 100px;
 
@@ -18,8 +19,9 @@
     }
 
     .div-signup {
-      width: 209px;
+      width: 179px;
       height: 67px;
+      margin: 0 10px;
       line-height: 67px;
       text-align: center;
     }
