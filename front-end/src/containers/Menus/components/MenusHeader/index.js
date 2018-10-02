@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 
 import './styles.css'
 
@@ -28,6 +29,8 @@ class MenusHeader extends Component {
   }
 
   render () {
+    const selectedType = this.state.selectedType
+
     return (
       <div className='div-menus-header-container'>
         <div className='div-menus-header-left'>
@@ -43,13 +46,13 @@ class MenusHeader extends Component {
         </div>
 
         <div className='div-menus-header-right'>
-          <div className={'div-menus-type-item clickable ' + (this.state.selectedType === MenuTypes.fresh ? 'bottom-line' : '')} onClick={() => { this.onSelectMenuType(MenuTypes.fresh) }}>
+          <div className={ classNames('div-menus-type-item clickable', {'bottom-line': selectedType === MenuTypes.fresh}) } onClick={() => { this.onSelectMenuType(MenuTypes.fresh) }}>
             FRESH
           </div>
-          <div className={'div-menus-type-item clickable ' + (this.state.selectedType === MenuTypes.food ? 'bottom-line' : '')} onClick={() => { this.onSelectMenuType(MenuTypes.food) }}>
+          <div className={ classNames('div-menus-type-item clickable', {'bottom-line': selectedType === MenuTypes.food}) } onClick={() => { this.onSelectMenuType(MenuTypes.food) }}>
             FOOD
           </div>
-          <div className={'div-menus-type-item clickable ' + (this.state.selectedType === MenuTypes.drinks ? 'bottom-line' : '')} onClick={() => { this.onSelectMenuType(MenuTypes.drinks) }}>
+          <div className={ classNames('div-menus-type-item clickable', {'bottom-line': selectedType === MenuTypes.drinks}) } onClick={() => { this.onSelectMenuType(MenuTypes.drinks) }}>
             DRINKS
           </div>
         </div>
