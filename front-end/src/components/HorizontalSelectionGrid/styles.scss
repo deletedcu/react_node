@@ -1,0 +1,29 @@
+@import "../../styles/variables/variables";
+
+.selection-grid {
+  background-color: white;
+  border: 1px solid $text-light-gray;
+  border-radius: 11px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  
+  .selection-grid-cell {
+    width: 80px;
+    line-height: 80px;
+    font-size: 19px;
+    color: $text-light-gray;
+    text-align: center;
+  }
+
+  .selection-grid-cell-has-separator {
+    border-right: 1px solid $text-light-gray;
+  }
+
+  .selection-grid-cell-selected {
+    background-color: #62B266;
+    color: white;
+    transition: all ease-in-out 0.1s;
+  }
+}
