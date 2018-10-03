@@ -1,0 +1,54 @@
+import React, { Component } from 'react'
+import Button from '../../../../components/Button'
+import HorizontalSelectionGrid from '../../../../components/HorizontalSelectionGrid'
+
+import './styles.css'
+
+class MealPlan extends Component {
+
+  render () {
+    return (
+      <div className='div-meal-plan'>
+        <div className='div-meal-plan-title'>
+          { this.props.title }
+        </div>
+        <div className='div-meal-plan-subtitle'>
+          { this.props.subtitle }
+        </div>
+        <div className='div-meal-plan-image'>
+          <img src={ this.props.image } alt='plan'/>
+        </div>
+        <div className='div-meal-plan-recipies'>
+          <HorizontalSelectionGrid
+            values={ this.props.recipiesPerWeek }
+          />
+          <div className='div-meal-plan-recipies-title'>
+            RECIPESE PER WEEK
+          </div>
+        </div>
+        <div className='div-meal-plan-prices'>
+          <div className='div-menu-plan-price'>
+            { this.props.prices.perServingOld && <span className='span-menu-plan-price-old-value'>{ this.props.prices.shippingOld }</span> }
+            <span className='span-menu-plan-price-value'>{ this.props.prices.perServing }</span><br/>
+            <span className='span-menu-plan-price-title'>per serving</span>
+          </div>
+          <div className='div-menu-plan-price-separator'/>
+          <div className='div-menu-plan-price'>
+            { this.props.prices.shippingOld && <span className='span-menu-plan-price-old-value'>{ this.props.prices.shippingOld }</span> }
+            <span className='span-menu-plan-price-value'>{ this.props.prices.shipping }</span><br/>
+            <span className='span-menu-plan-price-title'>shipping</span>
+          </div>
+          <div className='div-menu-plan-price-separator'/>
+          <div className='div-menu-plan-price'>
+            { this.props.prices.weeklyTotalOld && <span className='span-menu-plan-price-old-value'>{ this.props.prices.weeklyTotalOld }</span> }
+            <span className='span-menu-plan-price-value'>{ this.props.prices.weeklyTotal }</span><br/>
+            <span className='span-menu-plan-price-title'>weekly total</span>
+          </div>
+        </div>
+        <Button className='btn-grab-offer'>GRAB THE OFFER</Button>
+      </div>
+    )
+  }
+}
+
+export default MealPlan

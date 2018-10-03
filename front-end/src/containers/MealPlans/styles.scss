@@ -23,7 +23,31 @@
     display: flex;
     margin-top: -170px;
     padding-bottom: 90px;
-    height: 500px;
+
+    .div-meal-plans-grid {
+      box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+      background-color: white;
+      max-width: calc(100% - 280px);
+
+      .div-weekly-plans-title {
+        color: $text-light-gray;
+        font-size: 41px;
+        font-family: 'Montserrat-Medium';
+        text-align: center;
+        height: 150px;
+        line-height: 150px;
+        background-color: #F2FFF3;
+      }
+
+      .div-meal-plans-separator {
+        background-color: #CCCCCC;
+        height: 1px;
+      }
+
+      .div-meal-plan-wrapper {
+        padding: 70px 45px;
+      }
+    }
   }
 
   .div-quote-container {
@@ -57,8 +81,6 @@
     .div-common-questions {
       display: flex;
       flex-direction: row;
-      padding-left: 0;
-      padding-right: 0;
 
       .div-common-questions-pannel {
         padding-left: 50px;

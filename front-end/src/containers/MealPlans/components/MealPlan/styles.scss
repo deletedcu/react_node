@@ -1,0 +1,94 @@
+@import "../../../../styles/variables/variables";
+
+.div-meal-plan {
+  background-color: white;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.16);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+
+  .div-meal-plan-title {
+    font-size: 41px;
+    color: #232323;
+    text-align: center;
+    font-family: 'Montserrat-SemiBold';
+    margin-top: 40px;
+  }
+
+  .div-meal-plan-subtitle {
+    color: $text-light-gray;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .div-meal-plan-image {
+    margin-top: 40px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .div-meal-plan-recipies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+
+    .div-meal-plan-recipies-title {
+      text-align: center;
+      margin-top: 20px;
+      color: $text-light-gray;
+      font-size: 25px;
+    }
+  }
+
+  .div-meal-plan-prices {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 0 27px;
+
+    .div-menu-plan-price {
+      position: relative;
+      width: 33.33%;
+      text-align: center;
+
+      .span-menu-plan-price-old-value {
+        position: absolute;
+        margin-top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 27px;
+        color: #D3D5DB;
+        text-decoration: line-through;
+      }
+
+      .span-menu-plan-price-value {
+        font-size: 33px;
+        color: $text-light-gray;
+      }
+
+      .span-menu-plan-price-title {
+        font-size: $small-font-size;
+        color: #D3D5DB;
+      }
+    }
+
+    .div-menu-plan-price-separator {
+      background-color: $text-light-gray;
+      width: 1px;
+      opacity: 0.58;
+      margin: 12px 0;
+      box-sizing: border-box;
+    }
+  }
+
+  .btn-grab-offer {
+    height: 85px;
+    margin: 27px;
+  }
+}
