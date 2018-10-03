@@ -5,6 +5,7 @@ import asyncComponent from '../../components/AsyncComponent'
 
 const AsyncHome = asyncComponent(() => import('../Home'))
 const AsyncMenu = asyncComponent(() => import('../Menus'))
+const AsyncMealPlans = asyncComponent(() => import('../MealPlans'))
 
 /**
  * Routes
@@ -14,6 +15,7 @@ const routes = (
   <Switch>
     <Route path='/home' component={ AsyncHome } />
     <Route path='/menus' component={ AsyncMenu } />
+    <Route path='/meal-plans' component={ AsyncMealPlans } />
 
     <Redirect to='/home' />
   </Switch>

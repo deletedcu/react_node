@@ -24,7 +24,7 @@ class Menus extends Component {
           {/* bootstrap - container */}
           <div className='div-menus-grid container'>
             {/* Menus Header */}
-            <MenusHeader/>
+            <MenusHeader history={ this.props.history }/>
 
             {/* Separator Line */}
             <div className='div-menus-separator'/>
