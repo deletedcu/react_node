@@ -28,7 +28,6 @@
 
     .div-menus-grid {
       box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
-      padding: 0px;
       background-color: white;
       max-width: calc(100% - 280px);
 
@@ -38,9 +37,6 @@
       }
 
       .row {
-        margin-left: 0px;
-        margin-right: 0px;
-
         .div-menu-wrapper {
           padding-left: 0px;
           padding-right: 0px;

@@ -48,6 +48,16 @@ input {
   outline: 0;
 }
 
+// Override Bootstrap
+.container {
+  padding: 0;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 // ::-webkit-scrollbar {
 //   width: 0px;
 // }

@@ -51,13 +51,13 @@ class MenusHeader extends Component {
 
         <div className='div-menus-header-right'>
           <div className={ classNames('div-menus-type-item clickable', {'bottom-line': selectedType === MenuTypes.menu}) } onClick={() => { this.onSelectMenuType(MenuTypes.menu) }}>
-            Menu
+            MENU
           </div>
           <div className={ classNames('div-menus-type-item clickable', {'bottom-line': selectedType === MenuTypes.mealplans}) } onClick={() => { this.onSelectMenuType(MenuTypes.mealplans) }}>
-            Meal Plans
+            MEAL PLANS
           </div>
           <div className={ classNames('div-menus-type-item clickable', {'bottom-line': selectedType === MenuTypes.recommended}) } onClick={() => { this.onSelectMenuType(MenuTypes.recommended) }}>
-            Recommended
+            RECOMMENDED
           </div>
         </div>
       </div>
