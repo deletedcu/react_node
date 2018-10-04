@@ -13,16 +13,20 @@ $page-padding: 110px;
 
   .div-checkout-forms {
     min-height: 500px;
+    margin-bottom: 50px;
 
+    position: relative;
     display: flex;
     flex-direction: row;
 
     .div-checkout-steps-section {
-      flex-grow: 3;
+      width: 60%;
+      padding: 18px;
     }
 
     .div-checkout-summary-section {
-      flex-grow: 2;
+      width: 40%;
+      padding: 18px;
     }
   }
 

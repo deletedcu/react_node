@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import OrderSummary from './components/OrderSummary'
 
 import './styles.css'
 
@@ -28,6 +29,8 @@ class Checkout extends Component {
 
           {/* Summary Section */}
           <div className='div-checkout-summary-section'>
+            <OrderSummary
+            />
           </div>
         </div>
 
@@ -36,9 +39,9 @@ class Checkout extends Component {
 
         {/* Help/Contact Instruction */}
         <div className='div-help-container'>
-          Need help? Visit the
-          <span className='clickable' onClick={this.onHelpCenter}> Help Center </span> or
-          <span className='clickable' onClick={this.onContactUs}> Contact Us </span>
+          Need help? Visit the&nbsp;
+          <span className='clickable' onClick={this.onHelpCenter}>Help Center</span>&nbsp;or&nbsp;
+          <span className='clickable' onClick={this.onContactUs}>Contact Us</span>
         </div>
       </div>
     )

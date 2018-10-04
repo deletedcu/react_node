@@ -1,0 +1,21 @@
+@import "../../../../styles/variables/variables";
+
+.ordered-item {
+  display: flex;
+  flex-direction: row;
+
+  img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .ordered-item-info {
+    margin-left: 16px;
+    color: $text-light-gray;
+    font-size: 27px;
+
+    .ordered-item-info-count {
+      margin-top: 0px;
+    }
+  }
+}

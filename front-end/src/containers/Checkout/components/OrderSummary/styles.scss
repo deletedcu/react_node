@@ -1,0 +1,131 @@
+@import "../../../../styles/variables/variables";
+
+$padding: 40px;
+$margin: 20px;
+$shadow: 0px 3px 6px rgba(0,0,0,0.16);
+
+.order-summary-container {
+  background-color: white;
+  border: 1px solid #B7CBB8;
+  box-shadow: $shadow;
+
+  .order-summary-header {
+    height: 107px;
+    background-color: $bg-gray;
+    padding-left: $padding;
+    padding-right: $padding;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 27px;
+
+    .order-summary-title {
+      color: $text-light-gray;
+    }
+
+    .order-summary-edit {
+      color: #108915;
+    }
+  }
+
+  .order-summary-separator-gray {
+    height: 1px;
+    background-color: #ACACAC;
+  }
+
+  .order-summary-separator-green {
+    height: 1px;
+    background-color: #B7CBB8;
+  }
+
+  .order-summary-info {
+    color: #ACACAC;
+    font-size: $footer-primary-font-size;
+
+    .order-summary-info-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: $padding;
+      padding-right: $padding;
+      margin-top: $margin;
+    }
+
+    .order-summary-promo-input {
+      position: relative;
+      margin-top: $margin;
+      padding-bottom: $padding - 10px;
+      padding-left: $padding - 10px;
+      padding-right: $padding - 10px;
+
+      input {
+        width: 100%;
+        height: 67px;
+        border: 1px solid #B4B4B4;
+        border-radius: 5px;
+        color: $bg-green;
+        padding-left: 30px;
+      }
+      input:focus {
+        border: 1px solid #108915;
+      }
+
+      span {
+        position: absolute;
+        top: 6px;
+        right: $padding - 4px;
+        bottom: 6px;
+        width: 170px;
+        height: 55px;
+        line-height: 55px;
+        color: #DFDFDF;
+        text-align: center;
+        border-radius: 5px;
+      }
+
+      .span-apply-active {
+        color: #108915;
+        background-color: #EAFEEB;
+      }
+    }
+
+    .order-summary-total-price-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: $text-light-gray;
+      padding-left: $padding;
+      padding-right: $padding;
+      margin: $margin 0;
+    }
+  }
+
+  .order-summary-items {
+    padding: $margin $padding;
+
+    .order-summary-items-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 27px;
+
+      .order-summary-items-title {
+        color: $text-light-gray;  
+      }
+
+      .order-summary-items-edit {
+        color: #108915;
+      }
+    }
+
+    .order-summary-items-list {
+      margin-top: $margin;
+
+      .ordered-item {
+        margin-bottom: $margin;
+      }
+    }
+  }
+}
