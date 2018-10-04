@@ -1,0 +1,45 @@
+@import "../../styles/variables/variables";
+
+$page-padding: 110px;
+
+.div-checkout-container {
+  background-color: #F1F1F1;
+  padding: $page-padding $page-padding 0 $page-padding;
+
+  .div-checkout-title {
+    font-size: $large-font-size;
+    font-family: 'Montserrat-SemiBold';
+  }
+
+  .div-checkout-forms {
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: row;
+
+    .div-checkout-steps-section {
+      flex-grow: 3;
+    }
+
+    .div-checkout-summary-section {
+      flex-grow: 2;
+    }
+  }
+
+  .div-checkout-separator {
+    height: 1px;
+    background-color: $text-light-gray;
+    margin-left: -($page-padding);
+    margin-right: -($page-padding);
+  }
+
+  .div-help-container {
+    padding: 50px 0 150px 0;
+    text-align: center;
+
+    span {
+      color: $bg-green;
+      text-decoration: underline;
+    }
+  }
+}
