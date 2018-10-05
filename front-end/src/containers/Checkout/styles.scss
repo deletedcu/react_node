@@ -44,12 +44,14 @@ $page-padding: 110px;
         border: 1px solid $bg-green;
       }
 
-      .div-checkout-account {
+      .div-checkout-section-content {
         background-color: white;
         padding: 0 50px;
         display: flex;
         flex-direction: column;
-  
+      }
+
+      .div-checkout-account {
         .div-checkout-account-names {
           display: flex;
           flex-direction: row;
@@ -79,6 +81,76 @@ $page-padding: 110px;
   
         .div-checkout-account-names, .div-checkout-account-email, .div-checkout-account-password {
           margin-top: 35px;
+        }
+      }
+
+      .div-checkout-address {
+        .div-checkout-address-first-row {
+          .div-checkout-address-firstname {
+            width: 30%;
+            padding-right: 15px;
+          }
+
+          .div-checkout-address-lastname {
+            width: 30%;
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+
+          .div-checkout-address-contact-number {
+            width: 40%;
+            padding-left: 15px;
+          }
+        }
+
+        .div-checkout-address-second-row {
+          .div-checkout-address-street {
+            width: 60%;
+            padding-right: 15px
+          }
+
+          .div-checkout-address-apartment {
+            width: 40%;
+            padding-left: 15px;
+          }
+        }
+
+        .div-checkout-address-third-row {
+          margin-bottom: 50px;
+
+          .div-checkout-address-city {
+            width: 60%;
+            padding-right: 15px;
+          }
+
+          .div-checkout-address-state {
+            width: 20%;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            display: flex;
+            flex-direction: column;
+
+            .select-us-state {
+              margin-top: 10px;
+              border: 1px solid #B7CBB8;
+              background-color: white;
+              outline: none;
+              height: 70px;
+              color: $text-light-gray;
+            }
+          }
+
+          .div-checkout-address-zip {
+            width: 20%;
+            padding-left: 15px;
+          }
+        }
+
+        .div-checkout-address-first-row, .div-checkout-address-second-row, .div-checkout-address-third-row {
+          margin-top: 35px;
+          display: flex;
+          flex-direction: row;
         }
       }
     }

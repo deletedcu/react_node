@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import SelectUSState from 'react-select-us-states'
 import OrderSummary from './components/OrderSummary'
 import CheckoutStepForm, { CheckoutFormStatus } from './components/CheckoutStepForm'
 
@@ -15,7 +16,7 @@ class Checkout extends Component {
     super(props)
 
     this.state = {
-      currentStep: CheckoutStep.account,
+      currentStep: CheckoutStep.address,
     }
   }
 
@@ -31,6 +32,16 @@ class Checkout extends Component {
     this.setState({
       currentStep: CheckoutStep.address,
     })
+  }
+
+  onCompleteDeliveryAddress = () => {
+    this.setState({
+      currentStep: CheckoutStep.payment,  
+    })
+  }
+
+  onSelectState = (selectedState) => {
+    console.log(selectedState)
   }
 
   render () {
@@ -56,7 +67,7 @@ class Checkout extends Component {
               buttonTitle='Proceed to Delivery Info'
               onSubmit={ this.onCreateAccount }
             >
-              <div className='div-checkout-account'>
+              <div className='div-checkout-section-content div-checkout-account'>
                 <div className='div-checkout-account-names'>
                   <div className='div-checkout-account-firstname'>
                     <div><span>First Name</span></div>
@@ -91,7 +102,51 @@ class Checkout extends Component {
               status={ currentStep === CheckoutStep.address ? CheckoutFormStatus.editing : (currentStep === CheckoutStep.account ? CheckoutFormStatus.disabled : CheckoutFormStatus.completed) }
               title='Delivery Address'
               buttonTitle='Proceed to Payment Info'
-            />
+              onSubmit={ this.onCompleteDeliveryAddress }
+            >
+              <div className='div-checkout-section-content div-checkout-address'>
+                <div className='div-checkout-address-first-row'>
+                  <div className='div-checkout-address-firstname'>
+                    <div><span>First Name</span></div>
+                    <div><input required type='text'/></div>
+                  </div>
+                  <div className='div-checkout-address-lastname'>
+                    <div><span>Last Name</span></div>
+                    <div><input required type='text'/></div>
+                  </div>
+                  <div className='div-checkout-address-contact-number'>
+                    <div><span>Contact Number</span></div>
+                    <div><input required type='text'/></div>
+                  </div>
+                </div>
+
+                <div className='div-checkout-address-second-row'>
+                  <div className='div-checkout-address-street'>
+                    <div><span>Street Address</span></div>
+                    <div><input required type='text'/></div>
+                  </div>
+                  <div className='div-checkout-address-apartment'>
+                    <div><span>Apartment Number</span></div>
+                    <div><input required type='text'/></div>
+                  </div>
+                </div>
+
+                <div className='div-checkout-address-third-row'>
+                  <div className='div-checkout-address-city'>
+                    <div><span>City</span></div>
+                    <div><input required type='text'/></div>
+                  </div>
+                  <div className='div-checkout-address-state'>
+                    <div><span>State</span></div>
+                    <SelectUSState className='select-us-state' onChange={ this.onSelectState }/>
+                  </div>
+                  <div className='div-checkout-address-zip'>
+                    <div><span>Zip</span></div>
+                    <div><input required type='text'/></div>
+                  </div>
+                </div>
+              </div>
+            </CheckoutStepForm>
 
             {/* Payment Info Section */}
             <CheckoutStepForm
@@ -99,7 +154,8 @@ class Checkout extends Component {
               status={ currentStep === CheckoutStep.payment ? CheckoutFormStatus.editing : CheckoutFormStatus.disabled }
               title='Payment Info'
               buttonTitle='Complete Order'
-            />
+            >
+            </CheckoutStepForm>
           </div>
 
           {/* Summary Section */}
