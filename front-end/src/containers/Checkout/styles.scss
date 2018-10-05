@@ -22,6 +22,65 @@ $page-padding: 110px;
     .div-checkout-steps-section {
       width: 60%;
       padding: 18px;
+      color: $text-light-gray;
+
+      .checkout-step-form-container {
+        margin-bottom: 30px;
+      }
+
+      input {
+        width: 100%;
+        height: 70px;
+        border: 1px solid #B7CBB8;
+        border-radius: 4px;
+        color: $text-light-gray;
+        font-size: 27px;
+        caret-color: $bg-green;
+        margin-top: 10px;
+        padding: 20px;
+      }
+
+      input:focus {
+        border: 1px solid $bg-green;
+      }
+
+      .div-checkout-account {
+        background-color: white;
+        padding: 0 50px;
+        display: flex;
+        flex-direction: column;
+  
+        .div-checkout-account-names {
+          display: flex;
+          flex-direction: row;
+  
+          .div-checkout-account-firstname {
+            flex-grow: 1;
+            margin-right: 15px;
+          }
+
+          .div-checkout-account-lastname {
+            flex-grow: 1;
+            margin-left: 15px;
+          }
+        }
+
+        .div-checkout-account-login {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin: 30px 0;
+
+          .clickable {
+            color: $bg-green;
+            margin-left: 5px;
+          }
+        }
+  
+        .div-checkout-account-names, .div-checkout-account-email, .div-checkout-account-password {
+          margin-top: 35px;
+        }
+      }
     }
 
     .div-checkout-summary-section {
