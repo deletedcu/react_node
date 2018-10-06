@@ -1,14 +1,29 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 import SelectUSState from 'react-select-us-states'
+import CreditCardInput from 'react-credit-card-input'
 import OrderSummary from './components/OrderSummary'
 import CheckoutStepForm, { CheckoutFormStatus } from './components/CheckoutStepForm'
+import RadioButton from '../../components/RadioButton'
 
 import './styles.css'
+
+import imgPaypal from '../../assets/images/paypal.svg'
 
 const CheckoutStep = {
   'account': 1,
   'address': 2,
   'payment': 3,
+}
+
+const AccountMode = {
+  'create': 1,
+  'login': 2,
+}
+
+const PaymentOption = {
+  'stripe': 1,
+  'paypal': 2,
 }
 class Checkout extends Component {
 
@@ -16,18 +31,44 @@ class Checkout extends Component {
     super(props)
 
     this.state = {
-      currentStep: CheckoutStep.address,
+      currentAccountMode: AccountMode.create,
+      currentStep: CheckoutStep.account,
+      currentPaymentOption: PaymentOption.stripe,
+
+      accountFirstName: '',
+      accountLastName: '',
+      emailAddress: '',
+      password: '',
+
+      addressFirstName: '',
+      addressLastName: '',
+      contactNumber: '',
+      streetAddress: '',
+      apartmentNumber: '',
+      city: '',
+      state: '',
+      zip: '',
+
+      cardNumber: '',
+      cardExpiry: '',
+      cardCVC: '',
+      cardName: '',
     }
   }
 
-  onHelpCenter = () => {
-
+  /**
+   * Switch to login/signup form
+   */
+  onSwitchAccountMode = () => {
+    this.setState({
+      currentAccountMode: this.state.currentAccountMode === AccountMode.login ? AccountMode.create : AccountMode.login,
+    })
   }
 
-  onContactUs = () => {
-    this.props.history.push('/contact-us')
-  }
-
+  /**
+   * Section Submit Handler
+   */
+  
   onCreateAccount = () => {
     this.setState({
       currentStep: CheckoutStep.address,
@@ -40,12 +81,76 @@ class Checkout extends Component {
     })
   }
 
-  onSelectState = (selectedState) => {
-    console.log(selectedState)
+  onCompleteOrder = () => {
+    
   }
 
+
+  /**
+   * Input Change Handler
+   */
+  onSelectState = (selectedState) => {
+    this.setState({
+      state: selectedState,
+    })
+  }
+
+  onChangeCardNumber = (e) => {
+    this.setState({
+      cardNumber: e.target.value,
+    })
+  }
+
+  onChangeCardExpiryDate = (e) => {
+    this.setState({
+      cardExpiry: e.target.value,
+    })
+  }
+
+  onChangeCardCVC = (e) => {
+    this.setState({
+      cardCVC: e.target.value,
+    })
+  }
+
+  onChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  onPaymentOptionChange = (option, checked) => {
+    if ((option === PaymentOption.stripe && checked === true) || (option === PaymentOption.paypal && checked === false)) {
+      this.setState({
+        currentPaymentOption: PaymentOption.stripe,
+      })
+    } else {
+      this.setState({
+        currentPaymentOption: PaymentOption.paypal,
+      })
+    }
+  }
+
+
+  /**
+   * Page Navigation Handler
+   */
+  onHelpCenter = () => {
+    
+  }
+
+  onContactUs = () => {
+    this.props.history.push('/contact-us')
+  }
+
+
+  /**
+   * Render
+   */
   render () {
     const currentStep = this.state.currentStep
+    const currentAccountMode = this.state.currentAccountMode
+    const currentPaymentOption = this.state.currentPaymentOption
 
     return (
       <div className='div-checkout-container'>
@@ -68,30 +173,35 @@ class Checkout extends Component {
               onSubmit={ this.onCreateAccount }
             >
               <div className='div-checkout-section-content div-checkout-account'>
-                <div className='div-checkout-account-names'>
-                  <div className='div-checkout-account-firstname'>
-                    <div><span>First Name</span></div>
-                    <div><input required type='text'/></div>
+                {/* First Name, Last Name */}
+                { currentAccountMode === AccountMode.create &&
+                  <div className='div-checkout-account-names'>
+                    <div className='div-checkout-account-firstname'>
+                      <div><span>First Name</span></div>
+                      <div><input required type='text' name='accountFirstName' value={this.state.accountFirstName} onChange={this.onChange}/></div>
+                    </div>
+                    <div className='div-checkout-account-lastname'>
+                      <div><span>Last Name</span></div>
+                      <div><input required type='text' name='accountLastName' value={this.state.accountLastName} onChange={this.onChange}/></div>
+                    </div>
                   </div>
-                  <div className='div-checkout-account-lastname'>
-                    <div><span>Last Name</span></div>
-                    <div><input required type='text'/></div>
-                  </div>
-                </div>
+                }
 
+                {/* Email, Password */}
                 <div className='div-checkout-account-email'>
                   <div><span>Email Address</span></div>
-                  <div><input required type='email'/></div>
+                  <div><input required type='email' name='emailAddress' value={this.state.emailAddress} onChange={this.onChange}/></div>
                 </div>
 
                 <div className='div-checkout-account-password'>
                   <div><span>Password</span></div>
-                  <div><input required type='password'/></div>
+                  <div><input required type='password' name='password' value={this.state.password} onChange={this.onChange}/></div>
                 </div>
 
+                {/* Login Button */}
                 <div className='div-checkout-account-login'>
-                  <span>Already have an account? </span>
-                  <span className='clickable'>Login</span>
+                  <span>{ currentAccountMode === AccountMode.create ? 'Already have an account?' : 'Create an account?'}</span>
+                  <span className='clickable' onClick={this.onSwitchAccountMode}>{ currentAccountMode === AccountMode.create ? 'Login' : 'Sign up' }</span>
                 </div>
               </div>
             </CheckoutStepForm>
@@ -104,37 +214,40 @@ class Checkout extends Component {
               buttonTitle='Proceed to Payment Info'
               onSubmit={ this.onCompleteDeliveryAddress }
             >
-              <div className='div-checkout-section-content div-checkout-address'>
+              <div className='div-checkout-section-content div-checkout-address'> 
+                {/* First Name, Last Name, Contact Number */}
                 <div className='div-checkout-address-first-row'>
                   <div className='div-checkout-address-firstname'>
                     <div><span>First Name</span></div>
-                    <div><input required type='text'/></div>
+                    <div><input required type='text' name='addressFirstName' value={this.state.addressFirstName} onChange={this.onChange}/></div>
                   </div>
                   <div className='div-checkout-address-lastname'>
                     <div><span>Last Name</span></div>
-                    <div><input required type='text'/></div>
+                    <div><input required type='text' name='addressLastName' value={this.state.addressLastName} onChange={this.onChange}/></div>
                   </div>
                   <div className='div-checkout-address-contact-number'>
                     <div><span>Contact Number</span></div>
-                    <div><input required type='text'/></div>
+                    <div><input required type='text' name='contactNumber' value={this.state.contactNumber} onChange={this.onChange}/></div>
                   </div>
                 </div>
 
+                {/* Street, Apartment */}
                 <div className='div-checkout-address-second-row'>
                   <div className='div-checkout-address-street'>
                     <div><span>Street Address</span></div>
-                    <div><input required type='text'/></div>
+                    <div><input required type='text' name='streetAddress' value={this.state.streetAddress} onChange={this.onChange}/></div>
                   </div>
                   <div className='div-checkout-address-apartment'>
                     <div><span>Apartment Number</span></div>
-                    <div><input required type='text'/></div>
+                    <div><input required type='text' name='apartmentNumber' value={this.state.apartmentNumber} onChange={this.onChange}/></div>
                   </div>
                 </div>
 
+                {/* City, State, Zip */}
                 <div className='div-checkout-address-third-row'>
                   <div className='div-checkout-address-city'>
                     <div><span>City</span></div>
-                    <div><input required type='text'/></div>
+                    <div><input required type='text' name='city' value={this.state.city} onChange={this.onChange}/></div>
                   </div>
                   <div className='div-checkout-address-state'>
                     <div><span>State</span></div>
@@ -142,7 +255,7 @@ class Checkout extends Component {
                   </div>
                   <div className='div-checkout-address-zip'>
                     <div><span>Zip</span></div>
-                    <div><input required type='text'/></div>
+                    <div><input required type='text' name='zip' value={this.state.zip} onChange={this.onChange}/></div>
                   </div>
                 </div>
               </div>
@@ -154,7 +267,50 @@ class Checkout extends Component {
               status={ currentStep === CheckoutStep.payment ? CheckoutFormStatus.editing : CheckoutFormStatus.disabled }
               title='Payment Info'
               buttonTitle='Complete Order'
+              onSubmit={ this.onCompleteOrder }
             >
+              <div className='div-checkout-section-content div-checkout-payment'>
+                {/* Stripe */}
+                <div className={ classNames('div-checkout-payment-credit-card', {'div-checkout-payment-active': currentPaymentOption === PaymentOption.stripe})}>
+                  <RadioButton
+                    checked={ currentPaymentOption === PaymentOption.stripe }
+                    onCheckChange={ (checked) => this.onPaymentOptionChange(PaymentOption.stripe, checked) }
+                  >
+                    Credit Card
+                  </RadioButton>
+                  <div className='div-checkout-payment-credit-card-number'>
+                    <div><span>Card Number</span></div>
+                    <div className='div-checkout-payment-credit-card-number-wrapper'>
+                      <CreditCardInput
+                        cardNumberInputProps={{ value: this.state.cardNumber, onChange: this.onChangeCardNumber }}
+                        cardExpiryInputProps={{ value: this.state.cardExpiry, onChange: this.onChangeCardExpiryDate }}
+                        cardCVCInputProps={{ value: this.state.cardCVC, onChange: this.onChangeCardCVC }}
+                        fieldClassName='input'
+                        containerStyle={{width: '100%'}}
+                      />
+                    </div>
+                  </div>
+                  <div className='div-checkout-payment-credit-card-name'>
+                    <div><span>Name On Card</span></div>
+                    <div><input type='text' name='cardName' value={this.state.cardName} onChange={this.onChange}/></div>
+                  </div>
+                </div>
+
+                {/* Paypal */}
+                <div className={ classNames('div-checkout-payment-paypal', {'div-checkout-payment-active': currentPaymentOption === PaymentOption.paypal})}>
+                  <RadioButton
+                    checked={ currentPaymentOption === PaymentOption.paypal }
+                    onCheckChange={ (checked) => this.onPaymentOptionChange(PaymentOption.paypal, checked) }
+                  >
+                    Paypal
+                  </RadioButton>
+                  <div className='div-checkout-payment-paypal-instruction'>
+                    You will be redirected to Paypal website to complete the payment securely.
+                  </div>
+                  <img className='img-paypal' src={imgPaypal} alt='paypal'/>
+                </div>
+              </div>
+              
             </CheckoutStepForm>
           </div>
 

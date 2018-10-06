@@ -12,7 +12,6 @@ $page-padding: 110px;
   }
 
   .div-checkout-forms {
-    min-height: 500px;
     margin-bottom: 50px;
 
     position: relative;
@@ -151,6 +150,72 @@ $page-padding: 110px;
           margin-top: 35px;
           display: flex;
           flex-direction: row;
+        }
+      }
+
+      .div-checkout-payment {
+        .div-checkout-payment-credit-card {
+          border: 1px solid #B7CBB8;
+          margin-top: 40px;
+          padding: 24px;
+
+          .div-checkout-payment-credit-card-number {
+            margin: 30px 20px 0 40px;
+
+            .div-checkout-payment-credit-card-number-wrapper {
+              margin-top: 10px;
+
+              .input {
+                border: 1px solid #56B05A;
+                height: 70px;
+
+                label {
+                  flex-grow: 1;
+
+                  input {
+                    border: none;
+                    margin-top: 5px;
+                    padding: 0;
+                    font-size: 22px;
+                  }
+
+                  .credit-card-input {
+                    min-width: unset;
+                  }
+                }
+              }
+            }
+          }
+          
+          .div-checkout-payment-credit-card-name {
+            margin: 30px 20px 20px 35px;
+          }
+        }
+
+        .div-checkout-payment-paypal {
+          position: relative;
+          border: 1px solid #B7CBB8;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          padding: 24px;
+
+          .div-checkout-payment-paypal-instruction {
+            font-size: 22px;
+            margin: 10px 100px 40px 35px;
+          }
+
+          .img-paypal {
+            position: absolute;
+            top: 0;
+            right: -40px;
+            height: 75px;
+          }
+        }
+
+        .div-checkout-payment-active {
+          border: 1px solid #F2FFF3;
+          background-color: #F2FFF3;
+          border-radius: 4px;
         }
       }
     }
