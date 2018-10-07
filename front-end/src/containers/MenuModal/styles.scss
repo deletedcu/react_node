@@ -47,7 +47,7 @@
       .span-offer {
         position: absolute;
         margin-top: 20px;
-        font-size: 12px;
+        font-size: $minor-font-size;
         color: white;
         background-color: $bg-green;
         padding: 10px 25px;
@@ -157,7 +157,6 @@
 
           .div-additional-info-title {
             color: #080808;
-            font-size: 21px;
           }
 
           .checkbox {
@@ -173,7 +172,6 @@
 
           .div-special-instructions-title {
             color: #080808;
-            font-size: 21px;
           }
 
           .input-special-instructions {

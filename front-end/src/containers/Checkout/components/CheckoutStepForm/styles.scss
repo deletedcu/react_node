@@ -1,9 +1,12 @@
 @import "../../../../styles/variables/variables";
 
+$step-number-size: 44px;
+$checkout-header-height: 108px;
+
 .checkout-step-form-container {
   background-color: white;
   border: 1px solid #B7CBB8;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+  box-shadow: $shadow-primary;
 
   .checkout-step-form-separator {
     height: 1px;
@@ -15,12 +18,12 @@
     flex-direction: row;
     align-items: center;
     background-color: #F2FFF3;
-    height: 108px;
+    height: $checkout-header-height;
 
     .img-checked, .div-step-number {
-      width: 44px;
-      height: 44px;
-      border-radius: 22px;
+      width: $step-number-size;
+      height: $step-number-size;
+      border-radius: 100px;
       margin-left: 30px;
     }
 
@@ -29,8 +32,8 @@
       border: 3px solid #06AA0D;
       background-color: white;
       text-align: center;
-      line-height: 44px;
-      font-size: 27px;
+      line-height: $step-number-size;
+      font-size: $footer-secondary-font-size;
       font-family: 'Montserrat-Bold';
     }
 
@@ -42,7 +45,7 @@
 
     .div-checkout-step-title {
       color: $text-light-gray;
-      font-size: 27px;
+      font-size: $footer-secondary-font-size;
       margin-left: 15px;
     }
   }
@@ -52,10 +55,6 @@
   }
 
   .checkout-step-form-body {
-    .div-checkout-step-form {
-      min-height: 100px;
-    }
-
     .div-checkout-step-form-footer {
       text-align: right;
 

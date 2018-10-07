@@ -1,12 +1,14 @@
 @import "../../../../styles/variables/variables";
 
+$thumbnail-size: 77px;
+
 .div-thumbnails-list {
-  width: 77px;
+  width: $thumbnail-size;
   display: flex;
   flex-direction: column;
   
   .green-border {
-    border: 2px solid #56B05A;
+    border: 2px solid $bg-green;
   }
 
   .gray-border {
@@ -14,8 +16,8 @@
   }
 
   .img-menu-thumbnail {
-    width: 77px;
-    height: 77px;
+    width: $thumbnail-size;
+    height: $thumbnail-size;
     margin-bottom: 10px;
   }
 }

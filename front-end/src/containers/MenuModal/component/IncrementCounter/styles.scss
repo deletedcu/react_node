@@ -18,7 +18,7 @@ $increment-color: #D3D3D3;
 
   input {
     text-align: center;
-    font-size: 28px;
+    font-size: $footer-secondary-font-size;
     color: $increment-color;
     flex-grow: 1;
     min-width: 40px;

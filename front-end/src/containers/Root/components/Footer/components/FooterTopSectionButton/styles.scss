@@ -1,3 +1,5 @@
+@import "../../../../../../styles/variables/variables";
+
 .div-footer-top-section-button-container {
   color: #AFAFAF;
   display: flex;
@@ -16,6 +18,6 @@
   }
 
   .div-footer-top-section-button-separator {
-    font-size: 17px;
+    font-size: $small-font-size;
   }
 }

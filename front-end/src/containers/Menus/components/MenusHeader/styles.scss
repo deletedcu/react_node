@@ -30,7 +30,7 @@
       input {
         width: 0px; 
         flex-grow: 1;
-        font-size: 23px;
+        font-size: $footer-primary-font-size;
       }
 
       img {
@@ -43,7 +43,7 @@
 
       span {
         color: #D0D0D0;
-        font-size: 23px;
+        font-size: $footer-primary-font-size;
         flex-grow: 1;
       }
 
@@ -63,19 +63,19 @@
       width: 33.33%;
       text-align: center;
       line-height: 150px;
-      font-size: 23px;
+      font-size: $footer-primary-font-size;
       color: $bg-green;
       margin: 0 5px;
       box-sizing: border-box;
     }
 
     .div-menus-type-item:hover {
-      transition: all ease-in-out 0.1s;
+      transition: $animation-primary;
       border-bottom: 3px solid $bg-green;
     }
 
     .bottom-line {
-      transition: all ease-in-out 0.1s;
+      transition: $animation-primary;
       border-bottom: 3px solid $bg-green;
     }
   }

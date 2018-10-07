@@ -5,7 +5,7 @@ import './styles.css'
 
 const OrderedItem = (props) => {
   return (
-    <div className={ classNames('ordered-item', props.className) }>
+    <div className={ classNames('ordered-item', props.className) } style={ props.style }>
       <img src={ props.image } alt='item'/>
       <div className='ordered-item-info'>
         <div>{ props.title }</div>

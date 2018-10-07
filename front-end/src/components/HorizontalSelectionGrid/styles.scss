@@ -12,7 +12,6 @@
   .selection-grid-cell {
     width: 80px;
     line-height: 80px;
-    font-size: 19px;
     color: $text-light-gray;
     text-align: center;
   }
@@ -24,6 +23,6 @@
   .selection-grid-cell-selected {
     background-color: #62B266;
     color: white;
-    transition: all ease-in-out 0.1s;
+    transition: $animation-primary;
   }
 }

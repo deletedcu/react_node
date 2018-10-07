@@ -25,7 +25,7 @@ class HorizontalSelectionGrid extends Component {
     return (
       <div className='selection-grid'>
        {
-         values.map((value, index) => {
+        values.map((value, index) => {
           return (<div 
                     key={ index }
                     className={ classNames('selection-grid-cell', 'clickable', {'selection-grid-cell-selected': this.state.selectedIndex === index}, {'selection-grid-cell-has-separator': index < values.length - 1}) }

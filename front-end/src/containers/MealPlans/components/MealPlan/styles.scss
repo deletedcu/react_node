@@ -2,7 +2,7 @@
 
 .div-meal-plan {
   background-color: white;
-  box-shadow: 0px 3px 10px rgba(0,0,0,0.16);
+  box-shadow: $shadow-primary;
   border-radius: 7px;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
 
   .div-meal-plan-subtitle {
     color: $text-light-gray;
-    font-size: 25px;
+    font-size: $footer-secondary-font-size;
     text-align: center;
   }
 
@@ -40,7 +40,7 @@
       text-align: center;
       margin-top: 20px;
       color: $text-light-gray;
-      font-size: 25px;
+      font-size: $footer-secondary-font-size;
     }
   }
 
@@ -62,13 +62,13 @@
         margin-top: -30px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 27px;
+        font-size: $footer-secondary-font-size;
         color: #D3D5DB;
         text-decoration: line-through;
       }
 
       .span-menu-plan-price-value {
-        font-size: 33px;
+        font-size: $medium-font-size;
         color: $text-light-gray;
       }
 
