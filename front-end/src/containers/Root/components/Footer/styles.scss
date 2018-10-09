@@ -49,6 +49,10 @@
       .footer-middle-link {
         color: #AFAFAF;
         margin-top: 10px;
+        cursor: pointer;
+      }
+      .footer-middle-link:hover {
+        text-decoration: underline;
       }
 
       .footer-middle-image-links {
@@ -56,6 +60,7 @@
         flex-direction: row;
         align-items: center;
         margin-top: 10px;
+        cursor: pointer;
 
         a {
           margin-right: 20px;
@@ -83,6 +88,7 @@
       .footer-bottom-link {
         color: #AFAFAF;
         margin-left: 68px;
+        cursor: pointer;
       }
     }
   }

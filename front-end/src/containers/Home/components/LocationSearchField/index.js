@@ -10,10 +10,10 @@ class LocationSearchField extends Component {
     return (
       <div className='div-location-search-container'>
         <input type='text' placeholder='Enter location here' spellCheck='false'/>
-        <div className='div-locateme clickable'>
+        <Button className='btn-locate-me clickable'>
           <img src={imgLocateMe} alt='locate'/>
           <span>Locate Me</span>
-        </div>
+        </Button>
         <Button>FIND FOOD</Button>
       </div>
     )
