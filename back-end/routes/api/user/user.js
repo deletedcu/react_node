@@ -20,7 +20,7 @@ exports.login = (email, password) => {
 
       // user not exists
       if (!user) {
-        reject({ status: 404, message: 'Cannot find user email!' });
+        reject({ status: 404, message: 'Cannot find email address!' });
         return;
       }
 
