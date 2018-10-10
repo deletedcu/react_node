@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Component } from 'react'
+import NotificationSystem from 'react-notification-system'
 import { connect } from 'react-redux'
 import routes from './routes'
 import Header from './components/Header'
@@ -7,6 +8,7 @@ import asyncComponent from '../../components/AsyncComponent'
 
 import './styles/styles.css'
 
+import { initializeNotificationSystem } from '../../services/notification'
 
 const AsyncMenuModal = asyncComponent(() => import('../MenuModal')) 
 
@@ -14,24 +16,34 @@ const AsyncMenuModal = asyncComponent(() => import('../MenuModal'))
  * Root component, containing routes
  */
 
-const Root = (props) => {
-  return (
-    <div className='app header-fixed'>
-      {/* Header */}
-      <Header/>
+class Root extends Component {
 
-      {/* Body */}
-      <div className='app-body'>
-        { routes }
+  componentDidMount () {
+    initializeNotificationSystem(this.refs.notificationSystem)
+  }
+
+  render () {
+
+    return (
+      <div className='app header-fixed'>
+        {/* Header */}
+        <Header/>
+  
+        {/* Body */}
+        <div className='app-body'>
+          { routes }
+        </div>
+  
+        {/* Footer */}
+        <Footer/>
+  
+        {/* Menu Modal */}
+        { this.props.menuModal.visible && <AsyncMenuModal /> }
+  
+        <NotificationSystem ref='notificationSystem' dismissible='click'/>
       </div>
-
-      {/* Footer */}
-      <Footer/>
-
-      {/* Menu Modal */}
-      { props.menuModal.visible && <AsyncMenuModal /> }
-    </div>
-  )
+    )
+  }
 }
 
 function mapStateToProps(state) {

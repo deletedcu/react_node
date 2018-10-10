@@ -25,6 +25,11 @@
     // flex-direction: row;
     // overflow-x: hidden;
   }
+
+  .notification-message {
+    font-size: $regular-font-size;
+    margin: 20px 10px !important;
+  }
 }
 
 .header-fixed {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import classNames from 'classnames'
 import SelectUSState from 'react-select-us-states'
 import CreditCardInput from 'react-credit-card-input'
@@ -9,6 +10,8 @@ import RadioButton from '../../components/RadioButton'
 import './styles.css'
 
 import imgPaypal from '../../assets/images/paypal.svg'
+
+import { loginUser, signupUser } from '../../redux/actions/user'
 
 const CheckoutStep = {
   'account': 1,
@@ -56,6 +59,14 @@ class Checkout extends Component {
     }
   }
 
+  componentWillReceiveProps ({user}) {
+    if (user.loggedIn) {
+      this.setState({
+        currentStep: CheckoutStep.address,
+      })
+    }
+  }
+
   /**
    * Switch to login/signup form
    */
@@ -69,10 +80,19 @@ class Checkout extends Component {
    * Section Submit Handler
    */
   
-  onCreateAccount = () => {
-    this.setState({
-      currentStep: CheckoutStep.address,
-    })
+  onAuthenticate = () => {
+    if (this.state.currentAccountMode === AccountMode.create) {
+      // sign up
+      this.props.dispatch(signupUser({
+        email: this.state.emailAddress,
+        password: this.state.password,
+        first_name: this.state.accountFirstName,
+        last_name: this.state.accountLastName,
+      }))
+    } else {
+      // login
+      this.props.dispatch(loginUser(this.state.emailAddress, this.state.password))
+    }
   }
 
   onCompleteDeliveryAddress = () => {
@@ -170,7 +190,7 @@ class Checkout extends Component {
               status={ currentStep === CheckoutStep.account ? CheckoutFormStatus.editing : CheckoutFormStatus.completed }
               title='Create Account'
               buttonTitle='Proceed to Delivery Info'
-              onSubmit={ this.onCreateAccount }
+              onSubmit={ this.onAuthenticate }
             >
               <div className='div-checkout-section-content div-checkout-account'>
                 {/* First Name, Last Name */}
@@ -336,4 +356,10 @@ class Checkout extends Component {
 
 }
 
-export default Checkout
+function mapStateToProps(state) {
+  return {
+    user: state.user,
+  }
+}
+
+export default connect(mapStateToProps)(Checkout)
