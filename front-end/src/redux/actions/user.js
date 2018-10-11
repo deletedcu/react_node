@@ -19,7 +19,7 @@ export function loginUser(email, password){
       dispatch({type: 'LOGIN_USER_FULFILLED', payload: response.data.user})
     })
     .catch((err) => {
-      if (err.response.data) {
+      if (err.response) {
         showNotification(err.response.data.message, 'error')
       } else {
         showNotification('Failed to login', 'error')
@@ -43,7 +43,7 @@ export function signupUser(user) {
       localStorage.setItem('token', response.data.user.token)
       dispatch({type: 'SIGNUP_USER_FULFILLED', payload: response.data.user})
     }).catch((err) => {
-      if (err.response.data) {
+      if (err.response) {
         showNotification(err.response.data.message, 'error')
       } else {
         showNotification('Failed to sign up', 'error')
