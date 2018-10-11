@@ -22,4 +22,20 @@
     line-height: 28px;
     font-size: $small-font-size;
   }
+
+  @media (max-width: 710px) {
+    img {
+      height: 19px;
+    }
+
+    span {
+      width: 14px;
+      height: 14px;
+      line-height: 14px;
+      font-size: 9px;
+      left: 12px;
+      top: -2px;
+      border: 1px solid white;
+    }
+  }
 }

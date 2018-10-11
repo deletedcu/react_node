@@ -19,13 +19,6 @@
     background-color: $bg-footer-primary;
   }
 
-  .app-body {
-    // display: flex;
-    // flex-grow: 1;
-    // flex-direction: row;
-    // overflow-x: hidden;
-  }
-
   .notification-message {
     font-size: $regular-font-size;
     margin: 20px 10px !important;
@@ -42,5 +35,16 @@
   }
   .app-body {
     margin-top: $body-top-margin;
+  }
+}
+
+@media (max-width: 710px) {
+  .app-header {
+    position: absolute !important;
+    height: $header-mobile-height !important;
+  }
+
+  .app-body {
+    margin-top: 30px !important;
   }
 }

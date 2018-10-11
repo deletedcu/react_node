@@ -13,11 +13,6 @@
     margin-top: 26px;
     margin-right: 100px;
 
-    .button {
-      width: 209px;
-      height: 67px;
-    }
-
     .div-signup {
       width: 179px;
       height: 67px;
@@ -36,15 +31,30 @@
       margin-right: 30px;
       margin-top: 34px;
 
-      .button {
-        width: 150px;
-        height: 50px;
-      }
-
       .div-signup {
         width: 130px;
         height: 50px;
         line-height: 50px;
+      }
+    }
+  }
+
+  @media (max-width: 710px) {
+    .img-logo {
+      margin-left: 20px;
+      margin-top: 21px;
+      height: 18px;
+    }
+
+    .div-buttons {
+      margin-right: 15px;
+      margin-top: 15px;
+
+      .div-signup {
+        width: 60px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 9px;
       }
     }
   }
