@@ -1,6 +1,9 @@
 @import "../../styles/variables/variables";
 
 .button {
+  width: 209px;
+  height: 67px;
+  font-size: $regular-font-size;
   background: $bg-green;
   border: 1px solid #108915;
   border-radius: 4px;
@@ -23,4 +26,19 @@
 
 .button:active {
   box-shadow: none;
+}
+
+@media (max-width: 1024px) {
+  .button {
+    width: 150px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 710px) {
+  .button {
+    width: 75px;
+    height: 25px;
+    font-size: 9px;
+  }
 }
