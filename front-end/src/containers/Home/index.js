@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Slider from 'react-slick'
 import LocationSearchField from './components/LocationSearchField'
 import FeaturedMenu from './components/FeaturedMenu'
 import HowItWorks from './components/HowItWorks'
@@ -19,6 +20,15 @@ class Home extends Component {
   }
 
   render () {
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+    }
+
     return (
       <div className='div-home-container'>
         {/* Banner */}
@@ -101,6 +111,14 @@ class Home extends Component {
             <Feedback />
             <Feedback />
             <Feedback />
+          </div>
+          <div className='responsive-div-feedbacks'>
+            <Slider {...settings}>
+              <Feedback />
+              <Feedback />
+              <Feedback />
+              <Feedback />
+            </Slider>
           </div>
         </div>
 

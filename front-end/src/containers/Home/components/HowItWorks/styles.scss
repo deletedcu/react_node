@@ -81,6 +81,16 @@
       margin-left: 20px;
     }
   }
+
+  @media (max-width: 710px) {
+    width: 100%;
+
+    .btn-all-products {
+      font-size: 17px;
+      height: 60px;
+      width: 100%;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -92,16 +102,26 @@
     display: block;
     display: flex;
     flex-direction: column;
-    margin-top: 70px;
+    margin-top: 50px;
 
     .div-how-it-works-center {
       position: relative;
       left: 50%;
-      width: 80%;
+      width: calc(100% - 80px);
       top: unset;
       transform: translateX(-50%);
+
       .div-how-it-works-step, .div-how-it-works-title, .div-how-it-works-description, .div-how-it-works-view-all-products {
         text-align: center;
+      }
+
+      .div-how-it-works-title {
+        font-size: 42px;
+      }
+
+      .div-how-it-works-description {
+        font-size: 16px;
+        margin-top: 20px;
       }
     }
 

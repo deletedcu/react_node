@@ -20,7 +20,6 @@
   }
 
   .btn-locate-me {
-    width: 151px;
     text-align: center;
     background-color: $bg-gray;
     border: 1px solid $border-gray;
@@ -41,8 +40,43 @@
       line-height: 66px;
     }
   }
+}
 
-  .button {
-    width: 173px;
+@media (max-width: 1024px) {
+  .div-location-search-container {
+    height: 64px;
+
+    .btn-locate-me {
+      span {
+        line-height: 45px;
+      }
+    }
+  }
+}
+
+@media (max-width: 710px) {
+  .div-location-search-container {
+    height: 45px;
+
+    .button {
+      height: 33px !important;
+    }
+
+    input {
+      font-size: 9px;
+      min-width: 0px;
+    }
+
+    .btn-locate-me {
+      img {
+        width: 8px;
+        height: 8px;
+      }
+      
+      span {
+        line-height: 30px;
+        font-size: 9px !important;
+      }
+    }
   }
 }

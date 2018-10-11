@@ -1,20 +1,40 @@
 @import "../../../../styles/variables/variables";
 
+.img-feedback-user {
+  width: 74px;
+  height: 74px;
+  border-radius: 37px;
+  background-color: lightgray;
+  border: 1px solid #DBDBDB;
+  z-index: 1;
+}
+
+.div-feedback-box {
+  background-color: $bg-gray;
+  border: 1px solid $border-gray;
+  border-radius: 4px;
+  padding: 40px 40px 30px 40px;
+
+  .div-feedback-star {
+    display: flex;
+    .img-star {
+      width: 12px;
+      margin: 2px;
+    }
+  }
+}
+
 .div-feedback {
   position: relative;
   width: 574px;
   height: 197px;
+  display: inline-block;
+  margin: 20px;
 
   .img-feedback-user {
     position: absolute;
     left: 0;
     top: 0;
-    width: 74px;
-    height: 74px;
-    border-radius: 37px;
-    background-color: lightgray;
-    border: 1px solid #DBDBDB;
-    z-index: 1;
   }
 
   .div-feedback-box {
@@ -23,10 +43,6 @@
     top: 37px;
     bottom: 0px;
     right: 0px;
-    background-color: $bg-gray;
-    border: 1px solid $border-gray;
-    border-radius: 4px;
-    padding: 40px 40px 30px 40px;
     display: flex;
     flex-direction: column;
 
@@ -40,14 +56,6 @@
         color: $text-light-gray;
         font-size: 19px;
       }
-
-      .div-feedback-star {
-        display: flex;
-        .img-star {
-          width: 12px;
-          margin: 2px;
-        }
-      }
     }
 
     .div-feedback-content {
@@ -57,6 +65,54 @@
       margin-top: 20px;
       overflow: hidden;
       text-align: left;
+    }
+  }
+}
+
+.responsive-div-feedback {
+  display: none;
+}
+
+@media (max-width: 710px) {
+  .div-feedback {
+    display: none;
+  }
+
+  .responsive-div-feedback {
+    display: block;
+    position: relative;
+    margin-top: 70px;
+
+    .img-feedback-user {
+      position: absolute;
+      left: 50%;
+      top: -38px;
+      transform: translateX(-50%);
+    }
+
+    .div-feedback-box {
+      width: 100%;
+
+      .div-feedback-star {
+        margin-top: 20px;
+        justify-content: center;
+
+        .img-star {
+          height: 12px;
+        }
+      }
+
+      .div-feedback-name {
+        margin-top: 20px;
+        font-size: 19px;
+        text-align: center;
+      }
+
+      .div-feedback-content {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 16px;
+      }
     }
   }
 }

@@ -11,25 +11,39 @@
     position: relative;
     background: url('../../assets/images/banner.png') no-repeat center/cover;
     height: calc(100vh - 60px);
+    min-height: 450px;
 
     .div-banner-center {
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translateX(-50%) translateY(-50%);
-      max-width: calc(100% - 40px);
+      max-width: calc(100% - 50px);
 
       .div-title {
         text-align: center;
         font-size: $large-font-size;
+
+        @media (max-width: 710px) {
+          font-size: $regular-font-size;
+        }
       }
+    }
+
+    @media (max-width: 710px) {
+      max-height: 350px;
     }
   }
 
   .div-section-title {
     text-align: center;
-    margin-top: 140px;
+    margin-top: 100px;
     font-size: $large-font-size;
+
+    @media (max-width: 710px) {
+      font-size: $regular-font-size;
+      margin-top: 50px;
+    }
   }
 
   .div-featured-menu-container {
@@ -46,6 +60,14 @@
         padding-left: 0px;
         padding-right: 0px;
       }
+
+      @media (max-width: 1366px) {
+        max-width: calc(100% - 100px);
+      }
+
+      @media (max-width: 710px) {
+        margin-top: 30px;
+      }
     }
 
     .div-all-products-container {
@@ -61,6 +83,17 @@
           width: 26px;
           height: 26px;
           margin-left: 20px;
+        }
+      }
+
+      @media (max-width: 710px) {
+        width: calc(100% - 80px);
+        margin-left: 40px;
+    
+        .btn-all-products {
+          font-size: 17px;
+          height: 60px;
+          width: 100%;
         }
       }
     }
@@ -86,9 +119,32 @@
       margin-top: 100px;
       text-align: center;
 
-      .div-feedback {
-        display: inline-block;
-        margin: 20px;
+      @media(max-width: 710px) {
+        display: none;
+      }
+    }
+
+    .responsive-div-feedbacks {
+      display: none;
+      margin-bottom: 80px;
+      
+      .slick-slider {
+        .responsive-div-feedback {
+          margin-left: 40px;
+          margin-right: 40px;
+        }
+
+        .slick-dots {
+          bottom: -40px;
+        }
+  
+        .slick-arrow {
+          display: none;
+        }
+      }
+
+      @media (max-width: 710px) {
+        display: block;
       }
     }
   }
@@ -106,6 +162,10 @@
       left: 50%;
       top: calc(50% - 50px);
       transform: translateX(-50%) translateY(-50%);
+    }
+
+    @media (max-width: 710px) {
+      display: none;
     }
   }
 }
