@@ -39,23 +39,69 @@ class HowItWorks extends Component {
 
     if (imageFirst) {
       return (
-        <div className='div-how-it-works'>
-          <div className='div-how-it-works-left'>
-            { imageContent }
+        <div>
+          <div className='div-how-it-works'>
+            <div className='div-how-it-works-left'>
+              { imageContent }
+            </div>
+            <div className='div-how-it-works-right'>
+              { textAndButtonContent }
+            </div>
           </div>
-          <div className='div-how-it-works-right'>
-            { textAndButtonContent }
+
+          {/* Responsive */}
+          <div className='responsive-div-how-it-works'>
+            <div className='div-how-it-works-center'>
+              <div className='div-how-it-works-step'>
+                { step }
+              </div>
+              <img className='img-how-it-works img-responsive' src={image} alt='how-it-works'/>
+              <div className='div-how-it-works-title'>
+                { title }
+              </div>
+              <div className='div-how-it-works-description'>
+                { description }
+              </div>
+              <div className='div-how-it-works-view-all-products'>
+                <Button className='btn-all-products' onClick={ this.props.onViewAllProducts }>
+                  <span>View All Products</span><img src={imgArrowRight} alt='arrow_right'/>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       )
     } else {
       return (
-        <div className='div-how-it-works'>
-          <div className='div-how-it-works-left'>
-            { textAndButtonContent }
+        <div>
+          <div className='div-how-it-works'>
+            <div className='div-how-it-works-left'>
+              { textAndButtonContent }
+            </div>
+            <div className='div-how-it-works-right'>
+              { imageContent }
+            </div>
           </div>
-          <div className='div-how-it-works-right'>
-            { imageContent }
+
+          {/* Responsive */}
+          <div className='responsive-div-how-it-works'>
+            <div className='div-how-it-works-center'>
+              <div className='div-how-it-works-step'>
+                { step }
+              </div>
+              <img className='img-how-it-works img-responsive' src={image} alt='how-it-works'/>
+              <div className='div-how-it-works-title'>
+                { title }
+              </div>
+              <div className='div-how-it-works-description'>
+                { description }
+              </div>
+              <div className='div-how-it-works-view-all-products'>
+                <Button className='btn-all-products' onClick={ this.props.onViewAllProducts }>
+                  <span>View All Products</span><img src={imgArrowRight} alt='arrow_right'/>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       ) 

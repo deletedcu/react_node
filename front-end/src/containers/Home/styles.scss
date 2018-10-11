@@ -4,6 +4,7 @@
 
   .div-location-search-container {
     width: 775px;
+    max-width: 100%;
   }
 
   .div-banner-container {
@@ -16,6 +17,7 @@
       left: 50%;
       top: 50%;
       transform: translateX(-50%) translateY(-50%);
+      max-width: calc(100% - 40px);
 
       .div-title {
         text-align: center;
