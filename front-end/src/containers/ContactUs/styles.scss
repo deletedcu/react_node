@@ -21,11 +21,11 @@
   .div-contact-us {
     position: relative;
     display: flex;
-    margin-top: -170px;
+    margin: -170px 36px 0 36px;
     padding-bottom: 90px;
 
     .container {
-      max-width: 980px;
+      max-width: 980px !important;
       box-shadow: $shadow-primary;
       background-color: white;
 
@@ -102,6 +102,72 @@
           width: 350px;
           height: 80px;
           margin: 40px 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 710px) {
+    .div-contact-us-banner {
+      max-height: 350px;
+
+      .div-contact-us-title {
+        font-size: $regular-font-size;
+        top: calc(50% - 60px)
+      }
+    }
+
+    .div-contact-us {
+      padding-bottom: 50px;
+      margin-top: -200px;
+
+      .container {
+        .div-contact-us-form-title {
+          height: 70px;
+          line-height: 70px;
+          font-size: $regular-font-size;
+        }
+
+        .div-contact-us-form {
+          font-size: 14px;
+          padding: 0 15px;
+
+          input, textarea {
+            height: 48px;
+            font-size: 14px;
+            margin-top: 5px;
+          }
+
+          textarea {
+            height: 200px;
+          }
+
+          .div-contact-us-form-names {
+            flex-direction: column;
+
+            .div-contact-us-form-firstname {
+              margin-right: 0;
+            }
+            .div-contact-us-form-lastname {
+              margin-left: 0;
+              margin-top: 15px;
+            }
+          }
+
+          .div-contact-us-form-names, .div-contact-us-form-email, .div-contact-us-form-message {
+            margin-top: 15px;
+          }
+
+          .div-contact-us-separator {
+            margin: 20px -15px 0 -15px;
+          }
+
+          .btn-send-message {
+            width: 100%;
+            height: 60px;
+            font-size: $small-font-size;
+            margin: 20px 0;
+          }
         }
       }
     }
