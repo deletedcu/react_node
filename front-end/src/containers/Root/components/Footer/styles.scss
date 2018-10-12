@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   font-size: $footer-primary-font-size;
-  overflow: hidden;
   
   .div-footer-top-container {
     height: 90px;
@@ -32,6 +31,13 @@
       img {
         height: 55px;
         margin: 60px 0 0 69px;
+      }
+
+      @media (max-width: 1440px) {
+        margin-right: 20px;
+        img {
+          margin-left: 30px;
+        }
       }
     }
 
@@ -69,6 +75,14 @@
             height: 35px;
           }
         }
+      }
+
+      @media (max-width: 1440px) {
+        margin: 30px 50px 0 50px;
+      }
+
+      @media (max-width: 1200px) {
+        margin: 20px 25px 0 25px;
       }
     }
   }

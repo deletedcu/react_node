@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import routes from './routes'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import DropdownFooter from './components/DropdownFooter'
 import asyncComponent from '../../components/AsyncComponent'
 
 import './styles/styles.css'
@@ -36,6 +37,7 @@ class Root extends Component {
   
         {/* Footer */}
         <Footer/>
+        <DropdownFooter/> {/* For responsive mode */}
   
         {/* Menu Modal */}
         { this.props.menuModal.visible && <AsyncMenuModal /> }

@@ -1,0 +1,42 @@
+@import "../../../../../../styles/variables/variables";
+
+.dropdown-list {
+  padding: 12.5px 25px;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: 0;
+
+  .dropdown-list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      color: $text-light-gray;
+      font-size: 14px;
+    }
+  
+    img {
+      width: 12px;
+    }
+  }
+
+  .dropdown-list-content {
+    color: $text-light-gray;
+    font-size: 14px;
+    margin-top: 10px;
+
+    div {
+      padding-top: 10px;
+    }
+    div:hover {
+      color: white;
+    }
+  }
+}

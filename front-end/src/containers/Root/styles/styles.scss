@@ -17,6 +17,19 @@
   .app-footer {
     height: $footer-height;
     background-color: $bg-footer-primary;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .responsive-app-footer {
+    background-color: $bg-footer-primary;
+    display: none;
+
+    @media (max-width: 1024px) {
+      display: block;
+    }
   }
 
   .notification-message {
