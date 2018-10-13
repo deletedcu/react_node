@@ -25,4 +25,15 @@
     color: white;
     transition: $animation-primary;
   }
+
+  @media (max-width: 710px) {
+    height: 30px;
+    border-radius: 4px;
+    
+    .selection-grid-cell {
+      font-size: 9px;
+      width: 30px;
+      line-height: 30px;
+    }
+  }
 }

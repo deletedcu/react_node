@@ -57,6 +57,10 @@
       width: 33.33%;
       text-align: center;
 
+      span {
+        display: block;
+      }
+
       .span-menu-plan-price-old-value {
         position: absolute;
         margin-top: -30px;
@@ -91,5 +95,61 @@
     width: calc(100% - 54px);
     height: 85px;
     margin: 27px;
+  }
+
+  @media (max-width: 710px) {
+    .div-meal-plan-title {
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    .div-meal-plan-subtitle {
+      font-size: 9px;
+    }
+
+    .div-meal-plan-image {
+      margin-top: 15px;
+    }
+
+    .div-meal-plan-recipies {
+      margin-top: 15px;
+
+      .div-meal-plan-recipies-title {
+        font-size: 9px;
+        margin-top: 10px;
+      }
+    }
+
+    .div-meal-plan-prices {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 0 27px;
+  
+      .div-menu-plan-price {
+        .span-menu-plan-price-old-value {
+          margin-top: -10px;
+          font-size: 10px;
+        }
+  
+        .span-menu-plan-price-value {
+          font-size: 10px;
+        }
+  
+        .span-menu-plan-price-title {
+          font-size: 7px;
+        }
+      }
+  
+      .div-menu-plan-price-separator {
+        margin: 0;
+      }
+    }
+
+    .btn-grab-offer {
+      font-size: 9px;
+      width: calc(100% - 20px);
+      height: 32px;
+      margin: 10px;
+    }
   }
 }

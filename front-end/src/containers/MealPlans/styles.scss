@@ -68,4 +68,46 @@
       border-radius: 6px;
     }
   }
+
+  @media (max-width: 1024px) {
+    .div-meal-plans {
+      .div-meal-plans-grid {
+        max-width: calc(100% - 72px);
+      }
+    }
+  }
+
+  @media (max-width: 710px) {
+    background-color: white;
+
+    .div-meal-plans-banner {
+      height: 350px;
+
+      .div-meal-plans-title {
+        font-size: $regular-font-size;
+        top: calc(50% - 60px);
+      }
+    }
+
+    .div-meal-plans {
+      margin-top: -200px;
+      padding-bottom: 20px;
+
+      .container {
+        .div-weekly-plans-title {
+          font-size: $regular-font-size;
+          height: 70px;
+          line-height: 70px;
+        }
+
+        .div-meal-plan-wrapper {
+          padding: 15px;
+        }
+      }
+    }
+
+    .div-quote-container {
+      display: none;
+    }
+  }
 }

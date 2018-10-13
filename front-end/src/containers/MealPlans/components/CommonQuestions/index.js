@@ -12,7 +12,7 @@ class CommonQuestions extends Component {
         </div>
         <div className='div-common-questions container'>
           <div className='row'>
-            <div className='div-common-questions-pannel col-12 col-xl-6'>
+            <div className='div-common-questions-pannel left col-12 col-xl-6'>
               <div className='div-question-title'>
                 Do you accommodate specific diets or allergies?
               </div>
@@ -32,7 +32,7 @@ class CommonQuestions extends Component {
                 We deliver to all locations in the continental United States. <a className='clickable'>See if we deliver to you.</a>
               </div>
             </div>
-            <div className='div-common-questions-pannel col-12 col-xl-6'>
+            <div className='div-common-questions-pannel right col-12 col-xl-6'>
               <div className='div-question-title'>
                 Where do you source your ingredients?
               </div>
