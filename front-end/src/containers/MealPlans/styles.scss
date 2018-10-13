@@ -46,6 +46,16 @@
 
       .div-meal-plan-wrapper {
         padding: 70px 45px;
+
+        @media (max-width: 1400px) {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+
+        @media (max-width: 1199px) {
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
       }
     }
   }

@@ -4,7 +4,7 @@
   background-color: white;
   border: 1px solid #E1E1E1;
   border-radius: 3px;
-  height: 76px;
+  height: 80px;
   margin-top: 50px;
   padding: 5px;
 
@@ -17,6 +17,10 @@
     font-size: $small-font-size;
     font-family: 'Lato-Bold'; 
     caret-color: $bg-green;
+  }
+
+  .button {
+    max-width: 180px;
   }
 
   .btn-locate-me {
@@ -40,33 +44,29 @@
       line-height: 66px;
     }
   }
-}
 
-@media (max-width: 1024px) {
-  .div-location-search-container {
+  @media (max-width: 1024px) {
     height: 64px;
-
+  
     .btn-locate-me {
       span {
         line-height: 45px;
       }
     }
   }
-}
 
-@media (max-width: 710px) {
-  .div-location-search-container {
+  @media (max-width: 710px) {
     height: 45px;
-
+  
     .button {
       height: 33px !important;
     }
-
+  
     input {
       font-size: 9px;
       min-width: 0px;
     }
-
+  
     .btn-locate-me {
       img {
         width: 8px;

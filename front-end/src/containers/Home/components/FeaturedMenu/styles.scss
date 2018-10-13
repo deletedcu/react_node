@@ -47,13 +47,13 @@
       justify-content: space-between;
       height: 65px;
       padding: 5px;
+      font-size: $small-font-size;
   
       .div-price {
         background-color: $bg-gray;
         color: #4c4e4c;
         text-align: center;
         line-height: 55px;
-        font-size: $small-font-size;
         font-family: 'Lato-Bold';
         border-radius: 4px;
         width: calc(50% - 2.5px);
@@ -81,7 +81,7 @@
       max-width: 50%;
       min-width: 150px;
       background-color: lightgray;
-      margin-top: 3px;
+      margin-top: 0;
       flex-grow: 1;
     }
   
@@ -95,7 +95,7 @@
         }
     
         .div-featured-menu-more-detail {
-          font-size: 9px;
+          font-size: 12px;
           flex-direction: column;
     
           .div-featured-menu-detail-column-1 {

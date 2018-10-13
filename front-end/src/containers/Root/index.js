@@ -28,7 +28,7 @@ class Root extends Component {
     return (
       <div className='app header-fixed'>
         {/* Header */}
-        <Header/>
+        <Header history={ this.props.history }/>
   
         {/* Body */}
         <div className='app-body'>

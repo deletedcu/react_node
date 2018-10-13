@@ -8,10 +8,14 @@ import imgLogo from '../../../../assets/images/logo.svg'
 
 class Header extends Component {
 
+  onClickLogo = () => {
+    this.props.history.push('/home')
+  }
+
   render () {
     return (
       <div className='app-header'>
-        <img className='img-logo' src={imgLogo} alt='logo'/>
+        <img className='img-logo clickable' src={imgLogo} alt='logo' onClick={this.onClickLogo}/>
         <div className='div-buttons'>
           <Cart
             purchasedCount={1}
