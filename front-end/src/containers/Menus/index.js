@@ -7,8 +7,8 @@ import './styles.css'
 class Menus extends Component {
 
   render () {
-    // default 18 items
-    const data = Array.apply(null, Array(18))
+    // default 12 items
+    const data = Array.apply(null, Array(12))
 
     return (
       <div className='div-menus-container'>

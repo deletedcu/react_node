@@ -56,6 +56,37 @@
         margin-left: 50%;
         transform: translateX(-50%);
       }
+
+      @media (max-width: 1440px) {
+        max-width: calc(100% - 72px);
+      }
+    }
+  }
+
+  @media (max-width: 710px) {
+    .div-menus-banner {
+      height: 350px;
+
+      .div-menus-title {
+        font-size: $regular-font-size;
+        top: calc(50% - 60px);
+      }
+    }
+
+    .div-menus {
+      margin-top: -200px;
+      padding-bottom: 40px;
+
+      .div-menus-grid {
+        .div-load-more {
+           height: 60px;
+           line-height: 60px;
+           font-size: $small-font-size;
+
+           width: calc(100% - 30px);
+           max-width: 333px;
+        }
+      }
     }
   }
 }
