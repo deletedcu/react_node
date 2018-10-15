@@ -7,8 +7,12 @@ import imgGreenStar from '../../../../assets/images/star_green.svg'
 class Feedback extends Component {
 
   render () {
+    const inlineBlockStyle = {
+      display: 'inline-block',
+    }
+
     return (
-      <div>
+      <div style={ inlineBlockStyle }>
         <div className='div-feedback'>
           <img className='img-feedback-user' alt=''/>
           <div className='div-feedback-box'>

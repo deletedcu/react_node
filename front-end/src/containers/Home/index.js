@@ -49,16 +49,16 @@ class Home extends Component {
           </div>
           <div className='div-featured-menus container'>
             <div className='row'>
-              <div className='div-featured-menu-wrapper col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3'>
+              <div className='div-featured-menu-wrapper col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3'>
                 <FeaturedMenu />
               </div>
-              <div className='div-featured-menu-wrapper col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3'>
+              <div className='div-featured-menu-wrapper col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3'>
                 <FeaturedMenu />
               </div>
-              <div className='div-featured-menu-wrapper col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3'>
+              <div className='div-featured-menu-wrapper col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3'>
                 <FeaturedMenu />
               </div>
-              <div className='div-featured-menu-wrapper col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3'>
+              <div className='div-featured-menu-wrapper col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3'>
                 <FeaturedMenu />
               </div>
             </div>
