@@ -14,6 +14,10 @@
     box-shadow: $shadow-primary;
   }
 
+  .app-body {
+    min-height: 100vh;
+  }
+
   .app-footer {
     height: $footer-height;
     background-color: $bg-footer-primary;
