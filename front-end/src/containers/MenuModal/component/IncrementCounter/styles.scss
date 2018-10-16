@@ -23,4 +23,18 @@ $increment-color: #D3D3D3;
     flex-grow: 1;
     min-width: 40px;
   }
+
+  @media (max-width: 710px) {
+    padding: 0 15px;
+    height: 45px;
+
+    span {
+      font-size: 22px;
+    }
+
+    input {
+      font-size: 13px;
+      min-width: 20px;
+    }
+  }
 }

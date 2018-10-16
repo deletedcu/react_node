@@ -12,7 +12,6 @@ class AsyncImport extends Component {
 
   toggleFoucClass () {
     const root = document.getElementById('root')
-    console.log(root);
     
     if (root.className.includes('fouc')) {
       root.className = root.className.replace('fouc', '')

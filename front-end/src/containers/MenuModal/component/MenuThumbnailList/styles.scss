@@ -1,6 +1,7 @@
 @import "../../../../styles/variables/variables";
 
 $thumbnail-size: 77px;
+$mobile-thumbnail-size: 36px;
 
 .div-thumbnails-list {
   width: $thumbnail-size;
@@ -19,5 +20,15 @@ $thumbnail-size: 77px;
     width: $thumbnail-size;
     height: $thumbnail-size;
     margin-bottom: 10px;
+  }
+
+  @media (max-width: 710px) {
+    width: $mobile-thumbnail-size;
+
+    .img-menu-thumbnail {
+      width: $mobile-thumbnail-size;
+      height: $mobile-thumbnail-size;
+      margin-bottom: 5px;
+    }
   }
 }

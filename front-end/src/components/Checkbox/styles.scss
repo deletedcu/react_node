@@ -12,4 +12,15 @@
   span {
     color: #A0A0A0;
   }
+
+  @media (max-width: 710px) {
+    .img-checkbox {
+      height: 15px;
+      margin-right: 5px;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
 }

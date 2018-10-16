@@ -8,80 +8,98 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.44);
   z-index: $zindex-modal;
+  overflow: scroll;
 
   .div-menu-modal-center {
     background-color: white;
     box-shadow: 0px 3px 24px rgba(0, 0, 0, 0.16);
     position: absolute;
-    top: 50%;
+    top: 120px;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    margin-bottom: 100px;
+    transform: translateX(-50%);
+    max-width: calc(100% - 44px);
     
     display: flex;
     flex-direction: row;
 
-    .div-menu-modal-thumbnails {
-      padding-top: 50px;
-      padding-left: 50px;
-      padding-right: 10px;
-      box-sizing: content-box;
+    .img-close {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      right: 50px;
+      top: 20px;
+      z-index: 1;
     }
 
-    .div-menu-modal-image-detail {
-      position: relative;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      box-sizing: content-box;
-
+    .div-menu-modal-thumbnail-image-detail {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      flex-direction: row;
 
-      .img-menu {
-        width: 534px;
-        height: 511px;
-        background-color: lightgray;
-        flex-grow: 1;
+      .div-menu-modal-thumbnails {
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 10px;
+        box-sizing: content-box;
       }
-
-      .span-offer {
-        position: absolute;
-        margin-top: 20px;
-        font-size: $minor-font-size;
-        color: white;
-        background-color: $bg-green;
-        padding: 10px 25px;
-      }
-      
-
-      .div-menu-info-list {
+  
+      .div-menu-modal-image-detail {
+        position: relative;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        box-sizing: content-box;
+  
         display: flex;
-        flex-direction: row;
-        margin-top: 40px;
-
-        .div-menu-info {
-          text-align: center;
-          padding: 0 40px;
-
-          span {
-            color: $bg-green;
-          }
-
-          .span-menu-info-value {
-            font-size: 33px;
-          }
-
-          .span-menu-info-title {
-            font-size: $small-font-size;
-          }
+        flex-direction: column;
+        justify-content: space-between;
+  
+        .img-menu {
+          width: 534px;
+          height: 511px;
+          background-color: lightgray;
+          flex-grow: 1;
         }
-
-        .div-menu-info-separator {
-          background-color: $text-light-gray;
-          width: 1px;
-          opacity: 0.58;
-          margin: 12px 0;
-          box-sizing: border-box;
+  
+        .span-offer {
+          position: absolute;
+          margin-top: 20px;
+          font-size: $minor-font-size;
+          color: white;
+          background-color: $bg-green;
+          padding: 10px 25px;
+        }
+        
+  
+        .div-menu-info-list {
+          display: flex;
+          flex-direction: row;
+          margin-top: 40px;
+  
+          .div-menu-info {
+            text-align: center;
+            padding: 0 40px;
+            width: 33%;
+  
+            span {
+              color: $bg-green;
+            }
+  
+            .span-menu-info-value {
+              font-size: 33px;
+            }
+  
+            .span-menu-info-title {
+              font-size: $small-font-size;
+            }
+          }
+  
+          .div-menu-info-separator {
+            background-color: $text-light-gray;
+            width: 1px;
+            opacity: 0.58;
+            margin: 12px 0;
+            box-sizing: border-box;
+          }
         }
       }
     }
@@ -94,18 +112,11 @@
       padding: 0 50px 50px 50px;
       max-width: 760px;
 
-      .img-close {
-        width: 28px;
-        height: 28px;
-        float: right;
-        margin: 20px 0 0 0;
-      }
-
       .div-menu-modal-description {
         position: relative;
         flex-grow: 1;
         max-height: 510px;
-        margin-top: -50px;
+        margin-top: 50px;
         overflow: scroll;
 
         .div-menu-title {
@@ -206,6 +217,10 @@
         .btn-add-to-cart {
           width: 50%;
           margin-left: 10px;
+
+          @media (max-width: 1024px) {
+            height: 67px;
+          }
         }
       }
 
@@ -215,6 +230,162 @@
         width: calc(100% - 100px);
         height: 84px;
         background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1));
+      }
+    }
+
+    @media (max-width: 1365px) {
+      .div-menu-modal-description-cart {
+        max-width: 500px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+
+      .div-menu-modal-thumbnail-image-detail {
+        margin-top: 20px;
+
+        .div-menu-modal-image-detail {
+          padding-right: 50px;
+        }
+      }
+
+      .div-menu-modal-description-cart {
+        max-width: 100%;
+        margin-top: 0px;
+
+        .div-menu-modal-description {
+          margin-top: 0px;
+        }
+
+        .div-opacity-layer-top {
+          width: calc(100% - 100px);
+          top: -50px;
+        }
+      }
+    }
+
+    @media (max-width: 710px) {
+      top: 50px;
+
+      .img-close {
+        width: 13px;
+        height: 13px;
+        top: 10px;
+        right: 20px;
+      }
+
+      .div-menu-modal-thumbnail-image-detail {
+        margin-top: 10px;
+
+        .div-menu-modal-thumbnails {
+          padding-top: 20px;
+          padding-left: 20px;
+        }
+
+        .div-menu-modal-image-detail {
+          padding-top: 20px;
+          padding-right: 20px;
+          padding-bottom: 20px;
+
+          .img-menu {
+            width: 250px;
+            height: 240px;
+          }
+
+          .span-offer {
+            font-size: 9px;
+            padding: 5px 12px;
+          }
+
+          .div-menu-info-list {
+            margin-left: -45px;
+            margin-right: -25px;
+            margin-top: 20px;
+
+            .div-menu-info {
+              padding: 0 20px;
+
+              .span-menu-info-value {
+                font-size: 24px;
+              }
+              .span-menu-info-title {
+                font-size: 9px;
+              }
+            }
+          }
+        }
+      }
+
+      .div-menu-modal-description-cart {
+        padding: 0 20px 20px 20px;
+
+        .div-opacity-layer-top {
+          width: calc(100% - 40px);
+          top: 0px;
+        }
+
+        .div-menu-modal-description {
+          max-height: 380px;
+
+          .div-menu-title {
+            font-size: $regular-font-size;
+          }
+
+          .div-menu-specialities {
+            margin: 20px 0 20px 0;
+
+            .div-menu-speciality {
+              margin-right: 40px;
+              img {
+                width: 20px;
+                height: 20px;
+              }
+              span {
+                font-size: 9px;
+              }
+            }
+          }
+
+          .div-description-text {
+            font-size: 9px;
+          }
+
+          .div-additional-info {
+            margin-top: 20px;
+
+            .div-additional-info-title {
+              font-size: 14px;
+            }
+            .checkbox {
+              margin-top: 10px;
+            }
+          }
+
+          .div-special-instructions {
+            margin-top: 15px;
+            margin-bottom: 15px;
+
+            .div-special-instructions-title {
+              font-size: 14px;
+            }
+            .input-special-instructions {
+              height: 45px;
+              margin-top: 10px;
+              font-size: 14px;
+            }
+          }
+        }
+        
+        .div-menu-modal-cart {
+          height: 45px;
+          margin-top: 5px;
+
+          .btn-add-to-cart {
+            height: 45px;
+            font-size: 12px;
+          }
+        }
       }
     }
   }

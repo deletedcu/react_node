@@ -72,43 +72,48 @@ class MenuModal extends Component {
     return (
       <div className='div-menu-modal-container'>
         <div className='div-menu-modal-center'>
-          {/* Thumbnails */}
-          <MenuThumbnailList 
-            className='div-menu-modal-thumbnails'
-            imageUrls={['', '']}
-          />
+          {/* Close button */}
+          <img src={ imgClose } alt='close' className='img-close clickable' onClick={ this.onClose }/>
 
-          {/* Image / Short Info */}
-          <div className='div-menu-modal-image-detail'>
-            <img src='' alt='placeholder' className='img-menu'/>
-            <span className='span-offer'>OFFER</span>
-            <div className='div-menu-info-list'>
-              <div className='div-menu-info'>
-                <span className='span-menu-info-value'>29 G</span><br/>
-                <span className='span-menu-info-title'>PROTEIN</span>
-              </div>
-              <div className='div-menu-info-separator'/>
-              <div className='div-menu-info'>
-                <span className='span-menu-info-value'>480</span><br/>
-                <span className='span-menu-info-title'>CALORIES</span>
-              </div>
-              <div className='div-menu-info-separator'/>
-              <div className='div-menu-info'>
-                <span className='span-menu-info-value'>49 G</span><br/>
-                <span className='span-menu-info-title'>CARGS</span>
+          <div className='div-menu-modal-thumbnail-image-detail'>
+            {/* Thumbnails */}
+            <MenuThumbnailList 
+              className='div-menu-modal-thumbnails'
+              imageUrls={['', '']}
+            />
+
+            {/* Image / Short Info */}
+            <div className='div-menu-modal-image-detail'>
+              <img src='' alt='placeholder' className='img-menu'/>
+              <span className='span-offer'>OFFER</span>
+              <div className='div-menu-info-list'>
+                <div className='div-menu-info'>
+                  <span className='span-menu-info-value'>29 G</span><br/>
+                  <span className='span-menu-info-title'>PROTEIN</span>
+                </div>
+                <div className='div-menu-info-separator'/>
+                <div className='div-menu-info'>
+                  <span className='span-menu-info-value'>480</span><br/>
+                  <span className='span-menu-info-title'>CALORIES</span>
+                </div>
+                <div className='div-menu-info-separator'/>
+                <div className='div-menu-info'>
+                  <span className='span-menu-info-value'>49 G</span><br/>
+                  <span className='span-menu-info-title'>CARGS</span>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Description / Add to cart */}
           <div className='div-menu-modal-description-cart'>
-            <div>
-              <img src={ imgClose } alt='close' className='img-close clickable' onClick={ this.onClose }/>
-            </div>
             <div className='div-menu-modal-description' onScroll={ this.onScrollDescription }>
+              {/* Menu name */}
               <div className='div-menu-title'>
                 Chicken Leg Magic
               </div>
+
+              {/* Specialities */}
               <div className='div-menu-specialities'>
                 <div className='div-menu-speciality'>
                   <img src={ imgHighProtein } alt='special'/>
@@ -123,6 +128,8 @@ class MenuModal extends Component {
                   <span>Soy Free</span>
                 </div>
               </div>
+
+              {/* Description */}
               <div className='div-description-text'>
                 <ShowMore
                   lines={5}
@@ -133,6 +140,7 @@ class MenuModal extends Component {
                 </ShowMore>
               </div>
 
+              {/* Additional */}
               <div className='div-additional-info'>
                 <div className='div-additional-info-title'> 
                   Additional Information
@@ -144,6 +152,7 @@ class MenuModal extends Component {
                 <Checkbox onCheckChange={ () => {} }>e) Fries </Checkbox>
               </div>
 
+              {/* Special instruction */}
               <div className='div-special-instructions'>
                 <div className='div-special-instructions-title'>
                   Special Instructions
@@ -154,6 +163,7 @@ class MenuModal extends Component {
               { !this.state.descriptionScrolled && <div className='div-opacity-layer-bottom'/> }
             </div>
             
+            {/* Add to cart */}
             <div className='div-menu-modal-cart'>
               <IncrementCounter className='increment-counter' onChange={ this.onItemCountChange }/>
               <Button className='btn-add-to-cart' onClick={ this.onAddToCart }>ADD TO CART</Button>
