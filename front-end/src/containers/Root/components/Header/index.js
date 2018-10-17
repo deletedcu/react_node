@@ -18,7 +18,7 @@ class Header extends Component {
         <img className='img-logo clickable' src={imgLogo} alt='logo' onClick={this.onClickLogo}/>
         <div className='div-buttons'>
           <Cart
-            purchasedCount={1}
+            history={ this.props.history }
           />
           <div className='div-signup clickable'>Sign Up</div>
           <Button>Login</Button>

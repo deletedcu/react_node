@@ -1,0 +1,39 @@
+@import "../../styles/variables/variables";
+
+.numeric-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .numeric-counter-button {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #CFCFCF;
+    font-size: $medium-font-size;
+  }
+
+  .numeric-counter-number {
+    font-size: $regular-font-size;
+    color: $text-light-gray;
+    text-align: center;
+    min-width: 20px;
+    margin: 0 5px;
+  }
+  
+  @media (max-width: 710px) {
+    .numeric-counter-button {
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      font-size: $regular-font-size;
+    }
+
+    .numeric-counter-number {
+      min-width: 10px;
+      font-size: 14px;
+    }
+  }
+}

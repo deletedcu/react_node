@@ -1,16 +1,26 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import NumericCounter from '../../../../components/NumericCounter'
 
 import './styles.css'
 
-import imgGreenStar from '../../../../assets/images/star_green.svg'
+// import imgGreenStar from '../../../../assets/images/star_green.svg'
 
 import { showMenuModal } from '../../../../redux/actions/menuModal'
+import { addToCart, removeFromCart } from '../../../../redux/actions/cart'
 
 class MenuItem extends Component {
 
   onShowMenuModal = () => {
     this.props.dispatch(showMenuModal({}))
+  }
+
+  onIncrementPurchasedCount = () => {
+    this.props.dispatch(addToCart('Chicken Leg Magic'))
+  }
+
+  onDecrementPurchasedCount = () => {
+    this.props.dispatch(removeFromCart())
   }
 
   render () {
@@ -21,7 +31,7 @@ class MenuItem extends Component {
           <span>Chicken Leg Magic</span>
           <span>$40.00</span>
         </div>
-        <div className='div-time-rating'>
+        {/* <div className='div-time-rating'>
           <div className='div-time'>
             40-55 min
           </div>
@@ -29,6 +39,12 @@ class MenuItem extends Component {
             <img src={imgGreenStar} alt='star'/>
             <span>4.5 (200)</span>
           </div>
+        </div> */}
+        <div className='div-numeric-counter'>
+          <NumericCounter
+            onIncrement={ this.onIncrementPurchasedCount }
+            onDecrement={ this.onDecrementPurchasedCount }
+          />
         </div>
       </div>
     )

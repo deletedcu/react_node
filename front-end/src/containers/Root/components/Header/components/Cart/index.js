@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import './styles.css'
 
@@ -10,26 +11,38 @@ class Cart extends Component {
     super(props)
 
     this.state = {
-      purchasedCount: props.purchasedCount,
+      purchasedCount: 0,
     }
   }
 
-  componentWillReceiveProps(newProps) {
+  componentWillReceiveProps({ cart }) {
     this.setState({
-      purchasedCount: newProps.purchasedCount,
+      purchasedCount: cart.items.length,
     })
+  }
+
+  onClickCart = () => {
+    this.props.history.push('/checkout')
   }
 
   render () {
     const purchasedCount = this.state.purchasedCount
 
     return (
-      <div className='div-cart clickable'>
+      purchasedCount > 0 ?
+      <div className='div-cart clickable' onClick={ this.onClickCart }>
         <img className='img-cart' src={imgCart} alt='cart'/>
-        { purchasedCount > 0 && <span>{ this.state.purchasedCount }</span> }
+        <span>{ this.state.purchasedCount }</span>
       </div>
+      : null
     )
   }
 }
 
-export default Cart
+function mapStateToProps(state) {
+  return {
+    cart: state.cart,
+  }
+}
+
+export default connect(mapStateToProps)(Cart)
