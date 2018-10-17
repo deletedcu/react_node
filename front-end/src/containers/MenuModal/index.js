@@ -141,9 +141,9 @@ class MenuModal extends Component {
               </div>
 
               {/* Additional */}
-              <div className='div-additional-info'>
-                <div className='div-additional-info-title'> 
-                  Additional Information
+              <div className='div-ingredients-list'>
+                <div className='div-ingredients-list-title'> 
+                  Ingredients
                 </div>
                 <Checkbox onCheckChange={ () => {} }>a) Fries</Checkbox>
                 <Checkbox onCheckChange={ () => {} }>b) Sour Cream & Chive Potato</Checkbox>
@@ -153,12 +153,12 @@ class MenuModal extends Component {
               </div>
 
               {/* Special instruction */}
-              <div className='div-special-instructions'>
+              {/* <div className='div-special-instructions'>
                 <div className='div-special-instructions-title'>
                   Special Instructions
                 </div>
                 <input type='text' name='specialInstructions' className='input-special-instructions' placeholder='I am alergic to banana' value={this.state.specialInstructions} onChange={ this.onChange }/>
-              </div>
+              </div> */}
 
               { !this.state.descriptionScrolled && <div className='div-opacity-layer-bottom'/> }
             </div>
