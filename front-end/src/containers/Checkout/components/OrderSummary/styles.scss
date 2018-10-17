@@ -67,6 +67,7 @@ $order-summary-header-height: 108px;
         border-radius: 5px;
         color: $bg-green;
         padding-left: 30px;
+        padding-right: 180px;
       }
       input:focus {
         border: 1px solid #108915;
@@ -125,6 +126,58 @@ $order-summary-header-height: 108px;
 
       .ordered-item {
         margin-bottom: $margin;
+      }
+    }
+  }
+
+  @media (max-width: 710px) {
+    .order-summary-header {
+      font-size: $regular-font-size;
+      height: 70px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .order-summary-info {
+      font-size: 13px;
+
+      .order-summary-info-block {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .order-summary-promo-input {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+
+        input {
+          padding-left: 15px;
+          height: 50px;
+          padding-right: 80px;
+        }
+
+        span {
+          right: 30px;
+          line-height: 40px;
+          height: 40px;
+          width: 70px;
+        }
+      }
+
+      .order-summary-total-price-block {
+        font-size: 13px;
+        font-family: 'Montserrat-Bold';
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+    
+    .order-summary-items {
+      padding: 20px 20px;
+
+      .order-summary-items-header {
+        font-size: $regular-font-size;
       }
     }
   }

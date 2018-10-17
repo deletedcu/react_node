@@ -16,4 +16,15 @@ $ordered-item-size: 120px;
     color: $text-light-gray;
     font-size: $footer-secondary-font-size;
   }
+
+  @media (max-width: 710px) {
+    img {
+      width: 75px;
+      height: 75px;
+    }
+
+    .ordered-item-info {
+      font-size: 13px; 
+    }
+  }
 }

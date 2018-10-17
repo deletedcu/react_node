@@ -15,4 +15,14 @@
     color: #1A1A1A;
     font-size: $footer-primary-font-size;
   }
+
+  @media (max-width: 710px) {
+    .img-radio-button {
+      height: 20px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
 }

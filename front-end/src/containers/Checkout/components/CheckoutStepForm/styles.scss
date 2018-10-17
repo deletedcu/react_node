@@ -68,4 +68,37 @@ $checkout-header-height: 108px;
     }
     
   }
+
+  @media (max-width: 710px) {
+    .checkout-step-form-header {
+      height: 70px;
+
+      .img-checked, .div-step-number {
+        width: 32px;
+        height: 32px;
+        margin-left: 15px;
+      }
+
+      .div-step-number {
+        line-height: 32px;
+        font-size: $regular-font-size;
+      }
+
+      .div-checkout-step-title {
+        font-size: $regular-font-size;
+      }
+    }
+
+    .checkout-step-form-body {
+      .div-checkout-step-form-footer {
+        .btn-checkout-step-form {
+          margin: 25px 20px;
+          padding: unset;
+          width: calc(100% - 40px);
+          height: 60px;
+          font-size: $small-font-size;
+        }
+      }
+    }
+  }
 }

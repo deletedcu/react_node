@@ -269,13 +269,15 @@ class Checkout extends Component {
                     <div><span>City</span></div>
                     <div><input required type='text' name='city' value={this.state.city} onChange={this.onChange}/></div>
                   </div>
-                  <div className='div-checkout-address-state'>
-                    <div><span>State</span></div>
-                    <SelectUSState className='select-us-state' onChange={ this.onSelectState }/>
-                  </div>
-                  <div className='div-checkout-address-zip'>
-                    <div><span>Zip</span></div>
-                    <div><input required type='text' name='zip' value={this.state.zip} onChange={this.onChange}/></div>
+                  <div className='div-checkout-address-state-zip'>
+                    <div className='div-checkout-address-state'>
+                      <div><span>State</span></div>
+                      <SelectUSState className='select-us-state' onChange={ this.onSelectState }/>
+                    </div>
+                    <div className='div-checkout-address-zip'>
+                      <div><span>Zip</span></div>
+                      <div><input required type='text' name='zip' value={this.state.zip} onChange={this.onChange}/></div>
+                    </div>
                   </div>
                 </div>
               </div>
