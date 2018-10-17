@@ -8,6 +8,7 @@ import './styles.css'
 
 import { showMenuModal } from '../../../../redux/actions/menuModal'
 import { addToCart, removeFromCart } from '../../../../redux/actions/cart'
+import { showNotification } from '../../../../services/notification'
 
 class MenuItem extends Component {
 
@@ -17,10 +18,14 @@ class MenuItem extends Component {
 
   onIncrementPurchasedCount = () => {
     this.props.dispatch(addToCart('Chicken Leg Magic'))
+
+    showNotification('Added to cart', 'success')
   }
 
   onDecrementPurchasedCount = () => {
     this.props.dispatch(removeFromCart())
+
+    showNotification('Removed from cart', 'info')
   }
 
   render () {
