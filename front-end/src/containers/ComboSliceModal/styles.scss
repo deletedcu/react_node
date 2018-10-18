@@ -1,0 +1,166 @@
+@import "../../styles/variables/variables";
+
+.div-combo-slice-modal-center {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0px 3px 24px rgba(0, 0, 0, 0.16);
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  width: 1100px;
+  overflow: hidden;
+
+  .div-combo-slice-modal-center-content {
+    overflow: scroll;
+    height: calc(100% - 180px);
+
+    .div-extra-instructions {
+      padding: 0 25px;
+      margin-top: -30px;
+  
+      .div-extra-instructions-title {
+        color: #332F2F;
+        font-size: 29px;
+      }
+  
+      .textarea-instructions {
+        width: 100%;
+        height: 220px;
+        border: 1px solid #979797;
+        border-radius: 6px;
+        color: $text-light-gray;
+        font-size: 27px;
+        caret-color: $bg-green;
+        resize: none;
+        padding: 20px;
+        margin-top: 20px;
+      }
+  
+      .textarea-instructions:focus {
+        border: 1px solid $bg-green;
+      }
+    }
+  }
+
+  .div-combo-slice-modal-center-buy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    padding: 25px;
+
+    .buy-numeric-counter {
+      margin-right: 30px;
+
+      span {
+        height: 60px;
+        line-height: 60px;
+      }
+
+      .numeric-counter-button {
+        width: 60px;
+        border: 2px solid #108915;
+        font-size: 43px;
+        color: #108915;
+      }
+
+      .numeric-counter-number {
+        color: #666666;
+        font-size: 32px;
+        border: 1px solid $text-light-gray;
+        border-radius: 4px;
+        width: 100px;
+        margin: 0 20px;
+      }
+    }
+
+    .btn-add-to-cart {
+      height: 100px;
+      width: 480px;
+      font-size: $medium-font-size;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    width: calc(100% - 40px);
+  }
+
+  @media (max-width: 710px) {
+    top: 170px;
+    bottom: unset;
+    margin-bottom: 80px;
+
+    .div-combo-slice-modal-center-content {
+      .div-extra-instructions {
+        .div-extra-instructions-title {
+          font-size: 13px;
+        }
+
+        .textarea-instructions {
+          font-size: 13px;
+          height: 150px;
+          padding: 10px 20px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .div-combo-slice-modal-center-buy {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      
+      .buy-numeric-counter {
+        margin-right: 30px;
+  
+        span {
+          height: 45px;
+          line-height: 45px;
+        }
+  
+        .numeric-counter-button {
+          width: 45px;
+          border: 2px solid #108915;
+          font-size: 22px;
+          color: #108915;
+        }
+  
+        .numeric-counter-number {
+          font-size: 13px;
+          width: 60px;
+          margin: 0 10px;
+        }
+      }
+
+      .btn-add-to-cart {
+        width: 150px;
+        height: 45px;
+        font-size: 12px;
+      }
+
+      @media (max-width: 414px) {
+        justify-content: space-between;
+
+        .buy-numeric-counter {
+          margin-right: unset;
+
+          span {
+            height: 30px;
+            line-height: 30px;
+          }
+
+          .numeric-counter-button {
+            width: 30px;
+          }
+
+          .numeric-counter-number {
+            margin: 0 5px;
+          }
+        }
+      }
+    }
+  }
+}

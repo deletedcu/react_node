@@ -4,7 +4,8 @@ import ShowMore from 'react-show-more';
 import MenuThumbnailList from './component/MenuThumbnailList'
 import IncrementCounter from './component/IncrementCounter'
 import Button from '../../components/Button'
-import Checkbox from '../../components/Checkbox'
+import Checkbox, { CheckboxType } from '../../components/Checkbox'
+import ModalContainer from '../../components/ModalContainer'
 
 import './styles.css'
 
@@ -25,14 +26,6 @@ class MenuModal extends Component {
       
       specialInstructions: '',
     }
-  }
-
-  componentDidMount () {
-    window.document.body.style.overflow = 'hidden'
-  }
-
-  componentWillUnmount() {
-    window.document.body.removeAttribute('style')
   }
 
   onClose = () => {
@@ -70,7 +63,7 @@ class MenuModal extends Component {
 
   render () {
     return (
-      <div className='div-menu-modal-container'>
+      <ModalContainer>
         <div className='div-menu-modal-center'>
           {/* Close button */}
           <img src={ imgClose } alt='close' className='img-close clickable' onClick={ this.onClose }/>
@@ -145,11 +138,11 @@ class MenuModal extends Component {
                 <div className='div-ingredients-list-title'> 
                   Ingredients
                 </div>
-                <Checkbox onCheckChange={ () => {} }>a) Fries</Checkbox>
-                <Checkbox onCheckChange={ () => {} }>b) Sour Cream & Chive Potato</Checkbox>
-                <Checkbox onCheckChange={ () => {} }>c) Potato</Checkbox>
-                <Checkbox onCheckChange={ () => {} }>d) Sour Cream & Chive Potato</Checkbox>
-                <Checkbox onCheckChange={ () => {} }>e) Fries </Checkbox>
+                <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>a) Fries</Checkbox>
+                <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>b) Sour Cream & Chive Potato</Checkbox>
+                <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>c) Potato</Checkbox>
+                <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>d) Sour Cream & Chive Potato</Checkbox>
+                <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>e) Fries </Checkbox>
               </div>
 
               {/* Special instruction */}
@@ -172,7 +165,7 @@ class MenuModal extends Component {
             { this.state.descriptionScrolled && <div className='div-opacity-layer-top'/> }
           </div>
         </div>
-      </div>
+      </ModalContainer>
     )
   }
 }

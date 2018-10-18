@@ -11,7 +11,8 @@ import './styles/styles.css'
 
 import { initializeNotificationSystem } from '../../services/notification'
 
-const AsyncMenuModal = asyncComponent(() => import('../MenuModal')) 
+const AsyncMenuModal = asyncComponent(() => import('../MenuModal'))
+const AsyncComboSliceModal = asyncComponent(() => import('../ComboSliceModal'))
 
 /**
  * Root component, containing routes
@@ -41,7 +42,11 @@ class Root extends Component {
   
         {/* Menu Modal */}
         { this.props.menuModal.visible && <AsyncMenuModal /> }
+
+        {/* Combo Slice Modal */}
+        { this.props.comboSliceModal.visible && <AsyncComboSliceModal /> }
   
+        {/* Notification System */}
         <NotificationSystem ref='notificationSystem' dismissible='click'/>
       </div>
     )
@@ -51,6 +56,7 @@ class Root extends Component {
 function mapStateToProps(state) {
   return {
     menuModal: state.menuModal,
+    comboSliceModal: state.comboSliceModal,
   }
 }
 
