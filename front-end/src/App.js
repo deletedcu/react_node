@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './redux/store'
+import ScrollToTop from './components/ScrollToTop'
 
 import './styles/styles.css'
 import 'slick-carousel/slick/slick.css'
@@ -16,7 +17,9 @@ class App extends Component {
     return (
       <Provider store={ store }>
         <BrowserRouter>
-          <Route path='/' component={Root} />
+          <ScrollToTop>
+            <Route path='/' component={Root} />
+          </ScrollToTop>
         </BrowserRouter>
       </Provider> 
     )
