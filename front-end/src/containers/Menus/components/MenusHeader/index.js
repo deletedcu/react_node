@@ -19,6 +19,7 @@ class MenusHeader extends Component {
 
     this.state = {
       selectedType: MenuTypes.menu,
+      searchText: '',
     }
   }
 
@@ -32,6 +33,12 @@ class MenusHeader extends Component {
     }
   }
 
+  onChangeSearchText = (e) => {
+    this.setState({
+      searchText: e.target.value,
+    })
+  }
+
   render () {
     const selectedType = this.state.selectedType
 
@@ -39,7 +46,7 @@ class MenusHeader extends Component {
       <div className='div-menus-header-container'>
         <div className='div-menus-header-left'>
           <div className='div-search-container'>
-            <input type='text' placeholder='Search Menu'/>
+            <input type='text' placeholder='Search Menu' onChange={ this.onChangeSearchText } value={ this.state.searchText }/>
             <img src={imgSearch} alt='search'/>
           </div>
 

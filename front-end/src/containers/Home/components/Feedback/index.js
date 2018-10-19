@@ -14,11 +14,11 @@ class Feedback extends Component {
     return (
       <div style={ inlineBlockStyle }>
         <div className='div-feedback'>
-          <img className='img-feedback-user' alt=''/>
+          <img className='img-feedback-user' alt='' src={ this.props.authorImage }/>
           <div className='div-feedback-box'>
             <div className='div-feedback-name-star'>
               <div className='div-feedback-name'>
-                JOHN SWIPE
+                { this.props.authorName }
               </div>
               <div className='div-feedback-star'>
                 <img className='img-star' src={imgGreenStar} alt='star'/>
@@ -29,7 +29,7 @@ class Feedback extends Component {
               </div>
             </div>
             <div className='div-feedback-content'>
-              "Best online food delivery service on the market.It definitely satisfy me. I will order again."
+              { this.props.feedback }
             </div>
           </div>
         </div>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ShowMore from 'react-show-more';
 import MenuThumbnailList from './component/MenuThumbnailList'
 import IncrementCounter from './component/IncrementCounter'
 import Button from '../../components/Button'
 import Checkbox, { CheckboxType } from '../../components/Checkbox'
 import ModalContainer from '../../components/ModalContainer'
+import ExpandableDescription from './component/ExpandableDescription'
 
 import './styles.css'
 
@@ -79,6 +79,7 @@ class MenuModal extends Component {
             <div className='div-menu-modal-image-detail'>
               <img src='' alt='placeholder' className='img-menu'/>
               <span className='span-offer'>OFFER</span>
+              
               <div className='div-menu-info-list'>
                 <div className='div-menu-info'>
                   <span className='span-menu-info-value'>29 G</span><br/>
@@ -123,15 +124,9 @@ class MenuModal extends Component {
               </div>
 
               {/* Description */}
-              <div className='div-description-text'>
-                <ShowMore
-                  lines={5}
-                  more='Read More'
-                  less=''
-                >
+              <ExpandableDescription>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.
-                </ShowMore>
-              </div>
+              </ExpandableDescription>
 
               {/* Additional */}
               <div className='div-ingredients-list'>

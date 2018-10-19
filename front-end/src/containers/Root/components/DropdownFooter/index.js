@@ -26,11 +26,13 @@ class DropdownFooter extends Component {
             <div>Press</div>
             <div>Unlimited</div>
           </DropdownList>
+
           <DropdownList title='HELP'>
             <div>Payments</div>
             <div>Shipping</div>
             <div>FAQ</div>
           </DropdownList>
+
           <DropdownList title='CITIES'>
             <div>San Francisco</div>
             <div>San Jose</div>
@@ -38,6 +40,7 @@ class DropdownFooter extends Component {
             <div>Concord</div>
             <div>See More...</div>
           </DropdownList>
+
           <DropdownList title='SOCIAL'>
             <div className='footer-middle-image-links'>
               <a><img src={imgFacebook} alt='facebook'/></a>

@@ -60,25 +60,6 @@
     }
   }
 
-  .div-quote-container {
-    position: relative;
-    background-color: #EBECF1;
-    height: 160px;
-
-    .div-quote {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      padding: 20px;
-      width: 70%;
-      text-align: center;
-      background-color: white;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.16);
-      border-radius: 6px;
-    }
-  }
-
   @media (max-width: 1024px) {
     .div-meal-plans {
       .div-meal-plans-grid {
@@ -116,7 +97,7 @@
       }
     }
 
-    .div-quote-container {
+    .quote-container {
       display: none;
     }
   }

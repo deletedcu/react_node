@@ -20,7 +20,7 @@ class Home extends Component {
   }
 
   render () {
-    var settings = {
+    var sliderSettings = {
       dots: true,
       infinite: true,
       speed: 500,
@@ -28,6 +28,17 @@ class Home extends Component {
       slidesToScroll: 1,
       arrows: false,
     }
+
+    var feedbacks = []
+    Array.apply(null, Array(4)).forEach((value, index) => {
+      feedbacks.push(
+        <Feedback
+          key={index}
+          authorName='John Doe'
+          feedback='"Best online food delivery service on the market.It definitely satisfy me. I will order again."'
+        />
+      )
+    })
 
     return (
       <div className='div-home-container'>
@@ -107,17 +118,11 @@ class Home extends Component {
             WE GET PEOPLE TALKING
           </div>
           <div className='div-feedbacks'>
-            <Feedback />
-            <Feedback />
-            <Feedback />
-            <Feedback />
+            { feedbacks }
           </div>
           <div className='responsive-div-feedbacks'>
-            <Slider {...settings}>
-              <Feedback />
-              <Feedback />
-              <Feedback />
-              <Feedback />
+            <Slider {...sliderSettings}>
+              { feedbacks }
             </Slider>
           </div>
         </div>

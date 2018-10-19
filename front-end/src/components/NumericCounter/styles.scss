@@ -6,9 +6,9 @@
   align-items: center;
 
   .numeric-counter-button {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
     text-align: center;
     border-radius: 100px;
     border: 1px solid #CFCFCF;
@@ -25,9 +25,9 @@
   
   @media (max-width: 710px) {
     .numeric-counter-button {
-      width: 20px;
-      height: 20px;
-      line-height: 20px;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
       font-size: $regular-font-size;
     }
 

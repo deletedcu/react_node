@@ -18,16 +18,15 @@ const CheckoutStep = {
   'address': 2,
   'payment': 3,
 }
-
 const AccountMode = {
   'create': 1,
   'login': 2,
 }
-
 const PaymentOption = {
   'stripe': 1,
   'paypal': 2,
 }
+
 class Checkout extends Component {
 
   constructor (props) {
@@ -193,7 +192,7 @@ class Checkout extends Component {
               onSubmit={ this.onAuthenticate }
             >
               <div className='div-checkout-section-content div-checkout-account'>
-                {/* First Name, Last Name */}
+                {/* First Name, Last Name => only visible in signup mode */}
                 { currentAccountMode === AccountMode.create &&
                   <div className='div-checkout-account-names'>
                     <div className='div-checkout-account-firstname'>
@@ -218,13 +217,14 @@ class Checkout extends Component {
                   <div><input required type='password' name='password' value={this.state.password} onChange={this.onChange}/></div>
                 </div>
 
-                {/* Login Button */}
+                {/* Login/Signup Button */}
                 <div className='div-checkout-account-login'>
                   <span>{ currentAccountMode === AccountMode.create ? 'Already have an account?' : 'Create an account?'}</span>
                   <span className='clickable' onClick={this.onSwitchAccountMode}>{ currentAccountMode === AccountMode.create ? 'Login' : 'Sign up' }</span>
                 </div>
               </div>
             </CheckoutStepForm>
+
 
             {/* Deliver Address Section */}
             <CheckoutStepForm

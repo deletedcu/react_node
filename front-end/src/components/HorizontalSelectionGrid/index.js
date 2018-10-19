@@ -16,6 +16,8 @@ class HorizontalSelectionGrid extends Component {
   onSelect = (index) => {
     this.setState({
       selectedIndex: index,
+    }, () => {
+      this.props.onSelectionChange(this.props.values[index])
     })
   }
 
@@ -23,7 +25,7 @@ class HorizontalSelectionGrid extends Component {
     const values = this.props.values
 
     return (
-      <div className='selection-grid'>
+      <div className={classNames('selection-grid', this.props.className)} style={this.props.style}>
        {
         values.map((value, index) => {
           return (<div 

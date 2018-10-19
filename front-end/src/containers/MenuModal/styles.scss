@@ -143,14 +143,6 @@
         }
       }
 
-      .div-description-text {
-        opacity: 0.58;
-
-        a {
-          color: $bg-green;
-        }
-      }
-
       .div-ingredients-list {
         display: flex;
         flex-direction: column;
@@ -336,10 +328,6 @@
               font-size: 9px;
             }
           }
-        }
-
-        .div-description-text {
-          font-size: 9px;
         }
 
         .div-ingredients-list {

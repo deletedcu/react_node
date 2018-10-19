@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MealPlan from './components/MealPlan'
 import CommonQuestions from './components/CommonQuestions'
+import Quote from './components/Quote'
 
 import './styles.css'
 
@@ -67,11 +68,7 @@ class MenuPlans extends Component {
         </div>
 
         {/* Quote */}
-        <div className='div-quote-container'>
-          <div className='div-quote'>
-            "I'd marry @blueapron if I could. We just have a good thing goin' on." - @kaywatt
-          </div>
-        </div>
+        <Quote/>
 
         {/* Common Questions */}
         <CommonQuestions/>

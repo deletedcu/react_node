@@ -6,6 +6,14 @@ import './styles.css'
 
 class MealPlan extends Component {
 
+  onSelectionChange = (selectedValue) => {
+
+  }
+
+  onGrabOffer = () => {
+    
+  }
+
   render () {
     return (
       <div className='div-meal-plan'>
@@ -21,6 +29,7 @@ class MealPlan extends Component {
         <div className='div-meal-plan-recipies'>
           <HorizontalSelectionGrid
             values={ this.props.recipiesPerWeek }
+            onSelectionChange={ this.onSelectionChange }
           />
           <div className='div-meal-plan-recipies-title'>
             RECIPESE PER WEEK
@@ -45,7 +54,7 @@ class MealPlan extends Component {
             <span className='span-menu-plan-price-title'>weekly total</span>
           </div>
         </div>
-        <Button className='btn-grab-offer'>GRAB THE OFFER</Button>
+        <Button className='btn-grab-offer' onClick={ this.onGrabOffer }>GRAB THE OFFER</Button>
       </div>
     )
   }

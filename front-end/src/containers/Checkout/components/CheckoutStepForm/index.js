@@ -24,7 +24,7 @@ class CheckoutStepForm extends Component {
     const formStatus = this.props.status
 
     return (
-      <div className={ classNames('checkout-step-form-container', this.props.className) }>
+      <div className={ classNames('checkout-step-form-container', this.props.className) } style={this.props.style}>
         {/* Header */}
         <div className={ classNames('checkout-step-form-header', {'checkout-step-form-header-inactive': formStatus !== CheckoutFormStatus.editing }) }>
           { formStatus === CheckoutFormStatus.completed ?

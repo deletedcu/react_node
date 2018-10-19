@@ -1,0 +1,13 @@
+@import "../../../../styles/variables/variables";
+
+.div-description-text {
+  opacity: 0.58;
+
+  a {
+    color: $bg-green;
+  }
+
+  @media (max-width: 710px) {
+    font-size: 9px;
+  }
+}
