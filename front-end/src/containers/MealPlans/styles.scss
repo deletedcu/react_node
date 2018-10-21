@@ -1,7 +1,7 @@
 @import "../../styles/variables/variables";
 
 .div-meal-plans-container {
-  background-color: #F1F1F1;
+  background-color: $extra-light-gray;
 
   .div-meal-plans-banner {
     position: relative;
@@ -36,7 +36,7 @@
         text-align: center;
         height: 150px;
         line-height: 150px;
-        background-color: #F2FFF3;
+        background-color: $extra-light-gray;
       }
 
       .div-meal-plans-separator {

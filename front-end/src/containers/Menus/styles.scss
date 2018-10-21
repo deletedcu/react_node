@@ -1,7 +1,7 @@
 @import "../../styles/variables/variables";
 
 .div-menus-container {
-  background-color: #F1F1F1;
+  background-color: $extra-light-gray;
 
   .div-menus-banner {
     position: relative;
@@ -44,7 +44,7 @@
       }
 
       .div-load-more {
-        background-color: #F2FFF3;
+        background-color: $extra-light-gray;
         width: 333px;
         height: 94px;
         border-radius: 100px; 

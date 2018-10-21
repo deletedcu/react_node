@@ -29,11 +29,11 @@ $increment-color: #D3D3D3;
     height: 45px;
 
     span {
-      font-size: 22px;
+      font-size: $footer-primary-font-size;
     }
 
     input {
-      font-size: 13px;
+      font-size: $mobile-regular-font-size;
       min-width: 20px;
     }
   }

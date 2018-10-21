@@ -16,7 +16,7 @@
     padding: 0 16px;
     font-size: $small-font-size;
     font-family: 'Lato-Bold'; 
-    caret-color: $bg-green;
+    caret-color: $green-primary;
   }
 
   .button {
@@ -63,7 +63,7 @@
     }
   
     input {
-      font-size: 9px;
+      font-size: $mobile-small-font-size;
       min-width: 0px;
     }
   
@@ -75,7 +75,7 @@
       
       span {
         line-height: 30px;
-        font-size: 9px !important;
+        font-size: $mobile-small-font-size !important;
       }
     }
   }

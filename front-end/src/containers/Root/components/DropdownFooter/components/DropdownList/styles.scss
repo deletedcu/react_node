@@ -19,7 +19,7 @@
 
     span {
       color: $text-light-gray;
-      font-size: 14px;
+      font-size: $mobile-regular-font-size;
     }
   
     img {
@@ -34,7 +34,7 @@
 
   .dropdown-list-content {
     color: $text-light-gray;
-    font-size: 14px;
+    font-size: $mobile-regular-font-size;
     margin-top: 10px;
     animation-name: dropdown-animation;
     animation-duration: 0.25s;

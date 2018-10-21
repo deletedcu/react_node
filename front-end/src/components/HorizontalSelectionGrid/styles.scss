@@ -23,7 +23,7 @@
   .selection-grid-cell-selected {
     background-color: #62B266;
     color: white;
-    transition: $animation-primary;
+    transition: $transition-primary;
   }
 
   @media (max-width: 710px) {
@@ -31,7 +31,7 @@
     border-radius: 4px;
     
     .selection-grid-cell {
-      font-size: 9px;
+      font-size: $mobile-small-font-size;
       width: 30px;
       line-height: 30px;
     }

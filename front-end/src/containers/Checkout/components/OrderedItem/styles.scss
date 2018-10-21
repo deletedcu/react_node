@@ -24,7 +24,7 @@ $ordered-item-size: 120px;
     }
 
     .ordered-item-info {
-      font-size: 13px; 
+      font-size: $mobile-regular-font-size; 
     }
   }
 }

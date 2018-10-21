@@ -61,7 +61,7 @@
   
       .div-quick-order {
         background-color: #EAFEEB;
-        color: $bg-green;
+        color: $green-primary;
         text-align: center;
         line-height: 55px;
         border-radius: 4px;
@@ -91,11 +91,11 @@
         padding: 10px;
 
         .div-featured-menu-name {
-          font-size: 14px;
+          font-size: $mobile-regular-font-size;
         }
     
         .div-featured-menu-more-detail {
-          font-size: 12px;
+          font-size: $minor-font-size;
           flex-direction: column;
     
           .div-featured-menu-detail-column-1 {
@@ -128,15 +128,15 @@
           text-align: center;
           line-height: 30px;
           font-family: 'Lato-Bold';
-          font-size: 9px;
+          font-size: $mobile-small-font-size;
           border-radius: 4px;
           width: calc(50% - 2.5px);
         }
     
         .div-quick-order {
-          font-size: 9px;
+          font-size: $mobile-small-font-size;
           background-color: #EAFEEB;
-          color: $bg-green;
+          color: $green-primary;
           text-align: center;
           line-height: 30px;
           border-radius: 4px;

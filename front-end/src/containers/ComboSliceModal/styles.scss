@@ -32,15 +32,15 @@
         border: 1px solid #979797;
         border-radius: 6px;
         color: $text-light-gray;
-        font-size: 27px;
-        caret-color: $bg-green;
+        font-size: $footer-secondary-font-size;
+        caret-color: $green-primary;
         resize: none;
         padding: 20px;
         margin-top: 20px;
       }
   
       .textarea-instructions:focus {
-        border: 1px solid $bg-green;
+        border: 1px solid $green-primary;
       }
     }
   }
@@ -63,9 +63,9 @@
 
       .numeric-counter-button {
         width: 60px;
-        border: 2px solid #108915;
+        border: 2px solid $green-secondary;
         font-size: 43px;
-        color: #108915;
+        color: $green-secondary;
       }
 
       .numeric-counter-number {
@@ -97,11 +97,11 @@
     .div-combo-slice-modal-center-content {
       .div-extra-instructions {
         .div-extra-instructions-title {
-          font-size: 13px;
+          font-size: $mobile-regular-font-size;
         }
 
         .textarea-instructions {
-          font-size: 13px;
+          font-size: $mobile-regular-font-size;
           height: 150px;
           padding: 10px 20px;
           margin-top: 10px;
@@ -123,13 +123,13 @@
   
         .numeric-counter-button {
           width: 45px;
-          border: 2px solid #108915;
-          font-size: 22px;
-          color: #108915;
+          border: 2px solid $green-secondary;
+          font-size: $footer-primary-font-size;
+          color: $green-secondary;
         }
   
         .numeric-counter-number {
-          font-size: 13px;
+          font-size: $mobile-regular-font-size;
           width: 60px;
           margin: 0 10px;
         }
@@ -138,7 +138,7 @@
       .btn-add-to-cart {
         width: 150px;
         height: 45px;
-        font-size: 12px;
+        font-size: $minor-font-size;
       }
 
       @media (max-width: 414px) {

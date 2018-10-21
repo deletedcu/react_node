@@ -15,7 +15,7 @@
     width: 28px;
     height: 28px;
     color: white;
-    background-color: $bg-green;
+    background-color: $green-primary;
     border: 4px solid white;
     border-radius: 50px;
     text-align: center;
@@ -32,7 +32,7 @@
       width: 14px;
       height: 14px;
       line-height: 14px;
-      font-size: 9px;
+      font-size: $mobile-small-font-size;
       left: 12px;
       top: -2px;
       border: 1px solid white;

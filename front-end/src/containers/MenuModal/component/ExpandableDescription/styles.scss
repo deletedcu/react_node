@@ -4,10 +4,10 @@
   opacity: 0.58;
 
   a {
-    color: $bg-green;
+    color: $green-primary;
   }
 
   @media (max-width: 710px) {
-    font-size: 9px;
+    font-size: $mobile-small-font-size;
   }
 }

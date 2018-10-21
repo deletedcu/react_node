@@ -54,13 +54,13 @@
       
       .div-feedback-name {
         color: $text-light-gray;
-        font-size: 19px;
+        font-size: $regular-font-size;
       }
     }
 
     .div-feedback-content {
       color: $text-light-gray;
-      font-size: 14px;
+      font-size: $mobile-regular-font-size;
       margin-right: 30px;
       margin-top: 20px;
       overflow: hidden;
@@ -104,14 +104,14 @@
 
       .div-feedback-name {
         margin-top: 20px;
-        font-size: 19px;
+        font-size: $regular-font-size;
         text-align: center;
       }
 
       .div-feedback-content {
         margin-top: 20px;
         text-align: center;
-        font-size: 16px;
+        font-size: $mobile-regular-font-size;
       }
     }
   }

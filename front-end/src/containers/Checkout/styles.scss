@@ -30,17 +30,17 @@ $page-padding: 110px;
       input {
         width: 100%;
         height: 70px;
-        border: 1px solid #B7CBB8;
+        border: 1px solid $light-green-primary;
         border-radius: 4px;
         color: $text-light-gray;
-        font-size: 27px;
-        caret-color: $bg-green;
+        font-size: $footer-secondary-font-size;
+        caret-color: $green-primary;
         margin-top: 10px;
         padding: 20px;
       }
 
       input:focus {
-        border: 1px solid $bg-green;
+        border: 1px solid $green-primary;
       }
 
       .div-checkout-section-content {
@@ -73,7 +73,7 @@ $page-padding: 110px;
           margin: 30px 0;
 
           .clickable {
-            color: $bg-green;
+            color: $green-primary;
             margin-left: 5px;
           }
         }
@@ -136,7 +136,7 @@ $page-padding: 110px;
   
               .select-us-state {
                 margin-top: 10px;
-                border: 1px solid #B7CBB8;
+                border: 1px solid $light-green-primary;
                 background-color: white;
                 outline: none;
                 height: 70px;
@@ -160,7 +160,7 @@ $page-padding: 110px;
 
       .div-checkout-payment {
         .div-checkout-payment-credit-card {
-          border: 1px solid #B7CBB8;
+          border: 1px solid $light-green-primary;
           margin-top: 40px;
           padding: 24px;
 
@@ -181,7 +181,7 @@ $page-padding: 110px;
                     border: none;
                     margin-top: 5px;
                     padding: 0;
-                    font-size: 22px;
+                    font-size: $footer-primary-font-size;
                   }
 
                   .credit-card-input {
@@ -199,13 +199,13 @@ $page-padding: 110px;
 
         .div-checkout-payment-paypal {
           position: relative;
-          border: 1px solid #B7CBB8;
+          border: 1px solid $light-green-primary;
           margin-top: 30px;
           margin-bottom: 30px;
           padding: 24px;
 
           .div-checkout-payment-paypal-instruction {
-            font-size: 22px;
+            font-size: $footer-primary-font-size;
             margin: 10px 100px 40px 35px;
           }
 
@@ -218,8 +218,8 @@ $page-padding: 110px;
         }
 
         .div-checkout-payment-active {
-          border: 1px solid #F2FFF3;
-          background-color: #F2FFF3;
+          border: 1px solid $extra-light-gray;
+          background-color: $extra-light-gray;
           border-radius: 4px;
         }
       }
@@ -243,7 +243,7 @@ $page-padding: 110px;
     text-align: center;
 
     span {
-      color: $bg-green;
+      color: $green-primary;
       text-decoration: underline;
     }
   }
@@ -289,12 +289,12 @@ $page-padding: 110px;
       .div-checkout-steps-section {
         padding-left: 0;
         padding-right: 0;
-        font-size: 14px;
+        font-size: $mobile-regular-font-size;
 
         input {
           height: 50px;
-          font-size: 14px;
-          caret-color: $bg-green;
+          font-size: $mobile-regular-font-size;
+          caret-color: $green-primary;
           margin-top: 10px;
           padding: 15px;
         }
@@ -396,7 +396,7 @@ $page-padding: 110px;
   
         .div-checkout-payment {
           .div-checkout-payment-credit-card {
-            border: 1px solid #B7CBB8;
+            border: 1px solid $light-green-primary;
             margin-top: 15px;
             padding: 0;
 
@@ -414,7 +414,7 @@ $page-padding: 110px;
   
                   label {
                     input {
-                      font-size: 12px;
+                      font-size: $minor-font-size;
                     }
                   }
                 }
@@ -431,7 +431,7 @@ $page-padding: 110px;
             padding: 15px;
   
             .div-checkout-payment-paypal-instruction {
-              font-size: 12px;
+              font-size: $minor-font-size;
               margin: 10px 0 20px 30px;
             }
   
@@ -447,7 +447,7 @@ $page-padding: 110px;
     .div-help-container {
       padding-top: 30px;
       padding-bottom: 60px;
-      font-size: 14px;
+      font-size: $mobile-regular-font-size;
     }
   }
 }

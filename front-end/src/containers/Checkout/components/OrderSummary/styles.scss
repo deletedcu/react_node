@@ -6,7 +6,7 @@ $order-summary-header-height: 108px;
 
 .order-summary-container {
   background-color: white;
-  border: 1px solid #B7CBB8;
+  border: 1px solid $light-green-primary;
   box-shadow: $shadow-primary;
 
   .order-summary-header {
@@ -26,7 +26,7 @@ $order-summary-header-height: 108px;
     }
 
     .order-summary-edit {
-      color: #108915;
+      color: $green-secondary;
     }
   }
 
@@ -37,7 +37,7 @@ $order-summary-header-height: 108px;
 
   .order-summary-separator-green {
     height: 1px;
-    background-color: #B7CBB8;
+    background-color: $light-green-primary;
   }
 
   .order-summary-info {
@@ -65,12 +65,12 @@ $order-summary-header-height: 108px;
         height: 67px;
         border: 1px solid #B4B4B4;
         border-radius: 5px;
-        color: $bg-green;
+        color: $green-primary;
         padding-left: 30px;
         padding-right: 180px;
       }
       input:focus {
-        border: 1px solid #108915;
+        border: 1px solid $green-secondary;
       }
 
       span {
@@ -87,7 +87,7 @@ $order-summary-header-height: 108px;
       }
 
       .span-apply-active {
-        color: #108915;
+        color: $green-secondary;
         background-color: #EAFEEB;
       }
     }
@@ -117,7 +117,7 @@ $order-summary-header-height: 108px;
       }
 
       .order-summary-items-edit {
-        color: #108915;
+        color: $green-secondary;
       }
     }
 
@@ -139,7 +139,7 @@ $order-summary-header-height: 108px;
     }
 
     .order-summary-info {
-      font-size: 13px;
+      font-size: $mobile-regular-font-size;
 
       .order-summary-info-block {
         padding-left: 20px;
@@ -166,7 +166,7 @@ $order-summary-header-height: 108px;
       }
 
       .order-summary-total-price-block {
-        font-size: 13px;
+        font-size: $mobile-regular-font-size;
         font-family: 'Montserrat-Bold';
         padding-left: 20px;
         padding-right: 20px;

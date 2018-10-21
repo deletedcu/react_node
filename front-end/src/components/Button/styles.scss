@@ -4,8 +4,8 @@
   width: 209px;
   height: 67px;
   font-size: $regular-font-size;
-  background: $bg-green;
-  border: 1px solid #108915;
+  background: $green-primary;
+  border: 1px solid $green-secondary;
   border-radius: 4px;
   box-shadow: $shadow-primary;
   color: #fff;
@@ -21,7 +21,7 @@
 }
 
 .button:hover {
-  box-shadow: 0px 0px 6px darken($bg-green, 20%);
+  box-shadow: 0px 0px 6px darken($green-primary, 20%);
 }
 
 .button:active {
@@ -39,6 +39,6 @@
   .button {
     width: 75px;
     height: 25px;
-    font-size: 9px;
+    font-size: $mobile-small-font-size;
   }
 }

@@ -46,7 +46,7 @@
       padding: 20px 50px;
 
       a {
-        color: #108915;
+        color: $green-secondary;
         text-decoration: underline;
       }
     }
@@ -68,7 +68,7 @@
     }
 
     .div-common-questions {
-      font-size: 14px;
+      font-size: $mobile-regular-font-size;
 
       .row {
         .div-common-questions-pannel {
@@ -76,7 +76,7 @@
           padding-right: 10px;
 
           .div-question-title {
-            font-size: 14px;
+            font-size: $mobile-regular-font-size;
             margin-top: 15px;
           }
 
@@ -89,7 +89,7 @@
 
     .div-check-faq-container {
       margin: 50px 25px;
-      font-size: 14px;
+      font-size: $mobile-regular-font-size;
 
       .div-check-faq {
         width: 100%;

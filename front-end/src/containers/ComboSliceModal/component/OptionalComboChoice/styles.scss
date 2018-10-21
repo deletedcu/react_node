@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    font-size: 28px;
+    font-size: $footer-secondary-font-size;
   }
 
   .div-optional-combo-list {
@@ -23,7 +23,7 @@
 
       span {
         color: #332F2F;
-        font-size: 28px;
+        font-size: $footer-secondary-font-size;
         margin-left: 10px;
 
         div {
@@ -38,7 +38,7 @@
     padding-right: 30px;
 
     .div-optional-combo-title {
-      font-size: 13px;
+      font-size: $mobile-regular-font-size;
     }
 
     .div-optional-combo-list {
@@ -56,11 +56,11 @@
   
         span {
           color: #332F2F;
-          font-size: 13px;
+          font-size: $mobile-regular-font-size;
           margin-left: 10px;
 
           div {
-            font-size: 9px;
+            font-size: $mobile-small-font-size;
           }
         }
       }

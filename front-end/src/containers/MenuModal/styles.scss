@@ -55,7 +55,7 @@
         margin-top: 20px;
         font-size: $minor-font-size;
         color: white;
-        background-color: $bg-green;
+        background-color: $green-primary;
         padding: 10px 25px;
       }
       
@@ -71,11 +71,11 @@
           width: 33%;
 
           span {
-            color: $bg-green;
+            color: $green-primary;
           }
 
           .span-menu-info-value {
-            font-size: 33px;
+            font-size: $medium-font-size;
           }
 
           .span-menu-info-title {
@@ -135,7 +135,7 @@
           }
 
           span {
-            color: $bg-green;
+            color: $green-primary;
             font-size: $small-font-size;
             text-align: center;
             margin-top: 5px;
@@ -277,7 +277,7 @@
         }
 
         .span-offer {
-          font-size: 9px;
+          font-size: $mobile-small-font-size;
           padding: 5px 12px;
         }
 
@@ -290,10 +290,10 @@
             padding: 0 20px;
 
             .span-menu-info-value {
-              font-size: 24px;
+              font-size: $footer-primary-font-size;
             }
             .span-menu-info-title {
-              font-size: 9px;
+              font-size: $mobile-small-font-size;
             }
           }
         }
@@ -325,7 +325,7 @@
               height: 20px;
             }
             span {
-              font-size: 9px;
+              font-size: $mobile-small-font-size;
             }
           }
         }
@@ -335,7 +335,7 @@
           margin-bottom: 20px;
 
           .div-ingredients-list-title {
-            font-size: 14px;
+            font-size: $mobile-regular-font-size;
           }
           .checkbox {
             margin-top: 10px;
@@ -363,7 +363,7 @@
 
         .btn-add-to-cart {
           height: 45px;
-          font-size: 12px;
+          font-size: $minor-font-size;
         }
       }
     }

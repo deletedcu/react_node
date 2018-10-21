@@ -1,3 +1,5 @@
+@import "../../styles/variables/variables";
+
 .checkbox {
   display: flex;
   flex-direction: row;
@@ -20,7 +22,7 @@
     }
 
     span {
-      font-size: 12px;
+      font-size: $minor-font-size;
     }
   }
 }
