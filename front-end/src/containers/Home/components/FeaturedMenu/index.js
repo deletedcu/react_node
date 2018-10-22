@@ -4,11 +4,19 @@ import { connect } from 'react-redux'
 import './styles.css'
 
 import { showMenuModal } from '../../../../redux/actions/menuModal'
+import { addToCart } from '../../../../redux/actions/cart'
+import { showNotification } from '../../../../services/notification'
 
 class FeaturedMenu extends Component {
 
   onShowMenuModal = () => {
-    this.props.dispatch(showMenuModal({}))
+    this.props.dispatch(showMenuModal(this.props.item))
+  }
+
+  onQuickOrder = () => {
+    this.props.dispatch(addToCart(this.props.item))
+
+    showNotification('Added to cart', 'success')
   }
 
   render () {
@@ -18,32 +26,32 @@ class FeaturedMenu extends Component {
         <div className='div-featured-menu-details-order'>  
           <div className='div-featured-menu-details'>
             <div className='div-featured-menu-name'>
-              English Breakfast Frittata x 5
+              { this.props.item.name }
             </div>
             <div className='div-featured-menu-more-detail'>
               <div className='div-featured-menu-detail-column-1'>
                 <div className='div-featured-menu-detail-calories'>
-                  Calories: 280
+                  { `Calories: ${this.props.item.calories}` }
                 </div>
                 <div className='div-featured-menu-detail-fat'>
-                  Fat: 21g
+                  { `Fat: ${this.props.item.fat}g` }
                 </div>
               </div>
               <div className='div-featured-menu-detail-column-2'>
                 <div className='div-featured-menu-detail-carbs'>
-                  Carbs: 13g
+                  { `Carbs: ${this.props.item.carbs}g` }
                 </div>
                 <div className='div-featured-menu-detail-protein'>
-                  Protein: 30g
+                  { `Protein: ${this.props.item.protein}g` }
                 </div>
               </div>
             </div>
           </div>
           <div className='div-order'>
             <div className='div-price'>
-              $55
+              { `$${this.props.item.price}` }
             </div>
-            <div className='div-quick-order clickable'>
+            <div className='div-quick-order clickable' onClick={ this.onQuickOrder }>
               Quick Order
             </div>
           </div>

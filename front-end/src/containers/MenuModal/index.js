@@ -15,6 +15,8 @@ import imgGlutenFree from '../../assets/images/gluten-free.svg'
 import imgSoyFree from '../../assets/images/soy-free.svg'
 
 import { closeMenuModal } from '../../redux/actions/menuModal'
+import { addToCart } from '../../redux/actions/cart'
+import { showNotification } from '../../services/notification'
 
 class MenuModal extends Component {
 
@@ -22,7 +24,10 @@ class MenuModal extends Component {
     super(props)
 
     this.state = {
+      item: props.menuModal.item,
+
       descriptionScrolled: false,
+      itemCount: 1,
       
       specialInstructions: '',
     }
@@ -54,11 +59,18 @@ class MenuModal extends Component {
   }
 
   onItemCountChange = (count) => {
-
+    this.setState({
+      itemCount: count,
+    })
   }
 
   onAddToCart = () => {
+    var items = new Array(this.state.itemCount).fill(this.state.item)
+    
+    this.props.dispatch(addToCart(items))
+    this.props.dispatch(closeMenuModal())
 
+    showNotification('Added to cart', 'success')
   }
 
   render () {
@@ -82,18 +94,18 @@ class MenuModal extends Component {
               
               <div className='div-menu-info-list'>
                 <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>29 G</span><br/>
+                  <span className='span-menu-info-value'>{`${this.state.item.protein} G`}</span><br/>
                   <span className='span-menu-info-title'>PROTEIN</span>
                 </div>
                 <div className='div-menu-info-separator'/>
                 <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>480</span><br/>
+                  <span className='span-menu-info-value'>{`${this.state.item.calories}`}</span><br/>
                   <span className='span-menu-info-title'>CALORIES</span>
                 </div>
                 <div className='div-menu-info-separator'/>
                 <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>49 G</span><br/>
-                  <span className='span-menu-info-title'>CARGS</span>
+                  <span className='span-menu-info-value'>{`${this.state.item.carbs} G`}</span><br/>
+                  <span className='span-menu-info-title'>CARBS</span>
                 </div>
               </div>
             </div>
@@ -104,7 +116,7 @@ class MenuModal extends Component {
             <div className='div-menu-modal-description' onScroll={ this.onScrollDescription }>
               {/* Menu name */}
               <div className='div-menu-title'>
-                Chicken Leg Magic
+                { this.state.item.name }
               </div>
 
               {/* Specialities */}
@@ -125,7 +137,7 @@ class MenuModal extends Component {
 
               {/* Description */}
               <ExpandableDescription>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.
+                { this.state.item.description }
               </ExpandableDescription>
 
               {/* Additional */}

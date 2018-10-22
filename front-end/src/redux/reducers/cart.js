@@ -3,12 +3,16 @@ export default function reducer(state = {
 }, action) {
   switch(action.type) {
     case 'ADD_TO_CART': {
-      state.items.push(action.payload.item)
+      state.items = state.items.concat(action.payload.items)
+      
       return {...state, items: state.items}
     }
 
     case 'REMOVE_FROM_CART': {
-      state.items.pop()
+      const index = state.items.findIndex((item) => {
+        return item.id === action.payload.item.id
+      })
+      state.items.splice(index, 1)
       return {...state, items: state.items}
     }
 

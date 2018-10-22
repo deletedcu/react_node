@@ -15,10 +15,13 @@
   .div-menu-item-name-price {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
     margin-top: 16px;
     font-size: 29px;
+
+    .span-menu-item-price {
+      margin-left: 20px;
+    }
   }
 
   .div-numeric-counter {

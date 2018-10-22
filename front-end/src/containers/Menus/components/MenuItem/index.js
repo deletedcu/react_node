@@ -13,17 +13,17 @@ import { showNotification } from '../../../../services/notification'
 class MenuItem extends Component {
 
   onShowMenuModal = () => {
-    this.props.dispatch(showMenuModal({}))
+    this.props.dispatch(showMenuModal(this.props.item))
   }
 
   onIncrementPurchasedCount = () => {
-    this.props.dispatch(addToCart('Chicken Leg Magic'))
+    this.props.dispatch(addToCart([this.props.item]))
 
     showNotification('Added to cart', 'success')
   }
 
   onDecrementPurchasedCount = () => {
-    this.props.dispatch(removeFromCart())
+    this.props.dispatch(removeFromCart(this.props.item))
 
     showNotification('Removed from cart', 'info')
   }
@@ -33,8 +33,8 @@ class MenuItem extends Component {
       <div className='div-menu-item'>
         <img className='img-menu-item clickable' alt='Placeholder' onClick={ this.onShowMenuModal }/>
         <div className='div-menu-item-name-price'>
-          <span>Chicken Leg Magic</span>
-          <span>$40.00</span>
+          <span>{ this.props.item.name }</span>
+          <span className='span-menu-item-price'>{ `$${this.props.item.price}` }</span>
         </div>
         {/* <div className='div-time-rating'>
           <div className='div-time'>
@@ -47,6 +47,7 @@ class MenuItem extends Component {
         </div> */}
         <div className='div-numeric-counter'>
           <NumericCounter
+            count={ this.props.count }
             onIncrement={ this.onIncrementPurchasedCount }
             onDecrement={ this.onDecrementPurchasedCount }
           />

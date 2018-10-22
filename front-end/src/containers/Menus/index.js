@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import MenusHeader from './components/MenusHeader'
 import MenuItem from './components/MenuItem'
 
@@ -8,7 +9,19 @@ class Menus extends Component {
 
   render () {
     // default 12 items
-    const data = Array.apply(null, Array(12))
+    var menuItems = []
+    Array.apply(null, Array(12)).forEach((value, index) => {
+      menuItems.push({
+        id: index,
+        name: `English Breakfast Frittata (${index})`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.',
+        price: (55 + index * 5),
+        calories: (280 + index * 5),
+        carbs: (13 + index),
+        fat: (21 + index),
+        protein: (30 + index),
+      })
+    })
 
     return (
       <div className='div-menus-container'>
@@ -31,11 +44,13 @@ class Menus extends Component {
 
             {/* Grid */}
             <div className='row'>
-              {data.map((val, index) => 
-                <div key={index} className='div-menu-wrapper col-12 col-md-6 col-lg-6 col-xl-4'>
-                  <MenuItem/>
-                </div>
-              )}
+              {
+                menuItems.map((menuItem, index) => 
+                  <div key={index} className='div-menu-wrapper col-12 col-md-6 col-lg-6 col-xl-4'>
+                    <MenuItem item={menuItem} count={ this.props.cart.items.filter((item) => { return item.id === menuItem.id }).length }/>
+                  </div>
+                )
+              }
             </div>
 
             {/* Load More button */}
@@ -49,4 +64,10 @@ class Menus extends Component {
   }
 }
 
-export default Menus
+function mapStateToProps(state) {
+  return {
+    cart: state.cart,
+  }
+}
+
+export default connect(mapStateToProps)(Menus)

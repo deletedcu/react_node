@@ -9,26 +9,22 @@ class NumericCounter extends Component {
     super(props)
 
     this.state = {
-      count: 0,
+      count: this.props.count,
     }
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      count: newProps.count,
+    })
   }
 
   onDecrement = () => {
-    if (this.state.count > 0) {
-      this.setState({
-        count: this.state.count - 1,
-      }, () => {
-        this.props.onDecrement()
-      })
-    }
+    this.props.onDecrement()
   }
 
   onIncrement = () => {
-    this.setState({
-      count: this.state.count + 1,
-    }, () => {
-      this.props.onIncrement()
-    })
+    this.props.onIncrement()
   }
   
   render () {

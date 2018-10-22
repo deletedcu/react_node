@@ -24,12 +24,16 @@ class IncrementCounter extends Component {
   onDecrement = () => {
     this.setState({
       value: Math.max(parseInt(this.state.value, 10) - 1, 1),
+    }, () => {
+      this.props.onChange(this.state.value)
     })
   }
 
   onIncrement = () => {
     this.setState({
       value: parseInt(this.state.value, 10) + 1,
+    }, () => {
+      this.props.onChange(this.state.value)
     })
   }
 
