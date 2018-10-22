@@ -11,7 +11,7 @@ class Cart extends Component {
     super(props)
 
     this.state = {
-      purchasedCount: 0,
+      purchasedCount: props.cart.items.length,
     }
   }
 

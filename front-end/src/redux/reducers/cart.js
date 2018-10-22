@@ -1,9 +1,13 @@
+var cartItems = localStorage.getItem('cart_items')
+
 export default function reducer(state = {
-  items: [],
+  items: cartItems ? JSON.parse(cartItems) : [],
 }, action) {
   switch(action.type) {
     case 'ADD_TO_CART': {
       state.items = state.items.concat(action.payload.items)
+
+      localStorage.setItem('cart_items', JSON.stringify(state.items))
       
       return {...state, items: state.items}
     }
@@ -13,6 +17,9 @@ export default function reducer(state = {
         return item.id === action.payload.item.id
       })
       state.items.splice(index, 1)
+
+      localStorage.setItem('cart_items', JSON.stringify(state.items))
+
       return {...state, items: state.items}
     }
 
