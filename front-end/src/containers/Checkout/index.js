@@ -361,6 +361,7 @@ class Checkout extends Component {
 function mapStateToProps(state) {
   return {
     user: state.user,
+    cart: state.cart,
   }
 }
 

@@ -31,6 +31,8 @@
         width: 0px; 
         flex-grow: 1;
         font-size: $footer-primary-font-size;
+        color: $text-light-gray;
+        caret-color: $green-primary;
 
         @media (max-width: 1200px) {
           font-size: $regular-font-size;

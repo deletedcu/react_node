@@ -6,7 +6,7 @@ import './styles.css'
 import imgSearch from '../../../../assets/images/search.svg'
 import imgDownArrow from '../../../../assets/images/down_arrow.svg'
 
-const MenuTypes = {
+export const MenuTypes = {
   'menu': 1,
   'mealplans': 2,
   'recommended': 3,
@@ -24,18 +24,18 @@ class MenusHeader extends Component {
   }
 
   onSelectMenuType = (selectedType) => {
-    // this.setState({
-    //   selectedType: selectedType,
-    // })
-
-    if (selectedType === MenuTypes.mealplans) {
-      this.props.history.push('/meal-plans')
-    }
+    this.setState({
+      selectedType: selectedType,
+    }, () => {
+      this.props.onChangeMenu(selectedType)
+    })
   }
 
   onChangeSearchText = (e) => {
     this.setState({
       searchText: e.target.value,
+    }, () => {
+      this.props.onChangeSearchText(this.state.searchText)
     })
   }
 
