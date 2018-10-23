@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import classNames from 'classnames'
 import OrderedItem from '../OrderedItem'
 
@@ -22,7 +23,41 @@ class OrderSummary extends Component {
     })
   }
 
+  onApplyPromoCode = () => {
+
+  }
+
+  groupBy = (items, key) => items.reduce(
+    (result, item) => ({
+      ...result,
+      [item[key]]: [
+        ...(result[item[key]] || []),
+        item,
+      ],
+    }), 
+    {},
+  )
+
   render () {
+    const cartItems = this.props.cart.items
+    const totalPrice = cartItems.reduce((sum, cartItem) => {
+      return sum + cartItem.price
+    }, 0)
+    const groupedItems = this.groupBy(cartItems, 'id')
+
+    let orderedItems = []
+    Object.keys(groupedItems).forEach((id, index) => {
+      orderedItems.push(
+        <OrderedItem
+          key={ index }
+          image={ imgItem }
+          title={ groupedItems[id][0].name }
+          count={ `x${groupedItems[id].length}` }
+        />
+      )
+    })
+    
+
     return (
       <div className='order-summary-container'>
         {/* Header */}
@@ -43,7 +78,7 @@ class OrderSummary extends Component {
           </div>
           <div className='order-summary-info-block'>
             <span>6 Meals Per Week</span>
-            <span>$59.99</span>
+            <span>{`$${totalPrice}`}</span>
           </div>
           <div className='order-summary-info-block'>
             <span>Shipping</span>
@@ -53,7 +88,7 @@ class OrderSummary extends Component {
           {/* Promo Code Input */}
           <div className='order-summary-promo-input'>
             <input type='text' placeholder='Add a promo or gift code' name='promoCode' value={ this.state.promoCode } onChange={ this.onChange }/>
-            <span className={ classNames('clickable', {'span-apply-active': this.state.promoCode }) }>APPLY</span>
+            <span className={ classNames('clickable', {'span-apply-active': this.state.promoCode }) } onClick={ this.onApplyPromoCode }>APPLY</span>
           </div>
 
           {/* Separator */}
@@ -62,7 +97,7 @@ class OrderSummary extends Component {
           {/* Total Price */}
           <div className='order-summary-total-price-block'>
             <span>Total</span>
-            <span>$59.99</span>
+            <span>{`$${totalPrice}`}</span>
           </div>
         </div>
 
@@ -76,16 +111,7 @@ class OrderSummary extends Component {
             <span className='order-summary-items-edit clickable'>edit</span>
           </div>
           <div className='order-summary-items-list'>
-            <OrderedItem
-              image={ imgItem }
-              title='English Breakfast'
-              count='x3'
-            />
-            <OrderedItem
-              image={ imgItem }
-              title='BBQ Steak Bites'
-              count='x5'
-            />
+            { orderedItems }
           </div>
         </div>
       </div>
@@ -93,4 +119,10 @@ class OrderSummary extends Component {
   }
 }
 
-export default OrderSummary
+function mapStateToProps(state) {
+  return {
+    cart: state.cart,
+  }
+}
+
+export default connect(mapStateToProps)(OrderSummary)

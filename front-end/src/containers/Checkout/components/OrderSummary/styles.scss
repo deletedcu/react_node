@@ -123,6 +123,8 @@ $order-summary-header-height: 108px;
 
     .order-summary-items-list {
       margin-top: $margin;
+      overflow: scroll;
+      max-height: 400px;
 
       .ordered-item {
         margin-bottom: $margin;
