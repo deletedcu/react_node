@@ -158,6 +158,22 @@
         }
       }
 
+      .div-recipies-per-week {
+        margin-top: 40px;
+        margin-bottom: 20px;
+
+        .div-recipies-per-week-title {
+          color: #080808;
+        }
+
+        .div-recipies-selection-grid {
+          display: flex;
+          .selection-grid {
+            margin-top: 20px;
+          }
+        }
+      }
+
       // .div-special-instructions {
       //   display: flex;
       //   flex-direction: column;
@@ -205,6 +221,11 @@
           height: 67px;
         }
       }
+
+      .btn-add-to-cart-full {
+        width: 100%;
+        margin-left: 0;
+      }
     }
 
     .div-opacity-layer-top {
@@ -219,6 +240,12 @@
   @media (max-width: 1365px) {
     .div-menu-modal-description-cart {
       max-width: 500px;
+    }
+  }
+
+  @media (min-width: 1201px) {
+    .div-menu-modal-description-cart {
+      min-width: 500px;
     }
   }
 
@@ -339,6 +366,22 @@
           }
           .checkbox {
             margin-top: 10px;
+          }
+        }
+
+        .div-recipies-per-week {
+          margin-top: 20px;
+          margin-bottom: 10px;
+
+          .div-recipies-per-week-title {
+            font-size: $mobile-regular-font-size;
+          }
+          .div-recipies-selection-grid {
+            margin-top: 10px;
+
+            .selection-grid {
+              margin-top: 0px;
+            }
           }
         }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NumericCounter from '../../../../components/NumericCounter'
+import Button from '../../../../components/Button'
 
 import './styles.css'
 
@@ -28,13 +29,19 @@ class MenuItem extends Component {
     showNotification('Removed from cart', 'info')
   }
 
+  onAddToCart = () => {
+    this.props.dispatch(addToCart([this.props.item]))
+    
+    showNotification('Added to cart', 'success')
+  }
+
   render () {
     return (
       <div className='div-menu-item'>
         <img className='img-menu-item clickable' alt='Placeholder' onClick={ this.onShowMenuModal }/>
         <div className='div-menu-item-name-price'>
           <span>{ this.props.item.name }</span>
-          <span className='span-menu-item-price'>{ `$${this.props.item.price}` }</span>
+          <span className='span-menu-item-price'>{ `$${this.props.item.type === 'menu' ? this.props.item.price : this.props.item.prices[0]}` }</span>
         </div>
         {/* <div className='div-time-rating'>
           <div className='div-time'>
@@ -45,13 +52,19 @@ class MenuItem extends Component {
             <span>4.5 (200)</span>
           </div>
         </div> */}
-        <div className='div-numeric-counter'>
-          <NumericCounter
-            count={ this.props.count }
-            onIncrement={ this.onIncrementPurchasedCount }
-            onDecrement={ this.onDecrementPurchasedCount }
-          />
-        </div>
+        { this.props.item.type === 'menu' ?
+          <div className='div-numeric-counter'>
+            <NumericCounter
+              count={ this.props.count }
+              onIncrement={ this.onIncrementPurchasedCount }
+              onDecrement={ this.onDecrementPurchasedCount }
+            />
+          </div>
+          :
+          <div className='div-add-to-cart'>
+            <Button onClick={ this.onAddToCart }>Add To Cart</Button>
+          </div>
+        }
       </div>
     )
   }

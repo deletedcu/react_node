@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import classNames from 'classnames'
 import MenuThumbnailList from './component/MenuThumbnailList'
 import IncrementCounter from './component/IncrementCounter'
 import Button from '../../components/Button'
 import Checkbox, { CheckboxType } from '../../components/Checkbox'
 import ModalContainer from '../../components/ModalContainer'
 import ExpandableDescription from './component/ExpandableDescription'
+import HorizontalSelectionGrid from '../../components/HorizontalSelectionGrid'
 
 import './styles.css'
 
@@ -64,6 +66,10 @@ class MenuModal extends Component {
     })
   }
 
+  onSelectionChange = (selectedValue) => {
+    
+  }
+
   onAddToCart = () => {
     var items = new Array(this.state.itemCount).fill(this.state.item)
     
@@ -74,6 +80,8 @@ class MenuModal extends Component {
   }
 
   render () {
+    const item = this.state.item
+
     return (
       <ModalContainer>
         <div className='div-menu-modal-center'>
@@ -84,7 +92,7 @@ class MenuModal extends Component {
             {/* Thumbnails */}
             <MenuThumbnailList 
               className='div-menu-modal-thumbnails'
-              imageUrls={['', '']}
+              imageUrls={ item.type === 'menu' ? Array.apply(null, Array(1)) : Array.apply(null, Array(item.menu.length)) }
             />
 
             {/* Image / Short Info */}
@@ -94,17 +102,17 @@ class MenuModal extends Component {
               
               <div className='div-menu-info-list'>
                 <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>{`${this.state.item.protein} G`}</span><br/>
+                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.protein : item.menu[0].protein} G`}</span><br/>
                   <span className='span-menu-info-title'>PROTEIN</span>
                 </div>
                 <div className='div-menu-info-separator'/>
                 <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>{`${this.state.item.calories}`}</span><br/>
+                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.calories : item.menu[0].calories}`}</span><br/>
                   <span className='span-menu-info-title'>CALORIES</span>
                 </div>
                 <div className='div-menu-info-separator'/>
                 <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>{`${this.state.item.carbs} G`}</span><br/>
+                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.carbs : item.menu[0].carbs} G`}</span><br/>
                   <span className='span-menu-info-title'>CARBS</span>
                 </div>
               </div>
@@ -116,7 +124,7 @@ class MenuModal extends Component {
             <div className='div-menu-modal-description' onScroll={ this.onScrollDescription }>
               {/* Menu name */}
               <div className='div-menu-title'>
-                { this.state.item.name }
+                { item.name }
               </div>
 
               {/* Specialities */}
@@ -137,20 +145,37 @@ class MenuModal extends Component {
 
               {/* Description */}
               <ExpandableDescription>
-                { this.state.item.description }
+                { item.description }
               </ExpandableDescription>
 
               {/* Additional */}
-              <div className='div-ingredients-list'>
-                <div className='div-ingredients-list-title'> 
-                  Ingredients
+              { item.type === 'menu' &&
+                <div className='div-ingredients-list'>
+                  <div className='div-ingredients-list-title'> 
+                    Ingredients
+                  </div>
+                  <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>a) Fries</Checkbox>
+                  <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>b) Sour Cream & Chive Potato</Checkbox>
+                  <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>c) Potato</Checkbox>
+                  <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>d) Sour Cream & Chive Potato</Checkbox>
+                  <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>e) Fries </Checkbox>
                 </div>
-                <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>a) Fries</Checkbox>
-                <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>b) Sour Cream & Chive Potato</Checkbox>
-                <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>c) Potato</Checkbox>
-                <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>d) Sour Cream & Chive Potato</Checkbox>
-                <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>e) Fries </Checkbox>
-              </div>
+              }
+
+              {/* Recipies per week */}
+              { item.type !== 'menu' &&
+                <div className='div-recipies-per-week'>
+                  <div className='div-recipies-per-week-title'>
+                    Recipies Per Week
+                  </div>
+                  <div className='div-recipies-selection-grid'>
+                    <HorizontalSelectionGrid
+                      values={ item.recipiesPerWeek }
+                      onSelectionChange={ this.onSelectionChange }
+                    />
+                  </div>
+                </div>
+              }
 
               {/* Special instruction */}
               {/* <div className='div-special-instructions'>
@@ -160,16 +185,16 @@ class MenuModal extends Component {
                 <input type='text' name='specialInstructions' className='input-special-instructions' placeholder='I am alergic to banana' value={this.state.specialInstructions} onChange={ this.onChange }/>
               </div> */}
 
-              { !this.state.descriptionScrolled && <div className='div-opacity-layer-bottom'/> }
+              { item.type === 'menu' && !this.state.descriptionScrolled && <div className='div-opacity-layer-bottom'/> }
             </div>
             
             {/* Add to cart */}
             <div className='div-menu-modal-cart'>
-              <IncrementCounter className='increment-counter' onChange={ this.onItemCountChange }/>
-              <Button className='btn-add-to-cart' onClick={ this.onAddToCart }>ADD TO CART</Button>
+              { item.type === 'menu' && <IncrementCounter className='increment-counter' onChange={ this.onItemCountChange }/> }
+              <Button className={classNames('btn-add-to-cart', {'btn-add-to-cart-full': item.type !== 'menu'})} onClick={ this.onAddToCart }>ADD TO CART</Button>
             </div>
 
-            { this.state.descriptionScrolled && <div className='div-opacity-layer-top'/> }
+            { item.type === 'menu' && this.state.descriptionScrolled && <div className='div-opacity-layer-top'/> }
           </div>
         </div>
       </ModalContainer>
