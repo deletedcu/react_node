@@ -67,7 +67,12 @@ class MenuModal extends Component {
   }
 
   onSelectionChange = (selectedValue) => {
-    
+    const selectedIndex = this.state.item.recipiesPerWeek.indexOf(selectedValue)
+    const price = this.state.item.prices[selectedIndex]
+
+    this.setState({
+      item: {...this.state.item, price: price }
+    })
   }
 
   onAddToCart = () => {

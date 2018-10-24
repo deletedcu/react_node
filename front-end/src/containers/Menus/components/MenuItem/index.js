@@ -41,7 +41,7 @@ class MenuItem extends Component {
         <img className='img-menu-item clickable' alt='Placeholder' onClick={ this.onShowMenuModal }/>
         <div className='div-menu-item-name-price'>
           <span>{ this.props.item.name }</span>
-          <span className='span-menu-item-price'>{ `$${this.props.item.type === 'menu' ? this.props.item.price : this.props.item.prices[0]}` }</span>
+          <span className='span-menu-item-price'>{ `$${this.props.item.price}` }</span>
         </div>
         {/* <div className='div-time-rating'>
           <div className='div-time'>

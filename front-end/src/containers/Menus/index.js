@@ -76,6 +76,7 @@ class Menus extends Component {
             type: 'mealplan',
             name: `Weight Control`,
             description: 'Our Weight Loss plan is geared towards those who want to lose weight through precise dieting. Meals on this plan focuses on prioritizing adequately fueling your body while keeping you under your caloric limit.',
+            price: 40,
             prices: [40, 60, 80],
             recipiesPerWeek: [4, 6, 9],
             menu: [
