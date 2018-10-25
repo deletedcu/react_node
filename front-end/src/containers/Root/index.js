@@ -26,11 +26,10 @@ class Root extends Component {
   }
 
   render () {
-
     return (
       <div className='app header-fixed'>
         {/* Header */}
-        <Header history={ this.props.history }/>
+        <Header history={ this.props.history } authMode={ this.props.location.pathname.includes('/auth') }/>
   
         {/* Body */}
         <div className='app-body'>

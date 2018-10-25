@@ -1,0 +1,20 @@
+@import "../../../../styles/variables/variables";
+
+.service-feature {
+  text-align: center;
+  width: 360px;
+
+  .img-service-feature {
+    height: 65px;
+  }
+
+  .div-service-feature-title {
+    margin-top: 40px;
+  }
+
+  .div-service-feature-description {
+    color: $text-light-gray;
+    font-size: $small-font-size;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,81 @@
+@import "../../../../styles/variables/variables";
+
+.signup-form {
+  background-color: white;
+  border: 1px solid #D2D2D2;
+  padding: 50px;
+  color: $text-light-gray;
+
+  .span-link {
+    color: $green-secondary;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .signup-form-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .signup-form-title {
+      font-size: 32px;
+      font-family: 'Montserrat-SemiBold';
+    }
+  }
+
+  .signup-form-inputs {
+    .signup-form-input {
+      margin-top: 30px;
+
+      input {
+        width: 100%;
+        height: 80px;
+        margin-top: 10px;
+        padding: 0 20px;
+        border: 1px solid $light-green-primary;
+        border-radius: 4px;
+        font-size: $footer-secondary-font-size;
+        caret-color: $green-primary;
+      }
+
+      input:focus {
+        border: 1px solid $green-primary;
+      }
+    }
+
+    .btn-continue {
+      margin-top: 50px;
+      width: 100%;
+      height: 80px;
+    }
+  }
+
+  .signup-form-separator {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+    
+    .signup-form-separator-line {
+      flex-grow: 1;
+      height: 1px;
+      background-color: $light-green-primary;
+    }
+
+    span {
+      padding: 0 16px;
+    }
+  }
+
+  .btn-facebook {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .signup-form-footer {
+    text-align: center;
+    margin-top: 50px;
+  }
+}

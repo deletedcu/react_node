@@ -1,0 +1,64 @@
+@import "../../styles/variables/variables";
+
+.div-auth-container {
+  background-color: #F1F1F1;
+  padding-top: 50px;
+
+  .div-auth-description {
+    margin-top: 70px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .div-auth-description-title {
+      font-size: $large-font-size;
+      font-family: 'Montserrat-SemiBold';
+    }
+
+    .div-auth-description-text {
+      color: $text-light-gray;
+      margin-top: 40px;
+      max-width: 570px;
+    }
+  }
+
+  .div-auth-form-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 120px;
+
+    .div-auth-form-half-container {
+      width: 50%;
+      padding: 0 20px;
+
+      .img-background {
+        max-width: 100%;
+
+      }
+    }
+
+    @media (min-width: 1440px) {
+      max-width: 1440px;
+    }
+  }
+
+  .div-auth-features-container {
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+
+  .div-auth-help-contact-container {
+    padding: 70px 0;
+    text-align: center;
+    background-color: $border-gray;
+    border-top: 1px solid #C6C4C4;
+    color: $text-light-gray;
+    font-size: $small-font-size;
+
+    span {
+      color: $green-primary;
+      text-decoration: underline;
+    }
+  }
+}

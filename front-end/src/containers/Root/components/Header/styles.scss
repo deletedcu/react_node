@@ -8,6 +8,14 @@
     margin-top: 32px;
   }
 
+  .img-flow {
+    position: absolute;
+    height: 35px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
   .div-buttons {
     display: flex;
     float: right;

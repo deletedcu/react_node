@@ -1,0 +1,14 @@
+.service-features {
+  .row {
+    .col-12 {
+      margin-bottom: 70px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 1440px;
+  }
+}

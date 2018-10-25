@@ -1,0 +1,21 @@
+
+@import "../../../../styles/variables/variables";
+
+.facebook-button {
+  border: 1px solid $green-secondary;
+  border-radius: 4px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  color: $green-secondary;
+
+  position: relative;
+
+  img {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+  }
+}
