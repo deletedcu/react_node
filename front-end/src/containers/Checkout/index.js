@@ -12,6 +12,9 @@ import './styles.css'
 import imgPaypal from '../../assets/images/paypal.svg'
 
 import { loginUser, signupUser } from '../../redux/actions/user'
+import { showOverlaySpinner, hideOverlaySpinner } from '../../redux/actions/overlaySpinner'
+import getStripeToken from '../../services/stripeToken'
+import { showNotification } from '../../services/notification'
 
 const CheckoutStep = {
   'account': 1,
@@ -59,7 +62,7 @@ class Checkout extends Component {
   }
 
   componentWillReceiveProps ({user}) {
-    if (user.loggedIn) {
+    if (user.loggedIn && this.state.currentStep === CheckoutStep.account) {
       this.setState({
         currentStep: CheckoutStep.address,
       })
@@ -101,7 +104,29 @@ class Checkout extends Component {
   }
 
   onCompleteOrder = () => {
-    
+    if (this.state.currentPaymentOption === PaymentOption.stripe) {
+      // stripe
+      // validation check
+      if (!this.state.cardNumber || !this.state.cardExpiry || !this.state.cardCVC || !this.state.cardName) {
+        showNotification('Please fill out the form', 'error')
+        return
+      }
+  
+      // retrieve stripe token
+      this.props.dispatch(showOverlaySpinner())
+
+      getStripeToken(this.state.cardNumber, this.state.cardExpiry, this.state.cardCVC, this.state.cardName)
+        .then(tokenInfo => {
+          // TODO
+          this.props.dispatch(hideOverlaySpinner())
+        })
+        .catch(err => {
+          this.props.dispatch(hideOverlaySpinner())
+          showNotification('Failed to retrieve card info', 'error')
+        })
+    } else {
+      // paypal
+    }
   }
 
 

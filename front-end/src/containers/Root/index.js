@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import DropdownFooter from './components/DropdownFooter'
 import asyncComponent from '../../components/AsyncComponent'
+import OverlaySpinner from '../../components/OverlaySpinner'
 
 import './styles/styles.css'
 
@@ -48,6 +49,8 @@ class Root extends Component {
   
         {/* Notification System */}
         <NotificationSystem ref='notificationSystem' dismissible='click'/>
+
+        <OverlaySpinner visible={ this.props.overlaySpinner.visible }/>
       </div>
     )
   }
@@ -57,6 +60,7 @@ function mapStateToProps(state) {
   return {
     menuModal: state.menuModal,
     comboSliceModal: state.comboSliceModal,
+    overlaySpinner: state.overlaySpinner,
   }
 }
 
