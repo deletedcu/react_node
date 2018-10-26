@@ -1,6 +1,6 @@
 @import "../../../../styles/variables/variables";
 
-.signup-form {
+.auth-form {
   background-color: white;
   border: 1px solid #D2D2D2;
   padding: 50px;
@@ -12,20 +12,20 @@
     cursor: pointer;
   }
 
-  .signup-form-header {
+  .auth-form-header {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
-    .signup-form-title {
+    .auth-form-title {
       font-size: 32px;
       font-family: 'Montserrat-SemiBold';
     }
   }
 
-  .signup-form-inputs {
-    .signup-form-input {
+  .auth-form-inputs {
+    .auth-form-input {
       margin-top: 30px;
 
       input {
@@ -51,14 +51,14 @@
     }
   }
 
-  .signup-form-separator {
+  .auth-form-separator {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-top: 30px;
     
-    .signup-form-separator-line {
+    .auth-form-separator-line {
       flex-grow: 1;
       height: 1px;
       background-color: $light-green-primary;
@@ -74,8 +74,62 @@
     margin-top: 30px;
   }
 
-  .signup-form-footer {
+  .auth-form-footer {
     text-align: center;
     margin-top: 50px;
+  }
+
+  @media (max-width: 710px) {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .auth-form-header {
+      .auth-form-title {
+        font-size: $regular-font-size;
+      }
+
+      .auth-form-switch {
+        font-size: $small-font-size;
+      }
+    }
+
+    .auth-form-inputs {
+      margin-top: 30px;
+      
+      .auth-form-input {
+        margin-top: 15px;
+        font-size: $mobile-regular-font-size;
+  
+        input {
+          height: 50px;
+          font-size: $mobile-regular-font-size;
+          padding: 20px 15px;
+        }
+      }
+  
+      .btn-continue {
+        margin-top: 30px;
+        height: 50px;
+        font-size: $mobile-regular-font-size;
+      }
+    }
+  
+    .auth-form-separator {
+      margin-top: 15px;
+    
+      span {
+        font-size: $small-font-size;
+      }
+    }
+  
+    .btn-facebook {
+      margin-top: 15px;
+    }
+  
+    .auth-form-footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: $small-font-size;
+    }
   }
 }

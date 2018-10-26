@@ -18,4 +18,20 @@
     transform: translateY(-50%);
     width: 15px;
   }
+
+  @media (max-width: 710px) {
+    height: 50px;
+    line-height: 50px;
+    font-size: $mobile-regular-font-size;
+
+    img {
+      width: 10px;
+    }
+  }
+
+  @media (max-width: 414px) {
+    img {
+      left: 15px;
+    }
+  }
 }

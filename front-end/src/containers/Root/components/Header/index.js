@@ -6,6 +6,7 @@ import './styles.css'
 
 import imgLogo from '../../../../assets/images/logo.svg'
 import imgFlow from '../../../../assets/images/login_flow.svg'
+import imgMinimizedFlow from '../../../../assets/images/login_flow_min.svg'
 
 class Header extends Component {
 
@@ -27,6 +28,7 @@ class Header extends Component {
         <img className='img-logo clickable' src={imgLogo} alt='logo' onClick={this.onClickLogo}/>
 
         { this.props.authMode && <img className='img-flow' src={imgFlow} alt='flow'/> }
+        { this.props.authMode && <img className='img-min-flow' src={imgMinimizedFlow} alt='flow'/> }
         
         { !this.props.authMode &&
           <div className='div-buttons'>

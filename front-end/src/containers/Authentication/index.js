@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ServiceFeatures from './components/ServiceFeatures'
-import SignupForm from './components/SignupForm'
+import AuthForm from './components/AuthForm'
 
 import './styles.css'
 
@@ -19,12 +19,12 @@ class Authentication extends Component {
 
         {/* Form section */}
         <div className='container div-auth-form-container'>
-          <div className='div-auth-form-half-container'>
+          <div className='div-auth-img'>
             <img className='img-background' src={imgBackground} alt='background'/>
           </div>
 
-          <div className='div-auth-form-half-container'>
-            <SignupForm/>
+          <div className='div-auth-form'>
+            <AuthForm/>
           </div>
         </div>
 

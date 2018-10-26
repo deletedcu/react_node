@@ -16,6 +16,15 @@
     transform: translateX(-50%) translateY(-50%);
   }
 
+  .img-min-flow {
+    display: none;
+    position: absolute;
+    height: 30px;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   .div-buttons {
     display: flex;
     float: right;
@@ -32,9 +41,21 @@
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1600px) {
+    .img-flow {
+      left: unset;
+      right: 40px;
+      transform: translateY(-50%);
+    }
+  }
+
+  @media (max-width: 1200px) {
     .img-logo {
       margin-left: 40px;
+    }
+
+    .img-flow {
+      height: 30px;
     }
 
     .div-buttons {
@@ -49,10 +70,25 @@
     }
   }
 
+  @media (max-width: 1024px) {
+    .img-flow {
+      display: none;
+    }
+
+    .img-min-flow {
+      display: block;
+    }
+  }
+
   @media (max-width: 710px) {
     .img-logo {
       margin-left: 20px;
       margin-top: 21px;
+      height: 18px;
+    }
+
+    .img-min-flow {
+      right: 20px;
       height: 18px;
     }
 
