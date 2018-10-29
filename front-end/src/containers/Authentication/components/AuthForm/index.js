@@ -4,6 +4,10 @@ import FacebookButton from '../FacebookButton'
 
 import './styles.css'
 
+export const AuthFormType = {
+  login: 0,
+  signup: 1,
+}
 class AuthForm extends Component {
 
   constructor (props) {

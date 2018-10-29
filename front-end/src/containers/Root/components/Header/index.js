@@ -15,11 +15,11 @@ class Header extends Component {
   }
 
   onSignUp = () => {
-    this.props.history.push('/auth')
+    this.props.history.push('/auth/signup')
   }
 
   onLogin = () => {
-    this.props.history.push('/auth')
+    this.props.history.push('/auth/login')
   }
 
   render () {
