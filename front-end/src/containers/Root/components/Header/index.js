@@ -23,14 +23,16 @@ class Header extends Component {
   }
 
   render () {
+    const pathName = this.props.pathName
+    
     return (
       <div className='app-header'>
         <img className='img-logo clickable' src={imgLogo} alt='logo' onClick={this.onClickLogo}/>
 
-        { this.props.authMode && <img className='img-flow' src={imgFlow} alt='flow'/> }
-        { this.props.authMode && <img className='img-min-flow' src={imgMinimizedFlow} alt='flow'/> }
+        { pathName.includes('auth/signup') && <img className='img-flow' src={imgFlow} alt='flow'/> }
+        { pathName.includes('auth/signup') && <img className='img-min-flow' src={imgMinimizedFlow} alt='flow'/> }
         
-        { !this.props.authMode &&
+        { !pathName.includes('auth') &&
           <div className='div-buttons'>
             <Cart
               history={ this.props.history }

@@ -8,6 +8,10 @@ import imgBackground from '../../../assets/images/bg_login.png'
 
 class Signup extends Component {
 
+  onSwitchToLogin = () => {
+    this.props.history.push('/auth/login')
+  }
+
   render () {
     return (
       <div className='signup-container'>
@@ -25,7 +29,9 @@ class Signup extends Component {
 
           <div className='div-signup-form'>
             <AuthForm
-              type={AuthFormType.signup}
+              type={ AuthFormType.signup }
+              onSwitchAuthType={ this.onSwitchToLogin }
+              history={ this.props.history }
             />
           </div>
         </div>

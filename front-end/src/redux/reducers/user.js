@@ -7,7 +7,7 @@ export default function reducer(state = {
   switch(action.type) {
 
     case 'LOGIN_USER': {
-      return {...state, loggingIn: true}
+      return {...state, loggingIn: true, loggedIn: false}
     }
 
     case 'LOGIN_USER_FULFILLED': {

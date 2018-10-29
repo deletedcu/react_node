@@ -29,7 +29,7 @@ class Root extends Component {
     return (
       <div className='app header-fixed'>
         {/* Header */}
-        <Header history={ this.props.history } authMode={ this.props.location.pathname.includes('/auth') }/>
+        <Header history={ this.props.history } pathName={ this.props.location.pathname }/>
   
         {/* Body */}
         <div className='app-body'>

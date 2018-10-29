@@ -12,7 +12,7 @@
     cursor: pointer;
   }
 
-  .auth-form-header {
+  .auth-form-header-normal {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,6 +21,20 @@
     .auth-form-title {
       font-size: 32px;
       font-family: 'Montserrat-SemiBold';
+    }
+  }
+
+  .auth-form-header-green {
+    margin: -50px -50px 0 -50px;
+    height: 135px;
+    line-height: 135px;
+    border-bottom: 1px solid $light-green-primary;
+    background: $extra-light-green;
+
+    .auth-form-title {
+      font-size: 41px;
+      font-family: 'Montserrat-Medium';
+      text-align: center;
     }
   }
 
@@ -69,7 +83,7 @@
     }
   }
 
-  .btn-facebook {
+  .facebook-button {
     width: 100%;
     margin-top: 30px;
   }
@@ -77,19 +91,36 @@
   .auth-form-footer {
     text-align: center;
     margin-top: 50px;
+
+    .auth-form-footer-signup {
+      margin-top: 50px;
+    }
   }
 
   @media (max-width: 710px) {
     padding-left: 15px;
     padding-right: 15px;
 
-    .auth-form-header {
+    .auth-form-header-normal {
       .auth-form-title {
         font-size: $regular-font-size;
       }
 
       .auth-form-switch {
         font-size: $small-font-size;
+      }
+    }
+
+    .auth-form-header-green {
+      margin: -50px -15px 0 -15px;
+      height: 80px;
+      line-height: 80px;
+      border-bottom: unset;
+
+      .auth-form-title {
+        font-size: $regular-font-size;
+        font-family: 'Montserrat-Regular';
+        color: $text-primary;
       }
     }
 
@@ -130,6 +161,10 @@
       text-align: center;
       margin-top: 30px;
       font-size: $small-font-size;
+
+      .auth-form-footer-signup {
+        font-size: $small-font-size;
+      }
     }
   }
 }
