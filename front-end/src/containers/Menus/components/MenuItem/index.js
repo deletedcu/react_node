@@ -52,7 +52,7 @@ class MenuItem extends Component {
             <span>4.5 (200)</span>
           </div>
         </div> */}
-        { this.props.item.type === 'menu' ?
+        { this.props.item.type === 'menu' &&
           <div className='div-numeric-counter'>
             <NumericCounter
               count={ this.props.count }
@@ -60,10 +60,10 @@ class MenuItem extends Component {
               onDecrement={ this.onDecrementPurchasedCount }
             />
           </div>
-          :
-          <div className='div-add-to-cart'>
-            <Button onClick={ this.onAddToCart }>Add To Cart</Button>
-          </div>
+          // :
+          // <div className='div-add-to-cart'>
+          //   <Button onClick={ this.onAddToCart }>Add To Cart</Button>
+          // </div>
         }
       </div>
     )
