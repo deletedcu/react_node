@@ -1,0 +1,58 @@
+@import "../../styles/variables/variables";
+
+.div-select-meals-container {
+  margin-top: 80px;
+
+  .container {
+    max-width: calc(100% - 40px) !important;
+    .row {
+
+    }
+  }
+
+  .div-meal-item {
+    box-shadow: $shadow-primary;
+    margin: 10px;
+
+    display: flex;
+
+    .div-meal-item-text-container {
+      padding: 10px 20px;
+
+      .div-meal-item-title {
+        font-family: 'Montserrat-SemiBold';
+      }
+
+      .div-meal-item-description {
+        margin-top: 10px;
+      }
+
+      .div-meal-item-price {
+        margin-top: 30px;
+      }
+
+      @media (max-width: 414px) {
+        font-size: $mobile-regular-font-size;
+
+        .div-meal-item-description {
+          margin-top: 5px;
+          font-size: $mobile-small-font-size;
+        }
+
+        .div-meal-item-price {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .div-meal-item-image-container {
+      background-color: lightgray;
+      min-width: 200px;
+
+      @media (max-width: 414px) {
+        min-width: 150px;
+        font-size: $mobile-regular-font-size;
+      }
+    }
+  }
+}

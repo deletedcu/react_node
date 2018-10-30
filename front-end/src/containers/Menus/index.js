@@ -28,6 +28,10 @@ class Menus extends Component {
     })
   }
 
+  onSelectMealPlan = (mealPlanItem) => {
+    this.props.history.push('/select-meals')
+  }
+
   render () {
     // default 12 items
     var menuItems = []
@@ -143,7 +147,7 @@ class Menus extends Component {
                 menuItems.map((menuItem, index) => 
                   <div key={index} className='div-menu-wrapper col-12 col-md-6 col-lg-6 col-xl-4'>
                     { this.state.menuType === MenuTypes.mealplans ?
-                      <MenuItem item={menuItem} />
+                      <MenuItem item={menuItem} onSelectMealPlan={this.onSelectMealPlan}/>
                       :
                       <MenuItem item={menuItem} count={ this.props.cart.items.filter((item) => { return item.id === menuItem.id }).length }/>
                     }

@@ -14,7 +14,11 @@ import { showNotification } from '../../../../services/notification'
 class MenuItem extends Component {
 
   onShowMenuModal = () => {
-    this.props.dispatch(showMenuModal(this.props.item))
+    if (this.props.item.type === 'menu') {
+      this.props.dispatch(showMenuModal(this.props.item))
+    } else {
+      this.props.onSelectMealPlan(this.props.item)
+    }
   }
 
   onIncrementPurchasedCount = () => {
