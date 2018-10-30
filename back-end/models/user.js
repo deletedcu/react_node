@@ -8,6 +8,8 @@ const userSchema = mongoose.Schema({
   
   first_name: String,
   last_name: String,
+  
+  zip: String,
 
   created_at: Date,
   updated_at: Date,

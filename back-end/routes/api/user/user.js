@@ -36,6 +36,7 @@ exports.login = (email, password) => {
             email: user.email,
             first_name: user.first_name,
             last_name: user.last_name,
+            zip: user.zip,
             token: jwt.sign(email, config.jwtSecret, {}),
           },
         });
@@ -53,8 +54,9 @@ exports.login = (email, password) => {
  * @param {string} password 
  * @param {string} firstName 
  * @param {string} lastName 
+ * @param {string} zip
  */
-exports.register = (email, password, firstName, lastName) => {
+exports.register = (email, password, firstName, lastName, zip) => {
   return new Promise((resolve, reject) => {
     // check if user already exists
     User.findOne({ email_lowercased: email.toLowerCase() }).exec((err, matchingUser) => {
@@ -81,6 +83,7 @@ exports.register = (email, password, firstName, lastName) => {
         hashed_password: hash,
         first_name: firstName,
         last_name: lastName,
+        zip: zip,
       };
 
       new User(user).save((err) => {
@@ -98,6 +101,7 @@ exports.register = (email, password, firstName, lastName) => {
               email_lowercased: user.email_lowercased,
               first_name: user.first_name,
               last_name: user.last_name,
+              zip: user.zip,
               token: jwt.sign(user.email, config.jwtSecret, {}),
             },
           });

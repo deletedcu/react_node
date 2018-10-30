@@ -36,11 +36,12 @@ router.post('/register', (request, response) => {
   const password = request.body.password;
   const firstName = request.body.first_name;
   const lastName = request.body.last_name;
+  const zip = request.body.zip;
   
   if (!email || !password || !email.trim() || !password.trim()) {
     response.status(400).json({ message: 'Invalid request!'});
   } else {
-    register(email, password, firstName, lastName)
+    register(email, password, firstName, lastName, zip)
       .then(res => {
         response.status(res.status).json({ message: res.message, user: res.user });
       })
