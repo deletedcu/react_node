@@ -58,6 +58,19 @@
       }
     }
 
+    .auth-form-double-inputs {
+      display: flex;
+
+      #input_firstname {
+        margin-right: 15px;
+        width: 50%;
+      }
+      #input_lastname {
+        margin-left: 15px;
+        width: 50%;
+      }
+    }
+
     .btn-continue {
       margin-top: 50px;
       width: 100%;
@@ -142,6 +155,15 @@
         margin-top: 30px;
         height: 50px;
         font-size: $mobile-regular-font-size;
+      }
+
+      .auth-form-double-inputs {
+        #input_firstname {
+          margin-right: 5px;
+        }
+        #input_lastname {
+          margin-left: 5px;
+        }
       }
     }
   

@@ -17,6 +17,8 @@ class AuthForm extends Component {
     super (props)
 
     this.state = {
+      firstName: '',
+      lastName: '',
       email: '',
       password: '',
       zip: '',
@@ -39,6 +41,8 @@ class AuthForm extends Component {
 
   signup = () => {
     this.props.dispatch(signupUser({
+      first_name: this.state.firstName,
+      last_name: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
       zip: this.state.zip,
@@ -102,6 +106,20 @@ class AuthForm extends Component {
 
         {/* Form fields */}
         <form className='auth-form-inputs'>
+          { 
+            isSignup &&
+            <div className='auth-form-double-inputs'>
+              <div id='input_firstname' className='auth-form-input'>
+                <div className='auth-form-input-name'>First Name</div>
+                <input required type='text' name='firstName' value={this.state.firstName} onChange={this.onChange}/>
+              </div>
+              <div id='input_lastname' className='auth-form-input'>
+                <div className='auth-form-input-name'>Last Name</div>
+                <input required type='text' name='lastName' value={this.state.lastName} onChange={this.onChange}/>
+              </div>
+            </div>
+          }
+
           <div className='auth-form-input'>
             <div className='auth-form-input-name'>Email</div>
             <input required type='email' name='email' value={this.state.email} onChange={this.onChange}/>
