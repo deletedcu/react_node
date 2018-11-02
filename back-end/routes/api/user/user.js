@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 const config = require('../../../config/config');
 const User = require('../../../models/user');
 
+const checkToken = require('../../../helpers/checkToken');
+
 /**
  * Login Function
  * @param {string} email 
@@ -108,5 +110,42 @@ exports.register = (email, password, firstName, lastName, zip) => {
         }
       });
     });
+  });
+}
+
+/**
+ * Authenticate request(token) and retrieve user info
+ * @param {*} request 
+ */
+exports.authenticate = (request) => {
+  return new Promise((resolve, reject) => {
+    const email = checkToken(request);
+
+    if (email) {
+      User.findOne({ email: email }).exec((err, user) => {
+        if (err) {
+          reject({ status: 500, message: 'Internal server error ...' });
+          return;
+        }
+  
+        if (!user) {
+          reject({ status: 404, message: 'User not found!' });
+          return;
+        }
+  
+        resolve({
+          status: 200,
+          user: {
+            email: user.email,
+            first_name: user.first_name,
+            last_name: user.last_name,
+            zip: user.zip,
+            token: jwt.sign(email, config.jwtSecret, {}),
+          },
+        });
+      });
+    } else {
+      reject({ status: 401, message: 'Unauthorized request!'});
+    }
   });
 }

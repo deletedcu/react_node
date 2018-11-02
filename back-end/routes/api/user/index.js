@@ -3,6 +3,7 @@ const express = require('express');
 
 const login = require('./user').login;
 const register = require('./user').register;
+const authenticate = require('./user').authenticate;
 
 var router = express.Router();
 
@@ -32,16 +33,12 @@ router.post('/login', (request, response) => {
  * 
  */
 router.post('/register', (request, response) => {
-  const email = request.body.email;
-  const password = request.body.password;
-  const firstName = request.body.first_name;
-  const lastName = request.body.last_name;
-  const zip = request.body.zip;
+  let { email, password, first_name, last_name, zip } = request.body;
   
   if (!email || !password || !email.trim() || !password.trim()) {
     response.status(400).json({ message: 'Invalid request!'});
   } else {
-    register(email, password, firstName, lastName, zip)
+    register(email, password, first_name, last_name, zip)
       .then(res => {
         response.status(res.status).json({ message: res.message, user: res.user });
       })
@@ -49,6 +46,20 @@ router.post('/register', (request, response) => {
         response.status(err.status).json({ message: err.message });
       });
   }
+});
+
+/**
+ * Authenticate token => login user
+ * 
+ */
+router.post('/authenticate_token', (request, response) => {
+  authenticate(request)
+    .then(res => {
+      response.status(res.status).json({ message: res.message, user: res.user });
+    })
+    .catch(err => {
+      response.status(err.status).json({ message: err.message });
+    });
 });
 
 module.exports = router;
