@@ -11,6 +11,7 @@ import OverlaySpinner from '../../components/OverlaySpinner'
 import './styles/styles.css'
 
 import { initializeNotificationSystem } from '../../services/notification'
+import { authenticateUser } from '../../redux/actions/user'
 
 const AsyncMenuModal = asyncComponent(() => import('../MenuModal'))
 const AsyncComboSliceModal = asyncComponent(() => import('../ComboSliceModal'))
@@ -21,30 +22,63 @@ const AsyncComboSliceModal = asyncComponent(() => import('../ComboSliceModal'))
 
 class Root extends Component {
 
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      isChecked: false
+    }
+  }
+
   componentDidMount () {
     initializeNotificationSystem(this.refs.notificationSystem)
+
+    if (this.props.user.loggedIn === true ) {
+      this.setState({
+        isChecked: true,
+      })
+    } else {
+      const token = localStorage.getItem('token')
+      if (token) {
+        this.props.dispatch(authenticateUser(token))
+      } else {
+        this.setState({
+          isChecked: true,
+        })
+      }
+    }
+  }
+
+  componentWillReceiveProps ({ user }) {
+    if (!user.loggingIn) {
+      this.setState({ isChecked: true })
+    }
   }
 
   render () {
     return (
       <div className='app header-fixed'>
-        {/* Header */}
-        <Header history={ this.props.history } pathName={ this.props.location.pathname }/>
-  
-        {/* Body */}
-        <div className='app-body'>
-          { routes }
-        </div>
-  
-        {/* Footer */}
-        <Footer/>
-        <DropdownFooter/> {/* For responsive mode */}
-  
-        {/* Menu Modal */}
-        { this.props.menuModal.visible && <AsyncMenuModal /> }
+        { this.state.isChecked &&
+          <div>
+            {/* Header */}
+            <Header history={ this.props.history } pathName={ this.props.location.pathname }/>
+      
+            {/* Body */}
+            <div className='app-body'>
+              { routes }
+            </div>
+      
+            {/* Footer */}
+            <Footer/>
+            <DropdownFooter/> {/* For responsive mode */}
+      
+            {/* Menu Modal */}
+            { this.props.menuModal.visible && <AsyncMenuModal /> }
 
-        {/* Combo Slice Modal */}
-        { this.props.comboSliceModal.visible && <AsyncComboSliceModal /> }
+            {/* Combo Slice Modal */}
+            { this.props.comboSliceModal.visible && <AsyncComboSliceModal /> }
+          </div>
+        }
   
         {/* Notification System */}
         <NotificationSystem ref='notificationSystem' dismissible='click'/>
@@ -57,6 +91,7 @@ class Root extends Component {
 
 function mapStateToProps(state) {
   return {
+    user: state.user,
     menuModal: state.menuModal,
     comboSliceModal: state.comboSliceModal,
     overlaySpinner: state.overlaySpinner,

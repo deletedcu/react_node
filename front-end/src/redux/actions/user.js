@@ -5,6 +5,7 @@ import { showNotification } from '../../services/notification'
 export function loginUser(email, password){
   return function(dispatch) {
     dispatch({type: 'SHOW_OVERLAY_SPINNER'})
+    dispatch({type: 'LOGIN_USER'})
 
     axios.request({
       url: '/user/login',
@@ -37,6 +38,7 @@ export function loginUser(email, password){
 export function signupUser(user) {
   return function(dispatch) {
     dispatch({type: 'SHOW_OVERLAY_SPINNER'})
+    dispatch({type: 'SIGNUP_USER'})
 
     axios.request({
       url: '/user/register',
@@ -59,6 +61,35 @@ export function signupUser(user) {
 
       dispatch({type: 'SIGNUP_USER_REJECTED', payload: err})
       dispatch({type: 'HIDE_OVERLAY_SPINNER'})
+    })
+  }
+}
+
+export function logoutUser() {
+  return function(dispatch) {
+    localStorage.setItem('token', '')
+    dispatch({type: 'LOGOUT_USER_FULFILLED', payload: {}})
+  }
+}
+
+export function authenticateUser(token) {
+  return function(dispatch) {
+    dispatch({type: 'SHOW_OVERLAY_SPINNER'})
+    dispatch({type: 'LOGIN_USER'})
+
+    axios.request({
+      url: '/user/authenticate_token',
+      baseURL: config.apiBaseUrl,
+      method: 'post',
+      headers: {
+        'x-access-token': token
+      }
+    }).then((response) => {
+      dispatch({type: 'HIDE_OVERLAY_SPINNER'})
+      dispatch({type: 'LOGIN_USER_FULFILLED', payload: response.data.user})
+    }).catch((err) => {
+      dispatch({type: 'HIDE_OVERLAY_SPINNER'})
+      dispatch({type: 'LOGIN_USER_REJECTED', payload: err})
     })
   }
 }

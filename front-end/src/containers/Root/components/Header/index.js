@@ -10,6 +10,9 @@ import imgLogo from '../../../../assets/images/logo.svg'
 import imgFlow from '../../../../assets/images/login_flow.svg'
 import imgMinimizedFlow from '../../../../assets/images/login_flow_min.svg'
 
+import { logoutUser } from '../../../../redux/actions/user'
+import { showNotification } from '../../../../services/notification'
+
 class Header extends Component {
 
   onClickLogo = () => {
@@ -22,6 +25,13 @@ class Header extends Component {
 
   onLogin = () => {
     this.props.history.push('/auth/login')
+  }
+
+  onLogout = () => {
+    this.props.dispatch(logoutUser())
+    this.props.history.replace('/home')
+
+    showNotification('Logged out', 'success')
   }
 
   render () {
@@ -41,7 +51,11 @@ class Header extends Component {
             />
             { !user.loggedIn && <div className='div-signup clickable' onClick={this.onSignUp}>Sign Up</div> }
             { !user.loggedIn && <Button onClick={this.onLogin}>Login</Button> }
-            { user.loggedIn && <SettingsDropdown/> }
+            { user.loggedIn && 
+              <SettingsDropdown
+                onLogout={ this.onLogout }
+              /> 
+            }
           </div>
         }
       </div>

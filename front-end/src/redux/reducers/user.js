@@ -30,6 +30,10 @@ export default function reducer(state = {
       return {...state, loggingIn: false, loggedIn: false, error: action.payload}
     }
 
+    case 'LOGOUT_USER_FULFILLED': {
+      return {...state, user: action.payload, loggedIn: false}
+    }
+
     default: {
       return {...state}
     }
