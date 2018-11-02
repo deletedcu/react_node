@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NumericCounter from '../../../../components/NumericCounter'
-import Button from '../../../../components/Button'
 
 import './styles.css'
 
