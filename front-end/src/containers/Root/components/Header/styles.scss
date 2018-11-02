@@ -40,6 +40,10 @@
       line-height: 67px;
       text-align: center;
     }
+
+    .div-cart {
+      margin-top: 10px;
+    }
   }
 
   @media (max-width: 1600px) {
@@ -104,6 +108,10 @@
         height: 25px;
         line-height: 25px;
         font-size: $mobile-small-font-size;
+      }
+
+      .div-cart {
+        margin-top: 5px;
       }
     }
   }
