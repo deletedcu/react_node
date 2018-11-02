@@ -37,7 +37,7 @@ class Checkout extends Component {
 
     this.state = {
       currentAccountMode: AccountMode.create,
-      currentStep: CheckoutStep.account,
+      currentStep: props.user.loggedIn ? CheckoutStep.address : CheckoutStep.account,
       currentPaymentOption: PaymentOption.stripe,
 
       accountFirstName: '',
