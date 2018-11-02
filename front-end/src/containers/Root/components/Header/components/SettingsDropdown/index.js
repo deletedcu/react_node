@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdown'
-import Button from '../../../../../../components/Button'
 
 import 'react-simple-dropdown/styles/Dropdown.css'
 import './styles.css'
+
+import imgHamburgerMenu from '../../../../../../assets/images/hamburger_menu.svg'
+import imgEditProfile from '../../../../../../assets/images/edit_profile.svg'
+import imgPaymentMethod from '../../../../../../assets/images/payment_method.svg'
+import imgOrderHistory from '../../../../../../assets/images/order_history.svg'
+import imgLogout from '../../../../../../assets/images/logout.svg'
 
 
 class SettingsDropdown extends Component {
@@ -27,20 +31,27 @@ class SettingsDropdown extends Component {
   }
 
   render () {
-    let { user } = this.props
-
     return (
       <Dropdown ref='settingsDropdown' className='settings-dropdown'>
         <DropdownTrigger>
-          <span className='clickable'>{ user.user.first_name }</span>
+          <img className='clickable' src={imgHamburgerMenu} alt='hamburger'/>
         </DropdownTrigger>
         <DropdownContent>
-          <div className='div-menu clickable' onClick={ this.onEditProfile }>Edit Profile</div>
-          <div className='div-menu clickable' onClick={ this.onPaymentMethod }>Payment Method</div>
-          <div className='div-menu clickable' onClick={ this.onOrderHistory }>Order History</div>
-          <div className='div-logout'>
-            <div className='div-full-name'>{ `${user.user.first_name} ${user.user.last_name}` }</div>
-            <Button className='btn-logout' onClick={ this.onLogout }>LOG OUT</Button>
+          <div className='div-menu clickable' onClick={ this.onEditProfile }>
+            <img src={imgEditProfile} alt='edit'/>
+            <span>Edit Profile</span>
+          </div>
+          <div className='div-menu clickable' onClick={ this.onPaymentMethod }>
+            <img src={imgPaymentMethod} alt='payment'/>
+            <span>Payment Method</span>
+          </div>
+          <div className='div-menu clickable' onClick={ this.onOrderHistory }>
+            <img src={imgOrderHistory} alt='history'/>
+            <span>Order History</span>
+          </div>
+          <div className='div-menu clickable' onClick={ this.onLogout }>
+            <img src={imgLogout} alt='logout'/>
+            <span>Log Out</span>
           </div>
         </DropdownContent>
       </Dropdown>
@@ -48,10 +59,4 @@ class SettingsDropdown extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    user: state.user,
-  }
-}
-
-export default connect(mapStateToProps)(SettingsDropdown)
+export default SettingsDropdown

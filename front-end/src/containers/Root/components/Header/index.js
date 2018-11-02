@@ -46,16 +46,16 @@ class Header extends Component {
         
         { !pathName.includes('auth') &&
           <div className='div-buttons'>
-            <Cart
-              history={ history }
-            />
-            { !user.loggedIn && <div className='div-signup clickable' onClick={this.onSignUp}>Sign Up</div> }
-            { !user.loggedIn && <Button onClick={this.onLogin}>Login</Button> }
             { user.loggedIn && 
               <SettingsDropdown
                 onLogout={ this.onLogout }
               /> 
             }
+            <Cart
+              history={ history }
+            />
+            { !user.loggedIn && <div className='div-signup clickable' onClick={this.onSignUp}>Sign Up</div> }
+            { !user.loggedIn && <Button onClick={this.onLogin}>Login</Button> }
           </div>
         }
       </div>
