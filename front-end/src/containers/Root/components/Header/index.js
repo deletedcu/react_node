@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Button from '../../../../components/Button'
 import Cart from './components/Cart'
+import SettingsDropdown from './components/SettingsDropdown'
 
 import './styles.css'
 
@@ -23,7 +25,7 @@ class Header extends Component {
   }
 
   render () {
-    const pathName = this.props.pathName
+    let { pathName, user, history } = this.props
     
     return (
       <div className='app-header'>
@@ -35,10 +37,11 @@ class Header extends Component {
         { !pathName.includes('auth') &&
           <div className='div-buttons'>
             <Cart
-              history={ this.props.history }
+              history={ history }
             />
-            <div className='div-signup clickable' onClick={this.onSignUp}>Sign Up</div>
-            <Button onClick={this.onLogin}>Login</Button>
+            { !user.loggedIn && <div className='div-signup clickable' onClick={this.onSignUp}>Sign Up</div> }
+            { !user.loggedIn && <Button onClick={this.onLogin}>Login</Button> }
+            { user.loggedIn && <SettingsDropdown/> }
           </div>
         }
       </div>
@@ -46,4 +49,10 @@ class Header extends Component {
   }
 }
 
-export default Header
+function mapStateToProps(state) {
+  return {
+    user: state.user,
+  }
+}
+
+export default connect(mapStateToProps)(Header)
