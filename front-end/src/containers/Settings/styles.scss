@@ -1,0 +1,42 @@
+@import "../../styles/variables/variables";
+
+.div-settings-container {
+  background-color: $extra-light-gray;
+  margin-top: 120px;
+
+  .div-settings-body {
+    display: flex;
+    padding: 70px 130px;
+
+    .div-settings-menu {
+      width: 470px;
+      margin-right: 150px;
+    }
+
+    .div-settings-page {
+      flex-grow: 1;
+    }
+  }
+
+  .div-settings-contact {
+    padding: 70px 0;
+    text-align: center;
+    background-color: $border-gray;
+    border-top: 1px solid #C6C4C4;
+    color: $text-light-gray;
+    font-size: $small-font-size;
+
+    span {
+      color: $green-primary;
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 710px) {
+    margin-top: 60px;
+
+    .div-settings-contact {
+      padding: 50px 30px;
+    }
+  }
+}

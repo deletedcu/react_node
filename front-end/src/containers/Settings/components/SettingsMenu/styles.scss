@@ -1,0 +1,24 @@
+@import "../../../../styles/variables/variables";
+
+.settings-menu {
+
+  .settings-menu-item {
+    height: 85px;
+    line-height: 85px;
+    padding-left: 35px;
+    color: $text-light-gray;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .settings-menu-item-active {
+    opacity: 0.6;
+    color: white;
+    border: 1px solid $text-light-gray;
+    background-color: $green-primary;
+    text-shadow: $shadow-primary;
+    -webkit-text-stroke-width: 0.05px;
+    -webkit-text-stroke-color: $text-light-gray;
+    transition: all 0.25s ease-in-out;
+  }
+}
