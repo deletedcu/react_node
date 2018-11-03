@@ -10,6 +10,7 @@ const AsyncSelectMeals = asyncComponent(() => import('../SelectMeals'))
 // const AsyncMealPlans = asyncComponent(() => import('../MealPlans'))
 const AsyncContactUs = asyncComponent(() => import('../ContactUs'))
 const AsyncCheckout = asyncComponent(() => import('../Checkout'))
+const AsyncSettings = asyncComponent(() => import('../Settings'))
 
 /**
  * Routes
@@ -24,6 +25,7 @@ const routes = (
     {/* <Route path='/meal-plans' component={ AsyncMealPlans } /> */}
     <Route path='/contact-us' component={ AsyncContactUs } />
     <Route path='/checkout' component={ AsyncCheckout } />
+    <Route path='/settings' component={ AsyncSettings } />
 
     <Redirect to='/home' />
   </Switch>

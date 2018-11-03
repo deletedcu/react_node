@@ -27,6 +27,18 @@ class Header extends Component {
     this.props.history.push('/auth/login')
   }
 
+  onEditProfile = () => {
+    this.props.history.push('/settings/edit_profile')
+  }
+
+  onOrderHistory = () => {
+    this.props.history.push('/settings/order_history')
+  }
+
+  onPaymentMethod = () => {
+    this.props.history.push('/settings/payment_method')
+  }
+
   onLogout = () => {
     this.props.dispatch(logoutUser())
     this.props.history.replace('/home')
@@ -48,6 +60,9 @@ class Header extends Component {
           <div className='div-buttons'>
             { user.loggedIn && 
               <SettingsDropdown
+                onEditProfile={ this.onEditProfile }
+                onPaymentMethod={ this.onPaymentMethod }
+                onOrderHistory={ this.onOrderHistory }
                 onLogout={ this.onLogout }
               /> 
             }

@@ -15,14 +15,17 @@ class SettingsDropdown extends Component {
 
   onEditProfile = () => {
     this.refs.settingsDropdown.hide()
+    this.props.onEditProfile()
   }
 
   onPaymentMethod = () => {
     this.refs.settingsDropdown.hide()
+    this.props.onPaymentMethod()
   }
 
   onOrderHistory = () => {
     this.refs.settingsDropdown.hide()
+    this.props.onOrderHistory()
   }
 
   onLogout = () => {
