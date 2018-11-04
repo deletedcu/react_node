@@ -33,7 +33,7 @@ class EditProfile extends Component {
   }
 
   onCancel = () => {
-
+    this.props.history.push('/home')
   }
 
   render () {
