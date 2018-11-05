@@ -4,8 +4,9 @@ const express = require('express');
 const login = require('./user').login;
 const register = require('./user').register;
 const authenticate = require('./user').authenticate;
+const updateProfile = require('./user').updateProfile;
 
-var router = express.Router();
+let router = express.Router();
 
 /**
  * Login
@@ -54,6 +55,20 @@ router.post('/register', (request, response) => {
  */
 router.post('/authenticate_token', (request, response) => {
   authenticate(request)
+    .then(res => {
+      response.status(res.status).json({ message: res.message, user: res.user });
+    })
+    .catch(err => {
+      response.status(err.status).json({ message: err.message });
+    });
+});
+
+/**
+ * Update profile
+ * 
+ */
+router.post('/update_profile', (request, response) => {
+  updateProfile(request)
     .then(res => {
       response.status(res.status).json({ message: res.message, user: res.user });
     })

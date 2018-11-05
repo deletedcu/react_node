@@ -11,6 +11,9 @@ const userSchema = mongoose.Schema({
   
   zip: String,
 
+  phone: String,
+  country: String,
+
   created_at: Date,
   updated_at: Date,
 });
