@@ -30,6 +30,18 @@ export default function reducer(state = {
       return {...state, loggingIn: false, loggedIn: false, error: action.payload}
     }
 
+    case 'UPDATE_USER': {
+      return {...state}
+    }
+
+    case 'UPDATE_USER_FULFILLED': {
+      return {...state, loggingIn: false, loggedIn: true, user: action.payload}
+    }
+
+    case 'UPDATE_USER_REJECTED': {
+      return {...state, error: action.payload}
+    }
+
     case 'LOGOUT_USER_FULFILLED': {
       return {...state, user: action.payload, loggedIn: false}
     }

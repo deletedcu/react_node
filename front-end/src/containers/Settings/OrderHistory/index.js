@@ -5,7 +5,7 @@ class OrderHistory extends Component {
 
   render () {
     return (
-      <div>
+      <div className='div-order-history-container'>
 
       </div>
     )

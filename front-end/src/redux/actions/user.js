@@ -93,3 +93,30 @@ export function authenticateUser(token) {
     })
   }
 }
+
+export function updateUserProfile(token, params) {
+  return function(dispatch) {
+    dispatch({type: 'SHOW_OVERLAY_SPINNER'})
+    dispatch({type: 'UPDATE_USER'})
+
+    axios.request({
+      url: '/user/update_profile',
+      baseURL: config.apiBaseUrl,
+      method: 'post',
+      headers: {
+        'x-access-token': token
+      },
+      data: params,
+    }).then((response) => {
+      showNotification('Successfully updated', 'success')
+      
+      localStorage.setItem('token', response.data.user.token)
+
+      dispatch({type: 'HIDE_OVERLAY_SPINNER'})
+      dispatch({type: 'UPDATE_USER_FULFILLED', payload: response.data.user})
+    }).catch((err) => {
+      dispatch({type: 'HIDE_OVERLAY_SPINNER'})
+      dispatch({type: 'UPDATE_USER_REJECTED', payload: err})
+    })
+  }
+}

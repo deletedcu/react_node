@@ -4,6 +4,8 @@ import Button from '../../../components/Button'
 import Checkbox, { CheckboxType } from '../../../components/Checkbox'
 import './styles.css'
 
+import { updateUserProfile } from '../../../redux/actions/user'
+
 class EditProfile extends Component {
 
   constructor (props) {
@@ -29,7 +31,17 @@ class EditProfile extends Component {
 
   onSave = (e) => {
     e.preventDefault()
-    console.log(e)
+    
+    let { firstName, lastName, email, phone, country, password } = this.state
+
+    this.props.dispatch(updateUserProfile(this.props.user.user.token, {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      phone: phone,
+      country: country,
+      password: password,
+    }))
   }
 
   onCancel = () => {

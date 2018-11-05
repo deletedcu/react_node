@@ -1,0 +1,28 @@
+@import "../../../../../styles/variables/variables";
+
+.payment-method-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .img-card {
+    height: 27px;
+  }
+
+  .div-card-number-expiry {
+    .div-card-number {
+      color: $text-primary;
+      font-family: 'Montserrat-SemiBold';
+    }
+
+    .div-card-expiry {
+      color: $text-light-gray;
+    }
+  }
+
+  .div-remove {
+    color: $text-light-gray;
+    font-size: $small-font-size;
+    text-decoration: underline;
+  }
+}

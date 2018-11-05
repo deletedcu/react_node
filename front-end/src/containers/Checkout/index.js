@@ -45,14 +45,14 @@ class Checkout extends Component {
       emailAddress: '',
       password: '',
 
-      addressFirstName: '',
-      addressLastName: '',
-      contactNumber: '',
+      addressFirstName: props.user.loggedIn ? props.user.user.first_name : '',
+      addressLastName: props.user.loggedIn ? props.user.user.last_name : '',
+      contactNumber: props.user.loggedIn ? props.user.user.phone : '',
       streetAddress: '',
       apartmentNumber: '',
       city: '',
       state: '',
-      zip: '',
+      zip: props.user.loggedIn ? props.user.user.zip : '',
 
       cardNumber: '',
       cardExpiry: '',
@@ -65,6 +65,10 @@ class Checkout extends Component {
     if (user.loggedIn && this.state.currentStep === CheckoutStep.account) {
       this.setState({
         currentStep: CheckoutStep.address,
+        addressFirstName: user.user.first_name,
+        addressLastName: user.user.last_name,
+        contactNumber: user.user.phone,
+        zip: user.user.zip,
       })
     }
   }

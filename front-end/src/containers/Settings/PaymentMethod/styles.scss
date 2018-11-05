@@ -1,0 +1,65 @@
+@import "../../../styles/variables/variables";
+
+.div-payment-methods-container {
+  background-color: white;
+  border: 1px solid #D2D2D2;
+  padding: 50px 50px 0 50px;
+  color: $text-light-gray;
+
+  .div-form-header {
+    margin: -50px -50px 0 -50px;
+    height: 135px;
+    line-height: 135px;
+    border-bottom: 1px solid $light-green-primary;
+    background: $extra-light-green;
+    font-size: 41px;
+    font-family: 'Montserrat-Medium';
+    text-align: center;
+  }
+
+  .div-connected-payment-methods {
+    padding: 70px;
+
+    .payment-method-info {
+      margin-bottom: 70px;
+    }
+
+    .chk-add {
+      span {
+        color: $text-light-gray;
+      }
+    }
+  }
+
+  .div-separator {
+    width: calc(100% + 100px);
+    height: 1px;
+    background-color: $light-green-primary;
+    margin-left: -50px;
+  }
+
+  .div-save {
+    padding: 70px 0;
+    text-align: center;
+
+    .btn-save {
+      width: 165px;
+      height: 81px;
+    }
+  }
+
+  @media (max-width: 710px) {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .div-form-header {
+      margin: -50px -15px 0 -15px;
+      height: 80px;
+      line-height: 80px;
+      border-bottom: unset;
+      font-size: $regular-font-size;
+      font-family: 'Montserrat-Regular';
+      color: $text-primary;
+    }
+  }
+}
