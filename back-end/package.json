@@ -6,6 +6,7 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@moltin/sdk": "^3.15.2",
     "axios": "^0.18.0",
     "basic-auth": "^2.0.1",
     "bcrypt-nodejs": "0.0.3",
