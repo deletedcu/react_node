@@ -5,7 +5,7 @@ const config = require('../../../config/config');
 exports.getAllProducts = (request) => {
   return new Promise((resolve, reject) => {
     if (checkToken(request)) {
-      Moltin.Products.All()
+      Moltin.Products.With(['main_image', 'files']).All()
         .then(products => {
           resolve({ status: 200, products: products });
         })
