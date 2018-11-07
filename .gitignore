@@ -24,3 +24,4 @@ front-end/node_modules
 front-end/**/*.css
 front-end/build
 back-end/node_modules
+back-end/localStorage
