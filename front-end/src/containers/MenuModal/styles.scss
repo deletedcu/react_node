@@ -46,8 +46,8 @@
       .img-menu {
         width: 534px;
         height: 511px;
-        background-color: lightgray;
         flex-grow: 1;
+        object-fit: contain;
       }
 
       .span-offer {

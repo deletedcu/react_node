@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Slider from 'react-slick'
 import LocationSearchField from './components/LocationSearchField'
 import FeaturedMenu from './components/FeaturedMenu'
@@ -20,7 +21,7 @@ class Home extends Component {
   }
 
   render () {
-    var sliderSettings = {
+    let sliderSettings = {
       dots: true,
       infinite: true,
       speed: 500,
@@ -29,7 +30,7 @@ class Home extends Component {
       arrows: false,
     }
 
-    var feedbacks = []
+    let feedbacks = []
     Array.apply(null, Array(4)).forEach((value, index) => {
       feedbacks.push(
         <Feedback
@@ -40,21 +41,8 @@ class Home extends Component {
       )
     })
 
-    // Just random data !!!
-    var featuredMenuItems = []
-    Array.apply(null, Array(4)).forEach((value, index) => {
-      featuredMenuItems.push({
-        id: index,
-        type: 'menu',
-        name: `English Breakfast (${index})`,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.',
-        price: (55 + index * 5),
-        calories: (280 + index * 5),
-        carbs: (13 + index),
-        fat: (21 + index),
-        protein: (30 + index),
-      })
-    })
+    // Just first 4 products for now !!!
+    let featuredMenuItems = this.props.products.products.slice(0, 4).map(product => { return {...product, type: 'menu'}})
 
     return (
       <div className='div-home-container'>
@@ -149,4 +137,10 @@ class Home extends Component {
   }
 }
 
-export default Home
+function mapStateToProps(state) {
+  return {
+    products: state.products,
+  }
+}
+
+export default connect(mapStateToProps)(Home)

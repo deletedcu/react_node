@@ -32,6 +32,8 @@ class MenuModal extends Component {
       itemCount: 1,
       
       specialInstructions: '',
+
+      currentImageIndex: 0,
     }
   }
 
@@ -84,8 +86,15 @@ class MenuModal extends Component {
     showNotification('Added to cart', 'success')
   }
 
+  onThumbnailSelected = (selectedIndex) => {
+    this.setState({
+      currentImageIndex: selectedIndex,
+    })
+  }
+
   render () {
-    const item = this.state.item
+    const { item, currentImageIndex } = this.state
+    const thumbnailUrls = [item.main_image].concat(item.files);
 
     return (
       <ModalContainer>
@@ -97,12 +106,13 @@ class MenuModal extends Component {
             {/* Thumbnails */}
             <MenuThumbnailList 
               className='div-menu-modal-thumbnails'
-              imageUrls={ item.type === 'menu' ? Array.apply(null, Array(1)) : Array.apply(null, Array(item.menu.length)) }
+              imageUrls={ thumbnailUrls }
+              onThumbnailSelected={ this.onThumbnailSelected }
             />
 
             {/* Image / Short Info */}
             <div className='div-menu-modal-image-detail'>
-              <img src='' alt='placeholder' className='img-menu'/>
+              <img src={ thumbnailUrls[currentImageIndex] } alt='placeholder' className='img-menu'/>
               <span className='span-offer'>OFFER</span>
               
               <div className='div-menu-info-list'>

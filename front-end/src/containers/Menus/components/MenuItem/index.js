@@ -41,10 +41,10 @@ class MenuItem extends Component {
   render () {
     return (
       <div className='div-menu-item'>
-        <img className='img-menu-item clickable' alt='Placeholder' onClick={ this.onShowMenuModal }/>
+        <img className='img-menu-item clickable' src={ this.props.item.main_image } alt='Placeholder' onClick={ this.onShowMenuModal }/>
         <div className='div-menu-item-name-price'>
           <span>{ this.props.item.name }</span>
-          <span className='span-menu-item-price'>{ `$${this.props.item.price}` }</span>
+          <span className='span-menu-item-price'>{ `${this.props.item.display_price}` }</span>
         </div>
         {/* <div className='div-time-rating'>
           <div className='div-time'>

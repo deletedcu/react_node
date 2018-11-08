@@ -12,6 +12,7 @@ import './styles/styles.css'
 
 import { initializeNotificationSystem } from '../../services/notification'
 import { authenticateUser } from '../../redux/actions/user'
+import { fetchAllProducts } from '../../redux/actions/products'
 
 const AsyncMenuModal = asyncComponent(() => import('../MenuModal'))
 const AsyncComboSliceModal = asyncComponent(() => import('../ComboSliceModal'))
@@ -28,6 +29,8 @@ class Root extends Component {
     this.state = {
       isChecked: false
     }
+
+    props.dispatch(fetchAllProducts())
   }
 
   componentDidMount () {

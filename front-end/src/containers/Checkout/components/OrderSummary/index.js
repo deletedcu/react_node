@@ -5,7 +5,6 @@ import OrderedItem from '../OrderedItem'
 
 import './styles.css'
 
-import imgItem from '../../../../assets/images/ordered_item_placeholder.png'
 
 class OrderSummary extends Component {
 
@@ -50,7 +49,7 @@ class OrderSummary extends Component {
       orderedItems.push(
         <OrderedItem
           key={ index }
-          image={ imgItem }
+          image={ groupedItems[id][0].main_image }
           title={ groupedItems[id][0].name }
           count={ `x${groupedItems[id].length}` }
         />

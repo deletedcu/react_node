@@ -9,7 +9,7 @@
   .img-menu-item {
     max-height: 331px;
     min-height: 300px;
-    background-color: lightgray; 
+    object-fit: contain;
   }
 
   .div-menu-item-name-price {

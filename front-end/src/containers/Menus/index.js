@@ -34,90 +34,64 @@ class Menus extends Component {
 
   render () {
     // default 12 items
-    var menuItems = []
+    let { products } = this.props.products
+    let menuItems = []
 
     switch (this.state.menuType) {
       case MenuTypes.menu:
-        Array.apply(null, Array(12)).forEach((value, index) => {
-          let item = {
-            id: index,
-            name: `English Breakfast (${index})`,
-            type: 'menu',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.',
-            price: (55 + index * 5),
-            calories: (280 + index * 5),
-            carbs: (13 + index),
-            fat: (21 + index),
-            protein: (30 + index),
-          }
-
-          item.name.includes(this.state.searchText) && menuItems.push(item)
-        })
+        menuItems = products.filter(product => product.name.includes(this.state.searchText)).map(product => {return {...product, type: 'menu'}})
         break
         
       case MenuTypes.recommended:
-        Array.apply(null, Array(6)).forEach((value, index) => {
-          let item = {
-            id: index,
-            name: `English Breakfast (${index})`,
-            type: 'menu',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nisi eget diam bibendum tempor eget in ex. Mauris libero mi, viverra ut magna eu, sollicitudin efficitur quam. Phasellus in dui gravida, luctus orci sed, pellentesque est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac libero quis augue congue viverra a a enim. Ut vel posuere dui. Phasellus rutrum leo mi, nec eleifend neque laoreet at.',
-            price: (55 + index * 5),
-            calories: (280 + index * 5),
-            carbs: (13 + index),
-            fat: (21 + index),
-            protein: (30 + index),
-          }
-
-          item.name.includes(this.state.searchText) && menuItems.push(item)
-        })
+        menuItems = products.filter(product => product.name.includes(this.state.searchText)).map(product => {return {...product, type: 'menu'}}).slice(0, 3);
         break
 
       case MenuTypes.mealplans:
-        Array.apply(null, Array(3)).forEach((value, index) => {
-          let item = {
-            id: 'mealplan' + index,
-            type: 'mealplan',
-            name: `Weight Control`,
-            description: 'Our Weight Loss plan is geared towards those who want to lose weight through precise dieting. Meals on this plan focuses on prioritizing adequately fueling your body while keeping you under your caloric limit.',
-            price: 40,
-            prices: [40, 60, 80],
-            recipiesPerWeek: [4, 6, 9],
-            menu: [
-              {
-                name: 'Chickpea Power Bowl',
-                calories: 430,
-                fat: 6.6,
-                carbs: 40,
-                protein: 49,
-              },
-              {
-                name: 'Eggplant Lasagna',
-                calories: 430,
-                fat: 6.6,
-                carbs: 40,
-                protein: 49,
-              },
-              {
-                name: 'Zucchini Noodle with Meatball',
-                calories: 430,
-                fat: 6.6,
-                carbs: 40,
-                protein: 49,
-              },
-              {
-                name: 'Vegan coconut Curry',
-                calories: 430,
-                fat: 6.6,
-                carbs: 40,
-                protein: 49,
-              },
-            ]
-          }
-
-          item.name.includes(this.state.searchText) && menuItems.push(item)
-        })
         break
+        // Array.apply(null, Array(3)).forEach((value, index) => {
+        //   let item = {
+        //     id: 'mealplan' + index,
+        //     type: 'mealplan',
+        //     name: `Weight Control`,
+        //     description: 'Our Weight Loss plan is geared towards those who want to lose weight through precise dieting. Meals on this plan focuses on prioritizing adequately fueling your body while keeping you under your caloric limit.',
+        //     price: 40,
+        //     prices: [40, 60, 80],
+        //     recipiesPerWeek: [4, 6, 9],
+        //     menu: [
+        //       {
+        //         name: 'Chickpea Power Bowl',
+        //         calories: 430,
+        //         fat: 6.6,
+        //         carbs: 40,
+        //         protein: 49,
+        //       },
+        //       {
+        //         name: 'Eggplant Lasagna',
+        //         calories: 430,
+        //         fat: 6.6,
+        //         carbs: 40,
+        //         protein: 49,
+        //       },
+        //       {
+        //         name: 'Zucchini Noodle with Meatball',
+        //         calories: 430,
+        //         fat: 6.6,
+        //         carbs: 40,
+        //         protein: 49,
+        //       },
+        //       {
+        //         name: 'Vegan coconut Curry',
+        //         calories: 430,
+        //         fat: 6.6,
+        //         carbs: 40,
+        //         protein: 49,
+        //       },
+        //     ]
+        //   }
+
+        //   item.name.includes(this.state.searchText) && menuItems.push(item)
+        // })
+        // break
       default:
         break
     }
@@ -171,6 +145,7 @@ class Menus extends Component {
 
 function mapStateToProps(state) {
   return {
+    products: state.products,
     cart: state.cart,
   }
 }

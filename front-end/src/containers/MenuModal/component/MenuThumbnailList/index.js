@@ -3,8 +3,6 @@ import classNames from 'classnames'
 
 import './styles.css'
 
-import imgPlaceholder from '../../../../assets/images/thumbnail_placeholder.png'
-
 class MenuThumbnailList extends Component {
 
   constructor (props) {
@@ -15,9 +13,17 @@ class MenuThumbnailList extends Component {
     }
   }
 
+  onSelect = (selectedIndex) => {
+    this.setState({
+      selectedIndex: selectedIndex,
+    }, () => {
+      this.props.onThumbnailSelected(selectedIndex)
+    })
+  }
+
   render () {
     const images = this.props.imageUrls.map((imageUrl, index) => {
-      return <img key={ index } src={ imgPlaceholder } alt='thumbnail' className={ 'clickable img-menu-thumbnail ' + ((this.state.selectedIndex === index) ? 'green-border' : 'gray-border') } onClick={ () => { this.setState({selectedIndex: index}) } }/>
+      return <img key={ index } src={ imageUrl } alt='thumbnail' className={ 'clickable img-menu-thumbnail ' + ((this.state.selectedIndex === index) ? 'green-border' : 'gray-border') } onClick={ () => { this.onSelect(index) } }/>
     })
 
     return (
