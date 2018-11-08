@@ -48,11 +48,16 @@ exports.getAllProducts = (request) => {
             slug: product.slug,
             sku: product.sku,
             description: product.description,
-            price: product.price,
+            price: product.price.amount,
             status: product.status,
-            meta: product.meta,
+            display_price: product.meta.display_price.with_tax.formatted,
+            stock_level: product.meta.stock.level,
             main_image: product.main_image,
             files: product.files,
+            protein: '--',
+            calories: '--',
+            carbs: '--',
+            fat: '--',
           });
         });
 
