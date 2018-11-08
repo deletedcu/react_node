@@ -5,6 +5,7 @@ import cart from './cart'
 import menuModal from './menuModal'
 import comboSliceModal from './comboSliceModal'
 import overlaySpinner from './overSpinner'
+import products from './products'
 
 export default combineReducers({
   user,
@@ -12,4 +13,5 @@ export default combineReducers({
   menuModal,
   comboSliceModal,
   overlaySpinner,
+  products,
 });
