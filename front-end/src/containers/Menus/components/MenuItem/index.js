@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import LazyImage from '../../../../components/LazyImage'
 import NumericCounter from '../../../../components/NumericCounter'
 
 import './styles.css'
@@ -41,7 +42,7 @@ class MenuItem extends Component {
   render () {
     return (
       <div className='div-menu-item'>
-        <img className='img-menu-item clickable' src={ this.props.item.main_image } alt='Placeholder' onClick={ this.onShowMenuModal }/>
+        <LazyImage className='img-menu-item clickable' src={ this.props.item.main_image } onClick={ this.onShowMenuModal }/>
         <div className='div-menu-item-name-price'>
           <span>{ this.props.item.name }</span>
           <span className='span-menu-item-price'>{ `${this.props.item.display_price}` }</span>

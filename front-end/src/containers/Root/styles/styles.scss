@@ -16,6 +16,18 @@
 
   .app-body {
     min-height: 100vh;
+
+    .img-banner {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+       
+      img {
+        object-fit: cover !important;
+      }
+    }
   }
 
   .app-footer {

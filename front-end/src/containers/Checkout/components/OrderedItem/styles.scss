@@ -6,7 +6,7 @@ $ordered-item-size: 120px;
   display: flex;
   flex-direction: row;
 
-  img {
+  .img-item {
     width: $ordered-item-size;
     height: $ordered-item-size;
   }
@@ -18,7 +18,7 @@ $ordered-item-size: 120px;
   }
 
   @media (max-width: 710px) {
-    img {
+    .img-item {
       width: 75px;
       height: 75px;
     }

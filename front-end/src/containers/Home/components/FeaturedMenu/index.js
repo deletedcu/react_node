@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import LazyImage from '../../../../components/LazyImage'
 
 import './styles.css'
 
@@ -24,7 +25,8 @@ class FeaturedMenu extends Component {
 
     return (
       <div className='div-featured-menu'>
-        <img className='img-featured-menu clickable' src={ item.main_image } alt='Placeholder' onClick={ this.onShowMenuModal }/>
+        <LazyImage className='img-featured-menu clickable' src={ item.main_image } onClick={ this.onShowMenuModal }/>
+        
         <div className='div-featured-menu-details-order'>  
           <div className='div-featured-menu-details'>
             <div className='div-featured-menu-name'>

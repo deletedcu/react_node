@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import Button from '../../components/Button'
+import LazyImage from '../../components/LazyImage'
 
 import './styles.css'
+
+import imgBanner from '../../assets/images/banner.png'
 
 class ContactUs extends Component {
 
@@ -32,6 +35,8 @@ class ContactUs extends Component {
       <div className='div-contact-us-container'>
         {/* Banner and Title */}
         <div className='div-contact-us-banner'>
+          <LazyImage className='img-banner' src={ imgBanner } disableSpinner={true} />
+
           <div className='div-contact-us-title'>
             Contact Us
           </div>

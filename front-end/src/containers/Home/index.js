@@ -6,9 +6,11 @@ import FeaturedMenu from './components/FeaturedMenu'
 import HowItWorks from './components/HowItWorks'
 import Feedback from './components/Feedback'
 import Button from '../../components/Button'
+import LazyImage from '../../components/LazyImage'
 
 import './styles.css'
 
+import imgBanner from '../../assets/images/banner.png';
 import imgArrowRight from '../../assets/images/arrow-right.svg'
 import imgOrders from '../../assets/images/menu.png'
 import imgTrack from '../../assets/images/track.png'
@@ -48,6 +50,8 @@ class Home extends Component {
       <div className='div-home-container'>
         {/* Banner */}
         <div className='div-banner-container'>
+          <LazyImage className='img-banner' src={ imgBanner } disableSpinner={true} />
+
           <div className='div-banner-center'>
             <div className='div-title'>
               FROM CHEF'S KITCHEN TO<br/>

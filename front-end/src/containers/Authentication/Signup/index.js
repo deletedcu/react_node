@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ServiceFeatures from '../components/ServiceFeatures'
 import AuthForm, { AuthFormType } from '../components/AuthForm'
+import LazyImage from '../../../components/LazyImage'
 
 import './styles.css'
 
@@ -24,7 +25,7 @@ class Signup extends Component {
         {/* Form section */}
         <div className='container div-signup-form-container'>
           <div className='div-signup-img'>
-            <img className='img-background' src={imgBackground} alt='background'/>
+            <LazyImage className='img-background' src={imgBackground} disableSpinner={true}/>
           </div>
 
           <div className='div-signup-form'>

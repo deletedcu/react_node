@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import MenusHeader, { MenuTypes } from './components/MenusHeader'
 import MenuItem from './components/MenuItem'
+import LazyImage from '../../components/LazyImage'
 
 import './styles.css'
+
+import imgBanner from '../../assets/images/banner.png'
 
 class Menus extends Component {
 
@@ -100,6 +103,8 @@ class Menus extends Component {
       <div className='div-menus-container'>
         {/* Banner and Title */}
         <div className='div-menus-banner'>
+          <LazyImage className='img-banner' src={ imgBanner } disableSpinner={true} />
+          
           <div className='div-menus-title'>
             MENUS
           </div>

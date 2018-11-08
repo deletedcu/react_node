@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
+import LazyImage from '../../../../components/LazyImage'
 
 import './styles.css'
 
@@ -23,7 +24,7 @@ class MenuThumbnailList extends Component {
 
   render () {
     const images = this.props.imageUrls.map((imageUrl, index) => {
-      return <img key={ index } src={ imageUrl } alt='thumbnail' className={ 'clickable img-menu-thumbnail ' + ((this.state.selectedIndex === index) ? 'green-border' : 'gray-border') } onClick={ () => { this.onSelect(index) } }/>
+      return <LazyImage key={ index } src={ imageUrl } className={ 'clickable img-menu-thumbnail ' + ((this.state.selectedIndex === index) ? 'green-border' : 'gray-border') } onClick={ () => { this.onSelect(index) } } disableSpinner={true}/>
     })
 
     return (

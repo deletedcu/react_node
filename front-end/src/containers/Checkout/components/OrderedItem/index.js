@@ -1,12 +1,13 @@
 import React from 'react'
 import classNames from 'classnames'
+import LazyImage from '../../../../components/LazyImage'
 
 import './styles.css'
 
 const OrderedItem = (props) => {
   return (
     <div className={ classNames('ordered-item', props.className) } style={ props.style }>
-      <img src={ props.image } alt='item'/>
+      <LazyImage className='img-item' src={ props.image }/>
       <div className='ordered-item-info'>
         <div>{ props.title }</div>
         <div className='ordered-item-info-count'>{ props.count }</div>

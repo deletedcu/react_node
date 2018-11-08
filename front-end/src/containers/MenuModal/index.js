@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
+import LazyImage from '../../components/LazyImage'
 import MenuThumbnailList from './component/MenuThumbnailList'
 import IncrementCounter from './component/IncrementCounter'
 import Button from '../../components/Button'
@@ -112,7 +113,7 @@ class MenuModal extends Component {
 
             {/* Image / Short Info */}
             <div className='div-menu-modal-image-detail'>
-              <img src={ thumbnailUrls[currentImageIndex] } alt='placeholder' className='img-menu'/>
+              <LazyImage src={ thumbnailUrls[currentImageIndex] } className='img-menu'/>
               <span className='span-offer'>OFFER</span>
               
               <div className='div-menu-info-list'>

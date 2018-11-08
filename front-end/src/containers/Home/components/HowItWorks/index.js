@@ -55,7 +55,7 @@ class HowItWorks extends Component {
               <div className='div-how-it-works-step'>
                 { step }
               </div>
-              <img className='img-how-it-works img-responsive' src={image} alt='how-it-works'/>
+              { imageContent }
               <div className='div-how-it-works-title'>
                 { title }
               </div>
@@ -89,7 +89,7 @@ class HowItWorks extends Component {
               <div className='div-how-it-works-step'>
                 { step }
               </div>
-              <img className='img-how-it-works img-responsive' src={image} alt='how-it-works'/>
+              { imageContent }
               <div className='div-how-it-works-title'>
                 { title }
               </div>
