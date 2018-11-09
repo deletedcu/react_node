@@ -48,7 +48,7 @@ exports.getAllProducts = (request) => {
             slug: product.slug,
             sku: product.sku,
             description: product.description,
-            price: product.price[0].amount / 100,
+            price: product.price.map(price => price.amount / 100),
             status: product.status,
             display_price: product.meta.display_price.with_tax.formatted,
             stock_level: product.meta.stock.level,
