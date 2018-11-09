@@ -1,3 +1,3 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/mealpost');
+mongoose.connect('mongodb://localhost/mealpost', { useNewUrlParser: true });

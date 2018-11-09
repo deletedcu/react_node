@@ -1,13 +1,11 @@
-'use strict';
-
 const jwt = require('jsonwebtoken');
-const config = require('../config/config')
+const config = require('../config/config');
 
 /**
  * Check access token's validity
  * @param {*} request 
  */
-module.exports = function(request) {
+module.exports = (request) => {
   let token = request.headers['x-access-token'];
   if (token) {
     try {

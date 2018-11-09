@@ -1,5 +1,6 @@
 const Moltin = require('../../../helpers/moltin');
 const checkToken = require('../../../helpers/checkToken');
+const descriptionParser = require('../../../helpers/descriptionParser');
 const config = require('../../../config/config');
 
 exports.getAllProducts = (request) => {
@@ -42,22 +43,21 @@ exports.getAllProducts = (request) => {
             product.files = [];
           }
 
+          // parse description content
+          let descriptionJSON = descriptionParser(product.description);
+
           result.push({
             id: product.id,
             name: product.name,
             slug: product.slug,
             sku: product.sku,
-            description: product.description,
             price: product.price.map(price => price.amount / 100),
             status: product.status,
             display_price: product.meta.display_price.with_tax.formatted,
             stock_level: product.meta.stock.level,
             main_image: product.main_image,
             files: product.files,
-            protein: '--',
-            calories: '--',
-            carbs: '--',
-            fat: '--',
+            ...descriptionJSON,
           });
         });
 
