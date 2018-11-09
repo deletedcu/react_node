@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import Button from '../../../../components/Button'
 import FacebookButton from '../FacebookButton'
 
@@ -69,22 +70,6 @@ class AuthForm extends Component {
     }
   }
 
-  onTermsOfUse = () => {
-
-  }
-
-  onPrivacyPolicy = () => {
-    
-  }
-
-  onSwitchToLogin = () => {
-    this.props.onSwitchAuthType('login')
-  }
-
-  onSwitchToSignup = () => {
-    this.props.onSwitchAuthType('signup')
-  }
-
   render () {
     const isSignup = this.props.type === AuthFormType.signup
 
@@ -99,7 +84,7 @@ class AuthForm extends Component {
           { 
             isSignup && 
             <div className='auth-form-switch'>
-              or <span className='span-link' onClick={ this.onSwitchToLogin }>login</span>
+              or <Link to='/auth/login'><span className='span-link' onClick={ this.onSwitchToLogin }>login</span></Link>
             </div>
           }
         </div>
@@ -155,12 +140,12 @@ class AuthForm extends Component {
 
         {/* Form footer */}
         <div className='auth-form-footer'>
-          By clicking above, you agree to our <span className='span-link' onClick={this.onTermsOfUse}>Terms of Use</span> and consent to our <span className='span-link' onClick={this.onPrivacyPolicy}>Privacy Policy</span>
+          By clicking above, you agree to our <Link to='/home'><span className='span-link'>Terms of Use</span></Link> and consent to our <Link to='/home'><span className='span-link'>Privacy Policy</span></Link>
           
           { 
             !isSignup &&
             <div className='auth-form-footer-signup'>
-              New to Mealpost? <span className='span-link' onClick={ this.onSwitchToSignup }>Sign up</span>
+              New to Mealpost? <Link to='/auth/signup'><span className='span-link'>Sign up</span></Link>
             </div>
           }
         </div>

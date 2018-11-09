@@ -9,6 +9,7 @@ $ordered-item-size: 120px;
   .img-item {
     width: $ordered-item-size;
     height: $ordered-item-size;
+    border: 1px solid $border-gray;
   }
 
   .ordered-item-info {

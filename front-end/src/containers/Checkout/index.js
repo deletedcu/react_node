@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 import SelectUSState from 'react-select-us-states'
 import CreditCardInput from 'react-credit-card-input'
@@ -178,19 +179,6 @@ class Checkout extends Component {
       })
     }
   }
-
-
-  /**
-   * Page Navigation Handler
-   */
-  onHelpCenter = () => {
-    
-  }
-
-  onContactUs = () => {
-    this.props.history.push('/contact-us')
-  }
-
 
   /**
    * Render
@@ -378,8 +366,9 @@ class Checkout extends Component {
         {/* Help/Contact Instruction */}
         <div className='div-help-container'>
           Need help? Visit the&nbsp;
-          <span className='clickable' onClick={this.onHelpCenter}>Help Center</span>&nbsp;or&nbsp;
-          <span className='clickable' onClick={this.onContactUs}>Contact Us</span>
+          <Link to='/home'><span>Help Center</span></Link>
+          &nbsp;or&nbsp;
+          <Link to='/contact-us'><span>Contact Us</span></Link>
         </div>
       </div>
     )
