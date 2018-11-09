@@ -8,6 +8,26 @@ module.exports = (description) => {
   try {
     // parse
     descriptionJSON = JSON.parse(description);
+
+    if (!descriptionJSON.description) {
+      descriptionJSON.description = '';
+    }
+
+    if (!descriptionJSON.calories) {
+      descriptionJSON.calories = '--';
+    }
+
+    if (!descriptionJSON.fat) {
+      descriptionJSON.fat = '--';
+    }
+
+    if (!descriptionJSON.protein) {
+      descriptionJSON.protein = '--';
+    }
+
+    if (!descriptionJSON.carbs) {
+      descriptionJSON.carbs = '--';
+    }
   } 
   catch {
     // invalid json format, return default values
