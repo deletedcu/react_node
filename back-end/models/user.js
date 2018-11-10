@@ -14,6 +14,8 @@ const userSchema = mongoose.Schema({
   phone: String,
   country: String,
 
+  customer_id: String,
+
   created_at: Date,
   updated_at: Date,
 });

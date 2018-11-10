@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt-nodejs');
 const jwt = require('jsonwebtoken');
 const config = require('../../../config/config');
+const Moltin = require('../../../helpers/moltin');
 const User = require('../../../models/user');
 
 const checkToken = require('../../../helpers/checkToken');
@@ -76,40 +77,48 @@ exports.register = (email, password, firstName, lastName, zip) => {
         return;
       }
 
-      // user not exists
-      const salt = bcrypt.genSaltSync(10);
-      const hash = bcrypt.hashSync(password, salt);
-
-      // create user
-      const user = {
+      // create customer
+      Moltin.Customers.Create({
+        name: `${firstName} ${lastName}`,
         email: email,
-        email_lowercased: email.toLowerCase(),
-        hashed_password: hash,
-        first_name: firstName,
-        last_name: lastName,
-        zip: zip,
-      };
-
-      new User(user).save((err) => {
-        if (err) {
-          // something went wrong
-          console.log(err);
-          reject({ status: 500, message: 'Internal server error ...' });
-        } else {
-          // user has been created
-          resolve({
-            status: 200,
-            message: 'User has been registered!',
-            user: {
-              email: user.email,
-              email_lowercased: user.email_lowercased,
-              first_name: user.first_name,
-              last_name: user.last_name,
-              zip: user.zip,
-              token: jwt.sign(user.email, config.jwtSecret, {}),
-            },
-          });
-        }
+      }).then(customer => {
+        // create user
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(password, salt);
+        const user = {
+          email: email,
+          email_lowercased: email.toLowerCase(),
+          hashed_password: hash,
+          first_name: firstName,
+          last_name: lastName,
+          zip: zip,
+          customer_id: customer.data.id,
+        };
+  
+        new User(user).save((err) => {
+          if (err) {
+            // something went wrong
+            console.log(err);
+            reject({ status: 500, message: 'Internal server error ...' });
+          } else {
+            // user has been created
+            resolve({
+              status: 200,
+              message: 'User has been registered!',
+              user: {
+                email: user.email,
+                email_lowercased: user.email_lowercased,
+                first_name: user.first_name,
+                last_name: user.last_name,
+                zip: user.zip,
+                token: jwt.sign(user.email, config.jwtSecret, {}),
+              },
+            });
+          }
+        });
+      }).catch(err => {
+        console.log(err);
+        reject({ status: 500, message: 'Internal server error ...' });
       });
     });
   });
