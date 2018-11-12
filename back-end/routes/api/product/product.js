@@ -5,7 +5,7 @@ const config = require('../../../config/config');
 
 exports.getAllProducts = (request) => {
   return new Promise((resolve, reject) => {
-    Moltin.Products.With(['main_image', 'files']).All()
+    Moltin.Products.Filter({eq: {status: 'live'}}).With(['main_image', 'files']).All()
       .then(res => {
         let products = res.data;
         let mainImages = res.included.main_images;
