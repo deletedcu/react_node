@@ -43,6 +43,24 @@ exports.getAllProducts = (request) => {
             product.files = [];
           }
 
+          if (product.relationships.categories) {
+            // product has categories, find their ids and attach to result
+            let categories = product.relationships.categories.data.map((category) => { return category.id });
+            product.categories = categories;
+          } else {
+            // product doesn't have categories
+            product.categories = [];
+          }
+
+          if (product.relationships.collections) {
+            // product has categories, find their ids and attach to result
+            let collections = product.relationships.collections.data.map((collection) => { return collection.id });
+            product.collections = collections;
+          } else {
+            // product doesn't have categories
+            product.collections = [];
+          }
+
           // parse description content
           let descriptionJSON = descriptionParser(product.description);
 
@@ -57,6 +75,8 @@ exports.getAllProducts = (request) => {
             stock_level: product.meta.stock.level,
             main_image: product.main_image,
             files: product.files,
+            categories: product.categories,
+            collections: product.collections,
             ...descriptionJSON,
           });
         });
