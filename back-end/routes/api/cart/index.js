@@ -2,6 +2,7 @@ const express = require('express');
 let router = express.Router();
 
 const addProductToCart = require('./cart').addProductToCart;
+const updateCart = require('./cart').updateCart;
 const getCart = require('./cart').getCart;
 
 /**
@@ -24,6 +25,20 @@ router.get('/', (request, response) => {
  */
 router.post('/add', (request, response) => {
   addProductToCart(request)
+    .then(res => {
+      response.status(res.status).json({ cart: res.cart });
+    })
+    .catch(err => {
+      response.status(err.status).json({ message: err.message });
+    });
+});
+
+/**
+ * Update cart (quantity)
+ * 
+ */
+router.post('/update', (request, response) => {
+  updateCart(request)
     .then(res => {
       response.status(res.status).json({ cart: res.cart });
     })
