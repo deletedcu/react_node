@@ -22,7 +22,7 @@ exports.getAllProducts = (request) => {
           } else {
             // product doesn't have main image
 
-            product.main_image = '';
+            product.main_image = 'no image';
           }
           
           if (product.relationships.files) {
