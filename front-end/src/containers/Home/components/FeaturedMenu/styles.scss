@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   margin: 20px;
+  height: calc(100% - 40px);
 
   .img-featured-menu {
     height: 250px;
@@ -18,10 +19,16 @@
   .div-featured-menu-details-order {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
+    flex-grow: 1;
 
     .div-featured-menu-details {
       padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
   
       .div-featured-menu-name {
         text-align: left;
@@ -75,6 +82,7 @@
 @media (max-width: 710px) {
   .div-featured-menu {
     margin: 15px 0px;
+    height: unset;
     flex-direction: row;
 
     .img-featured-menu {
