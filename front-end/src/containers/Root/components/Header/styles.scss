@@ -3,9 +3,9 @@
 .app-header {
   .img-logo {
     float: left;
-    height: 55px;
-    margin-left: 136px;
-    margin-top: 32px;
+    height: 36px;
+    margin-left: 60px;
+    margin-top: 21px;
   }
 
   .img-flow {
@@ -25,20 +25,40 @@
     transform: translateY(-50%);
   }
 
+  .div-links {
+    float: left;
+    display: flex;
+    align-items: center;
+    line-height: 100%;
+    height: 100%;
+    margin-left: 60px;
+
+    span {
+      color: black;
+      opacity: 0.65;
+      margin: 0 30px;
+    }
+  }
+
   .div-buttons {
     display: flex;
     float: right;
     align-items: center;
-    margin-top: 26px;
-    margin-right: 100px;
-    height: 67px;
+    margin-top: 21px;
+    margin-right: 60px;
+    height: 36px;
 
-    .div-signup {
+    .div-login {
       width: 179px;
-      height: 67px;
+      height: 36px;
       margin: 0 10px;
-      line-height: 67px;
+      line-height: 36px;
       text-align: center;
+    }
+
+    .button {
+      height: 50px;
+      width: 150px;
     }
 
     .div-cart {
@@ -68,7 +88,7 @@
       margin-top: 34px;
       height: 50px;
 
-      .div-signup {
+      .div-login {
         width: 130px;
         height: 50px;
         line-height: 50px;
@@ -103,7 +123,7 @@
       margin-top: 15px;
       height: 25px;
 
-      .div-signup {
+      .div-login {
         width: 60px;
         height: 25px;
         line-height: 25px;

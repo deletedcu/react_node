@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Button from '../../../../components/Button'
 import Cart from './components/Cart'
@@ -55,6 +56,14 @@ class Header extends Component {
 
         { pathName.includes('auth/signup') && <img className='img-flow' src={imgFlow} alt='flow'/> }
         { pathName.includes('auth/signup') && <img className='img-min-flow' src={imgMinimizedFlow} alt='flow'/> }
+
+        { pathName.includes('home') &&
+          <div className='div-links'>
+            <Link to='/menus'><span className='clickable'>MENU</span></Link>
+            <Link to='/home'><span className='clickable'>HOW IT WORKS</span></Link>
+            <Link to='/home'><span className='clickable'>GIFTS</span></Link>
+          </div>
+        }
         
         { !pathName.includes('auth') &&
           <div className='div-buttons'>
@@ -69,8 +78,8 @@ class Header extends Component {
             <Cart
               history={ history }
             />
-            { !user.loggedIn && <div className='div-signup clickable' onClick={this.onSignUp}>Sign Up</div> }
-            { !user.loggedIn && <Button onClick={this.onLogin}>Login</Button> }
+            { !user.loggedIn && <div className='div-login clickable' onClick={this.onLogin}>Login</div> }
+            { !user.loggedIn && <Button onClick={this.onSignUp}>Signup</Button> }
           </div>
         }
       </div>
