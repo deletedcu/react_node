@@ -92,7 +92,7 @@ class Home extends Component {
             className='how-it-works-order'
             step='Step 1'
             title='Order'
-            description='Place order through mealpost app from wide range of restaurants near to you.'
+            description='Select from a meticulously designed rotating menu with new options every week.'
             image={ imgOrders }
             imageFirst={ false }
           />
@@ -100,7 +100,7 @@ class Home extends Component {
             className='how-it-works-track'
             step='Step 2'
             title='Track'
-            description='Track your order with mealpost app. First you will see order preparing then it is sent to via a mealpostman.'
+            description='Track your order with Mealpost app. Meals are crafted from only the finest ingredients and delivered fresh right to your door.'
             image={ imgTrack }
             imageFirst={ true }
           />
@@ -108,7 +108,7 @@ class Home extends Component {
             className='how-it-works-receive'
             step='Step 3'
             title='Receive'
-            description='Recieve your meal within sometime in your doorstep.'
+            description='Your meals are already assembled and ready to consume. Just reheat, Sit back, and Enjoy.'
             image={ imgReceive }
             imageFirst={ false }
           />
