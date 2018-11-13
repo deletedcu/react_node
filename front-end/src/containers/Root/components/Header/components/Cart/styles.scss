@@ -2,40 +2,36 @@
 
 .div-cart {
   position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  border: 1px solid $green-primary;
+  border-radius: 10px;
 
   img {
-    height: 38px;
+    height: 14px;
+    margin-right: 15px;
   }
 
   span {
-    position: absolute;
-    box-sizing: content-box;
-    top: -18px;
-    left: 24px;
-    width: 28px;
-    height: 28px;
-    color: white;
-    background-color: $green-primary;
-    border: 4px solid white;
-    border-radius: 50px;
-    text-align: center;
-    line-height: 28px;
-    font-size: $small-font-size;
+    color: $green-primary;
+    font-size: $mobile-regular-font-size;
+    font-family: 'Montserrat-Bold';
   }
 
-  @media (max-width: 710px) {
-    img {
-      height: 19px;
-    }
+  // @media (max-width: 710px) {
+  //   img {
+  //     height: 19px;
+  //   }
 
-    span {
-      width: 14px;
-      height: 14px;
-      line-height: 14px;
-      font-size: $mobile-small-font-size;
-      left: 12px;
-      top: -2px;
-      border: 1px solid white;
-    }
-  }
+  //   span {
+  //     width: 14px;
+  //     height: 14px;
+  //     line-height: 14px;
+  //     font-size: $mobile-small-font-size;
+  //     left: 12px;
+  //     top: -2px;
+  //     border: 1px solid white;
+  //   }
+  // }
 }

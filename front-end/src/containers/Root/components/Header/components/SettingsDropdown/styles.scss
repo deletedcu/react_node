@@ -8,41 +8,50 @@
 .settings-dropdown {
 
   .dropdown__trigger {
-    img {
-      height: 50px;
-      margin-top: 10px;
-      margin-right: 30px;
+    .settings-dropdown-trigger {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-left: 5px;
+        height: 9px;
+      }
+
+      span {
+        font-size: $regular-font-size;
+      }
 
       &:active {
-        opacity: 0.7;
+        opacity: 0.6;
       }
     }
   }
 
   .dropdown__content {
-    background: white;
-    border-radius: 4px;
-    border: 1px solid $text-light-gray;
-    width: 380px;
-    margin-left: -230px;
-    margin-top: 0px;
-    padding-bottom: 20px;
+    background-image: url('../../../../../../assets/images/popup.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 243px;
+    height: 289px;
+    margin-left: -32px;
+    margin-top: 5px;
+    padding-top: 20px;
     animation-name: dropdown-animation;
     animation-duration: 0.5s;
     transform-origin: left top;
 
     .div-menu {
       color: $text-light-gray;
-      padding: 0 40px;
-      height: 60px;
+      padding: 0 20px;
+      height: 45px;
       margin-top: 20px;
-      font-size: $small-font-size;
+      font-size: $mobile-regular-font-size;
       display: flex;
       align-items: center;
 
       img {
-        height: 40px;
-        margin-right: 50px;
+        height: 30px;
+        margin-right: 30px;
       }
 
       &:hover {
@@ -52,40 +61,6 @@
         text-shadow: $shadow-primary;
         -webkit-text-stroke-width: 0.05px;
         -webkit-text-stroke-color: $text-light-gray;
-      }
-    }
-  }
-
-  @media (max-width: 1200px) {
-    .dropdown__content {
-      width: 340px;
-    }
-  }
-
-  @media (max-width: 710px) {
-    .dropdown__trigger {
-      img {
-        height: 25px;
-        margin-top: 7px;
-        margin-right: 10px;
-      }
-    }
-    
-    .dropdown__content {
-      margin-top: 5px;
-      width: 260px;
-      padding-bottom: 10px;
-
-      .div-menu {
-        padding: 0 20px;
-        margin-top: 10px;
-        font-size: $mobile-regular-font-size;
-        height: 40px;
-        
-        img {
-          height: 20px;
-          margin-right: 20px;
-        }
       }
     }
   }

@@ -4,7 +4,7 @@ import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdow
 import 'react-simple-dropdown/styles/Dropdown.css'
 import './styles.css'
 
-import imgHamburgerMenu from '../../../../../../assets/images/hamburger_menu.svg'
+import imgTriangle from '../../../../../../assets/images/dropdown_triangle.svg'
 import imgEditProfile from '../../../../../../assets/images/edit_profile.svg'
 import imgPaymentMethod from '../../../../../../assets/images/payment_method.svg'
 import imgOrderHistory from '../../../../../../assets/images/order_history.svg'
@@ -37,7 +37,10 @@ class SettingsDropdown extends Component {
     return (
       <Dropdown ref='settingsDropdown' className='settings-dropdown'>
         <DropdownTrigger>
-          <img className='clickable' src={imgHamburgerMenu} alt='hamburger'/>
+          <div className='settings-dropdown-trigger clickable'>
+            <span>MY ACCOUNT</span>
+            <img src={imgTriangle} alt='hamburger'/>
+          </div>
         </DropdownTrigger>
         <DropdownContent>
           <div className='div-menu clickable' onClick={ this.onEditProfile }>
