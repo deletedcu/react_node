@@ -7,10 +7,10 @@ const AsyncHome = asyncComponent(() => import('../Home'))
 const AsyncAuthentication = asyncComponent(() => import('../Authentication'))
 const AsyncMenu = asyncComponent(() => import('../Menus'))
 const AsyncSelectMeals = asyncComponent(() => import('../SelectMeals'))
-// const AsyncMealPlans = asyncComponent(() => import('../MealPlans'))
 const AsyncContactUs = asyncComponent(() => import('../ContactUs'))
 const AsyncCheckout = asyncComponent(() => import('../Checkout'))
 const AsyncSettings = asyncComponent(() => import('../Settings'))
+const AsyncNotAvailable = asyncComponent(() => import ('../NotAvailable'))
 
 /**
  * Routes
@@ -22,10 +22,10 @@ const routes = (
     <Route path='/auth' component={  AsyncAuthentication } />
     <Route path='/menus' component={ AsyncMenu } />
     <Route path='/select-meals' component={ AsyncSelectMeals } />
-    {/* <Route path='/meal-plans' component={ AsyncMealPlans } /> */}
     <Route path='/contact-us' component={ AsyncContactUs } />
     <Route path='/checkout' component={ AsyncCheckout } />
     <Route path='/settings' component={ AsyncSettings } />
+    <Route path='/not-available' component={ AsyncNotAvailable } />
 
     <Redirect to='/home' />
   </Switch>
