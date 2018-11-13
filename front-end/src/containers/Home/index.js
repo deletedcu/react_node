@@ -63,9 +63,6 @@ class Home extends Component {
 
         {/* Featured Menu */}
         <div className='div-featured-menu-container'>
-          <div className='div-section-title'>
-            FEATURED MENU
-          </div>
           <div className='div-featured-menus container'>
             <div className='row'>
               {
@@ -92,28 +89,28 @@ class Home extends Component {
             HOW IT WORKS
           </div>
           <HowItWorks
+            className='how-it-works-order'
             step='Step 1'
             title='Order'
             description='Place order through mealpost app from wide range of restaurants near to you.'
             image={ imgOrders }
             imageFirst={ false }
-            onViewAllProducts={ this.onViewAllProducts }
           />
           <HowItWorks
+            className='how-it-works-track'
             step='Step 2'
             title='Track'
             description='Track your order with mealpost app. First you will see order preparing then it is sent to via a mealpostman.'
             image={ imgTrack }
             imageFirst={ true }
-            onViewAllProducts={ this.onViewAllProducts }
           />
           <HowItWorks
+            className='how-it-works-receive'
             step='Step 3'
             title='Receive'
             description='Recieve your meal within sometime in your doorstep.'
             image={ imgReceive }
             imageFirst={ false }
-            onViewAllProducts={ this.onViewAllProducts }
           />
         </div>
 

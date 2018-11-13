@@ -9,7 +9,6 @@
     position: relative;
     width: 50%;
     height: 800px;
-    overflow: hidden;
   }
 }
 
@@ -47,7 +46,7 @@
 .img-how-it-works {
   position: absolute;
   top: 50%;
-  left: 50%;
+  // left: 50%;
   transform: translateX(-50%) translateY(-50%);
   max-height: 800px;
   max-width: 90%;
@@ -57,10 +56,18 @@
   .div-how-it-works-center {
     left: 60%;
   }
+
+  .img-how-it-works {
+    left: 60%;
+  }
 }
 
 .div-how-it-works-right {
   .div-how-it-works-center {
+    left: 40%;
+  }
+
+  .img-how-it-works {
     left: 40%;
   }
 }

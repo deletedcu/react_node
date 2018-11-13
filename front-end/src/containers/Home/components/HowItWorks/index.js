@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import Button from '../../../../components/Button'
 
 import './styles.css'
-
-import imgArrowRight from '../../../../assets/images/arrow-right.svg'
 
 class HowItWorks extends Component {
 
@@ -25,11 +22,6 @@ class HowItWorks extends Component {
         <div className='div-how-it-works-description'>
           { description }
         </div>
-        <div className='div-how-it-works-view-all-products'>
-          <Button className='btn-all-products' onClick={ this.props.onViewAllProducts }>
-            <span>View All Products</span><img src={imgArrowRight} alt='arrow_right'/>
-          </Button>
-        </div>
       </div>
     )
 
@@ -37,9 +29,26 @@ class HowItWorks extends Component {
       <img className='img-how-it-works img-responsive' src={image} alt='how-it-works'/>
     )
 
+    const responsiveHowItWorks = (
+      <div className='responsive-div-how-it-works'>
+        <div className='div-how-it-works-center'>
+          <div className='div-how-it-works-step'>
+            { step }
+          </div>
+          { imageContent }
+          <div className='div-how-it-works-title'>
+            { title }
+          </div>
+          <div className='div-how-it-works-description'>
+            { description }
+          </div>
+        </div>
+      </div>
+    )
+
     if (imageFirst) {
       return (
-        <div>
+        <div className={this.props.className} style={this.props.style}>
           <div className='div-how-it-works'>
             <div className='div-how-it-works-left'>
               { imageContent }
@@ -50,30 +59,12 @@ class HowItWorks extends Component {
           </div>
 
           {/* Responsive */}
-          <div className='responsive-div-how-it-works'>
-            <div className='div-how-it-works-center'>
-              <div className='div-how-it-works-step'>
-                { step }
-              </div>
-              { imageContent }
-              <div className='div-how-it-works-title'>
-                { title }
-              </div>
-              <div className='div-how-it-works-description'>
-                { description }
-              </div>
-              <div className='div-how-it-works-view-all-products'>
-                <Button className='btn-all-products' onClick={ this.props.onViewAllProducts }>
-                  <span>View All Products</span><img src={imgArrowRight} alt='arrow_right'/>
-                </Button>
-              </div>
-            </div>
-          </div>
+          { responsiveHowItWorks }
         </div>
       )
     } else {
       return (
-        <div>
+        <div className={this.props.className} style={this.props.style}>
           <div className='div-how-it-works'>
             <div className='div-how-it-works-left'>
               { textAndButtonContent }
@@ -84,25 +75,7 @@ class HowItWorks extends Component {
           </div>
 
           {/* Responsive */}
-          <div className='responsive-div-how-it-works'>
-            <div className='div-how-it-works-center'>
-              <div className='div-how-it-works-step'>
-                { step }
-              </div>
-              { imageContent }
-              <div className='div-how-it-works-title'>
-                { title }
-              </div>
-              <div className='div-how-it-works-description'>
-                { description }
-              </div>
-              <div className='div-how-it-works-view-all-products'>
-                <Button className='btn-all-products' onClick={ this.props.onViewAllProducts }>
-                  <span>View All Products</span><img src={imgArrowRight} alt='arrow_right'/>
-                </Button>
-              </div>
-            </div>
-          </div>
+          { responsiveHowItWorks }
         </div>
       ) 
     }
