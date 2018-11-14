@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 242.936 454.427">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        filter: url(#Filter_Pop-Ups_Outline);
+      }
+    </style>
+    <filter id="Filter_Pop-Ups_Outline" x="0" y="0" width="242.936" height="454.427" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-2" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <path id="Filter_Pop-Ups_Outline-2" data-name="Filter Pop-Ups Outline" class="cls-1" d="M12.787-4.689H64.458l7.291-15.069L80.7-4.689H212.148c7.062,0,12.787,7,12.787,15.635V401.035c0,8.635-5.725,15.635-12.787,15.635H12.787C5.725,416.67,0,409.67,0,401.035V10.946C0,2.311,5.725-4.689,12.787-4.689Z" transform="translate(7 26.76)"/>
+  </g>
+</svg>

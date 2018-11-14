@@ -1,0 +1,60 @@
+@import "../../../../styles/variables/variables";
+
+.div-side-item {
+  margin: 15px;
+  border-radius: 10px;
+  border: 1px solid #70707080;
+  box-shadow: $shadow-secondary;
+  background: white;
+
+  .div-side-item-info {
+    display: flex;
+    padding: 20px 0 0 20px;
+
+    .div-side-item-detail {
+      margin-right: 10px;
+
+      .div-side-item-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+  
+      .div-side-item-description {
+        font-size: $mobile-regular-font-size;
+        color: $text-light-gray;
+        width: 200px;
+      }
+    }
+    
+    .img-side-item {
+      width: 180px;
+      height: 120px;
+    }
+  }
+
+  .div-side-item-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px 20px 20px;
+
+    .div-side-item-price-add {
+      display: flex;
+      align-items: center;
+
+      .div-side-item-price {
+        font-size: 16px;
+        color: $text-light-gray;
+        margin-right: 20px;
+      }
+
+      .div-side-item-add {
+        color: $green-primary;
+        font-size: $mobile-regular-font-size;
+        padding: 5px 15px;
+        border: 1px solid $green-primary;
+        border-radius: 8px;
+      }
+    }
+  }
+}

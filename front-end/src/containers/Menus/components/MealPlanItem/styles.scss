@@ -1,0 +1,41 @@
+@import "../../../../styles/variables/variables";
+
+.div-meal-plan-item {
+  border: 1px solid #F2F2F2;
+  border-radius: 13px;
+  color: black;
+  background-color: white;
+  box-shadow: $shadow-secondary;
+  margin: 15px;
+  padding: 20px 10px 20px 20px;
+
+  .div-meal-plan-item-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .div-meal-plan-item-description {
+    font-size: $mobile-regular-font-size;
+    font-family: 'Montserrat-Light';
+  }
+
+  .div-meal-plan-item-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    
+    .div-meal-plan-item-price {
+      font-size: 16px;
+      margin-right: 20px;
+    }
+
+    .div-meal-plan-item-add {
+      color: $green-primary;
+      font-size: $mobile-regular-font-size;
+      padding: 5px 15px;
+      border: 1px solid $green-primary;
+      border-radius: 8px;
+    }
+  }
+} 

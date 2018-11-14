@@ -2,90 +2,56 @@
 
 .div-menus-container {
   background-color: $extra-light-gray;
-
-  .div-menus-banner {
-    position: relative;
-    height: 465px;
-
-    .div-menus-title {
-      position: relative;
-      text-align: center;
-      font-size: 70px;
-      font-family: 'Montserrat-SemiBold';
-      top: calc(50% - 30px);
-      transform: translateY(-50%);
-    }
-  }
+  margin-top: 78px;
 
   .div-menus {
-    position: relative;
-    display: flex;
-    margin-top: -170px;
-    padding-bottom: 140px;
-    box-sizing: content-box;
-    min-height: 650px;
+    padding: 40px 60px 40px;
 
-    .div-menus-grid {
-      box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
-      background-color: white;
-      max-width: calc(100% - 280px);
+    .div-menus-section {
+      margin-bottom: 60px;
 
-      .div-menus-separator {
-        background-color: #CCCCCC;
-        height: 1px;
+      .div-menus-section-title {
+        display: flex;
+        align-items: center;
+        font-size: $footer-secondary-font-size;
+
+        .div-line {
+          height: 1px;
+          background-color: #232222;
+          opacity: 0.24;
+          flex-grow: 1;
+          margin-left: 30px;
+        }
       }
 
-      .row {
+      .div-menus-grid {
+        margin-top: 10px;
+        margin-left: -15px;
+        margin-right: -15px;
+
         .div-menu-wrapper {
           padding-left: 0px;
           padding-right: 0px;
         }
       }
-
-      .div-load-more {
-        background-color: $extra-light-green;
-        width: 333px;
-        height: 94px;
-        border-radius: 100px; 
-        font-size: $footer-secondary-font-size;
-        text-align: center;
-        line-height: 94px;
-        margin-top: 24px;
-        margin-bottom: 24px;
-        margin-left: 50%;
-        transform: translateX(-50%);
-      }
-
-      @media (max-width: 1440px) {
-        max-width: calc(100% - 72px);
-      }
     }
   }
 
-  @media (max-width: 710px) {
-    .div-menus-banner {
-      height: 350px;
+  // @media (max-width: 710px) {
+  //   .div-menus {
+  //     margin-top: 60px;
+  //     padding-bottom: 40px;
 
-      .div-menus-title {
-        font-size: $regular-font-size;
-        top: calc(50% - 60px);
-      }
-    }
+  //     .div-menus-grid {
+  //       .div-load-more {
+  //          height: 60px;
+  //          line-height: 60px;
+  //          font-size: $small-font-size;
 
-    .div-menus {
-      margin-top: -200px;
-      padding-bottom: 40px;
-
-      .div-menus-grid {
-        .div-load-more {
-           height: 60px;
-           line-height: 60px;
-           font-size: $small-font-size;
-
-           width: calc(100% - 30px);
-           max-width: 333px;
-        }
-      }
-    }
-  }
+  //          width: calc(100% - 30px);
+  //          max-width: 333px;
+  //       }
+  //     }
+  //   }
+  // }
 }
