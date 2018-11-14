@@ -1,10 +1,5 @@
 @import "../../../../../../styles/variables/variables";
 
-@keyframes dropdown-animation {
-  from { transform: scaleY(0); }
-  to { transform: scaleY(1); }
-}
-
 .settings-dropdown {
 
   .dropdown__trigger {

@@ -11,7 +11,7 @@
   .app-header {
     height: $header-height;
     background-color: white;
-    box-shadow: $shadow-primary;
+    border-bottom: 0.5px solid #70707080;
   }
 
   .app-body {

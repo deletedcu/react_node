@@ -27,11 +27,6 @@
     }
   }
 
-  @keyframes dropdown-animation {
-    from { transform: scaleY(0); }
-    to { transform: scaleY(1); }
-  }
-
   .dropdown-list-content {
     color: $text-light-gray;
     font-size: $mobile-regular-font-size;

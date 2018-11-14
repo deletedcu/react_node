@@ -1,1 +1,6 @@
-$transition-primary: all ease-in-out 0.1s;
+$transition-primary: all ease-out 0.1s;
+
+@keyframes dropdown-animation {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}

@@ -6,34 +6,31 @@
   align-items: center;
 
   .numeric-counter-button {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
     text-align: center;
     border-radius: 100px;
     border: 1px solid #CFCFCF;
-    font-size: $medium-font-size;
+    font-size: $small-font-size;
   }
 
   .numeric-counter-number {
-    font-size: $regular-font-size;
-    color: $text-light-gray;
+    font-size: $mobile-regular-font-size;
     text-align: center;
-    min-width: 20px;
-    margin: 0 5px;
+    min-width: 15px;
+    margin: 0 2px;
   }
   
   @media (max-width: 710px) {
     .numeric-counter-button {
-      width: 25px;
-      height: 25px;
-      line-height: 25px;
-      font-size: $regular-font-size;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
     }
 
     .numeric-counter-number {
       min-width: 10px;
-      font-size: $mobile-regular-font-size;
     }
   }
 }
