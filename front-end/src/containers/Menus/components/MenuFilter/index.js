@@ -4,7 +4,6 @@ import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdow
 import 'react-simple-dropdown/styles/Dropdown.css'
 import './styles.css'
 
-import imgFilter from '../../../../assets/images/filter_button.svg'
 import imgCheck from '../../../../assets/images/check.svg'
 
 export const MenuFilterType = {
@@ -66,7 +65,7 @@ class MenuFilter extends Component {
       <Dropdown ref='menuFilterDropdown' className='menu-filter'>
         <DropdownTrigger>
           <div className='menu-filter-dropdown-trigger clickable'>
-            <img src={imgFilter} alt='hamburger'/>
+            <div className='div-filter'/>
           </div>
         </DropdownTrigger>
         <DropdownContent>

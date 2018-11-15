@@ -19,12 +19,16 @@
     flex-direction: row;
     align-items: center;
 
-    img {
+    .div-recommended {
+      width: 69px;
       height: 37px;
-      margin-right: 20px;
+      margin-left: 20px;
+      background-image: url('../../../../assets/images/recommended_button.svg');
+      background-repeat: no-repeat;
+      background-position: center;
 
       &:active {
-        opacity: 0.6;
+        background-image: url('../../../../assets/images/recommended_button_highlight.svg');
       }
     }
   }

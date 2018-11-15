@@ -4,7 +4,6 @@ import MenuFilter from '../MenuFilter'
 import './styles.css'
 
 import imgSearch from '../../../../assets/images/search.svg'
-import imgRecommended from '../../../../assets/images/recommended_button.svg'
 
 class MenusHeader extends Component {
 
@@ -33,7 +32,7 @@ class MenusHeader extends Component {
       <div className='div-menus-header-container'>
         <div className='div-menus-header-left'>
           <MenuFilter onChangeFilters={this.onChangeFilters}/>
-          <img className='clickable' src={imgRecommended} alt='recommended'/>
+          <div className='div-recommended clickable'/>
         </div>
 
         <div className='div-menus-header-right'>

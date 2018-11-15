@@ -3,11 +3,15 @@
 .menu-filter {
   .dropdown__trigger {
     .menu-filter-dropdown-trigger {
-      img {
+      .div-filter {
+        width: 69px;
         height: 37px;
+        background-image: url('../../../../assets/images/filter_button.svg');
+        background-repeat: no-repeat;
+        background-position: center;
         
         &:active {
-          opacity: 0.6;
+          background-image: url('../../../../assets/images/filter_button_highlight.svg');
         }
       }
     }

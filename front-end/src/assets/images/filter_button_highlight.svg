@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 71.308 39.23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #56b05a;
+        stroke: #707070;
+        stroke-width: 0.2px;
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        filter: url(#Rectangle_1132);
+      }
+    </style>
+    <filter id="Rectangle_1132" x="0" y="0" width="71.308" height="39.23" filterUnits="userSpaceOnUse">
+      <feOffset dx="1" dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.15" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_536" data-name="Group 536" transform="translate(13118 8534.471)">
+    <g class="cls-5" transform="matrix(1, 0, 0, 1, -13118, -8534.47)">
+      <g id="Rectangle_1132-2" data-name="Rectangle 1132" class="cls-1">
+        <rect class="cls-3" width="69.858" height="37.781" rx="8"/>
+        <rect class="cls-4" x="0.1" y="0.1" width="69.658" height="37.581" rx="7.9"/>
+      </g>
+    </g>
+    <path id="if_filter_2561439" class="cls-2" d="M25.743,3H2l9.5,11.231v7.764l4.749,2.374V14.231Z" transform="translate(-13096.714 -8527.439)"/>
+  </g>
+</svg>
