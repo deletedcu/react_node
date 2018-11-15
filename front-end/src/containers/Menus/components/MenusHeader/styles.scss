@@ -31,9 +31,16 @@
         background-image: url('../../../../assets/images/recommended_button_highlight.svg');
       }
     }
+
+    .menu-datepicker {
+      margin-left: 60px;
+    }
   }
 
   .div-menus-header-right {
+    display: flex;
+    align-items: center;
+
     .div-search-container {
       width: 325px;
       height: 52px;
@@ -57,6 +64,26 @@
 
       img {
         height: 28px;
+      }
+    }
+
+    .div-zip-code {
+      display: flex;
+      align-items: center;
+      margin-right: 100px;
+
+      img {
+        height: 32px;
+        margin-right: 10px;
+      }
+
+      .div-zip-code-description {
+        color: #3D403F;
+        font-family: 'Montserrat-Bold';
+      }
+      .div-zip-code-info {
+        color: #3D403F;
+        margin-top: -10px;
       }
     }
   }

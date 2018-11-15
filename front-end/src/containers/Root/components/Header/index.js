@@ -75,11 +75,11 @@ class Header extends Component {
                 onLogout={ this.onLogout }
               /> 
             }
+            { !user.loggedIn && <div className='div-login clickable' onClick={this.onLogin}>Login</div> }
+            { !user.loggedIn && <Button onClick={this.onSignUp}>Signup</Button> }
             <Cart
               history={ history }
             />
-            { !user.loggedIn && <div className='div-login clickable' onClick={this.onLogin}>Login</div> }
-            { !user.loggedIn && <Button onClick={this.onSignUp}>Signup</Button> }
           </div>
         }
       </div>

@@ -1,0 +1,16 @@
+@import "../../../../styles/variables/variables";
+
+.menu-datepicker {
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 24px;
+  }
+
+  span {
+    font-family: 'Montserrat-Medium';
+    color: #3D403F;
+    margin: 0 10px;
+  }
+}

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import moment from 'moment'
 import MenusHeader from './components/MenusHeader'
 import MenuItem from './components/MenuItem'
 import SideItem from './components/SideItem'
@@ -32,19 +31,24 @@ class Menus extends Component {
   }
 
   render () {
+    let zipCode = this.props.user.user.zip;
     let { products } = this.props.products
     let menuItems = products.filter(product => product.name.includes(this.state.searchText)).map(product => {return {...product, type: 'menu'}})
 
     return (
       <div className='div-menus-container'>
         {/* Menus Header */}
-        <MenusHeader onChangeFilters={ this.onChangeFilters } onChangeSearchText={ this.onChangeSearchText }/>
+        <MenusHeader 
+          zipCode={ zipCode }
+          onChangeFilters={ this.onChangeFilters } 
+          onChangeSearchText={ this.onChangeSearchText }
+        />
 
         {/* Menus Table */}
         <div className='div-menus'>
           {/* Weekly Menus */}
           <div className='div-menus-section'>
-            <div className='div-menus-section-title'>{`Week of ${moment().format('MMMM Do')}`}</div>
+            <div className='div-menus-section-title'>Mealpost Originals</div>
             <div className='div-menus-grid row'>
               {
                 menuItems.map((menuItem, index) => 
@@ -98,6 +102,7 @@ class Menus extends Component {
 
 function mapStateToProps(state) {
   return {
+    user: state.user,
     products: state.products,
     cart: state.cart,
   }
