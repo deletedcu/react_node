@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Button from '../../../../components/Button'
-import Cart from './components/Cart'
+import Cart from '../../../../components/Cart'
 import SettingsDropdown from './components/SettingsDropdown'
 
 import './styles.css'
@@ -48,10 +49,10 @@ class Header extends Component {
   }
 
   render () {
-    let { pathName, user, history } = this.props
+    let { pathName, user, history, sideBar } = this.props
     
     return (
-      <div className='app-header'>
+      <div className={classNames('app-header', {'app-header-squizzed': sideBar.visible})}>
         <img className='img-logo clickable' src={imgLogo} alt='logo' onClick={this.onClickLogo}/>
 
         { pathName.includes('auth/signup') && <img className='img-flow' src={imgFlow} alt='flow'/> }
@@ -77,9 +78,12 @@ class Header extends Component {
             }
             { !user.loggedIn && <div className='div-login clickable' onClick={this.onLogin}>Login</div> }
             { !user.loggedIn && <Button onClick={this.onSignUp}>Signup</Button> }
-            <Cart
-              history={ history }
-            />
+            { !sideBar.visible &&
+              <Cart
+                highlighted={ false }
+                history={ history }
+              />
+            }
           </div>
         }
       </div>
@@ -90,6 +94,7 @@ class Header extends Component {
 function mapStateToProps(state) {
   return {
     user: state.user,
+    sideBar: state.sideBar,
   }
 }
 

@@ -1,6 +1,7 @@
 export function addToCart(items){
   return function(dispatch) {
     dispatch({ type: 'ADD_TO_CART', payload: { items: items }})
+    dispatch({ type: 'SHOW_SIDEBAR' })
   }
 }
 

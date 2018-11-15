@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 import { connect } from 'react-redux'
 
 import './styles.css'
 
-import imgCart from '../../../../../../assets/images/cart.svg'
+import imgCart from '../../assets/images/cart.svg'
 
 class Cart extends Component {
 
@@ -30,7 +31,7 @@ class Cart extends Component {
 
     return (
       purchasedCount > 0 ?
-      <div className='div-cart clickable' onClick={ this.onClickCart }>
+      <div className={classNames('div-cart', 'clickable', {'div-cart-highlighted': this.props.highlighted})} onClick={ this.onClickCart }>
         <img className='img-cart' src={imgCart} alt='cart'/>
         <span>{ this.state.purchasedCount }</span>
       </div>

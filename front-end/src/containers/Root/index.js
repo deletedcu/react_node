@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import NotificationSystem from 'react-notification-system'
 import { connect } from 'react-redux'
 import routes from './routes'
+import Sidebar from 'react-sidebar'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import SideCart from '../SideCart'
 import DropdownFooter from './components/DropdownFooter'
 import asyncComponent from '../../components/AsyncComponent'
 import OverlaySpinner from '../../components/OverlaySpinner'
@@ -60,34 +62,42 @@ class Root extends Component {
 
   render () {
     return (
-      <div className='app header-fixed'>
-        { this.state.isChecked &&
-          <div>
-            {/* Header */}
-            <Header history={ this.props.history } pathName={ this.props.location.pathname }/>
-      
-            {/* Body */}
-            <div className='app-body'>
-              { routes }
+      <Sidebar
+        sidebar={<SideCart history={this.props.history}/>}
+        styles={{sidebar: {background: 'white', zIndex: '1001', width: '375px', transition: 'transform .1s ease-out', WebkitTransition: '-webkit-transform .1s ease-out'}}}
+        docked={this.props.sideBar.visible}
+        transitions={false}
+        pullRight={true}
+      >
+        <div className='app header-fixed'>
+          { this.state.isChecked &&
+            <div>
+              {/* Header */}
+              <Header history={ this.props.history } pathName={ this.props.location.pathname }/>
+        
+              {/* Body */}
+              <div className='app-body'>
+                { routes }
+              </div>
+        
+              {/* Footer */}
+              <Footer/>
+              <DropdownFooter/> {/* For responsive mode */}
+        
+              {/* Menu Modal */}
+              { this.props.menuModal.visible && <AsyncMenuModal /> }
+
+              {/* Combo Slice Modal */}
+              { this.props.comboSliceModal.visible && <AsyncComboSliceModal /> }
             </div>
-      
-            {/* Footer */}
-            <Footer/>
-            <DropdownFooter/> {/* For responsive mode */}
-      
-            {/* Menu Modal */}
-            { this.props.menuModal.visible && <AsyncMenuModal /> }
+          }
+    
+          {/* Notification System */}
+          <NotificationSystem ref='notificationSystem' dismissible='click'/>
 
-            {/* Combo Slice Modal */}
-            { this.props.comboSliceModal.visible && <AsyncComboSliceModal /> }
-          </div>
-        }
-  
-        {/* Notification System */}
-        <NotificationSystem ref='notificationSystem' dismissible='click'/>
-
-        <OverlaySpinner visible={ this.props.overlaySpinner.visible }/>
-      </div>
+          <OverlaySpinner visible={ this.props.overlaySpinner.visible }/>
+        </div>
+      </Sidebar>
     )
   }
 }
@@ -98,6 +108,7 @@ function mapStateToProps(state) {
     menuModal: state.menuModal,
     comboSliceModal: state.comboSliceModal,
     overlaySpinner: state.overlaySpinner,
+    sideBar: state.sideBar,
   }
 }
 

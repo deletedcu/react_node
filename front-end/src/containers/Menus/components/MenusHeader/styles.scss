@@ -2,10 +2,12 @@
 
 .div-menus-header-container {
   position: fixed;
-  width: 100%;
+  left: 0;
+  right: 0;
   height: 78px;
   z-index: $zindex-menu-header;
   background-color: $extra-light-green;
+  transition: all ease-out 0.1s;
 
   display: flex;
   flex-direction: row;
@@ -121,4 +123,8 @@
   //     }
   //   }
   // }
+}
+
+.div-menus-header-squizzed {
+  right: 375px;
 }

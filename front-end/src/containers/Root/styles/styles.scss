@@ -76,6 +76,9 @@
     left: 0;
     z-index: $zindex-header;
   }
+  .app-header-squizzed {
+    right: 375px;
+  }
   .app-body {
     margin-top: $body-top-margin;
   }

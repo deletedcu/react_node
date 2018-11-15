@@ -1,6 +1,8 @@
 @import "../../../../styles/variables/variables";
 
 .app-header {
+  transition: all ease-out 0.1s;
+
   .img-logo {
     float: left;
     height: 36px;

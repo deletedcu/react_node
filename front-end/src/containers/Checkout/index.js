@@ -13,6 +13,7 @@ import './styles.css'
 import imgPaypal from '../../assets/images/paypal.svg'
 
 import { loginUser, signupUser } from '../../redux/actions/user'
+import { hideSidebar } from '../../redux/actions/sideBar'
 import { showOverlaySpinner, hideOverlaySpinner } from '../../redux/actions/overlaySpinner'
 import getStripeToken from '../../services/stripeToken'
 import { showNotification } from '../../services/notification'
@@ -60,6 +61,8 @@ class Checkout extends Component {
       cardCVC: '',
       cardName: '',
     }
+
+    props.dispatch(hideSidebar())
   }
 
   componentWillReceiveProps ({user}) {

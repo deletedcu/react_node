@@ -1,0 +1,30 @@
+@import "../../styles/variables/variables";
+
+.div-side-cart-container {
+  .div-side-cart-header {
+    height: $header-height;
+    border-bottom: 0.5px solid #70707080;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .div-side-cart-header-left {
+      display: flex;
+      align-items: center;
+      margin-left: 40px;
+
+      .div-side-cart-header-title {
+        margin-left: 20px;
+        font-family: 'Montserrat-Medium';
+        color: $text-light-gray;
+      }
+    }
+
+    .div-side-cart-header-right {
+      margin-right: 20px;
+      img {
+        height: 26.5px;
+      }
+    }
+  }
+}

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
+import { connect } from 'react-redux'
 import MenuFilter from '../MenuFilter'
 import MenuDatePicker from '../MenuDatePicker'
 
@@ -31,7 +33,7 @@ class MenusHeader extends Component {
 
   render () {
     return (
-      <div className='div-menus-header-container'>
+      <div className={classNames('div-menus-header-container', {'div-menus-header-squizzed': this.props.sideBar.visible})}>
         <div className='div-menus-header-left'>
           <MenuFilter onChangeFilters={this.onChangeFilters}/>
           <div className='div-recommended clickable'/>
@@ -57,4 +59,10 @@ class MenusHeader extends Component {
   }
 }
 
-export default MenusHeader
+function mapStateToProps(state) {
+  return {
+    sideBar: state.sideBar,
+  }
+}
+
+export default connect(mapStateToProps)(MenusHeader)

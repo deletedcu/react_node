@@ -24,6 +24,7 @@
     "react-scripts": "1.1.5",
     "react-select-us-states": "^0.1.2",
     "react-show-more": "^2.0.0",
+    "react-sidebar": "^3.0.2",
     "react-simple-dropdown": "^3.2.3",
     "react-slick": "^0.23.1",
     "redux": "^4.0.0",

@@ -1,4 +1,4 @@
-@import "../../../../../../styles/variables/variables";
+@import "../../styles/variables/variables";
 
 .div-cart {
   position: relative;
@@ -34,4 +34,13 @@
   //     border: 1px solid white;
   //   }
   // }
+}
+
+.div-cart-highlighted {
+  border: unset;
+  background-color: $green-primary;
+
+  span {
+    color: white;
+  }
 }
