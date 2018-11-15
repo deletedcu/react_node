@@ -17,6 +17,15 @@ export default function reducer(state = {
       return {...state, items: state.items}
     }
 
+    case 'REMOVE_ALL_FROM_CART': {
+      let items = [];
+      state.items.forEach(item => {
+        item.id !== action.payload.item.id && items.push(item)
+      })
+
+      return {...state, items: items}
+    }
+
     default: {
       return {...state}
     }

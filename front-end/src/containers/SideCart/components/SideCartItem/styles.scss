@@ -1,0 +1,61 @@
+@import "../../../../styles/variables/variables";
+
+.side-cart-item {
+  margin-top: 20px;
+
+  .side-cart-item-content {
+    display: flex;
+    
+    .img-item {
+      width: 133px;
+      height: 90px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .side-cart-item-info {
+      color: #242222;
+      margin-top: 5px;
+      margin-left: 10px;
+      flex-grow: 1;
+
+      .side-cart-item-title {
+        font-size: 12px;
+        font-family: 'Montserrat-SemiBold';
+      }
+
+      .side-cart-item-counter-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+
+        .numeric-counter {
+          .numeric-counter-button {
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+          }
+          .numeric-counter-number {
+            font-size: 12px;
+          }
+        }
+
+        .side-cart-item-price {
+          font-size: 11px;
+        }
+      }
+
+      .side-cart-item-remove {
+        margin-top: 10px;
+        font-size: $mobile-small-font-size;
+      }
+    }
+  }
+
+  .side-cart-item-separator {
+    height: 1px;
+    background-color: $text-light-gray;
+    margin: 20px 5px;
+  }
+}

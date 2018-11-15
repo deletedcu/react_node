@@ -1,6 +1,10 @@
 @import "../../styles/variables/variables";
 
 .div-side-cart-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
   .div-side-cart-header {
     height: $header-height;
     border-bottom: 0.5px solid #70707080;
@@ -26,5 +30,15 @@
         height: 26.5px;
       }
     }
+  }
+
+  .div-side-cart-items {
+    flex-grow: 1;
+    overflow: scroll;
+    padding: 0 40px;
+  }
+
+  .div-side-cart-bottom {
+    height: 400px;
   }
 }

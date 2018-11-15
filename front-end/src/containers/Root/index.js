@@ -105,6 +105,7 @@ class Root extends Component {
 function mapStateToProps(state) {
   return {
     user: state.user,
+    cart: state.cart,
     menuModal: state.menuModal,
     comboSliceModal: state.comboSliceModal,
     overlaySpinner: state.overlaySpinner,
