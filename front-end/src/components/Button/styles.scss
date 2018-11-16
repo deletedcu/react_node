@@ -5,9 +5,7 @@
   height: 67px;
   font-size: $regular-font-size;
   background: $green-primary;
-  border: 1px solid $green-secondary;
-  border-radius: 4px;
-  box-shadow: $shadow-primary;
+  border-radius: 8px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -21,7 +19,7 @@
 }
 
 .button:hover {
-  box-shadow: 0px 0px 6px darken($green-primary, 20%);
+  box-shadow: $shadow-primary;
 }
 
 .button:active {

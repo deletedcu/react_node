@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Cart from '../../components/Cart'
 import SideCartItem from './components/SideCartItem'
+import SideCartSummary from './components/SideCartSummary'
 
 import './styles.css'
 
@@ -70,7 +71,7 @@ class SideCart extends Component {
 
         {/* Sidebar bottom - Cart summary / checkout */}
         <div className='div-side-cart-bottom'>
-
+          <SideCartSummary/>
         </div>
       </div>
     )

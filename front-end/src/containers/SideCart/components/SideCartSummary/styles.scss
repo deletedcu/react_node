@@ -1,0 +1,60 @@
+@import "../../../../styles/variables/variables";
+
+.side-cart-summary {
+  color: #242222;
+  padding: 0 40px;
+
+  .side-cart-summary-separator {
+    height: 1px;
+    background-color: $text-light-gray;
+  }
+
+  .side-cart-summary-recommended {
+    margin-top: 20px;
+    margin-left: 20px;
+
+    .side-cart-summary-recommended-title {
+      display: flex;
+      align-items: center;
+
+      span {
+        font-size: 12px;
+      }
+
+      img {
+        height: 16px;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .side-cart-summary-free-delivery {
+    font-size: $mobile-regular-font-size;
+    font-family: 'Montserrat-Light';
+    color: #545954;
+    background-color: $extra-light-green;
+    text-align: center;
+    height: 57px;
+    line-height: 57px;
+    margin: 15px -40px 0 -40px;
+  }
+  
+  .side-cart-summary-prices {
+    padding: 40px 10px 0 10px;
+
+    .side-cart-summary-price {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+  }
+
+  .btn-checkout {
+    width: 100%;
+    height: 52px;
+    font-size: $small-font-size;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+  }
+}
