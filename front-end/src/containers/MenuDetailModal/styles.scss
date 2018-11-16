@@ -1,0 +1,131 @@
+@import "../../styles/variables/variables";
+
+.div-menu-modal-center {
+  background-color: white;
+  box-shadow: $shadow-third;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  margin-bottom: 80px;
+  transform: translateX(-50%);
+  max-width: calc(100% - 44px);
+  padding: 30px 30px 50px 60px;
+  width: 960px;
+
+  .div-menu-modal-detail {
+    display: flex;
+
+    .div-menu-modal-detail-text {
+      .div-menu-title {
+        text-align: center;
+        font-size: 40px;
+        color: #545252;
+      }
+
+      .div-menu-description {
+        font-size: $small-font-size;
+        color: $text-light-gray;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .div-menu-title-nutrients {
+
+      }
+
+      .div-menu-title-ingredients {
+
+      }
+    }
+
+    .div-menu-modal-detail-image {
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+
+      .div-menu-modal-close {
+        img {
+          height: 48px;
+          float: right;
+        }
+      }
+
+      .img-menu {
+        margin-top: 30px;
+        width: 430px;
+        height: 288px;
+      }
+    }
+  }
+
+  .div-menu-modal-separator {
+    height: 1px;
+    background-color: #AAAAAA;
+    margin: 50px 30px 30px 0;
+  }
+
+  .div-menu-modal-customer-input {
+    display: flex;
+    color: $text-light-gray;
+    font-size: $small-font-size;
+
+    .div-menu-modal-selection {
+      .div-menu-modal-selection-title {
+        margin: 5px;
+      }
+
+      .radio-button {
+        margin-bottom: 5px;
+
+        span {
+          font-size: $small-font-size;
+          color: $text-light-gray;
+        }
+      }
+    }
+
+    .div-menu-modal-special-request {
+      flex-grow: 1;
+      margin-left: 120px;
+
+      textarea {
+        border: 0.1px solid $text-light-gray;
+        border-radius: 10px;
+        resize: none;
+        box-shadow: $shadow-secondary;
+        caret-color: $text-light-gray;
+        height: 130px;
+        width: calc(100% - 60px);
+        margin-left: 10px;
+        margin-top: 10px;
+        padding: 10px;
+      }
+    }
+  }
+
+  .div-menu-modal-bottom {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-evenly;
+
+    .div-menu-modal-buttons {
+      display: flex;
+    
+      .btn-add {
+        width: 250px;
+        height: 55px;
+        margin-right: 5px;
+        font-size: $small-font-size;
+      }
+  
+      .btn-like {
+        width: 66px;
+        height: 55px;
+  
+        img {
+          height: 32px;
+        }
+      }
+    }
+  }
+}

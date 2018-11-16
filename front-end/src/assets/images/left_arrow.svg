@@ -1,17 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.415 24.415">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.608 18.023">
   <defs>
     <style>
       .cls-1 {
-        fill: #d4d4d4;
-      }
-
-      .cls-2 {
         fill: none;
+        stroke: #878787;
+        stroke-linejoin: round;
+        stroke-width: 3px;
       }
     </style>
   </defs>
-  <g id="baseline-keyboard_arrow_right-24px" transform="matrix(-1, 0.017, -0.017, -1, 24.415, 23.996)">
-    <path id="Path_347" data-name="Path 347" class="cls-1" d="M8.59,16.59,13.17,12,8.59,7.41,10,6l6,6-6,6Z"/>
-    <path id="Path_348" data-name="Path 348" class="cls-2" d="M0,0H24V24H0Z"/>
-  </g>
+  <path id="Path_306" data-name="Path 306" class="cls-1" d="M2643.751,1310.378l-13.342,7.922,13.342,7.5" transform="translate(-2628.908 -1309.088)"/>
 </svg>

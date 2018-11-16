@@ -16,7 +16,7 @@ import { initializeNotificationSystem } from '../../services/notification'
 import { authenticateUser } from '../../redux/actions/user'
 import { fetchAllProducts } from '../../redux/actions/products'
 
-const AsyncMenuModal = asyncComponent(() => import('../MenuModal'))
+const AsyncMenuModal = asyncComponent(() => import('../MenuDetailModal'))
 const AsyncComboSliceModal = asyncComponent(() => import('../ComboSliceModal'))
 
 /**
