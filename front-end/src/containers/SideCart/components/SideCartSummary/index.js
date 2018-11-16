@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import Button from '../../../../components/Button'
+import RecommendedMenuSlider from '../RecommendedMenuSlider'
 
 import './styles.css'
 
 import imgRecommended from '../../../../assets/images/recommended.svg'
 
 class SideCartSummary extends Component {
+
+  onCheckout = () => {
+    this.props.onCheckout()
+  }
 
   render () {
     return (
@@ -20,7 +25,7 @@ class SideCartSummary extends Component {
             <img src={imgRecommended} alt='recommended'/>
           </div>
 
-
+          <RecommendedMenuSlider/>
         </div>
 
         {/* Away from free delivery */}
@@ -52,7 +57,7 @@ class SideCartSummary extends Component {
         </div>
 
         {/* Checkout */}
-        <Button className='btn-checkout'>Checkout</Button>
+        <Button className='btn-checkout' onClick={this.onCheckout}>Checkout</Button>
       </div>
     )
   }

@@ -12,6 +12,10 @@ import { hideSidebar } from '../../redux/actions/sideBar'
 
 class SideCart extends Component {
 
+  onCheckout = () => {
+    this.props.history.push('/checkout')
+  }
+
   onClose = () => {
     this.props.dispatch(hideSidebar())
   }
@@ -31,9 +35,9 @@ class SideCart extends Component {
     const { history, cart } = this.props
 
     const cartItems = cart.items
-    const totalPrice = cartItems.reduce((sum, cartItem) => {
-      return sum + cartItem.price[0]
-    }, 0)
+    // const totalPrice = cartItems.reduce((sum, cartItem) => {
+    //   return sum + cartItem.price[0]
+    // }, 0)
     const groupedItems = this.groupBy(cartItems, 'id')
 
     let sideCartItems = []
@@ -71,7 +75,9 @@ class SideCart extends Component {
 
         {/* Sidebar bottom - Cart summary / checkout */}
         <div className='div-side-cart-bottom'>
-          <SideCartSummary/>
+          <SideCartSummary
+            onCheckout={this.onCheckout}
+          />
         </div>
       </div>
     )

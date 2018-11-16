@@ -1,0 +1,19 @@
+.recommended-menu-slider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .img-arrow {
+    width: 9px;
+  }
+
+  .img-recommended {
+    height: 51px;
+    margin: 0 5px;
+  }
+
+  .slick-slider {
+    flex-grow: 1;
+    width: calc(100% - 18px);
+  }
+}
