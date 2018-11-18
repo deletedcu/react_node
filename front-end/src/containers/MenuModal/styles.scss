@@ -15,9 +15,9 @@
 
   .img-close {
     position: absolute;
-    width: 28px;
-    height: 28px;
-    right: 50px;
+    width: 22px;
+    height: 22px;
+    right: 20px;
     top: 20px;
     z-index: 1;
   }
@@ -67,9 +67,11 @@
         margin-top: 40px;
 
         .div-menu-info {
+          display: flex;
+          flex-direction: column;
           text-align: center;
           padding: 0 30px;
-          width: 33%;
+          width: calc(25% - 1px);
 
           span {
             color: $green-primary;
@@ -108,7 +110,27 @@
       flex-grow: 1;
       max-height: 510px;
       margin-top: 50px;
-      overflow: scroll;
+      overflow-y: scroll;
+
+      /* width */
+      &::-webkit-scrollbar {
+        width: 15px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #F5F5F5; 
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #747474; 
+        border-radius: 100px;
+
+        &:hover {
+          background: #555; 
+        }
+      }
 
       .div-menu-title {
         font-size: $medium-font-size;
@@ -175,25 +197,25 @@
         }
       }
 
-      // .div-special-instructions {
-      //   display: flex;
-      //   flex-direction: column;
-      //   margin-top: 30px;
-      //   margin-bottom: 30px;
+      .div-special-instructions {
+        display: flex;
+        flex-direction: column;
+        margin: 30px 20px 0 0;
 
-      //   .div-special-instructions-title {
-      //     color: #080808;
-      //   }
+        .div-special-instructions-title {
+          color: #080808;
+        }
 
-      //   .input-special-instructions {
-      //     border-radius: 9px;
-      //     border: 1px solid #A0A0A0;
-      //     height: 57px;
-      //     margin-top: 20px;
-      //     padding: 0 20px;
-      //   }
-      // }
-
+        .input-special-instructions {
+          border-radius: 9px;
+          border: 1px solid #A0A0A0;
+          height: 120px;
+          margin-top: 20px;
+          padding: 15px;
+          resize: none;
+        }
+      }
+      
       .div-opacity-layer-bottom {
         position: absolute;
         bottom: 0px;
@@ -206,12 +228,13 @@
     .div-menu-modal-cart {
       position: relative;
       display: flex;
-      flex-direction: row;
       height: 67px;
+      margin-top: 30px;
 
       .increment-counter {
         width: 50%;
         margin-right: 10px;
+        visibility: hidden;
       }
 
       .btn-add-to-cart {
@@ -232,7 +255,7 @@
     .div-opacity-layer-top {
       position: absolute;
       top: 50px;
-      width: calc(100% - 100px);
+      width: calc(100% - 115px);
       height: 84px;
       background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1));
     }
@@ -270,7 +293,6 @@
       }
 
       .div-opacity-layer-top {
-        width: calc(100% - 100px);
         top: -50px;
       }
     }
@@ -332,7 +354,6 @@
       padding: 0 20px 20px 20px;
 
       .div-opacity-layer-top {
-        width: calc(100% - 40px);
         top: 0px;
       }
 
@@ -356,6 +377,10 @@
               font-size: $mobile-small-font-size;
             }
           }
+        }
+
+        .div-description-text {
+          margin-right: 10px;
         }
 
         .div-ingredients-list {
@@ -386,24 +411,23 @@
           }
         }
 
-        // .div-special-instructions {
-        //   margin-top: 15px;
-        //   margin-bottom: 15px;
+        .div-special-instructions {
+          margin: 15px 10px 0 0;
 
-        //   .div-special-instructions-title {
-        //     font-size: 14px;
-        //   }
-        //   .input-special-instructions {
-        //     height: 45px;
-        //     margin-top: 10px;
-        //     font-size: 14px;
-        //   }
-        // }
+          .div-special-instructions-title {
+            font-size: 14px;
+          }
+          .input-special-instructions {
+            height: 45px;
+            margin-top: 10px;
+            font-size: 14px;
+          }
+        }
       }
       
       .div-menu-modal-cart {
         height: 45px;
-        margin-top: 5px;
+        margin-top: 20px;
 
         .btn-add-to-cart {
           height: 45px;

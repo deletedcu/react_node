@@ -118,18 +118,23 @@ class MenuModal extends Component {
               
               <div className='div-menu-info-list'>
                 <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.protein : item.menu[0].protein} G`}</span><br/>
-                  <span className='span-menu-info-title'>PROTEIN</span>
-                </div>
-                <div className='div-menu-info-separator'/>
-                <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.calories : item.menu[0].calories}`}</span><br/>
+                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.calories : item.menu[0].calories}`}</span>
                   <span className='span-menu-info-title'>CALORIES</span>
                 </div>
                 <div className='div-menu-info-separator'/>
                 <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.carbs : item.menu[0].carbs} G`}</span><br/>
+                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.carbs : item.menu[0].carbs}`}</span>
                   <span className='span-menu-info-title'>CARBS</span>
+                </div>
+                <div className='div-menu-info-separator'/>
+                <div className='div-menu-info'>
+                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.protein : item.menu[0].protein}`}</span>
+                  <span className='span-menu-info-title'>PROTEIN</span>
+                </div>
+                <div className='div-menu-info-separator'/>
+                <div className='div-menu-info'>
+                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.fat : item.menu[0].fat}`}</span>
+                  <span className='span-menu-info-title'>FAT</span>
                 </div>
               </div>
             </div>
@@ -194,12 +199,12 @@ class MenuModal extends Component {
               }
 
               {/* Special instruction */}
-              {/* <div className='div-special-instructions'>
+              <div className='div-special-instructions'>
                 <div className='div-special-instructions-title'>
                   Special Instructions
                 </div>
-                <input type='text' name='specialInstructions' className='input-special-instructions' placeholder='I am alergic to banana' value={this.state.specialInstructions} onChange={ this.onChange }/>
-              </div> */}
+                <textarea name='specialInstructions' className='input-special-instructions' placeholder='I am alergic to banana' value={this.state.specialInstructions} onChange={ this.onChange }/>
+              </div>
 
               { item.type === 'menu' && !this.state.descriptionScrolled && <div className='div-opacity-layer-bottom'/> }
             </div>
