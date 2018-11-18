@@ -35,9 +35,6 @@ class SideCart extends Component {
     const { history, cart } = this.props
 
     const cartItems = cart.items
-    // const totalPrice = cartItems.reduce((sum, cartItem) => {
-    //   return sum + cartItem.price[0]
-    // }, 0)
     const groupedItems = this.groupBy(cartItems, 'id')
 
     let sideCartItems = []

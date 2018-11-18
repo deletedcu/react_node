@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Button from '../../../../components/Button'
 import RecommendedMenuSlider from '../RecommendedMenuSlider'
 
@@ -13,6 +14,15 @@ class SideCartSummary extends Component {
   }
 
   render () {
+    const { cart } = this.props
+    const total = cart.items.reduce((sum, cartItem) => {
+      return sum + cartItem.price[0]
+    }, 0)
+    const delivery = 0
+    const taxes = 0
+    const estimatedTotal = (total + delivery) * (100 + taxes) / 100
+    const freeDelivery = total > 25 ? 0 : (25 - total)
+
     return (
       <div className='side-cart-summary'>
         {/* Separator */}
@@ -30,37 +40,43 @@ class SideCartSummary extends Component {
 
         {/* Away from free delivery */}
         <div className='side-cart-summary-free-delivery'>
-          $43.95 away from free delivery
+          { freeDelivery !== 0 ? `$${freeDelivery.toFixed(2)} away from free delivery` : 'Free Delivery'}
         </div>
 
         {/* Prices */}
         <div className='side-cart-summary-prices'>
           <div className='side-cart-summary-price'>
             <div className='side-cart-summary-price-title'>Subtotal</div>
-            <div className='side-cart-summary-price-value'>$69.98</div>
+            <div className='side-cart-summary-price-value'>{`$${total.toFixed(2)}`}</div>
           </div>
 
           <div className='side-cart-summary-price'>
             <div className='side-cart-summary-price-title'>Delivery</div>
-            <div className='side-cart-summary-price-value'>FREE</div>
+            <div className='side-cart-summary-price-value'>{ delivery > 0 ? `$${delivery}` : 'FREE' }</div>
           </div>
 
           <div className='side-cart-summary-price'>
             <div className='side-cart-summary-price-title'>Taxes</div>
-            <div className='side-cart-summary-price-value'>6.98</div>
+            <div className='side-cart-summary-price-value'>{ taxes }</div>
           </div>
 
           <div className='side-cart-summary-price'>
             <div className='side-cart-summary-price-title'>ESTIMATED TOTAL</div>
-            <div className='side-cart-summary-price-value'>$96.38</div>
+            <div className='side-cart-summary-price-value'>{`$${estimatedTotal.toFixed(2)}`}</div>
           </div>
         </div>
 
         {/* Checkout */}
-        <Button className='btn-checkout' onClick={this.onCheckout}>Checkout</Button>
+        <Button className='btn-checkout' onClick={this.onCheckout} style={{visibility: cart.items.length > 0 ? 'visible' : ' hidden' }}>Checkout</Button>
       </div>
     )
   }
 }
 
-export default SideCartSummary
+function mapStateToProps(state) {
+  return {
+    cart: state.cart,
+  }
+}
+
+export default connect(mapStateToProps)(SideCartSummary)
