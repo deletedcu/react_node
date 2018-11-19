@@ -6,7 +6,7 @@ import { ModalType } from '../../redux/actions/modal'
 const AsyncMenuModal = asyncComponent(() => import('../MenuModal'))
 const AsyncComboSliceModal = asyncComponent(() => import('../ComboSliceModal'))
 const AsyncCardInfoModal = asyncComponent(() => import('../CardInfoModal'))
-
+const AsyncEditProfileModal = asyncComponent(() => import('../EditProfileModal'))
 
 /**
  * Routes
@@ -25,6 +25,9 @@ const Modal = (props) => {
 
       {/* Card Info Modal */}
       { active === ModalType.cardInfoModal && <AsyncCardInfoModal /> }
+
+      {/* Edit Profile Modal */}
+      { active === ModalType.editProfileModal && <AsyncEditProfileModal /> }
     </div>
   )
 }

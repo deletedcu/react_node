@@ -2,6 +2,9 @@ export const ModalType = {
   menuModal: 0,
   comboSliceModal: 1,
   cardInfoModal: 2,
+  editProfileModal: 3,
+  orderFeedbackModal: 4,
+  mealPreferenceModal: 5,
 }
 
 export function showModal(modalType, data){

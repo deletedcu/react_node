@@ -1,0 +1,91 @@
+@import "../../styles/variables/variables";
+
+.edit-profile-modal {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translate(-50%);
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 0.5px solid $text-light-gray;
+  border-radius: 30px;
+  box-shadow: $shadow-secondary;
+  padding: 30px 60px 40px;
+  color: $text-light-gray;
+
+  .edit-profile-close {
+    .img-close {
+      height: 35px;
+      float: right;
+    }
+  }
+
+  .edit-profile-title {
+    color: $text-light-gray;
+    margin-left: 5px;
+  }
+
+  .form-inputs {
+    .form-input {
+      margin-top: 30px;
+      font-size: $mobile-regular-font-size;
+
+      input {
+        width: 100%;
+        height: 43px;
+        margin-top: 5px;
+        padding: 0 10px;
+        border: 1px solid $light-green-primary;
+        border-radius: 2px;
+        caret-color: $green-primary;
+      }
+
+      input:focus {
+        border: 1px solid $green-primary;
+      }
+    }
+
+    .form-double-inputs {
+      display: flex;
+
+      #input_firstname {
+        margin-right: 15px;
+        width: 50%;
+      }
+      #input_lastname {
+        margin-left: 15px;
+        width: 50%;
+      }
+    }
+
+    .btn-save {
+      width: 129px;
+      height: 52px;
+      border-radius: 26px;
+      font-size: $small-font-size;
+      float: right;
+      margin-top: 30px;
+    }
+  }
+
+  @media (max-width: 710px) {
+    .form-inputs { 
+      .form-input {
+        input {
+          padding: 20px 15px;
+        }
+      }
+
+      .form-double-inputs {
+        #input_firstname {
+          margin-right: 5px;
+        }
+        #input_lastname {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
