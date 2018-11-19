@@ -1,35 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 41.453 41.453">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 34 34">
   <defs>
     <style>
       .cls-1 {
-        fill: #fff;
+        fill: #efefef;
         stroke: #707070;
       }
 
       .cls-2 {
-        stroke: none;
+        fill: #fff;
+        stroke: #a8a3a3;
       }
 
       .cls-3 {
-        fill: none;
+        stroke: none;
       }
 
       .cls-4 {
-        filter: url(#Ellipse_206);
+        fill: none;
+      }
+
+      .cls-5 {
+        filter: url(#Ellipse_212);
       }
     </style>
-    <filter id="Ellipse_206" x="0" y="0" width="41.453" height="41.453" filterUnits="userSpaceOnUse">
+    <filter id="Ellipse_212" x="3.805" y="3.805" width="28.391" height="28.39" filterUnits="userSpaceOnUse">
       <feOffset dx="1" dy="1" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
       <feFlood flood-opacity="0.161"/>
       <feComposite operator="in" in2="blur"/>
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
-  <g class="cls-4" transform="matrix(1, 0, 0, 1, 0, 0)">
-    <g id="Ellipse_206-2" data-name="Ellipse 206" class="cls-1" transform="translate(8 8)">
-      <circle class="cls-2" cx="11.726" cy="11.726" r="11.726"/>
-      <circle class="cls-3" cx="11.726" cy="11.726" r="11.226"/>
+  <g id="Select_Button" data-name="Select Button" transform="translate(-619 -957)">
+    <g id="Ellipse_209" data-name="Ellipse 209" class="cls-1" transform="translate(619 957)">
+      <circle class="cls-3" cx="17" cy="17" r="17"/>
+      <circle class="cls-4" cx="17" cy="17" r="16.5"/>
+    </g>
+    <g class="cls-5" transform="matrix(1, 0, 0, 1, 619, 957)">
+      <g id="Ellipse_212-2" data-name="Ellipse 212" class="cls-2" transform="translate(5.8 5.8)">
+        <circle class="cls-3" cx="11.195" cy="11.195" r="11.195"/>
+        <circle class="cls-4" cx="11.195" cy="11.195" r="10.695"/>
+      </g>
     </g>
   </g>
 </svg>

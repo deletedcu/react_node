@@ -1,0 +1,84 @@
+@import "../../styles/variables/variables";
+
+.card-info-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 0.5px solid $text-light-gray;
+  border-radius: 30px;
+  box-shadow: $shadow-secondary;
+  padding: 30px 60px 40px;
+
+  .card-close {
+    .img-close {
+      height: 35px;
+      float: right;
+    }
+  }
+  
+
+  .card-info-title {
+    color: $text-light-gray;
+    margin-left: 5px;
+  }
+
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+    span {
+      font-size: $mobile-regular-font-size;
+    }
+
+    .input-name {
+      height: 43px;
+      border: 1px solid $light-green-primary;
+      border-radius: 2px;
+      color: $text-light-gray;
+      font-size: $small-font-size;
+      caret-color: $green-primary;
+      margin-top: 5px;
+      padding: 10px;
+    }
+
+    .card-input-wrapper {
+      .input {
+        border: 1px solid $light-green-primary;
+        height: 43px;
+        label {
+          flex-grow: 1;
+          input {
+            border: none;
+            margin-top: 5px;
+            padding: 0;
+            font-size: $small-font-size;
+          }
+          .credit-card-input {
+            min-width: unset;
+          }
+        }
+
+        &:focus {
+          border: 1px solid $green-primary;
+        }
+      }
+    }
+  }
+
+  .card-info-save {
+    margin-top: 30px;
+
+    .btn-save {
+      width: 129px;
+      height: 52px;
+      border-radius: 26px;
+      font-size: $small-font-size;
+      float: right;
+    }
+  }
+}

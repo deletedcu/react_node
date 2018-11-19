@@ -1,41 +1,34 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Button from '../../../components/Button'
-import Checkbox, { CheckboxType } from '../../../components/Checkbox'
 import PaymentMethodInfo from './components/PaymentMethodInfo'
 import './styles.css'
 
+import { showModal, ModalType } from '../../../redux/actions/modal'
+
 class PaymentMethod extends Component {
 
-  onSave = () => {
-
+  onAddCard = () => {
+    this.props.dispatch(showModal(ModalType.cardInfoModal))
   }
 
   render () {
     return (
       <div className='div-payment-methods-container'>
-        {/* Form header */}
-        <div className='div-form-header'>
-          Payment Methods
-        </div>
-
         {/* Form fields */}
         <div className='div-connected-payment-methods'>
-          <PaymentMethodInfo/>
-          <PaymentMethodInfo/>
-          <PaymentMethodInfo/>
-          <Checkbox className='chk-add' type={CheckboxType.square} onCheckChange={ () => {} }>&nbsp;&nbsp;Add New Card</Checkbox>
+          <PaymentMethodInfo underline={true}/>
+          <PaymentMethodInfo underline={true}/>
+          <PaymentMethodInfo underline={false}/>
         </div>
 
-        {/* Separator */}
-        <div className='div-separator'/>
-
         {/* Save button */}
-        <div className='div-save'>
-          <Button className='btn-save' onClick={ this.onSave }>Save</Button>
+        <div className='div-add-card'>
+          <Button className='btn-add-card' onClick={ this.onAddCard }>Add Credit/Debit Card</Button>
         </div>
       </div>
     )
   }
 }
 
-export default PaymentMethod
+export default connect()(PaymentMethod)

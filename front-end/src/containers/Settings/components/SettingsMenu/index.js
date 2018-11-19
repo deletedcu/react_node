@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import classNames from 'classnames'
 import './styles.css'
 
 const SettingsMenuItem = {
   editProfile: 0,
   paymentMethod: 1,
   orderHistory: 2,
+  mealPreference: 3,
 }
 
 class SettingsMenu extends Component {
@@ -31,6 +31,8 @@ class SettingsMenu extends Component {
       activeItem = SettingsMenuItem.orderHistory
     } else if (path.includes('payment_method')) {
       activeItem = SettingsMenuItem.paymentMethod
+    } else if (path.includes('meal_preference')) {
+      activeItem = SettingsMenuItem.mealPreference
     }
 
     return activeItem
@@ -51,6 +53,9 @@ class SettingsMenu extends Component {
       case SettingsMenuItem.orderHistory:
         this.props.history.push('/settings/order_history')
         break
+      case SettingsMenuItem.mealPreference:
+        this.props.history.push('/settings/meal_preference')
+        break
       default:
         this.props.history.push('/settings/edit_profile')
     }
@@ -62,24 +67,35 @@ class SettingsMenu extends Component {
     return (
       <div className='settings-menu'>
         <div 
-          className={ classNames('settings-menu-item', 'clickable', {'settings-menu-item-active': activeItem === SettingsMenuItem.editProfile}) }
+          className='settings-menu-item clickable'
           onClick={ () => { this.onClickMenu(SettingsMenuItem.editProfile) } }
         >
-          Edit Profile
+          <div>Edit Profile</div>
+          { activeItem === SettingsMenuItem.editProfile && <div className='settings-menu-item-underline'/> }
         </div>
 
         <div 
-          className={ classNames('settings-menu-item', 'clickable', {'settings-menu-item-active': activeItem === SettingsMenuItem.paymentMethod}) }
+          className='settings-menu-item clickable'
           onClick={ () => { this.onClickMenu(SettingsMenuItem.paymentMethod) } }
         >
-          Payment Method
+          <div>Payment Methods</div>
+          { activeItem === SettingsMenuItem.paymentMethod && <div className='settings-menu-item-underline'/> }
         </div>
 
         <div 
-          className={ classNames('settings-menu-item', 'clickable', {'settings-menu-item-active': activeItem === SettingsMenuItem.orderHistory}) }
+          className='settings-menu-item clickable'
           onClick={ () => { this.onClickMenu(SettingsMenuItem.orderHistory) } }
         >
-          Order History
+          <div>Order History</div>
+          { activeItem === SettingsMenuItem.orderHistory && <div className='settings-menu-item-underline'/> }
+        </div>
+
+        <div 
+          className='settings-menu-item clickable'
+          onClick={ () => { this.onClickMenu(SettingsMenuItem.mealPreference) } }
+        >
+          <div>Meal Preference</div>
+          { activeItem === SettingsMenuItem.mealPreference && <div className='settings-menu-item-underline'/> }
         </div>
       </div>
     )

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.372 31.991">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #707070;
+      }
+    </style>
+  </defs>
+  <g id="if_pen-checkbox_353430" transform="translate(-7.586 -8.597)">
+    <path id="Path_266" data-name="Path 266" class="cls-1" d="M52.212,12.041,49.227,9.06a1.582,1.582,0,0,0-2.236,0L44.6,11.44l5.221,5.212,2.388-2.381A1.575,1.575,0,0,0,52.212,12.041Z" transform="translate(-11.717)"/>
+    <path id="Path_267" data-name="Path 267" class="cls-1" d="M21.922,28.747l5.222,5.213L41.528,19.6,36.306,14.39Z" transform="translate(-4.538 -1.834)"/>
+    <path id="Path_268" data-name="Path 268" class="cls-1" d="M19.757,37.028l-1.115,6.324,6.337-1.111Z" transform="translate(-3.499 -8.999)"/>
+    <path id="Path_269" data-name="Path 269" class="cls-1" d="M30.692,39.7H11V20.014H24.9L28.323,16.6H9.8a2.217,2.217,0,0,0-2.21,2.21v22.1a2.217,2.217,0,0,0,2.21,2.21H31.9a2.217,2.217,0,0,0,2.21-2.21v-15.8l-3.417,3.411Z" transform="translate(0 -2.532)"/>
+  </g>
+</svg>

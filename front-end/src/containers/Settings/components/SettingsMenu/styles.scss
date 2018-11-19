@@ -1,24 +1,20 @@
 @import "../../../../styles/variables/variables";
 
 .settings-menu {
+  display: flex;
+  border-bottom: 1px solid #818080;
 
   .settings-menu-item {
-    height: 85px;
-    line-height: 85px;
-    padding-left: 35px;
+    text-align: center;
     color: $text-light-gray;
-    font-size: 32px;
-    margin-bottom: 20px;
+    width: 25%;
+    line-height: 60px;
+    margin-bottom: -2px;
   }
 
-  .settings-menu-item-active {
-    opacity: 0.6;
-    color: white;
-    border: 1px solid $text-light-gray;
+  .settings-menu-item-underline  {
+    height: 10px;
+    border-radius: 5px;
     background-color: $green-primary;
-    text-shadow: $shadow-primary;
-    -webkit-text-stroke-width: 0.05px;
-    -webkit-text-stroke-color: $text-light-gray;
-    transition: all 0.25s ease-in-out;
   }
 }

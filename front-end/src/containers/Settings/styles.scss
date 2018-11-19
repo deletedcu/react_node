@@ -1,28 +1,30 @@
 @import "../../styles/variables/variables";
 
 .div-settings-container {
-  background-color: $extra-light-gray;
-  margin-top: 78px;
+  background-color: white;
+
+  .div-settings-banner {
+    position: relative;
+    height: 465px;
+  }
 
   .div-settings-body {
-    display: flex;
-    padding: 70px 130px;
+    margin-top: 100px;
+    margin-bottom: 250px;
 
     .div-settings-menu {
-      width: 470px;
-      margin-right: 150px;
+
     }
 
     .div-settings-page {
-      flex-grow: 1;
-      max-width: 980px;
+      margin-top: 120px;
     }
   }
 
   .div-settings-contact {
-    padding: 70px 0;
+    padding: 70px 0 200px;
     text-align: center;
-    background-color: $border-gray;
+    background-color: white;
     border-top: 1px solid #C6C4C4;
     color: $text-light-gray;
     font-size: $small-font-size;
@@ -34,7 +36,9 @@
   }
 
   @media (max-width: 710px) {
-    margin-top: 60px;
+    .div-settings-banner {
+      max-height: 350px;
+    }
 
     .div-settings-contact {
       padding: 50px 30px;

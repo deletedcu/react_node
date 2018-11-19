@@ -1,15 +1,18 @@
 @import "../../../../../styles/variables/variables";
 
 .payment-method-info {
+  width: 50%;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
 
   .img-card {
     height: 27px;
+    margin-right: 30px;
   }
 
   .div-card-number-expiry {
+    font-size: $small-font-size;
     .div-card-number {
       color: $text-primary;
       font-family: 'Montserrat-SemiBold';
@@ -17,6 +20,7 @@
 
     .div-card-expiry {
       color: $text-light-gray;
+      white-space: nowrap;
     }
   }
 
@@ -25,4 +29,8 @@
     font-size: $small-font-size;
     text-decoration: underline;
   }
+}
+
+.payment-method-info-underlined {
+  border-bottom: 1px solid $text-light-gray;
 }

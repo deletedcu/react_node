@@ -6,6 +6,8 @@ import './styles.css'
 
 import { updateUserProfile } from '../../../redux/actions/user'
 
+import imgEdit from '../../../assets/images/edit.svg'
+
 class EditProfile extends Component {
 
   constructor (props) {
@@ -47,7 +49,7 @@ class EditProfile extends Component {
   onCancel = () => {
     this.props.history.push('/home')
   }
-
+          
   render () {
     return (
       <div className='div-edit-profile-container'>
