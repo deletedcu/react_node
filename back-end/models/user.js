@@ -12,7 +12,7 @@ const userSchema = mongoose.Schema({
   zip: String,
 
   phone: String,
-  country: String,
+  shipping_address: String,
 
   customer_id: String,
 

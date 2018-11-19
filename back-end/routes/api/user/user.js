@@ -39,7 +39,7 @@ exports.login = (email, password) => {
             email: user.email,
             first_name: user.first_name,
             last_name: user.last_name,
-            country: user.country,
+            shipping_address: user.shipping_address,
             phone: user.phone,
             zip: user.zip,
             token: jwt.sign(email, config.jwtSecret, {}),
@@ -150,7 +150,7 @@ exports.authenticate = (request) => {
             email: user.email,
             first_name: user.first_name,
             last_name: user.last_name,
-            country: user.country,
+            shipping_address: user.shipping_address,
             phone: user.phone,
             zip: user.zip,
             token: jwt.sign(email, config.jwtSecret, {}),
@@ -172,14 +172,14 @@ exports.updateProfile = (request) => {
     const currentEmail = checkToken(request);
 
     if (currentEmail) {
-      let { first_name, last_name, email, phone, country, password } = request.body;
+      let { first_name, last_name, email, phone, shipping_address, password } = request.body;
       let user = {
         first_name: first_name,
         last_name: last_name,
         email: email,
         email_lowercased: email.toLowerCase(),
         phone: phone,
-        country: country,
+        shipping_address: shipping_address,
       };
 
       if (password) {
@@ -206,7 +206,7 @@ exports.updateProfile = (request) => {
                 email: newUser.email,
                 first_name: newUser.first_name,
                 last_name: newUser.last_name,
-                country: newUser.country,
+                shipping_address: newUser.shipping_address,
                 phone: newUser.phone,
                 zip: newUser.zip,
                 token: jwt.sign(newUser.email, config.jwtSecret, {}),
