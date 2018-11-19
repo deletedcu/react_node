@@ -65,7 +65,7 @@ class Checkout extends Component {
       cardName: '',
     }
 
-    this.updateAddress()
+    props.user.loggedIn && this.updateAddress()
   }
 
   componentWillReceiveProps ({user}) {
@@ -76,6 +76,8 @@ class Checkout extends Component {
         addressLastName: user.user.last_name,
         contactNumber: user.user.phone,
         zip: user.user.zip,
+      }, () => {
+        this.updateAddress()
       })
     }
   }
