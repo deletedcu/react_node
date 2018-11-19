@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
+import addressParser from 'parse-address-string'
 import SelectUSState from 'react-select-us-states'
 import CreditCardInput from 'react-credit-card-input'
 import OrderSummary from './components/OrderSummary'
@@ -37,6 +38,8 @@ class Checkout extends Component {
   constructor (props) {
     super(props)
 
+    props.dispatch(hideSidebar())
+
     this.state = {
       currentAccountMode: AccountMode.create,
       currentStep: props.user.loggedIn ? CheckoutStep.address : CheckoutStep.account,
@@ -62,7 +65,7 @@ class Checkout extends Component {
       cardName: '',
     }
 
-    props.dispatch(hideSidebar())
+    this.updateAddress()
   }
 
   componentWillReceiveProps ({user}) {
@@ -78,6 +81,25 @@ class Checkout extends Component {
   }
 
   /**
+   * Parse user's shipping address and fill out the address form
+   */
+  updateAddress = () => {
+    addressParser(this.props.user.user.shipping_address, (err, addressObject) => {
+      if (!err) {
+        this.setState({
+          streetAddress: addressObject.street_address1 || '',
+          apartmentNumber: addressObject.street_address2 || '',
+          city: addressObject.city || '',
+          state: addressObject.state || '',
+          ...(addressObject.postal_code && { zip: addressObject.postal_code }),
+        }, () => {
+          document.getElementById('stateSelector').value = this.state.state || 'AL'
+        })
+      }
+    })
+  }
+
+  /**
    * Switch to login/signup form
    */
   onSwitchAccountMode = () => {
@@ -89,7 +111,6 @@ class Checkout extends Component {
   /**
    * Section Submit Handler
    */
-  
   onAuthenticate = () => {
     if (this.state.currentAccountMode === AccountMode.create) {
       // sign up
@@ -292,7 +313,7 @@ class Checkout extends Component {
                   <div className='div-checkout-address-state-zip'>
                     <div className='div-checkout-address-state'>
                       <div><span>State</span></div>
-                      <SelectUSState className='select-us-state' onChange={ this.onSelectState }/>
+                      <SelectUSState id='stateSelector' className='select-us-state' value={this.state.state} onChange={ this.onSelectState }/>
                     </div>
                     <div className='div-checkout-address-zip'>
                       <div><span>Zip</span></div>
