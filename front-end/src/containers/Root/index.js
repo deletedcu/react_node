@@ -15,6 +15,7 @@ import './styles/styles.css'
 import { initializeNotificationSystem } from '../../services/notification'
 import { authenticateUser } from '../../redux/actions/user'
 import { fetchAllProducts } from '../../redux/actions/products'
+import { ModalType } from '../../redux/actions/modal';
 
 const AsyncMenuModal = asyncComponent(() => import('../MenuModal'))
 const AsyncComboSliceModal = asyncComponent(() => import('../ComboSliceModal'))
@@ -61,11 +62,13 @@ class Root extends Component {
   }
 
   render () {
+    const { modal, history, sideBar, location, overlaySpinner } = this.props
+
     return (
       <Sidebar
-        sidebar={<SideCart history={this.props.history}/>}
+        sidebar={<SideCart history={history}/>}
         styles={{sidebar: {background: 'white', zIndex: '1001', width: '375px', transition: 'transform .1s ease-out', WebkitTransition: '-webkit-transform .1s ease-out'}}}
-        docked={this.props.sideBar.visible}
+        docked={sideBar.visible}
         transitions={false}
         pullRight={true}
       >
@@ -73,7 +76,7 @@ class Root extends Component {
           { this.state.isChecked &&
             <div>
               {/* Header */}
-              <Header history={ this.props.history } pathName={ this.props.location.pathname }/>
+              <Header history={history} pathName={location.pathname}/>
         
               {/* Body */}
               <div className='app-body'>
@@ -85,17 +88,17 @@ class Root extends Component {
               <DropdownFooter/> {/* For responsive mode */}
         
               {/* Menu Modal */}
-              { this.props.menuModal.visible && <AsyncMenuModal /> }
+              { modal.active === ModalType.menuModal && <AsyncMenuModal /> }
 
               {/* Combo Slice Modal */}
-              { this.props.comboSliceModal.visible && <AsyncComboSliceModal /> }
+              { modal.active === ModalType.comboSliceModal && <AsyncComboSliceModal /> }
             </div>
           }
     
           {/* Notification System */}
           <NotificationSystem ref='notificationSystem' dismissible='click'/>
 
-          <OverlaySpinner visible={ this.props.overlaySpinner.visible }/>
+          <OverlaySpinner visible={ overlaySpinner.visible }/>
         </div>
       </Sidebar>
     )
@@ -106,8 +109,7 @@ function mapStateToProps(state) {
   return {
     user: state.user,
     cart: state.cart,
-    menuModal: state.menuModal,
-    comboSliceModal: state.comboSliceModal,
+    modal: state.modal,
     overlaySpinner: state.overlaySpinner,
     sideBar: state.sideBar,
   }

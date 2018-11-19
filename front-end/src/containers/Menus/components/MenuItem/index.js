@@ -5,14 +5,14 @@ import NumericCounter from '../../../../components/NumericCounter'
 
 import './styles.css'
 
-import { showMenuModal } from '../../../../redux/actions/menuModal'
+import { showModal, ModalType } from '../../../../redux/actions/modal'
 import { addToCart, removeFromCart } from '../../../../redux/actions/cart'
 import { showNotification } from '../../../../services/notification'
 
 class MenuItem extends Component {
 
   onShowMenuModal = () => {
-    this.props.dispatch(showMenuModal(this.props.item))
+    this.props.dispatch(showModal(ModalType.menuModal, this.props.item))
   }
 
   onIncrementPurchasedCount = () => {

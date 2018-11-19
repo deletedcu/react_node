@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { showMenuModal } from '../../redux/actions/menuModal'
+import { showModal, ModalType } from '../../redux/actions/modal'
 
 import './styles.css'
 
 class SelectMeals extends Component {
 
   onClickMeal = () => {
-    this.props.dispatch(showMenuModal({
+    this.props.dispatch(showModal(ModalType.menuModal, {
       id: 99,
       name: 'Chicken Leg Tandoori',
       type: 'menu',

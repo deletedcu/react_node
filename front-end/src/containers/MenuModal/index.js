@@ -17,7 +17,7 @@ import imgHighProtein from '../../assets/images/high-protein.svg'
 import imgGlutenFree from '../../assets/images/gluten-free.svg'
 import imgSoyFree from '../../assets/images/soy-free.svg'
 
-import { closeMenuModal } from '../../redux/actions/menuModal'
+import { closeModal } from '../../redux/actions/modal'
 import { addToCart } from '../../redux/actions/cart'
 import { showNotification } from '../../services/notification'
 
@@ -27,7 +27,7 @@ class MenuModal extends Component {
     super(props)
 
     this.state = {
-      item: props.menuModal.item,
+      item: props.modal.data,
 
       descriptionScrolled: false,
       itemCount: 1,
@@ -39,7 +39,7 @@ class MenuModal extends Component {
   }
 
   onClose = () => {
-    this.props.dispatch(closeMenuModal())
+    this.props.dispatch(closeModal())
   }
 
   onScrollDescription = (e) => {
@@ -82,7 +82,7 @@ class MenuModal extends Component {
     var items = new Array(this.state.itemCount).fill(this.state.item)
     
     this.props.dispatch(addToCart(items))
-    this.props.dispatch(closeMenuModal())
+    this.props.dispatch(closeModal())
 
     showNotification('Added to cart', 'success')
   }
@@ -225,7 +225,7 @@ class MenuModal extends Component {
 
 function mapStateToProps(state) {
   return {
-    menuModal: state.menuModal,
+    modal: state.modal,
   }
 }
 
