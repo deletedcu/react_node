@@ -21,6 +21,7 @@ class EditProfileModal extends Component {
       lastName: user.last_name,
       email: user.email,
       phone: user.phone || '',
+      zip: user.zip || '',
       shippingAddress: user.shipping_address || '',
       password: '',
     }
@@ -35,13 +36,14 @@ class EditProfileModal extends Component {
   onSave = (e) => {
     e.preventDefault()
     
-    let { firstName, lastName, email, phone, shippingAddress, password } = this.state
+    let { firstName, lastName, email, phone, shippingAddress, password, zip } = this.state
 
     this.props.dispatch(updateUserProfile(this.props.user.user.token, {
       first_name: firstName,
       last_name: lastName,
       email: email,
       phone: phone,
+      zip: zip,
       shipping_address: shippingAddress,
       password: password,
     }))
@@ -84,6 +86,11 @@ class EditProfileModal extends Component {
             <div className='form-input'>
               <div className='form-input-name'>Phone Number</div>
               <input type='tel' name='phone' value={this.state.phone} onChange={this.onChange}/>
+            </div>
+
+            <div className='form-input'>
+              <div className='form-input-name'>Zip</div>
+              <input type='text' name='zip' value={this.state.zip} onChange={this.onChange}/>
             </div>
 
             <div className='form-input'>

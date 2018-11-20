@@ -22,6 +22,7 @@ class EditProfile extends Component {
           <div className='div-profile-info-title-list'>
             <div className='div-profile-info-title'>User Name</div>
             <div className='div-profile-info-title'>Shipping Address</div>
+            <div className='div-profile-info-title'>Zip</div>
             <div className='div-profile-info-title'>Phone Number</div>
             <div className='div-profile-info-title'>Email Address</div>
           </div>
@@ -29,6 +30,7 @@ class EditProfile extends Component {
           <div className='div-profile-info-text-list'>
             <div className='div-profile-info-text'>{`${user.first_name} ${user.last_name}`}</div>
             <div className='div-profile-info-text'>{user.shipping_address || '-'}</div>
+            <div className='div-profile-info-text'>{user.zip || '-'}</div>
             <div className='div-profile-info-text'>{user.phone || '-'}</div>
             <div className='div-profile-info-text'>{user.email}</div>
           </div>

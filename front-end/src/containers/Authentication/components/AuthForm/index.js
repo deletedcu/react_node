@@ -22,7 +22,6 @@ class AuthForm extends Component {
       lastName: '',
       email: '',
       password: '',
-      zip: '',
     }
   }
 
@@ -46,7 +45,6 @@ class AuthForm extends Component {
       last_name: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
-      zip: this.state.zip,
     }))
   }
 
@@ -114,14 +112,6 @@ class AuthForm extends Component {
             <div className='auth-form-input-name'>Create Password</div>
             <input required type='password' name='password' value={this.state.password} onChange={this.onChange} placeholder='6 characters or more'/>
           </div>
-
-          { 
-            isSignup && 
-            <div className='auth-form-input'>
-              <div className='auth-form-input-name'>Zip</div>
-              <input required name='zip' value={this.state.zip} onChange={this.onChange}/>
-            </div>
-          }
 
           <Button className='btn-continue' onClick={this.onContinue}>CONTINUE</Button>
         </form>
