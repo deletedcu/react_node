@@ -1,0 +1,39 @@
+@import "../../../styles/variables/variables";
+
+.meal-preference-modal {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translate(-50%);
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 0.5px solid $text-light-gray;
+  border-radius: 30px;
+  box-shadow: $shadow-secondary;
+  padding: 30px 60px 40px;
+  color: $text-light-gray;
+
+  .meal-preference-close {
+    .img-close {
+      height: 35px;
+      float: right;
+    }
+  }
+
+  .meal-preference-title {
+    color: $text-light-gray;
+    margin-left: 5px;
+  }
+
+  .meal-preference-save {
+    .btn-save {
+      float: right;
+      width: 129px;
+      height: 53px;
+      font-size: $small-font-size;
+      border-radius: 100px;
+    }
+  }
+}

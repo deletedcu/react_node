@@ -8,6 +8,7 @@ const AsyncComboSliceModal = asyncComponent(() => import('./ComboSliceModal'))
 const AsyncCardInfoModal = asyncComponent(() => import('./CardInfoModal'))
 const AsyncEditProfileModal = asyncComponent(() => import('./EditProfileModal'))
 const AsyncOrderFeedbackModal = asyncComponent(() => import('./OrderFeedbackModal'))
+const AsyncMealPreferenceModal = asyncComponent(() => import('./MealPreferenceModal'))
 
 /**
  * Routes
@@ -32,6 +33,9 @@ const Modal = (props) => {
 
       {/* Rating Modal */}
       { active === ModalType.orderFeedbackModal && <AsyncOrderFeedbackModal /> }
+
+      {/* Meal Preference Modal */}
+      { active === ModalType.mealPreferenceModal && <AsyncMealPreferenceModal /> }
     </div>
   )
 }
