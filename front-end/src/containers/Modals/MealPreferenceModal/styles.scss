@@ -22,12 +22,67 @@
     }
   }
 
-  .meal-preference-title {
-    color: $text-light-gray;
-    margin-left: 5px;
+  .meal-preference-rate-title {
+    font-size: $small-font-size;
+    margin-bottom: 5px;
+    margin-top: 30px;
+  }
+
+  .img-star {
+    width: 35px;
+    height: 35px;
+  }
+
+  .meal-preference-variation {
+    margin-top: 30px;
+
+    .meal-preference-variation-title {
+      font-size: $small-font-size;
+      margin-bottom: 10px;
+    }
+
+    .meal-preference-variation-group {
+      .radio-button {
+        margin-bottom: 10px;
+        .span-radio-button {
+          font-size: $mobile-regular-font-size;
+          color: $text-light-gray;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .meal-preference-special-request {
+    margin-top: 40px;
+
+    .checkbox {
+      img {
+        height: 15px;
+      }
+      span {
+        font-size: $mobile-regular-font-size;
+        color: $text-light-gray;
+      }
+    }
+
+    .textarea-special-request {
+      width: 490px;
+      height: 140px;
+      font-size: $small-font-size;
+      border: 1px solid $green-primary;
+      border-radius: 2px;
+      color: $text-light-gray;
+      caret-color: $green-primary;
+      resize: none;
+      padding: 10px;
+      margin-top: 10px;
+    }
   }
 
   .meal-preference-save {
+    margin-top: 90px;
+    
     .btn-save {
       float: right;
       width: 129px;

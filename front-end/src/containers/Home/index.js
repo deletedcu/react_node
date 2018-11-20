@@ -22,6 +22,10 @@ class Home extends Component {
     this.props.history.push('/menus')
   }
 
+  onFindFood = () => {
+    this.props.history.push('/menus')
+  }
+
   render () {
     let sliderSettings = {
       dots: true,
@@ -57,7 +61,7 @@ class Home extends Component {
               FROM CHEF'S KITCHEN TO<br/>
               YOUR DOORSTEP
             </div>
-            <LocationSearchField />
+            <LocationSearchField onFindFood={ this.onFindFood } />
           </div>
         </div>
 
@@ -131,7 +135,7 @@ class Home extends Component {
 
         {/* Location Search */}
         <div className='div-location-search'>
-          <LocationSearchField />
+          <LocationSearchField onFindFood={ this.onFindFood }/>
         </div>
       </div>
     )

@@ -22,11 +22,10 @@ class LocationSearchField extends Component {
   }
 
   onLocateMe = () => {
-
   }
 
   onFindFood = () => {
-
+    this.props.onFindFood()
   }
 
   render () {
