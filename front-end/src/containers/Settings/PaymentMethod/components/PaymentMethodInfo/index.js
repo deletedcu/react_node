@@ -8,16 +8,16 @@ import imgCard from '../../../../../assets/images/master_card.svg'
 class PaymentMethodInfo extends Component {
 
   onCheckChange = (checked) => {
-
+    this.props.onCheckChange(checked)
   }
 
   render () {
-    const { underline } = this.props
+    const { underline, checked } = this.props
 
     return (
       <div className={classNames('payment-method-info', {'payment-method-info-underlined' : underline})}>
         <RadioButton
-          // checked={ currentPaymentOption === PaymentOption.stripe }
+          checked={ checked }
           onCheckChange={ this.onCheckChange }
         />
 
