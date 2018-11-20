@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import asyncComponent from '../../components/AsyncComponent'
 import { ModalType } from '../../redux/actions/modal'
 
-const AsyncMenuModal = asyncComponent(() => import('../MenuModal'))
-const AsyncComboSliceModal = asyncComponent(() => import('../ComboSliceModal'))
-const AsyncCardInfoModal = asyncComponent(() => import('../CardInfoModal'))
-const AsyncEditProfileModal = asyncComponent(() => import('../EditProfileModal'))
-const AsyncOrderFeedbackModal = asyncComponent(() => import('../OrderFeedbackModal'))
+const AsyncMenuModal = asyncComponent(() => import('./MenuModal'))
+const AsyncComboSliceModal = asyncComponent(() => import('./ComboSliceModal'))
+const AsyncCardInfoModal = asyncComponent(() => import('./CardInfoModal'))
+const AsyncEditProfileModal = asyncComponent(() => import('./EditProfileModal'))
+const AsyncOrderFeedbackModal = asyncComponent(() => import('./OrderFeedbackModal'))
 
 /**
  * Routes

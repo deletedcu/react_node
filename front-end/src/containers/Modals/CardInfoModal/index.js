@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ModalContainer from '../../components/ModalContainer'
+import ModalContainer from '../../../components/ModalContainer'
 import CreditCardInput from 'react-credit-card-input'
-import Button from '../../components/Button'
+import Button from '../../../components/Button'
 
 import './styles.css'
 
-import imgClose from '../../assets/images/close_button.svg'
+import imgClose from '../../../assets/images/close_button.svg'
 
-import { closeModal } from '../../redux/actions/modal'
+import { closeModal } from '../../../redux/actions/modal'
 
 class CardInfoModal extends Component {
 

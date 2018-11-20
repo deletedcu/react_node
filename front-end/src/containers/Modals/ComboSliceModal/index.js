@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import ModalContainer from '../../components/ModalContainer'
+import ModalContainer from '../../../components/ModalContainer'
 import RequiredComboChoice from './component/RequiredComboChoice'
 import OptionalComboChoice from './component/OptionalComboChoice'
-import NumericCounter from '../../components/NumericCounter'
-import Button from '../../components/Button'
+import NumericCounter from '../../../components/NumericCounter'
+import Button from '../../../components/Button'
 
 import './styles.css'
 

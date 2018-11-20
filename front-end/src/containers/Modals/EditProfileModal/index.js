@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Button from '../../components/Button'
-import ModalContainer from '../../components/ModalContainer'
+import Button from '../../../components/Button'
+import ModalContainer from '../../../components/ModalContainer'
 import './styles.css'
 
-import { updateUserProfile } from '../../redux/actions/user'
-import { closeModal } from '../../redux/actions/modal'
+import { updateUserProfile } from '../../../redux/actions/user'
+import { closeModal } from '../../../redux/actions/modal'
 
-import imgClose from '../../assets/images/close_button.svg'
+import imgClose from '../../../assets/images/close_button.svg'
 
 class EditProfileModal extends Component {
 

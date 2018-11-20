@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import LazyImage from '../../../../components/LazyImage'
+import LazyImage from '../../../../../components/LazyImage'
 
 import './styles.css'
 

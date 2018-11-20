@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Rate from 'rc-rate'
-import ModalContainer from '../../components/ModalContainer'
-import Button from '../../components/Button'
+import ModalContainer from '../../../components/ModalContainer'
+import Button from '../../../components/Button'
 
 import './styles.css'
 
-import { closeModal } from '../../redux/actions/modal'
+import { closeModal } from '../../../redux/actions/modal'
 
-import imgClose from '../../assets/images/close_button.svg'
+import imgClose from '../../../assets/images/close_button.svg'
 
 class OrderFeedbackModal extends Component {
 

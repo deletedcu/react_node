@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Checkbox, { CheckboxType } from '../../../../components/Checkbox'
+import Checkbox, { CheckboxType } from '../../../../../components/Checkbox'
 
 import './styles.css'
 

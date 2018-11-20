@@ -1,25 +1,25 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
-import LazyImage from '../../components/LazyImage'
+import LazyImage from '../../../components/LazyImage'
 import MenuThumbnailList from './component/MenuThumbnailList'
 import IncrementCounter from './component/IncrementCounter'
-import Button from '../../components/Button'
-import Checkbox, { CheckboxType } from '../../components/Checkbox'
-import ModalContainer from '../../components/ModalContainer'
+import Button from '../../../components/Button'
+import Checkbox, { CheckboxType } from '../../../components/Checkbox'
+import ModalContainer from '../../../components/ModalContainer'
 import ExpandableDescription from './component/ExpandableDescription'
-import HorizontalSelectionGrid from '../../components/HorizontalSelectionGrid'
+import HorizontalSelectionGrid from '../../../components/HorizontalSelectionGrid'
 
 import './styles.css'
 
-import imgClose from '../../assets/images/close.svg'
-import imgHighProtein from '../../assets/images/high-protein.svg'
-import imgGlutenFree from '../../assets/images/gluten-free.svg'
-import imgSoyFree from '../../assets/images/soy-free.svg'
+import imgClose from '../../../assets/images/close.svg'
+import imgHighProtein from '../../../assets/images/high-protein.svg'
+import imgGlutenFree from '../../../assets/images/gluten-free.svg'
+import imgSoyFree from '../../../assets/images/soy-free.svg'
 
-import { closeModal } from '../../redux/actions/modal'
-import { addToCart } from '../../redux/actions/cart'
-import { showNotification } from '../../services/notification'
+import { closeModal } from '../../../redux/actions/modal'
+import { addToCart } from '../../../redux/actions/cart'
+import { showNotification } from '../../../services/notification'
 
 class MenuModal extends Component {
 
