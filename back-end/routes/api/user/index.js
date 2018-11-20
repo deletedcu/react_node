@@ -34,12 +34,12 @@ router.post('/login', (request, response) => {
  * 
  */
 router.post('/register', (request, response) => {
-  let { email, password, first_name, last_name, zip } = request.body;
+  let { email, password, first_name, last_name } = request.body;
   
   if (!email || !password || !email.trim() || !password.trim()) {
     response.status(400).json({ message: 'Invalid request!'});
   } else {
-    register(email, password, first_name, last_name, zip)
+    register(email, password, first_name, last_name)
       .then(res => {
         response.status(res.status).json({ message: res.message, user: res.user });
       })

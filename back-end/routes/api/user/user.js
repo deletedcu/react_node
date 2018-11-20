@@ -59,9 +59,8 @@ exports.login = (email, password) => {
  * @param {string} password 
  * @param {string} firstName 
  * @param {string} lastName 
- * @param {string} zip
  */
-exports.register = (email, password, firstName, lastName, zip) => {
+exports.register = (email, password, firstName, lastName) => {
   return new Promise((resolve, reject) => {
     // check if user already exists
     User.findOne({ email_lowercased: email.toLowerCase() }).exec((err, matchingUser) => {
@@ -91,7 +90,6 @@ exports.register = (email, password, firstName, lastName, zip) => {
           hashed_password: hash,
           first_name: firstName,
           last_name: lastName,
-          zip: zip,
           customer_id: customer.data.id,
         };
   
@@ -110,7 +108,6 @@ exports.register = (email, password, firstName, lastName, zip) => {
                 email_lowercased: user.email_lowercased,
                 first_name: user.first_name,
                 last_name: user.last_name,
-                zip: user.zip,
                 token: jwt.sign(user.email, config.jwtSecret, {}),
               },
             });
@@ -172,7 +169,7 @@ exports.updateProfile = (request) => {
     const currentEmail = checkToken(request);
 
     if (currentEmail) {
-      let { first_name, last_name, email, phone, shipping_address, password } = request.body;
+      let { first_name, last_name, email, phone, shipping_address, password, zip } = request.body;
       let user = {
         first_name: first_name,
         last_name: last_name,
@@ -180,6 +177,7 @@ exports.updateProfile = (request) => {
         email_lowercased: email.toLowerCase(),
         phone: phone,
         shipping_address: shipping_address,
+        zip: zip,
       };
 
       if (password) {

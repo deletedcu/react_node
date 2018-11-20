@@ -9,9 +9,8 @@ const userSchema = mongoose.Schema({
   first_name: String,
   last_name: String,
   
-  zip: String,
-
   phone: String,
+  zip: String,
   shipping_address: String,
 
   customer_id: String,
