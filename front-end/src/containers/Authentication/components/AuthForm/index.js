@@ -130,7 +130,7 @@ class AuthForm extends Component {
 
         {/* Form footer */}
         <div className='auth-form-footer'>
-          By clicking above, you agree to our <Link to='/home'><span className='span-link'>Terms of Use</span></Link> and consent to our <Link to='/home'><span className='span-link'>Privacy Policy</span></Link>
+          By clicking above, you agree to our <Link to='/terms-of-service'><span className='span-link'>Terms of Use</span></Link> and consent to our <Link to='/terms-of-service'><span className='span-link'>Privacy Policy</span></Link>
           
           { 
             !isSignup &&

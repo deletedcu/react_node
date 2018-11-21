@@ -12,6 +12,8 @@ const AsyncCheckout = asyncComponent(() => import('../Checkout'))
 const AsyncSettings = asyncComponent(() => import('../Settings'))
 const AsyncNotAvailable = asyncComponent(() => import ('../NotAvailable'))
 const AsyncHelpCenter = asyncComponent(() => import ('../HelpCenter'))
+const AsyncTermsOfService = asyncComponent(() => import ('../TermsOfService'))
+
 
 /**
  * Routes
@@ -27,6 +29,7 @@ const routes = (
     <Route path='/checkout' component={ AsyncCheckout } />
     <Route path='/settings' component={ AsyncSettings } />
     <Route path='/help-center' component={ AsyncHelpCenter } />
+    <Route path='/terms-of-service' component={ AsyncTermsOfService } />
     <Route path='/not-available' component={ AsyncNotAvailable } />
 
     <Redirect to='/home' />

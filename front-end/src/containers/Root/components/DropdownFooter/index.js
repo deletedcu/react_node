@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import DropdownList from './components/DropdownList'
+import { Link } from 'react-router-dom'
 
 import './styles.css'
 
@@ -52,8 +53,8 @@ class DropdownFooter extends Component {
 
         {/* Bottom */}
         <div className='div-footer-bottom'>
-          <span className='span-bottom-link'>Terms of Service</span>
-          <span className='span-bottom-link'>Privacy</span>
+          <Link to='/terms-of-service'><span className='span-bottom-link'>Terms of Service</span></Link>
+          <Link to='/terms-of-service'><span className='span-bottom-link'>Privacy</span></Link>
           <span className='span-bottom-link'>@2018 Mealpost.com</span>
         </div>
       </div>

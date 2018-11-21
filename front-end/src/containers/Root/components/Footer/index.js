@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import FooterTopSectionButton from './components/FooterTopSectionButton'
 import FooterLanguageButton from './components/FooterLanguageButton'
 
@@ -103,9 +104,9 @@ class Footer extends Component {
         {/* Bottom Section */}
         <div className='div-footer-bottom-container'>
           <div className='div-footer-bottom-links'>
-            <a className='footer-bottom-link'>Terms of Service</a>
-            <a className='footer-bottom-link'>Privacy</a>
-            <a className='footer-bottom-link'>@2018 Mealpost.com</a>
+            <Link to='/terms-of-service'><span className='footer-bottom-link'>Terms of Service</span></Link>
+            <Link to='/terms-of-service'><span className='footer-bottom-link'>Privacy</span></Link>
+            <span className='footer-bottom-link'>@2018 Mealpost.com</span>
           </div>
         </div>
       </div>
