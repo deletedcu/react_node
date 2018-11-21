@@ -15,6 +15,10 @@ import imgInstagram from '../../../../assets/images/instagram.svg'
 
 class Footer extends Component {
 
+  onHelpCenter = () => {
+    this.props.history.push('/help-center')
+  }
+
   render () {
     return (
       <div className='app-footer'>
@@ -39,6 +43,7 @@ class Footer extends Component {
             image={imgHelp}
             title='Help Center'
             hasSeparator={false}
+            onClick={this.onHelpCenter}
           />
           <FooterLanguageButton/>
         </div>

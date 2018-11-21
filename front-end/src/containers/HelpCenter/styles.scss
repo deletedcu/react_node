@@ -1,0 +1,64 @@
+@import "../../styles/variables/variables";
+
+.div-help-center-container {
+  background-color: $extra-light-gray;
+
+  .div-help-center-banner {
+    position: relative;
+    height: 465px;
+
+    .div-help-center-title {
+      position: relative;
+      text-align: center;
+      font-size: 70px;
+      font-family: 'Montserrat-SemiBold';
+      top: calc(50% - 60px);
+      transform: translateY(-50%);
+    }
+
+    .div-help-center-search {
+      position: relative;
+      left: 50%;
+      top: calc(50% - 70px);
+      transform: translateX(-50%);
+      padding: 0 30px;
+      width: 960px;
+      max-width: 100%;
+    }    
+  }
+
+  .div-help-center {
+    padding: 80px 180px 120px;
+
+    .div-separator {
+      height: 1px;
+      background-color: #232222;
+      margin: 80px 10px 80px;
+      opacity: 0.85;
+    }
+
+    .div-still-need-help {
+      text-align: center;
+      margin-top: 80px;
+
+      .btn-need-help {
+        width: 306px;
+        height: 67px;
+        font-family: 'Montserrat-Bold';
+        border-radius: 4px;
+      } 
+    }
+  }
+
+
+  @media (max-width: 710px) {
+    .div-help-center-banner {
+      max-height: 350px;
+
+      .div-help-center-title {
+        font-size: $regular-font-size;
+        top: calc(50% - 60px)
+      }
+    }
+  }
+}

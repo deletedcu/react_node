@@ -80,7 +80,7 @@ class Root extends Component {
               </div>
         
               {/* Footer */}
-              <Footer/>
+              <Footer history={history}/>
               <DropdownFooter/> {/* For responsive mode */}
         
               {/* Modal */}

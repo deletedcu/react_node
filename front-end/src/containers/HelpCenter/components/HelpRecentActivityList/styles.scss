@@ -1,0 +1,16 @@
+@import "../../../../styles/variables/variables";
+
+.help-recent-activity-list {
+  .help-recent-activity-list-title {
+    font-size: $medium-font-size;
+    font-family: 'Montserrat-Bold';
+    opacity: 0.8;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .img-load-more {
+    height: 18px;
+  }
+}

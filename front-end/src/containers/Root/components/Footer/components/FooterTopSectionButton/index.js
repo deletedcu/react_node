@@ -4,6 +4,12 @@ import './styles.css'
 
 class FooterTopSectionButton extends Component {
 
+  onClick = () => {
+    if (this.props.onClick) {
+      this.props.onClick()
+    }
+  }
+
   render () {
     const image = this.props.image
     const title = this.props.title
@@ -11,7 +17,7 @@ class FooterTopSectionButton extends Component {
 
     return (
       <div className='div-footer-top-section-button-container'>
-        <div className='div-footer-top-section-button clickable'>
+        <div className='div-footer-top-section-button clickable' onClick={this.onClick}>
           <img src={image} alt='icon'/>
           <span>{ title }</span>
         </div>

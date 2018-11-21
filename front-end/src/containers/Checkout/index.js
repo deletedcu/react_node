@@ -392,7 +392,7 @@ class Checkout extends Component {
         {/* Help/Contact Instruction */}
         <div className='div-help-container'>
           Need help? Visit the&nbsp;
-          <Link to='/home'><span>Help Center</span></Link>
+          <Link to='/help-center'><span>Help Center</span></Link>
           &nbsp;or&nbsp;
           <Link to='/contact-us'><span>Contact Us</span></Link>
         </div>

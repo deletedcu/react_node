@@ -1,0 +1,38 @@
+@import "../../../../styles/variables/variables";
+
+.help-recent-activity {
+  color: #333333;
+
+  .help-recent-activity-title {
+    font-size: 30px;
+  }
+
+  .help-recent-activity-content {
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 5px;
+
+    .help-recent-activity-question {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .help-recent-activity-info {
+      img {
+        height: 26px;
+        margin-left: 30px;
+      }
+    }
+  }
+
+  .help-recent-activity-separator {
+    height: 1px;
+    background-color: #232222;
+    opacity: 0.85;
+    margin: 60px 0 20px;
+  }
+}

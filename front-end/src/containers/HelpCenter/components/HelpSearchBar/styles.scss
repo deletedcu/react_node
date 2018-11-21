@@ -1,0 +1,25 @@
+@import "../../../../styles/variables/variables";
+
+.help-search-bar {
+  position: relative;
+  
+  .input-help-search {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    border-radius: 6px;
+    padding: 0 20px 0 60px;
+    font-size: 29px;
+
+    &:focus {
+      border: 3px solid $green-primary;
+    }
+  }
+
+  .img-search {
+    position: absolute;
+    height: 28px;
+    left: 16px;
+    top: 21px;
+  }
+}
