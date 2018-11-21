@@ -5,7 +5,7 @@ const TermsOfService = (props) => {
   return (
     <div className='div-terms-of-service-container'>
       {/* Header - Title */}
-      <div className='div-terms-of-service-title'>PRIVACY & TERMS</div>
+      <div className='div-terms-of-service-title'>TERMS & CONDITIONS</div>
 
       {/* Content */}
       <div className='div-terms-of-service-content'>
