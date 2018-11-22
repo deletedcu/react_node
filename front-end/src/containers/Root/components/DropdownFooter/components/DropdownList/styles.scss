@@ -35,11 +35,9 @@
     animation-duration: 0.25s;
     transform-origin: left top;
 
-    div {
+    a {
       padding-top: 10px;
-    }
-    div:hover {
-      color: white;
+      color: $text-light-gray;
     }
   }
 }

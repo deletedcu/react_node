@@ -1,0 +1,22 @@
+@import "../../../../styles/variables/variables";
+
+.career-filter {
+  background-color: rgba(229, 225, 225, 0.6);
+  border: 0.5px solid rgba(0,0,0,0.5);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 10px;
+
+  span {
+    font-size: 25px;
+    color: black;
+    font-family: 'Montserrat-Regular';
+  }
+
+  img {
+    height: 10px;
+    margin-left: 20px;
+  }
+}

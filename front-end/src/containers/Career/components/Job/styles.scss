@@ -1,0 +1,33 @@
+@import "../../../../styles/variables/variables";
+
+.job {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .job-detail {
+    color: black;
+
+    .job-title {
+      font-size: 30px;
+      font-family: 'Montserrat-SemiBold';
+      opacity: 0.75;
+      margin-bottom: 5px;
+    }
+
+    .job-location {
+      margin-right: 100px;
+    }
+
+    .job-time {
+      opacity: 0.5;
+    }
+  }
+
+  .btn-apply {
+    width: 152px;
+    height: 51px;
+    font-family: 'Montserrat-Bold';
+    border-radius: 4px;
+  }
+}

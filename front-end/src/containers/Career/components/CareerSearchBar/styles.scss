@@ -1,0 +1,22 @@
+@import "../../../../styles/variables/variables";
+
+.career-search-bar {
+  border-radius: 6px;
+  display: flex;
+  height: 70px;
+  background-color: white;
+  overflow: hidden;
+
+  input {
+    height: 100%;
+    padding: 0 20px;
+    flex-grow: 1;
+  }
+
+  .btn-search {
+    height: 100%;
+    width: 209px;
+    border-radius: 4px;
+    font-family: 'Montserrat-Bold';
+  }
+}

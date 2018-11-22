@@ -1,0 +1,17 @@
+@import "../../../../styles/variables/variables";
+
+.career-filters {
+  display: flex;
+  align-items: center;
+
+  .career-filters-title {
+    font-size: 30px;
+    font-family: 'Montserrat-SemiBold';
+    color: rgba(0,0,0,0.7);
+    margin-right: 40px;
+  }
+
+  .career-filter {
+    margin-right: 20px;
+  }
+}
