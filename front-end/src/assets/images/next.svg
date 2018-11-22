@@ -1,0 +1,15 @@
+<svg id="baseline-subdirectory_arrow_right-24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="Path_319" data-name="Path 319" class="cls-1" d="M0,0H30V30H0Z"/>
+  <path id="Path_320" data-name="Path 320" class="cls-2" d="M25,18.882,16.6,27l-1.988-1.921,5.026-4.844H4V4H6.8V17.529H19.638l-5.026-4.844L16.6,10.765Z"/>
+</svg>

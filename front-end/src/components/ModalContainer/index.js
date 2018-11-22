@@ -15,7 +15,7 @@ class ModalContainer extends Component {
 
   render () {
     return (
-      <div className={ classNames('div-modal-container', this.props.className) } style={ this.props.style }>
+      <div className={ classNames('div-modal-container', this.props.className, {'div-modal-container-dark': this.props.darkMode}) } style={ this.props.style }>
         { this.props.children }
       </div>
     )

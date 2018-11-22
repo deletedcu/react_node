@@ -9,6 +9,7 @@ const AsyncCardInfoModal = asyncComponent(() => import('./CardInfoModal'))
 const AsyncEditProfileModal = asyncComponent(() => import('./EditProfileModal'))
 const AsyncOrderFeedbackModal = asyncComponent(() => import('./OrderFeedbackModal'))
 const AsyncMealPreferenceModal = asyncComponent(() => import('./MealPreferenceModal'))
+const AsyncJobApplyModal = asyncComponent(() => import('./JobApplyModal'))
 
 /**
  * Routes
@@ -36,6 +37,9 @@ const Modal = (props) => {
 
       {/* Meal Preference Modal */}
       { active === ModalType.mealPreferenceModal && <AsyncMealPreferenceModal /> }
+
+      {/* Job Apply Modal */}
+      { active === ModalType.jobApplyModal && <AsyncJobApplyModal /> }
     </div>
   )
 }

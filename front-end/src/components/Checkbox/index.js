@@ -18,8 +18,14 @@ class Checkbox extends Component {
     super(props)
 
     this.state = {
-      checked: false,
+      checked: props.checked,
     }
+  }
+
+  componentWillReceiveProps ({ checked }) {
+    this.setState({
+      checked: checked,
+    })
   }
 
   onClick = () => {

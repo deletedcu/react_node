@@ -1,0 +1,139 @@
+@import "../../../styles/variables/variables";
+
+.job-apply-modal {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translate(-50%);
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 32px;
+  box-shadow: $shadow-primary;
+  padding: 30px 100px 40px;
+  color: $text-light-gray;
+
+  width: 1080px;
+  height: 800px;
+
+  .job-apply-close {
+    .img-close {
+      height: 35px;
+      float: right;
+      margin-right: -50px;
+    }
+  }
+
+  .job-apply-title {
+    color: #414141;
+    font-family: 'Montserrat-Bold';
+  }
+
+  .job-apply-form {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    overflow-y: scroll;
+
+    input, textarea {
+      width: 100%;
+      height: 80px;
+      border: 1px solid $light-green-primary;
+      border-radius: 4px;
+      font-size: $footer-secondary-font-size;
+      color: $text-light-gray;
+      caret-color: $green-primary;
+      margin-top: 10px;
+      resize: none;
+      padding: 20px;
+
+      &:focus {
+        border: 1px solid $green-primary;
+      }
+    }
+    textarea {
+      height: 175px;
+    }
+
+    .input-file-uploader {
+      visibility: hidden;
+      border: unset;
+      width: 0;
+      height: 0;
+      padding: unset;
+      margin: unset,
+    }
+
+    .btn-attach {
+      width: 164px;
+      height: 73px;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+    .job-apply-form-double-input {
+      display: flex;
+      justify-content: space-between;
+
+      .job-apply-form-single-input {
+        width: calc(50% - 20px);
+      }
+    }
+
+    .job-apply-form-single-input {
+      margin-bottom: 30px;
+    }
+
+    .job-apply-form-description {
+      width: 80%;
+    }
+
+    .job-apply-form-selection-group {
+      margin-top: 30px;
+      .job-apply-form-selection-group-title {
+        color: $text-light-gray;
+      }
+      .checkbox {
+        margin-left: 20px;
+        margin-top: 20px;
+        img {
+          height: 30px;
+          border-radius: 2px;
+        }
+        span {
+          color: $text-light-gray;
+        }
+      }
+    }
+  }
+
+  .job-apply-next-prev-buttons {
+    position: absolute;
+    right: 40px;
+    bottom: -42px;
+    display: flex;
+
+    %button {
+      width: 229px;
+      height: 84px;
+      margin: 0 8px;
+      border-radius: 8px;
+    }
+
+    .btn-move {
+      @extend %button;
+
+      display: flex;
+      justify-content: space-between;
+      padding: 0 50px;
+      background-color: #3D3D3D;
+      .img-move {
+        height: 30px;
+      }
+    }
+
+    .btn-submit {
+      @extend %button;
+    }
+  }
+}
