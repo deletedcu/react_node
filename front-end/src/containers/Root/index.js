@@ -68,7 +68,7 @@ class Root extends Component {
         transitions={false}
         pullRight={true}
       >
-        <div className='app header-fixed'>
+        <div id='app' className='app header-fixed'>
           { this.state.isChecked &&
             <div>
               {/* Header */}
