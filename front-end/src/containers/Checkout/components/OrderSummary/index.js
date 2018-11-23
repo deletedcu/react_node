@@ -77,7 +77,7 @@ class OrderSummary extends Component {
           </div>
           <div className='order-summary-info-block'>
             <span>6 Meals Per Week</span>
-            <span>{`$${totalPrice}`}</span>
+            <span>{`$${totalPrice.toFixed(2)}`}</span>
           </div>
           <div className='order-summary-info-block'>
             <span>Shipping</span>
@@ -96,7 +96,7 @@ class OrderSummary extends Component {
           {/* Total Price */}
           <div className='order-summary-total-price-block'>
             <span>Total</span>
-            <span>{`$${totalPrice}`}</span>
+            <span>{`$${totalPrice.toFixed(2)}`}</span>
           </div>
         </div>
 

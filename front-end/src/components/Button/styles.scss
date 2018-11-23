@@ -21,6 +21,7 @@
 
 .button:active {
   box-shadow: none;
+  background: $green-secondary;
 }
 
 @media (max-width: 1024px) {

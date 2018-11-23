@@ -85,9 +85,16 @@
       height: 30px;
     }
 
+    .div-links {
+      margin-left: 30px;
+      span {
+        margin: 0 10px;
+      }
+    }
+
     .div-buttons {
       margin-right: 30px;
-      margin-top: 34px;
+      margin-top: 20px;
       height: 36px;
 
       .div-login {
@@ -106,6 +113,10 @@
     .img-min-flow {
       display: block;
     }
+
+    .div-links {
+      display: none;
+    }
   }
 
   @media (max-width: 710px) {
@@ -122,8 +133,19 @@
 
     .div-buttons {
       margin-right: 15px;
-      margin-top: 15px;
+      margin-top: 18px;
       height: 25px;
+      
+      .dropdown {
+        .settings-dropdown-trigger span {
+          font-size: $mobile-regular-font-size;
+        }
+        .dropdown__content  {
+          margin-left: -75px;
+          margin-top: 0;
+        }
+      }
+      
 
       .div-login {
         width: 60px;
