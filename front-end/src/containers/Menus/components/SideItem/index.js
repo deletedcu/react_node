@@ -42,7 +42,13 @@ class SideItem extends Component {
         <div className='div-side-item-info'>
           <div className='div-side-item-detail'>
             <div className='div-side-item-title'>
+              <ShowMore
+                lines={1}
+                more=''
+                less=''
+              >
               { item.name }
+              </ShowMore>
             </div>
             <div className='div-side-item-description'>
               <ShowMore
