@@ -121,7 +121,7 @@
 
   @media (max-width: 710px) {
     .img-logo {
-      margin-left: 20px;
+      margin-left: 22px;
       margin-top: 21px;
       height: 18px;
     }
@@ -132,7 +132,7 @@
     }
 
     .div-buttons {
-      margin-right: 15px;
+      margin-right: 22px;
       margin-top: 18px;
       height: 25px;
       
@@ -140,18 +140,48 @@
         .settings-dropdown-trigger span {
           font-size: $mobile-regular-font-size;
         }
-        .dropdown__content  {
+        .dropdown__content {
           margin-left: -75px;
           margin-top: 0;
         }
       }
       
-
       .div-login {
         width: 60px;
         height: 25px;
         line-height: 25px;
         font-size: $mobile-small-font-size;
+      }
+
+      .button {
+        height: 39px;
+        width: 100px;
+      }
+
+      .div-cart {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  @media (max-width: 414px) {
+    .div-buttons {
+      .dropdown {
+        .settings-dropdown-trigger span {
+          font-size: $mobile-small-font-size;
+        }
+        .settings-dropdown-trigger img {
+          height: 4px;
+        }
+        .dropdown__content {
+          margin-left: -112px;
+          margin-top: 3px;
+        }
+      }
+
+      .button {
+        height: 23px;
+        width: 70px;
       }
     }
   }

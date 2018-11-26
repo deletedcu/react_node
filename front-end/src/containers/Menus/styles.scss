@@ -37,21 +37,22 @@
     }
   }
 
-  // @media (max-width: 710px) {
-  //   .div-menus {
-  //     margin-top: 60px;
-  //     padding-bottom: 40px;
+  @media (max-width: 710px) {
+    margin-top: 60px;
+    // .div-menus {
+    //   margin-top: 60px;
+    //   padding-bottom: 40px;
 
-  //     .div-menus-grid {
-  //       .div-load-more {
-  //          height: 60px;
-  //          line-height: 60px;
-  //          font-size: $small-font-size;
+    //   .div-menus-grid {
+    //     .div-load-more {
+    //        height: 60px;
+    //        line-height: 60px;
+    //        font-size: $small-font-size;
 
-  //          width: calc(100% - 30px);
-  //          max-width: 333px;
-  //       }
-  //     }
-  //   }
-  // }
+    //        width: calc(100% - 30px);
+    //        max-width: 333px;
+    //     }
+    //   }
+    // }
+  }
 }

@@ -19,21 +19,18 @@
     font-family: 'Montserrat-Bold';
   }
 
-  // @media (max-width: 710px) {
-  //   img {
-  //     height: 19px;
-  //   }
-
-  //   span {
-  //     width: 14px;
-  //     height: 14px;
-  //     line-height: 14px;
-  //     font-size: $mobile-small-font-size;
-  //     left: 12px;
-  //     top: -2px;
-  //     border: 1px solid white;
-  //   }
-  // }
+  @media (max-width: 414px) {
+    padding: 4px 10px;
+    border-radius: 4px;
+    
+    span {
+      font-size: $mobile-small-font-size;
+    }
+    img {
+      height: 10px;
+      margin-right: 10px;
+    }
+  }
 }
 
 .div-cart-highlighted {

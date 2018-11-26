@@ -90,6 +90,43 @@
     }
   }
 
+  @media (max-width: 1365px) {
+    .div-menus-header-left .menu-datepicker {
+      display: none;
+    }
+    .div-menus-header-right .div-zip-code {
+      display: none;
+    }
+  }
+
+  @media (max-width: 710px) {
+    position: absolute;
+    padding: 0 22px;
+    height: 63px;
+
+    .div-menus-header-left {
+      .div-recommended {
+        width: 46px;
+        height: 31px;
+        margin-left: 10px;
+      }
+    }
+
+    .div-menus-header-right .div-search-container {
+      width: 200px;
+      height: 31px;
+      border-radius: 4px;
+      padding: 10px;
+
+      img {
+        height: 13px;
+      }
+      input {
+        font-size: $mobile-regular-font-size;
+      }
+    }
+  }
+
   // @media (max-width: 710px) {
   //   .div-menus-header-left {
   //     flex-direction: column;
