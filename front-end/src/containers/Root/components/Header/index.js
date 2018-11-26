@@ -52,7 +52,7 @@ class Header extends Component {
     let { pathName, user, history, sideBar } = this.props
     
     return (
-      <div className={classNames('app-header', {'app-header-squizzed': sideBar.visible})}>
+      <div className={classNames('app-header', {'app-header-squizzed': false})}>
         <img className='img-logo clickable' src={imgLogo} alt='logo' onClick={this.onClickLogo}/>
 
         { pathName.includes('auth/signup') && <img className='img-flow' src={imgFlow} alt='flow'/> }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NotificationSystem from 'react-notification-system'
 import { connect } from 'react-redux'
+import { isMobileOnly } from 'react-device-detect'
 import routes from './routes'
 import Modal from '../Modals'
 import Sidebar from 'react-sidebar'
@@ -51,7 +52,7 @@ class Root extends Component {
     }
   }
 
-  componentWillReceiveProps ({ user }) {
+  componentWillReceiveProps ({ user, location }) {
     if (!user.loggingIn) {
       this.setState({ isChecked: true })
     }
@@ -63,10 +64,14 @@ class Root extends Component {
     return (
       <Sidebar
         sidebar={<SideCart history={history}/>}
-        styles={{sidebar: {background: 'white', zIndex: '1001', width: '375px', transition: 'transform .1s ease-out', WebkitTransition: '-webkit-transform .1s ease-out'}}}
-        docked={sideBar.visible}
-        transitions={false}
+        styles={{
+          sidebar: {background: 'white', zIndex: '1001', width: '375px', transition: 'transform .1s ease-out', WebkitTransition: '-webkit-transform .1s ease-out'},
+          content: {zIndex: isMobileOnly ? '0' : '1'},
+          overlay: {backgroundColor: isMobileOnly ? 'rgba(0,0,0,0.34)' : 'unset'},
+        }}
+        transitions={true}
         pullRight={true}
+        open={sideBar.visible}
       >
         <div id='app' className='app header-fixed'>
           { this.state.isChecked &&
@@ -84,7 +89,7 @@ class Root extends Component {
               <DropdownFooter/> {/* For responsive mode */}
         
               {/* Modal */}
-              <Modal/>
+              <Modal pathName={location.pathname}/>
             </div>
           }
     

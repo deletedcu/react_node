@@ -15,7 +15,7 @@ class FeaturedMenu extends Component {
   }
 
   onQuickOrder = () => {
-    this.props.dispatch(addToCart(this.props.item))
+    this.props.dispatch(addToCart(this.props.item, false))
 
     showNotification('Added to cart', 'success')
   }

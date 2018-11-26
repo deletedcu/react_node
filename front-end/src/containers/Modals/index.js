@@ -17,11 +17,12 @@ const AsyncJobApplyModal = asyncComponent(() => import('./JobApplyModal'))
 
 const Modal = (props) => {
   const active = props.modal.active
+  const pathName = props.pathName
 
   return (
     <div>
       {/* Menu Modal */}
-      { active === ModalType.menuModal && <AsyncMenuModal /> }
+      { active === ModalType.menuModal && <AsyncMenuModal pathName={pathName}/> }
 
       {/* Combo Slice Modal */}
       { active === ModalType.comboSliceModal && <AsyncComboSliceModal /> }

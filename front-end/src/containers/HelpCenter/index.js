@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import LazyImage from '../../components/LazyImage'
 import Button from '../../components/Button'
 import HelpSearchBar from './components/HelpSearchBar'
@@ -8,8 +9,13 @@ import HelpRecentActivityList from './components/HelpRecentActivityList'
 import './styles.css'
 
 import imgBanner from '../../assets/images/banner.png'
+import { hideSidebar } from '../../redux/actions/sideBar'
 
 class HelpCenter extends Component {
+
+  componentDidMount () {
+    this.props.dispatch(hideSidebar())
+  }
 
   onSearchChange = (text) => {
 
@@ -51,4 +57,4 @@ class HelpCenter extends Component {
   }
 }
 
-export default HelpCenter
+export default connect()(HelpCenter)

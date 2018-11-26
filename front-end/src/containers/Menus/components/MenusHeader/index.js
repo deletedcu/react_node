@@ -33,7 +33,7 @@ class MenusHeader extends Component {
 
   render () {
     return (
-      <div className={classNames('div-menus-header-container', {'div-menus-header-squizzed': this.props.sideBar.visible})}>
+      <div className={classNames('div-menus-header-container', {'div-menus-header-squizzed': false})}>
         <div className='div-menus-header-left'>
           <MenuFilter onChangeFilters={this.onChangeFilters}/>
           <div className='div-recommended clickable'/>

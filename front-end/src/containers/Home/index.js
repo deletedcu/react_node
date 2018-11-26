@@ -16,7 +16,13 @@ import imgOrders from '../../assets/images/menu.png'
 import imgTrack from '../../assets/images/track.png'
 import imgReceive from '../../assets/images/deliver.png'
 
+import { hideSidebar } from '../../redux/actions/sideBar'
+
 class Home extends Component {
+
+  componentDidMount () {
+    this.props.dispatch(hideSidebar())
+  }
 
   onViewAllProducts = () => {
     this.props.history.push('/menus')

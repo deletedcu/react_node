@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Button from '../../components/Button'
 import LazyImage from '../../components/LazyImage'
 
 import './styles.css'
 
 import imgBanner from '../../assets/images/banner.png'
+import { hideSidebar } from '../../redux/actions/sideBar'
 
 class ContactUs extends Component {
 
@@ -17,6 +19,10 @@ class ContactUs extends Component {
       email: '',
       message: '',
     }
+  }
+
+  componentDidMount () {
+    this.props.dispatch(hideSidebar())
   }
 
   onChange = (e) => {
@@ -89,4 +95,4 @@ class ContactUs extends Component {
   }
 }
 
-export default ContactUs
+export default connect()(ContactUs)

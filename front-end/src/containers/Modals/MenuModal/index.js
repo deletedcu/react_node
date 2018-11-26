@@ -81,7 +81,7 @@ class MenuModal extends Component {
   onAddToCart = () => {
     var items = new Array(this.state.itemCount).fill(this.state.item)
     
-    this.props.dispatch(addToCart(items))
+    this.props.dispatch(addToCart(items, this.props.pathName.includes('/menus')))
     this.props.dispatch(closeModal())
 
     showNotification('Added to cart', 'success')

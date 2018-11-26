@@ -18,6 +18,7 @@
     "rc-rate": "^2.4.3",
     "react": "^16.5.2",
     "react-credit-card-input": "^1.0.15",
+    "react-device-detect": "^1.6.1",
     "react-dom": "^16.5.2",
     "react-facebook-login": "^4.1.1",
     "react-notification-system": "^0.2.17",
