@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Button from '../../../../components/Button'
 import RecommendedMenuSlider from '../RecommendedMenuSlider'
@@ -14,7 +15,7 @@ class SideCartSummary extends Component {
   }
 
   render () {
-    const { cart } = this.props
+    const { cart, user } = this.props
     const total = cart.items.reduce((sum, cartItem) => {
       return sum + cartItem.price[0]
     }, 0)
@@ -68,6 +69,15 @@ class SideCartSummary extends Component {
 
         {/* Checkout */}
         <Button className='btn-checkout' onClick={this.onCheckout} style={{visibility: cart.items.length > 0 ? 'visible' : ' hidden' }}>Checkout</Button>
+
+        {/* Separator */}
+        
+        { !user.loggedIn && 
+          <div>
+            <div className='side-cart-summary-separator'/>
+            <div className='side-cart-summary-bottom-link'>To manage your Mealpost account, <Link to='/auth/login'><span>Log in</span></Link> or <Link to='/auth/signup'><span>Sign up</span></Link> here.</div> 
+          </div>
+        }
       </div>
     )
   }
@@ -75,6 +85,7 @@ class SideCartSummary extends Component {
 
 function mapStateToProps(state) {
   return {
+    user: state.user,
     cart: state.cart,
   }
 }

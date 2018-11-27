@@ -58,4 +58,12 @@
     background-color: $text-light-gray;
     margin: 20px 5px;
   }
+
+  @media (max-width: 414px) {
+    margin-top: 15px;
+
+    .side-cart-item-separator {
+      background-color: #D4CDCD;
+    }
+  }
 }

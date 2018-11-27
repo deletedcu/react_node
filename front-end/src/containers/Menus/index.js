@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { isMobileOnly } from 'react-device-detect'
 import { connect } from 'react-redux'
 import MenusHeader from './components/MenusHeader'
 import MenuItem from './components/MenuItem'
@@ -13,6 +14,8 @@ class Menus extends Component {
 
     this.state = {
       searchText: '',
+      showAllMeals: !isMobileOnly,
+      showAllSides: !isMobileOnly,
     }
   }
 
@@ -30,7 +33,20 @@ class Menus extends Component {
     this.props.history.push('/select-meals')
   }
 
+  onViewAllMeals = () => {
+    this.setState({
+      showAllMeals: true,
+    })
+  }
+
+  onViewAllSides = () => {
+    this.setState({
+      showAllSides: true,
+    })
+  }
+
   render () {
+    let { showAllMeals, showAllSides } = this.state
     let zipCode = this.props.user.user.zip;
     let { products } = this.props.products
     let menuItems = products.filter(product => product.name.includes(this.state.searchText)).map(product => {return {...product, type: 'menu'}})
@@ -57,14 +73,15 @@ class Menus extends Component {
                       <MenuItem item={menuItem} count={ this.props.cart.items.filter((item) => { return item.id === menuItem.id }).length }/>
                     }
                   </div>
-                )
+                ).slice(0, !showAllMeals ? 4 : menuItems.length)
               }
             </div>
+            { menuItems.length > 0 && !showAllMeals && <div className='div-view-all clickable' onClick={this.onViewAllMeals}>{`VIEW ALL ${menuItems.length} MEALS`}</div> }
           </div>
 
           {/* Sides */}
           <div className='div-menus-section'>
-            <div className='div-menus-section-title'><span>Side</span><div className='div-line'/></div>
+            <div className='div-menus-section-title'><div className='div-line-left'/><span>Side</span><div className='div-line-right'/></div>
             <div className='div-menus-grid row'>
               {
                 menuItems.map((menuItem, index) => 
@@ -73,14 +90,15 @@ class Menus extends Component {
                       <SideItem item={menuItem} count={ this.props.cart.items.filter((item) => { return item.id === menuItem.id }).length }/>
                     }
                   </div>
-                )
+                ).slice(0, !showAllSides ? 4 : menuItems.length)
               }
             </div>
+            { menuItems.length > 0 && !showAllSides && <div className='div-view-all clickable' onClick={this.onViewAllSides}>{`VIEW ALL ${menuItems.length} SIDES`}</div> }
           </div>
 
           {/* Meal Plans */}
           <div className='div-menus-section'>
-            <div className='div-menus-section-title'><span>Meal Plans</span><div className='div-line'/></div>
+            <div className='div-menus-section-title'><div className='div-line-left'/><span>Meal Plans</span><div className='div-line-right'/></div>
             <div className='div-menus-grid row'>
               {
                 Array(4).fill(0).map((item, index) => 

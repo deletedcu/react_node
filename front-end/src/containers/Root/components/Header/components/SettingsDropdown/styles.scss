@@ -59,4 +59,12 @@
       }
     }
   }
+
+  @media (max-width: 414px) {
+    .dropdown__content {
+      .div-menu {
+        font-size: 12px;
+      }
+    }
+  }
 }

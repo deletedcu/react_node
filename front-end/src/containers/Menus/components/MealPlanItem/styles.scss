@@ -38,4 +38,27 @@
       border-radius: 8px;
     }
   }
+
+  @media (max-width: 414px) {
+    margin: 10px;
+    padding: 15px;
+
+    .div-meal-plan-item-title {
+      font-size: 12px;
+    }
+
+    .div-meal-plan-item-bottom {
+      margin-top: 10px;
+
+      .div-meal-plan-item-price {
+        font-size: 11px;
+      }
+
+      .div-meal-plan-item-add {
+        font-size: $mobile-small-font-size;
+        padding: 10px 20px;
+        margin-right: 15px;
+      }
+    }
+  }
 } 

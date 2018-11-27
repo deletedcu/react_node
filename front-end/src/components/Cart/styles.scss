@@ -40,4 +40,17 @@
   span {
     color: white;
   }
+
+  @media (max-width: 414px) {
+    padding: 10px 20px;
+    border-radius: 8px;
+
+    img {
+      height: 13px;
+    }
+
+    span {
+      font-size: 11px;
+    }
+  }
 }

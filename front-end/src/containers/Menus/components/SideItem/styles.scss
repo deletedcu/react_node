@@ -57,4 +57,33 @@
       }
     }
   }
+
+  @media (max-width: 414px) {
+    margin: 10px;
+
+    .div-side-item-info {
+      padding: 15px 0 0 15px;
+
+      .div-side-item-detail {
+        .div-side-item-title {
+          font-size: 11px;
+        }
+      }
+    }
+
+    .div-side-item-bottom {
+      padding: 10px 30px 20px 20px;
+
+      .div-side-item-price-add {
+        .div-side-item-price {
+          font-size: 11px;
+        }
+
+        .div-side-item-add {
+          font-size: $mobile-small-font-size;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
 }

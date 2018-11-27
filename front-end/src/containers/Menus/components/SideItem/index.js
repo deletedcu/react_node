@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { isMobileOnly } from 'react-device-detect'
 import LazyImage from '../../../../components/LazyImage'
 import NumericCounter from '../../../../components/NumericCounter'
 import ShowMore from 'react-show-more';
@@ -52,7 +53,7 @@ class SideItem extends Component {
             </div>
             <div className='div-side-item-description'>
               <ShowMore
-                lines={4}
+                lines={ isMobileOnly ? 3 : 4 }
                 more=''
                 less=''
               >

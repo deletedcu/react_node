@@ -38,6 +38,25 @@
     padding: 0 40px;
   }
 
-  .div-side-cart-bottom {
+  @media (max-width: 414px) {
+    .div-side-cart-header {
+      height: 60px;
+
+      .div-side-cart-header-left {
+        flex-grow: 1;
+        margin-left: 20px;
+
+        .div-side-cart-header-title {
+          font-size: $small-font-size;
+          flex-grow: 1;
+          text-align: center;
+          margin-left: unset;
+        }
+      }
+    }
+
+    .div-side-cart-items {
+      padding: 0 20px;
+    }
   }
 }

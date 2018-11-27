@@ -65,7 +65,7 @@ class Root extends Component {
       <Sidebar
         sidebar={<SideCart history={history}/>}
         styles={{
-          sidebar: {background: 'white', zIndex: '1001', width: '375px', transition: 'transform .1s ease-out', WebkitTransition: '-webkit-transform .1s ease-out'},
+          sidebar: {background: 'white', zIndex: '1001', width: isMobileOnly ? '325px' : '375px', transition: 'transform .1s ease-out', WebkitTransition: '-webkit-transform .1s ease-out'},
           content: {zIndex: isMobileOnly ? '0' : '1'},
           overlay: {backgroundColor: isMobileOnly ? 'rgba(0,0,0,0.34)' : 'unset'},
         }}

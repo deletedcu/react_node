@@ -113,8 +113,18 @@
       margin-top: -150px;
     }
 
-    @media (max-width: 710px) {
+    @media (max-width: 768px) {
       margin-top: 40px;
+
+      .how-it-works-track, .how-it-works-receive {
+        margin-top: 70px;
+      }
+    }
+
+    @media (max-width: 710px) {
+      .how-it-works-track, .how-it-works-receive {
+        margin-top: 30px;
+      }
     }
   }
 

@@ -56,6 +56,37 @@
     font-size: $small-font-size;
     border-radius: 8px;
     margin-top: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
+  }
+
+  .side-cart-summary-bottom-link {
+    margin: 20px 0;
+    font-size: $mobile-small-font-size;
+    span {
+      font-family: 'Montserrat-Bold';
+      color: #242222;
+    }
+  }
+
+  @media (max-width: 414px) {
+    padding: 0 20px;
+
+    .side-cart-summary-separator {
+      background-color: #D4CDCD;
+      margin: 0 -20px;
+    }
+
+    .side-cart-summary-prices {
+      padding-top: 20px;
+      margin-bottom: 20px;
+
+      .side-cart-summary-price-title {
+        visibility: hidden;
+      }
+    }
+
+    .btn-checkout {
+      display: none;
+    }
   }
 }
