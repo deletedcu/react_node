@@ -1,3 +1,5 @@
+@import "./variables/variables";
+
 button, button:focus {
   outline: none;
 }
@@ -82,5 +84,40 @@ input, textarea {
 .rc-rate-star-zero {
   .img-star {
     background-image: url('../assets/images/star_empty.svg');
+  }
+}
+
+// override react date picker styles
+.react-datepicker {
+  .react-datepicker__triangle {
+    border-bottom-color: white;  
+  }
+
+  .react-datepicker__header {
+    background-color: white;
+    border-bottom: unset;
+  }
+
+  .react-datepicker__current-month {
+    font-size: $mobile-regular-font-size;
+    color: black;
+    font-family: 'Montserrat-Bold';
+  }
+
+  .react-datepicker__day-name {
+    color: #B1B1B1;
+    font-size: $mobile-small-font-size;
+  }
+
+  .react-datepicker__day {
+    background-color: $extra-light-gray;
+    border-radius: 3px;
+    font-size: $mobile-small-font-size;
+    color: #B1B1B1;
+  }
+
+  .react-datepicker__day--selected {
+    color: white;
+    background-color: $green-primary;
   }
 }

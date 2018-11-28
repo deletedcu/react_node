@@ -20,6 +20,10 @@ class Footer extends Component {
     this.props.history.push('/help-center')
   }
 
+  onGiftCards = () => {
+    this.props.history.push('/gift-cards')
+  }
+
   render () {
     return (
       <div className='app-footer'>
@@ -39,6 +43,7 @@ class Footer extends Component {
             image={imgGiftCard}
             title='Gift Cards'
             hasSeparator={true}
+            onClick={this.onGiftCards}
           />
           <FooterTopSectionButton
             image={imgHelp}

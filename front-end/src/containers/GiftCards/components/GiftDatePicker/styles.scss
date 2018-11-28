@@ -1,0 +1,43 @@
+@import "../../../../styles/variables/variables";
+
+.gift-datepicker {
+  .react-datepicker-wrapper, .react-datepicker__input-container {
+    width: 100%;
+  }
+
+  .gift-datepicker-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border: 1px solid #B7CBB8;
+    border-radius: 4px;
+    height: 80px;
+    
+    span {
+      color: #B7CBB8;
+      font-size: $footer-secondary-font-size;
+      font-family: 'Montserrat-Medium';
+    }
+
+    img {
+      height: 36px;
+    }
+  }
+
+  @media (max-width: 710px) {
+    .gift-datepicker-input {
+      height: 48px;
+      padding: 0 15px;
+
+      span {
+        font-size: $mobile-regular-font-size;
+        font-family: 'Montserrat-Regular';
+      }
+
+      img {
+        height: 21px;
+      }
+    }
+  }
+}

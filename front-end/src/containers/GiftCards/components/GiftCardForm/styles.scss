@@ -1,0 +1,146 @@
+@import "../../../../styles/variables/variables";
+
+.gift-card-form {
+  border: 1px solid #B7CBB8;
+  box-shadow: $shadow-primary;
+  padding: 30px 50px;
+
+  %input-field {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #B7CBB8;
+    padding: 0 20px;
+    font-size: $footer-secondary-font-size;
+    font-family: 'Montserrat-Medium';
+    margin-top: 10px;
+    caret-color: $green-primary;
+
+    &:focus {
+      border: 1px solid $green-primary;
+    }
+
+    &::placeholder {
+      color: #B7CBB8;
+      opacity: 1;
+    }
+    
+    &:-ms-input-placeholder {
+        color: #B7CBB8;
+    }
+    
+    &::-ms-input-placeholder {
+        color: #B7CBB8;
+    }
+  }
+
+  input {
+    @extend %input-field;
+    height: 80px;
+  }
+
+  textarea {
+    @extend %input-field;
+    height: 240px;
+    resize: none;
+    padding: 20px;
+  }
+
+  .gift-card-form-name {
+    color: #108915;
+  }
+
+  .gift-card-form-double-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    
+    input {
+      width: calc(50% - 20px);
+    }
+  }
+
+  .gift-card-form-datepicker {
+    margin-top: 30px;
+
+    .gift-card-form-datepicker-title {
+      color: $text-light-gray;
+      margin-bottom: 10px;
+    }
+  }
+
+  .gift-card-form-message {
+    margin-top: 30px;
+
+    .gift-card-form-message-title {
+      color: $text-light-gray;
+    }
+  }
+
+  .btn-checkout {
+    width: 100%;
+    height: 80px;
+    color: white;
+    border-radius: 4px;
+    margin-top: 30px;
+    border: 1px solid #108915;
+  }
+
+  @media (max-width: 710px) {
+    padding: 25px 15px;
+
+    %input-field {
+      font-size: $mobile-regular-font-size;
+      font-family: 'Montserrat-Regular';
+      padding: 0 15px;
+      margin-top: 5px;
+    }
+
+    input {
+      height: 48px;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      height: 207px;
+      padding: 15px;
+    }
+
+    .gift-card-form-name {
+      font-size: $mobile-regular-font-size;
+    }
+  
+    .gift-card-form-double-inputs {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0;
+      
+      input {
+        width: 100%;
+      }
+    }
+  
+    .gift-card-form-datepicker {
+      margin-top: 20px;
+  
+      .gift-card-form-datepicker-title {
+        font-size: $mobile-regular-font-size;
+        margin-bottom: 5px;
+      }
+    }
+  
+    .gift-card-form-message {
+      margin-top: 20px;
+  
+      .gift-card-form-message-title {
+        font-size: $mobile-regular-font-size;
+      }
+    }
+  
+    .btn-checkout {
+      height: 48px;
+      font-size: $mobile-regular-font-size;
+      margin-top: 20px;
+    }
+  }
+}

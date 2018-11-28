@@ -1,0 +1,104 @@
+@import "../../styles/variables/variables";
+
+.div-giftcards-container {
+  .div-giftcards-banner {
+    position: relative;
+    height: 465px;
+
+    .div-giftcards-title {
+      position: relative;
+      text-align: center;
+      font-size: 52px;
+      font-family: 'Montserrat-SemiBold';
+      top: calc(50% - 30px);
+      transform: translateY(-50%);
+      margin: 0 25px;
+
+      .div-giftcards-subtitle {
+        color: $text-light-gray;
+        font-size: $regular-font-size;
+        font-family: 'Montserrat-Regular';
+      }
+    }
+  }
+
+  .div-giftcards-content {
+    margin-top: 100px;
+
+    .div-giftcards {
+      margin: 0 120px;
+    }
+
+    .div-giftcard-form {
+      width: 900px;
+      margin-top: 80px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .div-giftcards-bottom {
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    max-width: calc(100% - 80px);
+    margin: 100px 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+  }
+
+  @media (max-width: 1200px) {
+    .div-giftcards-content {
+      .div-giftcards {
+        margin: 0 60px;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .div-giftcards-content {
+      .div-giftcards {
+        margin: 0 28px;
+      }
+
+      .div-giftcard-form {
+        width: calc(100% - 60px);
+      }
+    }
+  }
+
+
+  @media (max-width: 710px) {
+    .div-giftcards-banner {
+      max-height: 350px;
+
+      .div-giftcards-title {
+        font-size: $regular-font-size;
+        top: calc(50% - 30px);
+        font-family: 'Montserrat-Regular';
+
+        .div-giftcards-subtitle {
+          margin-top: 20px;
+          color: $text-light-gray;
+          font-size: $mobile-regular-font-size;
+        }
+      }
+    }
+
+    .div-giftcards-content {
+      margin-top: 40px;
+
+      .div-giftcard-form {
+        margin-top: 0;
+      }
+    }
+
+    .div-giftcards-bottom {
+      font-size: 12px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      color: $text-light-gray;
+    }
+  }
+}

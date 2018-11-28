@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import moment from 'moment'
 import DatePicker from 'react-datepicker'
 
-import 'react-datepicker/dist/react-datepicker.css'
 import './styles.css'
 
 import imgLeftArrow from '../../../../assets/images/left_arrow.svg'

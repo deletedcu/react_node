@@ -1,0 +1,54 @@
+@import "../../../../styles/variables/variables";
+
+.gift-card-group {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: space-evenly;
+
+  .gift-card {
+    width: calc(33% - 60px);
+    height: 100%;
+  }
+
+  @media (max-width: 1600px) {
+    height: 200px;
+  }
+
+  @media (max-width: 1366px) {
+    height: 180px;
+
+    .gift-card {
+      width: calc(33% - 40px);
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .gift-card {
+      width: calc(33% - 20px);
+    } 
+  }
+
+  @media (max-width: 1024px) {
+    height: 150px;
+  }
+
+  @media (max-width: 768px) {
+    height: 120px;
+
+    .gift-card {
+      width: calc(33% - 10px);
+    }
+  }
+
+  @media (max-width: 710px) {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    .gift-card {
+      width: 310px;
+      height: 180px;
+      margin-bottom: 40px;
+    }
+  }
+}

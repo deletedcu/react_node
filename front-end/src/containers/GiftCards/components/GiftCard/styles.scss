@@ -1,0 +1,51 @@
+@import "../../../../styles/variables/variables";
+
+.gift-card {
+  position: relative;
+  box-sizing: border-box;
+
+  .gift-card-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .gift-card-info {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #2F2F2F;
+    text-align: right;
+    
+    .gift-card-price {
+      font-size: 32px;
+      font-family: 'Montserrat-Bold'; 
+    }
+    .gift-card-title {
+      font-size: 16px;
+      font-family: 'Montserrat-SemiBold';
+    }
+  }
+
+  @media (max-width: 710px) {
+    .gift-card-info {
+      top: 15px;
+      .gift-card-price {
+        font-size: 19px;
+      }
+      .gift-card-title {
+        font-size: 8px;
+      }
+    }
+  }
+}
+
+.gift-card-selected {
+  border: 6px solid #068F0B;
+  border-radius: 12px;
+
+  @media (max-width: 710px) {
+    border: 4px solid #068F0B;
+  }
+}

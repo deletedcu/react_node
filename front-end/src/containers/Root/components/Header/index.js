@@ -62,7 +62,7 @@ class Header extends Component {
           <div className='div-links'>
             <Link to='/menus'><span className='clickable'>MENU</span></Link>
             <Link to='/help-center'><span className='clickable'>HOW IT WORKS</span></Link>
-            <Link to='/home'><span className='clickable'>GIFTS</span></Link>
+            <Link to='/gift-cards'><span className='clickable'>GIFTS</span></Link>
           </div>
         }
         
