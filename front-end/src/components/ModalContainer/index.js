@@ -6,11 +6,12 @@ import './styles.css'
 class ModalContainer extends Component {
 
   componentDidMount () {
-    window.document.body.style.overflow = 'hidden'
+    window.document.getElementById('app').parentElement.style.overflow = 'hidden'
   }
 
   componentWillUnmount() {
-    window.document.body.removeAttribute('style')
+    window.document.getElementById('app').parentElement.style.overflow = 'unset'
+    window.document.getElementById('app').parentElement.style.overflowY = 'auto'
   }
 
   render () {
