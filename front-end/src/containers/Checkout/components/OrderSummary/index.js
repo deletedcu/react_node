@@ -4,8 +4,7 @@ import classNames from 'classnames'
 import OrderedItem from '../OrderedItem'
 
 import './styles.css'
-
-
+import { groupBy } from '../../../../utils'
 class OrderSummary extends Component {
 
   constructor (props) {
@@ -26,23 +25,12 @@ class OrderSummary extends Component {
 
   }
 
-  groupBy = (items, key) => items.reduce(
-    (result, item) => ({
-      ...result,
-      [item[key]]: [
-        ...(result[item[key]] || []),
-        item,
-      ],
-    }), 
-    {},
-  )
-
   render () {
     const cartItems = this.props.cart.items
     const totalPrice = cartItems.reduce((sum, cartItem) => {
       return sum + cartItem.price[0]
     }, 0)
-    const groupedItems = this.groupBy(cartItems, 'id')
+    const groupedItems =  groupBy(cartItems, 'id')
 
     let orderedItems = []
     Object.keys(groupedItems).forEach((id, index) => {

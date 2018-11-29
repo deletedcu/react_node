@@ -16,3 +16,9 @@ export function removeAllFromCart(item) {
     dispatch({ type: 'REMOVE_ALL_FROM_CART', payload: { item: item }})
   }
 }
+
+export function emptyCart() {
+  return function(dispatch) {
+    dispatch({ type: 'EMPTY_CART' })
+  }
+}

@@ -26,6 +26,10 @@ export default function reducer(state = {
       return {...state, items: items}
     }
 
+    case 'EMPTY_CART': {
+      return {...state, items: []}
+    }
+
     default: {
       return {...state}
     }

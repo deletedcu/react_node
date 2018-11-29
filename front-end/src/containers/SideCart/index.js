@@ -9,6 +9,7 @@ import './styles.css'
 import imgClose from '../../assets/images/close_button.svg'
 
 import { hideSidebar } from '../../redux/actions/sideBar'
+import { groupBy } from '../../utils'
 
 class SideCart extends Component {
 
@@ -20,22 +21,11 @@ class SideCart extends Component {
     this.props.dispatch(hideSidebar())
   }
 
-  groupBy = (items, key) => items.reduce(
-    (result, item) => ({
-      ...result,
-      [item[key]]: [
-        ...(result[item[key]] || []),
-        item,
-      ],
-    }), 
-    {},
-  )
-
   render () {
     const { history, cart } = this.props
 
     const cartItems = cart.items
-    const groupedItems = this.groupBy(cartItems, 'id')
+    const groupedItems = groupBy(cartItems, 'id')
 
     let sideCartItems = []
     Object.keys(groupedItems).forEach((id, index) => {

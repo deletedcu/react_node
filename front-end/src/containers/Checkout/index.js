@@ -16,7 +16,9 @@ import imgPaypal from '../../assets/images/paypal.svg'
 import { loginUser, signupUser } from '../../redux/actions/user'
 import { hideSidebar } from '../../redux/actions/sideBar'
 import { showOverlaySpinner, hideOverlaySpinner } from '../../redux/actions/overlaySpinner'
+import { emptyCart } from '../../redux/actions/cart'
 import getStripeToken from '../../services/stripeToken'
+import checkout from '../../services/checkout'
 import { showNotification } from '../../services/notification'
 
 const CheckoutStep = {
@@ -148,8 +150,26 @@ class Checkout extends Component {
 
       getStripeToken(this.state.cardNumber, this.state.cardExpiry, this.state.cardCVC, this.state.cardName)
         .then(tokenInfo => {
-          // TODO
-          this.props.dispatch(hideOverlaySpinner())
+          checkout(this.props.user.user.token, this.props.cart.items, {
+            first_name: this.state.addressFirstName,
+            last_name: this.state.addressLastName,
+            line_1: this.state.streetAddress,
+            line_2: this.state.apartmentNumber,
+            city: this.state.city,
+            postcode: this.state.zip,
+            county: this.state.state,
+            country: 'US',
+          }, tokenInfo).then(res => {
+            showNotification('Successfully processed your order', 'success')
+            
+            this.props.dispatch(hideOverlaySpinner())
+            this.props.dispatch(emptyCart())
+
+            this.props.history.push('/home')
+          }).catch(err => {
+            showNotification(err, 'error')
+            this.props.dispatch(hideOverlaySpinner())
+          })
         })
         .catch(err => {
           this.props.dispatch(hideOverlaySpinner())
