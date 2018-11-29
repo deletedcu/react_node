@@ -32,7 +32,7 @@ exports.payWithStripe = (request) => {
           payment: token,
         })
         .then(() => {
-          resolve();
+          resolve({ status: 200, message: 'Successfully processed payment'});
         })
         .catch(err => {
           console.log(err);

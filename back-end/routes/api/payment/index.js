@@ -10,7 +10,7 @@ const payWithStripe = require('./payment').payWithStripe;
 router.post('/stripe', (request, response) => {
   payWithStripe(request)
     .then(res => {
-      response.status(res.status).json({ message: 'Successfully processed payment' });
+      response.status(res.status).json({ message: res.message });
     })
     .catch(err => {
       response.status(err.status).json({ message: err.message });
