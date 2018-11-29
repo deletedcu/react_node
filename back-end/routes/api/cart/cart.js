@@ -138,7 +138,7 @@ exports.removeCart = (request) => {
         Moltin.Cart(user.customer_id)
           .Delete()
           .then(cart => {
-            resolve({ status: 200, cart: transformCartInfo(cart) });
+            resolve({ status: 200, cart: [] });
           })
           .catch(err => {
             console.log(err);
