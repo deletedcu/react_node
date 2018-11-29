@@ -195,13 +195,14 @@ class Checkout extends Component {
   }
 
   onPaymentOptionChange = (option, checked) => {
+    // In this version, only enable Stripe.
     if ((option === PaymentOption.stripe && checked === true) || (option === PaymentOption.paypal && checked === false)) {
       this.setState({
         currentPaymentOption: PaymentOption.stripe,
       })
     } else {
       this.setState({
-        currentPaymentOption: PaymentOption.paypal,
+        currentPaymentOption: PaymentOption.stripe,
       })
     }
   }
