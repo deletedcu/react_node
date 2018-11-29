@@ -70,7 +70,7 @@ router.post('/remove', (request, response) => {
 router.post('/checkout', (request, response) => {
   checkout(request)
     .then(res => {
-      response.status(res.status).json({ cart: res.orders });
+      response.status(res.status).json({ order: res.order });
     })
     .catch(err => {
       response.status(err.status).json({ message: err.message });

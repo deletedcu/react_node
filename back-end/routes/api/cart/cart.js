@@ -176,8 +176,8 @@ exports.checkout = (request) => {
 
         Moltin.Cart(user.customer_id)
           .Checkout(user.customer_id, billing)
-          .then(orders => {
-            resolve({ status: 200, orders: orders });
+          .then(order => {
+            resolve({ status: 200, order: order });
           })
           .catch(err => {
             console.log(err);
