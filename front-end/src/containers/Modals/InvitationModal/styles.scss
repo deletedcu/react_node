@@ -1,0 +1,15 @@
+@import "../../../styles/variables/variables";
+
+.invitation-modal {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 100px;
+  background: white;
+  border-radius: 30px;
+
+  width: 1572px;
+  height: 685px;
+}

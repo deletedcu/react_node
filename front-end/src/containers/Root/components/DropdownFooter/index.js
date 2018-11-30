@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import DropdownList from './components/DropdownList'
 import { Link } from 'react-router-dom'
 
@@ -9,7 +10,13 @@ import imgFacebook from '../../../../assets/images/facebook.svg'
 import imgTwitter from '../../../../assets/images/twitter.svg'
 import imgInstagram from '../../../../assets/images/instagram.svg'
 
+import { showModal, ModalType } from '../../../../redux/actions/modal'
+
 class DropdownFooter extends Component {
+
+  onSendInvitation = () => {
+    this.props.dispatch(showModal(ModalType.invitationModal))
+  }
 
   render () {
     return (
@@ -29,7 +36,7 @@ class DropdownFooter extends Component {
           </DropdownList>
 
           <DropdownList title='PRODUCT'>
-            <div>Get $20 off</div>
+            <div onClick={this.onSendInvitation}>Get $20 off</div>
             <div><Link to='/menus'>Menu</Link></div>
             <Link to='/menus'>Meal Plans</Link>
             <div>Partnerships</div>
@@ -69,4 +76,4 @@ class DropdownFooter extends Component {
   }
 }
 
-export default DropdownFooter
+export default connect()(DropdownFooter)

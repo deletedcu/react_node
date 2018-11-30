@@ -10,6 +10,7 @@ const AsyncEditProfileModal = asyncComponent(() => import('./EditProfileModal'))
 const AsyncOrderFeedbackModal = asyncComponent(() => import('./OrderFeedbackModal'))
 const AsyncMealPreferenceModal = asyncComponent(() => import('./MealPreferenceModal'))
 const AsyncJobApplyModal = asyncComponent(() => import('./JobApplyModal'))
+const AsyncInvitationModal = asyncComponent(() => import('./InvitationModal'))
 
 /**
  * Routes
@@ -41,6 +42,9 @@ const Modal = (props) => {
 
       {/* Job Apply Modal */}
       { active === ModalType.jobApplyModal && <AsyncJobApplyModal /> }
+
+      {/* Job Apply Modal */}
+      { active === ModalType.invitationModal && <AsyncInvitationModal /> }
     </div>
   )
 }

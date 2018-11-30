@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import FooterTopSectionButton from './components/FooterTopSectionButton'
 import FooterLanguageButton from './components/FooterLanguageButton'
@@ -14,6 +15,8 @@ import imgFacebook from '../../../../assets/images/facebook.svg'
 import imgTwitter from '../../../../assets/images/twitter.svg'
 import imgInstagram from '../../../../assets/images/instagram.svg'
 
+import { showModal, ModalType } from '../../../../redux/actions/modal'
+
 class Footer extends Component {
 
   onHelpCenter = () => {
@@ -22,6 +25,10 @@ class Footer extends Component {
 
   onGiftCards = () => {
     this.props.history.push('/gift-cards')
+  }
+
+  onSendInvitation = () => {
+    this.props.dispatch(showModal(ModalType.invitationModal))
   }
 
   render () {
@@ -78,7 +85,7 @@ class Footer extends Component {
             <div className='footer-middle-links-header'>
               PRODUCT
             </div>
-            <a className='footer-middle-link'>Get $20 off</a>
+            <a className='footer-middle-link' onClick={this.onSendInvitation}>Get $20 off</a>
             <Link to='/menus' className='footer-middle-link'>Weekly Menu</Link>
             <Link to='/menus' className='footer-middle-link'>Meal Plans</Link>
             <a className='footer-middle-link'>Partnerships</a>
@@ -129,4 +136,4 @@ class Footer extends Component {
   }
 }
 
-export default Footer
+export default connect()(Footer)

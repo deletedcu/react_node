@@ -6,6 +6,7 @@ export const ModalType = {
   orderFeedbackModal: 4,
   mealPreferenceModal: 5,
   jobApplyModal: 6,
+  invitationModal: 7,
 }
 
 export function showModal(modalType, data){
