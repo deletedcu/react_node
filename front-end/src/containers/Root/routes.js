@@ -9,6 +9,7 @@ const AsyncMenu = asyncComponent(() => import('../Menus'))
 const AsyncSelectMeals = asyncComponent(() => import('../SelectMeals'))
 const AsyncContactUs = asyncComponent(() => import('../ContactUs'))
 const AsyncCheckout = asyncComponent(() => import('../Checkout'))
+const AsyncOrderConfirmation = asyncComponent(() => import('../OrderConfirmation'))
 const AsyncSettings = asyncComponent(() => import('../Settings'))
 const AsyncNotAvailable = asyncComponent(() => import('../NotAvailable'))
 const AsyncHelpCenter = asyncComponent(() => import('../HelpCenter'))
@@ -29,6 +30,7 @@ const routes = (
     <Route path='/select-meals' component={ AsyncSelectMeals } />
     <Route path='/contact-us' component={ AsyncContactUs } />
     <Route path='/checkout' component={ AsyncCheckout } />
+    <Route path='/order-confirm' component={ AsyncOrderConfirmation } />
     <Route path='/settings' component={ AsyncSettings } />
     <Route path='/help-center' component={ AsyncHelpCenter } />
     <Route path='/terms-of-service' component={ AsyncTermsOfService } />

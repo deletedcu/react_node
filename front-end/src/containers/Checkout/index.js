@@ -165,7 +165,7 @@ class Checkout extends Component {
             this.props.dispatch(hideOverlaySpinner())
             this.props.dispatch(emptyCart())
 
-            this.props.history.push('/home')
+            this.props.history.push('/order-confirm')
           }).catch(err => {
             showNotification(err, 'error')
             this.props.dispatch(hideOverlaySpinner())
@@ -231,9 +231,7 @@ class Checkout extends Component {
    * Render
    */
   render () {
-    const currentStep = this.state.currentStep
-    const currentAccountMode = this.state.currentAccountMode
-    const currentPaymentOption = this.state.currentPaymentOption
+    const { currentStep, currentAccountMode, currentPaymentOption } = this.state
 
     return (
       <div className='div-checkout-container'>
