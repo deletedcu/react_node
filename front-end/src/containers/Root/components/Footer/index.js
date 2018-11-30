@@ -69,17 +69,27 @@ class Footer extends Component {
               COMPANY
             </div>
             <a className='footer-middle-link'>About</a>
+            <a className='footer-middle-link'>How It Works</a>
             <Link to='/career' className='footer-middle-link'>Careers</Link>
             <a className='footer-middle-link'>Press</a>
-            <a className='footer-middle-link'>Unlimited</a>
+          </div>
+
+          <div className='div-footer-middle-links-group'>
+            <div className='footer-middle-links-header'>
+              PRODUCT
+            </div>
+            <a className='footer-middle-link'>Get $20 off</a>
+            <Link to='/menus' className='footer-middle-link'>Weekly Menu</Link>
+            <Link to='/menus' className='footer-middle-link'>Meal Plans</Link>
+            <a className='footer-middle-link'>Partnerships</a>
           </div>
 
           <div className='div-footer-middle-links-group'>
             <div className='footer-middle-links-header'>
               HELP
             </div>
-            <a className='footer-middle-link'>Payments</a>
-            <a className='footer-middle-link'>Shipping</a>
+            <Link to='/contact-us' className='footer-middle-link'>Contact</Link>
+            <a className='footer-middle-link'>Service Areas</a>
             <a className='footer-middle-link'>FAQ</a>
           </div>
 

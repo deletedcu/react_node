@@ -23,14 +23,21 @@ class DropdownFooter extends Component {
         <div className='div-footer-dropdown-container'>
           <DropdownList title='COMPANY'>
             <div>About</div>
+            <div>How It Works</div>
             <Link to='/career'>Careers</Link>
             <div>Press</div>
-            <div>Unlimited</div>
+          </DropdownList>
+
+          <DropdownList title='PRODUCT'>
+            <div>Get $20 off</div>
+            <div><Link to='/menus'>Menu</Link></div>
+            <Link to='/menus'>Meal Plans</Link>
+            <div>Partnerships</div>
           </DropdownList>
 
           <DropdownList title='HELP'>
-            <div>Payments</div>
-            <div>Shipping</div>
+            <Link to='/contact-us'>Contact</Link>
+            <div>Service Areas</div>
             <div>FAQ</div>
           </DropdownList>
 
