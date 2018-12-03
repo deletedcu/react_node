@@ -34,14 +34,18 @@
     .div-menu {
       color: $text-light-gray;
       margin-top: 10px;
-      padding: 0 20px;
+      padding: 0 10px;
       height: 52px;
-      font-size: $regular-font-size;
+      font-size: $small-font-size;
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      img {
+      .img-icon {
+        width: 50px;
+      }
+
+      .img-check {
         height: 10px;
       }
 

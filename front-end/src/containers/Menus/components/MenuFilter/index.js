@@ -5,6 +5,11 @@ import 'react-simple-dropdown/styles/Dropdown.css'
 import './styles.css'
 
 import imgCheck from '../../../../assets/images/check.svg'
+import imgGluten from '../../../../assets/images/filter_gluten_free.png'
+import imgHighProtein from '../../../../assets/images/filter_high_protein.png'
+import imgLowFat from '../../../../assets/images/filter_low_fat.png'
+import imgLowCalory from '../../../../assets/images/filter_low_cal.png'
+import imgVegetable from '../../../../assets/images/filter_veg.png'
 
 export const MenuFilterType = {
   Vegetalian: 0,
@@ -70,24 +75,39 @@ class MenuFilter extends Component {
         </DropdownTrigger>
         <DropdownContent>
           <div className='div-menu clickable' onClick={ () => {this.onToggleFilter(MenuFilterType.Vegetalian)}}>
-            <span>Vegetalian</span>
-            { selectedFilterTypes.includes(MenuFilterType.Vegetalian) && <img src={imgCheck} alt='check'/> }
+            <div>
+              <img className='img-icon' src={imgVegetable} alt='veg'/>
+              <span>Vegetalian</span>
+            </div>
+            { selectedFilterTypes.includes(MenuFilterType.Vegetalian) && <img className='img-check' src={imgCheck} alt='check'/> }
           </div>
           <div className='div-menu clickable' onClick={ () => {this.onToggleFilter(MenuFilterType.UnderCal)}}>
-            <span>Under 400 Cal</span>
-            { selectedFilterTypes.includes(MenuFilterType.UnderCal) && <img src={imgCheck} alt='check'/> }
+            <div>
+              <img className='img-icon' src={imgLowCalory} alt='cal'/>
+              <span>Under 400 Cal</span>
+            </div>
+            { selectedFilterTypes.includes(MenuFilterType.UnderCal) && <img className='img-check' src={imgCheck} alt='check'/> }
           </div>
           <div className='div-menu clickable' onClick={ () => {this.onToggleFilter(MenuFilterType.GlutenFree)}}>
-            <span>Gluten Free</span>
-            { selectedFilterTypes.includes(MenuFilterType.GlutenFree) && <img src={imgCheck} alt='check'/> }
+            <div>
+              <img className='img-icon' src={imgGluten} alt='gluten'/>
+              <span>Gluten Free</span>
+            </div>
+            { selectedFilterTypes.includes(MenuFilterType.GlutenFree) && <img className='img-check' src={imgCheck} alt='check'/> }
           </div>
           <div className='div-menu clickable' onClick={ () => {this.onToggleFilter(MenuFilterType.HighProtein)}}>
-            <span>High Protein</span>
-            { selectedFilterTypes.includes(MenuFilterType.HighProtein) && <img src={imgCheck} alt='check'/> }
+            <div>
+              <img className='img-icon' src={imgHighProtein} alt='protein'/>
+              <span>High Protein</span>
+            </div>
+            { selectedFilterTypes.includes(MenuFilterType.HighProtein) && <img className='img-check' src={imgCheck} alt='check'/> }
           </div>
           <div className='div-menu clickable' onClick={ () => {this.onToggleFilter(MenuFilterType.LowFat)}}>
-            <span>Low Fat</span>
-            { selectedFilterTypes.includes(MenuFilterType.LowFat) && <img src={imgCheck} alt='check'/> }
+            <div>
+              <img className='img-icon' src={imgLowFat} alt='fat'/>
+              <span>Low Fat</span>
+            </div>
+            { selectedFilterTypes.includes(MenuFilterType.LowFat) && <img className='img-check' src={imgCheck} alt='check'/> }
           </div>
           <div className='div-menu-clear clickable' onClick={this.onClearFilters}>
             <span>Clear Filters</span>
