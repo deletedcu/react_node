@@ -76,6 +76,25 @@
       width: 100%;
       height: 80px;
     }
+
+    .auth-form-forgot-password {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+
+      .checkbox {
+        color: #CFCFCF;
+      }
+
+      .span-forgot-password {
+        color: $green-primary;
+        margin-right: 10px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 
   .auth-form-separator {
@@ -163,6 +182,12 @@
         }
         #input_lastname {
           margin-left: 5px;
+        }
+      }
+
+      .auth-form-forgot-password {
+        .span-forgot-password {
+          font-size: $mobile-regular-font-size;
         }
       }
     }

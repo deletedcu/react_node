@@ -16,18 +16,7 @@ class Authentication extends Component {
   render () {
     return (
       <div className='div-auth-container'>
-        {/* Login or Signup */}
-        <div className='div-auth-body'>
-          { routes }
-        </div>
-
-        {/* Contact section */}
-        <div className='div-auth-help-contact-container'>
-          Need help? Visit the&nbsp;
-          <Link to='/help-center'><span>Help Center</span></Link>
-          &nbsp;or&nbsp;
-          <Link to='/contact-us'><span>Contact Us</span></Link>
-        </div>       
+        { routes }    
       </div>
     )
   }

@@ -1,0 +1,134 @@
+@import "../../../../styles/variables/variables";
+
+.forgot-password-form {
+  background-color: white;
+  border: 1px solid #D2D2D2;
+  color: $text-light-gray;
+  box-shadow: $shadow-primary;
+
+  .forgot-password-form-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: $extra-light-green;
+    height: 135px;
+    line-height: 135px;
+
+    .forgot-password-form-header-title {
+      width: 100%;
+      font-size: 40px;
+      font-family: 'Montserrat-Medium';
+      text-align: center;
+    }
+  }
+
+  .forgot-password-form-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .forgot-password-form-instruction {
+      color: $text-light-gray;
+      width: 50%;
+      margin-top: 30px;
+    }
+
+    .forgot-password-form-input {
+      margin-top: 30px;
+      padding: 0 40px;
+      width: 100%;
+
+      input {
+        width: 100%;
+        height: 80px;
+        margin-top: 10px;
+        padding: 0 20px;
+        border: 1px solid $light-green-primary;
+        border-radius: 4px;
+        font-size: $footer-secondary-font-size;
+        caret-color: $green-primary;
+      }
+
+      input:focus {
+        border: 1px solid $green-primary;
+      }
+    }
+
+    .btn-reset {
+      margin: 20px 40px 0;
+      width: calc(100% - 80px);
+      height: 80px;
+      border-radius: 4px;
+    }
+  }
+
+  .forgot-password-form-links {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+
+    a {
+      color: $text-light-gray;
+      text-decoration: underline;
+    }
+
+    .div-separator {
+      width: 1px;
+      height: 20px;
+      background-color: #707070;
+      margin: 0 20px;
+    }
+  }
+
+  @media (max-width: 710px) {
+    .forgot-password-form-header {
+      height: 80px;
+      line-height: 80px;
+
+      .forgot-password-form-header-title {
+        font-size: $regular-font-size;
+        font-family: 'Montserrat-Regular';
+        color: $text-primary;
+      }
+    }
+
+    .forgot-password-form-inputs {
+      .forgot-password-form-instruction {
+        width: calc(100% - 40px);
+        font-size: $mobile-regular-font-size;
+      }
+
+      .forgot-password-form-input {
+        margin-top: 15px;
+        padding: 0 20px;
+        font-size: $mobile-regular-font-size;
+  
+        input {
+          height: 50px;
+          font-size: $mobile-regular-font-size;
+          padding: 20px 15px;
+        }
+      }
+
+      .btn-reset {
+        margin-left: 20px;
+        margin-right: 20px;
+        width: calc(100% - 40px);
+        height: 50px;
+        font-size: $mobile-regular-font-size;
+      }
+    }
+
+    .forgot-password-form-links {
+      margin: 20px 0;
+      a {
+        font-size: $mobile-regular-font-size;
+      }
+
+      .div-separator {
+        height: 10px;
+        margin: 0 10px;
+      }
+    }
+  }
+}

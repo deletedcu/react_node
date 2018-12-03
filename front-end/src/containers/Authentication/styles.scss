@@ -2,24 +2,5 @@
 
 .div-auth-container {
   background-color: #F1F1F1;
-
-  .div-auth-help-contact-container {
-    padding: 70px 0;
-    text-align: center;
-    background-color: $border-gray;
-    border-top: 1px solid #C6C4C4;
-    color: $text-light-gray;
-    font-size: $small-font-size;
-
-    span {
-      color: $green-primary;
-      text-decoration: underline;
-    }
-  }
-
-  @media (max-width: 710px) {
-    .div-auth-help-contact-container {
-      padding: 50px 30px;
-    }
-  }
+  padding-bottom: 1px;
 }

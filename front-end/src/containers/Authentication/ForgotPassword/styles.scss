@@ -1,0 +1,36 @@
+
+
+.forgot-password-container {
+  min-height: 100vh;
+  padding-bottom: 400px;
+
+  .div-forgot-password-banner {
+    position: relative;
+    height: 465px;
+  }
+
+  .div-forgot-password-form {
+    position: relative;
+    display: flex;
+    margin: -170px 30px 90px 30px;
+
+    .container {
+      max-width: 980px !important;
+    }
+  }
+
+  @media (max-width: 1366px) {
+    padding-bottom: 1px;
+  }
+
+  @media (max-width: 710px) {
+    .div-forgot-password-banner {
+      max-height: 350px;
+    }
+
+    .div-forgot-password-form {
+      margin-top: -180px;
+      margin-bottom: 40px;
+    }
+  }
+}

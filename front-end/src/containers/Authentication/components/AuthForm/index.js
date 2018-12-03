@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Button from '../../../../components/Button'
 import FacebookButton from '../FacebookButton'
+import Checkbox, { CheckboxType } from '../../../../components/Checkbox'
 
 import './styles.css'
 
@@ -22,6 +23,7 @@ class AuthForm extends Component {
       lastName: '',
       email: '',
       password: '',
+      rememberMe: true,
     }
   }
 
@@ -36,7 +38,7 @@ class AuthForm extends Component {
   }
 
   login = () => {
-    this.props.dispatch(loginUser(this.state.email, this.state.password))
+    this.props.dispatch(loginUser(this.state.email, this.state.password, this.state.rememberMe))
   }
 
   signup = () => {
@@ -66,6 +68,16 @@ class AuthForm extends Component {
     } else {
       this.signup()
     }
+  }
+
+  onCheckChange = (checked) => {
+    this.setState({
+      rememberMe: checked,
+    })
+  }
+
+  onForgotPassword = () => {
+    this.props.history.push('/auth/forgot-password')
   }
 
   render () {
@@ -109,9 +121,16 @@ class AuthForm extends Component {
           </div>
 
           <div className='auth-form-input'>
-            <div className='auth-form-input-name'>Create Password</div>
+            <div className='auth-form-input-name'>Password</div>
             <input required type='password' name='password' value={this.state.password} onChange={this.onChange} placeholder='6 characters or more'/>
           </div>
+
+          { !isSignup && 
+            <div className='auth-form-forgot-password'>
+              <Checkbox type={CheckboxType.square} checked={this.state.rememberMe} onCheckChange={this.onCheckChange}>Remember Me?</Checkbox>
+              <span className='span-forgot-password clickable' onClick={this.onForgotPassword}>Forgot Password?</span>
+            </div>
+          }
 
           <Button className='btn-continue' onClick={this.onContinue}>CONTINUE</Button>
         </form>

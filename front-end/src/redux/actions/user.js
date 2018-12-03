@@ -2,7 +2,7 @@ import axios from 'axios'
 import config from '../../config/config'
 import { showNotification } from '../../services/notification'
 
-export function loginUser(email, password){
+export function loginUser(email, password, rememberMe){
   return function(dispatch) {
     dispatch({type: 'SHOW_OVERLAY_SPINNER'})
     dispatch({type: 'LOGIN_USER'})
@@ -18,7 +18,7 @@ export function loginUser(email, password){
     }).then((response) => {
       showNotification('Successfully logged in', 'success')
 
-      localStorage.setItem('token', response.data.user.token)
+      rememberMe && localStorage.setItem('token', response.data.user.token)
       dispatch({type: 'LOGIN_USER_FULFILLED', payload: response.data.user})
       dispatch({type: 'HIDE_OVERLAY_SPINNER'})
     })
