@@ -30,7 +30,7 @@ class DropdownFooter extends Component {
         <div className='div-footer-dropdown-container'>
           <DropdownList title='COMPANY'>
             <div>About</div>
-            <div>How It Works</div>
+            <Link to='/how-it-works'>How It Works</Link>
             <Link to='/career'>Careers</Link>
             <div>Press</div>
           </DropdownList>

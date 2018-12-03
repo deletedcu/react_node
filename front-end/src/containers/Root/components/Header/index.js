@@ -48,6 +48,10 @@ class Header extends Component {
     showNotification('Logged out', 'success')
   }
 
+  onOrderNow = () => {
+    this.props.history.push('/menus')
+  }
+
   render () {
     let { pathName, user, history, sideBar } = this.props
     
@@ -58,15 +62,15 @@ class Header extends Component {
         { pathName.includes('auth/signup') && <img className='img-flow' src={imgFlow} alt='flow'/> }
         { pathName.includes('auth/signup') && <img className='img-min-flow' src={imgMinimizedFlow} alt='flow'/> }
 
-        { pathName.includes('home') &&
+        { (pathName.includes('home') || pathName.includes('login') || pathName.includes('forgot-password')) &&
           <div className='div-links'>
             <Link to='/menus'><span className='clickable'>MENU</span></Link>
-            <Link to='/help-center'><span className='clickable'>HOW IT WORKS</span></Link>
+            <Link to='/how-it-works'><span className='clickable'>HOW IT WORKS</span></Link>
             <Link to='/gift-cards'><span className='clickable'>GIFTS</span></Link>
           </div>
         }
         
-        { !pathName.includes('auth') &&
+        { !pathName.includes('auth') && !pathName.includes('how-it-works') &&
           <div className='div-buttons'>
             { user.loggedIn && 
               <SettingsDropdown
@@ -84,6 +88,12 @@ class Header extends Component {
                 history={ history }
               />
             }
+          </div>
+        }
+
+        { pathName.includes('how-it-works') && 
+          <div className='div-buttons'>
+            <Button className='btn-order-now' onClick={this.onOrderNow}>Order Now</Button>
           </div>
         }
       </div>

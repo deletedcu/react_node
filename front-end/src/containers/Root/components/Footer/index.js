@@ -76,7 +76,7 @@ class Footer extends Component {
               COMPANY
             </div>
             <a className='footer-middle-link'>About</a>
-            <a className='footer-middle-link'>How It Works</a>
+            <Link to='/how-it-works' className='footer-middle-link'>How It Works</Link>
             <Link to='/career' className='footer-middle-link'>Careers</Link>
             <a className='footer-middle-link'>Press</a>
           </div>

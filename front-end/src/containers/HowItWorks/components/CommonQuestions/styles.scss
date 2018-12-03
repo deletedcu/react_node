@@ -5,7 +5,8 @@
   padding-top: 80px;
 
   .div-common-question-title {
-    font-size: $large-font-size;
+    font-size: 38px;
+    font-family: 'Montserrat-Bold';
     text-align: center;
   }
 
@@ -20,12 +21,14 @@
 
     .div-question-title {
       font-size: $footer-primary-font-size;
-      font-family: 'Montserrat-SemiBold';
+      font-family: 'Montserrat-Medium';
       margin-top: 50px;
+      margin-left: 15px;
     }
 
     .div-question-answer {
       margin-top: 20px;
+      font-size: $small-font-size;
 
       a {
         text-decoration: underline;

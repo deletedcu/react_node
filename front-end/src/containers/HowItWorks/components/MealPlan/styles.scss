@@ -7,23 +7,8 @@
   display: flex;
   flex-direction: column;
 
-  .div-meal-plan-title {
-    font-size: 41px;
-    color: #232323;
-    text-align: center;
-    font-family: 'Montserrat-SemiBold';
-    margin-top: 40px;
-  }
-
-  .div-meal-plan-subtitle {
-    color: $text-light-gray;
-    font-size: $footer-secondary-font-size;
-    text-align: center;
-  }
-
   .div-meal-plan-image {
-    margin-top: 40px;
-
+    margin-bottom: 100px;
     img {
       width: 100%;
     }
@@ -97,17 +82,8 @@
   }
 
   @media (max-width: 710px) {
-    .div-meal-plan-title {
-      font-size: $mobile-regular-font-size;
-      margin-top: 15px;
-    }
-
-    .div-meal-plan-subtitle {
-      font-size: $mobile-small-font-size;
-    }
-
     .div-meal-plan-image {
-      margin-top: 15px;
+      margin-bottom: 40px;
     }
 
     .div-meal-plan-recipies {

@@ -1,0 +1,163 @@
+@import "../../styles/variables/variables";
+
+.div-meal-plans-container {
+
+  .div-meal-plans-banner {
+    position: relative;
+    background: url('../../assets/images/banner.png') no-repeat center/cover;
+    height: 465px;
+
+    .div-meal-plans-title {
+      position: relative;
+      max-width: 600px;
+      text-align: left;
+      font-size: 40px;
+      font-family: 'Montserrat-SemiBold';
+      left: 50%;
+      top: calc(50% + 30px);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .div-meal-plans-grey-space {
+    background-color: #EBECF1;
+    height: 170px;
+  }
+
+  .div-meal-plans {
+    position: relative;
+    display: flex;
+    margin-top: -150px;
+
+    .div-meal-plans-grid {
+      max-width: calc(100% - 280px);
+
+      .div-zip-code-wrapper {
+        display: flex;
+        align-items: center;
+        padding: 0 45px;
+        margin-bottom: -40px;
+        
+        .div-separator {
+          flex-grow: 1;
+          height: 1px;
+          background-color: #3A3A3A;
+        }
+
+        .div-zip-code {
+          display: flex;
+          align-items: center;
+          margin-left: 40px;
+          margin-right: 200px;
+
+          img {
+            height: 32px;
+          }
+          .div-zip-code-description {
+            font-family: 'Montserrat-Bold';
+          }
+
+          @media (max-width: 1440px) {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .div-meal-plan-wrapper {
+        padding: 70px 45px;
+
+        @media (max-width: 1400px) {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+
+        @media (max-width: 1199px) {
+          padding-top: 70px;
+          padding-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  .div-meal-plans-info {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #EBECF1;
+    border: 1px solid #EBE2E2;
+    height: 228px;
+    align-items: center;
+
+    .div-meal-plans-info-text {
+      display: flex;
+      flex-direction: column;
+      width: 228px;
+
+      .div-meal-plans-info-title {
+        font-size: 25px;
+        font-family: 'Montserrat-Medium';
+        color: #393838;
+      }
+      .div-meal-plans-info-content {
+        font-size: $small-font-size;
+        color: $text-light-gray;
+      }
+    }
+
+    .div-meal-plans-info-image {
+      img {
+        width: 180px;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .div-meal-plans {
+      .div-meal-plans-grid {
+        max-width: calc(100% - 72px);
+      }
+    }
+  }
+
+  @media (max-width: 710px) {
+    background-color: white;
+
+    .div-meal-plans-banner {
+      height: 350px;
+
+      .div-meal-plans-title {
+        font-size: $regular-font-size;
+        top: 50%;
+        text-align: center;
+        padding: 0 20px;
+      }
+    }
+
+    .div-meal-plans-grey-space {
+      height: 100px;
+    }
+
+    .div-meal-plans {
+      margin-top: -90px;
+
+      .container {
+        .div-zip-code-wrapper {
+          padding: 0 20px;
+          font-size: $mobile-regular-font-size;
+
+          .div-zip-code {
+            margin-left: 10px;
+          }
+        }
+
+        .div-meal-plan-wrapper {
+          padding: 15px;
+          margin-top: 40px;
+        }
+      }
+    }
+
+    .quote-container {
+      display: none;
+    }
+  }
+}

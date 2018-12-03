@@ -17,12 +17,6 @@ class MealPlan extends Component {
   render () {
     return (
       <div className='div-meal-plan'>
-        <div className='div-meal-plan-title'>
-          { this.props.title }
-        </div>
-        <div className='div-meal-plan-subtitle'>
-          { this.props.subtitle }
-        </div>
         <div className='div-meal-plan-image'>
           <img src={ this.props.image } alt='plan'/>
         </div>
@@ -32,7 +26,7 @@ class MealPlan extends Component {
             onSelectionChange={ this.onSelectionChange }
           />
           <div className='div-meal-plan-recipies-title'>
-            RECIPESE PER WEEK
+            MEALS PER WEEK
           </div>
         </div>
         <div className='div-meal-plan-prices'>
@@ -54,7 +48,7 @@ class MealPlan extends Component {
             <span className='span-menu-plan-price-title'>weekly total</span>
           </div>
         </div>
-        <Button className='btn-grab-offer' onClick={ this.onGrabOffer }>GRAB THE OFFER</Button>
+        <Button className='btn-grab-offer' onClick={ this.onGrabOffer }>SELECT</Button>
       </div>
     )
   }
