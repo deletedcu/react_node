@@ -1,8 +1,6 @@
 @import "../../styles/variables/variables";
 
 .div-contact-us-container {
-  background-color: $extra-light-gray;
-
   .div-contact-us-banner {
     position: relative;
     height: 465px;
@@ -25,21 +23,19 @@
 
     .container {
       max-width: 980px !important;
-      box-shadow: $shadow-primary;
-      background-color: white;
 
       .div-contact-us-form-title {
         color: $text-light-gray;
         font-size: 41px;
         font-family: 'Montserrat-Medium';
         text-align: center;
-        height: 150px;
-        line-height: 150px;
+        height: 136px;
+        line-height: 136px;
         background-color: $extra-light-green;
       }
   
       .div-contact-us-separator {
-        background-color: #CCCCCC;
+        background-color: #B7CBB8;
         height: 1px;
       }
   
@@ -48,6 +44,7 @@
         padding: 0 50px;
         display: flex;
         flex-direction: column;
+        box-shadow: $shadow-primary;        
   
         input, textarea {
           width: 100%;
@@ -102,6 +99,38 @@
           height: 80px;
           margin: 40px 0;
         }
+      }
+
+      .div-contact-us-thankyou {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #8FCD9D;
+        padding-bottom: 150px;
+        box-shadow: $shadow-primary;
+
+        img {
+          height: 270px;
+          margin-top: 40px;
+        }
+
+        .div-contact-us-thankyou-text {
+          margin-top: 10px;
+          width: 434px;
+          text-align: center;
+          font-size: $footer-secondary-font-size;
+          font-family: 'Montserrat-Medium';
+          color: $text-light-gray;
+        }
+      }
+
+      .btn-back-home {
+        width: 100%;
+        height: 124px;
+        border-radius: 0;
+        font-size: $footer-secondary-font-size;
+        font-family: 'Montserrat-Medium';
+        margin-top: 40px;
       }
     }
   }
@@ -167,6 +196,41 @@
             height: 60px;
             font-size: $small-font-size;
             margin: 20px 0;
+          }
+        }
+
+        .div-contact-us-thankyou {
+          padding-bottom: 70px;
+  
+          img {
+            height: 150px;
+            margin-top: 20px;
+          }
+  
+          .div-contact-us-thankyou-text {
+            width: 320px;
+            font-size: $small-font-size;
+          }
+        }
+
+        .btn-back-home {
+          height: 60px;
+          font-size: $small-font-size;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 414px) {
+    .div-contact-us {
+      .container {
+        .div-contact-us-thankyou {
+          padding-bottom: 30px;
+
+          .div-contact-us-thankyou-text {
+            width: 200px;
+            font-size: $mobile-regular-font-size;
           }
         }
       }

@@ -8,6 +8,8 @@ import './styles.css'
 import imgBanner from '../../assets/images/banner.png'
 import { hideSidebar } from '../../redux/actions/sideBar'
 
+import imgThankYou from '../../assets/images/thankyou.svg'
+
 class ContactUs extends Component {
 
   constructor (props) {
@@ -18,6 +20,8 @@ class ContactUs extends Component {
       lastName: '',
       email: '',
       message: '',
+
+      messageSent: true,
     }
   }
 
@@ -33,10 +37,18 @@ class ContactUs extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-
+    this.setState({
+      messageSent: true,
+    })
+  }
+  
+  onBackHome = () => {
+    this.props.history.push('/home')
   }
 
   render () {
+    const { messageSent } = this.state
+
     return (
       <div className='div-contact-us-container'>
         {/* Banner and Title */}
@@ -53,13 +65,14 @@ class ContactUs extends Component {
           <div className='container'>
             {/* Title */}
             <div className='div-contact-us-form-title'>
-              Get In Touch
+              { !messageSent ? 'Get In Touch' : 'Thank You!' }
             </div>
 
             {/* Separator Line */}
             <div className='div-contact-us-separator'/>
 
-            {/* Form */}
+            {/* Form Or Thank you */}
+            { !messageSent ?
             <div className='div-contact-us-form'>
               <form onSubmit={ this.onSubmit }>
                 <div className='div-contact-us-form-names'>
@@ -88,6 +101,17 @@ class ContactUs extends Component {
                 <Button className='btn-send-message'>Send Message</Button> 
               </form>
             </div>
+            :
+            <div className='div-contact-us-thankyou'>
+              <img src={imgThankYou} alt='thank you'/>
+              <div className='div-contact-us-thankyou-text'>Thanks for contact us! We will get back to you as soon as possible</div>
+            </div> 
+            }
+
+            {/* Back home button */}
+            { messageSent && 
+              <Button className='btn-back-home' onClick={this.onBackHome}>BACK HOME</Button>
+            }
           </div>
         </div>
       </div>
