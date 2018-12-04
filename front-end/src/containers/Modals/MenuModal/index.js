@@ -84,7 +84,7 @@ class MenuModal extends Component {
     this.props.dispatch(addToCart(items, this.props.pathName.includes('/menus')))
     this.props.dispatch(closeModal())
 
-    showNotification('Added to cart', 'success')
+    // showNotification('Added to cart', 'success')
   }
 
   onThumbnailSelected = (selectedIndex) => {

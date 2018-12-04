@@ -4,6 +4,8 @@ import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdow
 import 'react-simple-dropdown/styles/Dropdown.css'
 import './styles.css'
 
+import imgFilter from '../../../../assets/images/filter_button.svg'
+import imgFilterHighlight from '../../../../assets/images/filter_button_highlight.svg'
 import imgCheck from '../../../../assets/images/check.svg'
 import imgGluten from '../../../../assets/images/filter_gluten_free.png'
 import imgHighProtein from '../../../../assets/images/filter_high_protein.png'
@@ -25,8 +27,21 @@ class MenuFilter extends Component {
     super(props)
 
     this.state = {
+      isShown: false,
       selectedFilterTypes: [],
     }
+  }
+
+  onShow = () => {
+    this.setState({
+      isShown: true,
+    })
+  }
+
+  onHide = () => {
+    this.setState({
+      isShown: false,
+    })
   }
 
   onToggleFilter = (filterType) => {
@@ -64,13 +79,13 @@ class MenuFilter extends Component {
   }
 
   render () {
-    const { selectedFilterTypes } = this.state
+    const { selectedFilterTypes, isShown } = this.state
 
     return (
-      <Dropdown ref='menuFilterDropdown' className='menu-filter'>
+      <Dropdown ref='menuFilterDropdown' className='menu-filter' onShow={this.onShow} onHide={this.onHide}>
         <DropdownTrigger>
           <div className='menu-filter-dropdown-trigger clickable'>
-            <div className='div-filter'/>
+            <img className='img-filter' src={isShown ? imgFilterHighlight : imgFilter} alt='filter'/>
           </div>
         </DropdownTrigger>
         <DropdownContent>

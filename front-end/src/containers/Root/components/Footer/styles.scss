@@ -9,8 +9,9 @@
     height: 90px;
     display: flex;
     flex-direction: row;
+    z-index: 1;
 
-    .div-footer-language-button-container {
+    .language-dropdown {
       background-color: $bg-footer-secondary;
       margin-left: auto;
     }

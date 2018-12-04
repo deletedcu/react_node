@@ -1,13 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.608 18.023">
+<svg id="baseline-keyboard_arrow_right-24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <defs>
     <style>
       .cls-1 {
+        fill: #56b05a;
+      }
+
+      .cls-2 {
         fill: none;
-        stroke: #545252;
-        stroke-linejoin: round;
-        stroke-width: 3px;
       }
     </style>
   </defs>
-  <path id="Path_308" data-name="Path 308" class="cls-1" d="M13.342,0,0,7.922l13.342,7.5" transform="translate(14.107 16.734) rotate(180)"/>
+  <path id="Path_347" data-name="Path 347" class="cls-1" d="M8.59,16.59,13.17,12,8.59,7.41,10,6l6,6-6,6Z"/>
+  <path id="Path_348" data-name="Path 348" class="cls-2" d="M0,0H24V24H0Z"/>
 </svg>

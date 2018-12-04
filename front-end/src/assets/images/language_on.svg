@@ -1,0 +1,15 @@
+<svg id="baseline-toggle_on-24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <path id="Path_363" data-name="Path 363" class="cls-1" d="M17,7H7A5,5,0,0,0,7,17H17A5,5,0,0,0,17,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,17,15Z"/>
+  <path id="Path_364" data-name="Path 364" class="cls-2" d="M0,0H24V24H0Z"/>
+</svg>

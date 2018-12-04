@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import moment from 'moment'
-import DatePicker from 'react-datepicker'
+import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdown'
 
+import 'react-simple-dropdown/styles/Dropdown.css'
 import './styles.css'
 
 import imgLeftArrow from '../../../../assets/images/left_arrow.svg'
@@ -14,7 +15,7 @@ class MenuDatePicker extends Component {
     super(props)
 
     this.state = {
-      deliveryDate: new Date(),
+      deliveryDate: null,
     }
   }
 
@@ -51,12 +52,14 @@ class MenuDatePicker extends Component {
     return (
       <div className={classNames('menu-datepicker', this.props.className)} style={this.props.style}>
         <img className='clickable' src={imgLeftArrow} alt='left' onClick={this.onPrevDate}/>
-        <DatePicker
-          className='clickable'
-          selected={deliveryDate}
-          onChange={this.onDateChange}
-          customInput={<span>{`Delivery Day - ${moment(deliveryDate).format('MMM Do')}`}</span>}
-        />
+        <Dropdown ref='datePickerDropdown' className='datepicker-dropdown'>
+          <DropdownTrigger>
+            <span className='span-datepicker clickable'>{ deliveryDate ? `Delivery Day - ${moment(deliveryDate).format('MMM Do')}` : 'Select Delivery Date'}</span>
+          </DropdownTrigger>
+          <DropdownContent>
+
+          </DropdownContent>
+        </Dropdown>
         <img className='clickable' src={imgRightArrow} alt='right' onClick={this.onNextDate}/>
       </div>
     )

@@ -8,12 +8,15 @@
       align-items: center;
 
       img {
-        margin-left: 5px;
-        height: 9px;
+        height: 24px;
       }
 
       span {
         font-size: $regular-font-size;
+      }
+
+      .span-highlighted {
+        color: $green-primary;
       }
 
       &:active {

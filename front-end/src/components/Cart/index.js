@@ -6,6 +6,8 @@ import './styles.css'
 
 import imgCart from '../../assets/images/cart.svg'
 
+import { showSidebar, hideSidebar } from '../../redux/actions/sideBar'
+
 class Cart extends Component {
 
   constructor (props) {
@@ -24,7 +26,11 @@ class Cart extends Component {
 
   onClickCart = () => {
     if (this.state.purchasedCount > 0) {
-      this.props.history.push('/checkout')
+      if (this.props.highlighted) {
+        this.props.dispatch(hideSidebar())
+      } else {
+        this.props.dispatch(showSidebar())
+      }
     }
   }
 

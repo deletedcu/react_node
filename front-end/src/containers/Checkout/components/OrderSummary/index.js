@@ -50,7 +50,6 @@ class OrderSummary extends Component {
         {/* Header */}
         <div className='order-summary-header'>
           <span className='order-summary-title'>Order Summary</span>
-          <span className='order-summary-edit clickable'>edit</span>
         </div>
 
         {/* Separator */}
@@ -95,7 +94,6 @@ class OrderSummary extends Component {
         <div className='order-summary-items'>
           <div className='order-summary-items-header'>
             <span className='order-summary-items-title'>My Meals</span>
-            <span className='order-summary-items-edit clickable'>edit</span>
           </div>
           <div className='order-summary-items-list'>
             { orderedItems }

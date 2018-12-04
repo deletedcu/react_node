@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdown'
 
 import 'react-simple-dropdown/styles/Dropdown.css'
 import './styles.css'
 
 import imgTriangle from '../../../../../../assets/images/dropdown_triangle.svg'
+import imgTriangleReverse from '../../../../../../assets/images/dropdown_triangle_reverse.svg'
 import imgEditProfile from '../../../../../../assets/images/edit_profile.svg'
 import imgPaymentMethod from '../../../../../../assets/images/payment_method.svg'
 import imgOrderHistory from '../../../../../../assets/images/order_history.svg'
@@ -12,6 +14,25 @@ import imgLogout from '../../../../../../assets/images/logout.svg'
 
 
 class SettingsDropdown extends Component {
+
+  constructor (props) {
+    super(props) 
+
+    this.state = {
+      isShown: false,
+    }
+  }
+
+
+  onToggle = (isShown) => {
+    this.setState({
+      isShown: isShown,
+    })
+  } 
+
+  onMouseEnter = () => {
+    this.refs.settingsDropdown.show()
+  }
 
   onEditProfile = () => {
     this.refs.settingsDropdown.hide()
@@ -34,12 +55,13 @@ class SettingsDropdown extends Component {
   }
 
   render () {
+    const { isShown } = this.state
     return (
-      <Dropdown ref='settingsDropdown' className='settings-dropdown'>
+      <Dropdown ref='settingsDropdown' className='settings-dropdown' onShow={() => this.onToggle(true)} onHide={() => this.onToggle(false)}>
         <DropdownTrigger>
-          <div className='settings-dropdown-trigger clickable'>
-            <span>MY ACCOUNT</span>
-            <img src={imgTriangle} alt='hamburger'/>
+          <div className='settings-dropdown-trigger clickable' onMouseEnter={this.onMouseEnter}>
+            <span className={classNames({'span-highlighted': isShown})}>MY ACCOUNT</span>
+            <img src={ isShown ? imgTriangleReverse : imgTriangle } alt='hamburger'/>
           </div>
         </DropdownTrigger>
         <DropdownContent>

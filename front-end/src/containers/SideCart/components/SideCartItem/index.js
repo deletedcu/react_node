@@ -13,19 +13,19 @@ class SideCartItem extends Component {
   onIncrementPurchasedCount = () => {
     this.props.dispatch(addToCart([this.props.item]))
 
-    showNotification('Added to cart', 'success')
+    // showNotification('Added to cart', 'success')
   }
 
   onDecrementPurchasedCount = () => {
     this.props.dispatch(removeFromCart(this.props.item))
 
-    showNotification('Removed from cart', 'info')
+    // showNotification('Removed from cart', 'info')
   }
 
   onRemove = () => {
     this.props.dispatch(removeAllFromCart(this.props.item))
 
-    showNotification('Removed from cart', 'info')
+    // showNotification('Removed from cart', 'info')
   }
 
   render () {

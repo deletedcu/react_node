@@ -1,0 +1,15 @@
+<svg id="baseline-remove-24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <path id="Path_359" data-name="Path 359" class="cls-1" d="M19,13H5V11H19Z"/>
+  <path id="Path_360" data-name="Path 360" class="cls-2" d="M0,0H24V24H0Z"/>
+</svg>

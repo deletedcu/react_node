@@ -104,7 +104,7 @@ class ContactUs extends Component {
             :
             <div className='div-contact-us-thankyou'>
               <img src={imgThankYou} alt='thank you'/>
-              <div className='div-contact-us-thankyou-text'>Thanks for contact us! We will get back to you as soon as possible</div>
+              <div className='div-contact-us-thankyou-text'>Thanks for contact us! We will get back to you as soon as possible.</div>
             </div> 
             }
 

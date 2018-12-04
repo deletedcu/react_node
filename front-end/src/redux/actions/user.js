@@ -16,7 +16,7 @@ export function loginUser(email, password, rememberMe){
         password: password,
       }
     }).then((response) => {
-      showNotification('Successfully logged in', 'success')
+      // showNotification('Successfully logged in', 'success')
 
       rememberMe && localStorage.setItem('token', response.data.user.token)
       dispatch({type: 'LOGIN_USER_FULFILLED', payload: response.data.user})

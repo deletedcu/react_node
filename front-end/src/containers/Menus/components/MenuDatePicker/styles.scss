@@ -5,12 +5,23 @@
   align-items: center;
 
   img {
-    height: 10px;
+    height: 24px;
   }
 
-  span {
-    font-family: 'Montserrat-Medium';
-    color: #3D403F;
-    margin: 0 30px;
+  .datepicker-dropdown {
+    .span-datepicker {
+      font-family: 'Montserrat-Medium';
+      color: #3D403F;
+      margin: 0 30px;
+    }
+
+    .dropdown__content {
+      width: 189px;
+      height: 160px;
+      background-image: url('../../../../assets/images/datepicker_popup.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
+  
 }
