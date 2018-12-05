@@ -76,7 +76,7 @@ class SideCartSummary extends Component {
         }
 
         {/* Separator */}
-        <div className='side-cart-summary-separator'/>
+        <div className='side-cart-summary-separator' style={{visibility: user.loggedIn ? 'hidden' : 'visible'}}/>
         
         {/* Login/Signup */}
         { !user.loggedIn && 
