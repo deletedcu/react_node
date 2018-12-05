@@ -19,6 +19,8 @@
     padding: 80px 120px;
     background-color: white;
     border-radius: 54px;
+    border: 1px solid #B7CBB8;
+    box-shadow: $shadow-secondary;
 
     .div-terms-of-service-header {
       display: flex;
@@ -48,8 +50,68 @@
 
       .div-terms-of-service-subtitle {
         font-family: 'Montserrat-Bold';
-        margin-bottom: 40px;
-        margin-top: 10px;
+      }
+    }
+  }
+
+  @media (max-width: 1366px) {
+    .div-terms-of-service-content {
+      margin: 40px 60px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .div-terms-of-service-content {
+      padding: 40px 60px;
+    }
+  }
+
+  @media (max-width: 710px) {
+    .div-terms-of-service-title {
+      margin-top: 60px;
+      height: 100px;
+      line-height: 100px;
+      font-size: $regular-font-size;
+      font-family: 'Montserrat-Regular';
+    }
+
+    .div-terms-of-service-content {
+      margin: 30px 40px;
+      padding: 20px 15px;
+      border-radius: 7px;
+
+      .div-terms-of-service-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .title {
+          font-size: $small-font-size;
+        }
+        .timestamp {
+          font-size: 12px;
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+  
+      .div-separator {
+        display: none;
+      }
+  
+      .div-terms-of-service-body {
+        margin-top: 20px;
+
+        .div-terms-of-service-paragraph {
+          margin-bottom: 30px;
+          line-height: 24px;
+          font-size: 12px;
+          font-family: 'Montserrat-Medium';
+        }
+  
+        .div-terms-of-service-subtitle {
+          font-family: 'Montserrat-SemiBold';
+          font-size: $mobile-regular-font-size;
+        }
       }
     }
   }

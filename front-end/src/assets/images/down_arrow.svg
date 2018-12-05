@@ -1,12 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.6 12.471">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.103 10.616">
   <defs>
     <style>
       .cls-1 {
-        fill: #d0d0d0;
+        fill: none;
+        stroke: #707070;
+        stroke-linecap: round;
+        stroke-width: 3px;
       }
     </style>
   </defs>
-  <g id="back" transform="translate(0 124.983) rotate(-90)">
-    <path id="Path_238" data-name="Path 238" class="cls-1" d="M114.129,11.8,124.787,1.141A.668.668,0,1,0,123.843.2L112.71,11.33a.666.666,0,0,0,0,.945L123.843,23.4a.672.672,0,0,0,.47.2.651.651,0,0,0,.47-.2.666.666,0,0,0,0-.945Z" transform="translate(0 0)"/>
-  </g>
+  <path id="Path_388" data-name="Path 388" class="cls-1" d="M0,0,9.5,7.234,19.1,0" transform="translate(1.5 1.5)"/>
 </svg>

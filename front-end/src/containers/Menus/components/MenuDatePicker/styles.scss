@@ -21,6 +21,54 @@
       background-image: url('../../../../assets/images/datepicker_popup.svg');
       background-repeat: no-repeat;
       background-position: center;
+      padding: 15px 9px 10px 9px;
+      
+      .div-date-dropdown-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .div-date-menus {
+          // flex-grow: 1;
+          overflow-y: scroll;
+          &::-webkit-scrollbar {
+            width: 0px;  /* remove scrollbar space */
+            background: transparent;  /* optional: just make scrollbar invisible */
+          }
+  
+          .div-date-menu {
+            height: 21px;
+            line-height: 21px;
+            font-size: 7px;
+            color: #1E6D45;
+            padding-left: 10px;
+            border-bottom: 1px solid #EEEEEE;
+    
+            &:hover {
+              background-color: #F7F7F7;
+              box-shadow: $shadow-primary;
+            }
+          }
+        }
+  
+        .div-date-dropdown-bottom {
+          flex-shrink: 0;
+          height: 40px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: center;
+          color: #1E6D45;
+          font-size: 7px;
+  
+          img {
+            height: 6.5px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+          }
+        }
+      }
     }
   }
   

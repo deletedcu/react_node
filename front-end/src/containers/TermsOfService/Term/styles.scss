@@ -1,0 +1,25 @@
+.term {
+  .term-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    .img-down-arrow {
+      display: none;
+      height: 7.2px;
+      margin-right: 20px;
+    }
+  }
+
+  @media (max-width: 710px) {
+    .term-header {
+      border-top: 1px solid #D4CCCC;
+
+      .img-down-arrow {
+        display: block;
+      }
+    }
+  }
+}
