@@ -19,7 +19,7 @@ import imgSoyFree from '../../../assets/images/soy-free.svg'
 
 import { closeModal } from '../../../redux/actions/modal'
 import { addToCart } from '../../../redux/actions/cart'
-import { showNotification } from '../../../services/notification'
+// import { showNotification } from '../../../services/notification'
 
 class MenuModal extends Component {
 

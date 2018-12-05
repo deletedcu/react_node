@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ModalContainer from '../../../components/ModalContainer'
-import Button from '../../../components/Button'
+// import Button from '../../../components/Button'
 
 import './styles.css'
 

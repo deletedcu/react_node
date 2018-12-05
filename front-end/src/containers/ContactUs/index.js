@@ -21,7 +21,7 @@ class ContactUs extends Component {
       email: '',
       message: '',
 
-      messageSent: true,
+      messageSent: false,
     }
   }
 

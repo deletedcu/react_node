@@ -5,7 +5,7 @@ import NumericCounter from '../../../../components/NumericCounter'
 import './styles.css'
 
 import { addToCart, removeFromCart, removeAllFromCart } from '../../../../redux/actions/cart'
-import { showNotification } from '../../../../services/notification'
+// import { showNotification } from '../../../../services/notification'
 
 class SideCartItem extends Component {
 

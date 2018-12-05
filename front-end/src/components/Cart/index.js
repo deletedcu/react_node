@@ -6,7 +6,7 @@ import './styles.css'
 
 import imgCart from '../../assets/images/cart.svg'
 
-import { showSidebar, hideSidebar } from '../../redux/actions/sideBar'
+import { showSidebar } from '../../redux/actions/sideBar'
 
 class Cart extends Component {
 

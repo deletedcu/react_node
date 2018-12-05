@@ -9,7 +9,7 @@ import './styles.css'
 
 import { showModal, ModalType } from '../../../../redux/actions/modal'
 import { addToCart, removeFromCart } from '../../../../redux/actions/cart'
-import { showNotification } from '../../../../services/notification'
+// import { showNotification } from '../../../../services/notification'
 
 class SideItem extends Component {
 
