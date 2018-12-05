@@ -8,7 +8,6 @@
   flex-direction: column;
 
   .div-meal-plan-image {
-    margin-bottom: 100px;
     img {
       width: 100%;
     }
@@ -24,7 +23,7 @@
       text-align: center;
       margin-top: 20px;
       color: $text-light-gray;
-      font-size: $footer-secondary-font-size;
+      font-size: $mobile-regular-font-size;
     }
   }
 
@@ -33,7 +32,6 @@
     display: flex;
     flex-direction: row;
     margin-top: 40px;
-    margin-bottom: 20px;
     padding: 0 27px;
 
     .div-menu-plan-price {
@@ -50,42 +48,37 @@
         margin-top: -30px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: $footer-secondary-font-size;
+        font-size: $small-font-size;
         color: #D3D5DB;
         text-decoration: line-through;
       }
 
       .span-menu-plan-price-value {
-        font-size: $medium-font-size;
+        font-size: $small-font-size;
         color: $text-light-gray;
       }
 
       .span-menu-plan-price-title {
-        font-size: $small-font-size;
-        color: #D3D5DB;
+        font-size: $mobile-small-font-size;
+        color: #9D9D9D;
       }
     }
 
     .div-menu-plan-price-separator {
       background-color: $text-light-gray;
       width: 1px;
-      opacity: 0.58;
-      margin: 12px 0;
       box-sizing: border-box;
     }
   }
 
   .btn-grab-offer {
-    width: calc(100% - 54px);
-    height: 85px;
-    margin: 27px;
+    width: calc(100% - 98px);
+    height: 50px;
+    margin: 47px;
+    font-size: $small-font-size;
   }
 
   @media (max-width: 710px) {
-    .div-meal-plan-image {
-      margin-bottom: 40px;
-    }
-
     .div-meal-plan-recipies {
       margin-top: 15px;
 
@@ -96,7 +89,7 @@
     }
 
     .div-meal-plan-prices {
-      margin-top: 10px;
+      margin-top: 20px;
       margin-bottom: 10px;
       padding: 0 27px;
   

@@ -4,16 +4,17 @@
   background-color: white;
   border: 1px solid $text-light-gray;
   border-radius: 11px;
-  height: 80px;
+  height: 48px;
   display: flex;
   flex-direction: row;
   overflow: hidden;
   
   .selection-grid-cell {
-    width: 80px;
-    line-height: 80px;
+    width: 48px;
+    line-height: 48px;
     color: $text-light-gray;
     text-align: center;
+    font-size: $small-font-size;
   }
 
   .selection-grid-cell-has-separator {
@@ -24,6 +25,7 @@
     background-color: #62B266;
     color: white;
     transition: $transition-primary;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.16); 
   }
 
   @media (max-width: 710px) {

@@ -32,6 +32,35 @@
     }
   }
 
+  .div-side-cart-header-no-border {
+    border-bottom: unset;
+  }
+
+  .div-side-cart-empty {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+    .img-empty-cart {
+      height: 206px;
+    }
+    .span-empty-title {
+      font-size: $regular-font-size;
+      font-family: 'Montserrat-Medium';
+      color: #A7A7A7;
+      opacity: 0.65;
+      margin-top: 20px;
+    }
+    .span-empty-subtitle {
+      font-size: 12px;
+      color: #272727;
+      opacity: 0.84;
+      margin-top: 5px;
+    }
+  }
+
   .div-side-cart-items {
     flex-grow: 1;
     overflow-y: scroll;

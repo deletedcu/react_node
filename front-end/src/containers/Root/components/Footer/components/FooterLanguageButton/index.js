@@ -4,9 +4,6 @@ import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdow
 import 'react-simple-dropdown/styles/Dropdown.css'
 import './styles.css'
 
-import imgGlobe from '../../../../../../assets/images/globe.svg'
-import imgLanguageOn from '../../../../../../assets/images/language_on.svg'
-import imgLanguageOff from '../../../../../../assets/images/language_off.svg'
 import imgPlus from '../../../../../../assets/images/plus_white.svg'
 import imgMinus from '../../../../../../assets/images/minus_white.svg'
 
@@ -54,21 +51,18 @@ class FooterLanguageButton extends Component {
         <DropdownTrigger>
           <div className='div-footer-language-button-container clickable'>
             <span>{(selectedLanguage === Languages.Japan || selectedLanguage === Languages.Korea || selectedLanguage === Languages.Spanish) ? selectedLanguage : `Global-${selectedLanguage}` }</span>
-            <img src={imgGlobe} alt='globe'/>
+            <div className='img-globe'/>
           </div>
         </DropdownTrigger>
         <DropdownContent>
           <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.Japan)}>
             <span>JAPAN</span>
-            <img src={selectedLanguage === Languages.Japan ? imgLanguageOn : imgLanguageOff} alt='off'/>
           </div>
           <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.Korea)}>
             <span>KOREA</span>
-            <img src={selectedLanguage === Languages.Korea ? imgLanguageOn : imgLanguageOff} alt='off'/>
           </div>
           <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.Spanish)}>
             <span>SPANISH</span>
-            <img src={selectedLanguage === Languages.Spanish ? imgLanguageOn : imgLanguageOff} alt='off'/>
           </div>
           <div className='main-language-menu' onClick={this.onToggleGlobalLanguages}>
             <span>GLOBAL</span>

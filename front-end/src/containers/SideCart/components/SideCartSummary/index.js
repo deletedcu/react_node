@@ -16,6 +16,7 @@ class SideCartSummary extends Component {
 
   render () {
     const { cart, user } = this.props
+    const isCartEmpty = cart.items.length === 0
     const total = cart.items.reduce((sum, cartItem) => {
       return sum + cartItem.price[0]
     }, 0)
@@ -45,38 +46,41 @@ class SideCartSummary extends Component {
         </div>
 
         {/* Prices */}
-        <div className='side-cart-summary-prices'>
-          <div className='side-cart-summary-price'>
-            <div className='side-cart-summary-price-title'>Subtotal</div>
-            <div className='side-cart-summary-price-value'>{`$${total.toFixed(2)}`}</div>
-          </div>
+        { !isCartEmpty &&
+          <div className='side-cart-summary-prices'>
+            <div className='side-cart-summary-price'>
+              <div className='side-cart-summary-price-title'>Subtotal</div>
+              <div className='side-cart-summary-price-value'>{`$${total.toFixed(2)}`}</div>
+            </div>
 
-          <div className='side-cart-summary-price'>
-            <div className='side-cart-summary-price-title'>Delivery</div>
-            <div className='side-cart-summary-price-value'>{ delivery > 0 ? `$${delivery}` : 'FREE' }</div>
-          </div>
+            <div className='side-cart-summary-price'>
+              <div className='side-cart-summary-price-title'>Delivery</div>
+              <div className='side-cart-summary-price-value'>{ delivery > 0 ? `$${delivery}` : 'FREE' }</div>
+            </div>
 
-          <div className='side-cart-summary-price'>
-            <div className='side-cart-summary-price-title'>Taxes</div>
-            <div className='side-cart-summary-price-value'>{ taxes }</div>
-          </div>
+            <div className='side-cart-summary-price'>
+              <div className='side-cart-summary-price-title'>Taxes</div>
+              <div className='side-cart-summary-price-value'>{ taxes }</div>
+            </div>
 
-          <div className='side-cart-summary-price'>
-            <div className='side-cart-summary-price-title'>ESTIMATED TOTAL</div>
-            <div className='side-cart-summary-price-value'>{`$${estimatedTotal.toFixed(2)}`}</div>
+            <div className='side-cart-summary-price'>
+              <div className='side-cart-summary-price-title'>ESTIMATED TOTAL</div>
+              <div className='side-cart-summary-price-value'>{`$${estimatedTotal.toFixed(2)}`}</div>
+            </div>
           </div>
-        </div>
+        }
 
         {/* Checkout */}
-        <Button className='btn-checkout' onClick={this.onCheckout} style={{visibility: cart.items.length > 0 ? 'visible' : ' hidden' }}>Checkout</Button>
+        { !isCartEmpty &&
+          <Button className='btn-checkout' onClick={this.onCheckout}>Checkout</Button>
+        }
 
         {/* Separator */}
+        <div className='side-cart-summary-separator'/>
         
+        {/* Login/Signup */}
         { !user.loggedIn && 
-          <div>
-            <div className='side-cart-summary-separator'/>
-            <div className='side-cart-summary-bottom-link'>To manage your Mealpost account, <Link to='/auth/login'><span>Log in</span></Link> or <Link to='/auth/signup'><span>Sign up</span></Link> here.</div> 
-          </div>
+          <div className='side-cart-summary-bottom-link'>To manage your Mealpost account, <Link to='/auth/login'><span>Log in</span></Link> or <Link to='/auth/signup'><span>Sign up</span></Link> here.</div> 
         }
       </div>
     )

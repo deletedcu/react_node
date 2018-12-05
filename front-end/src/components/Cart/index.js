@@ -25,13 +25,7 @@ class Cart extends Component {
   }
 
   onClickCart = () => {
-    if (this.state.purchasedCount > 0) {
-      if (this.props.highlighted) {
-        this.props.dispatch(hideSidebar())
-      } else {
-        this.props.dispatch(showSidebar())
-      }
-    }
+    this.props.dispatch(showSidebar())
   }
 
   render () {

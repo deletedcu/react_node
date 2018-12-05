@@ -6,7 +6,6 @@ import CommonQuestions from './components/CommonQuestions'
 import './styles.css'
 
 import imgPlan from '../../assets/images/mealplan.png'
-import imgPinPoint from '../../assets/images/pinpoint.svg'
 import imgDelivery from '../../assets/images/delivery.svg'
 import imgLorry from '../../assets/images/lorry.svg'
 
@@ -18,55 +17,42 @@ class HowItWorks extends Component {
         {/* Banner and Title */}
         <div className='div-meal-plans-banner'>
           <div className='div-meal-plans-title'>
-            Chef-Inspired meals brought straight to your door.
+            Our Meal Plans
+          </div>
+          <div className='div-meal-plans-subtitle'>
+            Select how many meals you would like to receive per week. You'll be able to adjust this while choosing your meals.
           </div>
         </div>
-
-        {/* Grey section for zip code */}
-        <div className='div-meal-plans-grey-space'/>
 
         {/* Meal Plans */}
         <div className='div-meal-plans'>
           <div className='div-meal-plans-grid container'>
-            {/* Zip code */}
-            <div className='div-zip-code-wrapper'>
-              <div className='div-separator'/>
-              <div className='div-zip-code'>
-                <img src={imgPinPoint} alt='pinpoint'/>
-                <div>
-                  <div className='div-zip-code-description'>DELIVER TO</div>
-                  <div className='div-zip-code-info'>ZIP Code: { this.props.user.user.zip }</div>
-                </div>
-              </div>
-            </div>
             {/* Plans */}
             <div className='row'>
-              <div className='div-meal-plan-wrapper col-12 col-xl-6'>
+              <div className='div-meal-plan-wrapper col-12 col-lg-6'>
                 <MealPlan
                   title='Two-Person Plan'
                   subtitle='serves 2'
                   image={ imgPlan }
-                  recipiesPerWeek={ [2, 3] }
+                  recipiesPerWeek={ [3, 4] }
                   prices={{
                       perServing: '$9.99',
                       shipping: 'FREE',
                       weeklyTotal: '$39.99',
-                      weeklyTotalOld: '$59.94',
                     }
                   }
                 />
               </div>
-              <div className='div-meal-plan-wrapper col-12 col-xl-6'>
+              <div className='div-meal-plan-wrapper col-12 col-lg-6'>
                 <MealPlan
                   title='Family Plan'
                   subtitle='serves 2'
                   image={ imgPlan }
-                  recipiesPerWeek={ [4, 5, 6] }
+                  recipiesPerWeek={ [6, 8, 12] }
                   prices={{
                     perServing: '$9.99',
                     shipping: 'FREE',
                     weeklyTotal: '$39.99',
-                    weeklyTotalOld: '$59.94',
                   }
                 }
                 />

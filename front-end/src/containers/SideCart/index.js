@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 import { connect } from 'react-redux'
 import Cart from '../../components/Cart'
 import SideCartItem from './components/SideCartItem'
@@ -7,6 +8,7 @@ import SideCartSummary from './components/SideCartSummary'
 import './styles.css'
 
 import imgClose from '../../assets/images/close_button.svg'
+import imgEmptyCart from '../../assets/images/empty_cart.svg'
 
 import { hideSidebar } from '../../redux/actions/sideBar'
 import { groupBy } from '../../utils'
@@ -26,6 +28,7 @@ class SideCart extends Component {
 
     const cartItems = cart.items
     const groupedItems = groupBy(cartItems, 'id')
+    const isCartEmpty = cartItems.length === 0;
 
     let sideCartItems = []
     Object.keys(groupedItems).forEach((id, index) => {
@@ -41,13 +44,13 @@ class SideCart extends Component {
     return (
       <div className='div-side-cart-container'>
         {/* SideBar Header */}
-        <div className='div-side-cart-header'>
+        <div className={classNames('div-side-cart-header', {'div-side-cart-header-no-border': isCartEmpty})}>
           <div className='div-side-cart-header-left'>
             <Cart
               history={ history }
               highlighted={ true }
             />
-            <span className='div-side-cart-header-title'>YOUR CART</span>
+            { !isCartEmpty && <span className='div-side-cart-header-title'>YOUR CART</span> }
           </div>
           
           <div className='div-side-cart-header-right'>
@@ -55,10 +58,18 @@ class SideCart extends Component {
           </div>
         </div>
 
-        {/* Cart Items */}
+        {/* Cart Items Or Show Empty Cart */}
+        { isCartEmpty ? 
+        <div className='div-side-cart-empty'>
+          <img className='img-empty-cart' src={imgEmptyCart} alt='empty'/>
+          <span className='span-empty-title'>Your cart is empty</span>
+          <span className='span-empty-subtitle'>Add items to get started</span>
+        </div>
+        :
         <div className='div-side-cart-items'>
           { sideCartItems }
         </div>
+        }
 
         {/* Sidebar bottom - Cart summary / checkout */}
         <div className='div-side-cart-bottom'>

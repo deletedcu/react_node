@@ -7,6 +7,7 @@
   .side-cart-summary-separator {
     height: 1px;
     background-color: $text-light-gray;
+    margin: 20px 0;
   }
 
   .side-cart-summary-recommended {
@@ -41,7 +42,7 @@
   }
   
   .side-cart-summary-prices {
-    padding: 40px 10px 0 10px;
+    padding: 40px 10px 20px 10px;
 
     .side-cart-summary-price {
       display: flex;
@@ -55,8 +56,6 @@
     height: 52px;
     font-size: $small-font-size;
     border-radius: 8px;
-    margin-top: 20px;
-    margin-bottom: 20px;
   }
 
   .side-cart-summary-bottom-link {
