@@ -39,6 +39,15 @@
       color: black;
       opacity: 0.65;
       margin: 0 30px;
+      font-family: 'Montserrat-Light';
+
+      &:hover {
+        color: #4C844E;
+      }
+      &:active {
+        font-family: 'Montserrat-Medium';
+        letter-spacing: -0.2px;
+      }
     }
   }
 
@@ -61,6 +70,7 @@
     .button {
       height: 50px;
       width: 150px;
+      box-shadow: $shadow-primary;
     }
 
     .div-cart {

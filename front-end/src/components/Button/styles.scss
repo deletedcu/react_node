@@ -5,6 +5,7 @@
   height: 67px;
   font-size: $regular-font-size;
   background: $green-primary;
+  box-shadow: $shadow-primary;
   border: unset;
   border-radius: 8px;
   color: #fff;
@@ -16,7 +17,7 @@
 }
 
 .button:hover {
-  box-shadow: $shadow-primary;
+  filter: brightness(90%);
 }
 
 .button:active {
