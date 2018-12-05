@@ -85,10 +85,9 @@ class Footer extends Component {
             <div className='footer-middle-links-header'>
               PRODUCT
             </div>
-            <a className='footer-middle-link' onClick={this.onSendInvitation}>Get $20 off</a>
             <Link to='/menus' className='footer-middle-link'>Weekly Menu</Link>
             <Link to='/menus' className='footer-middle-link'>Meal Plans</Link>
-            <a className='footer-middle-link'>Partnerships</a>
+            <a className='footer-middle-link' onClick={this.onSendInvitation}>Get $20</a>
           </div>
 
           <div className='div-footer-middle-links-group'>
@@ -97,7 +96,6 @@ class Footer extends Component {
             </div>
             <Link to='/contact-us' className='footer-middle-link'>Contact</Link>
             <a className='footer-middle-link'>Service Areas</a>
-            <a className='footer-middle-link'>FAQ</a>
           </div>
 
           <div className='div-footer-middle-links-group'>
@@ -105,7 +103,7 @@ class Footer extends Component {
               CITIES
             </div>
             <a className='footer-middle-link'>San Francisco</a>
-            <a className='footer-middle-link'>San Jose</a>
+            <a className='footer-middle-link'>Oakland</a>
             <a className='footer-middle-link'>Berkely</a>
             <a className='footer-middle-link'>Concord</a>
             <a className='footer-middle-link'>See More...</a>
