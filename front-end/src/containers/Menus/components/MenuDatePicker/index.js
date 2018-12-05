@@ -75,7 +75,7 @@ class MenuDatePicker extends Component {
             <div className='div-date-dropdown-content'>
               <div className='div-date-menus'>
                 { dates.map((date, index) => {
-                  return <div key={index} className='div-date-menu' onClick={()=>this.onSelectDeliveryDate(date)}>{date.format('dddd, MMM D')}</div>
+                  return <div key={index} className='div-date-menu clickable' onClick={()=>this.onSelectDeliveryDate(date)}>{date.format('dddd, MMM D')}</div>
                 }) }
               </div>
               <div className='div-date-dropdown-bottom'>
