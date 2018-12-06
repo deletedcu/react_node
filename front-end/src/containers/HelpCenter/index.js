@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import LazyImage from '../../components/LazyImage'
 import Button from '../../components/Button'
 import HelpSearchBar from './components/HelpSearchBar'
-import HelpQuestionGrid from './components/HelpQuestionGrid'
 import HelpRecentActivityList from './components/HelpRecentActivityList'
 
 import './styles.css'
@@ -32,7 +31,7 @@ class HelpCenter extends Component {
         <div className='div-help-center-banner'>
           <LazyImage className='img-banner' src={ imgBanner } disableSpinner={true} />
           <div className='div-help-center-title'>
-            Help Center
+            Hi. How can we help?
           </div>
           <div className='div-help-center-search'>
             <HelpSearchBar onChange={this.onSearchChange}/>
@@ -41,10 +40,6 @@ class HelpCenter extends Component {
 
         {/* Help Center */}
         <div className='div-help-center'>
-          <HelpQuestionGrid/>
-
-          <div className='div-separator'/>
-
           <HelpRecentActivityList/>
 
           <div className='div-still-need-help'>

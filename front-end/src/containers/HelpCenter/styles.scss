@@ -10,7 +10,7 @@
     .div-help-center-title {
       position: relative;
       text-align: center;
-      font-size: 70px;
+      font-size: 60px;
       font-family: 'Montserrat-SemiBold';
       top: calc(50% - 60px);
       transform: translateY(-50%);
@@ -28,14 +28,7 @@
   }
 
   .div-help-center {
-    padding: 80px 180px 120px;
-
-    .div-separator {
-      height: 1px;
-      background-color: #232222;
-      margin: 80px 10px 80px;
-      opacity: 0.85;
-    }
+    padding: 120px 180px 120px;
 
     .div-still-need-help {
       text-align: center;

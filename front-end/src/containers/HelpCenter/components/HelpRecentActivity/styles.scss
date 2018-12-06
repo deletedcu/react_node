@@ -5,6 +5,7 @@
 
   .help-recent-activity-title {
     font-size: 30px;
+    margin-left: 5px;
   }
 
   .help-recent-activity-content {
@@ -29,10 +30,17 @@
     }
   }
 
+  .help-recent-activity-answer {
+    font-size: 24px;
+    color: #333333;
+    margin-top: 40px;
+    max-width: 640px;
+  }
+
   .help-recent-activity-separator {
     height: 1px;
     background-color: #232222;
     opacity: 0.85;
-    margin: 60px 0 20px;
+    margin: 40px 0 30px;
   }
 }
