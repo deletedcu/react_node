@@ -21,6 +21,17 @@
     .gift-card-price {
       font-size: 32px;
       font-family: 'Montserrat-Bold'; 
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input {
+        background-color: transparent;
+        margin-right: -20px;
+        cursor: pointer;
+      }
     }
     .gift-card-title {
       font-size: 16px;

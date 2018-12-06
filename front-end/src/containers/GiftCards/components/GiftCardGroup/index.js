@@ -24,9 +24,9 @@ class GiftCardGroup extends Component {
 
     return (
       <div className='gift-card-group'>
-        <GiftCard price={50} selected={selectedIndex === 0} onClick={()=>{this.onSelect(0)}}/>
-        <GiftCard price={200} selected={selectedIndex === 1} onClick={()=>{this.onSelect(1)}}/>
-        <GiftCard price={500} selected={selectedIndex === 2} onClick={()=>{this.onSelect(2)}}/>
+        <GiftCard editable={true} price={0} selected={selectedIndex === 0} onClick={()=>{this.onSelect(0)}}/>
+        <GiftCard price={60} selected={selectedIndex === 1} onClick={()=>{this.onSelect(1)}}/>
+        <GiftCard price={100} selected={selectedIndex === 2} onClick={()=>{this.onSelect(2)}}/>
       </div>
     )
   }
