@@ -62,11 +62,18 @@ class Header extends Component {
         { pathName.includes('auth/signup') && <img className='img-flow' src={imgFlow} alt='flow'/> }
         { pathName.includes('auth/signup') && <img className='img-min-flow' src={imgMinimizedFlow} alt='flow'/> }
 
-        { !pathName.includes('auth/signup') &&
+        { !pathName.includes('auth/signup') && !pathName.includes('help-center') &&
           <div className='div-links'>
             <Link to='/menus'><span className='clickable'>MENU</span></Link>
             <Link to='/how-it-works'><span className='clickable'>HOW IT WORKS</span></Link>
             <Link to='/gift-cards'><span className='clickable'>GIFTS</span></Link>
+          </div>
+        }
+
+        { pathName.includes('help-center') && 
+          <div className='div-help-center-banner'>
+            <div className='div-separator'/>
+            <div className='div-help-center-title'>Help Center</div>
           </div>
         }
         

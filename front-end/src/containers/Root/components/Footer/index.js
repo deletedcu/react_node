@@ -19,6 +19,10 @@ import { showModal, ModalType } from '../../../../redux/actions/modal'
 
 class Footer extends Component {
 
+  onAdvertise = () => {
+    window.open('mailto: support@mealpost.io', '_self')
+  }
+
   onHelpCenter = () => {
     this.props.history.push('/help-center')
   }
@@ -40,6 +44,7 @@ class Footer extends Component {
             image={imgAdvertise}
             title='Advertise'
             hasSeparator={true}
+            onClick={this.onAdvertise}
           />
           <FooterTopSectionButton
             image={imgCoin}
