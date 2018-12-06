@@ -89,7 +89,7 @@ class Root extends Component {
               <DropdownFooter/> {/* For responsive mode */}
         
               {/* Modal */}
-              <Modal pathName={location.pathname}/>
+              <Modal history={history} pathName={location.pathname}/>
             </div>
           }
     

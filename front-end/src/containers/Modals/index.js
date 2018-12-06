@@ -19,6 +19,7 @@ const AsyncInvitationModal = asyncComponent(() => import('./InvitationModal'))
 const Modal = (props) => {
   const active = props.modal.active
   const pathName = props.pathName
+  const history = props.history
 
   return (
     <div>
@@ -43,8 +44,8 @@ const Modal = (props) => {
       {/* Job Apply Modal */}
       { active === ModalType.jobApplyModal && <AsyncJobApplyModal /> }
 
-      {/* Job Apply Modal */}
-      { active === ModalType.invitationModal && <AsyncInvitationModal /> }
+      {/* Invitation Modal */}
+      { active === ModalType.invitationModal && <AsyncInvitationModal history={history} /> }
     </div>
   )
 }

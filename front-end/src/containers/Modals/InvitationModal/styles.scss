@@ -4,12 +4,121 @@
   position: absolute;
   display: flex;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 100px;
+  transform: translate(-50%);
   margin-bottom: 100px;
   background: white;
   border-radius: 30px;
+  overflow: hidden;
 
   width: 1572px;
   height: 685px;
+
+  .invitation-modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .div-title {
+      font-size: 22px;
+      font-family: 'Montserrat-SemiBold';
+      width: 100%;
+    }
+
+    .span-link {
+      color: $text-primary;
+      font-size: $mobile-regular-font-size;
+      font-family: 'Montserrat-SemiBold';
+      text-decoration: underline;
+      margin-top: 40px;
+    }
+
+    .button {
+      height: 80px;
+      width: 100%;
+      background-color: #515151;
+      border-radius: 0;
+      margin-top: 20px;
+
+      img {
+        height: 20px;
+        margin-right: 20px;
+      }
+    }
+
+    input {
+      border: 1px solid $text-light-gray;
+      background-color: transparent;
+      font-size: $small-font-size;
+      padding: 0 20px;
+      height: 60px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .referral-code-title {
+      color: #C7C5C5;
+      font-size: $mobile-regular-font-size;
+      font-family: 'Montserrat-SemiBold';
+      margin-top: 30px;
+    }
+
+    .referral-code {
+      width: 290px;
+      height: 60px;
+      margin-top: 10px;
+      line-height: 60px;
+      text-align: center;
+      background-color: #F1F1F1;
+      font-size: 30px;
+      font-family: 'Montserrat-SemiBold';
+      border: 1px dashed #C7C5C5;
+    }
+
+    .social-shares {
+      img {
+        height: 35px;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .invitation-modal-left {
+    width: 50%;
+    background-color: $extra-light-gray;
+    padding: 70px 120px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .invitation-modal-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .invitation-modal-title {
+        font-size: 22px;
+        font-family: 'Montserrat-SemiBold';
+      }
+      .invitation-modal-description {
+        width: 60%;
+        color: $text-light-gray;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .invitation-modal-right {
+    width: 50%;
+    padding: 30px 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .invitation-modal-logo {
+      .img-close {
+        height: 20px;
+        float: right;
+      }
+    }
+  }
 }
