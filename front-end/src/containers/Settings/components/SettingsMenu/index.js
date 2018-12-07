@@ -6,6 +6,7 @@ const SettingsMenuItem = {
   paymentMethod: 1,
   orderHistory: 2,
   mealPreference: 3,
+  redeemCredit: 4,
 }
 
 class SettingsMenu extends Component {
@@ -33,6 +34,8 @@ class SettingsMenu extends Component {
       activeItem = SettingsMenuItem.paymentMethod
     } else if (path.includes('meal_preference')) {
       activeItem = SettingsMenuItem.mealPreference
+    } else {
+      activeItem = SettingsMenuItem.redeemCredit
     }
 
     return activeItem
