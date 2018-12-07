@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import './styles.css'
 
-import imgRecommended from '../../../../assets/images/recommended.svg'
+import imgPlus from '../../../../assets/images/plus_green.svg'
 
 class HelpRecentActivity extends Component  {
 
@@ -26,13 +26,9 @@ class HelpRecentActivity extends Component  {
 
     return (
       <div className='help-recent-activity'>
-        <div className='help-recent-activity-title'>{title}</div>
         <div className='help-recent-activity-content'>
-          <div className='help-recent-activity-question clickable' onClick={this.onOpenAnswer}>{question}</div>
-          <div className='help-recent-activity-info'>
-            <span>{timestamp}</span>
-            <img src={imgRecommended} alt='recommended'/>
-          </div>
+          <div className='help-recent-activity-question clickable' onClick={this.onOpenAnswer}><img src={imgPlus} alt='recommended'/><span>{question}</span></div>
+          <div className='help-recent-activity-info'>{timestamp}</div>
         </div>
         { answerOpened &&
           <div className='help-recent-activity-answer'>
