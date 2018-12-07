@@ -9,15 +9,15 @@
   .div-footer-top-section-button {
     display: flex;
     align-items: center;
-    margin: 0px 68px;
+    margin: 0px 50px;
 
     img {
       height: 25px;
-      margin-right: 18px;
+      margin-right: 12px;
     }
 
-    @media (max-width: 1440px) {
-      margin: 0px 40px;
+    @media (max-width: 1366px) {
+      margin: 0px 30px;
     }
 
     @media (max-width: 1200px) {

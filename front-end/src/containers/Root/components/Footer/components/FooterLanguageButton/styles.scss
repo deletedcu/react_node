@@ -34,16 +34,6 @@
         display: none;
       }
     }
-
-    &:hover {
-      span {
-        color: $green-primary;
-      }
-
-      .img-globe {
-        background-image: url('../../../../../../assets/images/globe_green.svg');
-      }
-    }
   }
 
   .dropdown__content {
@@ -55,9 +45,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 60px;
+      height: 52px;
       padding: 0 50px;
       cursor: pointer;
+      font-size: $regular-font-size;
 
       img {
         height: 24px;
@@ -79,6 +70,7 @@
         padding-left: 70px;
         cursor: pointer;
         font-size: $small-font-size;
+        font-family: 'Montserrat-Medium';
 
         &:hover {
           background-color: $text-light-gray;

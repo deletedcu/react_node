@@ -100,18 +100,18 @@ class Footer extends Component {
               HELP
             </div>
             <Link to='/contact-us' className='footer-middle-link'>Contact</Link>
-            <a className='footer-middle-link'>Service Areas</a>
+            <Link to='/service-areas' className='footer-middle-link'>Service Areas</Link>
           </div>
 
           <div className='div-footer-middle-links-group'>
             <div className='footer-middle-links-header'>
               CITIES
             </div>
-            <a className='footer-middle-link'>San Francisco</a>
-            <a className='footer-middle-link'>Oakland</a>
-            <a className='footer-middle-link'>Berkely</a>
-            <a className='footer-middle-link'>Concord</a>
-            <a className='footer-middle-link'>See More...</a>
+            <Link to='/service-areas' className='footer-middle-link'>San Francisco</Link>
+            <Link to='/service-areas' className='footer-middle-link'>Oakland</Link>
+            <Link to='/service-areas' className='footer-middle-link'>Berkely</Link>
+            <Link to='/service-areas' className='footer-middle-link'>Concord</Link>
+            <Link to='/service-areas' className='footer-middle-link'>See More...</Link>
           </div>
 
           <div className='div-footer-middle-links-group'>

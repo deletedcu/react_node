@@ -17,6 +17,7 @@ const AsyncCareer = asyncComponent(() => import('../Career'))
 const AsyncTermsOfService = asyncComponent(() => import('../TermsOfService'))
 const AsyncGiftCards = asyncComponent(() => import('../GiftCards'))
 const AsyncHowItWorks = asyncComponent(() => import('../HowItWorks'))
+const AsyncServiceAreas = asyncComponent(() => import('../ServiceAreas'))
 
 
 /**
@@ -39,6 +40,7 @@ const routes = (
     <Route path='/gift-cards' component={ AsyncGiftCards } />
     <Route path='/not-available' component={ AsyncNotAvailable } />
     <Route path='/how-it-works' component={ AsyncHowItWorks } />
+    <Route path='/service-areas' component={ AsyncServiceAreas } />
 
     <Redirect to='/home' />
   </Switch>

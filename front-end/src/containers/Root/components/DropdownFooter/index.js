@@ -37,21 +37,21 @@ class DropdownFooter extends Component {
 
           <DropdownList title='PRODUCT'>
             <div><Link to='/menus'>Menu</Link></div>
-            <Link to='/menus'>Meal Plans</Link>
+            <div><Link to='/menus'>Meal Plans</Link></div>
             <div onClick={this.onSendInvitation}>Get $20</div>
           </DropdownList>
 
           <DropdownList title='HELP'>
-            <Link to='/contact-us'>Contact</Link>
-            <div>Service Areas</div>
+            <div><Link to='/contact-us'>Contact</Link></div>
+            <div><Link to='/service-areas'>Service Areas</Link></div>
           </DropdownList>
 
           <DropdownList title='CITIES'>
-            <div>San Francisco</div>
-            <div>Oakland</div>
-            <div>Berkely</div>
-            <div>Concord</div>
-            <div>See More...</div>
+            <div><Link to='/service-areas'>San Francisco</Link></div>
+            <div><Link to='/service-areas'>Oakland</Link></div>
+            <div><Link to='/service-areas'>Berkely</Link></div>
+            <div><Link to='/service-areas'>Concord</Link></div>
+            <div><Link to='/service-areas'>See More...</Link></div>
           </DropdownList>
 
           <DropdownList title='SOCIAL'>
