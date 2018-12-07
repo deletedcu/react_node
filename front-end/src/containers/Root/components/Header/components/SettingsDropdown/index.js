@@ -7,10 +7,9 @@ import './styles.css'
 
 import imgTriangle from '../../../../../../assets/images/dropdown_triangle.svg'
 import imgTriangleReverse from '../../../../../../assets/images/dropdown_triangle_reverse.svg'
-import imgEditProfile from '../../../../../../assets/images/edit_profile.svg'
-import imgPaymentMethod from '../../../../../../assets/images/payment_method.svg'
-import imgOrderHistory from '../../../../../../assets/images/order_history.svg'
-import imgLogout from '../../../../../../assets/images/logout.svg'
+import imgEditProfile from '../../../../../../assets/images/edit_profile.png'
+import imgOrderHistory from '../../../../../../assets/images/order_history.png'
+import imgLogout from '../../../../../../assets/images/logout.png'
 
 
 class SettingsDropdown extends Component {
@@ -39,11 +38,6 @@ class SettingsDropdown extends Component {
     this.props.onEditProfile()
   }
 
-  onPaymentMethod = () => {
-    this.refs.settingsDropdown.hide()
-    this.props.onPaymentMethod()
-  }
-
   onOrderHistory = () => {
     this.refs.settingsDropdown.hide()
     this.props.onOrderHistory()
@@ -67,11 +61,7 @@ class SettingsDropdown extends Component {
         <DropdownContent>
           <div className='div-menu clickable' onClick={ this.onEditProfile }>
             <img src={imgEditProfile} alt='edit'/>
-            <span>Edit Profile</span>
-          </div>
-          <div className='div-menu clickable' onClick={ this.onPaymentMethod }>
-            <img src={imgPaymentMethod} alt='payment'/>
-            <span>Payment Method</span>
+            <span>Account Settings</span>
           </div>
           <div className='div-menu clickable' onClick={ this.onOrderHistory }>
             <img src={imgOrderHistory} alt='history'/>
