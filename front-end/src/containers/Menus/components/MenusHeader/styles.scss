@@ -15,16 +15,28 @@
 
   padding: 0 40px 0 60px;
 
+  .div-separator {
+    width: 1px;
+    height: 43px;
+    background-color: #D1CDCD;
+    margin: 0 40px;
+  }
+
   .div-menus-header-left {
     flex-grow: 3;
     display: flex;
     flex-direction: row;
     align-items: center;
+    
+    .span-title {
+      font-size: $mobile-regular-font-size;
+      color: $text-light-gray;
+      margin-left: 10px;
+    }
 
     .div-recommended {
-      width: 69px;
-      height: 37px;
-      margin-left: 20px;
+      width: 62px;
+      height: 32px;
       background-image: url('../../../../assets/images/recommended_button.svg');
       background-repeat: no-repeat;
       background-position: center;
@@ -44,6 +56,7 @@
     align-items: center;
 
     .div-search-container {
+      margin-left: 70px;
       width: 325px;
       height: 52px;
       padding: 16px;
@@ -66,14 +79,14 @@
       }
 
       img {
-        height: 28px;
+        height: 22px;
       }
     }
 
     .div-zip-code {
       display: flex;
       align-items: center;
-      margin-right: 100px;
+      margin-right: 80px;
 
       img {
         height: 32px;
@@ -92,11 +105,20 @@
   }
 
   @media (max-width: 1365px) {
+    .div-separator {
+      margin: 0 20px;
+    }
     .div-menus-header-left .menu-datepicker {
       display: none;
     }
-    .div-menus-header-right .div-zip-code {
-      display: none;
+    .div-menus-header-right {
+      .div-zip-code, .div-separator {
+        display: none;
+      }
+      .div-search-container {
+        margin-left: 0;
+        width: 250px;
+      }
     }
   }
 
@@ -109,7 +131,6 @@
       .div-recommended {
         width: 46px;
         height: 31px;
-        margin-left: 10px;
       }
     }
 
@@ -124,6 +145,27 @@
       }
       input {
         font-size: $mobile-regular-font-size;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .div-menus-header-left {
+      .span-title {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 414px) {
+    .div-separator {
+      margin: 0 10px;
+      height: 30px;
+    }
+
+    .div-menus-header-right {
+      .div-search-container {
+        width: 150px;
       }
     }
   }

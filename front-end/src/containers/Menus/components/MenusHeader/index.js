@@ -36,8 +36,11 @@ class MenusHeader extends Component {
       <div className={classNames('div-menus-header-container', {'div-menus-header-squizzed': false})}>
         <div className='div-menus-header-left'>
           <MenuFilter onChangeFilters={this.onChangeFilters}/>
+          <span className='span-title'>FILTERS</span>
+          <div className='div-separator'/>
           <div className='div-recommended clickable'/>
-          <MenuDatePicker />
+          <span className='span-title'>RECOMMENDED</span>
+          {/* <MenuDatePicker /> */}
         </div>
 
         <div className='div-menus-header-right'>
@@ -48,6 +51,8 @@ class MenusHeader extends Component {
               <div className='div-zip-code-info'>ZIP Code: { this.props.zipCode }</div>
             </div>
           </div>
+
+          <div className='div-separator'/>
           
           <div className='div-search-container'>
             <input type='text' placeholder='Search Menu' onChange={ this.onChangeSearchText } value={ this.state.searchText }/>

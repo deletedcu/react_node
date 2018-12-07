@@ -4,8 +4,8 @@
   .dropdown__trigger {
     .menu-filter-dropdown-trigger {
       .img-filter {
-        width: 69px;
-        height: 37px;
+        width: 62px;
+        height: 32px;
         // background-image: url('../../../../assets/images/filter_button.svg');
         // background-repeat: no-repeat;
         // background-position: center;
@@ -66,7 +66,7 @@
   }
 
   @media (max-width: 710px) {
-    .dropdown__trigger .menu-filter-dropdown-trigger .div-filter {
+    .dropdown__trigger .menu-filter-dropdown-trigger .img-filter {
       width: 46px;
       height: 31px;
     }
