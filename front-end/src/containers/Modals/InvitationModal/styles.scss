@@ -119,6 +119,13 @@
         height: 20px;
         float: right;
       }
+
+      .img-prize {
+        height: 210px;
+        margin-top: 50px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }

@@ -8,6 +8,7 @@ import imgClose from '../../../assets/images/close_button.svg'
 import imgShare from '../../../assets/images/share.svg'
 import imgFacebook from '../../../assets/images/facebook_blue.svg'
 import imgTwitter from '../../../assets/images/twitter_blue.svg'
+import imgPrize from '../../../assets/images/prize.svg'
 
 import { closeModal } from '../../../redux/actions/modal'
 class InvitationModal extends Component {
@@ -26,7 +27,8 @@ class InvitationModal extends Component {
   }
 
   onRedeemCredit = () => {
-
+    this.props.history.push('/settings/redeem_credit')
+    this.props.dispatch(closeModal())
   }
 
   onChange = (e) => {
@@ -66,6 +68,7 @@ class InvitationModal extends Component {
           <div className='invitation-modal-right'>
             <div className='invitation-modal-logo'>
               <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
+              <img className='img-prize' src={imgPrize} alt='prize'/>
             </div>
             <div className='invitation-modal-form'>
               <div className='social-shares'>
