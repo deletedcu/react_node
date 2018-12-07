@@ -30,8 +30,8 @@ class DropdownFooter extends Component {
         <div className='div-footer-dropdown-container'>
           <DropdownList title='COMPANY'>
             <div>About</div>
-            <Link to='/how-it-works'>How It Works</Link>
             <Link to='/career'>Careers</Link>
+            <Link to='/how-it-works'>How It Works</Link>
             <div>Press</div>
           </DropdownList>
 
@@ -39,11 +39,13 @@ class DropdownFooter extends Component {
             <div><Link to='/menus'>Menu</Link></div>
             <div><Link to='/menus'>Meal Plans</Link></div>
             <div onClick={this.onSendInvitation}>Get $20</div>
+            <div>Mobile App</div>
           </DropdownList>
 
           <DropdownList title='HELP'>
-            <div><Link to='/contact-us'>Contact</Link></div>
+            <div><Link to='/home'>Manage Orders</Link></div>
             <div><Link to='/service-areas'>Service Areas</Link></div>
+            <div><Link to='/help-center'>FAQ</Link></div>
           </DropdownList>
 
           <DropdownList title='CITIES'>
