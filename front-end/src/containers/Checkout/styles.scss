@@ -108,9 +108,22 @@ $page-padding: 110px;
             padding-right: 15px
           }
 
-          .div-checkout-address-apartment {
+          .div-checkout-address-special-instructions {
             width: 40%;
             padding-left: 15px;
+
+            .div-special-instructions-title {
+              height: 30px;
+            }
+
+            input::-webkit-input-placeholder {
+              font-size: 18px;
+            }
+
+            .span-optional {
+              font-size: $small-font-size;
+              color: #BFBFBF;
+            }
           }
         }
 
@@ -128,6 +141,7 @@ $page-padding: 110px;
             width: 40%;
 
             .div-checkout-address-state {
+              position: relative;
               width: 50%;
               padding-left: 15px;
   
@@ -136,11 +150,23 @@ $page-padding: 110px;
   
               .select-us-state {
                 margin-top: 10px;
+                padding-left: 10px;
+                padding-right: 30px;
                 border: 1px solid $light-green-primary;
                 background-color: white;
                 outline: none;
                 height: 70px;
                 color: $text-light-gray;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+              }
+
+              img {
+                position: absolute;
+                width: 21px;
+                height: 8px;
+                right: 10px;
+                bottom: 30px;
               }
             }
   
@@ -353,10 +379,14 @@ $page-padding: 110px;
               padding: 0;
             }
   
-            .div-checkout-address-apartment {
+            .div-checkout-address-special-instructions {
               width: 100%;
               padding: 0;
               margin-top: 15px;
+
+              .span-optional {
+                font-size: $mobile-small-font-size;
+              }
             }
           }
   
@@ -379,6 +409,10 @@ $page-padding: 110px;
                 .select-us-state {
                   margin-top: 10px;
                   height: 50px;
+                }
+
+                img {
+                  bottom: 20px;
                 }
               }
     

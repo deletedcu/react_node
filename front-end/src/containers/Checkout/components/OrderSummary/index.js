@@ -2,9 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
 import OrderedItem from '../OrderedItem'
+import DatePicker from 'react-datepicker'
+import moment from 'moment'
 
 import './styles.css'
 import { groupBy } from '../../../../utils'
+
+import imgDownTriangle from '../../../../assets/images/black_triangle.svg'
+
 class OrderSummary extends Component {
 
   constructor (props) {
@@ -12,6 +17,7 @@ class OrderSummary extends Component {
 
     this.state = {
       promoCode: '',
+      deliveryDate: new Date(),
     }
   }
 
@@ -21,11 +27,18 @@ class OrderSummary extends Component {
     })
   }
 
+  onDateChange = (date) => {
+    this.setState({
+      deliveryDate: date,
+    })
+  }
+
   onApplyPromoCode = () => {
 
   }
 
   render () {
+    const { deliveryDate } = this.state
     const cartItems = this.props.cart.items
     const totalPrice = cartItems.reduce((sum, cartItem) => {
       return sum + cartItem.price[0]
@@ -60,7 +73,12 @@ class OrderSummary extends Component {
           {/* Date / Price Info */}
           <div className='order-summary-info-block'>
             <span>Delivery Day</span>
-            <span>Friday, September 14th</span>
+            <DatePicker
+              className='delivery-datepicker clickable'
+              selected={deliveryDate}
+              onChange={this.onDateChange}
+              customInput={<div><span>{moment(deliveryDate).format('dddd, MMMM D')}</span><img src={imgDownTriangle} alt='down'/></div>}
+            />
           </div>
           <div className='order-summary-info-block'>
             <span>6 Meals Per Week</span>
@@ -69,6 +87,10 @@ class OrderSummary extends Component {
           <div className='order-summary-info-block'>
             <span>Shipping</span>
             <span>Free</span>
+          </div>
+          <div className='order-summary-info-block-highlighted'>
+            <span>CHRISTMAS18</span>
+            <span>-$25.00</span>
           </div>
 
           {/* Promo Code Input */}

@@ -22,7 +22,7 @@ class HelpRecentActivity extends Component  {
 
   render () {
     const { answerOpened } = this.state 
-    const { title, question, timestamp, answer } = this.props
+    const { question, timestamp, answer } = this.props
 
     return (
       <div className='help-recent-activity'>

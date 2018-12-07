@@ -1,0 +1,15 @@
+<svg id="baseline-add_circle-24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.38 28.921">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #56b05a;
+      }
+    </style>
+  </defs>
+  <path id="Path_311" data-name="Path 311" class="cls-1" d="M0,0H30.38V28.921H0Z"/>
+  <path id="Path_312" data-name="Path 312" class="cls-2" d="M14.658,2C7.671,2,2,7.4,2,14.05S7.671,26.1,14.658,26.1s12.658-5.4,12.658-12.05S21.645,2,14.658,2Zm6.329,13.255H15.924v4.82H13.392v-4.82H8.329v-2.41h5.063V8.025h2.532v4.82h5.063Z" transform="translate(0.532 0.41)"/>
+</svg>

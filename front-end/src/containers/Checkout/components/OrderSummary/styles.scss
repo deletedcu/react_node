@@ -40,13 +40,30 @@ $order-summary-header-height: 108px;
     color: #ACACAC;
     font-size: $footer-primary-font-size;
 
-    .order-summary-info-block {
+    %order-summary-info-block {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       padding-left: $padding;
       padding-right: $padding;
       margin-top: $margin;
+    }
+
+    .order-summary-info-block {
+      @extend %order-summary-info-block;
+    }
+    
+    .order-summary-info-block-highlighted {
+      @extend %order-summary-info-block;
+      font-family: 'Montserrat-Medium';
+      color: $green-primary;
+    }
+
+    .delivery-datepicker {
+      img {
+        height: 9px;
+        margin-left: 3px;
+      }
     }
 
     .order-summary-promo-input {
@@ -135,7 +152,7 @@ $order-summary-header-height: 108px;
     .order-summary-info {
       font-size: $mobile-regular-font-size;
 
-      .order-summary-info-block {
+      .order-summary-info-block, .order-summary-info-block-highlighted {
         padding-left: 20px;
         padding-right: 20px;
       }

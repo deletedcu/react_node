@@ -12,6 +12,7 @@ import RadioButton from '../../components/RadioButton'
 import './styles.css'
 
 import imgPaypal from '../../assets/images/paypal.svg'
+import imgDownArrow from '../../assets/images/down_arrow_green.svg'
 
 import { loginUser, signupUser } from '../../redux/actions/user'
 import { hideSidebar } from '../../redux/actions/sideBar'
@@ -56,7 +57,7 @@ class Checkout extends Component {
       addressLastName: props.user.loggedIn ? props.user.user.last_name : '',
       contactNumber: props.user.loggedIn ? props.user.user.phone : '',
       streetAddress: '',
-      apartmentNumber: '',
+      specialInstruction: '',
       city: '',
       state: '',
       zip: props.user.loggedIn ? props.user.user.zip : '',
@@ -91,8 +92,7 @@ class Checkout extends Component {
     addressParser(this.props.user.user.shipping_address, (err, addressObject) => {
       if (!err) {
         this.setState({
-          streetAddress: addressObject.street_address1 || '',
-          apartmentNumber: addressObject.street_address2 || '',
+          streetAddress: (addressObject.street_address1 || '') + ' ' + (addressObject.street_address2 || ''),
           city: addressObject.city || '',
           state: addressObject.state || '',
           ...(addressObject.postal_code && { zip: addressObject.postal_code }),
@@ -154,7 +154,6 @@ class Checkout extends Component {
             first_name: this.state.addressFirstName,
             last_name: this.state.addressLastName,
             line_1: this.state.streetAddress,
-            line_2: this.state.apartmentNumber,
             city: this.state.city,
             postcode: this.state.zip,
             county: this.state.state,
@@ -313,15 +312,15 @@ class Checkout extends Component {
                   </div>
                 </div>
 
-                {/* Street, Apartment */}
+                {/* Street, special instructions */}
                 <div className='div-checkout-address-second-row'>
                   <div className='div-checkout-address-street'>
                     <div><span>Street Address</span></div>
                     <div><input required type='text' name='streetAddress' value={this.state.streetAddress} onChange={this.onChange}/></div>
                   </div>
-                  <div className='div-checkout-address-apartment'>
-                    <div><span>Apartment Number</span></div>
-                    <div><input required type='text' name='apartmentNumber' value={this.state.apartmentNumber} onChange={this.onChange}/></div>
+                  <div className='div-checkout-address-special-instructions'>
+                    <div className='div-special-instructions-title'><span>Special Instructions </span><span className='span-optional'>(OPTIONAL)</span></div>
+                    <div><input type='text' name='specialInstruction' value={this.state.specialInstruction} onChange={this.onChange} placeholder="e.g. Leave at the front desk"/></div>
                   </div>
                 </div>
 
@@ -335,6 +334,7 @@ class Checkout extends Component {
                     <div className='div-checkout-address-state'>
                       <div><span>State</span></div>
                       <SelectUSState id='stateSelector' className='select-us-state' value={this.state.state} onChange={ this.onSelectState }/>
+                      <img src={imgDownArrow} alt='arrow'/>
                     </div>
                     <div className='div-checkout-address-zip'>
                       <div><span>Zip</span></div>
