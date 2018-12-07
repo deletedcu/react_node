@@ -64,9 +64,9 @@ class Header extends Component {
 
         { !pathName.includes('auth/signup') && !pathName.includes('help-center') &&
           <div className='div-links'>
-            <Link to='/menus'><span className='clickable'>MENU</span></Link>
-            <Link to='/how-it-works'><span className='clickable'>HOW IT WORKS</span></Link>
-            <Link to='/gift-cards'><span className='clickable'>GIFTS</span></Link>
+            <Link to='/menus'><span className='clickable'>Menu</span></Link>
+            <Link to='/how-it-works'><span className='clickable'>How It Works</span></Link>
+            <Link to='/gift-cards'><span className='clickable'>Gifts</span></Link>
           </div>
         }
 
