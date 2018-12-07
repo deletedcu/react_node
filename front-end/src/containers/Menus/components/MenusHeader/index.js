@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
 import MenuFilter from '../MenuFilter'
-import MenuDatePicker from '../MenuDatePicker'
 
 import './styles.css'
 
@@ -39,7 +38,6 @@ class MenusHeader extends Component {
           <span className='span-title'>FILTERS</span>
           <div className='div-separator'/>
           <div className='div-recommended clickable'/>
-          <span className='span-title'>RECOMMENDED</span>
           {/* <MenuDatePicker /> */}
         </div>
 
