@@ -55,7 +55,8 @@
       }
 
       &:hover {
-        background-color: $text-light-gray;
+        background-color: white;
+        color: black;
       }
     }
 
@@ -73,7 +74,8 @@
         font-family: 'Montserrat-Medium';
 
         &:hover {
-          background-color: $text-light-gray;
+          background-color: white;
+          color: black;
         }
       }
     }
