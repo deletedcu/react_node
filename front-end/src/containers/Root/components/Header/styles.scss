@@ -201,10 +201,6 @@
         .settings-dropdown-trigger span {
           font-size: $mobile-regular-font-size;
         }
-        .dropdown__content {
-          margin-left: -75px;
-          margin-top: 0;
-        }
       }
       
       .div-login {
@@ -238,11 +234,7 @@
           font-size: $mobile-small-font-size;
         }
         .settings-dropdown-trigger img {
-          height: 4px;
-        }
-        .dropdown__content {
-          margin-left: -112px;
-          margin-top: 3px;
+          height: 15px;
         }
       }
 

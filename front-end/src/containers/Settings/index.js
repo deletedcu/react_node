@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import routes from './routes'
 import SettingsMenu from './components/SettingsMenu'
 import LazyImage from '../../components/LazyImage'
@@ -17,9 +17,10 @@ class Settings extends Component {
   }
 
   render () {
-    const { location, history } = this.props
+    const { location, history, user } = this.props
 
     return (
+      user.loggedIn ?
       <div className='div-settings-container'>
         {/* Banner */}
         <div className='div-settings-banner'>
@@ -50,8 +51,16 @@ class Settings extends Component {
           <Link to='/contact-us'><span>Contact Us</span></Link>
         </div>
       </div>
+      :
+      <Redirect to='/auth/login'/>
     )
   }
 }
 
-export default connect()(Settings)
+function mapStateToProps(state) {
+  return {
+    user: state.user,
+  }
+}
+
+export default connect(mapStateToProps)(Settings)

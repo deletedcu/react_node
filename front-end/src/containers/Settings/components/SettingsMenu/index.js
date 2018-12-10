@@ -34,6 +34,8 @@ class SettingsMenu extends Component {
       activeItem = SettingsMenuItem.paymentMethod
     } else if (path.includes('meal_preference')) {
       activeItem = SettingsMenuItem.mealPreference
+    } else if (path.includes('edit_profile')) {
+      activeItem = SettingsMenuItem.editProfile
     } else {
       activeItem = SettingsMenuItem.redeemCredit
     }

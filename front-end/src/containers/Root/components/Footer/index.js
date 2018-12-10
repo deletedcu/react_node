@@ -100,7 +100,7 @@ class Footer extends Component {
             <div className='footer-middle-links-header'>
               HELP
             </div>
-            <Link to='/home' className='footer-middle-link'>Manage Orders</Link>
+            <Link to='/settings/order_history' className='footer-middle-link'>Manage Orders</Link>
             <Link to='/service-areas' className='footer-middle-link'>Service Areas</Link>
             <Link to='/help-center' className='footer-middle-link'>FAQ</Link>
           </div>

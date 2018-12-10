@@ -33,6 +33,10 @@ class SettingsDropdown extends Component {
     this.refs.settingsDropdown.show()
   }
 
+  onMouseLeave = () => {
+    this.refs.settingsDropdown.hide()
+  }
+
   onEditProfile = () => {
     this.refs.settingsDropdown.hide()
     this.props.onEditProfile()
@@ -58,7 +62,7 @@ class SettingsDropdown extends Component {
             <img src={ isShown ? imgTriangleReverse : imgTriangle } alt='hamburger'/>
           </div>
         </DropdownTrigger>
-        <DropdownContent>
+        <DropdownContent onMouseLeave={this.onMouseLeave}>
           <div className='div-menu clickable' onClick={ this.onEditProfile }>
             <img src={imgEditProfile} alt='edit'/>
             <span>Account Settings</span>

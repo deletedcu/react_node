@@ -43,7 +43,7 @@ class DropdownFooter extends Component {
           </DropdownList>
 
           <DropdownList title='HELP'>
-            <div><Link to='/home'>Manage Orders</Link></div>
+            <div><Link to='/settings/order_history'>Manage Orders</Link></div>
             <div><Link to='/service-areas'>Service Areas</Link></div>
             <div><Link to='/help-center'>FAQ</Link></div>
           </DropdownList>
