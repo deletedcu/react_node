@@ -62,7 +62,7 @@ class Header extends Component {
         { pathName.includes('auth/signup') && <img className='img-flow' src={imgFlow} alt='flow'/> }
         { pathName.includes('auth/signup') && <img className='img-min-flow' src={imgMinimizedFlow} alt='flow'/> }
 
-        { !pathName.includes('auth/signup') && !pathName.includes('help-center') &&
+        { !pathName.includes('auth/signup') && !pathName.includes('help-center') && !pathName.includes('terms-of-service') &&
           <div className='div-links'>
             <Link to='/menus'><span className='clickable'>Menu</span></Link>
             <Link to='/how-it-works'><span className='clickable'>How It Works</span></Link>
@@ -74,6 +74,13 @@ class Header extends Component {
           <div className='div-help-center-banner'>
             <div className='div-separator'/>
             <div className='div-help-center-title'>Help Center</div>
+          </div>
+        }
+
+        { pathName.includes('terms-of-service') && 
+          <div className='div-help-center-banner'>
+            <div className='div-separator'/>
+            <div className='div-help-center-title'>Legal</div>
           </div>
         }
         

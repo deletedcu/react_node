@@ -2,37 +2,46 @@
 
 .div-terms-of-service-container {
   background-color: $extra-light-gray;
+  padding-top: 10px;
   padding-bottom: 70px;
 
-  .div-terms-of-service-title {
-    height: 240px;
-    line-height: 240px;
-    background-color: white;
-    border-bottom: 1px solid rgba(0,0,0,0.16);
-    text-align: center;
-    font-size: $large-font-size;
-    font-family: 'Montserrat-SemiBold';
+  .bold {
+    font-family: 'Montserrat-Bold';
   }
 
   .div-terms-of-service-content {
-    margin: 70px 140px 0;
-    padding: 80px 120px;
+    margin: 70px 200px 0;
+    padding: 60px 60px 500px;
     background-color: white;
-    border-radius: 54px;
-    border: 1px solid #B7CBB8;
     box-shadow: $shadow-secondary;
 
     .div-terms-of-service-header {
       display: flex;
+      justify-content: space-between;
       align-items: center;
 
-      .title {
-        font-size: 32px;
-        font-family: 'Montserrat-SemiBold';
+      .div-terms-of-service-header-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+  
+        .title {
+          font-size: 32px;
+          font-family: 'Montserrat-SemiBold';
+        }
+        .timestamp {
+          color: $green-primary;
+          margin-top: 10px;
+          font-size: 15px;
+        }
       }
-      .timestamp {
-        color: $green-primary;
-        margin-left: 100px;
+      
+      .btn-download {
+        width: 155px;
+        height: 50px;
+        font-size: $small-font-size;
+        font-family: 'Montserrat-Medium';
+        border-radius: 2px;
       }
     }
 
@@ -44,8 +53,9 @@
     }
 
     .div-terms-of-service-body {
+      font-size: 15px;
       .div-terms-of-service-paragraph {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
 
       .div-terms-of-service-subtitle {
@@ -67,30 +77,25 @@
   }
 
   @media (max-width: 710px) {
-    .div-terms-of-service-title {
-      margin-top: 60px;
-      height: 100px;
-      line-height: 100px;
-      font-size: $regular-font-size;
-      font-family: 'Montserrat-Regular';
-    }
-
     .div-terms-of-service-content {
-      margin: 30px 40px;
+      margin: 40px 40px;
       padding: 20px 15px;
-      border-radius: 7px;
 
       .div-terms-of-service-header {
-        flex-direction: column;
-        align-items: flex-start;
-
-        .title {
-          font-size: $small-font-size;
+        .div-terms-of-service-header-left {
+          .title {
+            font-size: $mobile-regular-font-size;
+          }
+          .timestamp {
+            font-size: $mobile-small-font-size;
+            margin-top: 0;
+          }
         }
-        .timestamp {
-          font-size: 12px;
-          margin-left: 0;
-          margin-top: 10px;
+
+        .btn-download {
+          font-size: $mobile-regular-font-size;
+          width: 100px;
+          height: 35px;
         }
       }
   

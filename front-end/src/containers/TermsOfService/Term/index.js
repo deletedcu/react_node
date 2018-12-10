@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactHtmlParser from 'react-html-parser'
 
 import imgDownArrow from '../../../assets/images/down_arrow.svg'
 import './styles.css'
@@ -32,7 +33,7 @@ class Term extends Component {
         {
           !collapsed &&
           content.map((paragraph, index) => {
-            return <div key={index} className='div-terms-of-service-paragraph'>{paragraph}</div>
+            return <div key={index} className='div-terms-of-service-paragraph'>{ReactHtmlParser(paragraph)}</div>
           })
         }
       </div>

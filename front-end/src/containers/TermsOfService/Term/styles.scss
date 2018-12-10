@@ -3,8 +3,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 
     .img-down-arrow {
       display: none;
@@ -16,6 +16,7 @@
   @media (max-width: 710px) {
     .term-header {
       border-top: 1px solid #D4CCCC;
+      padding: 20px 0;
 
       .img-down-arrow {
         display: block;
