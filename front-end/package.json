@@ -16,6 +16,7 @@
     "parse-address-string": "0.0.3",
     "prop-types": "^15.6.2",
     "rc-rate": "^2.4.3",
+    "rc-slider": "^8.6.4",
     "react": "^16.5.2",
     "react-credit-card-input": "^1.0.15",
     "react-datepicker": "^2.0.0",

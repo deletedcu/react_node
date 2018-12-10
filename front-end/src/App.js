@@ -12,6 +12,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import 'rc-rate/assets/index.css'
 import 'react-datepicker/dist/react-datepicker.css'
+import 'rc-slider/assets/index.css';
 import './styles/styles.css'
 
 class App extends Component {

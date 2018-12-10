@@ -3,6 +3,7 @@
 .gift-card {
   position: relative;
   box-sizing: border-box;
+  overflow: hidden;
 
   .gift-card-background {
     width: 100%;
@@ -36,6 +37,77 @@
     .gift-card-title {
       font-size: 16px;
       font-family: 'Montserrat-SemiBold';
+    }
+  }
+
+  .gift-card-slider-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.17);
+    border-radius: 6px;
+
+    .gift-card-slider {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 87px;
+      margin: 0 50px;
+      padding: 0 20px;
+      background-color: white;
+      border-radius: 14px;
+      box-shadow: $shadow-primary;
+      top: 50%;
+      transform: translateY(-50%);
+
+      .span-price {
+        flex-shrink: 0;
+        font-size: 15px;
+        color: $text-light-gray;
+        width: 35px;
+      }
+
+      .rc-slider {
+        flex-shrink: 1;
+        .rc-slider-rail {
+          background-color: #ECECEC;
+        }
+
+        .rc-slider-handle {
+          background-color: $green-primary;
+          border: unset;
+          box-shadow: $shadow-primary;
+
+          &:focus {
+            border: unset;
+          }
+        }
+
+        .rc-slider-track {
+          background-color: $green-primary;
+        }
+      }
+
+      .btn-select {
+        flex-shrink: 0;
+        border-radius: 2px;
+        width: 55px;
+        height: 20px;
+        font-size: $mobile-small-font-size;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  @media (max-width: 1366px) {
+    .gift-card-slider-wrapper {
+      .gift-card-slider {
+        margin: 0 20px;
+        padding: 0 10px;
+        height: 70px;
+      }
     }
   }
 
