@@ -2,13 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
 import OrderedItem from '../OrderedItem'
-import DatePicker from 'react-datepicker'
-import moment from 'moment'
+import MenuDatePicker from '../MenuDatePicker'
 
 import './styles.css'
 import { groupBy } from '../../../../utils'
-
-import imgDownTriangle from '../../../../assets/images/black_triangle.svg'
 
 class OrderSummary extends Component {
 
@@ -38,7 +35,6 @@ class OrderSummary extends Component {
   }
 
   render () {
-    const { deliveryDate } = this.state
     const cartItems = this.props.cart.items
     const totalPrice = cartItems.reduce((sum, cartItem) => {
       return sum + cartItem.price[0]
@@ -73,12 +69,7 @@ class OrderSummary extends Component {
           {/* Date / Price Info */}
           <div className='order-summary-info-block'>
             <span>Delivery Day</span>
-            <DatePicker
-              className='delivery-datepicker clickable'
-              selected={deliveryDate}
-              onChange={this.onDateChange}
-              customInput={<div><span>{moment(deliveryDate).format('dddd, MMMM D')}</span><img src={imgDownTriangle} alt='down'/></div>}
-            />
+              <MenuDatePicker onSelectDeliveryDate={this.onDateChange}/>
           </div>
           <div className='order-summary-info-block'>
             <span>6 Meals Per Week</span>
@@ -88,14 +79,14 @@ class OrderSummary extends Component {
             <span>Shipping</span>
             <span>Free</span>
           </div>
-          <div className='order-summary-info-block-highlighted'>
+          {/* <div className='order-summary-info-block-highlighted'>
             <span>CHRISTMAS18</span>
             <span>-$25.00</span>
-          </div>
+          </div> */}
 
           {/* Promo Code Input */}
           <div className='order-summary-promo-input'>
-            <input type='text' placeholder='Add a promo or gift code' name='promoCode' value={ this.state.promoCode } onChange={ this.onChange }/>
+            <input type='text' placeholder='Enter Code' name='promoCode' value={ this.state.promoCode } onChange={ this.onChange }/>
             <span className={ classNames('clickable', {'span-apply-active': this.state.promoCode }) } onClick={ this.onApplyPromoCode }>APPLY</span>
           </div>
 

@@ -6,7 +6,7 @@ $order-summary-header-height: 108px;
 
 .order-summary-container {
   background-color: white;
-  border: 1px solid $light-green-primary;
+  border: 1px solid #42AA48;
   box-shadow: $shadow-primary;
 
   .order-summary-header {
@@ -59,13 +59,6 @@ $order-summary-header-height: 108px;
       color: $green-primary;
     }
 
-    .delivery-datepicker {
-      img {
-        height: 9px;
-        margin-left: 3px;
-      }
-    }
-
     .order-summary-promo-input {
       position: relative;
       margin-top: $margin;
@@ -78,12 +71,13 @@ $order-summary-header-height: 108px;
         height: 67px;
         border: 1px solid #B4B4B4;
         border-radius: 5px;
-        color: $green-primary;
-        padding-left: 30px;
+        padding-left: 20px;
         padding-right: 180px;
-      }
-      input:focus {
-        border: 1px solid $green-secondary;
+        caret-color: $text-light-gray;
+
+        &:focus {
+          border: 1px solid #606060;
+        }
       }
 
       span {
@@ -101,7 +95,6 @@ $order-summary-header-height: 108px;
 
       .span-apply-active {
         color: $green-secondary;
-        background-color: #EAFEEB;
       }
     }
 
@@ -110,6 +103,7 @@ $order-summary-header-height: 108px;
       flex-direction: row;
       justify-content: space-between;
       color: $text-light-gray;
+      font-family: 'Montserrat-Medium';
       padding-left: $padding;
       padding-right: $padding;
       margin: $margin 0;
