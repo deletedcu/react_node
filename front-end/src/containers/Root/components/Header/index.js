@@ -13,7 +13,6 @@ import imgFlow from '../../../../assets/images/login_flow.svg'
 import imgMinimizedFlow from '../../../../assets/images/login_flow_min.svg'
 
 import { logoutUser } from '../../../../redux/actions/user'
-import { showNotification } from '../../../../services/notification'
 
 class Header extends Component {
 
@@ -44,8 +43,6 @@ class Header extends Component {
   onLogout = () => {
     this.props.dispatch(logoutUser())
     this.props.history.replace('/home')
-
-    showNotification('Logged out', 'success')
   }
 
   onOrderNow = () => {
