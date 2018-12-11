@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
+import Button from '../../../../components/Button'
 
 import './styles.css'
 
 class HowItWorks extends Component {
+
+  onLearnMore = () => {
+    this.props.onLearnMore()
+  }
 
   render () {
     const imageFirst = this.props.imageFirst
@@ -22,6 +27,7 @@ class HowItWorks extends Component {
         <div className='div-how-it-works-description'>
           { description }
         </div>
+        <Button className='btn-learn-more' onClick={this.onLearnMore}>LEARN MORE</Button>
       </div>
     )
 
@@ -42,6 +48,7 @@ class HowItWorks extends Component {
           <div className='div-how-it-works-description'>
             { description }
           </div>
+          <Button className='btn-learn-more' onClick={this.onLearnMore}>LEARN MORE</Button>
         </div>
       </div>
     )

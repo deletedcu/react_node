@@ -58,7 +58,7 @@ class EditProfileModal extends Component {
   render () {
     return (
       <ModalContainer>
-        <div className='edit-profile-modal'>
+        <div className='edit-profile-modal' onClick={(e)=>e.stopPropagation()}>
           <div className='edit-profile-close'>
             <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
           </div>

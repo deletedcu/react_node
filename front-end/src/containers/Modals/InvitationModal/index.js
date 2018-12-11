@@ -49,7 +49,7 @@ class InvitationModal extends Component {
   render () {
     return (
       <ModalContainer darkMode={true}>
-        <div className='invitation-modal'>
+        <div className='invitation-modal' onClick={(e)=>e.stopPropagation()}>
           <div className='invitation-modal-left'>
             <div className='invitation-modal-header'>
               <div className='invitation-modal-title'>Invite a friend, you both get $15</div>

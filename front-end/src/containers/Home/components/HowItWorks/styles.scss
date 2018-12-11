@@ -41,6 +41,22 @@
     color: $text-light-gray;
     text-align: left;
   }
+
+  .btn-learn-more {
+    background-color: transparent;
+    border: 1px solid #18AD1F;
+    color: $green-primary;
+    font-family: 'Montserrat-Medium';
+    width: 236px;
+    height: 64px;
+    border-radius: 32px;
+    box-shadow: unset;
+    margin-top: 30px;
+
+    &:active {
+      box-shadow: $shadow-primary;
+    }
+  }
 }  
 
 .img-how-it-works {
@@ -54,21 +70,21 @@
 
 .div-how-it-works-left {
   .div-how-it-works-center {
-    left: 60%;
+    left: 50%;
   }
 
   .img-how-it-works {
-    left: 60%;
+    left: 50%;
   }
 }
 
 .div-how-it-works-right {
   .div-how-it-works-center {
-    left: 40%;
+    left: 50%;
   }
 
   .img-how-it-works {
-    left: 40%;
+    left: 50%;
   }
 }
 
@@ -129,6 +145,13 @@
       .div-how-it-works-description {
         font-size: $small-font-size;
         margin-top: 20px;
+      }
+
+      .btn-learn-more {
+        width: 100px;
+        height: 30px;
+        margin-left: 50%;
+        transform: translateX(-50%);
       }
     }
 

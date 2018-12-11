@@ -6,7 +6,7 @@ import './styles.css'
 
 import imgCart from '../../assets/images/cart.svg'
 
-import { showSidebar } from '../../redux/actions/sideBar'
+import { showSidebar, hideSidebar } from '../../redux/actions/sideBar'
 
 class Cart extends Component {
 
@@ -25,7 +25,11 @@ class Cart extends Component {
   }
 
   onClickCart = () => {
-    this.props.dispatch(showSidebar())
+    if (this.props.highlighted) {
+      this.props.dispatch(hideSidebar())
+    } else {
+      this.props.dispatch(showSidebar())
+    }
   }
 
   render () {

@@ -20,6 +20,34 @@ import { hideSidebar } from '../../redux/actions/sideBar'
 
 class Home extends Component {
 
+  feedbacks = [
+    {
+      authorName: 'SAMANTHA',
+      feedback: '"Great service for people on the go. Would definitely recommend it to anyone who does not have time to go grocery shopping or cook but still wants a healthy alternative."',
+    },
+    {
+      authorName: 'SEBASTIAN',
+      feedback: `"I've never tried meal delivery services before.. really made me a believer."`,
+    },
+    {
+      authorName: 'NOAH',
+      feedback: '"My wife and I live busy lifestyles. Having delicious healthy food options on standby definitely helped us."',
+    },
+    {
+      authorName: 'ETHAN',
+      feedback: '"Tasty food. Portions are good.. and feeding my kids has literally never been easier."',
+    },
+  ]
+
+  sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  }
+
   componentDidMount () {
     this.props.dispatch(hideSidebar())
   }
@@ -32,29 +60,21 @@ class Home extends Component {
     this.props.history.push('/menus')
   }
 
+  onLearnMore = () => {
+    this.props.history.push('/how-it-works')
+  }
+
   render () {
-    let sliderSettings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-    }
-
-    let feedbacks = []
-    Array.apply(null, Array(4)).forEach((value, index) => {
-      feedbacks.push(
-        <Feedback
-          key={index}
-          authorName='John Doe'
-          feedback='"Best online food delivery service on the market.It definitely satisfy me. I will order again."'
-        />
-      )
-    })
-
     // Just first 4 products for now !!!
     let featuredMenuItems = this.props.products.products.slice(0, 4).map(product => { return {...product, type: 'menu'}})
+    
+    const feedbacks = this.feedbacks.map((feedback, index) => {
+      return  <Feedback
+                key={index}
+                authorName={feedback.authorName}
+                feedback={feedback.feedback}
+              />
+    })
 
     return (
       <div className='div-home-container'>
@@ -105,6 +125,7 @@ class Home extends Component {
             description='Select from a meticulously designed rotating menu with new options every week.'
             image={ imgOrders }
             imageFirst={ false }
+            onLearnMore={ this.onLearnMore }
           />
           <HowItWorks
             className='how-it-works-track'
@@ -113,6 +134,7 @@ class Home extends Component {
             description='Track your order with Mealpost app. Meals are crafted from only the finest ingredients and delivered fresh right to your door.'
             image={ imgTrack }
             imageFirst={ true }
+            onLearnMore={ this.onLearnMore }
           />
           <HowItWorks
             className='how-it-works-receive'
@@ -121,6 +143,7 @@ class Home extends Component {
             description='Your meals are already assembled and ready to consume. Just reheat, Sit back, and Enjoy.'
             image={ imgReceive }
             imageFirst={ false }
+            onLearnMore={ this.onLearnMore }
           />
         </div>
 
@@ -133,7 +156,7 @@ class Home extends Component {
             { feedbacks }
           </div>
           <div className='responsive-div-feedbacks'>
-            <Slider {...sliderSettings}>
+            <Slider {...this.sliderSettings}>
               { feedbacks }
             </Slider>
           </div>

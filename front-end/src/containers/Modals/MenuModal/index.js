@@ -12,7 +12,7 @@ import HorizontalSelectionGrid from '../../../components/HorizontalSelectionGrid
 
 import './styles.css'
 
-import imgClose from '../../../assets/images/close.svg'
+import imgClose from '../../../assets/images/close_button.svg'
 import imgHighProtein from '../../../assets/images/high-protein.svg'
 import imgGlutenFree from '../../../assets/images/gluten-free.svg'
 import imgSoyFree from '../../../assets/images/soy-free.svg'
@@ -99,7 +99,7 @@ class MenuModal extends Component {
 
     return (
       <ModalContainer>
-        <div className='div-menu-modal-center'>
+        <div className='div-menu-modal-center' onClick={(e)=>e.stopPropagation()}>
           {/* Close button */}
           <img src={ imgClose } alt='close' className='img-close clickable' onClick={ this.onClose }/>
 

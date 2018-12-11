@@ -58,7 +58,7 @@ class CardInfoModal extends Component {
   render () {
     return (
       <ModalContainer>
-        <div className='card-info-modal'>
+        <div className='card-info-modal' onClick={(e)=>e.stopPropagation()}>
           <div className='card-close'>
             <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
           </div>

@@ -51,7 +51,7 @@ class OrderFeedbackModal extends Component {
   render () {
     return (
       <ModalContainer>
-        <div className='order-feedback-modal'>
+        <div className='order-feedback-modal' onClick={(e)=>e.stopPropagation()}>
           <div className='order-feedback-close'>
             <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
           </div>

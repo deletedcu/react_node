@@ -72,7 +72,7 @@ class MealPreferenceModal extends Component {
 
     return (
       <ModalContainer>
-        <div className='meal-preference-modal'>
+        <div className='meal-preference-modal' onClick={(e)=>e.stopPropagation()}>
           <div className='meal-preference-close'>
             <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
           </div>

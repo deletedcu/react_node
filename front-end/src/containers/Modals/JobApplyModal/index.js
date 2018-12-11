@@ -125,7 +125,7 @@ class JobApplyModal extends Component {
 
     return (
       <ModalContainer darkMode={true}>
-        <div className='job-apply-modal'>
+        <div className='job-apply-modal' onClick={(e)=>e.stopPropagation()}>
           {/* Header */}
           <div className='job-apply-close'>
             <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
