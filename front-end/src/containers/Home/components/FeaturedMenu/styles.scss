@@ -12,7 +12,7 @@
 
   .img-featured-menu {
     height: 250px;
-    margin-top: 3px;
+    margin-top: 8px;
     border-bottom: 1px solid $border-gray;
   }
 
@@ -93,6 +93,11 @@
       flex-grow: 1;
       border-bottom: unset;
       border-right: 1px solid $border-gray;
+
+      img {
+        border-top-left-radius: 8px !important;
+        border-bottom-left-radius: 8px !important;
+      }
     }
   
     .div-featured-menu-details-order {
