@@ -2,6 +2,7 @@
 
 .div-giftcards-container {
   background-color: $extra-light-gray;
+  padding-bottom: 150px;
 
   .div-giftcards-banner {
     padding-top: 80px;
@@ -22,17 +23,29 @@
 
   .div-giftcards-content {
     margin-top: 100px;
+    padding: 0 230px;
 
-    .div-giftcards {
-      margin: 0 120px;
+    display: flex;
+
+    .giftcard-panel {
+      width: 530px;
+      margin-right: 40px;
     }
 
-    .div-giftcard-form {
-      width: 900px;
-      margin-top: 80px;
-      margin-left: 50%;
-      transform: translateX(-50%);
+    .gift-card-form {
+      flex-grow: 1;
     }
+
+    // .div-giftcards {
+    //   margin: 0 120px;
+    // }
+
+    // .div-giftcard-form {
+    //   width: 900px;
+    //   margin-top: 80px;
+    //   margin-left: 50%;
+    //   transform: translateX(-50%);
+    // }
   }
 
   .div-giftcards-bottom {

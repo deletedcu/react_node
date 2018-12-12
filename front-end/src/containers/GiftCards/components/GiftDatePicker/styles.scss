@@ -4,29 +4,25 @@
   position: relative;
 
   input {
-    color: #B7CBB8;
+    width: 100%;
   }
 
   .react-datepicker-wrapper {
-    position: absolute;
-    right: 20px;
-    top: 22px;
+    width: 100%;
 
+    .react-datepicker__input-container {
+      width: 100%;
+    }
+  }
+
+  .react-datepicker-input {
     .gift-datepicker-input {
       height: 36px;
     }
   }
 
-  .react-datepicker-popper {
-    left: -200px !important;
-    .react-datepicker__triangle {
-      left: calc(100% - 30px) !important;
-    }
-  }
-
   @media (max-width: 710px) {
-    .react-datepicker-wrapper {
-      top: 8px;
+    .react-datepicker-input {
       .gift-datepicker-input {
         height: 21px;
       }

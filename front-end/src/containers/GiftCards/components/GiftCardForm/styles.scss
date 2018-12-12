@@ -4,6 +4,7 @@
   border: 1px solid #B7CBB8;
   box-shadow: $shadow-primary;
   padding: 30px 50px;
+  background-color: white;
 
   %input-field {
     display: block;
@@ -11,9 +12,9 @@
     border-radius: 4px;
     border: 1px solid #B7CBB8;
     padding: 0 20px;
-    font-size: $footer-secondary-font-size;
+    font-size: $small-font-size;
     font-family: 'Montserrat-Medium';
-    margin-top: 10px;
+    margin-top: 20px;
     caret-color: $green-primary;
 
     &:focus {
@@ -21,7 +22,7 @@
     }
 
     &::placeholder {
-      color: #B7CBB8;
+      color: #5B5B5B50;
       opacity: 1;
     }
     
@@ -47,13 +48,15 @@
   }
 
   .gift-card-form-name {
-    color: #108915;
+    color: $text-light-gray;
+    font-size: $footer-primary-font-size;
+    font-family: 'Montserrat-Medium';
   }
 
   .gift-card-form-double-inputs {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     
     input {
       width: calc(50% - 20px);
@@ -61,19 +64,21 @@
   }
 
   .gift-card-form-datepicker {
-    margin-top: 30px;
+    margin-top: 40px;
 
     .gift-card-form-datepicker-title {
       color: $text-light-gray;
+      font-size: $footer-primary-font-size;
       margin-bottom: 10px;
     }
   }
 
   .gift-card-form-message {
-    margin-top: 30px;
+    margin-top: 40px;
 
     .gift-card-form-message-title {
       color: $text-light-gray;
+      font-size: $footer-primary-font-size;
     }
   }
 

@@ -1,0 +1,53 @@
+@import "../../../../styles/variables/variables";
+
+.giftcard-amount-input {
+  color: $text-light-gray;
+
+  .giftcard-amount-input-title {
+    font-size: 22px;
+    font-family: 'Montserrat-Medium';
+    margin-bottom: 20px;
+  }
+
+  .giftcard-amount-input-grid {
+    height: 58px;
+    display: flex;
+    border: 1px solid #B7CBB8;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: $shadow-primary;
+
+    font-size: $mobile-regular-font-size;
+
+    .giftcard-amount-input-cell {
+      line-height: 58px;
+      text-align: center;
+      min-width: 100px;
+      cursor: pointer;
+
+      input {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        text-align: center;
+        color: $text-light-gray;
+        cursor: pointer;
+
+        &::placeholder {
+          color: #108915;
+          opacity: 1;
+        }        
+      }
+    }
+
+    .giftcard-amount-input-cell-selected {
+      background-color: rgba(183, 203, 184, 0.48);
+    }
+
+    .separator {
+      height: 100%;
+      width: 1px;
+      background-color: #B7CBB8;
+    }
+  }
+}

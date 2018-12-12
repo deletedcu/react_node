@@ -18,6 +18,12 @@ class GiftCard extends Component {
     }
   }
 
+  componentWillReceiveProps ({ price }) {
+    this.setState({
+      price: price,
+    })
+  }
+
   onChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -26,7 +32,7 @@ class GiftCard extends Component {
 
   onChangePrice = (price) => {
     this.setState({
-      sliderPrice: price,
+      price: price,
     })
   }
 
