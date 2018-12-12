@@ -168,18 +168,18 @@
     }
   }
 
-  .div-location-search {
+  .div-bottom-form {
     position: relative;
-    height: 228px;
     background-color: $bg-gray;
     border: 1px solid #EBE2E2;
     margin-top: 100px;
-    padding: 0 20px;
+    height: 417px;
    
-    .div-location-search-container {
-      position: relative;
+    .bottom-form {
+      position: absolute;
+      width: 583px;
       left: 50%;
-      top: calc(50% - 50px);
+      top: 50%;
       transform: translateX(-50%) translateY(-50%);
     }
 

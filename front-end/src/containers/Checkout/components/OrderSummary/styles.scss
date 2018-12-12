@@ -59,6 +59,39 @@ $order-summary-header-height: 108px;
       color: $green-primary;
     }
 
+    .order-summary-promo-switch {
+      display: flex;
+      align-items: center;
+      padding: 0 $padding;
+      margin: $margin 0;
+
+      img {
+        height: 16px;
+        margin-right: 25px;
+        transition: all .25s linear;
+      }
+
+      span {
+        color: #535453;
+        font-size: $small-font-size;
+        font-family: 'Montserrat-Medium';
+        transition: all .25s linear;
+      }
+
+      .span-highlighted {
+        color: #266D16;
+      }
+
+      .img-rotated {
+        transform: rotate(45deg);
+      }
+
+      .img-rotated path {
+        fill: black !important;
+        background-color: black;
+      }
+    }
+
     .order-summary-promo-input {
       position: relative;
       margin-top: $margin;

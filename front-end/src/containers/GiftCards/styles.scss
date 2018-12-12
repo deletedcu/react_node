@@ -1,24 +1,22 @@
 @import "../../styles/variables/variables";
 
 .div-giftcards-container {
+  background-color: $extra-light-gray;
+
   .div-giftcards-banner {
-    position: relative;
-    height: 465px;
-
+    padding-top: 80px;
+    text-align: center;
+    
     .div-giftcards-title {
-      position: relative;
-      text-align: center;
-      font-size: 52px;
+      font-size: 34px;
       font-family: 'Montserrat-SemiBold';
-      top: calc(50% - 30px);
-      transform: translateY(-50%);
-      margin: 0 25px;
+    }
 
-      .div-giftcards-subtitle {
-        color: $text-light-gray;
-        font-size: $regular-font-size;
-        font-family: 'Montserrat-Regular';
-      }
+    .div-giftcards-subtitle {
+      margin-top: 25px;
+      color: $text-light-gray;
+      font-size: $mobile-regular-font-size;
+      font-family: 'Montserrat-Regular';
     }
   }
 

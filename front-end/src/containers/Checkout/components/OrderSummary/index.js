@@ -7,12 +7,15 @@ import MenuDatePicker from '../MenuDatePicker'
 import './styles.css'
 import { groupBy } from '../../../../utils'
 
+import imgPlus from '../../../../assets/images/plus_green_thin.svg'
+
 class OrderSummary extends Component {
 
   constructor (props) {
     super(props)
 
     this.state = {
+      showPromoCode: false,
       promoCode: '',
       deliveryDate: new Date(),
     }
@@ -27,6 +30,12 @@ class OrderSummary extends Component {
   onDateChange = (date) => {
     this.setState({
       deliveryDate: date,
+    })
+  }
+
+  onTogglePromoCode = () => {
+    this.setState({
+      showPromoCode: !this.state.showPromoCode,
     })
   }
 
@@ -85,10 +94,17 @@ class OrderSummary extends Component {
           </div> */}
 
           {/* Promo Code Input */}
-          <div className='order-summary-promo-input'>
-            <input type='text' placeholder='Enter Code' name='promoCode' value={ this.state.promoCode } onChange={ this.onChange }/>
-            <span className={ classNames('clickable', {'span-apply-active': this.state.promoCode }) } onClick={ this.onApplyPromoCode }>APPLY</span>
+          <div className='order-summary-promo-switch clickable' onClick={this.onTogglePromoCode}>
+            <img className={classNames({'img-rotated': this.state.showPromoCode})} src={imgPlus} alt='switch'/>
+            <span className={classNames({'span-highlighted': !this.state.showPromoCode})}>Add Gift Card or Promo Code</span>
           </div>
+
+          { this.state.showPromoCode &&
+            <div className='order-summary-promo-input'>
+              <input type='text' placeholder='Enter Code' name='promoCode' value={ this.state.promoCode } onChange={ this.onChange }/>
+              <span className={ classNames('clickable', {'span-apply-active': this.state.promoCode }) } onClick={ this.onApplyPromoCode }>APPLY</span>
+            </div>
+          }
 
           {/* Separator */}
           <div className='order-summary-separator-green'/>

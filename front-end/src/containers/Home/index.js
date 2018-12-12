@@ -7,6 +7,7 @@ import HowItWorks from './components/HowItWorks'
 import Feedback from './components/Feedback'
 import Button from '../../components/Button'
 import LazyImage from '../../components/LazyImage'
+import BottomForm from './components/BottomForm'
 
 import './styles.css'
 
@@ -163,8 +164,8 @@ class Home extends Component {
         </div>
 
         {/* Location Search */}
-        <div className='div-location-search'>
-          <LocationSearchField onFindFood={ this.onFindFood }/>
+        <div className='div-bottom-form'>
+          <BottomForm/>
         </div>
       </div>
     )

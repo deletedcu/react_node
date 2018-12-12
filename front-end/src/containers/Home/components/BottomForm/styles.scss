@@ -1,0 +1,49 @@
+@import "../../../../styles/variables/variables";
+
+.bottom-form {
+  background-color: white;
+  padding: 20px;
+  
+  .bottom-form-title {
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat-Light';
+    color: #686868;
+  }
+
+  .bottom-form-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+
+    input {
+      width: calc(50% - 6px);
+      height: 50px;
+      border: 1px solid #E1E1E1;
+      border-radius: 3px;
+      padding: 0 20px;
+      font-size: $small-font-size;
+      font-family: 'Montserrat-Light';
+    }
+  }
+
+  .btn-start {
+    width: 100%;
+    height: 66px;
+    border-radius: 4px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+
+  .bottom-form-link {
+    width: 100%;
+    text-align: center;
+    font-size: $mobile-regular-font-size;
+    color: #7E808C;
+    margin-top: 5px;
+
+    a {
+      color: #138E1C;
+    }
+  }
+}
