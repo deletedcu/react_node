@@ -16,6 +16,7 @@
       background-image: url('../../../../../../assets/images/globe.svg');
       background-position: center;
       background-repeat: no-repeat;
+      transition: all .25s linear;
   
       @media (max-width: 1440px) {
         margin-right: 30px;
@@ -29,9 +30,20 @@
     span {
       color: #AFAFAF;
       margin: 0 50px;
+      transition: all .25s linear;
   
       @media (max-width: 1200px) {
         display: none;
+      }
+    }
+
+    &:hover {
+      .img-globe {
+        background-image: url('../../../../../../assets/images/globe_highlight.svg');
+      }
+
+      span {
+        color: #F3F3F3;
       }
     }
   }
