@@ -52,8 +52,8 @@ class InvitationModal extends Component {
         <div className='invitation-modal' onClick={(e)=>e.stopPropagation()}>
           <div className='invitation-modal-left'>
             <div className='invitation-modal-header'>
-              <div className='invitation-modal-title'>Invite a friend, you both get $15</div>
-              <div className='invitation-modal-description'>Ask your friends to signup with your referral code and place an order. Once done, both you and your friend each earn $15 Mealpost Credit.</div>
+              <div className='invitation-modal-title'>Invite a friend, you both get $20</div>
+              <div className='invitation-modal-description'>Ask your friends to signup with your referral code and place an order. Once done, both you and your friend each earn $20 Mealpost Credit.</div>
             </div>
 
             <div className='invitation-modal-form'>

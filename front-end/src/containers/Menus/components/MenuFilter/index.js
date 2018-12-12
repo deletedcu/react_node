@@ -92,7 +92,7 @@ class MenuFilter extends Component {
           <div className='div-menu clickable' onClick={ () => {this.onToggleFilter(MenuFilterType.Vegetalian)}}>
             <div>
               <img className='img-icon' src={imgVegetable} alt='veg'/>
-              <span>Vegetalian</span>
+              <span>Vegetarian</span>
             </div>
             { selectedFilterTypes.includes(MenuFilterType.Vegetalian) && <img className='img-check' src={imgCheck} alt='check'/> }
           </div>
