@@ -39,7 +39,7 @@ class SideItem extends Component {
     let { item, count } = this.props
 
     return (
-      <div className='div-side-item'>
+      <div className='div-side-item' onClick={(e)=>e.stopPropagation()}>
         <div className='div-side-item-info'>
           <div className='div-side-item-detail'>
             <div className='div-side-item-title'>

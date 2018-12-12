@@ -37,7 +37,7 @@ class MenuItem extends Component {
     let { item, count } = this.props
 
     return (
-      <div className='div-menu-item'>
+      <div className='div-menu-item' onClick={(e)=>e.stopPropagation()}>
         <LazyImage className='img-menu-item clickable' src={ item.main_image } onClick={ this.onShowMenuModal }/>
         
         <div className='div-menu-item-name-description'>

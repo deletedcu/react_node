@@ -16,6 +16,7 @@ import './styles/styles.css'
 import { initializeNotificationSystem } from '../../services/notification'
 import { authenticateUser } from '../../redux/actions/user'
 import { fetchAllProducts } from '../../redux/actions/products'
+import { hideSidebar } from '../../redux/actions/sideBar'
 
 /**
  * Root component, containing routes
@@ -58,6 +59,12 @@ class Root extends Component {
     }
   }
 
+  onClickBackground = () => {
+    if (this.props.sideBar.visible) {
+      this.props.dispatch(hideSidebar())
+    }
+  }
+
   render () {
     const { history, sideBar, location, overlaySpinner } = this.props
 
@@ -73,7 +80,7 @@ class Root extends Component {
         pullRight={true}
         open={sideBar.visible}
       >
-        <div id='app' className='app header-fixed'>
+        <div id='app' className='app header-fixed' onClick={this.onClickBackground}>
           { this.state.isChecked &&
             <div>
               {/* Header */}

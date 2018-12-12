@@ -6,7 +6,7 @@ class MealPlanItem extends Component {
 
   render () {
     return (
-      <div className='div-meal-plan-item'>
+      <div className='div-meal-plan-item' onClick={(e)=>e.stopPropagation()}>
         {/* Title */}
         <div className='div-meal-plan-item-title'>Weight Loss</div>
         
