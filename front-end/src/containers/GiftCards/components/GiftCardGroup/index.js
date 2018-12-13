@@ -9,7 +9,7 @@ class GiftCardGroup extends Component {
     super(props)
 
     this.state = {
-      selectedIndex: 1,
+      selectedIndex: 0,
       selectedPrice: 60,
     }
   }
@@ -18,6 +18,8 @@ class GiftCardGroup extends Component {
     this.setState({
       selectedIndex: selectedIndex,
       selectedPrice: price,
+    }, () => {
+      this.props.onChange(price)
     })
   }
 
@@ -26,9 +28,9 @@ class GiftCardGroup extends Component {
 
     return (
       <div className='gift-card-group'>
-        <GiftCard editable={true} price={0} selected={selectedIndex === 0} onClick={(price)=>{this.onSelect(0, price)}}/>
-        <GiftCard price={60} selected={selectedIndex === 1} onClick={(price)=>{this.onSelect(1, price)}}/>
-        <GiftCard price={100} selected={selectedIndex === 2} onClick={(price)=>{this.onSelect(2, price)}}/>
+        <GiftCard price={60} selected={selectedIndex === 0} onClick={(price)=>{this.onSelect(0, price)}}/>
+        <GiftCard price={100} selected={selectedIndex === 1} onClick={(price)=>{this.onSelect(1, price)}}/>
+        <GiftCard price={200} selected={selectedIndex === 2} onClick={(price)=>{this.onSelect(2, price)}}/>
       </div>
     )
   }

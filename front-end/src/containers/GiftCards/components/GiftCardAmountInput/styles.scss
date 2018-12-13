@@ -34,7 +34,7 @@
         cursor: pointer;
 
         &::placeholder {
-          color: #108915;
+          color: $green-secondary;
           opacity: 1;
         }        
       }
@@ -48,6 +48,14 @@
       height: 100%;
       width: 1px;
       background-color: #B7CBB8;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .giftcard-amount-input-grid {
+      .giftcard-amount-input-cell {
+        min-width: 70px;
+      }
     }
   }
 }

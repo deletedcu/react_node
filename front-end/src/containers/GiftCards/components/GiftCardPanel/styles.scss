@@ -32,9 +32,9 @@
   }
 
   .btn-redeem-code {
-    border: 2.5px solid #B7CBB8;
+    border: 1px solid #B7CBB8;
     background-color: transparent;
-    color: #108915;
+    color: $green-secondary;
     font-size: $mobile-regular-font-size;
     width: 184px;
     height: 63px;
@@ -45,6 +45,17 @@
 
     &:active {
       box-shadow: $shadow-primary;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .gift-card {
+      width: 350px;
+      height: 210px;
+    }
+
+    .giftcard-panel-instructions {
+      margin-left: 0;
     }
   }
 }

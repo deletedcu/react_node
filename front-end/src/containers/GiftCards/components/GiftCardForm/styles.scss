@@ -88,12 +88,28 @@
     color: white;
     border-radius: 4px;
     margin-top: 30px;
-    border: 1px solid #108915;
+    border: 1px solid $green-secondary;
+  }
+  
+  @media (max-width: 1024px) {
+    padding: 25px 30px;
+
+    .gift-card-form-double-inputs {
+      display: flex;
+      flex-direction: column;
+      // margin-bottom: 20o;
+      
+      input {
+        width: 100%;
+      }
+    }
+
+    .btn-checkout {
+      font-size: $small-font-size;
+    }
   }
 
   @media (max-width: 710px) {
-    padding: 25px 15px;
-
     %input-field {
       font-size: $mobile-regular-font-size;
       font-family: 'Montserrat-Regular';
@@ -111,18 +127,12 @@
       padding: 15px;
     }
 
+    .gift-card-form-double-inputs {
+      margin-bottom: 0;
+    }
+
     .gift-card-form-name {
       font-size: $mobile-regular-font-size;
-    }
-  
-    .gift-card-form-double-inputs {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 0;
-      
-      input {
-        width: 100%;
-      }
     }
   
     .gift-card-form-datepicker {

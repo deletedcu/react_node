@@ -35,58 +35,50 @@
     .gift-card-form {
       flex-grow: 1;
     }
-
-    // .div-giftcards {
-    //   margin: 0 120px;
-    // }
-
-    // .div-giftcard-form {
-    //   width: 900px;
-    //   margin-top: 80px;
-    //   margin-left: 50%;
-    //   transform: translateX(-50%);
-    // }
   }
 
-  .div-giftcards-bottom {
-    font-size: 16px;
-    color: black;
-    text-align: center;
-    max-width: calc(100% - 80px);
-    margin: 100px 0;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    width: 1200px;
-  }
-
-  @media (max-width: 1200px) {
+  @media (max-width: 1800px) {
     .div-giftcards-content {
-      .div-giftcards {
-        margin: 0 60px;
-      }
+      padding: 0 100px;
+    }
+  }
+
+  @media (max-width: 1365px) {
+    .div-giftcards-content {
+      padding: 0 30px;
     }
   }
 
   @media (max-width: 1024px) {
     .div-giftcards-content {
-      .div-giftcards {
-        margin: 0 28px;
-      }
-
-      .div-giftcard-form {
-        width: calc(100% - 60px);
+      .giftcard-panel {
+        width: 350px;
+        margin-right: 20px;
       }
     }
   }
 
+  @media (max-width: 710px) {
+    display: none;
+  }
+}
+
+.responsive-giftcards-container {
+  display: none;
 
   @media (max-width: 710px) {
+    display: block;
+
     .div-giftcards-banner {
-      max-height: 350px;
+      position: relative;
+      height: 350px;
 
       .div-giftcards-title {
+        position: relative;
+        text-align: center;
         font-size: $regular-font-size;
-        top: calc(50% - 30px);
+        top: 50%;
+        transform: translateY(-50%);
         font-family: 'Montserrat-Regular';
 
         .div-giftcards-subtitle {
@@ -98,17 +90,25 @@
     }
 
     .div-giftcards-content {
-      margin-top: 40px;
+      padding: 40px 30px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-      .div-giftcard-form {
-        margin-top: 0;
+      .gift-card-form {
+        width: 100%;
+      }
+
+      .link-redeem-code {
+        color: $green-secondary;
+        font-size: $mobile-regular-font-size;
+        margin-top: 20px;
       }
     }
 
     .div-giftcards-bottom {
+      margin: 20px 38px 60px;
       font-size: 12px;
-      margin-top: 50px;
-      margin-bottom: 50px;
       color: $text-light-gray;
     }
   }

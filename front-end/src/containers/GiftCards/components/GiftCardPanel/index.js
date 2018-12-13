@@ -19,11 +19,13 @@ class GiftCardPanel extends Component {
   onChangeAmount = (amount) => {
     this.setState({
       price: amount || 0,
+    }, () => {
+      this.props.onChange(this.state.price)
     })
   }
 
   onRedeemCode = () => {
-
+    this.props.onRedeemCode()
   }
 
   render () {

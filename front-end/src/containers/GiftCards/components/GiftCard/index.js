@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Slider from 'rc-slider';
-import Button from '../../../../components/Button'
 import classNames from 'classnames'
 
 import './styles.css'
@@ -13,8 +11,6 @@ class GiftCard extends Component {
 
     this.state = {
       price: props.price,
-      sliderPrice: props.price,
-      showSlider: false,
     }
   }
 
@@ -24,41 +20,12 @@ class GiftCard extends Component {
     })
   }
 
-  onChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  onChangePrice = (price) => {
-    this.setState({
-      price: price,
-    })
-  }
-
-  onSelectPrice = (e) => {
-    e.stopPropagation()
-
-    this.setState({
-      price: this.state.sliderPrice,
-      showSlider: false,
-    }, () => {
-      this.props.onClick(this.state.price)
-    })
-  }
-
   onClick = () => {
-    if (this.props.editable) {
-      this.setState({
-        showSlider: true,
-      })
-    } else {
-      this.props.onClick()
-    }
+    this.props.onClick()
   }
 
   render () {
-    const { showSlider, price, sliderPrice } = this.state
+    const { price } = this.state
     const { selected } = this.props
 
     return (
@@ -68,16 +35,6 @@ class GiftCard extends Component {
           <div className='gift-card-price'><span>{`$${price}`}</span></div>
           <div className='gift-card-title'>Gift Card</div>
         </div>
-
-        { showSlider &&
-          <div className='gift-card-slider-wrapper'>
-            <div className='gift-card-slider'>
-              <span className='span-price'>{`$${sliderPrice}`}</span>
-              <Slider value={sliderPrice} onChange={this.onChangePrice}/>
-              <Button className='btn-select' onClick={this.onSelectPrice}>Select</Button>
-            </div>
-          </div>
-        }
       </div>
     )
   }
