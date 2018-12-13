@@ -1,0 +1,91 @@
+@import "../../../styles/variables/variables";
+
+.share-experience-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  transform: translate(-50%, -50%);
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  box-shadow: $shadow-primary;
+  padding: 50px 45px;
+  color: $text-light-gray;
+
+  .button {
+    width: 100%;
+    border-radius: 5px;
+    height: 37.5px;
+    font-size: 12px;
+    font-family: 'Montserrat-Medium';
+  }
+
+  .share-experience-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    .img-close {
+      height: 16px;
+    }
+  }
+
+  .share-experience-title {
+    text-align: center;
+    font-size: 28px;
+    color: #3D3D3D;
+  }
+
+  .share-experience-subtitle {
+    font-size: 12.5px;
+    font-family: 'Montserrat-Medium';
+    color: rgba(112,112,112,0.8);
+    text-align: center;
+    margin: 12px auto 18px;
+    max-width: 320px;
+  }
+
+  .share-experience-rate {
+    text-align: center;
+    margin-top: 20px;
+
+    .rc-rate-star .img-star {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  .share-experience-form {
+    margin-top: 30px;
+
+    %form {
+      width: 100%;
+      border: 1px solid rgba(87,87,87,0.55);
+      border-radius: 3px;
+      padding: 0 15px;
+      font-size: 12.5px;
+      margin-bottom: 15px;
+
+      &::placeholder {
+        color: rgba(112,112,112,0.8);
+        opacity: 1;
+      }
+    }
+
+    input {
+      @extend %form;
+      height: 34px;
+    }
+
+    textarea {
+      @extend %form;
+      resize: none;
+      height: 58px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}

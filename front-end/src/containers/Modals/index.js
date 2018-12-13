@@ -11,6 +11,7 @@ const AsyncOrderFeedbackModal = asyncComponent(() => import('./OrderFeedbackModa
 const AsyncMealPreferenceModal = asyncComponent(() => import('./MealPreferenceModal'))
 const AsyncJobApplyModal = asyncComponent(() => import('./JobApplyModal'))
 const AsyncInvitationModal = asyncComponent(() => import('./InvitationModal'))
+const AsyncShareExperienceModal = asyncComponent(() => import('./ShareExperienceModal'))
 
 /**
  * Routes
@@ -46,6 +47,9 @@ const Modal = (props) => {
 
       {/* Invitation Modal */}
       { active === ModalType.invitationModal && <AsyncInvitationModal history={history} /> }
+
+      {/* Share Experience Modal */}
+      { active === ModalType.shareExperienceModal && <AsyncShareExperienceModal history={history} /> }
     </div>
   )
 }
