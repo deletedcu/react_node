@@ -75,11 +75,36 @@
         margin-top: 10px;
         cursor: pointer;
 
-        a {
+        .div-social-link {
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 36px;
+          height: 36px;
           margin-right: 20px;
-
-          img {
-            height: 35px;
+          transition: background-image .25s linear;
+        }
+  
+        #facebook {
+          background-image: url('../../../../assets/images/facebook.svg');
+  
+          &:hover {
+            background-image: url('../../../../assets/images/facebook_highlight.svg');
+          }
+        }
+  
+        #twitter {
+          background-image: url('../../../../assets/images/twitter.svg');
+  
+          &:hover {
+            background-image: url('../../../../assets/images/twitter_highlight.svg');
+          }
+        }
+  
+        #instagram {
+          background-image: url('../../../../assets/images/instagram.svg');
+  
+          &:hover {
+            background-image: url('../../../../assets/images/instagram_highlight.svg');
           }
         }
       }

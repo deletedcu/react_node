@@ -9,13 +9,13 @@
   border-radius: 10px;
 
   img {
-    height: 24px;
+    height: 28px;
     margin-right: 10px;
   }
 
   span {
     color: $green-primary;
-    font-size: $mobile-regular-font-size;
+    font-size: $small-font-size;
     font-family: 'Montserrat-Bold';
   }
 
@@ -24,10 +24,10 @@
     border-radius: 4px;
     
     span {
-      font-size: $mobile-small-font-size;
+      font-size: $mobile-regular-font-size;
     }
     img {
-      height: 15px;
+      height: 20px;
       margin-right: 5px;
     }
   }

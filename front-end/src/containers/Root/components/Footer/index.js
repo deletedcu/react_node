@@ -11,9 +11,6 @@ import imgCoin from '../../../../assets/images/mealpost_coin.svg'
 import imgGiftCard from '../../../../assets/images/giftbox.svg'
 import imgHelp from '../../../../assets/images/help.svg'
 import imgLogo from '../../../../assets/images/logo_footer.svg'
-import imgFacebook from '../../../../assets/images/facebook.svg'
-import imgTwitter from '../../../../assets/images/twitter.svg'
-import imgInstagram from '../../../../assets/images/instagram.svg'
 
 import { showModal, ModalType } from '../../../../redux/actions/modal'
 
@@ -121,9 +118,9 @@ class Footer extends Component {
               SOCIAL
             </div>
             <div className='footer-middle-image-links'>
-              <a><img src={imgFacebook} alt='facebook'/></a>
-              <a><img src={imgTwitter} alt='twitter'/></a>
-              <a><img src={imgInstagram} alt='instagram'/></a>
+              <div id='facebook' className='div-social-link'/>
+              <div id='twitter' className='div-social-link'/>
+              <div id='instagram' className='div-social-link'/>
             </div>
           </div>
         </div>

@@ -91,7 +91,7 @@ class Header extends Component {
                 onLogout={ this.onLogout }
               /> 
             }
-            { !user.loggedIn && <div className='div-login clickable' onClick={this.onLogin}>LOG IN</div> }
+            { !user.loggedIn && <div className='div-login clickable' onClick={this.onLogin}>Log In</div> }
             { !user.loggedIn && <Button onClick={this.onSignUp}>SIGN UP</Button> }
             { !sideBar.visible &&
               <Cart

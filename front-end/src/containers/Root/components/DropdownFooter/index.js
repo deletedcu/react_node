@@ -6,9 +6,6 @@ import { Link } from 'react-router-dom'
 import './styles.css'
 
 import imgLogo from '../../../../assets/images/logo_footer.svg'
-import imgFacebook from '../../../../assets/images/facebook.svg'
-import imgTwitter from '../../../../assets/images/twitter.svg'
-import imgInstagram from '../../../../assets/images/instagram.svg'
 
 import { showModal, ModalType } from '../../../../redux/actions/modal'
 
@@ -58,9 +55,9 @@ class DropdownFooter extends Component {
 
           <DropdownList title='SOCIAL'>
             <div className='footer-middle-image-links'>
-              <a><img src={imgFacebook} alt='facebook'/></a>
-              <a><img src={imgTwitter} alt='twitter'/></a>
-              <a><img src={imgInstagram} alt='instagram'/></a>
+              <div id='facebook' className='div-social-link'/>
+              <div id='twitter' className='div-social-link'/>
+              <div id='instagram' className='div-social-link'/>
             </div>
           </DropdownList>
         </div>

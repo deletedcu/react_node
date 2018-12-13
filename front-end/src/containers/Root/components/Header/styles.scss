@@ -78,7 +78,7 @@
     height: 36px;
 
     .div-login {
-      width: 150px;
+      width: 120px;
       height: 36px;
       margin: 0 10px;
       line-height: 36px;
@@ -86,9 +86,10 @@
     }
 
     .button {
-      height: 50px;
-      width: 150px;
+      height: 45px;
+      width: 123px;
       box-shadow: $shadow-primary;
+      font-size: $small-font-size;
     }
 
     .div-cart {
@@ -206,12 +207,13 @@
         width: 60px;
         height: 25px;
         line-height: 25px;
-        font-size: $mobile-small-font-size;
+        font-size: $mobile-regular-font-size;
       }
 
       .button {
-        height: 39px;
+        height: 35px;
         width: 100px;
+        font-size: $mobile-regular-font-size;
       }
 
       .div-cart {
@@ -238,8 +240,8 @@
       }
 
       .button {
-        height: 23px;
-        width: 70px;
+        height: 30px;
+        width: 80px;
       }
     }
   }
