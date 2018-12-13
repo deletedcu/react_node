@@ -5,15 +5,17 @@
   margin-top: 78px;
 
   .div-menus {
-    padding: 120px 60px 40px;
+    padding: 120px 270px 40px;
 
     .div-menus-section {
-      margin-bottom: 60px;
+      max-width: 1350px;
+      margin: 0 auto 60px;
 
       .div-menus-section-title {
         display: flex;
         align-items: center;
         font-size: $footer-secondary-font-size;
+        font-family: 'Montserrat-Bold';
 
         %div-line {
           height: 1px;
@@ -58,6 +60,18 @@
         line-height: 64px;
         margin: 20px 0 30px;
       }
+    }
+  }
+
+  @media (max-width: 1500px) {
+    .div-menus {
+      padding: 120px 100px 40px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .div-menus {
+      padding: 120px 40px 40px;
     }
   }
 

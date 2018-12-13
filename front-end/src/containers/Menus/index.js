@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import MenusHeader from './components/MenusHeader'
 import MenuItem from './components/MenuItem'
 import SideItem from './components/SideItem'
-import MealPlanItem from './components/MealPlanItem'
+// import MealPlanItem from './components/MealPlanItem'
 import './styles.css'
 
 class Menus extends Component {
@@ -64,11 +64,11 @@ class Menus extends Component {
         <div className='div-menus'>
           {/* Weekly Menus */}
           <div className='div-menus-section'>
-            <div className='div-menus-section-title'>Mealpost Originals</div>
+          <div className='div-menus-section-title'><div className='div-line-left'/><span>MEALPOST ORIGINALS</span><div className='div-line-right'/></div>
             <div className='div-menus-grid row'>
               {
                 menuItems.map((menuItem, index) => 
-                  <div key={index} className='div-menu-wrapper col-12 col-md-6 col-lg-4 col-xl-3'>
+                  <div key={index} className='div-menu-wrapper col-12 col-md-6 col-lg-4 col-xl-4'>
                     {
                       <MenuItem item={menuItem} count={ this.props.cart.items.filter((item) => { return item.id === menuItem.id }).length }/>
                     }
@@ -81,11 +81,11 @@ class Menus extends Component {
 
           {/* Sides */}
           <div className='div-menus-section'>
-            <div className='div-menus-section-title'><div className='div-line-left'/><span>Side</span><div className='div-line-right'/></div>
+            <div className='div-menus-section-title'><div className='div-line-left'/><span>SIDES</span><div className='div-line-right'/></div>
             <div className='div-menus-grid row'>
               {
                 menuItems.map((menuItem, index) => 
-                  <div key={index} className='div-menu-wrapper col-12 col-md-6 col-lg-4 col-xl-3'>
+                  <div key={index} className='div-menu-wrapper col-12 col-md-6 col-lg-4 col-xl-4'>
                     {
                       <SideItem item={menuItem} count={ this.props.cart.items.filter((item) => { return item.id === menuItem.id }).length }/>
                     }
@@ -97,7 +97,7 @@ class Menus extends Component {
           </div>
 
           {/* Meal Plans */}
-          <div className='div-menus-section'>
+          {/* <div className='div-menus-section'>
             <div className='div-menus-section-title'><div className='div-line-left'/><span>Meal Plans</span><div className='div-line-right'/></div>
             <div className='div-menus-grid row'>
               {
@@ -110,7 +110,7 @@ class Menus extends Component {
                 )
               }
             </div>
-          </div>
+          </div> */}
           
         </div>
       </div>
