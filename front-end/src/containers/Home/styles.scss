@@ -103,6 +103,9 @@
     text-align: center;
     font-size: $large-font-size;
 
+    max-width: 1500px;
+    margin: auto;
+
     .how-it-works-track {
       margin-top: 50px;
     }
@@ -166,14 +169,33 @@
         display: block;
       }
     }
+
+    .btn-share-experience {
+      font-size: $small-font-size;
+      border-radius: 5px;
+      width: 239px;
+      height: 53px;
+      margin-top: 40px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+
+      @media (max-width: 710px) {
+        margin-top: 0;
+        margin-bottom: 40px;
+        width: calc(100% - 80px);
+      }
+    }
   }
 
   .div-bottom-form {
     position: relative;
-    background-color: $bg-gray;
-    border: 1px solid #EBE2E2;
+    background-image: url("../../assets/images/bottom_banner.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
     margin-top: 100px;
-    height: 417px;
+    height: 500px;
    
     .bottom-form {
       position: absolute;

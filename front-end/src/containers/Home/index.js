@@ -18,6 +18,7 @@ import imgTrack from '../../assets/images/track.png'
 import imgReceive from '../../assets/images/deliver.png'
 
 import { hideSidebar } from '../../redux/actions/sideBar'
+import { showModal, ModalType } from '../../redux/actions/modal'
 
 class Home extends Component {
 
@@ -63,6 +64,10 @@ class Home extends Component {
 
   onLearnMore = () => {
     this.props.history.push('/how-it-works')
+  }
+
+  onShareExperience = () => {
+    this.props.dispatch(showModal(ModalType.shareExperienceModal))
   }
 
   render () {
@@ -161,6 +166,7 @@ class Home extends Component {
               { feedbacks }
             </Slider>
           </div>
+          <Button className='btn-share-experience' onClick={this.onShareExperience}>Share your experience</Button>
         </div>
 
         {/* Location Search */}
