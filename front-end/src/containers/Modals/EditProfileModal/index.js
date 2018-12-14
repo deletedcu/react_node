@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import addressParser from 'parse-address-string'
 import Button from '../../../components/Button'
 import ModalContainer from '../../../components/ModalContainer'
 import './styles.css'
 
-import { updateUserProfile } from '../../../redux/actions/user'
+// import { updateUserProfile } from '../../../redux/actions/user'
 import { closeModal } from '../../../redux/actions/modal'
 
 import imgClose from '../../../assets/images/close_button.svg'
+import imgSwitchOff from '../../../assets/images/switch_off.svg'
+import imgSwitchOn from '../../../assets/images/switch_on.svg'
 
 class EditProfileModal extends Component {
 
@@ -19,12 +22,33 @@ class EditProfileModal extends Component {
     this.state = {
       firstName: user.first_name,
       lastName: user.last_name,
-      email: user.email,
+
       phone: user.phone || '',
-      zip: user.zip || '',
-      shippingAddress: user.shipping_address || '',
-      password: '',
+      
+      street: '',
+      apartment: '',
+      city: '',
+      state: '',
+      zip: '',
+      instructions: '',
+
+      leaveAtDoor: false,
     }
+
+    this.updateAddress(user.shipping_address)
+  }
+
+  updateAddress = (fullAddress) => {
+    addressParser(fullAddress, (err, addressObject) => {
+      if (!err) {
+        this.setState({
+          street: (addressObject.street_address1 || '') + ' ' + (addressObject.street_address2 || ''),
+          city: addressObject.city || '',
+          state: addressObject.state || '',
+          ...(addressObject.postal_code && { zip: addressObject.postal_code }),
+        })
+      }
+    })
   }
 
   onChange = (e) => {
@@ -33,20 +57,23 @@ class EditProfileModal extends Component {
     })
   }
 
+  onToggleSwitch = () => {
+    this.setState({
+      leaveAtDoor: !this.state.leaveAtDoor,
+    })
+  }
+
   onSave = (e) => {
     e.preventDefault()
     
-    let { firstName, lastName, email, phone, shippingAddress, password, zip } = this.state
+    // let { firstName, lastName, phone, shippingAddress } = this.state
 
-    this.props.dispatch(updateUserProfile(this.props.user.user.token, {
-      first_name: firstName,
-      last_name: lastName,
-      email: email,
-      phone: phone,
-      zip: zip,
-      shipping_address: shippingAddress,
-      password: password,
-    }))
+    // this.props.dispatch(updateUserProfile(this.props.user.user.token, {
+    //   first_name: firstName,
+    //   last_name: lastName,
+    //   phone: phone,
+    //   shipping_address: shippingAddress,
+    // }))
 
     this.props.dispatch(closeModal())
   }
@@ -56,54 +83,87 @@ class EditProfileModal extends Component {
   }
 
   render () {
+    const { type } = this.props
+    const { firstName, lastName, phone, street, apartment, city, state, zip, instructions, leaveAtDoor } = this.state
+
     return (
-      <ModalContainer>
+      <ModalContainer darkMode={true}>
         <div className='edit-profile-modal' onClick={(e)=>e.stopPropagation()}>
           <div className='edit-profile-close'>
             <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
           </div>
 
-          <div className='edit-profile-title'>Edit Profile</div>
+          <div className='edit-profile-title'>{ type === 'Name' ? 'Edit Name' : (type === 'Address' ? 'Edit Address' : 'Contact')}</div>
+          <div className='separator'/>
 
           {/* Form fields */}
           <form className='form-inputs' onSubmit={ this.onSave }>
-            <div className='form-double-inputs'>
-              <div id='input_firstname' className='form-input'>
-                <div className='form-input-name'>First Name</div>
-                <input required type='text' name='firstName' value={this.state.firstName} onChange={this.onChange}/>
+            { type === 'Name' &&
+              <div className='form-double-inputs'>
+                <div id='input_firstname' className='form-input'>
+                  <div className='form-input-name'>First Name</div>
+                  <input required type='text' name='firstName' value={firstName} onChange={this.onChange}/>
+                </div>
+                <div id='input_lastname' className='form-input'>
+                  <div className='form-input-name'>Last Name</div>
+                  <input required type='text' name='lastName' value={lastName} onChange={this.onChange}/>
+                </div>
               </div>
-              <div id='input_lastname' className='form-input'>
-                <div className='form-input-name'>Last Name</div>
-                <input required type='text' name='lastName' value={this.state.lastName} onChange={this.onChange}/>
+            }
+
+            { type === 'Phone' &&
+              <div className='form-input'>
+                <div className='form-input-name'>Phone Number</div>
+                <input type='tel' name='phone' value={phone} onChange={this.onChange}/>
+              </div>
+            }
+
+            { type === 'Address' &&
+              <div>
+                <div className='form-double-inputs'>
+                  <div id='input_street' className='form-input'>
+                    <div className='form-input-name'>Delivery Address</div>
+                    <input required type='text' name='street' value={street} onChange={this.onChange}/>
+                  </div>
+                  <div id='input_apartment' className='form-input'>
+                    <div className='form-input-name'>Apartment Number</div>
+                    <input required type='text' name='apartment' value={apartment} onChange={this.onChange}/>
+                  </div>
+                </div>
+
+                <div className='form-double-inputs'>
+                  <div id='input_city' className='form-input'>
+                    <div className='form-input-name'>City</div>
+                    <input required type='text' name='city' value={city} onChange={this.onChange}/>
+                  </div>
+                  <div id='input_state' className='form-input'>
+                    <div className='form-input-name'>State</div>
+                    <input required type='text' name='state' value={state} onChange={this.onChange}/>
+                  </div>
+                  <div id='input_zip' className='form-input'>
+                    <div className='form-input-name'>Zip Code</div>
+                    <input required type='text' name='zip' value={zip} onChange={this.onChange}/>
+                  </div>
+                </div>
+
+                <div className='form-input'>
+                  <div className='form-input-name'>Special Delivery Instructions</div>
+                  <textarea name='instructions' value={instructions} onChange={this.onChange} placeholder='Example: Gate Code #: 4856. Please call before you arrive.'/>
+                </div>
+              </div>
+            }
+
+            <div className='buttons'>
+              <div className='div-switch clickable' style={{visibility: type === 'Address' ? 'visible' : 'hidden'}}>
+                <img src={leaveAtDoor ? imgSwitchOn : imgSwitchOff} alt='switch' onClick={this.onToggleSwitch}/>
+                <span>Leave at doorstep or front desk</span>
+              </div>
+
+              <div>
+                <Button type='submit' className='btn-save'>Save</Button>
+                <Button onClick={this.onClose} className='btn-cancel'>Cancel</Button>
               </div>
             </div>
-
-            <div className='form-input'>
-              <div className='form-input-name'>Email Address</div>
-              <input required type='email' name='email' value={this.state.email} onChange={this.onChange}/>
-            </div>
-
-            <div className='form-input'>
-              <div className='form-input-name'>Phone Number</div>
-              <input type='tel' name='phone' value={this.state.phone} onChange={this.onChange}/>
-            </div>
-
-            <div className='form-input'>
-              <div className='form-input-name'>Zip</div>
-              <input type='text' name='zip' value={this.state.zip} onChange={this.onChange}/>
-            </div>
-
-            <div className='form-input'>
-              <div className='form-input-name'>Shipping Address</div>
-              <input type='text' name='shippingAddress' value={this.state.shippingAddress} onChange={this.onChange}/>
-            </div>
-
-            <div className='form-input'>
-              <div className='form-input-name'>New Password</div>
-              <input type='password' name='password' value={this.state.password} onChange={this.onChange} placeholder='6 characters or more'/>
-            </div>
-
-            <Button type='submit' className='btn-save'>Save</Button>
           </form>
         </div>
       </ModalContainer>

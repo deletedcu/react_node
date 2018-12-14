@@ -1,44 +1,106 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Button from '../../../components/Button'
 
 import './styles.css'
-
-import imgEdit from '../../../assets/images/edit.svg'
 
 import { showModal, ModalType } from '../../../redux/actions/modal'
 
 class EditProfile extends Component {
 
-  onEdit = () => {
-    this.props.dispatch(showModal(ModalType.editProfileModal))
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      currentPassword: '',
+      newPassword: '',
+      confirmPassword: '',
+      showPasswordForm: false,
+    }
+  }
+
+  onChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  onTogglePasswordForm = () => {
+    this.setState({
+      showPasswordForm: !this.state.showPasswordForm,
+      currentPassword: '',
+      newPassword: '',
+      confirmPassword: '',
+    })
+  }
+
+  onEditName = () => {
+    this.props.dispatch(showModal(ModalType.editNameModal))
+  }
+
+  onEditAddress = () => {
+    this.props.dispatch(showModal(ModalType.editAddressModal))
+  }
+
+  onEditPhoneNumber = () => {
+    this.props.dispatch(showModal(ModalType.editPhoneNumberModal))
+  }
+
+  onChangePassword = () => {
+
   }
 
   render () {
     const user = this.props.user.user
+    const { currentPassword, newPassword, confirmPassword, showPasswordForm } = this.state
 
     return (
       <div className='div-edit-profile-container'>
-        <div className='div-profile-info'>
-          <div className='div-profile-info-title-list'>
-            <div className='div-profile-info-title'>User Name</div>
-            <div className='div-profile-info-title'>Shipping Address</div>
-            <div className='div-profile-info-title'>Zip</div>
-            <div className='div-profile-info-title'>Phone Number</div>
-            <div className='div-profile-info-title'>Email Address</div>
+        <div className='div-profile-list'>
+          <div className='div-profile-info'>
+            <div className='div-profile-info-title-list'>
+              <div className='div-profile-info-title'>Name</div>
+              <div className='div-profile-info-title'>Delivery Address</div>
+              <div className='div-profile-info-title'>Phone Number</div>
+              <div className='div-profile-info-title'>Email Address</div>
+            </div>
+
+            <div className='div-profile-info-text-list'>
+              <div className='div-profile-info-text'>{`${user.first_name} ${user.last_name}`}</div>
+              <div className='div-profile-info-text'>{user.shipping_address || '-'}</div>
+              <div className='div-profile-info-text'>{user.phone || '-'}</div>
+              <div className='div-profile-info-text'>{user.email}</div>
+            </div>
           </div>
 
-          <div className='div-profile-info-text-list'>
-            <div className='div-profile-info-text'>{`${user.first_name} ${user.last_name}`}</div>
-            <div className='div-profile-info-text'>{user.shipping_address || '-'}</div>
-            <div className='div-profile-info-text'>{user.zip || '-'}</div>
-            <div className='div-profile-info-text'>{user.phone || '-'}</div>
-            <div className='div-profile-info-text'>{user.email}</div>
+          <div className='div-profile-edit'>
+            <Button onClick={this.onEditName}>Edit</Button>
+            <Button onClick={this.onEditAddress}>Edit</Button>
+            <Button onClick={this.onEditPhoneNumber}>Edit</Button>
           </div>
         </div>
 
-        <div className='div-profile-edit'>
-          <img className='img-profile-edit clickable' src={imgEdit} alt='edit' onClick={this.onEdit}/>
+        <div className='div-profile-update-password'>
+          <div className='div-profile-update-password-title clickable' onClick={this.onTogglePasswordForm}>Update Password</div>
+          { showPasswordForm &&
+            <div className='div-profile-update-password-inputs'>
+              <div className='div-profile-update-password-input'>
+                <div className='div-profile-update-password-input-title'>Current Password</div>
+                <input name='currentPassword' value={currentPassword} type='password' onChange={this.onChange}/>
+              </div>
+              <div className='div-profile-update-password-input'>
+                <div className='div-profile-update-password-input-title'>New Password</div>
+                <input name='newPassword' value={newPassword} type='password' onChange={this.onChange}/>
+              </div>
+              <div className='div-profile-update-password-input'>
+                <div className='div-profile-update-password-input-title'>Confirm Password</div>
+                <input name='confirmPassword' value={confirmPassword} type='password' onChange={this.onChange}/>
+              </div>
+              <Button onClick={this.onChangePassword}>Change</Button>
+            </div>
+          }
         </div>
+        
       </div>
     )
   }

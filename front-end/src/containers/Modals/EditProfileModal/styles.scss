@@ -3,8 +3,9 @@
 .edit-profile-modal {
   position: absolute;
   left: 50%;
-  top: 100px;
-  transform: translate(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 570px;
   margin-bottom: 100px;
   display: flex;
   flex-direction: column;
@@ -12,38 +13,58 @@
   border: 0.5px solid $text-light-gray;
   border-radius: 30px;
   box-shadow: $shadow-secondary;
-  padding: 30px 60px 40px;
+  padding: 20px 35px 30px 60px;
   color: $text-light-gray;
 
   .edit-profile-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
     .img-close {
-      height: 20px;
-      float: right;
+      height: 16px;
     }
   }
 
   .edit-profile-title {
     color: $text-light-gray;
-    margin-left: 5px;
+    margin-top: 3px;
+  }
+
+  .separator {
+    height: 1px;
+    background-color: #70707050;
+    margin-top: 15px;
   }
 
   .form-inputs {
     .form-input {
-      margin-top: 30px;
+      margin-top: 20px;
       font-size: $mobile-regular-font-size;
 
-      input {
+      %form {
         width: 100%;
-        height: 43px;
         margin-top: 5px;
-        padding: 0 10px;
+        padding: 10px;
         border: 1px solid $light-green-primary;
         border-radius: 2px;
         caret-color: $green-primary;
+
+        &:focus {
+          border: 1px solid $green-primary;
+        }
       }
 
-      input:focus {
-        border: 1px solid $green-primary;
+      input {
+        @extend %form;
+        height: 43px;
+      }
+
+      textarea {
+        @extend %form;
+        height: 107px;
+        resize: none;
+        border-radius: 6px;
       }
     }
 
@@ -58,16 +79,72 @@
         margin-left: 15px;
         width: 50%;
       }
+
+      #input_street {
+        width: 60%;
+        margin-right: 5px;
+      }
+
+      #input_apartment {
+        width: 40%;
+        margin-left: 5px;
+      }
+
+      #input_city {
+        width: 60%;
+        margin-right: 5px;
+      }
+
+      #input_state {
+        width: 20%;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
+      #input_zip {
+        width: calc(20% - 10px);
+        margin-left: 5px;
+      }
     }
 
-    .btn-save {
-      width: 129px;
-      height: 52px;
-      border-radius: 26px;
-      font-size: $small-font-size;
-      float: right;
-      margin-top: 30px;
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 24px;
+
+      .div-switch {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+
+        img {
+          height: 24px;
+          margin-right: 10px;
+        }
+
+        span {
+          font-size: $mobile-small-font-size;
+        }
+      }
+
+      .button {
+        width: 90px;
+        height: 25px;
+        border-radius: 0;
+        font-size: 12px;
+        box-shadow: $shadow-secondary;
+      }
+
+      .btn-save {
+        margin-right: 10px;
+      }
+
+      .btn-cancel {
+        background-color: #F6F6F6;
+        color: $text-light-gray;
+      }
     }
+    
   }
 
   @media (max-width: 710px) {

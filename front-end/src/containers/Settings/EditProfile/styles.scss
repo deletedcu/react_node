@@ -2,30 +2,84 @@
 
 .div-edit-profile-container {
   display: flex;
-  justify-content: center;
-  
-  .div-profile-info {
-    color: $text-light-gray;
-    display: flex;
-    margin-right: 100px;
+  flex-direction: column;
+  align-items: center;
 
-    .div-profile-info-title-list {
-      margin-right: 240px;
-      .div-profile-info-title {
-        margin-bottom: 50px;
-        text-align: right;
+  .div-profile-list {
+    display: flex;
+
+    .div-profile-info {
+      color: $text-light-gray;
+      display: flex;
+      margin-right: 150px;
+  
+      .div-profile-info-title-list {
+        margin-right: 140px;
+        .div-profile-info-title {
+          margin-bottom: 50px;
+        }
+      }
+      .div-profile-info-text-list {
+        .div-profile-info-text {
+          margin-bottom: 50px;
+        }
       }
     }
-    .div-profile-info-text-list {
-      .div-profile-info-text {
-        margin-bottom: 50px;
+  
+    .div-profile-edit {
+      display: flex;
+      flex-direction: column;
+  
+      .button {
+        width: 95px;
+        height: 40px;
+        font-size: $small-font-size;
+        border-radius: 0;
+        margin-bottom: 40px;
       }
-    }
+    } 
   }
 
-  .div-profile-edit {
-    .img-profile-edit {
-      height: 32px;
+  .div-profile-update-password {
+    width: 984px;
+
+    .div-profile-update-password-title {
+      color: $green-primary;
+      margin-bottom: 25px;
+    }
+
+    .div-profile-update-password-inputs {
+      display: flex;
+      align-items: flex-end;
+
+      .div-profile-update-password-input {
+        .div-profile-update-password-input-title {
+          color: $text-light-gray;
+          font-size: $mobile-regular-font-size;
+        }
+
+        input {
+          width: 220px;
+          height: 43px;
+          margin-top: 5px;
+          margin-right: 30px;
+          padding: 10px;
+          border: 1px solid $light-green-primary;
+          border-radius: 2px;
+          caret-color: $green-primary;
+  
+          &:focus {
+            border: 1px solid $green-primary;
+          }
+        }
+      }
+
+      .button {
+        width: 116px;
+        height: 43px;
+        border-radius: 6px;
+        font-size: $mobile-regular-font-size;
+      }
     }
   }
 }
