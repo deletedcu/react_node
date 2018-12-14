@@ -58,7 +58,7 @@ class SettingsDropdown extends Component {
       <Dropdown ref='settingsDropdown' className='settings-dropdown' onShow={() => this.onToggle(true)} onHide={() => this.onToggle(false)}>
         <DropdownTrigger>
           <div className='settings-dropdown-trigger clickable' onMouseEnter={this.onMouseEnter}>
-            <span className={classNames({'span-highlighted': isShown})}>MY ACCOUNT</span>
+            <span className={classNames({'span-highlighted': isShown})}>My Account</span>
             <img src={ isShown ? imgTriangleReverse : imgTriangle } alt='hamburger'/>
           </div>
         </DropdownTrigger>

@@ -21,7 +21,7 @@ class HelpCenter extends Component {
   }
 
   onNeedHelp = () => {
-    
+    this.props.history.push('/contact-us')
   }
 
   render () {

@@ -16,7 +16,7 @@ class HelpRecentActivity extends Component  {
 
   onOpenAnswer = () => {
     this.setState({
-      answerOpened: true,
+      answerOpened: !this.state.answerOpened,
     })
   }
 
@@ -27,7 +27,10 @@ class HelpRecentActivity extends Component  {
     return (
       <div className='help-recent-activity'>
         <div className='help-recent-activity-content'>
-          <div className='help-recent-activity-question clickable' onClick={this.onOpenAnswer}><img src={imgPlus} alt='recommended'/><span>{question}</span></div>
+          <div className='help-recent-activity-question clickable' onClick={this.onOpenAnswer}>
+            <img src={imgPlus} style={{visibility: answerOpened ? 'hidden' : 'visible'}} alt='recommended'/>
+            <span>{question}</span>
+          </div>
           <div className='help-recent-activity-info'>{timestamp}</div>
         </div>
         { answerOpened &&
