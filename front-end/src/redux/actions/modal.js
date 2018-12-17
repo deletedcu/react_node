@@ -10,6 +10,7 @@ export const ModalType = {
   jobApplyModal: 8,
   invitationModal: 9,
   shareExperienceModal: 10,
+  orderCancelModal: 11,
 }
 
 export function showModal(modalType, data){

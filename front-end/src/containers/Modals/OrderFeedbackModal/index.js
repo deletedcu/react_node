@@ -50,7 +50,7 @@ class OrderFeedbackModal extends Component {
 
   render () {
     return (
-      <ModalContainer>
+      <ModalContainer darkMode={true}>
         <div className='order-feedback-modal' onClick={(e)=>e.stopPropagation()}>
           <div className='order-feedback-close'>
             <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
@@ -76,10 +76,10 @@ class OrderFeedbackModal extends Component {
           </div>
 
           <div className='order-feedback-special-request'>
-            <div className='order-feedback-special-request-title'>Special Meal Request</div>
+            <div className='order-feedback-special-request-title'>Comment</div>
             <textarea name='specialRequest' value={this.state.specialRequest} onChange={this.onChange}></textarea>
             <div className='order-feedback-special-request-hint'>
-              * Your special request will be saved on the meal preference page. It will help us to design customized meal that match to your preference.
+              * Your feedback is highly appreciated and will help us to improve our ability to serve you and recommend meals you prefer in the future.
             </div>
           </div>
 

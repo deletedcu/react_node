@@ -8,6 +8,7 @@ const AsyncComboSliceModal = asyncComponent(() => import('./ComboSliceModal'))
 const AsyncCardInfoModal = asyncComponent(() => import('./CardInfoModal'))
 const AsyncEditProfileModal = asyncComponent(() => import('./EditProfileModal'))
 const AsyncOrderFeedbackModal = asyncComponent(() => import('./OrderFeedbackModal'))
+const AsyncOrderCancelModal = asyncComponent(() => import('./OrderCancelModal'))
 const AsyncMealPreferenceModal = asyncComponent(() => import('./MealPreferenceModal'))
 const AsyncJobApplyModal = asyncComponent(() => import('./JobApplyModal'))
 const AsyncInvitationModal = asyncComponent(() => import('./InvitationModal'))
@@ -56,6 +57,9 @@ const Modal = (props) => {
 
       {/* Share Experience Modal */}
       { active === ModalType.shareExperienceModal && <AsyncShareExperienceModal history={history} /> }
+
+      {/* Order Cancel Modal */}
+      { active === ModalType.orderCancelModal && <AsyncOrderCancelModal /> }
     </div>
   )
 }

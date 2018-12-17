@@ -4,7 +4,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 720px;
+  width: 700px;
   transform: translate(-50%, -50%);
   margin-bottom: 100px;
   display: flex;
@@ -25,7 +25,6 @@
 
   .order-feedback-title {
     color: $text-light-gray;
-    margin-left: 5px;
   }
 
   .order-feedback-rates {
