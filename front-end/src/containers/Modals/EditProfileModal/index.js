@@ -37,7 +37,9 @@ class EditProfileModal extends Component {
       leaveAtDoor: false,
     }
 
-    this.updateAddress(user.shipping_address)
+    if (props.type === 'Address') {
+      this.updateAddress(user.shipping_address)
+    }
   }
 
   updateAddress = (fullAddress) => {
@@ -152,7 +154,7 @@ class EditProfileModal extends Component {
                     <SelectUSState id='stateSelector' className='select-us-state' value={state} onChange={ this.onSelectState }/>
                     <img src={imgDownArrow} alt='arrow'/>
                   </div>
-                  
+
                   <div id='input_zip' className='form-input'>
                     <div className='form-input-name'>Zip Code</div>
                     <input required type='text' name='zip' value={zip} onChange={this.onChange}/>
