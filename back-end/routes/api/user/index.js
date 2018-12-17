@@ -5,6 +5,7 @@ const login = require('./user').login;
 const register = require('./user').register;
 const authenticate = require('./user').authenticate;
 const updateProfile = require('./user').updateProfile;
+const updatePassword = require('./user').updatePassword;
 
 let router = express.Router();
 
@@ -71,6 +72,19 @@ router.post('/update_profile', (request, response) => {
   updateProfile(request)
     .then(res => {
       response.status(res.status).json({ message: res.message, user: res.user });
+    })
+    .catch(err => {
+      response.status(err.status).json({ message: err.message });
+    });
+});
+
+/**
+ * Update password
+ */
+router.post('/update_password', (request, response) => {
+  updatePassword(request)
+    .then(res => {
+      response.status(res.status).json({ message: res.message });
     })
     .catch(err => {
       response.status(err.status).json({ message: err.message });

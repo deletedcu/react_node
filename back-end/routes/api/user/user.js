@@ -169,22 +169,13 @@ exports.updateProfile = (request) => {
     const currentEmail = checkToken(request);
 
     if (currentEmail) {
-      let { first_name, last_name, email, phone, shipping_address, password, zip } = request.body;
+      let { first_name, last_name, phone, shipping_address } = request.body;
       let user = {
         first_name: first_name,
         last_name: last_name,
-        email: email,
-        email_lowercased: email.toLowerCase(),
         phone: phone,
         shipping_address: shipping_address,
-        zip: zip,
       };
-
-      if (password) {
-        const salt = bcrypt.genSaltSync(10);
-        const hash = bcrypt.hashSync(password, salt);
-        user.hashed_password = hash;
-      }
 
       User.findOneAndUpdate(
         { email_lowercased: currentEmail.toLowerCase() },
@@ -212,6 +203,77 @@ exports.updateProfile = (request) => {
             })
           }
         });
+    } else {
+      reject({ status: 401, message: 'Unauthorized request!'});
+    }
+  });
+}
+
+/**
+ * Update password
+ * @param {*} request 
+ */
+exports.updatePassword = (request) => {
+  return new Promise((resolve, reject) => {
+    const currentEmail = checkToken(request);
+    const { old_password, new_password } = request.body;
+
+    if (currentEmail) {
+      User.findOne({ email_lowercased: currentEmail.toLowerCase() }).exec((err, user) => {
+        // something went wrong
+        if (err) {
+          reject({ status: 500, message: 'Internal server error ...' });
+          return;
+        }
+  
+        // user not exists
+        if (!user) {
+          reject({ status: 404, message: 'Cannot find user!' });
+          return;
+        }
+  
+        // user exists ...
+        const hashedPassword = user.hashed_password;
+  
+        // compare password
+        if (bcrypt.compareSync(old_password, hashedPassword)) {
+          const salt = bcrypt.genSaltSync(10);
+          const hash = bcrypt.hashSync(new_password, salt);
+          const new_hashed_password = hash;
+    
+          User.findOneAndUpdate(
+            { email_lowercased: currentEmail.toLowerCase() },
+            {
+              hashed_password: new_hashed_password,
+            },
+            {
+              new: true,
+            },
+            (err, newUser) => {
+              if (err) {
+                console.log(err);
+                reject({ status: 500, message: 'Internal server error ...' });
+              } else {
+                resolve({
+                  status: 200,
+                  message: 'User has been updated',
+                  user: {
+                    email: newUser.email,
+                    first_name: newUser.first_name,
+                    last_name: newUser.last_name,
+                    shipping_address: newUser.shipping_address,
+                    phone: newUser.phone,
+                    zip: newUser.zip,
+                    token: jwt.sign(newUser.email, config.jwtSecret, {}),
+                  }
+                })
+              }
+            });
+        } else {
+          // incorrect password
+          reject({ status: 401, message: 'Password is not correct!' });
+        }
+      });
     } else {
       reject({ status: 401, message: 'Unauthorized request!'});
     }
