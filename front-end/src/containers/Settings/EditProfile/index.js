@@ -5,6 +5,9 @@ import Button from '../../../components/Button'
 import './styles.css'
 
 import { showModal, ModalType } from '../../../redux/actions/modal'
+import { showNotification } from '../../../services/notification'
+
+import { updatePassword } from '../../../redux/actions/user'
 
 class EditProfile extends Component {
 
@@ -47,7 +50,26 @@ class EditProfile extends Component {
   }
 
   onChangePassword = () => {
+    const { currentPassword, newPassword, confirmPassword } = this.state
 
+    if (!currentPassword) {
+      showNotification('Please enter your current password!', 'error');
+      return;
+    }
+
+    if (!newPassword) {
+      showNotification('Please enter new password!', 'error');
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      showNotification('Please confirm new password!', 'error');
+      return;
+    }
+
+    this.props.dispatch(updatePassword(this.props.user.user.token, currentPassword, newPassword))
+
+    this.onTogglePasswordForm()
   }
 
   render () {

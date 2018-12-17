@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import addressParser from 'parse-address-string'
+import SelectUSState from 'react-select-us-states'
 import Button from '../../../components/Button'
 import ModalContainer from '../../../components/ModalContainer'
 import './styles.css'
 
-// import { updateUserProfile } from '../../../redux/actions/user'
+import { updateUserProfile } from '../../../redux/actions/user'
 import { closeModal } from '../../../redux/actions/modal'
 
 import imgClose from '../../../assets/images/close_button.svg'
 import imgSwitchOff from '../../../assets/images/switch_off.svg'
 import imgSwitchOn from '../../../assets/images/switch_on.svg'
+import imgDownArrow from '../../../assets/images/down_arrow_green.svg'
 
 class EditProfileModal extends Component {
 
@@ -46,6 +48,8 @@ class EditProfileModal extends Component {
           city: addressObject.city || '',
           state: addressObject.state || '',
           ...(addressObject.postal_code && { zip: addressObject.postal_code }),
+        }, () => {
+          document.getElementById('stateSelector').value = this.state.state || 'AL'
         })
       }
     })
@@ -54,6 +58,12 @@ class EditProfileModal extends Component {
   onChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+    })
+  }
+
+  onSelectState = (selectedState) => {
+    this.setState({
+      state: selectedState,
     })
   }
 
@@ -66,14 +76,14 @@ class EditProfileModal extends Component {
   onSave = (e) => {
     e.preventDefault()
     
-    // let { firstName, lastName, phone, shippingAddress } = this.state
+    let { firstName, lastName, phone, street, apartment, city, state, zip } = this.state
 
-    // this.props.dispatch(updateUserProfile(this.props.user.user.token, {
-    //   first_name: firstName,
-    //   last_name: lastName,
-    //   phone: phone,
-    //   shipping_address: shippingAddress,
-    // }))
+    this.props.dispatch(updateUserProfile(this.props.user.user.token, {
+      first_name: firstName,
+      last_name: lastName,
+      phone: phone,
+      shipping_address: `${street}, ${apartment}, ${city}, ${state}, ${zip}`,
+    }))
 
     this.props.dispatch(closeModal())
   }
@@ -136,10 +146,13 @@ class EditProfileModal extends Component {
                     <div className='form-input-name'>City</div>
                     <input required type='text' name='city' value={city} onChange={this.onChange}/>
                   </div>
+
                   <div id='input_state' className='form-input'>
                     <div className='form-input-name'>State</div>
-                    <input required type='text' name='state' value={state} onChange={this.onChange}/>
+                    <SelectUSState id='stateSelector' className='select-us-state' value={state} onChange={ this.onSelectState }/>
+                    <img src={imgDownArrow} alt='arrow'/>
                   </div>
+                  
                   <div id='input_zip' className='form-input'>
                     <div className='form-input-name'>Zip Code</div>
                     <input required type='text' name='zip' value={zip} onChange={this.onChange}/>

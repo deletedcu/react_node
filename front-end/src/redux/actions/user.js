@@ -120,3 +120,33 @@ export function updateUserProfile(token, params) {
     })
   }
 }
+
+export function updatePassword(token, currentPassword, newPassword) {
+  return function(dispatch) {
+    dispatch({type: 'SHOW_OVERLAY_SPINNER'})
+    dispatch({type: 'UPDATE_PASSWORD'})
+
+    axios.request({
+      url: '/user/update_password',
+      baseURL: config.apiBaseUrl,
+      method: 'post',
+      headers: {
+        'x-access-token': token
+      },
+      data: {
+        old_password: currentPassword,
+        new_password: newPassword,
+      },
+    }).then((response) => {
+      showNotification('Successfully updated', 'success')
+
+      dispatch({type: 'HIDE_OVERLAY_SPINNER'})
+      dispatch({type: 'UPDATE_PASSWORD_FULFILLED', payload: response.data})
+    }).catch((err) => {
+      showNotification('Failed to update password', 'error')
+
+      dispatch({type: 'HIDE_OVERLAY_SPINNER'})
+      dispatch({type: 'UPDATE_PASSWORD_REJECTED', payload: err})
+    })
+  }
+}

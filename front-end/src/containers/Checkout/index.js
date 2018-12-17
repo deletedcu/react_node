@@ -60,7 +60,7 @@ class Checkout extends Component {
       specialInstruction: '',
       city: '',
       state: '',
-      zip: props.user.loggedIn ? props.user.user.zip : '',
+      zip: '',
 
       cardNumber: '',
       cardExpiry: '',
