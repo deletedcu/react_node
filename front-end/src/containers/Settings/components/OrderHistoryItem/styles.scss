@@ -1,77 +1,64 @@
 @import "../../../../styles/variables/variables";
 
 .order-history-item {
-  display: flex;
-  color: $text-light-gray;
-  margin-top: 30px;
-  
-  .order-history-item-column-title {
-    font-family: 'Montserrat-SemiBold';
-    font-size: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .order-history-item-name-column {
-    width: 40%;
+  padding: 45px 0;
+  border-bottom: 1px solid #92A493;
 
-    .order-history-item-detail {
+  .order-history-main {
+    display: flex;
+    font-size: $small-font-size;
+    color: $text-light-gray;
+    text-align: center;
+
+    .order-history-item-name {
+      width: 33%;
+      text-align: left; 
       display: flex;
+      padding-left: 25px;
+
       .img-item {
-        width: 80px;
-        height: 80px;
+        width: 91px;
+        height: 83px;
+        margin-right: 5px;
       }
 
-      .order-history-item-title {
+      .order-history-item-info {
+        display: flex;
+        flex-direction: column;
         margin-top: 20px;
-        font-size: $small-font-size;
-      }
 
-      .order-history-item-more {
-        font-size: 16px;
-        margin-top: 5px;
+        .span-order-number-title {
+          color: #393838;
+        }
+        .span-order-number {
+          font-size: 16px;
+        }
+        .span-cancel {
+          color: $green-primary;
+          font-size: $mobile-regular-font-size;
+        }
       }
     }
-  }
 
-  .order-history-item-quantity-column {
-    width: 10%;
-    text-align: center;
-  }
-
-  .order-history-item-status-column {
-    width: 30%;
-    text-align: center;
+    .order-history-item-status, .order-history-item-date, .order-history-item-total {
+      margin-top: 20px;
+    }
 
     .order-history-item-status {
-      font-size: $small-font-size;
+      width: 17%;
+    }
+
+    .order-history-item-date {
+      width: 20%;
+    }
+
+    .order-history-item-total {
+      width: 30%;
     }
   }
 
-  .order-history-item-price-column {
-    width: 20%;
-    text-align: center;
-
-    .order-history-item-price {
-      font-size: $small-font-size;
-      margin-bottom: 30px;
-    }
-
-    .btn-rate {
-      width: 95px;
-      height: 41px;
-      font-size: $small-font-size;
-      background-color: #72BD75;
-      border-radius: 100px;
-    }
-
-    .img-star {
-      width: 25px;
-      height: 25px;
-    }
+  .order-history-sub {
+    margin-left: 120px;
+    margin-top: 30px;
   }
-}
-
-.order-history-item-underlined {
-  border-bottom: 1px solid #92A493;
-  padding-bottom: 50px;
 }

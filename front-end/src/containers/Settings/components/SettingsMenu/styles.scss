@@ -1,8 +1,14 @@
 @import "../../../../styles/variables/variables";
 
 .settings-menu {
-  display: flex;
-  border-bottom: 1px solid #818080;
+  .settings-menu-regular {
+    display: flex;
+    border-bottom: 1px solid #818080;
+  }
+
+  .settings-menu-responsive {
+    display: none;
+  }
 
   .settings-menu-item {
     text-align: center;
@@ -16,5 +22,86 @@
     height: 10px;
     border-radius: 5px;
     background-color: $green-primary;
+  }
+
+  @media (max-width: 1023px) {
+    .settings-menu-item {
+      font-size: $small-font-size;
+      line-height: 40px;
+    }
+
+    .settings-menu-item-underline {
+      height: 5px;
+    }
+  }
+
+  @media (max-width: 710px) {
+    border-bottom: unset;
+
+    .settings-menu-regular {
+      display: none;
+    }
+
+    .settings-menu-responsive {
+      display: block;
+      width: 100%;
+
+      .settings-menu-dropdown {
+        width: 100%;
+
+        .settings-menu-dropdown-trigger {
+          width: 100%;
+          height: 60px;
+          border: 1px solid #D0D0D0;
+          border-radius: 6px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 25px;
+          font-size: $small-font-size;
+          color: $text-light-gray;
+
+
+          .img-downarrow {
+            height: 7px;
+          }
+
+          @media (max-width: 414px) {
+            font-size: $mobile-regular-font-size;
+          }
+        }  
+
+        .dropdown__content {
+          width: 100%;
+          background: white;
+          z-index: 1;
+          margin-top: 5px;
+          border-radius: 15px;
+          border: 0.5px solid #70707050;
+          box-shadow: 2px 2px 6px rgba(0,0,0,0.16);
+          padding: 15px 0;
+          overflow: hidden;
+
+          .settings-menu-item {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+
+            &:hover {
+              color: $text-light-gray;
+              background-color: #B5E8B7;
+              box-shadow: 2px 2px 6px rgba(0,0,0,0.16);
+            }
+
+            @media (max-width: 414px) {
+              height: 35px;
+              line-height: 35px;
+              font-size: $mobile-regular-font-size;
+            }
+          }
+        }
+      }
+    }
   }
 }

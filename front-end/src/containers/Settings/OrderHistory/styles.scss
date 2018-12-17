@@ -1,5 +1,49 @@
 @import "../../../styles/variables/variables";
 
 .div-order-history-container {
-  height: 800px;
+  margin-top: -70px;  
+
+  .div-order-history-header {
+    height: 42px;
+    background-color: #F1F1F1;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat-SemiBold';
+    color: $text-light-gray;
+    text-align: center;
+
+    .span-name {
+      width: 33%;
+      text-align: left;
+      padding-left: 50px;
+    }
+
+    .span-status {
+      width: 17%;
+    }
+
+    .span-date {
+      width: 20%;
+    }
+
+    .span-total {
+      width: 30%;
+    }
+  }
+
+  .div-order-history-items {
+    min-height: 300px;
+    margin-top: 10px;
+  }
+
+  .btn-load-more {
+    width: 182px;
+    height: 53px;
+    font-size: $small-font-size;
+    border-radius: 23px;
+    margin: 100px 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
 }

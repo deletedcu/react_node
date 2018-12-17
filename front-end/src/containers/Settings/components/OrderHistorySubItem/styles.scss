@@ -1,0 +1,43 @@
+@import "../../../../styles/variables/variables";
+
+.order-history-subitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+
+  .order-history-subitem-info {
+    display: flex;
+
+    .img-subitem {
+      width: 79px;
+      height: 72px;
+    }
+
+    .order-history-subitem-detail {
+      display: flex;
+      flex-direction: column;
+
+      color: #707070;
+      margin-left: 15px;
+      margin-top: 20px;
+
+      .span-subitem-name {
+        font-size: $small-font-size;
+      }
+
+      .span-subitem-options, .span-subitem-quantity {
+        font-size: $mobile-regular-font-size;
+        font-family: 'Montserrat-SemiBold';
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .btn-rate {
+    width: 70px;
+    height: 30px;
+    border-radius: 0;
+    font-size: $mobile-regular-font-size;
+  }
+}

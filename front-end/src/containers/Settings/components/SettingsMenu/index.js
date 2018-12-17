@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
+import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdown'
+
+import 'react-simple-dropdown/styles/Dropdown.css'
 import './styles.css'
+import imgDownArrow from '../../../../assets/images/down_arrow.svg'
 
 const SettingsMenuItem = {
-  editProfile: 0,
-  paymentMethod: 1,
-  orderHistory: 2,
-  mealPreference: 3,
-  redeemCredit: 4,
+  editProfile: 'General',
+  paymentMethod: 'Payment Methods',
+  orderHistory: 'Order History',
+  mealPreference: 'Meal Preference',
+  redeemCredit: 'Redeem Credit',
 }
 
 class SettingsMenu extends Component {
@@ -48,6 +52,8 @@ class SettingsMenu extends Component {
       return
     }
 
+    this.refs.settingsMenuDropdown.hide()
+
     switch(clickedMenuItem) {
       case SettingsMenuItem.editProfile:
         this.props.history.push('/settings/edit_profile')
@@ -71,36 +77,78 @@ class SettingsMenu extends Component {
 
     return (
       <div className='settings-menu'>
-        <div 
-          className='settings-menu-item clickable'
-          onClick={ () => { this.onClickMenu(SettingsMenuItem.editProfile) } }
-        >
-          <div>General</div>
-          { activeItem === SettingsMenuItem.editProfile && <div className='settings-menu-item-underline'/> }
-        </div>
+        <div className='settings-menu-regular'>
+          <div 
+            className='settings-menu-item clickable'
+            onClick={ () => { this.onClickMenu(SettingsMenuItem.editProfile) } }
+          >
+            <div>General</div>
+            { activeItem === SettingsMenuItem.editProfile && <div className='settings-menu-item-underline'/> }
+          </div>
 
-        <div 
-          className='settings-menu-item clickable'
-          onClick={ () => { this.onClickMenu(SettingsMenuItem.paymentMethod) } }
-        >
-          <div>Payment Methods</div>
-          { activeItem === SettingsMenuItem.paymentMethod && <div className='settings-menu-item-underline'/> }
-        </div>
+          <div 
+            className='settings-menu-item clickable'
+            onClick={ () => { this.onClickMenu(SettingsMenuItem.paymentMethod) } }
+          >
+            <div>Payment Methods</div>
+            { activeItem === SettingsMenuItem.paymentMethod && <div className='settings-menu-item-underline'/> }
+          </div>
 
-        <div 
-          className='settings-menu-item clickable'
-          onClick={ () => { this.onClickMenu(SettingsMenuItem.orderHistory) } }
-        >
-          <div>Order History</div>
-          { activeItem === SettingsMenuItem.orderHistory && <div className='settings-menu-item-underline'/> }
-        </div>
+          <div 
+            className='settings-menu-item clickable'
+            onClick={ () => { this.onClickMenu(SettingsMenuItem.orderHistory) } }
+          >
+            <div>Order History</div>
+            { activeItem === SettingsMenuItem.orderHistory && <div className='settings-menu-item-underline'/> }
+          </div>
 
-        <div 
-          className='settings-menu-item clickable'
-          onClick={ () => { this.onClickMenu(SettingsMenuItem.mealPreference) } }
-        >
-          <div>Meal Preference</div>
-          { activeItem === SettingsMenuItem.mealPreference && <div className='settings-menu-item-underline'/> }
+          <div 
+            className='settings-menu-item clickable'
+            onClick={ () => { this.onClickMenu(SettingsMenuItem.mealPreference) } }
+          >
+            <div>Meal Preference</div>
+            { activeItem === SettingsMenuItem.mealPreference && <div className='settings-menu-item-underline'/> }
+          </div>
+        </div>
+        
+        <div className='settings-menu-responsive'>
+          <Dropdown ref='settingsMenuDropdown' className='settings-menu-dropdown'>
+            <DropdownTrigger>
+              <div className='settings-menu-dropdown-trigger clickable'>
+                <span>{ activeItem }</span>
+                <img className='img-downarrow' src={imgDownArrow} alt='arrow'/>
+              </div>
+            </DropdownTrigger>
+            <DropdownContent>
+              <div 
+              className='settings-menu-item clickable'
+              onClick={ () => { this.onClickMenu(SettingsMenuItem.editProfile) } }
+              >
+                General
+              </div>
+
+              <div 
+                className='settings-menu-item clickable'
+                onClick={ () => { this.onClickMenu(SettingsMenuItem.paymentMethod) } }
+              >
+                Payment Methods
+              </div>
+
+              <div 
+                className='settings-menu-item clickable'
+                onClick={ () => { this.onClickMenu(SettingsMenuItem.orderHistory) } }
+              >
+                Order History
+              </div>
+
+              <div 
+                className='settings-menu-item clickable'
+                onClick={ () => { this.onClickMenu(SettingsMenuItem.mealPreference) } }
+              >
+                Meal Preference
+              </div>
+            </DropdownContent>
+          </Dropdown>
         </div>
       </div>
     )

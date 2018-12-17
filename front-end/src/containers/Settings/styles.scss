@@ -10,7 +10,7 @@
 
   .div-settings-body {
     margin-top: 100px;
-    margin-bottom: 250px;
+    margin-bottom: 150px;
 
     .div-settings-menu {
 
@@ -35,9 +35,22 @@
     }
   }
 
+  @media (max-width: 1024px) {
+    .div-settings-body {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      max-width: calc(100% - 46px);
+    }
+  }
+
   @media (max-width: 710px) {
     .div-settings-banner {
       max-height: 350px;
+    }
+
+    .div-settings-body {
+      margin-top: 25px;
+      margin-bottom: 25px;
     }
 
     .div-settings-contact {
