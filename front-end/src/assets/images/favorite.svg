@@ -1,0 +1,11 @@
+<svg id="baseline-bookmark_border-24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <path id="Path_379" data-name="Path 379" d="M22.143,3H7.857A2.762,2.762,0,0,0,5.014,5.667L5,27l10-4,10,4V5.667A2.775,2.775,0,0,0,22.143,3Zm0,20L15,20.093,7.857,23V5.667H22.143Z"/>
+  <path id="Path_380" data-name="Path 380" class="cls-1" d="M0,0H30V30H0Z"/>
+</svg>

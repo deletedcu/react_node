@@ -1,49 +1,119 @@
 @import "../../../../styles/variables/variables";
 
 .meal-preference-item {
+  border-radius: 9px;
+  border: 1px solid rgba(112, 112, 112, 0.36);
   display: flex;
-  border: 0.3px solid $text-light-gray;
-  border-radius: 5px;
-  box-shadow: $shadow-secondary;
-  background-color: white;
-  color: $text-light-gray;
-  padding: 20px 36px;
-  margin: 20px;
-
-  .meal-preference-item-image {
-    width: 230px;
-    height: 154px;
-    border-radius: 8px;
-    box-shadow: $shadow-secondary;
+  flex-direction: column;
+  padding: 54px 38px 24px;
+  
+  .img-item {
+    margin: 0 -38px;
+    height: 325px;
   }
 
-  .meal-preference-item-info {
-    margin-left: 20px;
+  .meal-preference-item-name {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    padding: 38px 0 15px;
 
-    .meal-preference-item-name {
-      font-size: $mobile-regular-font-size;
+    .span-name {
+      max-width: 50%;
+      font-size: $small-font-size;
+      color: #616060;
+      font-family: 'Montserrat-SemiBold';
     }
 
-    .img-star {
-      width: 16px;
-      height: 16px;
+    .img-flag {
+      height: 30px;
+    }
+  }
+
+  .meal-preference-item-description {
+    font-size: $mobile-regular-font-size;
+    color: #616060;
+    padding-bottom: 10px;
+  }
+
+  .separator {
+    height: 1px;
+    background-color: #818080;
+  }
+
+  .span-edit {
+    padding-top: 10px;
+    color: #72BD75;
+  }
+
+  .meal-preference-item-edit-section {
+    .span-description {
+      font-family: 'Montserrat-Light';
+      font-size: $mobile-regular-font-size - 2;
+      color: #616060;
+      padding-bottom: 5px;
     }
 
-    .meal-preference-item-detail {
-      flex-grow: 1;
-      font-size: 11px;
-      margin-left: 10px;
-      margin-top: 10px;
+    .meal-preference-item-edit-options {
+      padding: 24px 12px 12px;
+      
+      .meal-preference-item-edit-options-title {
+        font-size: $small-font-size;
+        color: $text-light-gray;
+      }
+
+      .meal-preference-item-edit-options-grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        .meal-preference-option {
+          width: 50%;
+          padding: 2px;
+        }
+      }
     }
 
-    .meal-preference-item-edit {
-      margin-top: 20px;
-      span {
-        float: right;
-        text-decoration: underline;
-        font-size: 11px;
+    .meal-preference-item-edit-notes {
+      margin-left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 15px;
+      border-radius: 7px;
+      resize: none;
+      font-size: $mobile-small-font-size;
+      width: 251px;
+      height: 65px;
+      padding: 10px 7px;
+      background-color: #F9F9F9;
+      box-shadow: $shadow-secondary;
+      border: unset;
+      color: #707070;
+
+      &:focus {
+        box-shadow: unset;
+        border: 0.5px solid #70707080;
+        background-color: transparent;
+      }
+    }
+
+    .meal-preference-item-edit-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      .button {
+        width: 95px;
+        height: 24px;
+        margin: 0 5px;
+        border-radius: 0;
+        box-shadow: $shadow-secondary;
+        font-size: $mobile-regular-font-size - 2;
+      }
+
+      .btn-cancel {
+        background-color: #F6F6F6;
+        color: $text-light-gray;
       }
     }
   }

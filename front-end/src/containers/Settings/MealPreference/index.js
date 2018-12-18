@@ -8,27 +8,18 @@ class MealPreference extends Component {
   render () {
     return (
       <div className='div-meal-preference-container'>
+        <div className='div-meal-preference-header'>
+          Past Orders
+        </div>
+
+        <div className='div-meal-preference-items'>
           <MealPreferenceItem
-            item={{
-              main_image: 'no image',
-              name: 'Special Herb Grilled Chicken',
-              rate: 3,
-            }}
           />
           <MealPreferenceItem
-            item={{
-              main_image: 'no image',
-              name: 'Special Herb Grilled Chicken',
-              rate: 3,
-            }}
           />
           <MealPreferenceItem
-            item={{
-              main_image: 'no image',
-              name: 'Special Herb Grilled Chicken',
-              rate: 3,
-            }}
           />
+        </div>
       </div>
     )
   }
