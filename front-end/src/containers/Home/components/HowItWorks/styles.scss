@@ -25,11 +25,6 @@
   display: flex;
   flex-direction: column;
 
-  .div-how-it-works-step {
-    font-size: $medium-font-size;
-    text-align: left;
-  }
-
   .div-how-it-works-title {
     font-size: $extra-font-size;
     color: $text-black;
@@ -134,7 +129,7 @@
       top: unset;
       transform: translateX(-50%);
 
-      .div-how-it-works-step, .div-how-it-works-title, .div-how-it-works-description, .div-how-it-works-view-all-products {
+      .div-how-it-works-title, .div-how-it-works-description, .div-how-it-works-view-all-products {
         text-align: center;
       }
 

@@ -52,24 +52,25 @@
     align-items: center;
     line-height: 100%;
     height: 100%;
-    margin-left: 25px;
+    margin-left: 150px;
 
     span {
-      color: black;
-      opacity: 0.65;
+      color: #545954;
+      font-family: 'Montserrat-Medium';
       margin: 0 20px;
 
       &:hover {
-        color: #4C844E;
+        color: #4A724A;
       }
       &:active {
-        font-family: 'Montserrat-Medium';
+        font-family: 'Montserrat-SemiBold';
         letter-spacing: -0.2px;
       }
     }
 
     .div-link-selected {
       color: #4C844E;
+      font-family: 'Montserrat-SemiBold';
     }
   }
 

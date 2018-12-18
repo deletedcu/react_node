@@ -18,9 +18,6 @@ class HowItWorks extends Component {
 
     const textAndButtonContent = (
       <div className='div-how-it-works-center'>
-        <div className='div-how-it-works-step'>
-          { step }
-        </div>
         <div className='div-how-it-works-title'>
           { title }
         </div>
@@ -38,9 +35,6 @@ class HowItWorks extends Component {
     const responsiveHowItWorks = (
       <div className='responsive-div-how-it-works'>
         <div className='div-how-it-works-center'>
-          <div className='div-how-it-works-step'>
-            { step }
-          </div>
           { imageContent }
           <div className='div-how-it-works-title'>
             { title }
@@ -57,10 +51,10 @@ class HowItWorks extends Component {
       return (
         <div className={this.props.className} style={this.props.style}>
           <div className='div-how-it-works'>
-            <div className='div-how-it-works-left'>
+            <div className='div-how-it-works-left' style={{width: '40%'}}>
               { imageContent }
             </div>
-            <div className='div-how-it-works-right'>
+            <div className='div-how-it-works-right' style={{width: '60%'}}>
               { textAndButtonContent }
             </div>
           </div>
@@ -73,10 +67,10 @@ class HowItWorks extends Component {
       return (
         <div className={this.props.className} style={this.props.style}>
           <div className='div-how-it-works'>
-            <div className='div-how-it-works-left'>
+            <div className='div-how-it-works-left'  style={{width: '60%'}}>
               { textAndButtonContent }
             </div>
-            <div className='div-how-it-works-right'>
+            <div className='div-how-it-works-right'  style={{width: '40%'}}>
               { imageContent }
             </div>
           </div>
