@@ -10,8 +10,6 @@ import { updateUserProfile } from '../../../redux/actions/user'
 import { closeModal } from '../../../redux/actions/modal'
 
 import imgClose from '../../../assets/images/close_button.svg'
-import imgSwitchOff from '../../../assets/images/switch_off.svg'
-import imgSwitchOn from '../../../assets/images/switch_on.svg'
 import imgDownArrow from '../../../assets/images/down_arrow_green.svg'
 
 class EditProfileModal extends Component {
@@ -33,8 +31,6 @@ class EditProfileModal extends Component {
       state: '',
       zip: '',
       instructions: '',
-
-      leaveAtDoor: false,
     }
 
     if (props.type === 'Address') {
@@ -69,12 +65,6 @@ class EditProfileModal extends Component {
     })
   }
 
-  onToggleSwitch = () => {
-    this.setState({
-      leaveAtDoor: !this.state.leaveAtDoor,
-    })
-  }
-
   onSave = (e) => {
     e.preventDefault()
     
@@ -96,7 +86,7 @@ class EditProfileModal extends Component {
 
   render () {
     const { type } = this.props
-    const { firstName, lastName, phone, street, apartment, city, state, zip, instructions, leaveAtDoor } = this.state
+    const { firstName, lastName, phone, street, apartment, city, state, zip, instructions } = this.state
 
     return (
       <ModalContainer darkMode={true}>
@@ -169,15 +159,8 @@ class EditProfileModal extends Component {
             }
 
             <div className='buttons'>
-              <div className='div-switch clickable' style={{visibility: type === 'Address' ? 'visible' : 'hidden'}}>
-                <img src={leaveAtDoor ? imgSwitchOn : imgSwitchOff} alt='switch' onClick={this.onToggleSwitch}/>
-                <span>Leave at doorstep or front desk</span>
-              </div>
-
-              <div>
-                <Button type='submit' className='btn-save'>Save</Button>
-                <Button onClick={this.onClose} className='btn-cancel'>Cancel</Button>
-              </div>
+              <Button type='submit' className='btn-save'>Save</Button>
+              <Button onClick={this.onClose} className='btn-cancel'>Cancel</Button>
             </div>
           </form>
         </div>

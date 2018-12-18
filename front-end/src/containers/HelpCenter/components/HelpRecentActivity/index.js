@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import './styles.css'
 
 import imgPlus from '../../../../assets/images/plus_green.svg'
+import imgMinus from '../../../../assets/images/minus_green.svg'
 
 class HelpRecentActivity extends Component  {
 
@@ -28,7 +29,7 @@ class HelpRecentActivity extends Component  {
       <div className='help-recent-activity'>
         <div className='help-recent-activity-content'>
           <div className='help-recent-activity-question clickable' onClick={this.onOpenAnswer}>
-            <img src={imgPlus} style={{visibility: answerOpened ? 'hidden' : 'visible'}} alt='recommended'/>
+            <img src={ answerOpened ? imgMinus : imgPlus} alt='recommended'/>
             <span>{question}</span>
           </div>
           <div className='help-recent-activity-info'>{timestamp}</div>

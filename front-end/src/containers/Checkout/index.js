@@ -320,7 +320,7 @@ class Checkout extends Component {
                   </div>
                   <div className='div-checkout-address-special-instructions'>
                     <div className='div-special-instructions-title'><span>Special Instructions </span><span className='span-optional'>(OPTIONAL)</span></div>
-                    <div><input type='text' name='specialInstruction' value={this.state.specialInstruction} onChange={this.onChange} placeholder="e.g. Leave at the front desk"/></div>
+                    <div><input type='text' name='specialInstruction' value={this.state.specialInstruction} onChange={this.onChange}/></div>
                   </div>
                 </div>
 

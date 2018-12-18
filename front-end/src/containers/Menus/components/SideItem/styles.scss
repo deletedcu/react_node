@@ -39,23 +39,18 @@
     justify-content: space-between;
     padding: 20px 10px 20px 20px;
 
-    .div-side-item-price-add {
-      display: flex;
-      align-items: center;
+    .div-side-item-price {
+      font-size: 16px;
+      color: $text-light-gray;
+      margin-right: 20px;
+    }
 
-      .div-side-item-price {
-        font-size: 16px;
-        color: $text-light-gray;
-        margin-right: 20px;
-      }
-
-      .div-side-item-add {
-        color: $green-primary;
-        font-size: $mobile-regular-font-size;
-        padding: 5px 15px;
-        border: 1px solid $green-primary;
-        border-radius: 8px;
-      }
+    .div-side-item-add {
+      color: $green-primary;
+      font-size: $mobile-regular-font-size;
+      padding: 5px 15px;
+      border: 1px solid $green-primary;
+      border-radius: 8px;
     }
   }
 

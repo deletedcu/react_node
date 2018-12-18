@@ -131,23 +131,8 @@
 
     .buttons {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       margin-top: 24px;
-
-      .div-switch {
-        display: flex;
-        align-items: center;
-        margin-left: 20px;
-
-        img {
-          height: 24px;
-          margin-right: 10px;
-        }
-
-        span {
-          font-size: $mobile-small-font-size;
-        }
-      }
 
       .button {
         width: 90px;
