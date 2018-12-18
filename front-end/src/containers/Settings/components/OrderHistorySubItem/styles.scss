@@ -31,6 +31,11 @@
         font-family: 'Montserrat-SemiBold';
         margin-left: 15px;
       }
+
+      .span-subitem-rate {
+        display: none;
+        margin-top: 5px;
+      }
     }
   }
 
@@ -39,5 +44,42 @@
     height: 30px;
     border-radius: 0;
     font-size: $mobile-regular-font-size;
+  }
+
+  @media (max-width: 710px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .order-history-subitem-info {
+      .img-subitem {
+        width: 76px;
+        height: 76px;
+        border-radius: 38px;
+      }
+
+      .order-history-subitem-detail {
+        margin-top: 0;
+        line-height: 20px;
+
+        .span-subitem-name {
+          font-size: $mobile-regular-font-size;
+        }
+
+        .span-subitem-options, .span-subitem-quantity {
+          margin-left: 0;
+          font-size: $mobile-regular-font-size - 2;
+        }
+
+        .span-subitem-rate {
+          display: block;
+          color: $green-primary;
+          font-size: $mobile-regular-font-size;
+        }
+      }
+    }
+
+    .btn-rate {
+      display: none;
+    }
   }
 }

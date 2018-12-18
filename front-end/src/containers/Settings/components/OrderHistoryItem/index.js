@@ -33,6 +33,7 @@ class OrderHistoryItem extends Component {
 
     return (
       <div className='order-history-item'>
+        {/* Desktop mode */}
         <div className='order-history-main'>
           <div className='order-history-item-name'>
             <LazyImage className='img-item clickable' src={imgPlaceholder} onClick={this.onToggleSubItems}/>
@@ -53,6 +54,20 @@ class OrderHistoryItem extends Component {
 
           <div className='order-history-item-total'>
             $29.95
+          </div>
+        </div>
+
+        {/* Responsive mode */}
+        <div className='order-history-main-responsive'>
+          <LazyImage className='img-item clickable' src={imgPlaceholder} onClick={this.onToggleSubItems}/>
+          <div className='order-history-main-responsive-info'>
+            <div>
+              <span className='span-number-title'>Order Number</span>
+              <span className='span-price'>$29.95</span>
+            </div>
+            <span className='span-number'>R970777368</span>
+            <span className='span-cancel clickable' onClick={this.onCancel}>Cancel</span>
+            <span className='span-date'>Order Placed : Dec 17 2018</span>
           </div>
         </div>
 

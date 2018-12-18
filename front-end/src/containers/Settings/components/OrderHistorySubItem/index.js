@@ -23,6 +23,7 @@ class OrderHistorySubItem extends Component {
             <span className='span-subitem-name'>The Breakfast Platter</span>
             <span className='span-subitem-options'>Options: No Carbs, Gluten</span>
             <span className='span-subitem-quantity'>Quantity: 1</span>
+            <span className='span-subitem-rate clickable' onClick={this.onRate}>Rate</span>
           </div>
         </div>
 

@@ -10,11 +10,7 @@ class HowItWorks extends Component {
   }
 
   render () {
-    const imageFirst = this.props.imageFirst
-    const image = this.props.image
-    const step = this.props.step
-    const title = this.props.title
-    const description = this.props.description
+    const { imageFirst, image, title, description } = this.props
 
     const textAndButtonContent = (
       <div className='div-how-it-works-center'>

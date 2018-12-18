@@ -4,6 +4,10 @@
   padding: 45px 0;
   border-bottom: 1px solid #92A493;
 
+  .order-history-main-responsive {
+    display: none;
+  }
+
   .order-history-main {
     display: flex;
     font-size: $small-font-size;
@@ -61,4 +65,66 @@
     margin-left: 120px;
     margin-top: 30px;
   }
+
+  @media (max-width: 1024px) {
+    .order-history-sub {
+      margin-left: 50px;
+    }
+  }
+
+  @media (max-width: 710px) {
+    border-bottom-color: #DEDEDE;
+    padding: 20px 0;
+
+    .order-history-main {
+      display: none;
+    }
+
+    .order-history-sub {
+      margin-left: 30px;
+    }
+
+    .order-history-main-responsive {
+      display: flex;
+
+      .img-item {
+        width: 83px;
+        height: 83px;
+        border-radius: 42px;
+        margin-right: 20px;
+      }
+
+      .order-history-main-responsive-info {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        font-size: $mobile-regular-font-size;
+        color: #707070;
+        line-height: 24px;
+
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .span-number-title {
+          font-family: 'Montserrat-SemiBold';
+          color: #393838;
+        }
+        .span-cancel {
+          color: $green-primary;
+        }
+        .span-date {
+          font-family: 'Montserrat-Medium';
+        }
+        .span-price {
+          font-family: 'Montserrat-Medium';
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+
 }
