@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   padding: 54px 38px 24px;
+  overflow: hidden;
   
   .img-item {
     margin: 0 -38px;
@@ -114,6 +115,62 @@
       .btn-cancel {
         background-color: #F6F6F6;
         color: $text-light-gray;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 15px 25px;
+
+    .img-item {
+      margin: 0 -15px;
+    }
+  }
+
+  @media (max-width: 710px) {
+    .img-item {
+      height: 315px;
+    }
+
+    .meal-preference-item-name {
+      padding-top: 28px;
+
+      .img-flag {
+        height: 20px;
+      }
+
+      .span-name {
+        font-size: $mobile-regular-font-size;
+      }
+    }
+
+    .meal-preference-item-description {
+      font-size: $mobile-small-font-size;
+      line-height: 20px;
+    }
+
+    .span-edit {
+      font-size: $mobile-regular-font-size;
+    }
+
+    .meal-preference-item-edit-section {
+      .span-description {
+        font-size: $mobile-small-font-size;
+        line-height: 15px;
+      }
+  
+      .meal-preference-item-edit-options {
+        padding: 15px 5px 5px;
+        
+        .meal-preference-item-edit-options-title {
+          font-size: $mobile-regular-font-size;
+        }
+  
+        .meal-preference-item-edit-options-grid {
+          margin-left: 10px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
       }
     }
   }

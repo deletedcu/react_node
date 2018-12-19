@@ -22,4 +22,15 @@
   .meal-preference-option-selected {
     background-color: $green-primary;
   }
+
+  @media (max-width: 710px) {
+    .meal-preference-option-circle {
+      width: 10px;
+      height: 10px;
+    }
+
+    .meal-preference-option-text {
+      // font-size: $mobile-small-font-size;
+    }
+  }
 }
