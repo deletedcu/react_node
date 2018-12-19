@@ -3,6 +3,7 @@
 .div-payment-methods-container {
   background-color: white;
   color: $text-light-gray;
+  margin-top: -50px;
 
   .div-connected-payment-methods {
     display: flex;
@@ -10,19 +11,27 @@
     align-items: center;
 
     .payment-method-info {
-      padding: 50px 0;
+      margin-bottom: 40px;
     }
   }
 
   .div-add-card {
-    margin-top: 120px;
+    margin-top: 10px;
     text-align: center;
 
     .btn-add-card {
-      width: 267px;
-      height: 52px;
-      border-radius: 26px;
-      font-size: $small-font-size;
+      width: 355px;
+      height: 53px;
+      border-radius: 10px;
+      font-size: $mobile-regular-font-size;
+      color: $text-light-gray;
+      border: 1px solid #818181;
+      background-color: transparent;
+
+      img {
+        height: 20px;
+        margin-right: 10px;
+      }
     }
   }
 

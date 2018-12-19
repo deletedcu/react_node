@@ -2,6 +2,7 @@
 
 .card-info-modal {
   position: absolute;
+  width: 450px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -9,21 +10,21 @@
   flex-direction: column;
   background: white;
   border: 0.5px solid $text-light-gray;
-  border-radius: 30px;
+  border-radius: 24px;
   box-shadow: $shadow-secondary;
-  padding: 30px 60px 40px;
+  padding: 30px 50px 30px;
 
   .card-close {
     .img-close {
-      height: 20px;
+      height: 18px;
       float: right;
+      margin-right: -30px;
     }
   }
   
 
   .card-info-title {
     color: $text-light-gray;
-    margin-left: 5px;
   }
 
   .card-info {
@@ -40,7 +41,7 @@
       border: 1px solid $light-green-primary;
       border-radius: 2px;
       color: $text-light-gray;
-      font-size: $small-font-size;
+      font-size: $mobile-regular-font-size;
       caret-color: $green-primary;
       margin-top: 5px;
       padding: 10px;
@@ -56,7 +57,7 @@
             border: none;
             margin-top: 5px;
             padding: 0;
-            font-size: $small-font-size;
+            font-size: $mobile-regular-font-size;
           }
           .credit-card-input {
             min-width: unset;
@@ -74,10 +75,10 @@
     margin-top: 30px;
 
     .btn-save {
-      width: 129px;
-      height: 52px;
-      border-radius: 26px;
-      font-size: $small-font-size;
+      width: 100px;
+      height: 37px;
+      border-radius: 6px;
+      font-size: $mobile-regular-font-size;
       float: right;
     }
   }

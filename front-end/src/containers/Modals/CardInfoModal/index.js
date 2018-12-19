@@ -17,6 +17,7 @@ class CardInfoModal extends Component {
 
     this.state = {
       cardName: '',
+      cardHolderName: '',
       cardNumber: '',
       cardExpiry: '',
       cardCVC: '',
@@ -57,7 +58,7 @@ class CardInfoModal extends Component {
 
   render () {
     return (
-      <ModalContainer>
+      <ModalContainer darkMode={true}>
         <div className='card-info-modal' onClick={(e)=>e.stopPropagation()}>
           <div className='card-close'>
             <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
@@ -81,6 +82,11 @@ class CardInfoModal extends Component {
                 containerStyle={{width: '100%'}}
               />
             </div>
+          </div>
+
+          <div className='card-info'>
+            <span>Card Holder's Name</span>
+            <input className='input-name' type='text' name='cardHolderName' value={this.state.cardHolderName} onChange={this.onChange}/>
           </div>
 
           <div className='card-info-save'>

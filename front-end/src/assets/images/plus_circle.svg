@@ -1,0 +1,15 @@
+<svg id="baseline-add_circle_outline-24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #707070;
+      }
+    </style>
+  </defs>
+  <path id="Path_365" data-name="Path 365" class="cls-1" d="M0,0H20V20H0Z"/>
+  <path id="Path_366" data-name="Path 366" class="cls-2" d="M10.8,6H9.2V9.2H6v1.6H9.2V14h1.6V10.8H14V9.2H10.8ZM10,2a8,8,0,1,0,8,8A8,8,0,0,0,10,2Zm0,14.4A6.4,6.4,0,1,1,16.4,10,6.408,6.408,0,0,1,10,16.4Z"/>
+</svg>

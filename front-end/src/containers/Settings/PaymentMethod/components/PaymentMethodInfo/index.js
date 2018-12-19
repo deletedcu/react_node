@@ -1,36 +1,68 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import RadioButton from '../../../../../components/RadioButton'
 import './styles.css'
 
-import imgCard from '../../../../../assets/images/master_card.svg'
+import imgPaypal from '../../../../../assets/images/paypal.svg'
+import imgMasterCard from '../../../../../assets/images/mastercard.svg'
+import imgVisaCard from '../../../../../assets/images/visacard.svg'
+
+export const PaymentMethodType = {
+  paypal: 0,
+  masterCard: 1,
+  visaCard: 2, 
+}
 
 class PaymentMethodInfo extends Component {
 
-  onCheckChange = (checked) => {
-    this.props.onCheckChange(checked)
+  onRemove = () => {
+
   }
 
   render () {
-    const { underline, checked } = this.props
+    const { type } = this.props
+    let paymentMethodTitle = ''
+    let image = null
+    let colorClass = ''
+
+    switch (type) {
+      case PaymentMethodType.paypal:
+        paymentMethodTitle = 'PayPal'
+        image = imgPaypal
+        colorClass = 'blue'
+      break
+      case PaymentMethodType.masterCard:
+        paymentMethodTitle = 'Mastercard'
+        image = imgMasterCard
+        colorClass = 'orange'
+      break
+      case PaymentMethodType.visaCard:
+        paymentMethodTitle = 'VISA'
+        image = imgVisaCard
+        colorClass = 'cyan'
+      break
+      default:
+        paymentMethodTitle = 'PayPal'
+        image = imgPaypal
+        colorClass = 'blue'
+    }
 
     return (
-      <div className={classNames('payment-method-info', {'payment-method-info-underlined' : underline})}>
-        <RadioButton
-          checked={ checked }
-          onCheckChange={ this.onCheckChange }
-        />
-
-        <div style={{display: 'flex'}}>
-          <img className='img-card' src={imgCard} alt='card'/>
-          <div className='div-card-number-expiry'>
-            <div className='div-card-number'>・・・・ 4877</div>
-            <div className='div-card-expiry'>Expires 7/2017</div>
-          </div>
+      <div className='payment-method-info'>
+        <div className={classNames('payment-method-info-title', colorClass)}>
+          <span>{paymentMethodTitle}</span>
         </div>
-        
 
-        <div className='div-remove clickable'>Remove</div>
+        <div className='payment-method-info-content'>
+          <div className='div-image-wrapper'>
+            <img className={classNames('img-payment-method', {'img-payment-method-long': type === PaymentMethodType.paypal})} src={image} alt='card'/>
+          </div>
+          
+          <div>
+
+          </div>
+          
+          <span className='span-remove clickable' onClick={this.onRemove}>Remove</span>
+        </div>
       </div>
     )
   }

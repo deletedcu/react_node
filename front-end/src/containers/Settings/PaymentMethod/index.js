@@ -1,46 +1,38 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Button from '../../../components/Button'
-import PaymentMethodInfo from './components/PaymentMethodInfo'
+import PaymentMethodInfo, { PaymentMethodType } from './components/PaymentMethodInfo'
+
 import './styles.css'
+import imgPlus from '../../../assets/images/plus_circle.svg'
 
 import { showModal, ModalType } from '../../../redux/actions/modal'
 
 class PaymentMethod extends Component {
 
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      selectedIndex: 0,
-    }
-  }
-
   onAddCard = () => {
     this.props.dispatch(showModal(ModalType.cardInfoModal))
   }
 
-  onSelectionChange = (index) => {
-    this.setState({
-      selectedIndex: index,
-    })
-  }
-
   render () {
-    const { selectedIndex } = this.state
-
     return (
       <div className='div-payment-methods-container'>
         {/* Form fields */}
         <div className='div-connected-payment-methods'>
-          <PaymentMethodInfo underline={true} checked={selectedIndex === 0} onCheckChange={() => {this.onSelectionChange(0)}}/>
-          <PaymentMethodInfo underline={true} checked={selectedIndex === 1} onCheckChange={() => {this.onSelectionChange(1)}}/>
-          <PaymentMethodInfo underline={false} checked={selectedIndex === 2} onCheckChange={() => {this.onSelectionChange(2)}}/>
+          <PaymentMethodInfo
+            type={ PaymentMethodType.paypal }
+          />
+          <PaymentMethodInfo
+            type={ PaymentMethodType.masterCard }
+          />
+          <PaymentMethodInfo
+            type={ PaymentMethodType.visaCard }
+          />
         </div>
 
         {/* Save button */}
         <div className='div-add-card'>
-          <Button className='btn-add-card' onClick={ this.onAddCard }>Add Credit/Debit Card</Button>
+          <Button className='btn-add-card' onClick={ this.onAddCard }><img src={imgPlus} alt='plus'/><span>Add Credit/Debit Card</span></Button>
         </div>
       </div>
     )
