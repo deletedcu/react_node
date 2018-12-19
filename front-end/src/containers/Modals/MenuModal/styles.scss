@@ -173,10 +173,13 @@
 
         .div-ingredients-list-title {
           color: #080808;
+          margin-bottom: 10px;
         }
 
-        .checkbox {
-          margin-top: 20px;
+        .div-ingredients {
+          color: $text-light-gray;
+          font-size: $small-font-size;
+          margin-right: 5px;
         }
       }
 
@@ -389,8 +392,8 @@
           .div-ingredients-list-title {
             font-size: $mobile-regular-font-size;
           }
-          .checkbox {
-            margin-top: 10px;
+          .div-ingredients {
+            font-size: $mobile-small-font-size;
           }
         }
 

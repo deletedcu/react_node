@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
+import ReactHtmlParser from 'react-html-parser'
 import LazyImage from '../../../components/LazyImage'
 import MenuThumbnailList from './component/MenuThumbnailList'
 import IncrementCounter from './component/IncrementCounter'
 import Button from '../../../components/Button'
-import Checkbox, { CheckboxType } from '../../../components/Checkbox'
 import ModalContainer from '../../../components/ModalContainer'
 import ExpandableDescription from './component/ExpandableDescription'
 import HorizontalSelectionGrid from '../../../components/HorizontalSelectionGrid'
@@ -95,7 +95,8 @@ class MenuModal extends Component {
 
   render () {
     const { item, currentImageIndex } = this.state
-    const thumbnailUrls = [item.main_image].concat(item.files);
+    const thumbnailUrls = [item.main_image].concat(item.files)
+    const ingredients = '<b>Marinara Sauce</b> (Diced Tomatoes (Tomatoes, Tomato Juice, Citric Acid, Calcium Chloride), Tomato Puree (Water, Tomato Paste), Onions, Tapioca Starch, Spices, Garlic, Honey, Olive Oil, Sea Salt, Salt, Citric Acid), Penne (Water, Brown Rice Flour, Potato Starch, Tapioca Starch, Whole Egg, Egg White, Salt, Xanthan Gum), <b>Ground Beef, Onion, Tomato Paste</b> (Tomatoes, Salt, Citric Acid), Carrots, Celery, Asiago Cheese (Pasteurized Milk, Cultures, Salt, Enzymes, Powdered Cellulose (To Prevent Caking), Natamycin (A Natural Mold Inhibitor)), <b>Parmesan Cheese</b> (Pasteurized Milk, Cheese Cultures, Salt, Enzymes, Powdered Cellulose (Added To Prevent Caking)), Oil (Expeller Pressed Canola Oil, Extra Virgin Olive Oil), <b>Garlic, Spices, Sea Salt.</b><br/><br/><b>Contains: Egg, Milk.</b><br/><br/>Gluten Free Certified'
 
     return (
       <ModalContainer>
@@ -169,17 +170,15 @@ class MenuModal extends Component {
                 { item.description }
               </ExpandableDescription>
 
-              {/* Additional */}
+              {/* Ingredients */}
               { item.type === 'menu' &&
                 <div className='div-ingredients-list'>
                   <div className='div-ingredients-list-title'> 
                     Ingredients
                   </div>
-                  <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>a) Fries</Checkbox>
-                  <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>b) Sour Cream & Chive Potato</Checkbox>
-                  <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>c) Potato</Checkbox>
-                  <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>d) Sour Cream & Chive Potato</Checkbox>
-                  <Checkbox type={CheckboxType.round} onCheckChange={ () => {} }>e) Fries </Checkbox>
+                  <div className='div-ingredients'>
+                    { ReactHtmlParser(ingredients) }
+                  </div>
                 </div>
               }
 
