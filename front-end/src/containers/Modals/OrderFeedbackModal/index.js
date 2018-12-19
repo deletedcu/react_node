@@ -8,7 +8,7 @@ import './styles.css'
 
 import { closeModal } from '../../../redux/actions/modal'
 
-import imgClose from '../../../assets/images/close_button.svg'
+import imgCheck from '../../../assets/images/checkmark.svg'
 
 class OrderFeedbackModal extends Component {
 
@@ -16,9 +16,8 @@ class OrderFeedbackModal extends Component {
     super(props)
 
     this.state = {
-      foodRate: 0,
-      deliveryRate: 0,
-      specialRequest: '',
+      rate: 0,
+      feedback: '',
     }
   }
 
@@ -26,15 +25,9 @@ class OrderFeedbackModal extends Component {
     this.props.dispatch(closeModal())
   }
 
-  onChangeFoodRate = (rate) => {
+  onChangeRate = (rate) => {
     this.setState({
-      foodRate: rate,
-    })
-  }
-
-  onChangeDeliveryRate = (rate) => {
-    this.setState({
-      deliveryRate: rate,
+      rate: rate,
     })
   }
 
@@ -52,38 +45,28 @@ class OrderFeedbackModal extends Component {
     return (
       <ModalContainer darkMode={true}>
         <div className='order-feedback-modal' onClick={(e)=>e.stopPropagation()}>
-          <div className='order-feedback-close'>
-            <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
+          <div className='order-feedback-header-section'>
+            <div className='order-feedback-title'>Order Feedback</div>
+            <div className='order-feedback-subtitle'>Let us know how we did! Feedback will be saved for future meals, and used to improve your experience.</div>
+            <Rate
+              character={<div className='img-star'/>}
+              onChange={this.onChangeRate}
+            />
           </div>
 
-          <div className='order-feedback-title'>Order Feedback</div>
-
-          <div className='order-feedback-rates'>
-            <div className='order-feedback-rate'>
-              <div className='order-feedback-rate-title'>How was the food?</div>
-              <Rate
-                character={<div className='img-star'/>}
-                onChange={this.onChangeFoodRate}
-              />
-            </div>
-            <div className='order-feedback-rate'>
-              <div className='order-feedback-rate-title'>How was your delivery?</div>
-              <Rate
-                character={<div className='img-star'/>}
-                onChange={this.onChangeDeliveryRate}
-              />
-            </div>
+          <div>
+            <textarea className='text-feedback' name='feedback' value={this.state.feedback} onChange={this.onChange} placeholder='Let us know more...'/>
           </div>
 
-          <div className='order-feedback-special-request'>
-            <div className='order-feedback-special-request-title'>Comment</div>
-            <textarea name='specialRequest' value={this.state.specialRequest} onChange={this.onChange}></textarea>
-            <div className='order-feedback-special-request-hint'>
-              * Your feedback is highly appreciated and will help us to improve our ability to serve you and recommend meals you prefer in the future.
+          <div className='order-feedback-bottom-section'>
+            <div className='order-feedback-check'>
+              <img src={imgCheck} alt='check'/>
+              <div>
+                <div className='order-feedback-check-title'>Allow us to reply</div>
+                <div className='order-feedback-check-subtitle'>Your email will not be revealed</div>
+              </div>
             </div>
-          </div>
-
-          <div className='div-submit'>
+            
             <Button className='btn-submit' onClick={this.onSubmit}>Submit</Button>
           </div>
         </div>
