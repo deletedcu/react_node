@@ -203,7 +203,7 @@ class MenuModal extends Component {
                 <div className='div-special-instructions-title'>
                   Special Instructions
                 </div>
-                <textarea name='specialInstructions' className='input-special-instructions' placeholder='I am alergic to banana' value={this.state.specialInstructions} onChange={ this.onChange }/>
+                <textarea name='specialInstructions' className='input-special-instructions' value={this.state.specialInstructions} onChange={ this.onChange }/>
               </div>
 
               { item.type === 'menu' && !this.state.descriptionScrolled && <div className='div-opacity-layer-bottom'/> }
