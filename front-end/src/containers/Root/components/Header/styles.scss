@@ -31,8 +31,8 @@
     display: flex;
     align-items: center;
     float: left;
-    margin-top: 16px;
-    margin-left: 50px;
+    margin-top: 24px;
+    margin-left: 40px;
 
     .div-separator {
       width: 1px;
@@ -41,7 +41,6 @@
       margin-right: 60px;
     }
     .div-help-center-title {
-      font-size: 25px;
       font-family: 'Montserrat-Bold';
     }
   }
@@ -52,15 +51,16 @@
     align-items: center;
     line-height: 100%;
     height: 100%;
-    margin-left: 150px;
+    margin-left: 20px;
 
     span {
-      color: #545954;
+      color: #58595E;
+      font-size: $small-font-size;
       font-family: 'Montserrat-Medium';
-      margin: 0 20px;
+      margin: 0 16px;
 
       &:hover {
-        color: #4A724A;
+        color: #3B9A0A;
       }
       &:active {
         font-family: 'Montserrat-SemiBold';
@@ -69,7 +69,7 @@
     }
 
     .div-link-selected {
-      color: #4C844E;
+      color: #3B9A0A;
       font-family: 'Montserrat-SemiBold';
     }
   }

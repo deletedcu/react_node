@@ -61,22 +61,20 @@ class Header extends Component {
 
         { !pathName.includes('auth/signup') && !pathName.includes('help-center') && !pathName.includes('terms-of-service') &&
           <div className='div-links'>
-            <Link to='/menus'><span className={classNames('clickable', {'div-link-selected': pathName.includes('menus')})}>On The Menu</span></Link>
-            <Link to='/how-it-works'><span className={classNames('clickable', {'div-link-selected': pathName.includes('how-it-works')})}>Pricing</span></Link>
-            <Link to='/gift-cards'><span className={classNames('clickable', {'div-link-selected': pathName.includes('gift-cards')})}>Gifts</span></Link>
+            <Link to='/menus'><span className={classNames('clickable', {'div-link-selected': pathName.includes('menus')})}>ON THE MENU</span></Link>
+            <Link to='/how-it-works'><span className={classNames('clickable', {'div-link-selected': pathName.includes('how-it-works')})}>PRICING</span></Link>
+            <Link to='/gift-cards'><span className={classNames('clickable', {'div-link-selected': pathName.includes('gift-cards')})}>GIFTS</span></Link>
           </div>
         }
 
         { pathName.includes('help-center') && 
           <div className='div-help-center-banner'>
-            <div className='div-separator'/>
             <div className='div-help-center-title'>Help Center</div>
           </div>
         }
 
         { pathName.includes('terms-of-service') && 
           <div className='div-help-center-banner'>
-            <div className='div-separator'/>
             <div className='div-help-center-title'>Legal</div>
           </div>
         }

@@ -67,6 +67,7 @@ class Root extends Component {
 
   render () {
     const { history, sideBar, location, overlaySpinner } = this.props
+    const shouldShowFooter = !(location.pathname.includes('help-center') || location.pathname.includes('checkout') || location.pathname.includes('auth/signup'))
 
     return (
       <Sidebar
@@ -92,8 +93,12 @@ class Root extends Component {
               </div>
         
               {/* Footer */}
-              <Footer history={history}/>
-              <DropdownFooter/> {/* For responsive mode */}
+              { shouldShowFooter &&
+                <Footer history={history}/>
+              }
+              { shouldShowFooter &&
+                <DropdownFooter/>
+              }
         
               {/* Modal */}
               <Modal history={history} pathName={location.pathname}/>

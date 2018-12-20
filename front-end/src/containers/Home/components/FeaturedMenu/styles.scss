@@ -29,9 +29,11 @@
       flex-direction: column;
       justify-content: space-between;
       flex-grow: 1;
+      font-size: $small-font-size;
   
       .div-featured-menu-name {
         text-align: left;
+        font-family: 'Montserrat-Bold';
       }
   
       .div-featured-menu-more-detail {

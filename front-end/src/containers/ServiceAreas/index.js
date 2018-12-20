@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import LazyImage from '../../components/LazyImage'
 import Button from '../../components/Button'
+import BottomForm from '../Home/components/BottomForm'
 
 import './styles.css'
-
-import imgBanner from '../../assets/images/banner.png'
 
 const serviceAreas = [
   'Alameda',
@@ -83,7 +81,6 @@ class ServiceAreas extends Component {
       <div className='div-service-area-container'>
         {/* Banner and Title */}
         <div className='div-service-area-banner'>
-          <LazyImage className='img-banner' src={ imgBanner } disableSpinner={true} />
           <div className='div-service-area-title'>
             Check availability in your Area
           </div>
@@ -95,7 +92,7 @@ class ServiceAreas extends Component {
 
         {/* Service area grid */}
         <div className='div-service-areas container'>
-          <div className='div-service-areas-title'>Some cities we service ..</div>
+          <div className='div-service-areas-title'>Some cities we service:</div>
           <div className='div-service-areas-grid'>
             { 
               serviceAreas.map((serviceArea, index) => {
@@ -103,6 +100,12 @@ class ServiceAreas extends Component {
               })
             }
           </div>
+        </div>
+
+        {/* Bottom */}
+        <div className='div-service-area-bottom'>
+          <div className='div-separator'/>
+          <BottomForm/>
         </div>
       </div>
     )
