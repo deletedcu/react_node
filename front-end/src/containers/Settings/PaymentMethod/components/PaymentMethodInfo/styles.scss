@@ -39,6 +39,7 @@
 
     .div-image-wrapper {
       width: 80px;
+      text-align: center;
       
       .img-payment-method {
         width: 40px;
@@ -46,6 +47,24 @@
   
       .img-payment-method-long {
         width: 80px;
+      }
+    }
+
+    .div-secret-form {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      margin-left: 40px;
+
+      .img-password {
+        width: 40px;
+        margin-right: 30px;
+      }
+
+      span {
+        margin-right: 30px;
+        font-size: $small-font-size;
+        font-family: 'Montserrat-Medium';
       }
     }
     
