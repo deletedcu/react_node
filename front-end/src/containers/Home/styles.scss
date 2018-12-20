@@ -108,6 +108,14 @@
 
     .how-it-works-track {
       margin-top: 50px;
+
+      .div-how-it-works .div-how-it-works-right .div-how-it-works-center {
+        margin-left: 20%;
+
+        @media (max-width: 1024px) {
+          margin-left: 10%;
+        }
+      }
     }
 
     .how-it-works-receive {

@@ -108,45 +108,43 @@ class EditProfileModal extends Component {
               </div>
             </div>
 
+            <div className='form-double-inputs'>
+              <div id='input_street' className='form-input'>
+                <div className='form-input-name'>Delivery Address</div>
+                <input required type='text' name='street' value={street} onChange={this.onChange}/>
+              </div>
+              <div id='input_apartment' className='form-input'>
+                <div className='form-input-name'>Apartment Number</div>
+                <input required type='text' name='apartment' value={apartment} onChange={this.onChange}/>
+              </div>
+            </div>
+
+            <div className='form-double-inputs'>
+              <div id='input_city' className='form-input'>
+                <div className='form-input-name'>City</div>
+                <input required type='text' name='city' value={city} onChange={this.onChange}/>
+              </div>
+
+              <div id='input_state' className='form-input'>
+                <div className='form-input-name'>State</div>
+                <SelectUSState id='stateSelector' className='select-us-state' value={state} onChange={ this.onSelectState }/>
+                <img src={imgDownArrow} alt='arrow'/>
+              </div>
+
+              <div id='input_zip' className='form-input'>
+                <div className='form-input-name'>Zip Code</div>
+                <input required type='text' name='zip' value={zip} onChange={this.onChange}/>
+              </div>
+            </div>
+
             <div className='form-input'>
               <div className='form-input-name'>Phone Number</div>
               <input type='tel' name='phone' value={phone} onChange={this.onChange}/>
             </div>
 
-            <div>
-              <div className='form-double-inputs'>
-                <div id='input_street' className='form-input'>
-                  <div className='form-input-name'>Delivery Address</div>
-                  <input required type='text' name='street' value={street} onChange={this.onChange}/>
-                </div>
-                <div id='input_apartment' className='form-input'>
-                  <div className='form-input-name'>Apartment Number</div>
-                  <input required type='text' name='apartment' value={apartment} onChange={this.onChange}/>
-                </div>
-              </div>
-
-              <div className='form-double-inputs'>
-                <div id='input_city' className='form-input'>
-                  <div className='form-input-name'>City</div>
-                  <input required type='text' name='city' value={city} onChange={this.onChange}/>
-                </div>
-
-                <div id='input_state' className='form-input'>
-                  <div className='form-input-name'>State</div>
-                  <SelectUSState id='stateSelector' className='select-us-state' value={state} onChange={ this.onSelectState }/>
-                  <img src={imgDownArrow} alt='arrow'/>
-                </div>
-
-                <div id='input_zip' className='form-input'>
-                  <div className='form-input-name'>Zip Code</div>
-                  <input required type='text' name='zip' value={zip} onChange={this.onChange}/>
-                </div>
-              </div>
-
-              <div className='form-input'>
-                <div className='form-input-name'>Special Delivery Instructions</div>
-                <textarea name='instructions' value={instructions} onChange={this.onChange}/>
-              </div>
+            <div className='form-input'>
+              <div className='form-input-name'>Special Delivery Instructions</div>
+              <textarea name='instructions' value={instructions} onChange={this.onChange}/>
             </div>
 
             <div className='buttons'>

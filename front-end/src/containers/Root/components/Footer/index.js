@@ -7,7 +7,6 @@ import FooterLanguageButton from './components/FooterLanguageButton'
 import './styles.css'
 
 import imgAdvertise from '../../../../assets/images/work-briefcase.svg'
-import imgCoin from '../../../../assets/images/mealpost_coin.svg'
 import imgGiftCard from '../../../../assets/images/giftbox.svg'
 import imgHelp from '../../../../assets/images/help.svg'
 import imgLogo from '../../../../assets/images/logo_footer.svg'
@@ -42,11 +41,6 @@ class Footer extends Component {
             title='Advertise'
             hasSeparator={true}
             onClick={this.onAdvertise}
-          />
-          <FooterTopSectionButton
-            image={imgCoin}
-            title='Mealpost Coin'
-            hasSeparator={true}
           />
           <FooterTopSectionButton
             image={imgGiftCard}

@@ -12,7 +12,7 @@
       }
 
       span {
-        font-size: $regular-font-size;
+        font-size: $small-font-size;
       }
 
       .span-highlighted {
@@ -33,7 +33,7 @@
     width: 285px;
     height: 200px;
     margin-left: -100px;
-    margin-top: 5px;
+    margin-top: 12px;
     padding-top: 18px;
     animation-name: dropdown-animation;
     animation-duration: 0.5s;

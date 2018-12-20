@@ -9,6 +9,7 @@ import './styles.css'
 import { closeModal } from '../../../redux/actions/modal'
 
 import imgCheck from '../../../assets/images/checkmark.svg'
+import imgCheckHighlight from '../../../assets/images/checkmark_highlight.svg'
 
 class OrderFeedbackModal extends Component {
 
@@ -18,6 +19,7 @@ class OrderFeedbackModal extends Component {
     this.state = {
       rate: 0,
       feedback: '',
+      replyAllowed: false,
     }
   }
 
@@ -37,11 +39,19 @@ class OrderFeedbackModal extends Component {
     })
   }
 
+  onToggleCheck = () => {
+    this.setState({
+      replyAllowed: !this.state.replyAllowed,
+    })
+  }
+
   onSubmit = () => {
     this.props.dispatch(closeModal())
   }
 
   render () {
+    const { replyAllowed } = this.state
+
     return (
       <ModalContainer darkMode={true}>
         <div className='order-feedback-modal' onClick={(e)=>e.stopPropagation()}>
@@ -60,7 +70,7 @@ class OrderFeedbackModal extends Component {
 
           <div className='order-feedback-bottom-section'>
             <div className='order-feedback-check'>
-              <img src={imgCheck} alt='check'/>
+              <img className='clickable' src={replyAllowed ? imgCheckHighlight : imgCheck} alt='check' onClick={this.onToggleCheck}/>
               <div>
                 <div className='order-feedback-check-title'>Allow us to reply</div>
                 <div className='order-feedback-check-subtitle'>Your email will not be revealed</div>

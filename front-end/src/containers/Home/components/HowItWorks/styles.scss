@@ -102,12 +102,6 @@
 
   @media (max-width: 710px) {
     width: 100%;
-
-    .btn-all-products {
-      font-size: $small-font-size;
-      height: 60px;
-      width: 100%;
-    }
   }
 }
 
@@ -147,6 +141,7 @@
         height: 30px;
         margin-left: 50%;
         transform: translateX(-50%);
+        font-size: $mobile-small-font-size;
       }
     }
 
