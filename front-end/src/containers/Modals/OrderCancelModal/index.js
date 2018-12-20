@@ -6,7 +6,7 @@ import './styles.css'
 
 import { closeModal } from '../../../redux/actions/modal'
 
-import imgClose from '../../../assets/images/close_button.svg'
+// import imgClose from '../../../assets/images/close_button.svg'
 
 class OrderCancelModal extends Component {
 
@@ -25,9 +25,9 @@ class OrderCancelModal extends Component {
       <ModalContainer darkMode={true}>
         <div className='order-cancel-modal' onClick={(e)=>e.stopPropagation()}>
           {/* Header */}
-          <div className='order-cancel-close'>
+          {/* <div className='order-cancel-close'>
             <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
-          </div>
+          </div> */}
           <div className='order-cancel-title'>Cancel Order</div>
           <div className='separator'/>
 

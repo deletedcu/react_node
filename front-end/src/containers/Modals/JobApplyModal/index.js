@@ -5,7 +5,7 @@ import Button from '../../../components/Button'
 import Checkbox, { CheckboxType } from '../../../components/Checkbox'
 
 import './styles.css'
-import imgClose from '../../../assets/images/close_button_transparent.svg'
+import imgClose from '../../../assets/images/close_button.svg'
 import imgPrev from '../../../assets/images/prev.svg'
 import imgNext from '../../../assets/images/next.svg'
 

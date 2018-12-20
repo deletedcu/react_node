@@ -5,15 +5,15 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 1024px;
+  width: 958px;
   margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   background: white;
   border: 0.5px solid $text-light-gray;
-  border-radius: 30px;
+  border-radius: 6px;
   box-shadow: $shadow-secondary;
-  padding: 20px 35px 30px 60px;
+  padding: 35px 60px 35px 70px;
   color: $text-light-gray;
 
   .order-cancel-close {
@@ -55,11 +55,11 @@
   .buttons {
     display: flex;
     justify-content: flex-end;
-    margin-top: 50px;
+    margin-top: 40px;
 
     .button {
       height: 35px;
-      border-radius: 10px;
+      border-radius: 2px;
       font-size: 15px;
       box-shadow: unset;
     }

@@ -35,13 +35,7 @@ const Modal = (props) => {
       { active === ModalType.cardInfoModal && <AsyncCardInfoModal /> }
 
       {/* Edit Profile Name Modal */}
-      { active === ModalType.editNameModal && <AsyncEditProfileModal type='Name'/> }
-
-      {/* Edit Profile Address Modal */}
-      { active === ModalType.editAddressModal && <AsyncEditProfileModal type='Address'/> }
-
-      {/* Edit Profile Phone Number Modal */}
-      { active === ModalType.editPhoneNumberModal && <AsyncEditProfileModal type='Phone'/> }
+      { active === ModalType.editProfileModal && <AsyncEditProfileModal /> }
 
       {/* Rating Modal */}
       { active === ModalType.orderFeedbackModal && <AsyncOrderFeedbackModal /> }

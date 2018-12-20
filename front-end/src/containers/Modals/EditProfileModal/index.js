@@ -9,7 +9,7 @@ import './styles.css'
 import { updateUserProfile } from '../../../redux/actions/user'
 import { closeModal } from '../../../redux/actions/modal'
 
-import imgClose from '../../../assets/images/close_button.svg'
+// import imgClose from '../../../assets/images/close_button.svg'
 import imgDownArrow from '../../../assets/images/down_arrow_green.svg'
 
 class EditProfileModal extends Component {
@@ -33,9 +33,7 @@ class EditProfileModal extends Component {
       instructions: '',
     }
 
-    if (props.type === 'Address') {
-      this.updateAddress(user.shipping_address)
-    }
+    this.updateAddress(user.shipping_address)
   }
 
   updateAddress = (fullAddress) => {
@@ -85,78 +83,71 @@ class EditProfileModal extends Component {
   }
 
   render () {
-    const { type } = this.props
     const { firstName, lastName, phone, street, apartment, city, state, zip, instructions } = this.state
 
     return (
       <ModalContainer darkMode={true}>
         <div className='edit-profile-modal' onClick={(e)=>e.stopPropagation()}>
-          <div className='edit-profile-close'>
+          {/* <div className='edit-profile-close'>
             <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
-          </div>
+          </div> */}
 
-          <div className='edit-profile-title'>{ type === 'Name' ? 'Edit Name' : (type === 'Address' ? 'Edit Address' : 'Contact')}</div>
+          <div className='edit-profile-title'>Edit Profile</div>
           <div className='separator'/>
 
           {/* Form fields */}
           <form className='form-inputs' onSubmit={ this.onSave }>
-            { type === 'Name' &&
+            <div className='form-double-inputs'>
+              <div id='input_firstname' className='form-input'>
+                <div className='form-input-name'>First Name</div>
+                <input required type='text' name='firstName' value={firstName} onChange={this.onChange}/>
+              </div>
+              <div id='input_lastname' className='form-input'>
+                <div className='form-input-name'>Last Name</div>
+                <input required type='text' name='lastName' value={lastName} onChange={this.onChange}/>
+              </div>
+            </div>
+
+            <div className='form-input'>
+              <div className='form-input-name'>Phone Number</div>
+              <input type='tel' name='phone' value={phone} onChange={this.onChange}/>
+            </div>
+
+            <div>
               <div className='form-double-inputs'>
-                <div id='input_firstname' className='form-input'>
-                  <div className='form-input-name'>First Name</div>
-                  <input required type='text' name='firstName' value={firstName} onChange={this.onChange}/>
+                <div id='input_street' className='form-input'>
+                  <div className='form-input-name'>Delivery Address</div>
+                  <input required type='text' name='street' value={street} onChange={this.onChange}/>
                 </div>
-                <div id='input_lastname' className='form-input'>
-                  <div className='form-input-name'>Last Name</div>
-                  <input required type='text' name='lastName' value={lastName} onChange={this.onChange}/>
+                <div id='input_apartment' className='form-input'>
+                  <div className='form-input-name'>Apartment Number</div>
+                  <input required type='text' name='apartment' value={apartment} onChange={this.onChange}/>
                 </div>
               </div>
-            }
 
-            { type === 'Phone' &&
+              <div className='form-double-inputs'>
+                <div id='input_city' className='form-input'>
+                  <div className='form-input-name'>City</div>
+                  <input required type='text' name='city' value={city} onChange={this.onChange}/>
+                </div>
+
+                <div id='input_state' className='form-input'>
+                  <div className='form-input-name'>State</div>
+                  <SelectUSState id='stateSelector' className='select-us-state' value={state} onChange={ this.onSelectState }/>
+                  <img src={imgDownArrow} alt='arrow'/>
+                </div>
+
+                <div id='input_zip' className='form-input'>
+                  <div className='form-input-name'>Zip Code</div>
+                  <input required type='text' name='zip' value={zip} onChange={this.onChange}/>
+                </div>
+              </div>
+
               <div className='form-input'>
-                <div className='form-input-name'>Phone Number</div>
-                <input type='tel' name='phone' value={phone} onChange={this.onChange}/>
+                <div className='form-input-name'>Special Delivery Instructions</div>
+                <textarea name='instructions' value={instructions} onChange={this.onChange}/>
               </div>
-            }
-
-            { type === 'Address' &&
-              <div>
-                <div className='form-double-inputs'>
-                  <div id='input_street' className='form-input'>
-                    <div className='form-input-name'>Delivery Address</div>
-                    <input required type='text' name='street' value={street} onChange={this.onChange}/>
-                  </div>
-                  <div id='input_apartment' className='form-input'>
-                    <div className='form-input-name'>Apartment Number</div>
-                    <input required type='text' name='apartment' value={apartment} onChange={this.onChange}/>
-                  </div>
-                </div>
-
-                <div className='form-double-inputs'>
-                  <div id='input_city' className='form-input'>
-                    <div className='form-input-name'>City</div>
-                    <input required type='text' name='city' value={city} onChange={this.onChange}/>
-                  </div>
-
-                  <div id='input_state' className='form-input'>
-                    <div className='form-input-name'>State</div>
-                    <SelectUSState id='stateSelector' className='select-us-state' value={state} onChange={ this.onSelectState }/>
-                    <img src={imgDownArrow} alt='arrow'/>
-                  </div>
-
-                  <div id='input_zip' className='form-input'>
-                    <div className='form-input-name'>Zip Code</div>
-                    <input required type='text' name='zip' value={zip} onChange={this.onChange}/>
-                  </div>
-                </div>
-
-                <div className='form-input'>
-                  <div className='form-input-name'>Special Delivery Instructions</div>
-                  <textarea name='instructions' value={instructions} onChange={this.onChange} placeholder='Example: Gate Code #: 4856. Please call before you arrive.'/>
-                </div>
-              </div>
-            }
+            </div>
 
             <div className='buttons'>
               <Button type='submit' className='btn-save'>Save</Button>

@@ -6,7 +6,7 @@ import Button from '../../../components/Button'
 
 import './styles.css'
 
-import imgClose from '../../../assets/images/close_button.svg'
+// import imgClose from '../../../assets/images/close_button.svg'
 
 import { closeModal } from '../../../redux/actions/modal'
 
@@ -60,11 +60,12 @@ class CardInfoModal extends Component {
     return (
       <ModalContainer darkMode={true}>
         <div className='card-info-modal' onClick={(e)=>e.stopPropagation()}>
-          <div className='card-close'>
+          {/* <div className='card-close'>
             <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
-          </div>
+          </div> */}
 
           <div className='card-info-title'>Add New Card</div>
+          <div className='separator'/>
 
           <div className='card-info'>
             <span>Name on Card</span>
@@ -90,7 +91,8 @@ class CardInfoModal extends Component {
           </div>
 
           <div className='card-info-save'>
-            <Button className='btn-save' onClick={this.onSave}>SAVE</Button>
+            <Button className='btn-save' onClick={this.onSave}>Save</Button>
+            <Button onClick={this.onClose} className='btn-cancel'>Cancel</Button>
           </div>
         </div>
       </ModalContainer>

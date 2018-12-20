@@ -2,15 +2,13 @@ export const ModalType = {
   menuModal: 0,
   comboSliceModal: 1,
   cardInfoModal: 2,
-  editNameModal: 3,
-  editAddressModal: 4,
-  editPhoneNumberModal: 5,
-  orderFeedbackModal: 6,
-  mealPreferenceModal: 7,
-  jobApplyModal: 8,
-  invitationModal: 9,
-  shareExperienceModal: 10,
-  orderCancelModal: 11,
+  editProfileModal: 3,
+  orderFeedbackModal: 4,
+  mealPreferenceModal: 5,
+  jobApplyModal: 6,
+  invitationModal: 7,
+  shareExperienceModal: 8,
+  orderCancelModal: 9,
 }
 
 export function showModal(modalType, data){

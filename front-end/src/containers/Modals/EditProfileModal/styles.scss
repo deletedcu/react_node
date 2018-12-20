@@ -11,9 +11,9 @@
   flex-direction: column;
   background: white;
   border: 0.5px solid $text-light-gray;
-  border-radius: 30px;
+  border-radius: 6px;
   box-shadow: $shadow-secondary;
-  padding: 20px 35px 30px 60px;
+  padding: 40px 45px 36px;
   color: $text-light-gray;
 
   .edit-profile-close {
@@ -132,13 +132,13 @@
     .buttons {
       display: flex;
       justify-content: flex-end;
-      margin-top: 24px;
+      margin-top: 40px;
 
       .button {
-        width: 90px;
-        height: 25px;
-        border-radius: 0;
-        font-size: 12px;
+        width: 127px;
+        height: 32px;
+        border-radius: 3px;
+        font-size: $small-font-size;
         box-shadow: $shadow-secondary;
       }
 

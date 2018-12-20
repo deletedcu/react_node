@@ -10,9 +10,9 @@
   flex-direction: column;
   background: white;
   border: 0.5px solid $text-light-gray;
-  border-radius: 24px;
+  border-radius: 6px;
   box-shadow: $shadow-secondary;
-  padding: 30px 50px 30px;
+  padding: 40px 45px 36px;
 
   .card-close {
     .img-close {
@@ -25,6 +25,12 @@
 
   .card-info-title {
     color: $text-light-gray;
+  }
+
+  .separator {
+    height: 1px;
+    background-color: #70707050;
+    margin-top: 15px;
   }
 
   .card-info {
@@ -72,14 +78,25 @@
   }
 
   .card-info-save {
-    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+
+    .button {
+      width: 127px;
+      height: 32px;
+      border-radius: 3px;
+      font-size: $small-font-size;
+      box-shadow: $shadow-secondary;
+    }
 
     .btn-save {
-      width: 100px;
-      height: 37px;
-      border-radius: 6px;
-      font-size: $mobile-regular-font-size;
-      float: right;
+      margin-right: 10px;
+    }
+
+    .btn-cancel {
+      background-color: #F6F6F6;
+      color: $text-light-gray;
     }
   }
 }

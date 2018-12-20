@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   background: white;
-  border-radius: 32px;
+  border-radius: 6px;
   box-shadow: $shadow-primary;
   padding: 30px 100px 40px;
   color: $text-light-gray;
@@ -19,7 +19,7 @@
 
   .job-apply-close {
     .img-close {
-      height: 35px;
+      height: 20px;
       float: right;
       margin-right: -50px;
     }
