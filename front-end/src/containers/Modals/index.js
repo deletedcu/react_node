@@ -7,6 +7,7 @@ const AsyncMenuModal = asyncComponent(() => import('./MenuModal'))
 const AsyncComboSliceModal = asyncComponent(() => import('./ComboSliceModal'))
 const AsyncCardInfoModal = asyncComponent(() => import('./CardInfoModal'))
 const AsyncEditProfileModal = asyncComponent(() => import('./EditProfileModal'))
+const AsyncUpdatePasswordModal = asyncComponent(() => import('./UpdatePasswordModal'))
 const AsyncOrderFeedbackModal = asyncComponent(() => import('./OrderFeedbackModal'))
 const AsyncOrderCancelModal = asyncComponent(() => import('./OrderCancelModal'))
 const AsyncMealPreferenceModal = asyncComponent(() => import('./MealPreferenceModal'))
@@ -34,8 +35,11 @@ const Modal = (props) => {
       {/* Card Info Modal */}
       { active === ModalType.cardInfoModal && <AsyncCardInfoModal /> }
 
-      {/* Edit Profile Name Modal */}
+      {/* Edit Profile Modal */}
       { active === ModalType.editProfileModal && <AsyncEditProfileModal /> }
+
+      {/* Update Password Modal */}
+      { active === ModalType.updatePasswordModal && <AsyncUpdatePasswordModal /> }
 
       {/* Rating Modal */}
       { active === ModalType.orderFeedbackModal && <AsyncOrderFeedbackModal /> }
