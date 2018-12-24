@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import Button from '../../components/Button'
+import LazyImage from '../../components/LazyImage'
 import BottomForm from '../Home/components/BottomForm'
 
 import './styles.css'
+import imgBanner from '../../assets/images/servicearea_banner.png'
 
 const serviceAreas = [
   'Alameda',
@@ -81,8 +83,12 @@ class ServiceAreas extends Component {
       <div className='div-service-area-container'>
         {/* Banner and Title */}
         <div className='div-service-area-banner'>
+          <LazyImage className='img-banner' src={ imgBanner } disableSpinner={true} />
           <div className='div-service-area-title'>
             Check availability in your Area
+          </div>
+          <div className='div-service-area-subtitle'>
+            Get Quality, Healthy, Chef-Prepared Meals Delivered directly to you.
           </div>
           <div className='div-service-area-search'>
             <input name='zip' value={this.state.zip} onChange={this.onChange} placeholder='ZIP Code'/>
@@ -92,7 +98,7 @@ class ServiceAreas extends Component {
 
         {/* Service area grid */}
         <div className='div-service-areas container'>
-          <div className='div-service-areas-title'>Some cities we service:</div>
+          <div className='div-service-areas-title'>We also deliver to these cities..</div>
           <div className='div-service-areas-grid'>
             { 
               serviceAreas.map((serviceArea, index) => {

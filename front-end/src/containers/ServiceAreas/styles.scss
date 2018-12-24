@@ -1,21 +1,28 @@
 @import "../../styles/variables/variables";
 
 .div-service-area-container {
-  background-color: #FAFAFA;
+  background-color: #F1F1F1;
 
   .div-service-area-banner {
     position: relative;
-    height: 350px;
-    background-color: white;
-    border-bottom: 1px solid #707070B0;
-
+    height: 300px;
+    
     .div-service-area-title {
       position: relative;
       text-align: center;
       color: #5B5B5B;
-      font-size: 22px;
+      font-size: 32px;
       font-family: 'Montserrat-SemiBold';
       top: calc(50% - 40px);
+      transform: translateY(-50%);
+    }
+
+    .div-service-area-subtitle {
+      position: relative;
+      text-align: center;
+      color: #5B5B5B;
+      font-size: $mobile-regular-font-size;
+      top: calc(50% - 55px);
       transform: translateY(-50%);
     }
 
@@ -32,7 +39,7 @@
       input {
         width: 115px;
         height: 100%;
-        font-size: 16px;
+        font-size: $mobile-regular-font-size;
         padding: 0 20px;
         border-radius: 4px;
         border: 1px solid #70707080;
@@ -43,7 +50,7 @@
         width: 222px;
         height: 100%;
         border-radius: 4px;
-        font-size: 16px;
+        font-size: 15px;
         font-family: 'Montserrat-Medium';
       }
     }    
@@ -70,7 +77,7 @@
     
       .service-area {
         color: $text-light-gray;
-        font-size: 16px;
+        font-size: $mobile-regular-font-size;
         height: 50px;
         line-height: 50px;
 
