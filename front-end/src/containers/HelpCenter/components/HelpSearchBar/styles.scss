@@ -6,10 +6,11 @@
   .input-help-search {
     position: absolute;
     width: 100%;
-    height: 70px;
-    border-radius: 6px;
-    padding: 0 20px 0 60px;
-    font-size: 29px;
+    height: 54px;
+    border-radius: 27px;
+    border: 0.5px solid rgba(25,25,25,0.45);
+    padding: 0 20px 0 45px;
+    font-size: $mobile-regular-font-size;
 
     &:focus {
       border: 3px solid $green-primary;
@@ -18,8 +19,8 @@
 
   .img-search {
     position: absolute;
-    height: 28px;
-    left: 16px;
+    height: 14px;
+    left: 20px;
     top: 21px;
   }
 }

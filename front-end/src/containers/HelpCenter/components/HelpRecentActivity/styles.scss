@@ -14,6 +14,7 @@
     .help-recent-activity-question {
       display: flex;
       align-items: center;
+      font-size: $small-font-size;
 
       img {
         height: 28px;
@@ -29,20 +30,24 @@
         text-decoration: underline;
       }
     }
+
+    .help-recent-activity-info {
+      font-size: $mobile-small-font-size;
+      color: #989898;
+    }
   }
 
   .help-recent-activity-answer {
-    font-size: 24px;
     color: #888888;
     margin-left: 70px;
     margin-top: 20px;
-    max-width: 640px;
+    max-width: 500px;
   }
 
   .help-recent-activity-separator {
     height: 1px;
     background-color: #232222;
     opacity: 0.85;
-    margin: 40px 0 30px;
+    margin: 35px 0;
   }
 }

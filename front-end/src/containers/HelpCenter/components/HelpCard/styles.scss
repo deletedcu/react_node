@@ -1,0 +1,28 @@
+@import "../../../../styles/variables/variables";
+
+.help-card {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F1F1F1;
+  box-shadow: $shadow-primary;
+  border-radius: 10px;
+
+  .img-card {
+    height: 100px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  .span-title {
+    font-family: 'Montserrat-SemiBold';
+    margin-bottom: 15px;
+  }
+
+  .span-subtitle {
+    font-size: $mobile-regular-font-size;
+    color: #989898;
+    margin-bottom: 30px;
+  }
+}

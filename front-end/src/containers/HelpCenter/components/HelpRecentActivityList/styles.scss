@@ -1,8 +1,10 @@
 @import "../../../../styles/variables/variables";
 
 .help-recent-activity-list {
+  padding: 0 200px;
+  
   .help-recent-activity-list-title {
-    font-size: 45px;
+    font-size: 27px;
     font-family: 'Montserrat-SemiBold';
     opacity: 0.8;
     color: #333333;
@@ -11,8 +13,14 @@
   }
 
   .help-recent-activity-list-subtitle {
-    color: #333333;
+    color: $green-primary;
     text-align: center;
     margin-bottom: 40px;
+    font-size: $mobile-regular-font-size;
+  }
+
+  .span-more {
+    font-size: $small-font-size;
+    color: $green-primary;
   }
 }

@@ -1,16 +1,15 @@
 @import "../../styles/variables/variables";
 
 .div-help-center-container {
-  background-color: $extra-light-gray;
 
   .div-help-center-banner {
     position: relative;
-    height: 465px;
+    height: 440px;
 
     .div-help-center-title {
       position: relative;
       text-align: center;
-      font-size: 49px;
+      font-size: 40px;
       font-family: 'Montserrat-SemiBold';
       top: calc(50% - 60px);
       transform: translateY(-50%);
@@ -19,7 +18,7 @@
     .div-help-center-search {
       position: relative;
       left: 50%;
-      top: calc(50% - 70px);
+      top: 50%;
       transform: translateX(-50%);
       padding: 0 30px;
       width: 960px;
@@ -30,14 +29,34 @@
   .div-help-center {
     padding: 120px 180px 120px;
 
+    .div-cards {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 100px;
+
+      .help-card {
+        flex-grow: 1;
+        margin: 0 27px;
+      }
+    }
+
     .div-still-need-help {
-      text-align: center;
-      margin-top: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+
+      .span-need-help {
+        font-size: 35px;
+        color: #333333;
+        margin-bottom: 35px;
+      }
 
       .btn-need-help {
-        width: 306px;
-        height: 67px;
-        font-family: 'Montserrat-Medium';
+        width: 137px;
+        height: 40px;
+        font-size: $mobile-regular-font-size;
+        font-family: 'Montserrat-SemiBold';
         border-radius: 4px;
       } 
     }

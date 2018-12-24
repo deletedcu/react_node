@@ -12,7 +12,7 @@ class HelpRecentActivityList extends Component {
   render () {
     return (
       <div className='help-recent-activity-list'>
-        <div className='help-recent-activity-list-title'>Getting Started</div>
+        <div className='help-recent-activity-list-title'>Related Articles</div>
         <div className='help-recent-activity-list-subtitle'>Search for popular help topics:</div>
         <HelpRecentActivity
           question='What is Mealpost?'
@@ -44,6 +44,7 @@ class HelpRecentActivityList extends Component {
           answer="Not a chance. Our meals are marinated then cooked fresh one night before delivery. Meals are  refridgerated and kept in an insulated box during transit. When you are ready to eat, heat up, and enjoy."
           timestamp='Comment added about 9 months ago'
         />
+        <span className='span-more clickable'>See more</span>
       </div>
     )
   }

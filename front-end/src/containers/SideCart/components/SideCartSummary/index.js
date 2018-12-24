@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Button from '../../../../components/Button'
-import RecommendedMenuSlider from '../RecommendedMenuSlider'
+// import RecommendedMenuSlider from '../RecommendedMenuSlider'
 
 import './styles.css'
 
-import imgRecommended from '../../../../assets/images/recommended.svg'
+// import imgRecommended from '../../../../assets/images/recommended.svg'
 
 class SideCartSummary extends Component {
 
@@ -31,13 +31,20 @@ class SideCartSummary extends Component {
         <div className='side-cart-summary-separator'/>
 
         {/* Recommended */}
-        <div className='side-cart-summary-recommended'>
+        {/* <div className='side-cart-summary-recommended'>
           <div className='side-cart-summary-recommended-title'>
             <span>Recommened</span>
             <img src={imgRecommended} alt='recommended'/>
           </div>
 
           <RecommendedMenuSlider/>
+        </div> */}
+
+        {/* Meal preference link */}
+        <div className='side-cart-summary-preferences'>
+          <Link to='/settings/meal_preference'>
+            Meal Preferences
+          </Link>
         </div>
 
         {/* Away from free delivery */}
