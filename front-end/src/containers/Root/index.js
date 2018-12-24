@@ -67,7 +67,8 @@ class Root extends Component {
 
   render () {
     const { history, sideBar, location, overlaySpinner } = this.props
-    const shouldShowFooter = !(location.pathname.includes('help-center') || location.pathname.includes('checkout') || location.pathname.includes('auth/signup'))
+    const shouldShowHeader = !(location.pathname.includes('coming-soon'))
+    const shouldShowFooter = !(location.pathname.includes('help-center') || location.pathname.includes('checkout') || location.pathname.includes('auth/signup') || location.pathname.includes('coming-soon'))
 
     return (
       <Sidebar
@@ -85,7 +86,9 @@ class Root extends Component {
           { this.state.isChecked &&
             <div>
               {/* Header */}
-              <Header history={history} pathName={location.pathname}/>
+              { shouldShowHeader &&
+                <Header history={history} pathName={location.pathname}/>
+              }
         
               {/* Body */}
               <div className='app-body'>
