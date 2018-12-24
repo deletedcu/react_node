@@ -88,7 +88,7 @@ class AuthForm extends Component {
         {/* Form header */}
         <div className={ isSignup ? 'auth-form-header-normal' : 'auth-form-header-green'}>
           <div className='auth-form-title'>
-            { isSignup ? 'Create an account' : 'Login' }
+            { isSignup ? 'Create an account' : 'Log in' }
           </div>
 
           { 

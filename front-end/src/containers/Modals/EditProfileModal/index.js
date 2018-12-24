@@ -72,7 +72,7 @@ class EditProfileModal extends Component {
       first_name: firstName,
       last_name: lastName,
       phone: phone,
-      shipping_address: `${street}, ${apartment}, ${city}, ${state}, ${zip}`,
+      shipping_address: apartment ? `${street}, ${apartment}, ${city}, ${state}, ${zip}` : `${street}, ${city}, ${state}, ${zip}` ,
     }))
 
     this.props.dispatch(closeModal())
@@ -115,7 +115,7 @@ class EditProfileModal extends Component {
               </div>
               <div id='input_apartment' className='form-input'>
                 <div className='form-input-name'>Apartment Number</div>
-                <input required type='text' name='apartment' value={apartment} onChange={this.onChange}/>
+                <input type='text' name='apartment' value={apartment} onChange={this.onChange}/>
               </div>
             </div>
 

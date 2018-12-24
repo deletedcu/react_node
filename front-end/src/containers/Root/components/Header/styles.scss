@@ -83,6 +83,8 @@
       margin: 0 10px;
       line-height: 36px;
       text-align: center;
+      font-family: 'Montserrat-Medium';
+      font-size: $small-font-size;
     }
 
     .button {
@@ -90,6 +92,7 @@
       width: 123px;
       box-shadow: $shadow-primary;
       font-size: $small-font-size;
+      font-family: 'Montserrat-SemiBold';
     }
 
     .div-cart {
@@ -98,6 +101,8 @@
 
     .btn-order-now {
       margin-right: 20px;
+      font-family: 'Montserrat-SemiBold';
+      font-size: $small-font-size;
     }
   }
 

@@ -200,7 +200,7 @@ class MenuModal extends Component {
               {/* Special instruction */}
               <div className='div-special-instructions'>
                 <div className='div-special-instructions-title'>
-                  Special Instructions
+                  Special Request
                 </div>
                 <textarea name='specialInstructions' className='input-special-instructions' value={this.state.specialInstructions} onChange={ this.onChange }/>
               </div>
