@@ -35,7 +35,7 @@ class DropdownFooter extends Component {
           <DropdownList title='PRODUCT'>
             <div onClick={this.onSendInvitation}>Get $20</div>
             <div><Link to='/menus'>Weekly Menu</Link></div>
-            <div>Mobile App</div>
+            <div><Link to='/coming-soon'>Mobile App</Link></div>
           </DropdownList>
 
           <DropdownList title='HELP'>

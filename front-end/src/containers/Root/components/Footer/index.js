@@ -82,7 +82,7 @@ class Footer extends Component {
             </div>
             <a className='footer-middle-link' onClick={this.onSendInvitation}>Get $20 Off</a>
             <Link to='/menus' className='footer-middle-link'>Weekly Menu</Link>
-            <Link to='/home' className='footer-middle-link'>Mobile App</Link>
+            <Link to='/coming-soon' className='footer-middle-link'>Mobile App</Link>
           </div>
 
           <div className='div-footer-middle-links-group'>
