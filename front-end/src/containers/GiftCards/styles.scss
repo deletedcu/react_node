@@ -1,8 +1,11 @@
 @import "../../styles/variables/variables";
 
 .div-giftcards-container {
-  background-color: $extra-light-gray;
+  background-color: white;
   padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .div-giftcards-banner {
     padding-top: 80px;
@@ -10,20 +13,20 @@
     
     .div-giftcards-title {
       font-size: 34px;
-      font-family: 'Montserrat-SemiBold';
+      font-family: 'Montserrat-Bold';
     }
 
     .div-giftcards-subtitle {
-      margin-top: 25px;
+      margin-top: 10px;
       color: $text-light-gray;
       font-size: $mobile-regular-font-size;
-      font-family: 'Montserrat-Regular';
     }
   }
 
   .div-giftcards-content {
+    // max-width: 1300px;
     margin-top: 100px;
-    padding: 0 230px;
+    // padding: 0 230px;
 
     display: flex;
 
@@ -33,19 +36,19 @@
     }
 
     .gift-card-form {
-      flex-grow: 1;
+      width: 660px;
     }
   }
 
-  @media (max-width: 1800px) {
+  @media (max-width: 1366px) {
     .div-giftcards-content {
-      padding: 0 100px;
-    }
-  }
-
-  @media (max-width: 1365px) {
-    .div-giftcards-content {
+      width: 100%;
       padding: 0 30px;
+
+      .gift-card-form {
+        width: unset;
+        flex-grow: 1;
+      }
     }
   }
 

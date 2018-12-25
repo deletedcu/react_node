@@ -45,18 +45,6 @@ class GiftCardPanel extends Component {
         <div className='giftcard-panel-instructions'>
           <div className='giftcard-panel-instruction'>
             <img src={imgDot} alt='dot'/>
-            <span>Treat your friends and family to the perfect gift of delicious food.</span>
-          </div>
-          <div className='giftcard-panel-instruction'>
-            <img src={imgDot} alt='dot'/>
-            <span>Add a personalized note, or send them a surprise!</span>
-          </div>
-          <div className='giftcard-panel-instruction'>
-            <img src={imgDot} alt='dot'/>
-            <span>Recipients can redeem your Gift Card into your account or use it towards your next purchase.</span>
-          </div>
-          <div className='giftcard-panel-instruction'>
-            <img src={imgDot} alt='dot'/>
             <span>Gift Cards are subject to our Gift Card Terms.</span>
           </div>
           <div className='giftcard-panel-instruction'>

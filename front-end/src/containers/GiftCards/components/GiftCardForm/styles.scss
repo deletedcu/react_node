@@ -1,25 +1,21 @@
 @import "../../../../styles/variables/variables";
 
 .gift-card-form {
-  border: 1px solid #B7CBB8;
+  border: 1px solid $text-light-gray;
   box-shadow: $shadow-primary;
-  padding: 30px 50px;
+  padding: 50px;
+  margin: 40px;
   background-color: white;
 
   %input-field {
     display: block;
     width: 100%;
     border-radius: 4px;
-    border: 1px solid #B7CBB8;
+    border: 1px solid $text-light-gray;
     padding: 0 20px;
-    font-size: $small-font-size;
+    font-size: $mobile-regular-font-size;
     font-family: 'Montserrat-Medium';
-    margin-top: 20px;
-    caret-color: $green-primary;
-
-    &:focus {
-      border: 1px solid $green-primary;
-    }
+    margin-top: 10px;
 
     &::placeholder {
       color: #5B5B5B50;
@@ -37,19 +33,19 @@
 
   input {
     @extend %input-field;
-    height: 80px;
+    height: 60px;
   }
 
   textarea {
     @extend %input-field;
-    height: 240px;
+    height: 180px;
     resize: none;
     padding: 20px;
   }
 
   .gift-card-form-name {
     color: $text-light-gray;
-    font-size: $footer-primary-font-size;
+    font-size: $mobile-regular-font-size;
     font-family: 'Montserrat-Medium';
   }
 
@@ -59,36 +55,36 @@
     margin-bottom: 40px;
     
     input {
-      width: calc(50% - 20px);
+      width: calc(50% - 13px);
     }
   }
 
   .gift-card-form-datepicker {
-    margin-top: 40px;
+    margin-top: 20px;
 
     .gift-card-form-datepicker-title {
       color: $text-light-gray;
-      font-size: $footer-primary-font-size;
-      margin-bottom: 10px;
+      font-size: $mobile-regular-font-size;
     }
   }
 
   .gift-card-form-message {
-    margin-top: 40px;
+    margin-top: 20px;
 
     .gift-card-form-message-title {
       color: $text-light-gray;
-      font-size: $footer-primary-font-size;
+      font-size: $mobile-regular-font-size;
     }
   }
 
   .btn-checkout {
     width: 100%;
-    height: 80px;
+    height: 60px;
     color: white;
     border-radius: 4px;
     margin-top: 30px;
     border: 1px solid $green-secondary;
+    font-size: $mobile-regular-font-size;
   }
   
   @media (max-width: 1024px) {
