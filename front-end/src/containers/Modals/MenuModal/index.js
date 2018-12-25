@@ -8,7 +8,7 @@ import IncrementCounter from './component/IncrementCounter'
 import Button from '../../../components/Button'
 import ModalContainer from '../../../components/ModalContainer'
 import ExpandableDescription from './component/ExpandableDescription'
-import HorizontalSelectionGrid from '../../../components/HorizontalSelectionGrid'
+// import HorizontalSelectionGrid from '../../../components/HorizontalSelectionGrid'
 
 import './styles.css'
 
@@ -119,22 +119,22 @@ class MenuModal extends Component {
               
               <div className='div-menu-info-list'>
                 <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.calories : item.menu[0].calories}`}</span>
+                  <span className='span-menu-info-value'>{item.calories}</span>
                   <span className='span-menu-info-title'>CALORIES</span>
                 </div>
                 <div className='div-menu-info-separator'/>
                 <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.carbs : item.menu[0].carbs}`}</span>
+                  <span className='span-menu-info-value'>{item.carbs}</span>
                   <span className='span-menu-info-title'>CARBS</span>
                 </div>
                 <div className='div-menu-info-separator'/>
                 <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.protein : item.menu[0].protein}`}</span>
+                  <span className='span-menu-info-value'>{item.protein}</span>
                   <span className='span-menu-info-title'>PROTEIN</span>
                 </div>
                 <div className='div-menu-info-separator'/>
                 <div className='div-menu-info'>
-                  <span className='span-menu-info-value'>{`${item.type === 'menu' ? item.fat : item.menu[0].fat}`}</span>
+                  <span className='span-menu-info-value'>{item.fat}</span>
                   <span className='span-menu-info-title'>FAT</span>
                 </div>
               </div>
@@ -171,19 +171,17 @@ class MenuModal extends Component {
               </ExpandableDescription>
 
               {/* Ingredients */}
-              { item.type === 'menu' &&
-                <div className='div-ingredients-list'>
-                  <div className='div-ingredients-list-title'> 
-                    Ingredients
-                  </div>
-                  <div className='div-ingredients'>
-                    { ReactHtmlParser(ingredients) }
-                  </div>
+              <div className='div-ingredients-list'>
+                <div className='div-ingredients-list-title'> 
+                  Ingredients
                 </div>
-              }
+                <div className='div-ingredients'>
+                  { ReactHtmlParser(ingredients) }
+                </div>
+              </div>
 
               {/* Recipies per week */}
-              { item.type !== 'menu' &&
+              {/* { item.type !== 'menu' &&
                 <div className='div-recipies-per-week'>
                   <div className='div-recipies-per-week-title'>
                     Recipies Per Week
@@ -195,7 +193,7 @@ class MenuModal extends Component {
                     />
                   </div>
                 </div>
-              }
+              } */}
 
               {/* Special instruction */}
               <div className='div-special-instructions'>
@@ -205,16 +203,16 @@ class MenuModal extends Component {
                 <textarea name='specialInstructions' className='input-special-instructions' value={this.state.specialInstructions} onChange={ this.onChange }/>
               </div>
 
-              { item.type === 'menu' && !this.state.descriptionScrolled && <div className='div-opacity-layer-bottom'/> }
+              {!this.state.descriptionScrolled && <div className='div-opacity-layer-bottom'/>}
             </div>
             
             {/* Add to cart */}
             <div className='div-menu-modal-cart'>
-              { item.type === 'menu' && <IncrementCounter className='increment-counter' onChange={ this.onItemCountChange }/> }
+              <IncrementCounter className='increment-counter' onChange={ this.onItemCountChange }/>
               <Button className={classNames('btn-add-to-cart', {'btn-add-to-cart-full': item.type !== 'menu'})} onClick={ this.onAddToCart }>ADD TO CART</Button>
             </div>
 
-            { item.type === 'menu' && this.state.descriptionScrolled && <div className='div-opacity-layer-top'/> }
+            { this.state.descriptionScrolled && <div className='div-opacity-layer-top'/> }
           </div>
         </div>
       </ModalContainer>
