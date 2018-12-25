@@ -72,7 +72,7 @@ class Home extends Component {
 
   render () {
     // Just first 4 products for now !!!
-    let featuredMenuItems = this.props.products.products.slice(0, 4).map(product => { return {...product, type: 'menu'}})
+    let featuredMenuItems = this.props.products.products.slice(0, 4)
     
     const feedbacks = this.feedbacks.map((feedback, index) => {
       return  <Feedback
