@@ -29,6 +29,7 @@ class RedeemCredit extends Component {
       <div className='div-redeem-credit-container'>
         <div className='div-redeem-credit-form'>
           <div className='div-redeem-credit-title'>REDEEM A CODE</div>
+          <div className='div-redeem-credit-balance'>Account Balance: $0.00</div>
           <input className='input-code' name='code' value={this.state.code} onChange={this.onChange} placeholder='Enter Code'/>
           <Button className='btn-redeem' onClick={this.onRedeem}>Redeem</Button>
           <div className='div-redeem-credit-description'>Enter your code to redeem direct account credits, and gift cards. Mealpost gift cards are subject to Mealpost's Gift Card Terms and Conditions.</div>

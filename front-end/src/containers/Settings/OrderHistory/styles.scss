@@ -5,13 +5,15 @@
 
   .div-order-history-header {
     height: 42px;
-    background-color: #F1F1F1;
-    border-radius: 9px;
+    background-color: #F9F9F9;
     display: flex;
     align-items: center;
-    font-family: 'Montserrat-SemiBold';
-    color: $text-light-gray;
+    font-family: 'Montserrat-Medium';
+    font-size: 12px;
+    color: #222222;
     text-align: center;
+    border: 0.5px solid #98989888;
+    box-shadow: $shadow-primary;
 
     .span-name {
       width: 33%;

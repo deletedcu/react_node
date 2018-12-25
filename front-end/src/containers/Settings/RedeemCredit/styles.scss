@@ -12,9 +12,16 @@
     .div-redeem-credit-title {
       font-family: 'Montserrat-SemiBold';
     }
+
+    .div-redeem-credit-balance {
+      font-family: 'Montserrat-Medium';
+      font-size: $small-font-size;
+      color: #5A5858;
+      margin-top: 10px;
+    }
   
     .input-code {
-      margin-top: 60px;
+      margin-top: 20px;
       height: 63px;
       width: 100%;
       border: 1px solid $text-light-gray;
