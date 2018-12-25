@@ -97,7 +97,7 @@ class Checkout extends Component {
           state: addressObject.state || '',
           ...(addressObject.postal_code && { zip: addressObject.postal_code }),
         }, () => {
-          document.getElementById('stateSelector').value = this.state.state || 'AL'
+          document.getElementById('stateSelector').value = this.state.state || 'CA'
         })
       }
     })
@@ -281,7 +281,7 @@ class Checkout extends Component {
                 {/* Login/Signup Button */}
                 <div className='div-checkout-account-login'>
                   <span>{ currentAccountMode === AccountMode.create ? 'Already have an account?' : 'Create an account?'}</span>
-                  <span className='clickable' onClick={this.onSwitchAccountMode}>{ currentAccountMode === AccountMode.create ? 'Login' : 'Sign up' }</span>
+                  <span className='clickable' onClick={this.onSwitchAccountMode}>{ currentAccountMode === AccountMode.create ? 'Log In' : 'Sign up' }</span>
                 </div>
               </div>
             </CheckoutStepForm>

@@ -6,7 +6,6 @@ $order-summary-header-height: 108px;
 
 .order-summary-container {
   background-color: white;
-  border: 1px solid #42AA48;
   box-shadow: $shadow-primary;
 
   .order-summary-header {
@@ -159,8 +158,32 @@ $order-summary-header-height: 108px;
 
     .order-summary-items-list {
       margin-top: $margin;
-      overflow-y: scroll;
+      overflow-y: hidden;
       max-height: 400px;
+
+      &:hover {
+        overflow-y: scroll;
+      }
+
+      /* width */
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #F5F5F5; 
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #747474; 
+        border-radius: 100px;
+
+        &:hover {
+          background: #555; 
+        }
+      }
 
       .ordered-item {
         margin-bottom: $margin;
