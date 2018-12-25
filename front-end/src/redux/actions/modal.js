@@ -10,6 +10,7 @@ export const ModalType = {
   shareExperienceModal: 8,
   orderCancelModal: 9,
   updatePasswordModal: 10,
+  removePaymentModal: 11, 
 }
 
 export function showModal(modalType, data){

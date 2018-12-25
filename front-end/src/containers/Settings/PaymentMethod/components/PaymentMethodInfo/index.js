@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import classNames from 'classnames'
 import './styles.css'
 
@@ -6,6 +7,8 @@ import imgPaypal from '../../../../../assets/images/paypal.svg'
 import imgMasterCard from '../../../../../assets/images/mastercard.svg'
 import imgVisaCard from '../../../../../assets/images/visacard.svg'
 import imgPassword from '../../../../../assets/images/password.svg'
+
+import { showModal, ModalType } from '../../../../../redux/actions/modal'
 
 export const PaymentMethodType = {
   paypal: 0,
@@ -21,6 +24,8 @@ class PaymentMethodInfo extends Component {
 
   onRemove = (e) => {
     e.stopPropagation()
+
+    this.props.dispatch(showModal(ModalType.removePaymentModal))
   }
 
   render () {
@@ -84,4 +89,4 @@ class PaymentMethodInfo extends Component {
   }
 }
 
-export default PaymentMethodInfo
+export default connect()(PaymentMethodInfo)

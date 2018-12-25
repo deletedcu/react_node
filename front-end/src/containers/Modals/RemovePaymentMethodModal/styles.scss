@@ -1,0 +1,72 @@
+@import "../../../styles/variables/variables";
+
+.remove-payment-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 958px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 0.5px solid $text-light-gray;
+  border-radius: 6px;
+  box-shadow: $shadow-secondary;
+  padding: 35px 60px 35px 70px;
+  color: $text-light-gray;
+
+  .remove-payment-title {
+    color: $text-light-gray;
+    margin-top: 3px;
+    font-size: 25px;
+    font-family: 'Montserrat-SemiBold';
+  }
+
+  .separator {
+    width: 50%;
+    height: 1px;
+    background-color: #70707050;
+    margin-top: 5px;
+  }
+
+  .order-cancel-questions {
+    color: $text-light-gray;
+    font-family: 'Montserrat-Medium';
+    margin-top: 20px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 80px;
+
+    .button {
+      height: 35px;
+      border-radius: 2px;
+      font-size: 15px;
+      box-shadow: unset;
+    }
+
+    .btn-cancel {
+      margin-right: 15px;
+      width: 180px;
+      background-color: #D66161;
+      color: white;
+    }
+
+    .btn-close {
+      width: 141px;
+      background-color: #F5F5F5;
+      color: $text-light-gray;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    width: calc(100% - 40px);
+
+    .separator {
+      width: 100%;
+    }
+  }
+}
