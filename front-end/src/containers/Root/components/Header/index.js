@@ -45,10 +45,6 @@ class Header extends Component {
     this.props.history.replace('/home')
   }
 
-  onOrderNow = () => {
-    this.props.history.push('/menus')
-  }
-
   render () {
     let { pathName, user, history, sideBar } = this.props
     
@@ -97,12 +93,6 @@ class Header extends Component {
                 history={ history }
               />
             }
-          </div>
-        }
-
-        { pathName.includes('how-it-works') && 
-          <div className='div-buttons'>
-            <Button className='btn-order-now' onClick={this.onOrderNow}>Order Now</Button>
           </div>
         }
       </div>

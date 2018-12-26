@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Button from '../../../../components/Button'
-import HorizontalSelectionGrid from '../../../../components/HorizontalSelectionGrid'
 
 import './styles.css'
 
@@ -17,37 +16,20 @@ class MealPlan extends Component {
   render () {
     return (
       <div className='div-meal-plan'>
+        <div className='div-meal-plan-title'>{ this.props.title }</div>
+        <div className='div-meal-plan-subtitle'>
+          { this.props.subtitle1 && <span className='span-subtitle1'>{ this.props.subtitle1 }</span> }
+          <span className='span-subtitle2'>{ this.props.subtitle2 }</span>
+        </div>
+
         <div className='div-meal-plan-image'>
           <img src={ this.props.image } alt='plan'/>
         </div>
-        <div className='div-meal-plan-recipies'>
-          <HorizontalSelectionGrid
-            values={ this.props.recipiesPerWeek }
-            onSelectionChange={ this.onSelectionChange }
-          />
-          <div className='div-meal-plan-recipies-title'>
-            MEALS PER WEEK
-          </div>
-        </div>
-        <div className='div-meal-plan-prices'>
-          <div className='div-menu-plan-price'>
-            {/* { this.props.prices.perServingOld && <span className='span-menu-plan-price-old-value'>{ this.props.prices.shippingOld }</span> } */}
-            <span className='span-menu-plan-price-value'>{ this.props.prices.perServing }</span>
-            <span className='span-menu-plan-price-title'>per serving</span>
-          </div>
-          <div className='div-menu-plan-price-separator'/>
-          <div className='div-menu-plan-price'>
-            {/* { this.props.prices.shippingOld && <span className='span-menu-plan-price-old-value'>{ this.props.prices.shippingOld }</span> } */}
-            <span className='span-menu-plan-price-value'>{ this.props.prices.shipping }</span>
-            <span className='span-menu-plan-price-title'>shipping</span>
-          </div>
-          <div className='div-menu-plan-price-separator'/>
-          <div className='div-menu-plan-price'>
-            {/* { this.props.prices.weeklyTotalOld && <span className='span-menu-plan-price-old-value'>{ this.props.prices.weeklyTotalOld }</span> } */}
-            <span className='span-menu-plan-price-value'>{ this.props.prices.weeklyTotal }</span>
-            <span className='span-menu-plan-price-title'>weekly total</span>
-          </div>
-        </div>
+
+        <div className='div-meal-plan-start-price'>{`Starting at $${this.props.startPrice} per Serving`}</div>
+
+        <div className='div-meal-plan-total-price'>{`$${this.props.totalPrice} + FREE Shipping`}</div>
+
         <Button className='btn-grab-offer' onClick={ this.onGrabOffer }>SELECT</Button>
       </div>
     )

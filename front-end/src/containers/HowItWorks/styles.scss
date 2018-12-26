@@ -4,29 +4,28 @@
 
   .div-meal-plans-banner {
     position: relative;
-    background-image: linear-gradient(to bottom, #F2FFF3, white);
+    background-color: #f3f4f8;
     height: 465px;
 
     .div-meal-plans-title {
       position: relative;
       max-width: 600px;
       text-align: center;
-      font-size: 28px;
-      font-family: 'Montserrat-SemiBold';
-      color: #5D5D5D;
+      font-size: 34px;
+      font-family: 'Montserrat-Bold';
       left: 50%;
-      top: 50px;
+      top: 80px;
       transform: translate(-50%);
     }
 
     .div-meal-plans-subtitle {
       position: relative;
-      max-width: 700px;
+      max-width: calc(100% - 60px);
       text-align: center;
       font-size: $mobile-regular-font-size;
       color: $text-light-gray;
       left: 50%;
-      top: 60px;
+      top: 90px;
       transform: translate(-50%);
     }
   }
@@ -34,12 +33,14 @@
   .div-meal-plans {
     position: relative;
     display: flex;
-    margin-top: -330px;
+    margin-top: -270px;
+    background-color: #f3f4f8;
+    box-shadow: $shadow-primary;
 
     .div-meal-plans-grid {
       max-width: calc(950px);
       .div-meal-plan-wrapper {
-        padding: 70px 40px;
+        padding: 50px 40px;
 
         @media (max-width: 1400px) {
           padding-left: 30px;
@@ -57,31 +58,12 @@
   .div-meal-plans-info {
     display: flex;
     justify-content: space-evenly;
-    background-color: #EBECF1;
-    border: 1px solid #EBE2E2;
-    height: 228px;
+    background-color: #FAFBFC;
     align-items: center;
 
-    .div-meal-plans-info-text {
-      display: flex;
-      flex-direction: column;
-      width: 228px;
-
-      .div-meal-plans-info-title {
-        font-size: 25px;
-        font-family: 'Montserrat-Medium';
-        color: #393838;
-      }
-      .div-meal-plans-info-content {
-        font-size: $small-font-size;
-        color: $text-light-gray;
-      }
-    }
-
-    .div-meal-plans-info-image {
-      img {
-        width: 180px;
-      }
+    .quote-container {
+      max-width: 340px;
+      padding: 40px;
     }
   }
 
@@ -105,7 +87,7 @@
       }
 
       .div-meal-plans-subtitle {
-        padding: 0 40px;
+        max-width: calc(100% - 40px);
       }
     }
 
@@ -114,7 +96,7 @@
     }
 
     .div-meal-plans {
-      margin-top: -220px;
+      margin-top: -180px;
 
       .container {
         .div-meal-plan-wrapper {
@@ -137,7 +119,7 @@
     }
 
     .div-meal-plans {
-      margin-top: -260px;
+      margin-top: -200px;
     }
   }
 }

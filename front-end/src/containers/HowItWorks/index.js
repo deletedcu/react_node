@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import MealPlan from './components/MealPlan'
+import Quote from './components/Quote'
 import CommonQuestions from './components/CommonQuestions'
 
 import './styles.css'
 
 import imgPlan from '../../assets/images/mealplan.png'
-import imgDelivery from '../../assets/images/delivery.svg'
-import imgLorry from '../../assets/images/lorry.svg'
 
 class HowItWorks extends Component {
 
@@ -17,7 +16,7 @@ class HowItWorks extends Component {
         {/* Banner and Title */}
         <div className='div-meal-plans-banner'>
           <div className='div-meal-plans-title'>
-            Our Meal Plans
+            CHOOSE YOUR MEAL COUNT
           </div>
           <div className='div-meal-plans-subtitle'>
             Select how many meals you would like to receive per week. You'll be able to adjust this while choosing your meals.
@@ -31,30 +30,21 @@ class HowItWorks extends Component {
             <div className='row'>
               <div className='div-meal-plan-wrapper col-12 col-lg-6'>
                 <MealPlan
-                  title='Two-Person Plan'
-                  subtitle='serves 2'
+                  title='Single Plan'
+                  subtitle1='Minimum'
+                  subtitle2='4 MEALS / Week'
                   image={ imgPlan }
-                  recipiesPerWeek={ [3, 4] }
-                  prices={{
-                      perServing: '$9.99',
-                      shipping: 'FREE',
-                      weeklyTotal: '$39.99',
-                    }
-                  }
+                  startPrice='9.95'
+                  totalPrice='39.90'
                 />
               </div>
               <div className='div-meal-plan-wrapper col-12 col-lg-6'>
                 <MealPlan
                   title='Family Plan'
-                  subtitle='serves 2'
+                  subtitle2='6 MEALS / Week'
                   image={ imgPlan }
-                  recipiesPerWeek={ [6, 8, 12] }
-                  prices={{
-                    perServing: '$9.99',
-                    shipping: 'FREE',
-                    weeklyTotal: '$39.99',
-                  }
-                }
+                  startPrice='9.95'
+                  totalPrice='59.70'
                 />
               </div>
             </div>
@@ -63,24 +53,18 @@ class HowItWorks extends Component {
 
         {/* Info */}
         <div className='div-meal-plans-info'>
-          <div className='div-meal-plans-info-text'>
-            <div className='div-meal-plans-info-title'>Chef-Crafted Meals</div>
-            <div className='div-meal-plans-info-content'>Our chefs create dishes using all-natural, locally sourced ingredients.</div>
-          </div>
-          <div className='div-meal-plans-info-image'>
-            <img src={imgDelivery} alt='delivery'/>
-          </div>
-          <div className='div-meal-plans-info-text'>
-            <div className='div-meal-plans-info-title'>Direct Delivery</div>
-            <div className='div-meal-plans-info-content'>Meals are crafted from only the finest ingredients and delivered fresh right to your door.</div>
-          </div>
-          <div className='div-meal-plans-info-image'>
-            <img src={imgLorry} alt='lorry'/>
-          </div>
-          <div className='div-meal-plans-info-text'>
-            <div className='div-meal-plans-info-title'>Never worry about clean up</div>
-            <div className='div-meal-plans-info-content'>Your meals are already assembled and ready to consume. Just reheat, sit back and Enjoy.</div>
-          </div>
+          <Quote
+            quote={`"I just moved into a new home. MP really help saved dinner for my family!"`}
+            author='Heather'
+          />
+          <Quote
+            quote={`"Great service for people who really don't have time to cook or simply can't like myself.. #noshame."`}
+            author='James'
+          />
+          <Quote
+            quote={`"Absolutely delicious meals, affordable prices, why would order anything else?"`}
+            author='Vicky'
+          />
         </div>
 
         {/* Common Questions */}

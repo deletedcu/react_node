@@ -1,18 +1,25 @@
-.quote-container {
-  position: relative;
-  background-color: #EBECF1;
-  height: 160px;
+@import "../../../../styles/variables/variables";
 
-  .quote {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    padding: 20px;
-    width: 70%;
-    text-align: center;
-    background-color: white;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
-    border-radius: 6px;
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  color: $text-light-gray;
+  font-size: $mobile-regular-font-size;
+
+  .quote-stars {
+    display: flex;
+    img {
+      height: 11px;
+      margin-right: 4px;
+    }
+  }
+
+  .quote-text {
+    margin-top: 10px;
+  }
+
+  .quote-author {
+    margin-top: 20px;
+    font-family: 'Montserrat-Bold';
   }
 }

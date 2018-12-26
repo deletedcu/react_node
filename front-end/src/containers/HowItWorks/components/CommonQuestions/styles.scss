@@ -2,7 +2,8 @@
 
 .div-common-question-container {
   background-color: white;
-  padding-top: 80px;
+  padding: 80px 0;
+  box-shadow: $shadow-primary;
 
   .div-common-question-title {
     font-size: 38px;
@@ -23,12 +24,12 @@
       font-size: $footer-primary-font-size;
       font-family: 'Montserrat-Medium';
       margin-top: 50px;
-      margin-left: 15px;
     }
 
     .div-question-answer {
       margin-top: 20px;
       font-size: $small-font-size;
+      font-family: 'Montserrat-Light';
 
       a {
         text-decoration: underline;
@@ -42,9 +43,8 @@
 
     .div-check-faq {
       display: inline-block;
-      background-color: $bg-gray;
-      border: 1px solid $border-gray;
-      border-radius: 6px;
+      background-color: #FAFBFC;
+      border-radius: 7px;
       text-align: center;
       padding: 20px 50px;
 

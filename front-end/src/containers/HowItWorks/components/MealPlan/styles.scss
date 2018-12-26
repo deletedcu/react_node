@@ -2,117 +2,66 @@
 
 .div-meal-plan {
   background-color: white;
-  box-shadow: $shadow-primary;
-  border-radius: 7px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.16);
+  border-radius: 3px;
   display: flex;
   flex-direction: column;
 
+  .div-meal-plan-title {
+    font-size: 16px;
+    font-family: 'Montserrat-Bold';
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .div-meal-plan-subtitle {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+    .span-subtitle1 {
+      font-size: 7px;
+      color: #9D9D9D;
+      margin-right: 5px;
+      margin-top: 2px;
+    }
+
+    .span-subtitle2 {
+      font-size: $mobile-regular-font-size;
+      color: $text-light-gray;
+    }
+  }
+
   .div-meal-plan-image {
+    margin-top: 20px;
     img {
       width: 100%;
     }
   }
 
-  .div-meal-plan-recipies {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .div-meal-plan-start-price {
+    color: $text-light-gray;
+    font-size: $mobile-regular-font-size;
+    text-align: center;
     margin-top: 30px;
-
-    .div-meal-plan-recipies-title {
-      text-align: center;
-      margin-top: 20px;
-      color: $text-light-gray;
-      font-size: $mobile-regular-font-size;
-    }
   }
 
-  .div-meal-plan-prices {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    margin-top: 40px;
-    padding: 0 27px;
-
-    .div-menu-plan-price {
-      position: relative;
-      width: 33.33%;
-      text-align: center;
-
-      span {
-        display: block;
-      }
-
-      .span-menu-plan-price-old-value {
-        position: absolute;
-        margin-top: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: $small-font-size;
-        color: #D3D5DB;
-        text-decoration: line-through;
-      }
-
-      .span-menu-plan-price-value {
-        font-size: $small-font-size;
-        color: $text-light-gray;
-      }
-
-      .span-menu-plan-price-title {
-        font-size: $mobile-small-font-size;
-        color: #9D9D9D;
-      }
-    }
-
-    .div-menu-plan-price-separator {
-      background-color: $text-light-gray;
-      width: 1px;
-      box-sizing: border-box;
-    }
+  .div-meal-plan-total-price {
+    color: $text-light-gray;
+    font-size: $mobile-regular-font-size + 2;
+    text-align: center;
+    margin-top: 20px;
   }
 
   .btn-grab-offer {
-    width: calc(100% - 98px);
-    height: 50px;
-    margin: 47px;
-    font-size: $small-font-size;
+    width: calc(100% - 96px);
+    height: 46px;
+    margin: 24px 43px 43px;
+    font-size: $mobile-regular-font-size;
+    border-radius: 6px;
   }
 
   @media (max-width: 710px) {
-    .div-meal-plan-recipies {
-      margin-top: 15px;
-
-      .div-meal-plan-recipies-title {
-        font-size: $mobile-small-font-size;
-        margin-top: 10px;
-      }
-    }
-
-    .div-meal-plan-prices {
-      margin-top: 20px;
-      margin-bottom: 10px;
-      padding: 0 27px;
-  
-      .div-menu-plan-price {
-        .span-menu-plan-price-old-value {
-          margin-top: -10px;
-          font-size: $mobile-small-font-size;
-        }
-  
-        .span-menu-plan-price-value {
-          font-size: $mobile-small-font-size;
-        }
-  
-        .span-menu-plan-price-title {
-          font-size: 7px;
-        }
-      }
-  
-      .div-menu-plan-price-separator {
-        margin: 0;
-      }
-    }
-
     .btn-grab-offer {
       font-size: $mobile-small-font-size;
       width: calc(100% - 20px);
