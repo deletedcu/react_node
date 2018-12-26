@@ -6,10 +6,14 @@ const config = require('../../../config/config');
 exports.getAllProducts = (request) => {
   return new Promise((resolve, reject) => {
     let categories = [];
+    let collections = [];
 
     Moltin.Categories.All().then(res => {
       categories = res.data;
-      return Moltin.Products.Filter({eq: {status: 'live'}}).With(['main_image', 'files']).All();
+      return Moltin.Collections.All();
+    }).then(res => {
+      collections = res.data;
+      return Moltin.Products.Filter({eq: {status: 'live'}}).With(['main_image', 'files']).All(); 
     })
     .then(res => {
       let products = res.data;
@@ -50,7 +54,6 @@ exports.getAllProducts = (request) => {
 
         if (product.relationships.categories) {
           // product has categories, find their ids and attach to result
-          console.log(product.relationships.categories);
           let category = categories.find((category) => category.id === product.relationships.categories.data[0].id);
           product.category = category.name;
         } else {
@@ -60,8 +63,11 @@ exports.getAllProducts = (request) => {
 
         if (product.relationships.collections) {
           // product has categories, find their ids and attach to result
-          let collections = product.relationships.collections.data.map((collection) => { return collection.id });
-          product.collections = collections;
+          let collectionIds = product.relationships.collections.data.map((collection) => { return collection.id });
+          product.collections = collectionIds.map(collectionId => {
+            let collection = collections.find(collection => collection.id === collectionId);
+            return collection.name;
+          });
         } else {
           // product doesn't have categories
           product.collections = [];

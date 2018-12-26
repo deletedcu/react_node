@@ -28,6 +28,10 @@ module.exports = (description) => {
     if (!descriptionJSON.carbs) {
       descriptionJSON.carbs = '--';
     }
+
+    if (!descriptionJSON.ingredients) {
+      descriptionJSON.ingredients = 'Not Available';
+    }
   } 
   catch {
     // invalid json format, return default values
@@ -37,6 +41,7 @@ module.exports = (description) => {
       fat: '--',
       protein: '--',
       carbs: '--',
+      ingredients: 'Not Available',
     }
   }
 
