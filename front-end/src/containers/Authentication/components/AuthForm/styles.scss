@@ -2,8 +2,8 @@
 
 .auth-form {
   background-color: white;
-  border: 1px solid #D2D2D2;
-  padding: 50px;
+  box-shadow: $shadow-primary;
+  padding: 40px 28px;
   color: $text-light-gray;
 
   .span-link {
@@ -25,31 +25,36 @@
   }
 
   .auth-form-header-green {
-    margin: -50px -50px 0 -50px;
-    height: 135px;
-    line-height: 135px;
-    border-bottom: 1px solid $light-green-primary;
-    background: $extra-light-green;
+    margin: -30px -30px 0 -30px;
+    height: 60px;
+    line-height: 60px;
 
     .auth-form-title {
-      font-size: 41px;
-      font-family: 'Montserrat-Medium';
+      font-size: 30px;
+      font-family: 'Montserrat-SemiBold';
       text-align: center;
+      color: $text-primary;
     }
   }
 
   .auth-form-inputs {
     .auth-form-input {
-      margin-top: 30px;
+      margin-top: 15px;
+
+      .auth-form-input-name {
+        font-size: $mobile-regular-font-size;
+        font-family: 'Montserrat-Medium';
+        color: $text-light-gray;
+      }
 
       input {
         width: 100%;
-        height: 80px;
+        height: 53px;
         margin-top: 10px;
-        padding: 0 20px;
+        padding: 0 10px;
         border: 1px solid $light-green-primary;
         border-radius: 4px;
-        font-size: $footer-secondary-font-size;
+        font-size: $small-font-size;
         caret-color: $green-primary;
       }
 
@@ -72,9 +77,12 @@
     }
 
     .btn-continue {
-      margin-top: 50px;
+      margin-top: 20px;
       width: 100%;
-      height: 80px;
+      height: 53px;
+      font-size: $mobile-regular-font-size;
+      font-family: 'Montserrat-Medium';
+      border-radius: 4px;
     }
 
     .auth-form-forgot-password {
@@ -85,9 +93,17 @@
 
       .checkbox {
         color: #CFCFCF;
+
+        img {
+          height: 22px;
+        }
+        span {
+          font-size: $mobile-regular-font-size;
+        }
       }
 
       .span-forgot-password {
+        font-size: $mobile-regular-font-size;
         color: $green-primary;
         margin-right: 10px;
         &:hover {
@@ -112,6 +128,7 @@
 
     span {
       padding: 0 16px;
+      font-size: $mobile-regular-font-size;
     }
   }
 
@@ -122,10 +139,11 @@
 
   .auth-form-footer {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
+    font-size: $mobile-regular-font-size;
 
     .auth-form-footer-signup {
-      margin-top: 50px;
+      margin-top: 20px;
     }
   }
 
@@ -144,9 +162,7 @@
     }
 
     .auth-form-header-green {
-      margin: -50px -15px 0 -15px;
-      height: 80px;
-      line-height: 80px;
+      margin: -30px -15px 0 -15px;
       border-bottom: unset;
 
       .auth-form-title {
@@ -157,7 +173,7 @@
     }
 
     .auth-form-inputs {
-      margin-top: 30px;
+      margin-top: 15px;
       
       .auth-form-input {
         margin-top: 15px;
@@ -171,7 +187,7 @@
       }
   
       .btn-continue {
-        margin-top: 30px;
+        margin-top: 15x;
         height: 50px;
         font-size: $mobile-regular-font-size;
       }
@@ -201,7 +217,7 @@
     }
   
     .btn-facebook {
-      margin-top: 15px;
+      margin-top: 0px;
     }
   
     .auth-form-footer {

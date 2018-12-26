@@ -46,9 +46,9 @@ class ForgotPasswordForm extends Component {
           <Button className='btn-reset'>SEND RESET INSTRUCTIONS</Button>
 
           <div className='forgot-password-form-links'>
-            <Link to='/auth/signup'>Sign Up</Link>
-            <div className='div-separator'/>
             <Link to='/auth/login'>Log In</Link>
+            <div className='div-separator'/>
+            <Link to='/auth/signup'>Sign Up</Link>
           </div>
         </form>
       </div>

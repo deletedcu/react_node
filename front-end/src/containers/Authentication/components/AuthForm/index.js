@@ -116,12 +116,12 @@ class AuthForm extends Component {
           }
 
           <div className='auth-form-input'>
-            <div className='auth-form-input-name'>Email</div>
+            <div className='auth-form-input-name'>EMAIL</div>
             <input required type='email' name='email' value={this.state.email} onChange={this.onChange}/>
           </div>
 
           <div className='auth-form-input'>
-            <div className='auth-form-input-name'>Password</div>
+            <div className='auth-form-input-name'>PASSWORD</div>
             <input required type='password' name='password' value={this.state.password} onChange={this.onChange} placeholder='6 characters or more'/>
           </div>
 
