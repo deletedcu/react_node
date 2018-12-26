@@ -14,8 +14,6 @@ import './styles.css'
 
 import imgClose from '../../../assets/images/close_button.svg'
 import imgHighProtein from '../../../assets/images/high-protein.svg'
-import imgGlutenFree from '../../../assets/images/gluten-free.svg'
-import imgSoyFree from '../../../assets/images/soy-free.svg'
 
 import { closeModal } from '../../../redux/actions/modal'
 import { addToCart } from '../../../redux/actions/cart'
@@ -96,7 +94,6 @@ class MenuModal extends Component {
   render () {
     const { item, currentImageIndex } = this.state
     const thumbnailUrls = [item.main_image].concat(item.files)
-    const ingredients = '<b>Marinara Sauce</b> (Diced Tomatoes (Tomatoes, Tomato Juice, Citric Acid, Calcium Chloride), Tomato Puree (Water, Tomato Paste), Onions, Tapioca Starch, Spices, Garlic, Honey, Olive Oil, Sea Salt, Salt, Citric Acid), Penne (Water, Brown Rice Flour, Potato Starch, Tapioca Starch, Whole Egg, Egg White, Salt, Xanthan Gum), <b>Ground Beef, Onion, Tomato Paste</b> (Tomatoes, Salt, Citric Acid), Carrots, Celery, Asiago Cheese (Pasteurized Milk, Cultures, Salt, Enzymes, Powdered Cellulose (To Prevent Caking), Natamycin (A Natural Mold Inhibitor)), <b>Parmesan Cheese</b> (Pasteurized Milk, Cheese Cultures, Salt, Enzymes, Powdered Cellulose (Added To Prevent Caking)), Oil (Expeller Pressed Canola Oil, Extra Virgin Olive Oil), <b>Garlic, Spices, Sea Salt.</b><br/><br/><b>Contains: Egg, Milk.</b><br/><br/>Gluten Free Certified'
 
     return (
       <ModalContainer>
@@ -151,18 +148,16 @@ class MenuModal extends Component {
 
               {/* Specialities */}
               <div className='div-menu-specialities'>
-                <div className='div-menu-speciality'>
-                  <img src={ imgHighProtein } alt='special'/>
-                  <span>High Protein</span>
-                </div>
-                <div className='div-menu-speciality'>
-                  <img src={ imgGlutenFree } alt='special'/>
-                  <span>Gluten Free</span>
-                </div>
-                <div className='div-menu-speciality'>
-                  <img src={ imgSoyFree } alt='special'/>
-                  <span>Soy Free</span>
-                </div>
+                { 
+                  item.collections.map((collection, index) => {
+                    return (
+                      <div key={index} className='div-menu-speciality'>
+                        <img src={ imgHighProtein } alt='special'/>
+                        <span>{ collection }</span>
+                      </div>
+                    )
+                  }) 
+                }
               </div>
 
               {/* Description */}
@@ -176,7 +171,7 @@ class MenuModal extends Component {
                   Ingredients
                 </div>
                 <div className='div-ingredients'>
-                  { ReactHtmlParser(ingredients) }
+                  { ReactHtmlParser(item.ingredients) }
                 </div>
               </div>
 

@@ -16,11 +16,14 @@ class Menus extends Component {
       searchText: '',
       showAllMeals: !isMobileOnly,
       showAllSides: !isMobileOnly,
+      filters: [],
     }
   }
 
   onChangeFilters = (filters) => {
-
+    this.setState({
+      filters: filters,
+    })
   }
 
   onChangeSearchText = (searchText) => {
@@ -46,11 +49,20 @@ class Menus extends Component {
   }
 
   render () {
-    let { showAllMeals, showAllSides } = this.state
-    let zipCode = this.props.user.user.zip;
+    let { showAllMeals, showAllSides, filters, searchText } = this.state
+    let zipCode = this.props.user.user.zip
+
     let { products } = this.props.products
-    let originalItems = products.filter(product => product.name.includes(this.state.searchText) && product.category === 'Mealpost Original')
-    let sideItems = products.filter(product => product.name.includes(this.state.searchText) && product.category === 'Sides')
+    let productsFilteredByName = products.filter(product => product.name.includes(searchText))
+    let productsFilteredByCollectionTags = productsFilteredByName.filter(product => {
+      if (filters.length === 0) {
+        return true
+      } else {
+        return !(filters.some(filter => product.collections.indexOf(filter) === -1))
+      }
+    })
+    let originalItems = productsFilteredByCollectionTags.filter(product => product.category === 'Mealpost Original')
+    let sideItems = productsFilteredByCollectionTags.filter(product =>  product.category === 'Sides')
 
     return (
       <div className='div-menus-container'>

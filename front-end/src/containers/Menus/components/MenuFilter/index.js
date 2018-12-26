@@ -14,11 +14,11 @@ import imgLowCalory from '../../../../assets/images/filter_low_cal.png'
 import imgVegetable from '../../../../assets/images/filter_veg.png'
 
 export const MenuFilterType = {
-  Vegetalian: 0,
-  UnderCal: 1,
-  GlutenFree: 2,
-  HighProtein: 3,
-  LowFat: 4,
+  Vegetalian: 'Vegetalian',
+  UnderCal: 'Under 400cal',
+  GlutenFree: 'Gluten-Free',
+  HighProtein: 'High Protein',
+  LowFat: 'Low Fat',
 }
 
 class MenuFilter extends Component {
