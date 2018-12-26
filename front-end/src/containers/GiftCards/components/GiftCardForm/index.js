@@ -55,7 +55,7 @@ class GiftCardForm extends Component {
           <input required type='email' name='email' value={this.state.email} onChange={this.onChange} placeholder='Email'/>
 
           <div className='gift-card-form-datepicker'>
-            <div className='gift-card-form-datepicker-title'>Send Gift email on</div>
+            <div className='gift-card-form-datepicker-title'>Send Gift On</div>
             <GiftDatePicker onChange={this.onDateChange}/>
           </div>
 

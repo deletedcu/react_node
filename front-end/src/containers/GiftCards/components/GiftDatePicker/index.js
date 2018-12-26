@@ -33,7 +33,13 @@ class GiftDatePicker extends Component {
           selected={date}
           onChange={this.onDateChange}
           onClickOutside={this.onClickOutside}
-          customInput={<input value={moment(date).format('MM/DD/YYYY')} readOnly={true}/>}
+          customInput={
+            <div>
+              <input className='input-month' value={moment(date).format('MMMM')} readOnly={true} />
+              <input className='input-day' value={moment(date).format('DD')} readOnly={true} />
+              <input className='input-year' value={moment(date).format('YYYY')} readOnly={true} />
+            </div>
+          }
         />
       </div>
     )
