@@ -94,7 +94,7 @@ class AuthForm extends Component {
           { 
             isSignup && 
             <div className='auth-form-switch'>
-              or <Link to='/auth/login'><span className='span-link' onClick={ this.onSwitchToLogin }>login</span></Link>
+              or <Link to='/auth/login'><span className='span-link' onClick={ this.onSwitchToLogin }>Log in</span></Link>
             </div>
           }
         </div>

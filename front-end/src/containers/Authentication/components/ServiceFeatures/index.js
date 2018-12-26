@@ -16,7 +16,7 @@ const ServiceFeatures = (props) => {
           <ServiceFeature
             image={ imgMenus }
             title='PERSONALIZED MENUS'
-            description="Select from our 2-person or family plans. Tell us your dietary preferences and we'll personalize the menus you receive."
+            description="Select from our expanding weekly menu. Set your own meal preferences and we'll personalize your experience."
           />
         </div>
         <div className='col-12 col-md-4 col-lg-4 col-xl-4'>
@@ -30,7 +30,7 @@ const ServiceFeatures = (props) => {
           <ServiceFeature
             image={ imgDelivery }
             title='CONVENIENT DELIVERY'
-            description="Ingredients are carefully packaged in a refrigerated box so food stays fresh even if you're not home when we deliver."
+            description="Your meals are carefully prepared and packaged so the food stays fresh even if you're not home when we deliver."
           />
         </div>
       </div>

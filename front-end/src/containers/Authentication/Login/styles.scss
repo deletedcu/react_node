@@ -1,32 +1,14 @@
 @import "../../../styles/variables/variables";
 
 .login-container {
-
-  .div-login-banner {
-    position: relative;
-    height: 465px;
-
-    .div-login-title {
-      position: relative;
-      text-align: center;
-      font-size: 70px;
-      font-family: 'Montserrat-SemiBold';
-      top: calc(50% - 30px);
-      transform: translateY(-50%);
-
-      .div-login-subtitle {
-        font-size: $regular-font-size;
-        font-family: 'Montserrat-Regular';
-        color: $text-light-gray;
-        margin: 0 30px;
-      }
-    }
-  }
+  min-height: 100vh;
+  margin-top: -50px;
 
   .div-login-form {
     position: relative;
     display: flex;
-    margin: -170px 30px 90px 30px;
+    padding-top: 100px;
+    margin: 100px 30px 90px 30px;
 
     .container {
       max-width: 500px !important;
@@ -34,21 +16,8 @@
   }
 
   @media (max-width: 710px) {
-    .div-login-banner {
-      max-height: 350px;
-
-      .div-login-title {
-        font-size: $regular-font-size;
-        top: calc(50% - 60px);
-
-        .div-login-subtitle {
-          font-size: 11px;
-        }
-      }
-    }
-
     .div-login-form {
-      margin-top: -180px;
+      padding-top: 50px;
       margin-bottom: 40px;
     }
   }

@@ -1,62 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 666 34">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #56b05a;
-        stroke: #108915;
-      }
-
-      .cls-2, .cls-3 {
-        fill: #fff;
-      }
-
-      .cls-2, .cls-5 {
-        stroke: #707070;
-      }
-
-      .cls-3, .cls-4 {
-        font-size: 18px;
-        font-family: Helvetica;
-      }
-
-      .cls-4 {
-        fill: #707070;
-      }
-
-      .cls-5, .cls-7 {
-        fill: none;
-      }
-
-      .cls-5 {
-        stroke-linecap: round;
-        stroke-width: 2px;
-      }
-
-      .cls-6 {
-        stroke: none;
-      }
-    </style>
-  </defs>
-  <g id="Group_233" data-name="Group 233" transform="translate(-431 -49)">
-    <g id="Rectangle_815" data-name="Rectangle 815" class="cls-1" transform="translate(431 49)">
-      <rect class="cls-6" width="34" height="34" rx="5"/>
-      <rect class="cls-7" x="0.5" y="0.5" width="33" height="33" rx="4.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="589.198" height="32.177" viewBox="0 0 589.198 32.177">
+  <g id="Group_529" data-name="Group 529" transform="translate(-726 -49)">
+    <g id="Rectangle_816" data-name="Rectangle 816" transform="translate(936.224 50.891)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="30.287" height="30.287" rx="5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="29.287" height="29.287" rx="4.5" fill="none"/>
     </g>
-    <g id="Rectangle_816" data-name="Rectangle 816" class="cls-2" transform="translate(667 49)">
-      <rect class="cls-6" width="34" height="34" rx="5"/>
-      <rect class="cls-7" x="0.5" y="0.5" width="33" height="33" rx="4.5"/>
+    <g id="Rectangle_815" data-name="Rectangle 815" transform="translate(726 50.891)" fill="#56b05a" stroke="#108915" stroke-width="1">
+      <rect width="30.287" height="30.287" rx="5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="29.287" height="29.287" rx="4.5" fill="none"/>
     </g>
-    <g id="Rectangle_817" data-name="Rectangle 817" class="cls-2" transform="translate(951 49)">
-      <rect class="cls-6" width="34" height="34" rx="5"/>
-      <rect class="cls-7" x="0.5" y="0.5" width="33" height="33" rx="4.5"/>
+    <text id="_1" data-name="1" transform="translate(737.58 68.235)" fill="#fff" font-size="12" font-family="Helvetica"><tspan x="0" y="0">1</tspan></text>
+    <text id="_2" data-name="2" transform="translate(951.913 70.235)" fill="#707070" font-size="12" font-family="Helvetica"><tspan x="-3.337" y="0">2</tspan></text>
+    <text id="WELCOME" transform="translate(766.085 69.235)" fill="#707070" font-size="13" font-family="Helvetica" letter-spacing="0.06em"><tspan x="0" y="0">WELCOME</tspan></text>
+    <line id="Line_19" data-name="Line 19" x2="40.976" transform="translate(873.424 66.479)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="0.75"/>
+    <g id="Group_528" data-name="Group 528" transform="translate(-1)">
+      <text id="CHOOSE_MEALS" data-name="CHOOSE MEALS" transform="translate(986.999 69.345)" fill="#707070" font-size="13" font-family="Helvetica" letter-spacing="0.06em"><tspan x="0" y="0">CHOOSE MEALS</tspan></text>
+      <g id="Group_527" data-name="Group 527" transform="translate(-12 -2)">
+        <g id="Rectangle_817" data-name="Rectangle 817" transform="translate(1197.004 51)" fill="#fff" stroke="#707070" stroke-width="1">
+          <rect width="30.287" height="30.287" rx="5" stroke="none"/>
+          <rect x="0.5" y="0.5" width="29.287" height="29.287" rx="4.5" fill="none"/>
+        </g>
+        <text id="_3" data-name="3" transform="translate(1211.693 70.345)" fill="#707070" font-size="12" font-family="Helvetica"><tspan x="-3.337" y="0">3</tspan></text>
+      </g>
+      <text id="CHECKOUT" transform="translate(1237.198 69.345)" fill="#707070" font-size="13" font-family="Helvetica" letter-spacing="0.06em"><tspan x="0" y="0">CHECKOUT</tspan></text>
+      <line id="Line_20" data-name="Line 20" x2="40.976" transform="translate(1124.876 64.589)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="0.75"/>
     </g>
-    <text id="_1" data-name="1" class="cls-3" transform="translate(444 72)"><tspan x="0" y="0">1</tspan></text>
-    <text id="_2" data-name="2" class="cls-4" transform="translate(684 72)"><tspan x="-5.005" y="0">2</tspan></text>
-    <text id="_3" data-name="3" class="cls-4" transform="translate(968 72)"><tspan x="-5.005" y="0">3</tspan></text>
-    <text id="WELCOME" class="cls-4" transform="translate(476 72)"><tspan x="0" y="0">WELCOME</tspan></text>
-    <text id="SELECT_A_PLAN" data-name="SELECT A PLAN" class="cls-4" transform="translate(711 72)"><tspan x="0" y="0">SELECT A PLAN</tspan></text>
-    <text id="CHECKOUT" class="cls-4" transform="translate(995 72)"><tspan x="0" y="0">CHECKOUT</tspan></text>
-    <line id="Line_19" data-name="Line 19" class="cls-5" x2="46" transform="translate(596.5 66.5)"/>
-    <line id="Line_20" data-name="Line 20" class="cls-5" x2="46" transform="translate(883.5 66.5)"/>
   </g>
 </svg>

@@ -2,22 +2,25 @@
 
 .signup-container {
   padding-top: 50px;
+  background-color: #FAFBFD;
+  padding-bottom: 1px;
 
   .div-signup-description {
-    margin-top: 70px;
+    margin-top: 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     .div-signup-description-title {
-      font-size: 70px;
-      font-family: 'Montserrat-SemiBold';
+      font-size: 37px;
+      font-family: 'Montserrat-Bold';
     }
 
     .div-signup-description-text {
+      font-size: $small-font-size;
       color: $text-light-gray;
-      margin-top: 40px;
+      margin-top: 10px;
       max-width: 570px;
     }
   }
@@ -25,11 +28,17 @@
   .div-signup-form-container {
     display: flex;
     flex-direction: row;
-    margin-top: 120px;
+    margin-top: 90px;
 
     .div-signup-img, .div-signup-form {
+      max-width: 720px;
       width: 50%;
       padding: 0 20px;
+
+      .auth-form {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
 
       .img-background {
         max-width: 100%;
@@ -90,6 +99,11 @@
 
       .div-signup-form {
         padding: 0;
+
+        .auth-form {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
       }
     }
 

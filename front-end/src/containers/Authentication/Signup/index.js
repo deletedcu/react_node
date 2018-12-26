@@ -13,7 +13,7 @@ const Signup = (props) => {
       {/* Top description section */}
       <div className='div-signup-description'>
         <div className='div-signup-description-title'>Get Started</div>
-        <div className='div-signup-description-text'>Farm-fresh ingredients and delicious recipes delivered weekly to your home</div>
+        <div className='div-signup-description-text'>Fresh, Chef-Inspired Meals delivered weekly to your home</div>
       </div>
 
       {/* Form section */}
