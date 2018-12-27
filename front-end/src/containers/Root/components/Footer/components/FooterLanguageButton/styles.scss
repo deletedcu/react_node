@@ -6,13 +6,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 370px;
+    width: 320px;
     height: 100%;
   
     .img-globe {
-      width: 29px;
-      height: 29px;
-      margin-right: 60px;
+      width: 25px;
+      height: 25px;
+      margin-right: 50px;
       background-image: url('../../../../../../assets/images/globe.svg');
       background-position: center;
       background-repeat: no-repeat;
@@ -29,12 +29,9 @@
   
     span {
       color: #AFAFAF;
-      margin: 0 50px;
+      margin: 0 30px;
       transition: all .25s linear;
-  
-      @media (max-width: 1200px) {
-        display: none;
-      }
+      font-size: $small-font-size;
     }
 
     &:hover {
@@ -50,6 +47,8 @@
 
   .dropdown__content {
     width: 100%;
+    max-height: 300px;
+    overflow-y: scroll;
     background-color: #212122;
     color: #AFAFAF;
 
@@ -57,10 +56,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 52px;
-      padding: 0 50px;
+      height: 40px;
+      padding: 0 40px;
       cursor: pointer;
-      font-size: $regular-font-size;
+      font-size: $small-font-size;
 
       img {
         height: 24px;

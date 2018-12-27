@@ -13,7 +13,7 @@ import './styles.css'
 
 import imgBanner from '../../assets/images/banner.png';
 import imgArrowRight from '../../assets/images/arrow-right.svg'
-import imgOrders from '../../assets/images/menu.png'
+import imgOrders from '../../assets/images/menu.gif'
 import imgTrack from '../../assets/images/track.gif'
 import imgReceive from '../../assets/images/deliver.png'
 
