@@ -14,7 +14,7 @@ import imgLowCalory from '../../../../assets/images/filter_low_cal.png'
 import imgVegetable from '../../../../assets/images/filter_veg.png'
 
 export const MenuFilterType = {
-  Vegetalian: 'Vegetalian',
+  Vegetarian: 'Vegetarian',
   UnderCal: 'Under 400cal',
   GlutenFree: 'Gluten-Free',
   HighProtein: 'High Protein',
@@ -89,12 +89,12 @@ class MenuFilter extends Component {
           </div>
         </DropdownTrigger>
         <DropdownContent>
-          <div className='div-menu clickable' onClick={ () => {this.onToggleFilter(MenuFilterType.Vegetalian)}}>
+          <div className='div-menu clickable' onClick={ () => {this.onToggleFilter(MenuFilterType.Vegetarian)}}>
             <div>
               <img className='img-icon' src={imgVegetable} alt='veg'/>
               <span>Vegetarian</span>
             </div>
-            { selectedFilterTypes.includes(MenuFilterType.Vegetalian) && <img className='img-check' src={imgCheck} alt='check'/> }
+            { selectedFilterTypes.includes(MenuFilterType.Vegetarian) && <img className='img-check' src={imgCheck} alt='check'/> }
           </div>
           <div className='div-menu clickable' onClick={ () => {this.onToggleFilter(MenuFilterType.UnderCal)}}>
             <div>
