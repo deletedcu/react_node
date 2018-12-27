@@ -62,7 +62,7 @@ class ComingSoon extends Component {
             <div className='separator'/>
             <Link to='/terms-of-service'>Privacy</Link>
             <div className='separator'/>
-            <span>@2018 Mealpost</span>
+            <span>©2018 Mealpost</span>
           </div>
           <img className='img-globe clickable' src={imgGlobe} alt='globe'/>
         </div>

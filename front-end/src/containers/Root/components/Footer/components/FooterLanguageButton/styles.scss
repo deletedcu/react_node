@@ -31,7 +31,7 @@
       color: #AFAFAF;
       margin: 0 30px;
       transition: all .25s linear;
-      font-size: $small-font-size;
+      font-size: $small-font-size + 1;
     }
 
     &:hover {
@@ -59,7 +59,7 @@
       height: 40px;
       padding: 0 40px;
       cursor: pointer;
-      font-size: $small-font-size;
+      font-size: $small-font-size + 1;
 
       img {
         height: 24px;
@@ -81,7 +81,7 @@
         height: 40px;
         padding-left: 70px;
         cursor: pointer;
-        font-size: $small-font-size;
+        font-size: $small-font-size + 1;
         font-family: 'Montserrat-Medium';
 
         &:hover {
