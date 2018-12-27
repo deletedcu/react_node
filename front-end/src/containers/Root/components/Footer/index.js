@@ -101,7 +101,6 @@ class Footer extends Component {
             <Link to='/service-areas' className='footer-middle-link'>San Francisco</Link>
             <Link to='/service-areas' className='footer-middle-link'>Oakland</Link>
             <Link to='/service-areas' className='footer-middle-link'>Berkely</Link>
-            <Link to='/service-areas' className='footer-middle-link'>Concord</Link>
             <Link to='/service-areas' className='footer-middle-link'>See More...</Link>
           </div>
 

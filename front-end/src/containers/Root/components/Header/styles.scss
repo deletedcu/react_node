@@ -55,7 +55,7 @@
 
     span {
       color: #58595E;
-      font-size: $small-font-size;
+      font-size: $mobile-regular-font-size;
       font-family: 'Montserrat-Medium';
       margin: 0 16px;
 
@@ -84,25 +84,19 @@
       line-height: 36px;
       text-align: center;
       font-family: 'Montserrat-Medium';
-      font-size: $small-font-size;
+      font-size: $mobile-regular-font-size;
     }
 
     .button {
       height: 45px;
       width: 123px;
       box-shadow: $shadow-primary;
-      font-size: $small-font-size;
+      font-size: $mobile-regular-font-size;
       font-family: 'Montserrat-SemiBold';
     }
 
     .div-cart {
-      margin-left: 30px;
-    }
-
-    .btn-order-now {
-      margin-right: 20px;
-      font-family: 'Montserrat-SemiBold';
-      font-size: $small-font-size;
+      margin-left: 20px;
     }
   }
 
@@ -152,15 +146,17 @@
       display: block;
     }
 
-    .div-links {
-      display: none;
-    }
-
     .div-help-center-banner {
       margin-left: 30px;
       .div-separator {
         margin-right: 30px;
       }
+    }
+  }
+
+  @media (max-width: 950px) {
+    .div-links {
+      display: none;
     }
   }
 

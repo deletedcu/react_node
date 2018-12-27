@@ -7,6 +7,7 @@ import imgPaypal from '../../../../../assets/images/paypal.svg'
 import imgMasterCard from '../../../../../assets/images/mastercard.svg'
 import imgVisaCard from '../../../../../assets/images/visacard.svg'
 import imgPassword from '../../../../../assets/images/password.svg'
+import imgPasswordWhite from '../../../../../assets/images/password_white.svg'
 
 import { showModal, ModalType } from '../../../../../redux/actions/modal'
 
@@ -30,59 +31,41 @@ class PaymentMethodInfo extends Component {
 
   render () {
     const { type } = this.props
-    let paymentMethodTitle = ''
     let image = null
+    let passwordImage = null
     let colorClass = ''
 
     switch (type) {
       case PaymentMethodType.paypal:
-        paymentMethodTitle = 'PayPal'
         image = imgPaypal
-        colorClass = 'cyan'
+        passwordImage = imgPassword
+        colorClass = 'gray'
       break
       case PaymentMethodType.masterCard:
-        paymentMethodTitle = 'Mastercard'
         image = imgMasterCard
-        colorClass = 'orange'
+        passwordImage = imgPasswordWhite
+        colorClass = 'black'
       break
       case PaymentMethodType.visaCard:
-        paymentMethodTitle = 'VISA'
         image = imgVisaCard
+        passwordImage = imgPasswordWhite
         colorClass = 'blue'
       break
       default:
-        paymentMethodTitle = 'PayPal'
         image = imgPaypal
-        colorClass = 'cyan'
+        passwordImage = imgPassword
+        colorClass = 'gray'
     }
 
     return (
-      <div className='payment-method-info clickable' onClick={this.onEditPaymentMethod}>
-        <div className={classNames('payment-method-info-title', colorClass)}>
-          <span>{paymentMethodTitle}</span>
+      <div className={classNames('payment-method-info', 'clickable', colorClass)} onClick={this.onEditPaymentMethod}>
+        <div className='div-image-wrapper'>
+          <img className={classNames('img-payment-method', {'img-payment-method-long': type === PaymentMethodType.paypal})} src={image} alt='card'/>
         </div>
-
-        <div className='payment-method-info-content'>
-          <div className='div-image-wrapper'>
-            <img className={classNames('img-payment-method', {'img-payment-method-long': type === PaymentMethodType.paypal})} src={image} alt='card'/>
-          </div>
-          
-          <div className='div-secret-form'>
-            <img className='img-password' src={imgPassword} alt='password'/>
-            <img className='img-password' src={imgPassword} alt='password'/>
-            { type !== PaymentMethodType.paypal && <img className='img-password' src={imgPassword} alt='password'/> }
-            { type !== PaymentMethodType.paypal &&
-              <div>
-                <span>4877</span>
-                <span>07/15</span>
-              </div>
-            }
-            { type === PaymentMethodType.paypal &&
-              <span>alexK**@g***.com</span>
-            }
-          </div>
-          
-          <span className='span-remove clickable' onClick={this.onRemove}>Remove</span>
+        
+        <div className='div-secret-form'>
+          <img className='img-password' src={passwordImage} alt='password'/>
+          <span>4877</span>
         </div>
       </div>
     )

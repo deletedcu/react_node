@@ -4,18 +4,18 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 8px 15px;
+  padding: 5px 12px;
   border: 1px solid $green-primary;
   border-radius: 10px;
 
   img {
-    height: 28px;
+    height: 24px;
     margin-right: 10px;
   }
 
   span {
     color: $green-primary;
-    font-size: $small-font-size;
+    font-size: $mobile-regular-font-size;
     font-family: 'Montserrat-Bold';
   }
 
@@ -24,7 +24,7 @@
     border-radius: 4px;
     
     span {
-      font-size: $mobile-regular-font-size;
+      font-size: $mobile-small-font-size;
     }
     img {
       height: 20px;

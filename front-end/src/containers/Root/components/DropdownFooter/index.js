@@ -48,7 +48,6 @@ class DropdownFooter extends Component {
             <div><Link to='/service-areas'>San Francisco</Link></div>
             <div><Link to='/service-areas'>Oakland</Link></div>
             <div><Link to='/service-areas'>Berkely</Link></div>
-            <div><Link to='/service-areas'>Concord</Link></div>
             <div><Link to='/service-areas'>See More...</Link></div>
           </DropdownList>
 

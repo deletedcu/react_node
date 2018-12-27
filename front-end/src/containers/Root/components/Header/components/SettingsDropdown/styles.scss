@@ -8,11 +8,11 @@
       align-items: center;
 
       img {
-        height: 24px;
+        height: 20px;
       }
 
       span {
-        font-size: $small-font-size;
+        font-size: $mobile-regular-font-size;
         font-family: 'Montserrat-Medium';
       }
 
@@ -33,7 +33,7 @@
     box-shadow: 2px 2px 6px rgba(0,0,0,0.16);
     width: 285px;
     height: 200px;
-    margin-left: -100px;
+    margin-left: -150px;
     margin-top: 12px;
     padding-top: 18px;
     animation-name: dropdown-animation;
