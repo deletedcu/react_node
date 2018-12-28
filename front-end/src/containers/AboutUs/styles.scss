@@ -1,0 +1,63 @@
+@import "../../styles/variables/variables";
+
+.div-about-us-container {
+  display: flex;
+  flex-direction: column;
+
+  .img-background {
+    height: 565px;
+  }
+
+  .img-background-2 {
+    height: 608px;
+    margin: 80px 40px 60px;
+  }
+
+  .about-us-description {
+    color: #333333;
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    .about-us-description-title {
+      font-size: $regular-font-size + 2;
+      margin-bottom: 20px;
+    }
+
+    .about-us-description-content {
+      font-size: $mobile-regular-font-size;
+    }
+  }
+
+  .about-us-description-single {
+    font-size: $small-font-size;
+    color: #333333;
+  }
+
+  .separator {
+    height: 1px;
+    background-color: #777777;
+  }
+
+  .div-about-us-content {
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+
+  .div-about-us-bottom {
+    background-color: #F1F1F1;
+
+    .container {
+      padding: 80px 0 130px;
+
+      .about-us-careers {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+
+        .about-us-career-card {
+          width: calc(50% - 15px);
+        }
+      }
+    }
+  }
+}
