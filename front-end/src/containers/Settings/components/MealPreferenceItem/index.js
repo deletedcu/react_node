@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-import LazyImage from '../../../../components/LazyImage'
 import Button from '../../../../components/Button'
-import MealPreferenceOption from '../MealPreferenceOption'
+import MealPreferenceSlider from '../MealPreferenceSlider'
 
 import './styles.css'
-import imgPlaceholder from '../../../../assets/images/meal_preference_placeholder.png'
-import imgFavorite from '../../../../assets/images/favorite.svg'
 
 class MealPreferenceItem extends Component {
 
@@ -39,11 +36,8 @@ class MealPreferenceItem extends Component {
 
     return (
       <div className='meal-preference-item'>
-        <LazyImage className='img-item' src={imgPlaceholder}/>
-
         <div className='meal-preference-item-name'>
-          <span className='span-name'>Special Herb Grilled Chicken</span>
-          <img className='img-flag clickable' src={imgFavorite} alt='flag'/>
+          Special Herb Grilled Chicken
         </div>
 
         <div className='meal-preference-item-description'>
@@ -53,32 +47,23 @@ class MealPreferenceItem extends Component {
         <div className='separator'/>
 
         <span className='span-edit clickable' onClick={this.onToggleEdit}>Edit Meal Preference</span>
+        <span className='span-edit-description'>Meal Preferences are saved, and applied to your next reorder of this meal. </span>
 
         { editing &&
           <div className='meal-preference-item-edit-section'>
-            <div className='span-description'>Meal Preferences are saved, and applied to your next reorder of this meal. </div>
             <div className='separator'/>
 
             <div className='meal-preference-item-edit-options'>
               <div className='meal-preference-item-edit-options-title'>Options</div>
               <div className='meal-preference-item-edit-options-grid'>
-                <MealPreferenceOption
-                  text='No Carbs'
+                <MealPreferenceSlider
+                  title='Carb Levels'
                 />
-                <MealPreferenceOption
-                  text='Olive Oil'
+                <MealPreferenceSlider
+                  title='Salt Levels'
                 />
-                <MealPreferenceOption
-                  text='Salt-Free'
-                />
-                <MealPreferenceOption
-                  text='Crispy Skin'
-                />
-                <MealPreferenceOption
-                  text='Broccoli'
-                />
-                <MealPreferenceOption
-                  text='Extra Lemon'
+                <MealPreferenceSlider
+                  title='Sauce Levels'
                 />
               </div>
             </div>

@@ -5,35 +5,22 @@
   border: 1px solid rgba(112, 112, 112, 0.36);
   display: flex;
   flex-direction: column;
-  padding: 54px 38px 24px;
+  padding: 25px 50px 28px 40px;
   overflow: hidden;
-  
-  .img-item {
-    margin: 0 -38px;
-    height: 325px;
-  }
 
   .meal-preference-item-name {
     display: flex;
     justify-content: space-between;
-    padding: 38px 0 15px;
-
-    .span-name {
-      max-width: 50%;
-      font-size: $small-font-size;
-      color: #616060;
-      font-family: 'Montserrat-SemiBold';
-    }
-
-    .img-flag {
-      height: 30px;
-    }
+    padding-left: 15px;
+    color: #616060;
+    font-family: 'Montserrat-Bold';
+    margin-bottom: 15px;
   }
 
   .meal-preference-item-description {
     font-size: $mobile-regular-font-size;
     color: #616060;
-    padding-bottom: 10px;
+    margin-bottom: 35px;
   }
 
   .separator {
@@ -42,36 +29,35 @@
   }
 
   .span-edit {
-    padding-top: 10px;
-    color: #72BD75;
+    padding-top: 20px;
+    color: $green-primary;
+    font-family: 'Montserrat-Medium';
+    font-size: $regular-font-size + 2;
+  }
+
+  .span-edit-description {
+    font-size: $mobile-regular-font-size - 2;
+    font-family: 'Montserrat-Light';
+    color: #616060;
+    width: 90%;
   }
 
   .meal-preference-item-edit-section {
-    .span-description {
-      font-family: 'Montserrat-Light';
-      font-size: $mobile-regular-font-size - 2;
-      color: #616060;
-      padding-bottom: 5px;
-    }
+    margin-top: 18px;
 
     .meal-preference-item-edit-options {
-      padding: 24px 12px 12px;
+      margin: 35px -15px 25px;
       
       .meal-preference-item-edit-options-title {
-        font-size: $small-font-size;
+        font-size: $regular-font-size + 1;
         color: $text-light-gray;
+        margin-left: 15px;
+        margin-bottom: 25px;
       }
 
       .meal-preference-item-edit-options-grid {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: 20px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-        .meal-preference-option {
-          width: 50%;
-          padding: 2px;
+        .meal-preference-slider {
+          margin-bottom: 35px;
         }
       }
     }
@@ -79,29 +65,21 @@
     .meal-preference-item-edit-notes {
       margin-left: 50%;
       transform: translateX(-50%);
-      margin-bottom: 15px;
       border-radius: 7px;
+      border: 0.5px solid #70707080;
       resize: none;
-      font-size: $mobile-small-font-size;
-      width: 251px;
-      height: 65px;
-      padding: 10px 7px;
-      background-color: #F9F9F9;
-      box-shadow: $shadow-secondary;
-      border: unset;
+      font-size: $mobile-regular-font-size - 2;
+      width: calc(100% - 40px);
+      height: 160px;
+      padding: 20px;
       color: #707070;
-
-      &:focus {
-        box-shadow: unset;
-        border: 0.5px solid #70707080;
-        background-color: transparent;
-      }
     }
 
     .meal-preference-item-edit-buttons {
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-top: 20px;
       
       .button {
         width: 115px;
@@ -121,27 +99,13 @@
 
   @media (max-width: 768px) {
     padding: 0 15px 25px;
-
-    .img-item {
-      margin: 0 -15px;
-    }
   }
 
   @media (max-width: 710px) {
-    .img-item {
-      height: 315px;
-    }
-
     .meal-preference-item-name {
       padding-top: 28px;
 
-      .img-flag {
-        height: 20px;
-      }
-
-      .span-name {
-        font-size: $mobile-regular-font-size;
-      }
+      font-size: $mobile-regular-font-size;
     }
 
     .meal-preference-item-description {
@@ -153,12 +117,12 @@
       font-size: $mobile-regular-font-size;
     }
 
+    .span-description {
+      font-size: $mobile-small-font-size;
+      line-height: 15px;
+    }
+
     .meal-preference-item-edit-section {
-      .span-description {
-        font-size: $mobile-small-font-size;
-        line-height: 15px;
-      }
-  
       .meal-preference-item-edit-options {
         padding: 15px 5px 5px;
         
