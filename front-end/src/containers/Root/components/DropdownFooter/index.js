@@ -26,7 +26,7 @@ class DropdownFooter extends Component {
         {/* Dropdowns */}
         <div className='div-footer-dropdown-container'>
           <DropdownList title='COMPANY'>
-            <div>About</div>
+            <Link to='/about-us'>About</Link>
             <Link to='/career'>Careers</Link>
             <Link to='/how-it-works'>How It Works</Link>
           </DropdownList>
