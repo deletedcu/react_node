@@ -57,10 +57,10 @@
       margin-top: 40px;
 
       .button {
-        width: 127px;
-        height: 32px;
+        width: 115px;
+        height: 35px;
         border-radius: 3px;
-        font-size: $small-font-size;
+        font-size: $small-font-size - 1;
         box-shadow: $shadow-secondary;
       }
 

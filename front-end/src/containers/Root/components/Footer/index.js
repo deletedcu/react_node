@@ -72,16 +72,16 @@ class Footer extends Component {
               COMPANY
             </div>
             <a className='footer-middle-link'>About</a>
-            <Link to='/how-it-works' className='footer-middle-link'>How It Works</Link>
             <Link to='/career' className='footer-middle-link'>Careers</Link>
+            <Link to='/how-it-works' className='footer-middle-link'>How It Works</Link>
           </div>
 
           <div className='div-footer-middle-links-group'>
             <div className='footer-middle-links-header'>
               PRODUCT
             </div>
-            <a className='footer-middle-link' onClick={this.onSendInvitation}>Get $20 Off</a>
             <Link to='/menus' className='footer-middle-link'>Weekly Menu</Link>
+            <a className='footer-middle-link' onClick={this.onSendInvitation}>Get $20 Off</a>
             <Link to='/coming-soon' className='footer-middle-link'>Mobile App</Link>
           </div>
 

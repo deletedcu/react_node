@@ -6,7 +6,7 @@
   font-size: $footer-primary-font-size;
   
   .div-footer-top-container {
-    height: 90px;
+    height: 73px;
     display: flex;
     flex-direction: row;
     z-index: 1;
@@ -28,10 +28,10 @@
     flex-direction: row;
 
     .div-footer-middle-logo {
-      margin-right: 60px;
+      margin-right: 77px;
       img {
         height: 46px;
-        margin: 60px 0 0 69px;
+        margin: 38px 0 0 77px;
       }
 
       @media (max-width: 1700px) {
@@ -51,12 +51,13 @@
     .div-footer-middle-links-group {
       display: flex;
       flex-direction: column;
-      margin: 50px 70px 0px 70px;
+      margin: 38px 70px 0px 70px;
 
       .footer-middle-links-header {
         font-size: $regular-font-size;
         color: #7C7C7C;
         font-family: 'Montserrat-SemiBold';
+        margin-bottom: 10px;
       }
 
       .footer-middle-link {
@@ -125,7 +126,7 @@
   }
 
   .div-footer-bottom-container {
-    height: 90px;
+    height: 73px;
     background-color: $bg-footer-secondary;
     display: flex;
     flex-direction: row;

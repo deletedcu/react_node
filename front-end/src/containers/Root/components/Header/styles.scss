@@ -55,7 +55,7 @@
 
     span {
       color: #58595E;
-      font-size: $mobile-regular-font-size;
+      font-size: $mobile-regular-font-size - 1;
       font-family: 'Montserrat-Medium';
       margin: 0 16px;
 
@@ -84,7 +84,7 @@
       line-height: 36px;
       text-align: center;
       font-family: 'Montserrat-Medium';
-      font-size: $mobile-regular-font-size;
+      font-size: $mobile-regular-font-size - 1;
     }
 
     .button {
