@@ -14,6 +14,10 @@ import './styles.css'
 
 import imgClose from '../../../assets/images/close_button.svg'
 import imgHighProtein from '../../../assets/images/high-protein.svg'
+import imgGlutenFree from '../../../assets/images/gluten-free.svg'
+import imgLowFat from '../../../assets/images/low-fat.png'
+import imgUnder400Cal from '../../../assets/images/under-400-cal.png'
+import imgVegetarian from '../../../assets/images/vegetarian.png'
 
 import { closeModal } from '../../../redux/actions/modal'
 import { addToCart } from '../../../redux/actions/cart'
@@ -147,18 +151,38 @@ class MenuModal extends Component {
               </div>
 
               {/* Specialities */}
+              { item.collections.length > 0 &&
               <div className='div-menu-specialities'>
                 { 
                   item.collections.map((collection, index) => {
+                    let tagImage = null
+                    switch(collection) {
+                      case 'Gluten-Free': 
+                        tagImage = imgGlutenFree
+                        break
+                      case 'High Protein':
+                        tagImage = imgHighProtein
+                        break
+                      case 'Low Fat':
+                        tagImage = imgLowFat
+                        break
+                      case 'Under 400cal':
+                        tagImage = imgUnder400Cal
+                        break
+                      default:
+                        tagImage = imgVegetarian
+                    }
+
                     return (
                       <div key={index} className='div-menu-speciality'>
-                        <img src={ imgHighProtein } alt='special'/>
+                        <img src={ tagImage } alt='special'/>
                         <span>{ collection }</span>
                       </div>
                     )
                   }) 
                 }
               </div>
+              }
 
               {/* Description */}
               <ExpandableDescription>
