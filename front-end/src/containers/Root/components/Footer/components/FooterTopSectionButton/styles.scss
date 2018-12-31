@@ -9,15 +9,15 @@
   .div-footer-top-section-button {
     display: flex;
     align-items: center;
-    margin: 0px 77px;
+    margin: 0px 50px;
 
     img {
-      height: 20px;
+      height: 16px;
       margin-right: 10px;
     }
 
     span {
-      font-size: $small-font-size + 1;
+      font-size: $small-font-size;
     }
 
     @media (max-width: 1510px) {
@@ -27,6 +27,6 @@
 
   .div-footer-top-section-button-separator {
     color: white;
-    font-size: $small-font-size + 1;
+    font-size: $small-font-size;
   }
 }

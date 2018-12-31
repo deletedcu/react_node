@@ -26,27 +26,30 @@
   flex-direction: column;
 
   .div-how-it-works-title {
-    font-size: $extra-font-size;
+    font-size: $large-font-size - 2;
+    font-family: 'Montserrat-SemiBold';
     color: $text-black;
     text-align: left;
   }
 
   .div-how-it-works-description {
-    font-size: $footer-secondary-font-size;
+    font-size: $footer-primary-font-size + 1;
     color: $text-light-gray;
     text-align: left;
+    margin-top: 50px;
   }
 
   .btn-learn-more {
     background-color: transparent;
     border: 1px solid #18AD1F;
     color: $green-primary;
+    font-size: $small-font-size - 1;
     font-family: 'Montserrat-Medium';
-    width: 236px;
-    height: 64px;
+    width: 200px;
+    height: 54px;
     border-radius: 32px;
     box-shadow: unset;
-    margin-top: 30px;
+    margin-top: 40px;
 
     &:active {
       box-shadow: $shadow-primary;
@@ -128,7 +131,7 @@
       }
 
       .div-how-it-works-title {
-        font-size: 42px;
+        font-size: $medium-font-size;
       }
 
       .div-how-it-works-description {

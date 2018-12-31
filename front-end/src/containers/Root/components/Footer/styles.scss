@@ -10,10 +10,15 @@
     display: flex;
     flex-direction: row;
     z-index: 1;
+    padding-left: 27px;
 
     .language-dropdown {
       background-color: $bg-footer-secondary;
       margin-left: auto;
+    }
+
+    @media (max-width: 1510px) {
+      padding-left: 0;
     }
   }
 
@@ -30,20 +35,19 @@
     .div-footer-middle-logo {
       margin-right: 77px;
       img {
-        height: 46px;
+        height: 34px;
         margin: 38px 0 0 77px;
       }
 
       @media (max-width: 1700px) {
-        margin-top: -20px;
+        margin-top: -10px;
       }
 
       @media (max-width: 1510px) {
         margin-right: 20px;
-        margin-top: -30px;
+        margin-top: -10px;
         img {
           margin-left: 30px;
-          height: 40px;
         }
       }
     }
@@ -54,14 +58,14 @@
       margin: 38px 70px 0px 70px;
 
       .footer-middle-links-header {
-        font-size: $regular-font-size;
+        font-size: $small-font-size + 1;
         color: #7C7C7C;
         font-family: 'Montserrat-SemiBold';
         margin-bottom: 10px;
       }
 
       .footer-middle-link {
-        font-size: $small-font-size;
+        font-size: $mobile-regular-font-size + 1;
         color: #AFAFAF;
         margin-top: 10px;
         cursor: pointer;
@@ -80,8 +84,8 @@
         .div-social-link {
           background-position: center;
           background-repeat: no-repeat;
-          width: 28px;
-          height: 28px;
+          width: 24px;
+          height: 24px;
           margin-right: 15px;
           transition: background-image .25s linear;
         }
@@ -141,7 +145,11 @@
         color: #AFAFAF;
         margin-left: 68px;
         cursor: pointer;
-        font-size: $small-font-size;
+        font-size: $small-font-size - 2;
+      }
+
+      @media (max-width: 1510px) {
+        margin-left: -30px;
       }
     }
   }

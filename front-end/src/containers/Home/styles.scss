@@ -9,7 +9,7 @@
 
   .div-banner-container {
     position: relative;
-    height: 720px;
+    height: 620px;
 
     .div-banner-center {
       position: absolute;
@@ -20,7 +20,8 @@
 
       .div-title {
         text-align: center;
-        font-size: $large-font-size;
+        font-size: $large-font-size - 2;
+        font-family: 'Montserrat-Medium';
 
         @media (max-width: 710px) {
           font-size: $regular-font-size;
@@ -37,6 +38,7 @@
     text-align: center;
     margin-top: 100px;
     font-size: $large-font-size;
+    font-family: 'Montserrat-Medium';
 
     @media (max-width: 710px) {
       font-size: $regular-font-size;
@@ -103,7 +105,7 @@
     text-align: center;
     font-size: $large-font-size;
 
-    max-width: 1400px;
+    max-width: 1325px;
     margin: auto;
 
     .how-it-works-track {
@@ -139,6 +141,10 @@
 
   .div-feedback-container {
     position: relative;
+
+    .div-section-title {
+      font-family: 'Montserrat-Regular';
+    }
 
     .div-feedbacks {
       position: relative;
@@ -179,10 +185,10 @@
     }
 
     .btn-share-experience {
-      font-size: $small-font-size;
+      font-size: $mobile-regular-font-size;
       border-radius: 5px;
-      width: 239px;
-      height: 53px;
+      width: 215px;
+      height: 55px;
       margin-top: 40px;
       margin-left: 50%;
       transform: translateX(-50%);

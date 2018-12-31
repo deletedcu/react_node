@@ -10,8 +10,8 @@
     height: 100%;
   
     .img-globe {
-      width: 25px;
-      height: 25px;
+      width: 23px;
+      height: 23px;
       margin-right: 45px;
       background-image: url('../../../../../../assets/images/globe.svg');
       background-position: center;
@@ -31,7 +31,7 @@
       color: #AFAFAF;
       margin: 0 30px;
       transition: all .25s linear;
-      font-size: $small-font-size + 1;
+      font-size: $small-font-size;
     }
 
     &:hover {
@@ -59,10 +59,10 @@
       height: 40px;
       padding: 0 40px;
       cursor: pointer;
-      font-size: $small-font-size + 1;
+      font-size: $small-font-size;
 
       img {
-        height: 24px;
+        height: 23px;
       }
 
       &:hover {

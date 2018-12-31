@@ -14,13 +14,14 @@
   input {
     flex-grow: 100;
     padding: 0 16px;
-    font-size: $small-font-size;
+    font-size: $small-font-size - 2;
     font-family: 'Lato-Bold'; 
     caret-color: $green-primary;
   }
 
   .button {
     max-width: 180px;
+    font-size: $small-font-size - 1;
   }
 
   .btn-locate-me {
@@ -32,14 +33,14 @@
     
 
     img {
-      width: 19.25px;
-      height: 19.25px;
+      width: 18.25px;
+      height: 18.25px;
       margin-right: 5px;
     }
 
     span {
       font-family: 'Lato-Bold';
-      font-size: $small-font-size;
+      font-size: $small-font-size - 2;
       color: $text-gray;
       line-height: 66px;
     }
@@ -60,6 +61,7 @@
   
     .button {
       height: 33px !important;
+      font-size: $mobile-small-font-size;
     }
   
     input {
