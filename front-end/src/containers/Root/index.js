@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import NotificationSystem from 'react-notification-system'
 import { connect } from 'react-redux'
 import { isMobileOnly } from 'react-device-detect'
@@ -7,6 +7,7 @@ import Modal from '../Modals'
 import Sidebar from 'react-sidebar'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import SimplifiedFooter from './components/SimplifiedFooter'
 import SideCart from '../SideCart'
 import DropdownFooter from './components/DropdownFooter'
 import OverlaySpinner from '../../components/OverlaySpinner'
@@ -69,6 +70,7 @@ class Root extends Component {
     const { history, sideBar, location, overlaySpinner } = this.props
     const shouldShowHeader = !(location.pathname.includes('coming-soon'))
     const shouldShowFooter = !(location.pathname.includes('help-center') || location.pathname.includes('checkout') || location.pathname.includes('auth/signup') || location.pathname.includes('coming-soon'))
+    const shouldShowSimplifiedFooter = (location.pathname.includes('auth/login') || location.pathname.includes('auth/forgot-password'))
 
     return (
       <Sidebar
@@ -96,13 +98,20 @@ class Root extends Component {
               </div>
         
               {/* Footer */}
-              { shouldShowFooter &&
-                <Footer history={history}/>
+              {
+                shouldShowFooter &&
+                (
+                  shouldShowSimplifiedFooter ? 
+                  <SimplifiedFooter/> 
+                  : 
+                  (
+                    <Fragment>
+                      <Footer history={history}/>
+                      <DropdownFooter/>
+                    </Fragment>
+                  )
+                )
               }
-              { shouldShowFooter &&
-                <DropdownFooter/>
-              }
-        
               {/* Modal */}
               <Modal history={history} pathName={location.pathname}/>
             </div>

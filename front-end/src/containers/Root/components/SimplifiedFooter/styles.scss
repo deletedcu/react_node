@@ -1,0 +1,45 @@
+@import "../../../../styles/variables/variables";
+
+.simplified-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+  background-color: rgb(33,33,33);
+
+  .simplified-footer-left {
+    margin-left: 60px;
+    display: flex;
+    align-items: center;
+
+    .img-logo {
+      height: 42px;
+    }
+
+    .simplified-footer-links {
+      margin-left: 100px;
+      display: flex;
+      align-items: center;
+
+      .link {
+        color: #AFAFAF;
+        font-size: $regular-font-size + 3;
+      }
+
+      .separator {
+        height: 15px;
+        width: 1px;
+        background-color: white;
+        margin: 0 20px;
+      }
+    }    
+  }
+
+  .simplified-footer-right {
+    margin-right: 70px;
+
+    .img-globe {
+      height: 29px;
+    }
+  }
+}

@@ -32,7 +32,29 @@
       font-size: $mobile-regular-font-size;
       color: $text-light-gray;
       width: 60%;
-      margin-top: 30px;
+      margin-top: 20px;
+    }
+
+    .forgot-password-form-instruction-bold {
+      font-family: 'Montserrat-Bold';
+      font-size: $mobile-regular-font-size;
+      color: #4B4B4B;
+      width: 60%;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .forgot-password-help-link {
+      font-size: $mobile-regular-font-size;
+      text-align: center;
+      width: 60%;
+      margin-top: 20px;
+      color: #535353;
+
+      a {
+        color: $green-secondary;
+        text-decoration: underline;
+      }
     }
 
     .forgot-password-form-input {
@@ -67,6 +89,11 @@
       height: 56px;
       border-radius: 4px;
       font-size: $mobile-regular-font-size;
+    }
+
+    span {
+      width: calc(100% - 80px);
+      margin-top: 10px;
     }
   }
 
@@ -103,7 +130,7 @@
     }
 
     .forgot-password-form-inputs {
-      .forgot-password-form-instruction {
+      .forgot-password-form-instruction, .forgot-password-form-instruction-bold {
         width: calc(100% - 40px);
         font-size: $mobile-regular-font-size;
       }
@@ -126,6 +153,12 @@
         width: calc(100% - 40px);
         height: 50px;
         font-size: $mobile-regular-font-size;
+      }
+
+      span {
+        width: calc(100% - 40px);
+        font-size: $mobile-regular-font-size;
+        height: 50px;
       }
     }
 
