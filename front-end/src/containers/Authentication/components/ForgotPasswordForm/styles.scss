@@ -30,13 +30,14 @@
 
     .forgot-password-form-instruction {
       font-size: $mobile-regular-font-size;
+      font-family: 'OpenSans-Regular';
       color: $text-light-gray;
       width: 60%;
       margin-top: 20px;
     }
 
     .forgot-password-form-instruction-bold {
-      font-family: 'Montserrat-Bold';
+      font-family: 'OpenSans-Bold';
       font-size: $mobile-regular-font-size;
       color: #4B4B4B;
       width: 60%;
@@ -46,6 +47,7 @@
 
     .forgot-password-help-link {
       font-size: $mobile-regular-font-size;
+      font-family: 'OpenSans-Regular';
       text-align: center;
       width: 60%;
       margin-top: 20px;
