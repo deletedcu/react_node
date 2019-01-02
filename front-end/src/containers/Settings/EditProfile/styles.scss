@@ -1,7 +1,8 @@
 @import "../../../styles/variables/variables";
 
 .div-edit-profile-container {
-  padding: 0 50px;
+  width: 560px;
+  margin: 0 auto;
 
   .div-profile-info {
     flex-grow: 1;
@@ -9,21 +10,24 @@
     display: flex;
 
     .div-profile-info-title-list {
-      margin-right: 140px;
+      margin-right: 110px;
       flex-shrink: 0;
 
       .div-profile-info-title {
-        margin-bottom: 50px;
+        height: 70px;
+        font-family: 'Montserrat-Bold';
+        font-size: $small-font-size;
       }
     }
     .div-profile-info-text-list {
       .div-profile-info-text {
-        margin-bottom: 50px;
+        height: 70px;
+        font-size: $small-font-size;
       }
 
       .clickable {
         color: $green-primary;
-        margin-bottom: 30px;
+        font-size: $small-font-size;
       }
 
       .div-profile-update-password-inputs {
@@ -65,12 +69,12 @@
   .btn-edit {
     border-radius: 3px;
     background-color: #525252;
-    font-size: $small-font-size;
+    font-size: $mobile-regular-font-size;
     font-family: 'Montserrat-Medium';
-    width: 158px;
-    height: 51px;
+    width: 150px;
+    height: 48px;
     margin-left: 50%;
     transform: translateX(-50%);
-    margin-top: 100px;
+    margin-top: 90px;
   }
 }

@@ -3,10 +3,7 @@ import { connect } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom'
 import routes from './routes'
 import SettingsMenu from './components/SettingsMenu'
-import LazyImage from '../../components/LazyImage'
 import './styles.css'
-
-import imgBanner from '../../assets/images/banner.png'
 
 import { hideSidebar } from '../../redux/actions/sideBar'
 
@@ -22,11 +19,6 @@ class Settings extends Component {
     return (
       user.loggedIn ?
       <div className='div-settings-container'>
-        {/* Banner */}
-        <div className='div-settings-banner'>
-          <LazyImage className='img-banner' src={ imgBanner } disableSpinner={true} />
-        </div>
-  
         {/* Main Area */}
         <div className='div-settings-body container'>
           {/* Menu */}

@@ -4,55 +4,46 @@
   background-color: white;
   border: 1px solid #E1E1E1;
   border-radius: 3px;
-  height: 80px;
+  height: 60px;
   margin-top: 50px;
-  padding: 5px;
+  padding: 3px;
 
   display: flex;
   flex-direction: row;
 
   input {
     flex-grow: 100;
-    padding: 0 16px;
+    padding: 0 20px;
     font-size: $small-font-size - 2;
-    font-family: 'Lato-Bold'; 
+    font-family: 'OpenSans-Regular'; 
     caret-color: $green-primary;
   }
 
   .button {
-    max-width: 180px;
-    font-size: $small-font-size - 1;
+    max-width: 170px;
+    height: 51px;
+    font-size: $small-font-size - 2;
+    border-radius: 3px;
   }
 
   .btn-locate-me {
     text-align: center;
     background-color: $bg-gray;
     border: 1px solid $border-gray;
-    border-radius: 4px;
     margin-right: 6px;
+    max-width: 150px;
     
-
     img {
-      width: 18.25px;
-      height: 18.25px;
+      width: 16.5px;
+      height: 16.5px;
       margin-right: 5px;
     }
 
     span {
-      font-family: 'Lato-Bold';
+      font-family: 'OpenSans-SemiBold';
       font-size: $small-font-size - 2;
       color: $text-gray;
-      line-height: 66px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    height: 64px;
-  
-    .btn-locate-me {
-      span {
-        line-height: 45px;
-      }
+      line-height: 40px;
     }
   }
 
@@ -60,13 +51,14 @@
     height: 45px;
   
     .button {
-      height: 33px !important;
+      height: 37px !important;
       font-size: $mobile-small-font-size;
     }
   
     input {
       font-size: $mobile-small-font-size;
       min-width: 0px;
+      padding: 0 10px;
     }
   
     .btn-locate-me {
@@ -76,7 +68,7 @@
       }
       
       span {
-        line-height: 30px;
+        line-height: 35px;
         font-size: $mobile-small-font-size !important;
       }
     }

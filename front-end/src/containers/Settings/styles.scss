@@ -2,15 +2,11 @@
 
 .div-settings-container {
   background-color: white;
-
-  .div-settings-banner {
-    position: relative;
-    height: 465px;
-  }
+  padding-top: 40px;
 
   .div-settings-body {
     margin-top: 100px;
-    margin-bottom: 150px;
+    margin-bottom: 75px;
 
     .div-settings-menu {
 
@@ -22,12 +18,12 @@
   }
 
   .div-settings-contact {
-    padding: 120px 0 120px;
+    padding: 90px 0 90px;
     text-align: center;
     background-color: #F1F1F1;
-    border-top: 1px solid #C6C4C4;
     color: $text-light-gray;
-    font-size: $small-font-size;
+    font-size: $small-font-size - 1;
+    font-family: 'OpenSans-Regular';
 
     span {
       color: $green-primary;
@@ -44,10 +40,6 @@
   }
 
   @media (max-width: 710px) {
-    .div-settings-banner {
-      max-height: 350px;
-    }
-
     .div-settings-body {
       margin-top: 25px;
       margin-bottom: 25px;
