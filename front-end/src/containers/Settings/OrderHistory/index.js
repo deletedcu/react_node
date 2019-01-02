@@ -1,15 +1,50 @@
 import React, { Component } from 'react'
 import OrderHistoryItem from '../components/OrderHistoryItem'
 import Button from '../../../components/Button'
+import { connect } from 'react-redux'
 import './styles.css'
+
+import { fetchOrderHistory } from '../../../services/orderHistory'
+import { showNotification } from '../../../services/notification'
+import { showOverlaySpinner, hideOverlaySpinner } from '../../../redux/actions/overlaySpinner'
 
 class OrderHistory extends Component {
 
-  onLoadMore = () => {
+  constructor (props) {
+    super(props)
 
+    this.state = {
+      orderHistory: [],
+      showAll: false,
+    }
+  }
+
+  componentDidMount () {
+    this.props.dispatch(showOverlaySpinner())
+
+    fetchOrderHistory(this.props.user.user.token)
+      .then(res => {
+        this.props.dispatch(hideOverlaySpinner())
+        this.setState({
+          orderHistory: res.order_history,
+          showAll: res.order_history.length <= 5,
+        })
+      })
+      .catch(err => {
+        this.props.dispatch(hideOverlaySpinner())
+        showNotification('Failed to retrieve order history', 'error')
+      })
+  }
+
+  onLoadMore = () => {
+    this.setState({
+      showAll: true,
+    })
   }
 
   render () {
+    const { orderHistory, showAll } = this.state
+
     return (
       <div className='div-order-history-container'>
         <div className='div-order-history-header'>
@@ -19,16 +54,29 @@ class OrderHistory extends Component {
           <span className='span-total'>Total</span>
         </div>
 
-        <div className='div-order-history-items'>
-          <OrderHistoryItem/>
-          <OrderHistoryItem/>
-          <OrderHistoryItem/>
-        </div>
+        { orderHistory.length > 0 &&
+          <div className='div-order-history-items'>
+          {
+            orderHistory.slice(0, showAll ? orderHistory.length : 3).map((item, index) => {
+              return <OrderHistoryItem key={index} item={item}/>
+            })
+          }
+          </div>
+        }
 
-        <Button className='btn-load-more' onClick={this.onLoadMore}>Load More</Button>
+        { 
+          !showAll &&
+          <Button className='btn-load-more' onClick={this.onLoadMore}>Load More</Button>
+        }
       </div>
     )
   }
 }
 
-export default OrderHistory
+function mapStateToProps(state) {
+  return {
+    user: state.user,
+  }
+}
+
+export default connect(mapStateToProps)(OrderHistory)
