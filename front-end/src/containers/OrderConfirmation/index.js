@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../../components/Button'
-import qs from 'query-string'
+import qs from 'querystring'
 import { connect } from 'react-redux'
 import moment from 'moment'
 
@@ -14,7 +14,7 @@ class OrderConfirmation extends Component {
   constructor (props) {
     super(props)
 
-    let queryParams = qs.parse(this.props.location.search)
+    let queryParams = qs.parse(this.props.location.search.replace('?', ''))
 
     this.state = {
       deliveryDate: queryParams.delivery_date || '',
