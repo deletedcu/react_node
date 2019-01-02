@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../../components/Button'
+import qs from 'query-string'
+import { connect } from 'react-redux'
+import moment from 'moment'
 
 import './styles.css'
 import imgConfirm from '../../assets/images/confirm.svg'
@@ -8,8 +11,20 @@ import imgShare from '../../assets/images/share.svg'
 
 class OrderConfirmation extends Component {
 
+  constructor (props) {
+    super(props)
+
+    let queryParams = qs.parse(this.props.location.search)
+
+    this.state = {
+      deliveryDate: queryParams.delivery_date || '',
+      orderId: queryParams.order_id || '',
+      totalPrice: queryParams.total_price || '',
+    }
+  }
+
   onManageOrders = () => {
-    this.props.history.push('/home')
+    this.props.history.push('/settings/order_history')
   }
 
   onBackToStore = () => {
@@ -21,6 +36,9 @@ class OrderConfirmation extends Component {
   }
 
   render () {
+    const { deliveryDate, orderId, totalPrice } = this.state
+    const { user } = this.props
+
     return (
       <div className='div-order-confirm-container'>
         {/* Boxes */}
@@ -32,13 +50,13 @@ class OrderConfirmation extends Component {
               <span>Order Confirmed</span>
             </div>
             <div className='div-order-confirm-form-detail'>
-              <div className='div-order-confirm-form-greeting'>Hello, John</div>
+              <div className='div-order-confirm-form-greeting'>{`Hello, ${user.user.first_name}`}</div>
               <div className='div-order-confirm-form-description'>Your order is being processed and you should receive a confirmation from us shortly.</div>
               
               <div className='div-order-confirm-form-info-list'>
-                <div className='div-order-confirm-form-info'><span className='div-order-confirm-form-info-title'>Order #</span><span className='div-order-confirm-form-info-value'>R912745312</span></div>
-                <div className='div-order-confirm-form-info'><span className='div-order-confirm-form-info-title'>Total</span><span className='div-order-confirm-form-info-value'>$135.98</span></div>
-                <div className='div-order-confirm-form-info'><span className='div-order-confirm-form-info-title'>Delivery Date</span><span className='div-order-confirm-form-info-value'>November 13, 2018</span></div>
+                <div className='div-order-confirm-form-info'><span className='div-order-confirm-form-info-title'>Order #</span><span className='div-order-confirm-form-info-value'>{orderId}</span></div>
+                <div className='div-order-confirm-form-info'><span className='div-order-confirm-form-info-title'>Total</span><span className='div-order-confirm-form-info-value'>{`$${totalPrice}`}</span></div>
+                <div className='div-order-confirm-form-info'><span className='div-order-confirm-form-info-title'>Delivery Date</span><span className='div-order-confirm-form-info-value'>{moment(deliveryDate).format('MMMM D, YYYY')}</span></div>
               </div>
           
               <div className='div-order-confirm-form-buttons'>
@@ -75,4 +93,10 @@ class OrderConfirmation extends Component {
   }
 }
 
-export default OrderConfirmation
+function mapStateToProps (state) {
+  return {
+    user: state.user,
+  }
+}
+
+export default connect(mapStateToProps)(OrderConfirmation)

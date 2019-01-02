@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import moment from 'moment'
 import classNames from 'classnames'
 import addressParser from 'parse-address-string'
 import SelectUSState from 'react-select-us-states'
@@ -66,6 +67,8 @@ class Checkout extends Component {
       cardExpiry: '',
       cardCVC: '',
       cardName: '',
+
+      deliveryDate: new Date(),
     }
 
     props.user.loggedIn && this.updateAddress()
@@ -158,13 +161,16 @@ class Checkout extends Component {
             postcode: this.state.zip,
             county: this.state.state,
             country: 'US',
-          }, tokenInfo).then(res => {
+            instructions: `Delivery Date: ${moment(this.state.deliveryDate).format('YYYY-MM-DD')}, Special Instructions: ${this.state.specialInstruction}`,
+          }, tokenInfo).then(orderId => {
+            const deliveryDate = this.state.deliveryDate.toUTCString()
+            const totalPrice = this.orderSummary.totalPrice.toFixed(2)
+
             showNotification('Successfully processed your order', 'success')
             
             this.props.dispatch(hideOverlaySpinner())
             this.props.dispatch(emptyCart())
-
-            this.props.history.push('/order-confirm')
+            this.props.history.push(`/order-confirm?order_id=${orderId}&delivery_date=${deliveryDate}&total_price=${totalPrice}`)
           }).catch(err => {
             showNotification(err, 'error')
             this.props.dispatch(hideOverlaySpinner())
@@ -224,6 +230,12 @@ class Checkout extends Component {
         currentPaymentOption: PaymentOption.stripe,
       })
     }
+  }
+
+  onChangeDeliveryDate = (date) => {
+    this.setState({
+      deliveryDate: date,
+    })
   }
 
   /**
@@ -401,6 +413,9 @@ class Checkout extends Component {
           {/* Summary Section */}
           <div className='div-checkout-summary-section'>
             <OrderSummary
+              onRef={ref => (this.orderSummary = ref)}
+              deliveryDate={this.state.deliveryDate}
+              onDateChange={this.onChangeDeliveryDate}
             />
           </div>
         </div>

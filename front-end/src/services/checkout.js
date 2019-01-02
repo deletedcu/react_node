@@ -5,6 +5,8 @@ import { groupBy } from '../utils'
 
 const checkout = (token, items, billing, cardToken) => {
   return new Promise((resolve, reject) => {  
+    let order_id = ''
+
     removeCart(token)
       .then(res => {
         let addProductTasks = [];
@@ -28,11 +30,11 @@ const checkout = (token, items, billing, cardToken) => {
         })
       })
       .then(res => {
-        const order_id = res.data.order.data.id
+        order_id = res.data.order.data.id
         return processPayment(token, order_id, cardToken)
       })
       .then(res => {
-        resolve()
+        resolve(order_id)
       })
       .catch(err => {
         console.log(err)

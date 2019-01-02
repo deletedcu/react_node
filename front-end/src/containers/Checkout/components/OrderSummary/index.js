@@ -11,14 +11,24 @@ import imgPlus from '../../../../assets/images/plus_green_thin.svg'
 
 class OrderSummary extends Component {
 
+  totalPrice = 0
+
   constructor (props) {
     super(props)
 
     this.state = {
       showPromoCode: false,
       promoCode: '',
-      deliveryDate: new Date(),
+      deliveryDate: props.deliveryDate,
     }
+  }
+
+  componentDidMount () {
+    this.props.onRef(this)
+  }
+
+  componentWillUnmount () {
+    this.props.onRef(undefined)
   }
 
   onChange = (e) => {
@@ -30,6 +40,8 @@ class OrderSummary extends Component {
   onDateChange = (date) => {
     this.setState({
       deliveryDate: date,
+    }, () => {
+      this.onDateChange(date)
     })
   }
 
@@ -45,7 +57,7 @@ class OrderSummary extends Component {
 
   render () {
     const cartItems = this.props.cart.items
-    const totalPrice = cartItems.reduce((sum, cartItem) => {
+    this.totalPrice = cartItems.reduce((sum, cartItem) => {
       return sum + cartItem.price[0]
     }, 0)
     const groupedItems =  groupBy(cartItems, 'id')
@@ -82,7 +94,7 @@ class OrderSummary extends Component {
           </div>
           <div className='order-summary-info-block'>
             <span>6 Meals Per Week</span>
-            <span>{`$${totalPrice.toFixed(2)}`}</span>
+            <span>{`$${this.totalPrice.toFixed(2)}`}</span>
           </div>
           <div className='order-summary-info-block'>
             <span>Shipping</span>
@@ -112,7 +124,7 @@ class OrderSummary extends Component {
           {/* Total Price */}
           <div className='order-summary-total-price-block'>
             <span>Total</span>
-            <span>{`$${totalPrice.toFixed(2)}`}</span>
+            <span>{`$${this.totalPrice.toFixed(2)}`}</span>
           </div>
         </div>
 
