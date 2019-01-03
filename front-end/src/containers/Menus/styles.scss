@@ -9,13 +9,13 @@
     padding: 120px 270px 40px;
 
     .div-menus-section {
-      max-width: 1350px;
+      max-width: 1150px;
       margin: 0 auto 60px;
 
       .div-menus-section-title {
         display: flex;
         align-items: center;
-        font-size: $footer-secondary-font-size;
+        font-size: $footer-primary-font-size + 1;
         font-family: 'Montserrat-Bold';
 
         %div-line {
@@ -35,7 +35,7 @@
         }
 
         span {
-          margin-right: 30px;
+          margin-right: 70px;
         }
       }
 

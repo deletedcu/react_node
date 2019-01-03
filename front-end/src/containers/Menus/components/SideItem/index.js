@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { isMobileOnly } from 'react-device-detect'
 import LazyImage from '../../../../components/LazyImage'
 import ShowMore from 'react-show-more';
 
@@ -8,7 +7,6 @@ import './styles.css'
 
 import { showModal, ModalType } from '../../../../redux/actions/modal'
 import { addToCart } from '../../../../redux/actions/cart'
-// import { showNotification } from '../../../../services/notification'
 
 class SideItem extends Component {
 
@@ -40,7 +38,7 @@ class SideItem extends Component {
             </div>
             <div className='div-side-item-description'>
               <ShowMore
-                lines={ isMobileOnly ? 3 : 4 }
+                lines={3}
                 more=''
                 less=''
               >

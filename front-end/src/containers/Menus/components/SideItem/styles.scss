@@ -1,11 +1,12 @@
 @import "../../../../styles/variables/variables";
 
 .div-side-item {
-  margin: 15px;
+  margin: 12px;
   border-radius: 10px;
   border: 1px solid #70707080;
   box-shadow: $shadow-secondary;
   background: white;
+  overflow: hidden;
 
   .div-side-item-info {
     display: flex;
@@ -16,7 +17,7 @@
 
       .div-side-item-title {
         font-family: 'Montserrat-Bold';
-        font-size: 16px;
+        font-size: $small-font-size - 1;
         margin-bottom: 10px;
       }
   
@@ -28,8 +29,9 @@
     }
     
     .img-side-item {
-      width: 180px;
-      height: 120px;
+      width: 153px;
+      height: 102px;
+      margin-top: -20px;
     }
   }
 
@@ -40,7 +42,7 @@
     padding: 20px 10px 20px 20px;
 
     .div-side-item-price {
-      font-size: 16px;
+      font-size: $mobile-regular-font-size;
       color: $text-light-gray;
       margin-right: 20px;
     }
@@ -65,10 +67,14 @@
           font-size: 11px;
         }
       }
+
+      .img-side-item {
+        margin-top: -15px;
+      }
     }
 
     .div-side-item-bottom {
-      padding: 10px 30px 20px 20px;
+      padding: 10px 20px 20px 20px;
 
       .div-side-item-price-add {
         .div-side-item-price {
