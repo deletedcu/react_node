@@ -7,6 +7,9 @@ import Button from '../../../components/Button'
 import './styles.css'
 
 import { closeModal } from '../../../redux/actions/modal'
+import { rateOrder } from '../../../services/rateOrder'
+import { showNotification } from '../../../services/notification'
+import { showOverlaySpinner, hideOverlaySpinner } from '../../../redux/actions/overlaySpinner'
 
 import imgCheck from '../../../assets/images/checkmark.svg'
 import imgCheckHighlight from '../../../assets/images/checkmark_highlight.svg'
@@ -46,7 +49,30 @@ class OrderFeedbackModal extends Component {
   }
 
   onSubmit = () => {
-    this.props.dispatch(closeModal())
+    const { rate, feedback, replyAllowed } = this.state
+    const { product_id, order_id } = this.props.modal.data
+    const { token } = this.props.user.user
+
+    if (rate === 0 || !feedback) {
+      return
+    }
+
+    this.props.dispatch(showOverlaySpinner())
+
+    rateOrder(token, {
+      product_id: product_id,
+      order_id: order_id,
+      rate: rate,
+      feedback: feedback,
+      canReply: replyAllowed,
+    }).then(res => {
+      this.props.dispatch(hideOverlaySpinner())
+      this.props.dispatch(closeModal())
+      showNotification('Thanks for your feedback', 'success')
+    }).catch(err => {
+      this.props.dispatch(hideOverlaySpinner())
+      showNotification('Failed to send feedback', 'error')
+    })
   }
 
   render () {
@@ -85,4 +111,11 @@ class OrderFeedbackModal extends Component {
   }
 }
 
-export default connect()(OrderFeedbackModal)
+function mapStateToProps(state) {
+  return {
+    modal: state.modal,
+    user: state.user,
+  }
+}
+
+export default connect(mapStateToProps)(OrderFeedbackModal)

@@ -88,7 +88,7 @@ class OrderHistoryItem extends Component {
         { showSubItems && 
           <div className='order-history-sub'>
             {
-              item.fullProducts.map((product, index) => <OrderHistorySubItem key={index} product={product.product}  quantity={product.quantity}/>)
+              item.fullProducts.map((product, index) => <OrderHistorySubItem key={index} orderId={item.id}  product={product.product}  quantity={product.quantity}/>)
             }
           </div>
         }

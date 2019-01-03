@@ -2,6 +2,7 @@ const Moltin = require('../../../helpers/moltin');
 const checkToken = require('../../../helpers/checkToken');
 const config = require('../../../config/config');
 const User = require('../../../models/user');
+const OrderFeedback = require('../../../models/orderFeedback');
 
 exports.getOrderHistory = (request) => {
   return new Promise((resolve, reject) => {
@@ -32,6 +33,51 @@ exports.getOrderHistory = (request) => {
             console.log(err);
             reject({ status: err.errors[0].status, message: err.errors[0].detail});
           })
+      });
+    } else {
+      reject({ status: 401, message: 'Unauthorized request!'});
+    }
+  });
+};
+
+exports.rateOrder = (request) => {
+  return new Promise((resolve, reject) => {
+    let email = checkToken(request);  
+    
+    if (email) {
+      User.findOne({ email: email }).exec((err, user) => {
+        if (err) {
+          reject({ status: 500, message: 'Internal server error ...' });
+          return;
+        }
+  
+        if (!user) {
+          reject({ status: 401, message: 'Unauthorized request!' });
+          return;
+        }
+
+        if (!user.customer_id) {
+          reject({ status: 403, message: 'User is not a registered customer!' });
+          return;
+        }
+
+        const { order_id, product_id, rate, feedback, canReply } = request.body; 
+
+        new OrderFeedback({
+          user: user,
+          order_id: order_id,
+          product_id: product_id,
+          rate: rate,
+          feedback: feedback,
+          canReply: canReply,
+        }).save(err => {
+          if (err) {
+            console.log(err);
+            reject({ status: 500, message: 'Internal Server Error' });
+          } else {
+            resolve({ status: 200, message: 'Feedback has been saved'});
+          }
+        });
       });
     } else {
       reject({ status: 401, message: 'Unauthorized request!'});

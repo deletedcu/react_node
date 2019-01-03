@@ -23,7 +23,8 @@
       .img-item {
         width: 90px;
         height: 90px;
-        margin-right: 5px;
+        margin-top: 10px;
+        margin-right: 15px;
         border-radius: 45px;
         overflow: hidden;
         flex-shrink: 0;
@@ -43,6 +44,7 @@
         .span-cancel {
           color: $green-primary;
           font-size: $mobile-regular-font-size;
+          margin-top: 5px;
         }
       }
     }

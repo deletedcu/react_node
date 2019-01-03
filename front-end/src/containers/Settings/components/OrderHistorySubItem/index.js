@@ -10,7 +10,10 @@ import { showModal, ModalType } from '../../../../redux/actions/modal'
 class OrderHistorySubItem extends Component {
 
   onRate = () => {
-    this.props.dispatch(showModal(ModalType.orderFeedbackModal))
+    this.props.dispatch(showModal(ModalType.orderFeedbackModal, {
+      product_id: this.props.product.id,
+      order_id: this.props.orderId,
+    }))
   }
 
   render () {
@@ -22,7 +25,7 @@ class OrderHistorySubItem extends Component {
           <LazyImage className='img-subitem' src={product.main_image}/>
           <div className='order-history-subitem-detail'>
             <span className='span-subitem-name'>{ product.name }</span>
-            <span className='span-subitem-options'>Options: No Carbs, Gluten</span>
+            {/* <span className='span-subitem-options'>Options: No Carbs, Gluten</span> */}
             <span className='span-subitem-quantity'>{ `Quantity: ${quantity}` }</span>
             <span className='span-subitem-rate clickable' onClick={this.onRate}>Rate</span>
           </div>
