@@ -3,16 +3,12 @@
 .menu-filter {
   .dropdown__trigger {
     .menu-filter-dropdown-trigger {
+      font-size: $regular-font-size;
+      color: $text-light-gray;
+
       .img-filter {
-        width: 62px;
-        height: 32px;
-        // background-image: url('../../../../assets/images/filter_button.svg');
-        // background-repeat: no-repeat;
-        // background-position: center;
-        
-        // &:active {
-        //   background-image: url('../../../../assets/images/filter_button_highlight.svg');
-        // }
+        width: 58px;
+        height: 30px;
       }
     }
   }
@@ -36,7 +32,7 @@
       margin-top: 10px;
       padding: 0 10px;
       height: 52px;
-      font-size: $small-font-size;
+      font-size: $mobile-regular-font-size;
       display: flex;
       align-items: center;
       justify-content: space-between;

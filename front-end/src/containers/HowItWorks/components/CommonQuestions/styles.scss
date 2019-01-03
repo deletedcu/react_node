@@ -6,7 +6,7 @@
   box-shadow: $shadow-primary;
 
   .div-common-question-title {
-    font-size: 38px;
+    font-size: 31px;
     font-family: 'Montserrat-Bold';
     text-align: center;
   }
@@ -21,15 +21,14 @@
     }
 
     .div-question-title {
-      font-size: $footer-primary-font-size;
       font-family: 'Montserrat-Medium';
       margin-top: 50px;
+      margin-left: 15px;
     }
 
     .div-question-answer {
       margin-top: 20px;
-      font-size: $small-font-size;
-      font-family: 'Montserrat-Light';
+      font-size: $mobile-regular-font-size;
 
       a {
         text-decoration: underline;
@@ -45,12 +44,15 @@
       display: inline-block;
       background-color: #FAFBFC;
       border-radius: 7px;
+      border: 2.5px solid #DCDCDE;
       text-align: center;
       padding: 20px 50px;
+      font-size: $small-font-size - 1;
 
       a {
         color: $green-secondary;
         text-decoration: underline;
+        margin-left: 40px;
       }
     }
   }

@@ -34,18 +34,6 @@
       margin-left: 10px;
     }
 
-    .div-recommended {
-      width: 62px;
-      height: 32px;
-      background-image: url('../../../../assets/images/recommended_button.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-
-      &:active {
-        background-image: url('../../../../assets/images/recommended_button_highlight.svg');
-      }
-    }
-
     .menu-datepicker {
       margin-left: 60px;
     }
@@ -56,7 +44,7 @@
     align-items: center;
 
     .div-search-container {
-      margin-left: 70px;
+      margin-left: 35px;
       width: 325px;
       height: 52px;
       padding: 16px;
@@ -69,37 +57,35 @@
       input {
         width: 100%;
         flex-grow: 1;
-        font-size: $small-font-size;
+        font-size: $mobile-regular-font-size;
         color: #545954;
         caret-color: $green-primary;
-
-        @media (max-width: 1200px) {
-          font-size: $regular-font-size;
-        }
       }
 
       img {
-        height: 22px;
+        height: 21px;
       }
     }
 
     .div-zip-code {
       display: flex;
       align-items: center;
-      margin-right: 80px;
+      margin-right: 35px;
 
       img {
-        height: 32px;
-        margin-right: 10px;
+        height: 25px;
+        margin-right: 5px;
       }
 
       .div-zip-code-description {
         color: #3D403F;
         font-family: 'Montserrat-Bold';
+        font-size: $mobile-regular-font-size + 1;
       }
       .div-zip-code-info {
         color: #3D403F;
-        margin-top: -10px;
+        margin-top: -5px;
+        font-size: $mobile-regular-font-size;
       }
     }
   }

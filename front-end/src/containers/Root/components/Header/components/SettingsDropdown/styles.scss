@@ -31,7 +31,7 @@
     border: 0.5px solid #70707050;
     border-radius: 15px;
     box-shadow: 2px 2px 6px rgba(0,0,0,0.16);
-    width: 285px;
+    width: 255px;
     height: 200px;
     margin-left: -150px;
     margin-top: 12px;
@@ -43,15 +43,15 @@
 
     .div-menu {
       color: $text-light-gray;
-      padding: 0 24px;
+      padding: 0 20px;
       margin-bottom: 5px;
       height: 51px;
-      font-size: $mobile-regular-font-size;
+      font-size: $mobile-regular-font-size - 1;
       display: flex;
       align-items: center;
 
       img {
-        height: 30px;
+        height: 35px;
         margin-right: 20px;
       }
 

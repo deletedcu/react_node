@@ -36,9 +36,6 @@ class MenusHeader extends Component {
         <div className='div-menus-header-left'>
           <MenuFilter onChangeFilters={this.onChangeFilters}/>
           <span className='span-title'>FILTERS</span>
-          <div className='div-separator'/>
-          <div className='div-recommended clickable'/>
-          {/* <MenuDatePicker /> */}
         </div>
 
         <div className='div-menus-header-right'>

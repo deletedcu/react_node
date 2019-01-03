@@ -5,7 +5,6 @@ import LazyImage from '../../../../components/LazyImage'
 import OrderHistorySubItem from '../OrderHistorySubItem'
 
 import './styles.css'
-import imgPlaceholder from '../../../../assets/images/order_placeholder.png'
 
 import { showModal, ModalType } from '../../../../redux/actions/modal'
 
@@ -74,7 +73,7 @@ class OrderHistoryItem extends Component {
 
         {/* Responsive mode */}
         <div className='order-history-main-responsive'>
-          <LazyImage className='img-item clickable' src={imgPlaceholder} onClick={this.onToggleSubItems}/>
+          <LazyImage className='img-item clickable' src={mainImageSrc} onClick={this.onToggleSubItems}/>
           <div className='order-history-main-responsive-info'>
             <div>
               <span className='span-number-title'>Order Number</span>

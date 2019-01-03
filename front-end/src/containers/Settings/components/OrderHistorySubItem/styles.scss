@@ -10,8 +10,11 @@
     display: flex;
 
     .img-subitem {
-      width: 79px;
-      height: 72px;
+      width: 70px;
+      height: 70px;
+      border-radius: 35px;
+      overflow: hidden;
+      flex-shrink: 0;
     }
 
     .order-history-subitem-detail {
