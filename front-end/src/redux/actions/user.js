@@ -108,20 +108,22 @@ export function updateUserProfile(token, params) {
       },
       data: params,
     }).then((response) => {
-      showNotification('Successfully updated', 'success')
+      showNotification('Successfully updated profile', 'success')
       
       localStorage.setItem('token', response.data.user.token)
 
       dispatch({type: 'HIDE_OVERLAY_SPINNER'})
       dispatch({type: 'UPDATE_USER_FULFILLED', payload: response.data.user})
     }).catch((err) => {
+      showNotification('Failed to update profile', 'error')
+
       dispatch({type: 'HIDE_OVERLAY_SPINNER'})
       dispatch({type: 'UPDATE_USER_REJECTED', payload: err})
     })
   }
 }
 
-export function updatePassword(token, currentPassword, newPassword) {
+export function updatePassword(token, newPassword) {
   return function(dispatch) {
     dispatch({type: 'SHOW_OVERLAY_SPINNER'})
     dispatch({type: 'UPDATE_PASSWORD'})
@@ -134,11 +136,10 @@ export function updatePassword(token, currentPassword, newPassword) {
         'x-access-token': token
       },
       data: {
-        old_password: currentPassword,
         new_password: newPassword,
       },
     }).then((response) => {
-      showNotification('Successfully updated', 'success')
+      showNotification('Successfully updated password', 'success')
 
       dispatch({type: 'HIDE_OVERLAY_SPINNER'})
       dispatch({type: 'UPDATE_PASSWORD_FULFILLED', payload: response.data})

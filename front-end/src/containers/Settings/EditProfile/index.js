@@ -4,20 +4,79 @@ import Button from '../../../components/Button'
 
 import './styles.css'
 
-import { showModal, ModalType } from '../../../redux/actions/modal'
+import { updateUserProfile, updatePassword } from '../../../redux/actions/user'
 
 class EditProfile extends Component {
 
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      firstName: props.user.user.first_name,
+      lastName: props.user.user.last_name,
+      deliveryAddress: props.user.user.shipping_address,
+      phone: props.user.user.phone,
+      email: props.user.user.email,
+      password: '',
+
+      isEditMode: false,
+    }
+  }
+
+  componentWillReceiveProps ({ user }) {
+    this.setState({
+      firstName: user.user.first_name,
+      lastName: user.user.last_name,
+      deliveryAddress: user.user.shipping_address,
+      phone: user.user.phone,
+      email: user.user.email,
+    })
+  }
+
+
   onEdit = () => {
-    this.props.dispatch(showModal(ModalType.editProfileModal))
+    if (this.state.isEditMode) {
+      // should save changes
+      this.props.dispatch(updateUserProfile(this.props.user.user.token, {
+        first_name: this.state.firstName,
+        last_name: this.state.lastName,
+        shipping_address: this.state.deliveryAddress,
+        phone: this.state.phone,
+        email: this.state.email,
+      }))
+
+      if (this.state.password) {
+        this.props.dispatch(updatePassword(this.props.user.user.token, this.state.password))
+      }
+
+      this.setState({
+        isEditMode: false,
+      })
+    } else {
+      this.setState({
+        isEditMode: true,
+        password: '',
+      })
+    }
   }
 
   onChangePassword = () => {
-    this.props.dispatch(showModal(ModalType.updatePasswordModal))
+    this.setState({
+      isEditMode: true,
+      password: '',
+    }, () => {
+      this.refs.passwordInput.focus()
+    })
+  }
+
+  onChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    })
   }
 
   render () {
-    const user = this.props.user.user
+    const { firstName, lastName, password, deliveryAddress, phone, email, isEditMode } = this.state
 
     return (
       <div className='div-edit-profile-container'>
@@ -30,17 +89,37 @@ class EditProfile extends Component {
             <div className='div-profile-info-title'>Password</div>
           </div>
 
-          <div className='div-profile-info-text-list'>
-            <div className='div-profile-info-text'>{`${user.first_name} ${user.last_name}`}</div>
-            <div className='div-profile-info-text'>{user.shipping_address || '-'}</div>
-            <div className='div-profile-info-text'>{user.phone || '-'}</div>
-            <div className='div-profile-info-text'>{user.email}</div>
-
-            <div className='div-profile-info-title clickable' onClick={this.onChangePassword}>Update Password</div>
-          </div>
+          { !isEditMode ?
+            <div className='div-profile-info-text-list'>
+              <div className='div-profile-info-text'>{`${firstName} ${lastName}`}</div>
+              <div className='div-profile-info-text'>{deliveryAddress || '-'}</div>
+              <div className='div-profile-info-text'>{phone || '-'}</div>
+              <div className='div-profile-info-text'>{email}</div>
+              <div className='div-profile-info-title clickable' onClick={this.onChangePassword}>Update Password</div>
+            </div>
+            :
+            <div className='div-profile-info-input-list'>
+              <div className='div-profile-info-double-input'>
+                <input name='firstName' value={firstName} onChange={this.onChange} required/>
+                <input name='lastName' value={lastName} onChange={this.onChange} required/>
+              </div>
+              <div className='div-profile-info-input'>
+                <input name='deliveryAddress' value={deliveryAddress} onChange={this.onChange} required/>
+              </div>
+              <div className='div-profile-info-input'>
+                <input type='tel' name='phone' value={phone} onChange={this.onChange} required/>
+              </div>
+              <div className='div-profile-info-input'>
+                <input type='email' name='email' value={email} onChange={this.onChange} required/>
+              </div>
+              <div className='div-profile-info-input'>
+                <input ref='passwordInput' type='password' name='password' value={password} onChange={this.onChange}/>
+              </div>
+            </div>
+          }
         </div>
 
-        <Button className='btn-edit' onClick={this.onEdit}>Edit</Button>
+        <Button className='btn-edit' onClick={this.onEdit}>{ isEditMode ? 'Save' : 'Edit'}</Button>
       </div>
     )
   }

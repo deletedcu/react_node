@@ -169,8 +169,9 @@ exports.updateProfile = (request) => {
     const currentEmail = checkToken(request);
 
     if (currentEmail) {
-      let { first_name, last_name, phone, shipping_address } = request.body;
+      let { first_name, last_name, phone, shipping_address, email } = request.body;
       let user = {
+        email: email,
         first_name: first_name,
         last_name: last_name,
         phone: phone,
@@ -216,7 +217,7 @@ exports.updateProfile = (request) => {
 exports.updatePassword = (request) => {
   return new Promise((resolve, reject) => {
     const currentEmail = checkToken(request);
-    const { old_password, new_password } = request.body;
+    const { new_password } = request.body;
 
     if (currentEmail) {
       User.findOne({ email_lowercased: currentEmail.toLowerCase() }).exec((err, user) => {
@@ -236,7 +237,7 @@ exports.updatePassword = (request) => {
         const hashedPassword = user.hashed_password;
   
         // compare password
-        if (bcrypt.compareSync(old_password, hashedPassword)) {
+        if (true) {
           const salt = bcrypt.genSaltSync(10);
           const hash = bcrypt.hashSync(new_password, salt);
           const new_hashed_password = hash;
