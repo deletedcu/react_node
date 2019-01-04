@@ -18,10 +18,16 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
 
     .auth-form-title {
       font-size: 29px;
       font-family: 'Montserrat-SemiBold';
+      color: #4B4B4B;
+    }
+
+    .auth-form-switch {
+      font-size: $mobile-regular-font-size + 1;
     }
   }
 
@@ -68,11 +74,11 @@
       display: flex;
 
       #input_firstname {
-        margin-right: 15px;
+        margin-right: 9px;
         width: 50%;
       }
       #input_lastname {
-        margin-left: 15px;
+        margin-left: 9px;
         width: 50%;
       }
     }
@@ -119,7 +125,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px;
     
     .auth-form-separator-line {
       flex-grow: 1;
@@ -135,14 +141,14 @@
 
   .facebook-button {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .auth-form-footer {
     text-align: center;
     margin-top: 20px;
     font-size: $mobile-regular-font-size;
-    font-family: 'OpenSans-Regular';
+    font-family: 'Montserrat-Regular';
 
     .auth-form-footer-signup {
       margin-top: 20px;

@@ -23,6 +23,7 @@ class AuthForm extends Component {
       lastName: '',
       email: '',
       password: '',
+      zip: '',
       rememberMe: true,
     }
   }
@@ -47,6 +48,7 @@ class AuthForm extends Component {
       last_name: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
+      zip: this.state.zip,
     }))
   }
 
@@ -88,7 +90,7 @@ class AuthForm extends Component {
         {/* Form header */}
         <div className={ isSignup ? 'auth-form-header-normal' : 'auth-form-header-green'}>
           <div className='auth-form-title'>
-            { isSignup ? 'Create an account' : 'Log in' }
+            { isSignup ? 'Sign Up' : 'Log in' }
           </div>
 
           { 
@@ -124,6 +126,13 @@ class AuthForm extends Component {
             <div className='auth-form-input-name'>PASSWORD</div>
             <input required type='password' name='password' value={this.state.password} onChange={this.onChange}/>
           </div>
+
+          { isSignup &&
+            <div className='auth-form-input'>
+              <div className='auth-form-input-name'>ZIP</div>
+              <input required type='text' name='zip' value={this.state.zip} onChange={this.onChange}/>
+            </div>
+          }
 
           { !isSignup && 
             <div className='auth-form-forgot-password'>

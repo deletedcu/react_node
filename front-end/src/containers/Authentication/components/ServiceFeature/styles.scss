@@ -2,19 +2,21 @@
 
 .service-feature {
   text-align: center;
-  width: 360px;
+  width: 340px;
 
   .img-service-feature {
-    height: 65px;
+    height: 48px;
   }
 
   .div-service-feature-title {
-    margin-top: 40px;
+    margin-top: 60px;
+    font-size: $small-font-size - 1;
+    color: #2E2E2E;
   }
 
   .div-service-feature-description {
     color: $text-light-gray;
-    font-size: $small-font-size;
-    margin-top: 20px;
+    font-size: $mobile-regular-font-size;
+    margin-top: 25px;
   }
 }
