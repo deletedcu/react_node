@@ -166,7 +166,11 @@ class Home extends Component {
               { feedbacks }
             </Slider>
           </div>
-          <Button className='btn-share-experience' onClick={this.onShareExperience}>Share your experience</Button>
+
+          { 
+            this.props.user.loggedIn &&
+            <Button className='btn-share-experience' onClick={this.onShareExperience}>Share your experience</Button>
+          }
         </div>
 
         {/* Location Search */}
@@ -180,6 +184,7 @@ class Home extends Component {
 
 function mapStateToProps(state) {
   return {
+    user: state.user,
     products: state.products,
   }
 }

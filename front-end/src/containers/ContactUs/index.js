@@ -7,6 +7,9 @@ import './styles.css'
 
 import imgBanner from '../../assets/images/banner.png'
 import { hideSidebar } from '../../redux/actions/sideBar'
+import { showOverlaySpinner, hideOverlaySpinner } from '../../redux/actions/overlaySpinner'
+import { showNotification } from '../../services/notification'
+import { contact } from '../../services/contact'
 
 import imgThankYou from '../../assets/images/thankyou.svg'
 
@@ -37,8 +40,25 @@ class ContactUs extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    this.setState({
-      messageSent: true,
+
+    const { firstName, lastName, email, message } = this.state
+
+    this.props.dispatch(showOverlaySpinner())
+
+    contact({
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      message: message,
+    }).then(res => {
+      this.props.dispatch(hideOverlaySpinner())
+
+      this.setState({
+        messageSent: true,
+      })
+    }).catch(err => {
+      this.props.dispatch(hideOverlaySpinner())
+      showNotification('Failed to contact the support', 'error')
     })
   }
   

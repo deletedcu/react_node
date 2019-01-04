@@ -7,6 +7,9 @@ import Button from '../../../components/Button'
 import './styles.css'
 
 import { closeModal } from '../../../redux/actions/modal'
+import { showOverlaySpinner, hideOverlaySpinner } from '../../../redux/actions/overlaySpinner'
+import { rateSite } from '../../../services/rateSite'
+import { showNotification } from '../../../services/notification'
 
 import imgCheck from '../../../assets/images/checkmark.svg'
 import imgCheckHighlight from '../../../assets/images/checkmark_highlight.svg'
@@ -47,8 +50,28 @@ class ShareExperienceModal extends Component {
   }
 
   onSubmit = () => {
-    this.setState({
-      shared: true,
+    const { feedback, rate, replyAllowed } = this.state
+
+    if (!feedback || rate === 0) {
+      return
+    }
+
+    this.props.dispatch(showOverlaySpinner())
+
+    rateSite(this.props.user.user.token, {
+      feedback: feedback,
+      canReply: replyAllowed,
+      rate: rate,
+    }).then(res => {
+      this.props.dispatch(hideOverlaySpinner())
+      showNotification('Thanks for your feedback', 'success')
+
+      this.setState({
+        shared: true,
+      })
+    }).catch(err => {
+      this.props.dispatch(hideOverlaySpinner())
+      showNotification('Failed to send feedback', 'error')
     })
   }
 
@@ -102,4 +125,10 @@ class ShareExperienceModal extends Component {
   }
 }
 
-export default connect()(ShareExperienceModal)
+function mapStateToProps(state) {
+  return {
+    user: state.user,
+  }
+}
+
+export default connect(mapStateToProps)(ShareExperienceModal)
