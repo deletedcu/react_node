@@ -54,7 +54,6 @@ class OrderHistoryItem extends Component {
             <div className='order-history-item-info clickable'>
               <span className='span-order-number-title' onClick={this.onToggleSubItems}>Order Number</span>
               <span className='span-order-number' onClick={this.onToggleSubItems}>{item.id}</span>
-              <span className='span-cancel' onClick={this.onCancel}>Cancel</span>
             </div>
           </div>
 
@@ -80,7 +79,6 @@ class OrderHistoryItem extends Component {
               <span className='span-price'>{ item.price }</span>
             </div>
             <span className='span-number'>{ item.id } </span>
-            <span className='span-cancel clickable' onClick={this.onCancel}>Cancel</span>
             <span className='span-date'>{ `Order Placed: ${moment(item.timestamp).format('MMM D YYYY')}` }</span>
           </div>
         </div>

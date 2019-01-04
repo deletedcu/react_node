@@ -30,7 +30,7 @@
       }
 
       .span-subitem-options, .span-subitem-quantity {
-        font-size: $mobile-regular-font-size;
+        font-size: $mobile-regular-font-size - 1;
         font-family: 'Montserrat-SemiBold';
         margin-left: 15px;
       }
@@ -43,10 +43,10 @@
   }
 
   .btn-rate {
-    width: 70px;
+    width: 68px;
     height: 30px;
-    border-radius: 0;
-    font-size: $mobile-regular-font-size;
+    border-radius: 3px;
+    font-size: $mobile-regular-font-size - 1;
   }
 
   @media (max-width: 710px) {
@@ -55,9 +55,9 @@
 
     .order-history-subitem-info {
       .img-subitem {
-        width: 76px;
-        height: 76px;
-        border-radius: 38px;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
       }
 
       .order-history-subitem-detail {

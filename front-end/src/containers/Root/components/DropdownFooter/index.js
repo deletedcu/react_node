@@ -26,9 +26,9 @@ class DropdownFooter extends Component {
         {/* Dropdowns */}
         <div className='div-footer-dropdown-container'>
           <DropdownList title='COMPANY'>
-            <Link to='/about-us'>About</Link>
-            <Link to='/career'>Careers</Link>
-            <Link to='/how-it-works'>How It Works</Link>
+            <div><Link to='/about-us'>About</Link></div>
+            <div><Link to='/career'>Careers</Link></div>
+            <div><Link to='/how-it-works'>Pricing</Link></div>
           </DropdownList>
 
           <DropdownList title='PRODUCT'>
@@ -46,7 +46,7 @@ class DropdownFooter extends Component {
           <DropdownList title='CITIES'>
             <div><Link to='/service-areas'>San Francisco</Link></div>
             <div><Link to='/service-areas'>Oakland</Link></div>
-            <div><Link to='/service-areas'>Berkely</Link></div>
+            <div><Link to='/service-areas'>Berkeley</Link></div>
             <div><Link to='/service-areas'>See More...</Link></div>
           </DropdownList>
 

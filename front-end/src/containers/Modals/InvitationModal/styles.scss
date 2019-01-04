@@ -10,12 +10,12 @@
   transform: translate(-50%);
   margin-bottom: 100px;
   background: white;
-  border-radius: 6px;
+  border-radius: 3px;
   overflow: hidden;
   background-color: $extra-light-gray;
-  padding: 35px 80px;
+  padding: 30px 60px;
 
-  width: 614px;
+  width: 540px;
 
   .invitation-modal-form {
     display: flex;
@@ -24,35 +24,36 @@
     width: 100%;
 
     .span-title {
-      font-size: $small-font-size;
+      font-size: $mobile-regular-font-size + 1;
       font-family: 'Montserrat-SemiBold';
     }
 
     .span-link {
       color: $text-primary;
-      font-size: 11px;
+      font-size: $mobile-small-font-size + 2;
       font-family: 'Montserrat-SemiBold';
       text-decoration: underline;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
     .button {
-      height: 63px;
+      height: 58px;
       width: 100%;
       background-color: #515151;
       border-radius: 0;
       margin-top: 20px;
-      font-size: $mobile-regular-font-size;
+      font-size: $mobile-regular-font-size - 1;
+      font-family: 'Montserrat-SemiBold';
     }
 
     input {
       border: 1px solid $text-light-gray;
       background-color: transparent;
-      font-size: $mobile-regular-font-size;
-      padding: 0 20px;
-      height: 50px;
+      font-size: $mobile-regular-font-size - 2;
+      padding: 0 15px;
+      height: 45px;
       width: 100%;
-      margin-top: 20px;
+      margin-top: 17px;
     }
   }
 
@@ -60,16 +61,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 25px;
 
     .invitation-modal-title {
-      font-size: $small-font-size;
+      font-size: $mobile-regular-font-size + 1;
       font-family: 'Montserrat-SemiBold';
     }
     .invitation-modal-description {
       width: 60%;
-      font-size: $small-font-size;
+      font-size: $mobile-regular-font-size + 1;
       color: $text-light-gray;
       margin-top: 10px;
       text-align: center;
@@ -77,6 +78,6 @@
   }
 
   .img-prize {
-    height: 157px;
+    height: 147px;
   }
 }

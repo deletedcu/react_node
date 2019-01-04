@@ -10,7 +10,7 @@
 
   .order-history-main {
     display: flex;
-    font-size: $small-font-size;
+    font-size: $small-font-size - 1;
     color: $text-light-gray;
     text-align: center;
 
@@ -21,11 +21,11 @@
       padding-left: 25px;
 
       .img-item {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
         margin-top: 10px;
-        margin-right: 15px;
-        border-radius: 45px;
+        margin-right: 10px;
+        border-radius: 40px;
         overflow: hidden;
         flex-shrink: 0;
       }
@@ -37,14 +37,10 @@
 
         .span-order-number-title {
           color: #393838;
+          font-size: $small-font-size;
         }
         .span-order-number {
-          font-size: 16px;
-        }
-        .span-cancel {
-          color: $green-primary;
           font-size: $mobile-regular-font-size;
-          margin-top: 5px;
         }
       }
     }
@@ -93,9 +89,9 @@
       display: flex;
 
       .img-item {
-        width: 80px;
-        height: 80px;
-        border-radius: 40px;
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
         flex-shrink: 0;
         overflow: hidden;
         margin-right: 20px;
@@ -132,6 +128,4 @@
       }
     }
   }
-
-
 }
