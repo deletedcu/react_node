@@ -10,8 +10,8 @@
     flex-wrap: wrap;
 
     .meal-preference-item {
-      width: calc(33.3% - 20px);
-      margin: 10px;
+      width: calc(33.3% - 26px);
+      margin: 13px;
       flex-shrink: 1;
       align-self: flex-start;
     }
@@ -25,7 +25,7 @@
   @media (max-width: 1024px) {
     .div-meal-preference-items {
       .meal-preference-item {
-        width: calc(50% - 20px);
+        width: calc(50% - 26px);
       }
     }
   }

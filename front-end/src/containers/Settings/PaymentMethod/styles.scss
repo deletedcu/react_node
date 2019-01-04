@@ -11,7 +11,7 @@
     align-items: center;
 
     .payment-method-info {
-      margin-bottom: 40px;
+      margin-bottom: 26px;
     }
   }
 
@@ -20,16 +20,21 @@
     text-align: center;
 
     .btn-add-card {
-      width: 355px;
-      height: 53px;
+      width: 285px;
+      height: 42px;
       border-radius: 10px;
-      font-size: $mobile-regular-font-size;
+      font-size: $mobile-regular-font-size - 2;
       color: $text-light-gray;
       border: 1px solid #818181;
       background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 50%;
+      transform: translateX(-50%);
 
       img {
-        height: 20px;
+        height: 15px;
         margin-right: 10px;
       }
     }

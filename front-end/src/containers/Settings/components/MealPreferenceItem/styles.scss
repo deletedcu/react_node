@@ -5,22 +5,21 @@
   border: 1px solid rgba(112, 112, 112, 0.36);
   display: flex;
   flex-direction: column;
-  padding: 25px 50px 28px 40px;
+  padding: 25px 45px 20px 35px;
   overflow: hidden;
 
   .meal-preference-item-name {
-    display: flex;
-    justify-content: space-between;
     padding-left: 15px;
     color: #616060;
     font-family: 'Montserrat-Bold';
+    font-size: $small-font-size;
     margin-bottom: 15px;
   }
 
   .meal-preference-item-description {
-    font-size: $mobile-regular-font-size;
+    font-size: $mobile-regular-font-size - 1;
     color: #616060;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
   }
 
   .separator {
@@ -29,10 +28,10 @@
   }
 
   .span-edit {
-    padding-top: 20px;
+    padding-top: 15px;
     color: $green-primary;
     font-family: 'Montserrat-Medium';
-    font-size: $regular-font-size + 2;
+    font-size: $small-font-size;
   }
 
   .span-edit-description {
@@ -46,18 +45,18 @@
     margin-top: 18px;
 
     .meal-preference-item-edit-options {
-      margin: 35px -15px 25px;
+      margin: 30px -15px 25px;
       
       .meal-preference-item-edit-options-title {
-        font-size: $regular-font-size + 1;
+        font-size: $small-font-size + 1;
         color: $text-light-gray;
-        margin-left: 15px;
-        margin-bottom: 25px;
+        margin-left: 12px;
+        margin-bottom: 20px;
       }
 
       .meal-preference-item-edit-options-grid {
         .meal-preference-slider {
-          margin-bottom: 35px;
+          margin-bottom: 25px;
         }
       }
     }
@@ -70,8 +69,8 @@
       resize: none;
       font-size: $mobile-regular-font-size - 2;
       width: calc(100% - 40px);
-      height: 160px;
-      padding: 20px;
+      height: 133px;
+      padding: 15px;
       color: #707070;
     }
 
@@ -79,15 +78,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 20px;
+      margin-top: 15px;
       
       .button {
-        width: 115px;
-        height: 35px;
+        width: 96px;
+        height: 29px;
         margin: 0 5px;
         border-radius: 3px;
         box-shadow: $shadow-secondary;
-        font-size: $small-font-size - 1;
+        font-size: $mobile-regular-font-size - 2;
       }
 
       .btn-cancel {

@@ -3,8 +3,12 @@
 .div-settings-container {
   background-color: white;
   padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
   .div-settings-body {
+    flex-grow: 1;
     margin-top: 100px;
     margin-bottom: 75px;
 

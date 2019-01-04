@@ -73,7 +73,7 @@ class Footer extends Component {
             </div>
             <Link to='/about-us' className='footer-middle-link'>About</Link>
             <Link to='/career' className='footer-middle-link'>Careers</Link>
-            <Link to='/how-it-works' className='footer-middle-link'>How It Works</Link>
+            <Link to='/how-it-works' className='footer-middle-link'>Pricing</Link>
           </div>
 
           <div className='div-footer-middle-links-group'>
@@ -100,7 +100,7 @@ class Footer extends Component {
             </div>
             <Link to='/service-areas' className='footer-middle-link'>San Francisco</Link>
             <Link to='/service-areas' className='footer-middle-link'>Oakland</Link>
-            <Link to='/service-areas' className='footer-middle-link'>Berkely</Link>
+            <Link to='/service-areas' className='footer-middle-link'>Berkeley</Link>
             <Link to='/service-areas' className='footer-middle-link'>See More...</Link>
           </div>
 
