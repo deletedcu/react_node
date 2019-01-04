@@ -4,7 +4,7 @@ import Button from '../../../../components/Button'
 
 import './styles.css'
 
-import imgCheck from '../../../../assets/images/right.svg'
+import imgCheck from '../../../../assets/images/completed_checkout.svg'
 
 export const CheckoutFormStatus = {
   'editing': 1,

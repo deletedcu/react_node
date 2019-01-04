@@ -7,7 +7,7 @@ import MenuDatePicker from '../MenuDatePicker'
 import './styles.css'
 import { groupBy } from '../../../../utils'
 
-import imgPlus from '../../../../assets/images/plus_green_thin.svg'
+// import imgPlus from '../../../../assets/images/plus_green_thin.svg'
 
 class OrderSummary extends Component {
 
@@ -107,7 +107,7 @@ class OrderSummary extends Component {
 
           {/* Promo Code Input */}
           <div className='order-summary-promo-switch clickable' onClick={this.onTogglePromoCode}>
-            <img className={classNames({'img-rotated': this.state.showPromoCode})} src={imgPlus} alt='switch'/>
+            {/* <img className={classNames({'img-rotated': this.state.showPromoCode})} src={imgPlus} alt='switch'/> */}
             <span className={classNames({'span-highlighted': !this.state.showPromoCode})}>Add Gift Card or Promo Code</span>
           </div>
 

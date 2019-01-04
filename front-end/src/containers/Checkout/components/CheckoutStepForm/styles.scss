@@ -27,12 +27,12 @@ $checkout-header-height: 72px;
     }
 
     .div-step-number {
-      color: $green-secondary;
-      border: 3px solid #06AA0D;
+      color: $green-primary;
+      border: 2px solid $green-primary;
       background-color: white;
       text-align: center;
-      line-height: $step-number-size;
-      font-size: $small-font-size;
+      line-height: 27px;
+      font-size: $mobile-regular-font-size + 0.5;
       font-family: 'Montserrat-Bold';
     }
 
@@ -40,6 +40,7 @@ $checkout-header-height: 72px;
       color: white;
       border: unset;
       background-color: #ACACAC;
+      line-height: 30px;
     }
 
     .div-checkout-step-title {
