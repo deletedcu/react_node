@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const config = require('../../../config/config');
 const Moltin = require('../../../helpers/moltin');
 const User = require('../../../models/user');
+const UserFeedback = require('../../../models/userFeedback');
 
 const checkToken = require('../../../helpers/checkToken');
 
@@ -59,8 +60,9 @@ exports.login = (email, password) => {
  * @param {string} password 
  * @param {string} firstName 
  * @param {string} lastName 
+ * @param {string} zip
  */
-exports.register = (email, password, firstName, lastName) => {
+exports.register = (email, password, firstName, lastName, zip) => {
   return new Promise((resolve, reject) => {
     // check if user already exists
     User.findOne({ email_lowercased: email.toLowerCase() }).exec((err, matchingUser) => {
@@ -90,6 +92,7 @@ exports.register = (email, password, firstName, lastName) => {
           hashed_password: hash,
           first_name: firstName,
           last_name: lastName,
+          zip: zip,
           customer_id: customer.data.id,
         };
   
@@ -108,6 +111,7 @@ exports.register = (email, password, firstName, lastName) => {
                 email_lowercased: user.email_lowercased,
                 first_name: user.first_name,
                 last_name: user.last_name,
+                zip: user.zip,
                 token: jwt.sign(user.email, config.jwtSecret, {}),
               },
             });
@@ -274,6 +278,48 @@ exports.updatePassword = (request) => {
           // incorrect password
           reject({ status: 401, message: 'Password is not correct!' });
         }
+      });
+    } else {
+      reject({ status: 401, message: 'Unauthorized request!'});
+    }
+  });
+}
+
+/**
+ * Save user's feedback
+ * @param {*} request 
+ */
+exports.rate = (request) => {
+  return new Promise((resolve, reject) => {
+    let email = checkToken(request);  
+    
+    if (email) {
+      User.findOne({ email: email }).exec((err, user) => {
+        if (err) {
+          reject({ status: 500, message: 'Internal server error ...' });
+          return;
+        }
+  
+        if (!user) {
+          reject({ status: 401, message: 'Unauthorized request!' });
+          return;
+        }
+
+        const { rate, feedback, canReply } = request.body; 
+
+        new UserFeedback({
+          user: user,
+          rate: rate,
+          feedback: feedback,
+          canReply: canReply,
+        }).save(err => {
+          if (err) {
+            console.log(err);
+            reject({ status: 500, message: 'Internal Server Error' });
+          } else {
+            resolve({ status: 200, message: 'Feedback has been saved'});
+          }
+        });
       });
     } else {
       reject({ status: 401, message: 'Unauthorized request!'});

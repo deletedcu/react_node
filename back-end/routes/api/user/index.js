@@ -6,6 +6,7 @@ const register = require('./user').register;
 const authenticate = require('./user').authenticate;
 const updateProfile = require('./user').updateProfile;
 const updatePassword = require('./user').updatePassword;
+const rate = require('./user').rate;
 
 let router = express.Router();
 
@@ -35,12 +36,12 @@ router.post('/login', (request, response) => {
  * 
  */
 router.post('/register', (request, response) => {
-  let { email, password, first_name, last_name } = request.body;
+  let { email, password, first_name, last_name, zip } = request.body;
   
   if (!email || !password || !email.trim() || !password.trim()) {
     response.status(400).json({ message: 'Invalid request!'});
   } else {
-    register(email, password, first_name, last_name)
+    register(email, password, first_name, last_name, zip)
       .then(res => {
         response.status(res.status).json({ message: res.message, user: res.user });
       })
@@ -83,6 +84,19 @@ router.post('/update_profile', (request, response) => {
  */
 router.post('/update_password', (request, response) => {
   updatePassword(request)
+    .then(res => {
+      response.status(res.status).json({ message: res.message });
+    })
+    .catch(err => {
+      response.status(err.status).json({ message: err.message });
+    });
+});
+
+/**
+ * Rate the site
+ */
+router.post('/rate', (request, response) => {
+  rate(request)
     .then(res => {
       response.status(res.status).json({ message: res.message });
     })
