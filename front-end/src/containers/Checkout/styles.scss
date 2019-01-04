@@ -1,14 +1,20 @@
 @import "../../styles/variables/variables";
 
-$page-padding: 110px;
+$page-padding: 70px;
 
 .div-checkout-container {
   background-color: #F1F1F1;
-  padding: $page-padding $page-padding 0 $page-padding;
+  padding-top: 70px;
+
+  .div-checkout-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
   .div-checkout-title {
-    font-size: $large-font-size;
+    font-size: 31px;
     font-family: 'Montserrat-SemiBold';
+    margin-left: 20px;
   }
 
   .div-checkout-forms {
@@ -23,20 +29,24 @@ $page-padding: 110px;
       padding: 18px;
       color: $text-light-gray;
 
+      .span-input-title {
+        font-size: $mobile-regular-font-size - 1;
+      }
+
       .checkout-step-form-container {
-        margin-bottom: 30px;
+        margin-bottom: 22px;
       }
 
       input {
         width: 100%;
-        height: 70px;
+        height: 47px;
         border: 1px solid $light-green-primary;
         border-radius: 4px;
         color: $text-light-gray;
-        font-size: $footer-secondary-font-size;
+        font-size: $small-font-size;
         caret-color: $green-primary;
-        margin-top: 10px;
-        padding: 20px;
+        margin-top: 5px;
+        padding: 15px;
       }
 
       input:focus {
@@ -45,7 +55,7 @@ $page-padding: 110px;
 
       .div-checkout-section-content {
         background-color: white;
-        padding: 0 50px;
+        padding: 0 30px;
         display: flex;
         flex-direction: column;
       }
@@ -57,12 +67,12 @@ $page-padding: 110px;
   
           .div-checkout-account-firstname {
             flex-grow: 1;
-            margin-right: 15px;
+            margin-right: 12px;
           }
 
           .div-checkout-account-lastname {
             flex-grow: 1;
-            margin-left: 15px;
+            margin-left: 12px;
           }
         }
 
@@ -70,7 +80,8 @@ $page-padding: 110px;
           display: flex;
           flex-direction: row;
           align-items: center;
-          margin: 30px 0;
+          margin: 24px 0;
+          font-size: $mobile-regular-font-size - 1;
 
           .clickable {
             color: $green-primary;
@@ -79,7 +90,7 @@ $page-padding: 110px;
         }
   
         .div-checkout-account-names, .div-checkout-account-email, .div-checkout-account-password {
-          margin-top: 35px;
+          margin-top: 20px;
         }
       }
 
@@ -87,18 +98,18 @@ $page-padding: 110px;
         .div-checkout-address-first-row {
           .div-checkout-address-firstname {
             width: 30%;
-            padding-right: 15px;
+            padding-right: 12px;
           }
 
           .div-checkout-address-lastname {
             width: 30%;
-            padding-left: 15px;
-            padding-right: 15px;
+            padding-left: 12px;
+            padding-right: 12px;
           }
 
           .div-checkout-address-contact-number {
             width: 40%;
-            padding-left: 15px;
+            padding-left: 12px;
           }
         }
 
@@ -110,7 +121,7 @@ $page-padding: 110px;
 
           .div-checkout-address-special-instructions {
             width: 40%;
-            padding-left: 15px;
+            padding-left: 12px;
 
             .div-special-instructions-title {
               height: 30px;
@@ -121,7 +132,7 @@ $page-padding: 110px;
             }
 
             .span-optional {
-              font-size: $small-font-size;
+              font-size: $mobile-regular-font-size - 1;
               color: #BFBFBF;
             }
           }
@@ -132,7 +143,7 @@ $page-padding: 110px;
 
           .div-checkout-address-city {
             width: 60%;
-            padding-right: 15px;
+            padding-right: 12px;
           }
 
           .div-checkout-address-state-zip {
@@ -143,42 +154,43 @@ $page-padding: 110px;
             .div-checkout-address-state {
               position: relative;
               width: 50%;
-              padding-left: 15px;
+              padding-left: 12px;
   
               display: flex;
               flex-direction: column;
   
               .select-us-state {
-                margin-top: 10px;
+                margin-top: 5px;
                 padding-left: 10px;
                 padding-right: 30px;
                 border: 1px solid $light-green-primary;
                 background-color: white;
                 outline: none;
-                height: 70px;
+                height: 47px;
                 color: $text-light-gray;
+                font-size: $small-font-size;
                 -webkit-appearance: none;
                 -moz-appearance: none;
               }
 
               img {
                 position: absolute;
-                width: 21px;
-                height: 8px;
+                width: 15px;
+                height: 6px;
                 right: 10px;
-                bottom: 30px;
+                bottom: 20px;
               }
             }
   
             .div-checkout-address-zip {
               width: 50%;
-              padding-left: 15px;
+              padding-left: 12px;
             }
           }
         }
 
         .div-checkout-address-first-row, .div-checkout-address-second-row, .div-checkout-address-third-row {
-          margin-top: 35px;
+          margin-top: 20px;
           display: flex;
           flex-direction: row;
         }
@@ -198,7 +210,7 @@ $page-padding: 110px;
 
               .input {
                 border: 1px solid #56B05A;
-                height: 70px;
+                height: 47px;
 
                 label {
                   flex-grow: 1;
@@ -207,7 +219,7 @@ $page-padding: 110px;
                     border: none;
                     margin-top: 5px;
                     padding: 0;
-                    font-size: $footer-primary-font-size;
+                    font-size: $small-font-size;
                   }
 
                   .credit-card-input {
@@ -259,10 +271,11 @@ $page-padding: 110px;
   }
 
   .div-checkout-separator {
+    width: 100vw;
     height: 1px;
     background-color: $text-light-gray;
-    margin-left: -($page-padding);
-    margin-right: -($page-padding);
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 
   .div-help-container {
@@ -280,11 +293,6 @@ $page-padding: 110px;
 
     .div-checkout-title {
       text-align: center;
-    }
-
-    .div-checkout-separator {
-      margin-left: -20px;
-      margin-right: -20px;
     }
   }
 

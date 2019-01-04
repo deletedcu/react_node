@@ -94,11 +94,11 @@ class OrderSummary extends Component {
           </div>
           <div className='order-summary-info-block'>
             <span>6 Meals Per Week</span>
-            <span>{`$${this.totalPrice.toFixed(2)}`}</span>
+            <span className='span-light-gray'>{`$${this.totalPrice.toFixed(2)}`}</span>
           </div>
           <div className='order-summary-info-block'>
             <span>Shipping</span>
-            <span>Free</span>
+            <span className='span-light-gray'>Free</span>
           </div>
           {/* <div className='order-summary-info-block-highlighted'>
             <span>CHRISTMAS18</span>

@@ -1,7 +1,7 @@
 @import "../../../../styles/variables/variables";
 
-$step-number-size: 44px;
-$checkout-header-height: 108px;
+$step-number-size: 30px;
+$checkout-header-height: 72px;
 
 .checkout-step-form-container {
   background-color: white;
@@ -23,7 +23,7 @@ $checkout-header-height: 108px;
       width: $step-number-size;
       height: $step-number-size;
       border-radius: 100px;
-      margin-left: 30px;
+      margin-left: 20px;
     }
 
     .div-step-number {
@@ -32,7 +32,7 @@ $checkout-header-height: 108px;
       background-color: white;
       text-align: center;
       line-height: $step-number-size;
-      font-size: $footer-secondary-font-size;
+      font-size: $small-font-size;
       font-family: 'Montserrat-Bold';
     }
 
@@ -44,8 +44,8 @@ $checkout-header-height: 108px;
 
     .div-checkout-step-title {
       color: $text-light-gray;
-      font-size: $footer-secondary-font-size;
-      margin-left: 15px;
+      font-size: $small-font-size;
+      margin-left: 10px;
     }
   }
 
@@ -59,10 +59,12 @@ $checkout-header-height: 108px;
 
       .btn-checkout-step-form {
         width: unset;
-        height: 73px;
-        margin: 30px 50px 30px 0;
-        padding-left: 40px;
-        padding-right: 40px;
+        height: 48px;
+        border-radius: 4px;
+        margin: 20px 30px 20px 0;
+        padding-left: 60px;
+        padding-right: 60px;
+        font-size: $small-font-size - 1;
       }
     }
     
@@ -80,11 +82,11 @@ $checkout-header-height: 108px;
 
       .div-step-number {
         line-height: 32px;
-        font-size: $regular-font-size;
+        font-size: $mobile-regular-font-size;
       }
 
       .div-checkout-step-title {
-        font-size: $regular-font-size;
+        font-size: $mobile-regular-font-size;
       }
     }
 

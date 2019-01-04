@@ -1,6 +1,6 @@
 @import "../../../../styles/variables/variables";
 
-$ordered-item-size: 120px;
+$ordered-item-size: 78px;
 
 .ordered-item {
   display: flex;
@@ -14,9 +14,10 @@ $ordered-item-size: 120px;
   }
 
   .ordered-item-info {
-    margin-left: 16px;
+    margin-left: 15px;
     color: $text-light-gray;
-    font-size: $footer-secondary-font-size;
+    font-size: $mobile-regular-font-size - 1;
+    font-family: 'Montserrat-Bold';
   }
 
   @media (max-width: 710px) {
