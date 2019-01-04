@@ -25,9 +25,9 @@
         font-size: $small-font-size;
       }
 
-      .clickable {
-        color: $green-primary;
-        font-size: $small-font-size;
+      .password {
+        font-size: $mobile-small-font-size;
+        padding-top: 5px;
       }
     }
 
@@ -45,6 +45,12 @@
         margin-bottom: 20px;
       }
 
+      .input-readonly {
+        border: unset;
+        box-shadow: unset;
+        padding: unset;
+      }
+
       .div-profile-info-double-input {
         display: flex;
         justify-content: space-between;
@@ -60,9 +66,8 @@
     }
   }
 
-  .btn-edit {
+  .button {
     border-radius: 3px;
-    background-color: #525252;
     font-size: $mobile-regular-font-size;
     font-family: 'Montserrat-Medium';
     width: 150px;
@@ -70,5 +75,13 @@
     margin-left: 50%;
     transform: translateX(-50%);
     margin-top: 90px;
+  }
+
+  .btn-edit { 
+    background-color: #525252;
+  }
+
+  .btn-save {
+    background-color: $green-primary;
   }
 }

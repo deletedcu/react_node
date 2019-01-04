@@ -95,7 +95,7 @@ class EditProfile extends Component {
               <div className='div-profile-info-text'>{deliveryAddress || '-'}</div>
               <div className='div-profile-info-text'>{phone || '-'}</div>
               <div className='div-profile-info-text'>{email}</div>
-              <div className='div-profile-info-title clickable' onClick={this.onChangePassword}>Update Password</div>
+              <div className='div-profile-info-text password'>⬤⬤⬤⬤⬤⬤⬤⬤</div>
             </div>
             :
             <div className='div-profile-info-input-list'>
@@ -110,7 +110,7 @@ class EditProfile extends Component {
                 <input type='tel' name='phone' value={phone} onChange={this.onChange} required/>
               </div>
               <div className='div-profile-info-input'>
-                <input type='email' name='email' value={email} onChange={this.onChange} required/>
+                <input className='input-readonly' type='email' name='email' value={email} onChange={this.onChange} required readOnly/>
               </div>
               <div className='div-profile-info-input'>
                 <input ref='passwordInput' type='password' name='password' value={password} onChange={this.onChange}/>
@@ -119,7 +119,11 @@ class EditProfile extends Component {
           }
         </div>
 
-        <Button className='btn-edit' onClick={this.onEdit}>{ isEditMode ? 'Save' : 'Edit'}</Button>
+        { !isEditMode ?
+          <Button className='btn-edit' onClick={this.onEdit}>Edit</Button>
+          :
+          <Button className='btn-save' onClick={this.onSave}>Save</Button>
+        }
       </div>
     )
   }
