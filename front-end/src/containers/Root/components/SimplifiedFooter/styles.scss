@@ -17,17 +17,17 @@
     }
 
     .simplified-footer-links {
-      margin-left: 100px;
+      margin-left: 170px;
       display: flex;
       align-items: center;
 
       .link {
         color: #AFAFAF;
-        font-size: $regular-font-size + 3;
+        font-size: $small-font-size;
       }
 
       .separator {
-        height: 15px;
+        height: 10px;
         width: 1px;
         background-color: white;
         margin: 0 20px;
@@ -36,10 +36,10 @@
   }
 
   .simplified-footer-right {
-    margin-right: 70px;
+    margin-right: 75px;
 
     .img-globe {
-      height: 29px;
+      height: 25px;
     }
   }
 }

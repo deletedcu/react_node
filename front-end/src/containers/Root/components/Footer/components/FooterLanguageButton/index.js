@@ -4,18 +4,14 @@ import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdow
 import 'react-simple-dropdown/styles/Dropdown.css'
 import './styles.css'
 
-import imgPlus from '../../../../../../assets/images/plus_white.svg'
-import imgMinus from '../../../../../../assets/images/minus_white.svg'
-
 export const Languages = {
-  Japan: 'JAPAN',
-  Korea: 'KOREA',
-  Spanish: 'SPANISH',
-  Espanol: 'Español',
   English: 'English',
-  Portugues: 'Português',
+  Espanol: 'Español (LA)',
+  Portugues: 'Português (BRASIL)',
   Deutsch: 'Deutsch',
-  Francais: 'Français',
+  Japan: '日本語',
+  Korea: '한국어',
+  Turkish: 'Türkçe',
 }
 
 class FooterLanguageButton extends Component {
@@ -24,7 +20,6 @@ class FooterLanguageButton extends Component {
     super(props)
 
     this.state = {
-      showGlobalLanguages: false,
       selectedLanguage: Languages.English,
     }
   }
@@ -44,39 +39,24 @@ class FooterLanguageButton extends Component {
   }
 
   render () {
-    const { showGlobalLanguages, selectedLanguage } = this.state
+    const { selectedLanguage } = this.state
 
     return (
       <Dropdown ref='languagesDropdown' className='language-dropdown'>
         <DropdownTrigger>
           <div className='div-footer-language-button-container clickable'>
-            <span>{(selectedLanguage === Languages.Japan || selectedLanguage === Languages.Korea || selectedLanguage === Languages.Spanish) ? selectedLanguage : `Global-${selectedLanguage}` }</span>
+            <span>{`Global-${selectedLanguage}`}</span>
             <div className='img-globe'/>
           </div>
         </DropdownTrigger>
         <DropdownContent>
-          <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.Japan)}>
-            <span>JAPAN</span>
-          </div>
-          <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.Korea)}>
-            <span>KOREA</span>
-          </div>
-          <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.Spanish)}>
-            <span>SPANISH</span>
-          </div>
-          <div className='main-language-menu' onClick={this.onToggleGlobalLanguages}>
-            <span>GLOBAL</span>
-            <img src={ showGlobalLanguages ? imgMinus : imgPlus} alt='plus'/>
-          </div>
-          { showGlobalLanguages &&
-            <div className='sub-language-menus'>
-              <div className='sub-language-menu' onClick={() => this.onSelectLanguage(Languages.Espanol)}>Español</div>
-              <div className='sub-language-menu' onClick={() => this.onSelectLanguage(Languages.English)}>English</div>
-              <div className='sub-language-menu' onClick={() => this.onSelectLanguage(Languages.Portugues)}>Português</div>
-              <div className='sub-language-menu' onClick={() => this.onSelectLanguage(Languages.Deutsch)}>Deutsch</div>
-              <div className='sub-language-menu' onClick={() => this.onSelectLanguage(Languages.Francais)}>Français</div>
-            </div>
-          }
+          <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.English)}>English</div>
+          <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.Espanol)}>Español</div>
+          <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.Portugues)}>Português</div>
+          <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.Deutsch)}>Deutsch</div>
+          <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.Japan)}>日本語</div>
+          <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.Korea)}>한국어</div>
+          <div className='main-language-menu' onClick={() => this.onSelectLanguage(Languages.Turkish)}>Türkçe</div>
         </DropdownContent>
       </Dropdown>
     )

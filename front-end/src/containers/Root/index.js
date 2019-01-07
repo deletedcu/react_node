@@ -69,8 +69,8 @@ class Root extends Component {
   render () {
     const { history, sideBar, location, overlaySpinner } = this.props
     const shouldShowHeader = !(location.pathname.includes('coming-soon'))
-    const shouldShowFooter = !(location.pathname.includes('help-center') || location.pathname.includes('checkout') || location.pathname.includes('auth/signup') || location.pathname.includes('coming-soon'))
-    const shouldShowSimplifiedFooter = (location.pathname.includes('auth/login') || location.pathname.includes('auth/forgot-password'))
+    const shouldShowFooter = !(location.pathname.includes('help-center') || location.pathname.includes('checkout') || location.pathname.includes('coming-soon'))
+    const shouldShowSimplifiedFooter = location.pathname.includes('auth')
 
     return (
       <Sidebar
