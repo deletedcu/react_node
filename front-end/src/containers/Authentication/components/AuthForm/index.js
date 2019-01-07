@@ -127,12 +127,12 @@ class AuthForm extends Component {
             <input required type='password' name='password' value={this.state.password} onChange={this.onChange}/>
           </div>
 
-          { isSignup &&
+          {/* { isSignup &&
             <div className='auth-form-input'>
               <div className='auth-form-input-name'>ZIP</div>
               <input required type='text' name='zip' value={this.state.zip} onChange={this.onChange}/>
             </div>
-          }
+          } */}
 
           { !isSignup && 
             <div className='auth-form-forgot-password'>
