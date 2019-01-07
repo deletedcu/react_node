@@ -1,9 +1,9 @@
 @import "../../../../styles/variables/variables";
 
 .career-search-bar {
-  border-radius: 6px;
+  border-radius: 3px;
   display: flex;
-  height: 70px;
+  height: 60px;
   background-color: white;
   overflow: hidden;
 
@@ -11,12 +11,15 @@
     height: 100%;
     padding: 0 20px;
     flex-grow: 1;
+    font-size: $mobile-regular-font-size + 1;
   }
 
   .btn-search {
-    height: 100%;
-    width: 209px;
+    margin: 2px;
+    height: calc(100% - 4px);
+    width: 169px;
     border-radius: 4px;
     font-family: 'Montserrat-Bold';
+    font-size: $small-font-size - 1;
   }
 }

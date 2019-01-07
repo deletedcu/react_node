@@ -96,7 +96,7 @@ class CareerList extends Component {
           </div>
 
           <div className='div-career-section'>
-            <div className='div-career-section-title'>ACQUISITION</div>
+            <div className='div-career-section-title'>PRODUCT</div>
             <div className='div-separator'/>
             <Job
               title='Sr Product Manager'
@@ -109,6 +109,12 @@ class CareerList extends Component {
               location='San Francisco, CA'
               time='Full-Time'
               onApply={()=>{this.onApply('customer_engagement')}}
+            />
+            <Job
+              title='Delivery Driver, East Bay'
+              location='San Francisco, CA'
+              time='Full-Time'
+              onApply={()=>{this.onApply('delivery_driver')}}
             />
           </div>
         </div>

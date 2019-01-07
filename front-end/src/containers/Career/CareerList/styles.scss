@@ -6,16 +6,17 @@
 
   .div-career-banner {
     position: relative;
-    height: 600px;
+    height: 620px;
 
     .div-career-title {
       position: relative;
       text-align: center;
-      font-size: 70px;
+      font-size: 46px;
       font-family: 'Montserrat-SemiBold';
       top: 50%;
       transform: translateY(-50%);
       color: white;
+      line-height: 70px;
     }
 
     .div-career-search {
@@ -24,30 +25,33 @@
       top: calc(50% - 70px);
       transform: translateX(-50%);
       padding: 0 30px;
-      width: 960px;
+      width: 757px;
       max-width: 100%;
+      margin-top: 30px;
     }    
   }
 
   .div-career {
+    max-width: 860px;
+    
     .career-filters {
       margin-top: 40px;
     }
 
     .div-career-section {
-      margin: 80px 0;
+      margin: 60px 0;
 
       .div-career-section-title {
         color: rgba(0,0,0,0.4);
         font-family: 'Montserrat-SemiBold';
-        font-size: 40px;
+        font-size: 29px;
       }
 
       .div-separator {
-        width: 220px;
+        width: 170px;
         height: 1px;
         background-color: rgba(35,34,34, 0.85);
-        margin: 60px 0;
+        margin: 50px 0;
       }
 
       .job {

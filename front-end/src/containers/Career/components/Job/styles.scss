@@ -9,25 +9,28 @@
     color: black;
 
     .job-title {
-      font-size: 30px;
+      font-size: 23px;
       font-family: 'Montserrat-SemiBold';
       opacity: 0.75;
-      margin-bottom: 5px;
     }
 
     .job-location {
       margin-right: 100px;
+      font-size: $mobile-regular-font-size - 1;
     }
 
     .job-time {
       opacity: 0.5;
+      font-size: $mobile-regular-font-size - 1;
     }
   }
 
   .btn-apply {
-    width: 152px;
-    height: 51px;
-    font-family: 'Montserrat-Bold';
+    width: 118px;
+    height: 39px;
+    font-family: 'Montserrat-Medium';
+    font-size: $mobile-regular-font-size - 1;
     border-radius: 4px;
+    box-shadow: $shadow-primary;
   }
 }

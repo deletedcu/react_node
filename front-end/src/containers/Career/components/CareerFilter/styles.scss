@@ -6,17 +6,17 @@
   border-radius: 7px;
   display: flex;
   align-items: center;
-  height: 50px;
+  height: 39px;
   padding: 10px;
 
   span {
-    font-size: 25px;
+    font-size: $small-font-size - 1;
     color: black;
     font-family: 'Montserrat-Regular';
   }
 
   img {
-    height: 10px;
+    height: 5px;
     margin-left: 20px;
   }
 }
