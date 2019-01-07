@@ -1,8 +1,8 @@
 @import "../../../../../styles/variables/variables";
 
 .payment-method-info {
-  width: 539px;
-  height: 102px;
+  width: 486px;
+  height: 92px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -11,6 +11,8 @@
 
   .div-image-wrapper {
     width: 60px;
+    display: flex;
+    align-items: center;
     
     .img-payment-method {
       width: 30px;
@@ -18,6 +20,12 @@
 
     .img-payment-method-long {
       width: 60px;
+    }
+
+    span {
+      font-size: $mobile-regular-font-size - 1;
+      color: white;
+      margin-left: 10px;
     }
   }
 

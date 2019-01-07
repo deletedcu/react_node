@@ -27,6 +27,7 @@ class PaymentMethod extends Component {
           />
           <PaymentMethodInfo
             type={ PaymentMethodType.visaCard }
+            isDefault={true}
           />
         </div>
 

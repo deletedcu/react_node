@@ -30,7 +30,7 @@ class PaymentMethodInfo extends Component {
   }
 
   render () {
-    const { type } = this.props
+    const { type, isDefault } = this.props
     let image = null
     let passwordImage = null
     let colorClass = ''
@@ -61,6 +61,9 @@ class PaymentMethodInfo extends Component {
       <div className={classNames('payment-method-info', 'clickable', colorClass)} onClick={this.onEditPaymentMethod}>
         <div className='div-image-wrapper'>
           <img className={classNames('img-payment-method', {'img-payment-method-long': type === PaymentMethodType.paypal})} src={image} alt='card'/>
+          { isDefault && 
+            <span>(Default)</span>
+          }
         </div>
         
         <div className='div-secret-form'>
