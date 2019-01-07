@@ -4,11 +4,10 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 450px;
+  width: 417px;
   transform: translate(-50%, -50%);
   margin-bottom: 100px;
   border: 0.5px solid #EDF0F7;
-  border-radius: 3px;
   background-color: white;
   box-shadow: $shadow-primary;
 
@@ -26,7 +25,7 @@
 
   %feedback-subtitle {
     color: #6D6D6D;
-    font-size: $mobile-regular-font-size - 2;
+    font-size: $mobile-regular-font-size - 1;
     margin-bottom: 12px;
   }
 
@@ -45,7 +44,7 @@
 
   .order-feedback-header-section {
     @extend %order-feedback-section;
-    padding: 40px 108px 37px 32px;
+    padding: 40px 45px 37px 28px;
 
     .order-feedback-title {
       @extend %feedback-title;
@@ -67,7 +66,7 @@
     height: 240px;
     resize: none;
     padding: 30px;
-    font-size: $mobile-regular-font-size;
+    font-size: $mobile-regular-font-size - 1;
   }
 
   .order-feedback-bottom-section {
@@ -84,12 +83,12 @@
       }
 
       .order-feedback-check-title {
-        font-size: $mobile-regular-font-size - 2;
+        font-size: $mobile-regular-font-size - 1;
         font-family: 'Montserrat-SemiBold';
       }
 
       .order-feedback-check-subtitle {
-        font-size: $mobile-small-font-size;
+        font-size: $mobile-small-font-size + 2;
       }
     }
 
