@@ -1,62 +1,16 @@
 @import "../../../../styles/variables/variables";
 
 .giftcard-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   .gift-card {
-    width: 500px;
-    height: 285px;
+    width: 409px;
+    height: 234px;
   }
 
   .giftcard-amount-input {
-    margin-top: 25px;
-  }
-
-  .giftcard-panel-instructions {
-    margin-left: 60px;
-    margin-top: 60px;
-    margin-right: 40px;
-
-    .giftcard-panel-instruction {
-      display: flex;
-      margin-bottom: 50px;
-      
-      img {
-        height: 9px;
-        margin-top: 7px;
-        margin-right: 15px;
-      }
-      span {
-        font-size: 16px;
-        color: black;
-      }
-    }
-  }
-
-  .btn-redeem-code {
-    border: 2.5px solid #B7CBB8;
-    background-color: #FAFBFC;
-    color: $green-secondary;
-    font-size: $mobile-regular-font-size;
-    width: 184px;
-    height: 63px;
-    border-radius: 4;
-    box-shadow: unset;
-    margin-top: 30px;
-    margin-left: 50%;
-    transform: translateX(-50%);
-
-    &:active {
-      box-shadow: $shadow-primary;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    .gift-card {
-      width: 350px;
-      height: 210px;
-    }
-
-    .giftcard-panel-instructions {
-      margin-left: 0;
-    }
+    margin-top: 15px;
   }
 }

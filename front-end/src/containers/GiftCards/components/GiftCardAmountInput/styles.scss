@@ -2,27 +2,22 @@
 
 .giftcard-amount-input {
   color: $text-light-gray;
-
-  .giftcard-amount-input-title {
-    font-size: 22px;
-    font-family: 'Montserrat-Medium';
-    margin-bottom: 20px;
-  }
+  width: 100%;
 
   .giftcard-amount-input-grid {
-    height: 58px;
+    height: 50px;
     display: flex;
     border: 1px solid #B7CBB8;
     border-radius: 4px;
     background-color: white;
     box-shadow: $shadow-primary;
 
-    font-size: $mobile-regular-font-size;
+    font-size: $mobile-regular-font-size - 1;
 
     .giftcard-amount-input-cell {
-      line-height: 58px;
+      line-height: 50px;
       text-align: center;
-      min-width: 100px;
+      min-width: 70px;
       cursor: pointer;
 
       input {
@@ -54,7 +49,7 @@
   @media (max-width: 1024px) {
     .giftcard-amount-input-grid {
       .giftcard-amount-input-cell {
-        min-width: 70px;
+        min-width: 50px;
       }
     }
   }

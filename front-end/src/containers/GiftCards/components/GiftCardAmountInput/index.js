@@ -37,8 +37,6 @@ class GiftCardAmountInput extends Component {
 
     return (
       <div className='giftcard-amount-input'>
-        <div className='giftcard-amount-input-title'>Gift Amount</div>
-
         <div className='giftcard-amount-input-grid'>
           <div className={classNames('giftcard-amount-input-cell', {'giftcard-amount-input-cell-selected': selectedCell === 0})} onClick={()=>this.onClickCell(0, 60)}>$60</div>
           <div className='separator'/>

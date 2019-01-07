@@ -8,7 +8,7 @@
   align-items: center;
 
   .div-giftcards-banner {
-    padding-top: 80px;
+    padding-top: 120px;
     text-align: center;
     
     .div-giftcards-title {
@@ -17,47 +17,27 @@
     }
 
     .div-giftcards-subtitle {
-      margin-top: 10px;
+      margin: 30px 20px 0;
+      max-width: 550px;
       color: $text-light-gray;
       font-size: $mobile-regular-font-size;
+      line-height: 33px;
     }
   }
 
   .div-giftcards-content {
-    // max-width: 1300px;
-    margin-top: 100px;
-    // padding: 0 230px;
-
+    margin-top: 40px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .giftcard-panel {
-      width: 530px;
-      margin-right: 40px;
+      width: 420px;
     }
 
     .gift-card-form {
-      width: 660px;
-    }
-  }
-
-  @media (max-width: 1366px) {
-    .div-giftcards-content {
-      width: 100%;
-      padding: 0 30px;
-
-      .gift-card-form {
-        width: unset;
-        flex-grow: 1;
-      }
-    }
-  }
-
-  @media (max-width: 1024px) {
-    .div-giftcards-content {
-      .giftcard-panel {
-        width: 350px;
-        margin-right: 20px;
-      }
+      width: 420px;
+      margin-top: 20px;
     }
   }
 

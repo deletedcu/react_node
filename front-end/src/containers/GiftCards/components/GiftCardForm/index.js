@@ -10,10 +10,8 @@ class GiftCardForm extends Component {
     super(props)
 
     this.state = {
-      fromFirstName: '',
-      fromLastName: '',
-      toFirstName: '',
-      toLastName: '',
+      fromName: '',
+      toName: '',
       email: '',
       sendDate: new Date(),
       personalMessage: '',
@@ -36,26 +34,24 @@ class GiftCardForm extends Component {
     })
   }
 
+  onRedeemCode = () => {
+
+  }
+
   render () {
     return (
       <div className='gift-card-form'>
         <form onSubmit={this.onCheckout}>
           <div className='gift-card-form-name'>From</div>
-          <div className='gift-card-form-double-inputs'>
-            <input required type='text' name='fromFirstName' value={this.state.fromFirstName} onChange={this.onChange} placeholder='First Name'/>
-            <input required type='text' name='fromLastName' value={this.state.fromLastName} onChange={this.onChange} placeholder='Last Name'/>
-          </div>
+          <input required type='text' name='fromName' value={this.state.fromName} onChange={this.onChange} placeholder='Your Name'/>
 
-          <div className='gift-card-form-name'>Recipient's Name</div>
-          <div className='gift-card-form-double-inputs'>
-            <input required type='text' name='toFirstName' value={this.state.toFirstName} onChange={this.onChange} placeholder='First Name'/>
-            <input required type='text' name='toLastName' value={this.state.toLastName} onChange={this.onChange} placeholder='Last Name'/>
-          </div>
+          <div className='gift-card-form-name'>Send Gift To</div>
+          <input required type='text' name='toName' value={this.state.toName} onChange={this.onChange} placeholder={`Recipient's Name`}/>
 
-          <input required type='email' name='email' value={this.state.email} onChange={this.onChange} placeholder='Email'/>
+          <input required type='email' name='email' value={this.state.email} onChange={this.onChange} placeholder={`Recipient's Email`}/>
 
           <div className='gift-card-form-datepicker'>
-            <div className='gift-card-form-datepicker-title'>Send Gift On</div>
+            <div className='gift-card-form-datepicker-title'>Delivery Date</div>
             <GiftDatePicker onChange={this.onDateChange}/>
           </div>
 
@@ -64,7 +60,11 @@ class GiftCardForm extends Component {
             <textarea required name='personalMessage' value={this.state.personalMessage} onChange={this.onChange}/>
           </div>
 
-          <Button type='submit' className='btn-checkout'>PROCEED TO CHECKOUT</Button>
+          <Button type='submit' className='btn-checkout'>ADD TO CART</Button>
+
+          <div className='div-bottom-instruction'>Gift cards are subject to our Terms and Conditions</div>
+
+          <Button type='button' className='btn-redeem-code' onClick={this.onRedeemCode}>Redeem your code</Button>
         </form>
       </div>
     )

@@ -16,20 +16,8 @@
       .gift-datepicker-input {
         display: flex;
 
-        .input-month {
-          width: 50%;
-          margin-right: 10px;
-        }
-
-        .input-day {
-          width: 25%;
-          margin-right: 10px;
-          margin-left: 10px;
-        }
-
-        .input-year {
-          width: 25%;
-          margin-left: 10px;
+        input {
+          width: 100%;
         }
       }
     }

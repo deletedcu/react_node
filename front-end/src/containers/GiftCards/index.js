@@ -36,10 +36,12 @@ class GiftCards extends Component {
           {/* Title */}
           <div className='div-giftcards-banner'>
             <div className='div-giftcards-title'>
-              Give the gift of Mealpost
+              GIVE THE GIFT OF MEALPOST
             </div>
             <div className='div-giftcards-subtitle'>
-              Treat your friends and family to most delicious gift of all.
+              Whether it's for that special occasion or tough times in life- Mealpost gift cards
+              are here for your friends and loved ones. Treat your friends and family to the
+              most delicious gift of all.
             </div>
           </div>
 
