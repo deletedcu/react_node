@@ -5,7 +5,7 @@
   height: 74px;
   border-radius: 37px;
   background-color: lightgray;
-  border: 1px solid #DBDBDB;
+  border: 1px solid #EEEEEE;
   z-index: 1;
 }
 
@@ -18,7 +18,7 @@
   .div-feedback-star {
     display: flex;
     .img-star {
-      width: 12px;
+      width: 11px;
       margin: 2px;
     }
   }
@@ -27,7 +27,7 @@
 .div-feedback {
   position: relative;
   width: 530px;
-  height: 210px;
+  height: 200px;
   display: inline-block;
   margin: 20px;
 
@@ -55,6 +55,7 @@
       .div-feedback-name {
         color: $text-light-gray;
         font-size: $small-font-size - 1;
+        font-family: 'Montserrat-Medium';
       }
     }
 
@@ -63,7 +64,7 @@
       font-size: $mobile-regular-font-size - 1;
       overflow: hidden;
       text-align: left;
-      margin: 20px 20px 0 0;
+      margin: 15px 20px 0 0;
     }
   }
 }
@@ -93,7 +94,7 @@
       width: 100%;
 
       .div-feedback-star {
-        margin-top: 20px;
+        margin-top: 0px;
         justify-content: center;
 
         .img-star {
@@ -103,14 +104,15 @@
 
       .div-feedback-name {
         margin-top: 20px;
-        font-size: $regular-font-size;
+        font-size: $small-font-size - 1;
+        font-family: 'Montserrat-Medium';
         text-align: center;
       }
 
       .div-feedback-content {
         margin-top: 20px;
         text-align: center;
-        font-size: $mobile-regular-font-size;
+        font-size: $mobile-regular-font-size - 1;
       }
     }
   }

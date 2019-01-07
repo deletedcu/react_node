@@ -37,7 +37,7 @@
   .div-section-title {
     text-align: center;
     margin-top: 100px;
-    font-size: $large-font-size;
+    font-size: $large-font-size - 4;
     font-family: 'Montserrat-Medium';
 
     @media (max-width: 710px) {
@@ -51,7 +51,7 @@
     flex-direction: column;
 
     .div-featured-menus {
-      max-width: calc(100% - 200px);
+      max-width: 1540px;
       margin-top: 70px;
       padding-left: 0px;
       padding-right: 0px;
