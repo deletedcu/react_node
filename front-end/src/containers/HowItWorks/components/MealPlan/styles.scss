@@ -57,7 +57,7 @@
     width: calc(100% - 96px);
     height: 46px;
     margin: 24px 43px 43px;
-    font-size: $mobile-regular-font-size;
+    font-size: $mobile-regular-font-size - 1;
     border-radius: 6px;
   }
 

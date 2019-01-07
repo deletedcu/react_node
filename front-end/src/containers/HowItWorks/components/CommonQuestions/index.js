@@ -14,26 +14,6 @@ class CommonQuestions extends Component {
           <div className='row'>
             <div className='div-common-questions-pannel left col-12 col-xl-6'>
               <div className='div-question-title'>
-                What is Mealpost exactly?
-              </div>
-              <div className='div-question-answer'>
-                Mealpost is a weekly based meal delivery service that serves fresh, never frozen meals. Our vision is to help individuals grow and achieve their life goals through precise dieting. Ease and Taste doesn't usually go hand in hand, but we're obviously an exception.
-              </div>
-              <div className='div-question-title'>
-                Ordering Process
-              </div>
-              <div className='div-question-answer'>
-                Once you place an order, expect an email from us with details regarding your delivery. A Mealpost courier will pick up your chilled meals and deliver them directly to your provided address. Can't accept a delivery? Contact us here and let us know ASAP.
-              </div>
-              <div className='div-question-title'>
-                Recyclable Packaging
-              </div>
-              <div className='div-question-answer'>
-                Yes! All of our packaging including our sleeves, bags, and containers are all recyclable!  We are proud to move towards a more sustainability initiative. Mealpost trays are certified compostable by the Biodegradable Products Institute and meet ASTM standards for compostability.
-              </div>
-            </div>
-            <div className='div-common-questions-pannel right col-12 col-xl-6'>
-              <div className='div-question-title'>
                 When and Where do you Deliver?
               </div>
               <div className='div-question-answer'>
@@ -50,6 +30,26 @@ class CommonQuestions extends Component {
               </div>
               <div className='div-question-answer'>
                 Definitely. Your meals are completely customizable to be exactly how you want it. Mix and Match Meal Plans and Featured Dishes to figure out which format is better for you. Looking for Low Carb meals? Let us know!
+              </div>
+            </div>
+            <div className='div-common-questions-pannel right col-12 col-xl-6'>
+              <div className='div-question-title'>
+                What is Mealpost exactly?
+              </div>
+              <div className='div-question-answer'>
+                Mealpost is a weekly based meal delivery service that serves fresh, never frozen meals. Our vision is to help individuals grow and achieve their life goals through precise dieting. Ease and Taste doesn't usually go hand in hand, but we're obviously an exception.
+              </div>
+              <div className='div-question-title'>
+                Ordering Process
+              </div>
+              <div className='div-question-answer'>
+                Once you place an order, expect an email from us with details regarding your delivery. A Mealpost courier will pick up your chilled meals and deliver them directly to your provided address. Can't accept a delivery? Contact us here and let us know ASAP.
+              </div>
+              <div className='div-question-title'>
+                Recyclable Packaging
+              </div>
+              <div className='div-question-answer'>
+                Yes! All of our packaging including our sleeves, bags, and containers are all recyclable!  We are proud to move towards a more sustainability initiative. Mealpost trays are certified compostable by the Biodegradable Products Institute and meet ASTM standards for compostability.
               </div>
             </div>
           </div>
