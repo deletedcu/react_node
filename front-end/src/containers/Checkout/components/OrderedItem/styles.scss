@@ -14,10 +14,11 @@ $ordered-item-size: 78px;
   }
 
   .ordered-item-info {
-    margin-left: 15px;
+    margin-left: 12px;
+    margin-top: 12px;
     color: $text-light-gray;
-    font-size: $mobile-regular-font-size - 1;
-    font-family: 'Montserrat-Bold';
+    font-size: $mobile-regular-font-size;
+    font-family: 'Montserrat-Medium';
   }
 
   @media (max-width: 710px) {

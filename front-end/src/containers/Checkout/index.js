@@ -402,7 +402,7 @@ class Checkout extends Component {
                       Paypal
                     </RadioButton>
                     <div className='div-checkout-payment-paypal-instruction'>
-                      You will be redirected to Paypal website to complete the payment securely.
+                      You will be redirected to PayPal to complete your purchase securely.
                     </div>
                     <img className='img-paypal' src={imgPaypal} alt='paypal'/>
                   </div>

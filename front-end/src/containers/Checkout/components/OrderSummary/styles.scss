@@ -62,76 +62,54 @@ $order-summary-header-height: 70px;
       color: #ACACAC;
     }
 
-    .order-summary-promo-switch {
+    .order-summary-promo-price {
       display: flex;
+      justify-content: space-between;
       align-items: center;
       padding: 0 $padding;
       margin: $margin 0;
+      color: #266D16;
 
-      img {
-        height: 20px;
-        margin-right: 15px;
-        transition: all .25s linear;
-      }
-
-      span {
-        color: #535453;
+      .span-promo-price-title {
+        font-family: 'Montserrat-Bold';
         font-size: $mobile-regular-font-size - 1;
+        margin-left: 15px;
+      }
+
+      .span-promo-price-value {
+        font-size: $mobile-regular-font-size;
         font-family: 'Montserrat-Medium';
-        transition: all .25s linear;
-      }
-
-      .span-highlighted {
-        color: #266D16;
-      }
-
-      .img-rotated {
-        transform: rotate(45deg);
-      }
-
-      .img-rotated path {
-        fill: black !important;
-        background-color: black;
       }
     }
 
     .order-summary-promo-input {
       position: relative;
       margin-top: $margin;
-      padding-bottom: $padding - 10px;
+      margin-bottom: $padding - 10px;
       padding-left: $padding - 10px;
       padding-right: $padding - 10px;
 
       input {
-        width: 100%;
-        height: 47px;
-        border: 1px solid #B4B4B4;
-        border-radius: 5px;
+        width: calc(100% - 170px);
+        height: 22px;
         padding-left: 20px;
-        padding-right: 180px;
+        padding-bottom: 3px;
+        margin-right: 180px;
         caret-color: $text-light-gray;
-        font-size: $small-font-size;
-
-        &:focus {
-          border: 1px solid #606060;
-        }
+        font-size: $mobile-regular-font-size - 1;
+        font-family: 'Montserrat-Bold';
+        border-bottom: 1px solid $text-light-gray;
       }
 
       span {
         position: absolute;
-        top: 6px;
-        right: $padding - 4px;
-        bottom: 6px;
-        width: 170px;
-        height: 35px;
-        line-height: 35px;
-        color: #DFDFDF;
+        right: 28px;
+        bottom: 0;
+        height: 22px;
+        line-height: 22px;
+        color: #56B05A;
         text-align: center;
         border-radius: 5px;
-      }
-
-      .span-apply-active {
-        color: $green-secondary;
       }
     }
 
@@ -139,16 +117,25 @@ $order-summary-header-height: 70px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      color: $text-light-gray;
-      font-family: 'Montserrat-Medium';
       padding-left: $padding;
       padding-right: $padding;
-      margin: 10px 0;
+      margin: 15px 0;
+
+      span {
+        color: #003300;
+        font-family: 'Montserrat-Bold';
+      }
+
+      .span-total-price {
+        font-size: $mobile-regular-font-size + 1;
+        font-family: 'Montserrat-Medium';
+        color: $text-light-gray;
+      }
     }
   }
 
   .order-summary-items {
-    padding: 30px;
+    padding: 25px;
 
     .order-summary-items-header {
       display: flex;
@@ -162,7 +149,7 @@ $order-summary-header-height: 70px;
     }
 
     .order-summary-items-list {
-      margin-top: 30px;
+      margin-top: 25px;
       overflow-y: hidden;
       max-height: 400px;
 
@@ -213,22 +200,8 @@ $order-summary-header-height: 70px;
       }
 
       .order-summary-promo-input {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 20px;
-
-        input {
-          padding-left: 15px;
-          height: 47px;
-          padding-right: 80px;
-          font-size: $small-font-size;
-        }
-
         span {
-          right: 30px;
-          line-height: 40px;
-          height: 40px;
-          width: 70px;
+          right: 20px;
         }
       }
 

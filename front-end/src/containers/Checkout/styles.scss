@@ -197,20 +197,32 @@ $page-padding: 70px;
       }
 
       .div-checkout-payment {
+        .radio-button {
+          img {
+            height: 16px;
+            margin-right: 5px;
+          }
+
+          span {
+            font-size: $mobile-regular-font-size - 1;
+            font-family: 'Montserrat-Medium';
+          }
+        }
+
         .div-checkout-payment-credit-card {
           border: 1px solid $light-green-primary;
-          margin-top: 40px;
-          padding: 24px;
+          margin-top: 28px;
+          padding: 22px 18px 28px;
 
           .div-checkout-payment-credit-card-number {
-            margin: 30px 20px 0 40px;
+            margin: 20px 0 0 20px;
 
             .div-checkout-payment-credit-card-number-wrapper {
               margin-top: 10px;
 
               .input {
-                border: 1px solid #56B05A;
-                height: 47px;
+                border: 1px solid $green-primary;
+                height: 45px;
 
                 label {
                   flex-grow: 1;
@@ -219,7 +231,7 @@ $page-padding: 70px;
                     border: none;
                     margin-top: 5px;
                     padding: 0;
-                    font-size: $small-font-size;
+                    font-size: $mobile-regular-font-size - 2;
                   }
 
                   .credit-card-input {
@@ -231,7 +243,7 @@ $page-padding: 70px;
           }
           
           .div-checkout-payment-credit-card-name {
-            margin: 30px 20px 20px 35px;
+            margin-left: 20px;
           }
         }
 
@@ -244,15 +256,15 @@ $page-padding: 70px;
           opacity: 0.5;
 
           .div-checkout-payment-paypal-instruction {
-            font-size: $footer-primary-font-size;
-            margin: 10px 100px 40px 35px;
+            font-size: $mobile-regular-font-size - 1;
+            margin: 20px 100px 20px 20px;
           }
 
           .img-paypal {
             position: absolute;
             top: 0;
             right: 20px;
-            height: 60px;
+            height: 50px;
           }
         }
 

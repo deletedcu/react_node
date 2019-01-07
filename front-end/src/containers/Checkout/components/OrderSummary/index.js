@@ -52,7 +52,10 @@ class OrderSummary extends Component {
   }
 
   onApplyPromoCode = () => {
-
+    // TODO: Check promo code
+    this.setState({
+      showPromoCode: true,
+    })
   }
 
   render () {
@@ -98,22 +101,20 @@ class OrderSummary extends Component {
           </div>
           <div className='order-summary-info-block'>
             <span>Shipping</span>
-            <span className='span-light-gray'>Free</span>
+            <span className='span-light-gray'>FREE</span>
           </div>
-          {/* <div className='order-summary-info-block-highlighted'>
-            <span>CHRISTMAS18</span>
-            <span>-$25.00</span>
-          </div> */}
 
           {/* Promo Code Input */}
-          <div className='order-summary-promo-switch clickable' onClick={this.onTogglePromoCode}>
-            {/* <img className={classNames({'img-rotated': this.state.showPromoCode})} src={imgPlus} alt='switch'/> */}
-            <span className={classNames({'span-highlighted': !this.state.showPromoCode})}>Add Gift Card or Promo Code</span>
-          </div>
-
           { this.state.showPromoCode &&
+          <div className='order-summary-promo-price'>
+            <span className='span-promo-price-title'>Add Gift Card or Promo Code</span>
+            <span className='span-promo-price-value'>-$35.00</span>
+          </div>
+          }
+
+          { !this.state.showPromoCode &&
             <div className='order-summary-promo-input'>
-              <input type='text' placeholder='Enter Code' name='promoCode' value={ this.state.promoCode } onChange={ this.onChange }/>
+              <input type='text' placeholder='Add Gift Card or Promo Code' name='promoCode' value={ this.state.promoCode } onChange={ this.onChange }/>
               <span className={ classNames('clickable', {'span-apply-active': this.state.promoCode }) } onClick={ this.onApplyPromoCode }>APPLY</span>
             </div>
           }
@@ -124,7 +125,7 @@ class OrderSummary extends Component {
           {/* Total Price */}
           <div className='order-summary-total-price-block'>
             <span>Total</span>
-            <span>{`$${this.totalPrice.toFixed(2)}`}</span>
+            <span className='span-total-price'>{`$${this.totalPrice.toFixed(2)}`}</span>
           </div>
         </div>
 
