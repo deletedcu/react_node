@@ -175,7 +175,9 @@ class Home extends Component {
 
         {/* Location Search */}
         <div className='div-bottom-form'>
-          <BottomForm/>
+          <BottomForm
+            title='STAY IN TOUCH'
+          />
         </div>
       </div>
     )

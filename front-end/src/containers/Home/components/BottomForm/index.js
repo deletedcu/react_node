@@ -25,7 +25,7 @@ class BottomForm extends Component {
   render () {
     return (
       <div className='bottom-form'>
-        <div className='bottom-form-title'>STAY IN TOUCH</div>
+        <div className='bottom-form-title'>{ this.props.title }</div>
 
         <div className='bottom-form-inputs'>
           <input type='email' name='email' value={this.state.email} onChange={this.onChange} placeholder='Email Address'/>

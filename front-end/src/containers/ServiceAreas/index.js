@@ -82,7 +82,7 @@ class ServiceAreas extends Component {
         {/* Banner and Title */}
         <div className='div-service-area-banner'>
           <div className='div-service-area-title'>
-            Check availability in your Area
+            CHECK AVAILABILITY IN YOUR AREA
           </div>
           <div className='div-service-area-subtitle'>
             Get Quality, Healthy, Chef-Prepared Meals Delivered directly to you.
@@ -107,8 +107,9 @@ class ServiceAreas extends Component {
 
         {/* Bottom */}
         <div className='div-service-area-bottom'>
-          <div className='div-separator'/>
-          <BottomForm/>
+          <BottomForm
+            title='Get notified when we expand to your City'
+          />
         </div>
       </div>
     )

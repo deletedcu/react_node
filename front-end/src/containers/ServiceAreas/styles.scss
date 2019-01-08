@@ -1,20 +1,19 @@
 @import "../../styles/variables/variables";
 
 .div-service-area-container {
-  background-color: #F1F1F1;
 
   .div-service-area-banner {
     position: relative;
     height: 300px;
     background-color: rgb(243, 244, 248);
-    box-shadow: $shadow-primary;
+    border-bottom: 1px solid #DDDDDD;
     
     .div-service-area-title {
       position: relative;
       text-align: center;
       color: #5B5B5B;
       font-size: 32px;
-      font-family: 'Montserrat-SemiBold';
+      font-family: 'CeraPro-Medium';
       top: calc(50% - 40px);
       transform: translateY(-50%);
     }
@@ -23,7 +22,7 @@
       position: relative;
       text-align: center;
       color: #5B5B5B;
-      font-size: $mobile-regular-font-size;
+      font-size: $mobile-regular-font-size - 1;
       top: calc(50% - 55px);
       transform: translateY(-50%);
     }
@@ -42,17 +41,19 @@
         width: 115px;
         height: 100%;
         font-size: $mobile-regular-font-size;
-        padding: 0 20px;
+        font-family: 'OpenSans-Regular';
+        text-align: center;
+        padding: 0 5px;
         border-radius: 4px;
         border: 1px solid #70707080;
         margin-right: 10px;
       }
 
       .button {
-        width: 222px;
+        width: 221px;
         height: 100%;
         border-radius: 4px;
-        font-size: 15px;
+        font-size: $mobile-regular-font-size + 1;
         font-family: 'Montserrat-Medium';
       }
     }    
@@ -63,13 +64,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: calc(100% - 720px);
+    max-width: 1142px;
 
     .div-service-areas-title {
       color: #5B5B5B;
       text-align: center;
-      margin: 80px 0;
-      font-size: $small-font-size;
+      margin: 60px 0;
+      font-size: $small-font-size + 1;
+      font-family: 'Montserrat-Medium';
     }
 
     .div-service-areas-grid {
@@ -79,8 +81,8 @@
       grid-auto-columns: 230px;
     
       .service-area {
-        color: $text-light-gray;
-        font-size: $mobile-regular-font-size;
+        color: $green-primary;
+        font-size: $mobile-regular-font-size - 1;
         height: 70px;
         line-height: 70px;
 
@@ -92,15 +94,10 @@
   }
 
   .div-service-area-bottom {
-    padding: 0 200px;
-
-    .div-separator {
-      height: 1px;
-      background-color: #707070B0
-    }
+    background-color: #F1F2F6;
 
     .bottom-form {
-      padding: 100px 0;
+      padding: 50px 0;
       width: 540px;
       background-color: transparent;
       margin-left: 50%;
