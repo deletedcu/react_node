@@ -4,59 +4,82 @@
 
   .div-help-center-banner {
     position: relative;
-    height: 440px;
+    height: 417px;
 
     .div-help-center-title {
       position: relative;
       text-align: center;
-      font-size: 40px;
+      font-size: 38px;
       font-family: 'Montserrat-SemiBold';
-      top: calc(50% - 60px);
+      top: calc(50% - 40px);
       transform: translateY(-50%);
     }
 
     .div-help-center-search {
       position: relative;
       left: 50%;
-      top: 50%;
+      top: calc(50% - 30px);
       transform: translateX(-50%);
       padding: 0 30px;
-      width: 960px;
+      width: 860px;
       max-width: 100%;
     }    
   }
 
   .div-help-center {
-    padding: 120px 180px 120px;
+    margin-top: 120px;
 
-    .div-cards {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 100px;
+    .div-help-center-content {
+      max-width: 1330px;
 
-      .help-card {
-        flex-grow: 1;
-        margin: 0 27px;
+      .div-help-center-header {
+        display: flex;
+
+        .span-header-title {
+          font-size: 30px;
+          font-family: 'CeraPro-Bold';
+          margin-right: 50px;
+        }
+
+        .div-help-center-header-tabs {
+          display: flex;
+          flex-grow: 1;
+          border-bottom: 1px solid #1C1C1C;
+
+          .span-tab {
+            font-size: $mobile-regular-font-size;
+            font-family: 'Montserrat-Medium';
+            width: 80px;
+            text-align: center;
+            margin-top: 5px;
+          }
+
+          .span-tab-selected {
+            border-bottom: 4px solid #47944A;
+          }
+        }
       }
     }
+    
 
     .div-still-need-help {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-top: 60px;
+      margin-bottom: 100px;
 
       .span-need-help {
         font-family: 'Inkfree';
-        font-size: 35px;
+        font-size: 27px;
         color: #333333;
-        margin-bottom: 35px;
+        margin-bottom: 30px;
       }
 
       .btn-need-help {
-        width: 137px;
-        height: 40px;
-        font-size: $mobile-regular-font-size;
+        width: 111px;
+        height: 33.6px;
+        font-size: $mobile-small-font-size + 1;
         font-family: 'Montserrat-SemiBold';
         border-radius: 4px;
       } 

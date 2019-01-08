@@ -1,0 +1,22 @@
+@import "../../../../styles/variables/variables";
+
+.help-text {
+  display: flex;
+  flex-direction: column;
+
+  .help-text-title {
+    font-size: $regular-font-size - 1;
+    font-family: 'Montserrat-SemiBold';
+    margin-left: 15px;
+  }
+
+  .help-text-content {
+    font-family: 'OpenSans-Regular';
+    font-size: $mobile-regular-font-size - 1;
+
+    a {
+      color: $green-secondary;
+      text-decoration: underline;
+    }
+  }
+}

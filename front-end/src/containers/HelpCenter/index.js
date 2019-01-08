@@ -1,20 +1,26 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import classNames from 'classnames'
 import LazyImage from '../../components/LazyImage'
 import Button from '../../components/Button'
 import HelpSearchBar from './components/HelpSearchBar'
-import HelpRecentActivityList from './components/HelpRecentActivityList'
-import HelpCard from './components/HelpCard'
+import HelpGeneralPanel from './components/HelpGeneralPanel'
+import HelpDeliveryPanel from './components/HelpDeliveryPanel'
 
 import './styles.css'
 
 import imgBanner from '../../assets/images/helpcenter_banner.png'
-import imgAccountSetting from '../../assets/images/help_accountsetting.png'
-import imgGetStarted from '../../assets/images/help_getstarted.png'
-import imgPayment from '../../assets/images/help_payment.png'
 import { hideSidebar } from '../../redux/actions/sideBar'
 
 class HelpCenter extends Component {
+
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      selectedTabIndex: 0,
+    }
+  }
 
   componentDidMount () {
     this.props.dispatch(hideSidebar())
@@ -23,12 +29,20 @@ class HelpCenter extends Component {
   onSearchChange = (text) => {
 
   }
+  
+  onClickTab = (selectedTabIndex) => {
+    this.setState({
+      selectedTabIndex: selectedTabIndex,
+    })
+  }
 
   onNeedHelp = () => {
     this.props.history.push('/contact-us')
   }
 
   render () {
+    const { selectedTabIndex } = this.state
+
     return (
       <div className='div-help-center-container'>
         {/* Banner and Title */}
@@ -44,25 +58,21 @@ class HelpCenter extends Component {
 
         {/* Help Center */}
         <div className='div-help-center'>
-          <div className='div-cards'>
-            <HelpCard
-              image={imgAccountSetting}
-              title='Account & Settings'
-              subtitle='Adjust your profile settings and Meal preferences'
-            />
-            <HelpCard
-              image={imgGetStarted}
-              title='Getting Started'
-              subtitle='Explore and Get Started using your New Account'
-            />
-            <HelpCard
-              image={imgPayment}
-              title='Payments Info'
-              subtitle='Accepted payment methods, and promotions'
-            />
-          </div>
+          <div className='div-help-center-content container'>
+            <div className='div-help-center-header'>
+              <span className='span-header-title'>Getting Started</span>
+              <div className='div-help-center-header-tabs'>
+                <span className={ classNames('span-tab', 'clickable', {'span-tab-selected': selectedTabIndex === 0})} onClick={() => this.onClickTab(0)}>General</span>
+                <span className={ classNames('span-tab', 'clickable', {'span-tab-selected': selectedTabIndex === 1})} onClick={() => this.onClickTab(1)}>Delivery</span>
+              </div>
+            </div>
 
-          <HelpRecentActivityList/>
+            { selectedTabIndex === 0 ? 
+              <HelpGeneralPanel/>
+              :
+              <HelpDeliveryPanel/>
+            }
+          </div>
 
           <div className='div-still-need-help'>
             <span className='span-need-help'>Still Need Help?</span>

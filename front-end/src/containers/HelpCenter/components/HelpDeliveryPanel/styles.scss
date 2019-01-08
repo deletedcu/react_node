@@ -1,0 +1,33 @@
+@import "../../../../styles/variables/variables";
+
+.help-delivery-panel {
+
+  .help-delivery-section {
+    display: flex;
+    margin-top: 50px;
+
+    img {
+      width: 220px;
+      margin-right: 40px;
+    }
+
+    .help-delivery-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .help-text {
+        width: calc(50% - 50px);
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .separator {
+    background-color: #232222;
+    opacity: 0.85;
+    width: 100%;
+    height: 1px;
+    margin-top: 60px;
+  }
+}

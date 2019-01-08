@@ -1,0 +1,45 @@
+@import "../../../../styles/variables/variables";
+
+.help-general-panel {
+
+  .help-general-section {
+    display: flex;
+    margin-top: 50px;
+    border-bottom: 1px solid rgba(35, 34, 34, 0.85);
+    padding-bottom: 30px;
+
+    .help-general-image {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 220px;
+      flex-shrink: 0;
+      margin-right: 40px;
+
+      img {
+        width: 130px;
+        height: 130px;
+        flex-shrink: 0;
+      }
+      span {
+        font-family: 'Montserrat-SemiBold';
+        font-size: $mobile-regular-font-size;
+      }
+    }
+
+    .help-general-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .help-text {
+        width: calc(50% - 50px);
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .no-underline {
+    border-bottom: unset;
+  }
+}
