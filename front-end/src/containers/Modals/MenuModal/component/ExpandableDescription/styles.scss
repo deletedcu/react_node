@@ -2,6 +2,9 @@
 
 .div-description-text {
   opacity: 0.58;
+  font-size: $mobile-regular-font-size;
+  color: #323232;
+  opacity: 0.55;
 
   a {
     color: $green-primary;

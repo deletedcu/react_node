@@ -107,11 +107,11 @@ class AuthForm extends Component {
             isSignup &&
             <div className='auth-form-double-inputs'>
               <div id='input_firstname' className='auth-form-input'>
-                <div className='auth-form-input-name'>First Name</div>
+                <div className='auth-form-input-name'>FIRST NAME</div>
                 <input required type='text' name='firstName' value={this.state.firstName} onChange={this.onChange}/>
               </div>
               <div id='input_lastname' className='auth-form-input'>
-                <div className='auth-form-input-name'>Last Name</div>
+                <div className='auth-form-input-name'>LAST NAME</div>
                 <input required type='text' name='lastName' value={this.state.lastName} onChange={this.onChange}/>
               </div>
             </div>

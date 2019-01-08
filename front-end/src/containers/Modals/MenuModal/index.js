@@ -12,7 +12,7 @@ import ExpandableDescription from './component/ExpandableDescription'
 
 import './styles.css'
 
-import imgClose from '../../../assets/images/close_button.svg'
+// import imgClose from '../../../assets/images/close_button.svg'
 import imgHighProtein from '../../../assets/images/high-protein.svg'
 import imgGlutenFree from '../../../assets/images/gluten-free.svg'
 import imgLowFat from '../../../assets/images/low-fat.png'
@@ -100,10 +100,10 @@ class MenuModal extends Component {
     const thumbnailUrls = [item.main_image].concat(item.files)
 
     return (
-      <ModalContainer>
+      <ModalContainer darkMode={true}>
         <div className='div-menu-modal-center' onClick={(e)=>e.stopPropagation()}>
           {/* Close button */}
-          <img src={ imgClose } alt='close' className='img-close clickable' onClick={ this.onClose }/>
+          {/* <img src={ imgClose } alt='close' className='img-close clickable' onClick={ this.onClose }/> */}
 
           <div className='div-menu-modal-thumbnail-image-detail'>
             {/* Thumbnails */}
