@@ -8,6 +8,10 @@ import imgBanner2 from '../../assets/images/bg_about_us_2.png'
 
 class AboutUs extends Component {
 
+  onLearnMore = () => {
+    this.props.history.push('/career')
+  }
+
   render () {
     return (
       <div className='div-about-us-container'>
@@ -51,7 +55,7 @@ class AboutUs extends Component {
               <div className='about-us-description-title'>JOIN US</div>
               <div className='about-us-description-content'>Take your talents to the next level and work on projects that actual people use daily. Work alongside talented industry veterans- while helping users find new ways of obtaining clean, healthy, and delicious food. </div>
             </div>
-            <Button>LEARN MORE</Button>
+            <Button onClick={this.onLearnMore}>LEARN MORE</Button>
           </div>
           
         </div>

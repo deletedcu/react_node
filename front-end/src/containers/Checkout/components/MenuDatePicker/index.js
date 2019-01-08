@@ -16,7 +16,13 @@ class MenuDatePicker extends Component {
     let dates = []
     let n = 0
     while(n < 31){
-      dates.push(moment(new Date()).add(n, 'days'));
+      const day = moment(new Date()).add(n, 'days')
+      const weekDay = day.weekday()
+
+      if (weekDay === 3 || weekDay === 0) {
+        dates.push(day);
+      }
+
       n++
     }
 
