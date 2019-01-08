@@ -5,21 +5,28 @@
   flex-direction: column;
 
   .img-background {
-    height: 565px;
+    height: 487px;
+    margin-bottom: 50px;
+    margin-top: 15px;
   }
 
   .img-background-2 {
-    height: 608px;
-    margin: 80px 40px 60px;
+    width: 750px;
+    height: 526px;
+    margin: 80px auto 60px;
+  }
+
+  .container {
+    max-width: 1024px;
   }
 
   .about-us-description {
     color: #333333;
-    padding-top: 20px;
-    padding-bottom: 40px;
+    padding: 20px 40px 30px;
 
     .about-us-description-title {
       font-size: $regular-font-size + 2;
+      font-family: 'Lato-Regular';
       margin-bottom: 20px;
     }
 
@@ -30,34 +37,37 @@
 
   .about-us-description-single {
     font-size: $small-font-size;
+    font-family: 'Lato-Regular';
+    padding: 0 40px;
     color: #333333;
   }
 
   .separator {
-    height: 1px;
-    background-color: #777777;
+    height: 3px;
+    background-color: $green-primary;
+    margin: 80px 0;
   }
 
-  .div-about-us-content {
-    padding-top: 40px;
-    padding-bottom: 80px;
-  }
+  .about-us-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: 100px auto;
 
-  .div-about-us-bottom {
-    background-color: #F1F1F1;
-
-    .container {
-      padding: 80px 0 130px;
-
-      .about-us-careers {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 50px;
-
-        .about-us-career-card {
-          width: calc(50% - 15px);
-        }
+    .about-us-description {
+      .about-us-description-title {
+        text-align: center;
       }
+    }
+
+    .button {
+      width: 144px;
+      height: 48px;
+      border-radius: 5px;
+      border: 0.75px solid #3E8541;
+      font-size: $mobile-regular-font-size - 1;
+      font-family: 'Montserrat-Medium'; 
     }
   }
 }
