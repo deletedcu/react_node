@@ -31,7 +31,7 @@ class LocationSearchField extends Component {
   render () {
     return (
       <div className='div-location-search-container'>
-        <input type='text' placeholder='Enter your address' spellCheck='false' value={this.state.location} onChange={this.onLocationChange}/>
+        <input type='text' placeholder='ZIP Code' spellCheck='false' value={this.state.location} onChange={this.onLocationChange}/>
         <Button className='btn-locate-me clickable' onClick={ this.onLocateMe }>
           <img src={imgLocateMe} alt='locate'/>
           <span>Locate Me</span>

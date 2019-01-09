@@ -26,35 +26,29 @@ class FeaturedMenu extends Component {
     return (
       <div className='div-featured-menu'>
         <LazyImage className='img-featured-menu clickable' src={ item.main_image } onClick={ this.onShowMenuModal }/>
-        
-        <div className='div-featured-menu-details-order'>  
-          <div className='div-featured-menu-details'>
-            <div className='div-featured-menu-name'>
-              { item.name }
-            </div>
-            <div className='div-featured-menu-more-detail'>
-              <div className='div-featured-menu-detail-column-1'>
-                <div className='div-featured-menu-detail-calories'>
-                  { `Calories: ${item.calories}` }
-                </div>
-                <div className='div-featured-menu-detail-fat'>
-                  { `Fat: ${item.fat}g` }
-                </div>
-              </div>
-              <div className='div-featured-menu-detail-column-2'>
-                <div className='div-featured-menu-detail-carbs'>
-                  { `Carbs: ${item.carbs}g` }
-                </div>
-                <div className='div-featured-menu-detail-protein'>
-                  { `Protein: ${item.protein}g` }
-                </div>
-              </div>
-            </div>
+
+        <div className='div-featured-menu-details'>
+          <div className='div-featured-menu-name'>
+            { item.name }
           </div>
-          <div className='div-order'>
-            <div className='div-price'>
-              { `${item.display_price}` }
+          <div className='div-featured-menu-more-detail'>
+            <div className='div-featured-menu-detail-column'>
+              <div className='div-featured-menu-detail-calories'>
+                { `Calories: ${item.calories}` }
+              </div>
+              <div className='div-featured-menu-detail-protein'>
+                { `Protein: ${item.protein}g` }
+              </div>
             </div>
+            <div className='div-featured-menu-detail-column'>
+              <div className='div-featured-menu-detail-fat'>
+                { `Fat: ${item.fat}g` }
+              </div>
+              <div className='div-featured-menu-detail-carbs'>
+                { `Carbs: ${item.carbs}g` }
+              </div>
+            </div>
+
             <div className='div-quick-order clickable' onClick={ this.onQuickOrder }>
               Quick Order
             </div>

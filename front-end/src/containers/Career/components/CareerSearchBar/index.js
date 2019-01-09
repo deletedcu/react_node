@@ -27,7 +27,7 @@ class CareerSearchBar extends Component {
     return (
       <div className='career-search-bar'>
         <input type='text' name='search' value={this.state.search} onChange={this.onChange} placeholder='Enter job title, location or department'/>
-        <Button className='btn-search' onClick={this.onSearch}>Search</Button>
+        <Button className='btn-search' onClick={this.onSearch}>SEARCH</Button>
       </div>
     )
   }

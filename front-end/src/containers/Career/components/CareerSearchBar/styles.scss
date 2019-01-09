@@ -1,6 +1,7 @@
 @import "../../../../styles/variables/variables";
 
 .career-search-bar {
+  border: 1px solid #E1E1E1;
   border-radius: 3px;
   display: flex;
   height: 60px;
@@ -12,6 +13,7 @@
     padding: 0 20px;
     flex-grow: 1;
     font-size: $mobile-regular-font-size + 1;
+    font-family: 'OpenSans-Regular';
   }
 
   .btn-search {
@@ -19,6 +21,7 @@
     height: calc(100% - 4px);
     width: 169px;
     border-radius: 4px;
+    border: .75px solid #3E8541;
     font-family: 'Montserrat-Bold';
     font-size: $small-font-size - 1;
   }

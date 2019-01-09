@@ -3,80 +3,55 @@
 .div-featured-menu {
   position: relative;
   background-color: white;
-  border: 1px solid $border-gray;
-  border-radius: 4px;
   display: flex;
   flex-direction: column;
   margin: 20px;
   height: calc(100% - 40px);
-  overflow: hidden;
 
   .img-featured-menu {
-    height: 160px;
-    border-bottom: 1px solid $border-gray;
+    height: 120px;
+    border-radius: 3px;
+    border: 1px solid #70707080;
+    overflow: hidden;
   }
 
-  .div-featured-menu-details-order {
+  .div-featured-menu-details {
+    width: 100%;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
     flex-grow: 1;
 
-    .div-featured-menu-details {
-      padding: 12px;
+    .div-featured-menu-name {
+      text-align: left;
+      font-family: 'Montserrat-Bold';
+      font-size: $small-font-size - 1;
+      margin-top: 10px;
+    }
+
+    .div-featured-menu-more-detail {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex-grow: 1;
-      font-size: $mobile-regular-font-size - 1;
-  
-      .div-featured-menu-name {
-        text-align: left;
-        font-family: 'Montserrat-Bold';
-      }
-  
-      .div-featured-menu-more-detail {
-        display: flex;
-        margin-top: 10px;
-        color: $text-light-gray;
-        text-align: left;
-  
-        .div-featured-menu-detail-column-1 {
-          flex-grow: 1;
-        }
-  
-        .div-featured-menu-detail-column-2 {
-          flex-grow: 1;
-        }
+      margin-top: 5px;
+      color: $text-light-gray;
+      font-size: $mobile-regular-font-size;
+      text-align: left;
+
+      .div-featured-menu-detail-column {
+        margin-right: 5px;
+        flex-grow: 1;
       }
     }
-  
-    .div-order {
-      display: flex;
-      justify-content: space-between;
-      height: 36px;
-      padding: 2px;
+
+    .div-quick-order {
       font-size: $mobile-regular-font-size - 1;
-  
-      .div-price {
-        background-color: $bg-gray;
-        color: #4c4e4c;
-        text-align: center;
-        line-height: 32px;
-        font-family: 'Lato-Bold';
-        border-radius: 2px;
-        width: calc(50% - 2.5px);
-      }
-  
-      .div-quick-order {
-        background-color: #EAFEEB;
-        color: $green-primary;
-        text-align: center;
-        line-height: 32px;
-        border-radius: 2px;
-        width: calc(50% - 2.5px);
-      }
+      background-color: #EAFEEB;
+      color: $green-primary;
+      text-align: center;
+      border-radius: 2px;
+      width: 116px;
+      height: 41px;
+      line-height: 41px;
     }
   }
 }
@@ -93,71 +68,37 @@
       min-width: 150px;
       margin-top: 0;
       flex-grow: 1;
-      border-bottom: unset;
-      border-right: 1px solid $border-gray;
-
-      img {
-        border-top-left-radius: 8px !important;
-        border-bottom-left-radius: 8px !important;
-      }
     }
   
-    .div-featured-menu-details-order {
-      .div-featured-menu-details {
-        flex-grow: 1;
-        padding: 10px;
+    .div-featured-menu-details {
+      flex-grow: 1;
+      padding: 0 10px;
 
-        .div-featured-menu-name {
-          font-size: $mobile-regular-font-size;
-        }
-    
-        .div-featured-menu-more-detail {
-          font-size: $minor-font-size;
-          flex-direction: column;
-    
-          .div-featured-menu-detail-column-1 {
-            flex-grow: 1;
-
-            div {
-              margin-top: 5px;
-            }
-          }
-    
-          .div-featured-menu-detail-column-2 {
-            flex-grow: 1;
-
-            div {
-              margin-top: 5px;
-            }
-          }
-        }
+      .div-featured-menu-name {
+        font-size: $mobile-regular-font-size;
+        margin-top: unset;
       }
-    
-      .div-order {
-        display: flex;
-        justify-content: space-between;
-        height: 40px;
-        padding: 5px;
-    
-        .div-price {
-          background-color: $bg-gray;
-          color: #4c4e4c;
-          text-align: center;
-          line-height: 30px;
-          font-family: 'Lato-Bold';
-          font-size: $mobile-small-font-size;
-          border-radius: 4px;
-          width: calc(50% - 2.5px);
+  
+      .div-featured-menu-more-detail {
+        font-size: $minor-font-size;
+        flex-direction: column;
+  
+        .div-featured-menu-detail-column {
+          flex-grow: 1;
+
+          div {
+            margin-top: 5px;
+          }
         }
-    
+
         .div-quick-order {
           font-size: $mobile-small-font-size;
           background-color: #EAFEEB;
           color: $green-primary;
           text-align: center;
-          line-height: 30px;
           border-radius: 4px;
-          width: calc(50% - 2.5px);
+          width: 100%;
+          margin-top: 10px;
         }
       }
     }

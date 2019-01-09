@@ -169,12 +169,12 @@ class JobApplyModal extends Component {
               <div className='job-apply-form-double-input'>
                 <div className='job-apply-form-single-input'>
                   <div className='job-apply-form-input-title'>RESUME/CV*</div>
-                  <Button className='btn-attach' onClick={this.onAttachResume}>Attach</Button>
+                  <Button className='btn-attach' onClick={this.onAttachResume}>ATTACH</Button>
                   <input className='input-file-uploader' ref='resumeInput' type='file' onChange={this.onUploadResume}/>
                 </div>
                 <div className='job-apply-form-single-input'>
                   <div className='job-apply-form-input-title'>COVER LETTER*</div>
-                  <Button className='btn-attach' onClick={this.onAttachCoverLetter}>Attach</Button>
+                  <Button className='btn-attach' onClick={this.onAttachCoverLetter}>ATTACH</Button>
                   <input className='input-file-uploader' ref='coverletterInput' type='file' onChange={this.onUploadCoverLetter}/>
                 </div>
               </div>

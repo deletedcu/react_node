@@ -65,10 +65,13 @@
     }
 
     .btn-attach {
-      width: 164px;
-      height: 73px;
+      width: 169px;
+      height: 52px;
       border-radius: 4px;
+      border: .75px solid #3E8541;
       margin-top: 10px;
+      font-size: $mobile-regular-font-size + 1;
+      font-family: 'Montserrat-Medium';
     }
 
     .job-apply-form-double-input {
@@ -109,15 +112,17 @@
 
   .job-apply-next-prev-buttons {
     position: absolute;
-    right: 40px;
-    bottom: -42px;
+    right: 25px;
+    bottom: -25px;
     display: flex;
 
     %button {
-      width: 229px;
-      height: 84px;
+      width: 169px;
+      height: 51px;
       margin: 0 8px;
-      border-radius: 8px;
+      border-radius: 4px;
+      font-size: $mobile-regular-font-size + 1;
+      font-family: 'Montserrat-Medium';
     }
 
     .btn-move {
@@ -125,10 +130,11 @@
 
       display: flex;
       justify-content: space-between;
-      padding: 0 50px;
+      align-items: center;
+      padding: 0 30px;
       background-color: #3D3D3D;
       .img-move {
-        height: 30px;
+        height: 15px;
       }
     }
 
