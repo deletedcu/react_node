@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
 import MenuFilter from '../MenuFilter'
+import MenuDatePicker from '../../../../components/MenuDatePicker'
 
 import './styles.css'
 
@@ -30,24 +31,25 @@ class MenusHeader extends Component {
     this.props.onChangeFilters(filters)
   }
 
+  onDateChange = (date) => {
+
+  }
+
   render () {
     return (
       <div className={classNames('div-menus-header-container', {'div-menus-header-squizzed': false})}>
         <div className='div-menus-header-left'>
           <MenuFilter onChangeFilters={this.onChangeFilters}/>
           <span className='span-title'>FILTERS</span>
+          <MenuDatePicker onSelectDeliveryDate={this.onDateChange} forCheckoutPage={false}/>
         </div>
 
         <div className='div-menus-header-right'>
           <div className='div-zip-code'>
             <img src={imgPinPoint} alt='pinpoint'/>
-            <div>
-              <div className='div-zip-code-description'>DELIVER TO</div>
-              <div className='div-zip-code-info'>ZIP Code: { this.props.zipCode }</div>
-            </div>
+            <span className='span-title'>DELIVER TO: </span>
+            <span className='span-address'>Enter your address</span>
           </div>
-
-          <div className='div-separator'/>
           
           <div className='div-search-container'>
             <input type='text' placeholder='Search Menu' onChange={ this.onChangeSearchText } value={ this.state.searchText }/>

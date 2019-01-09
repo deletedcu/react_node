@@ -1,4 +1,4 @@
-@import "../../../../styles/variables/variables";
+@import "../../styles/variables/variables";
 
 .menu-datepicker {
   display: flex;
@@ -11,6 +11,16 @@
 
   .dropdown__trigger  {
     cursor: pointer;
+
+    .trigger-when {
+      font-family: 'CeraPro-Medium';
+      font-size: $mobile-regular-font-size;
+      color: #787878;
+
+      span {
+        color: $green-primary;
+      }
+    }
   }
 
   .datepicker-dropdown {

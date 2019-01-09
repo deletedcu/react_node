@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
 import OrderedItem from '../OrderedItem'
-import MenuDatePicker from '../MenuDatePicker'
+import MenuDatePicker from '../../../../components/MenuDatePicker'
 
 import './styles.css'
 import { groupBy } from '../../../../utils'
@@ -93,7 +93,7 @@ class OrderSummary extends Component {
           {/* Date / Price Info */}
           <div className='order-summary-info-block'>
             <span>Delivery Day</span>
-              <MenuDatePicker onSelectDeliveryDate={this.onDateChange}/>
+              <MenuDatePicker onSelectDeliveryDate={this.onDateChange} forCheckoutPage={true}/>
           </div>
           <div className='order-summary-info-block'>
             <span>6 Meals Per Week</span>

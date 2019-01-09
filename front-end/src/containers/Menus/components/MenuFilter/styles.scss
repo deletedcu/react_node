@@ -4,11 +4,12 @@
   .dropdown__trigger {
     .menu-filter-dropdown-trigger {
       font-size: $mobile-regular-font-size;
+      font-family: 'CeraPro-Regular';
       color: $text-light-gray;
 
       .img-filter {
-        width: 58px;
-        height: 30px;
+        width: 22px;
+        height: 20px;
       }
     }
   }
@@ -62,11 +63,6 @@
   }
 
   @media (max-width: 710px) {
-    .dropdown__trigger .menu-filter-dropdown-trigger .img-filter {
-      width: 46px;
-      height: 31px;
-    }
-
     .dropdown__content {
       margin-left: -20px;
     }
