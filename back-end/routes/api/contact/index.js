@@ -4,10 +4,10 @@ const mailSender = require('../../../helpers/mailSender');
 const config = require('../../../config/config');
 
 router.post('/', (request, response) => {
-  const { first_name, last_name, email, message } = request.body
+  const { name, email, message } = request.body
 
   const subject = 'Customer tries to contact you';
-  const body = `Name: ${first_name} ${last_name}<br/>Email: ${email}<br/>Message: ${message}<br/><br/>`;
+  const body = `Name: ${name}<br/>Email: ${email}<br/>Message: ${message}<br/><br/>`;
 
   mailSender(config.admin_email, subject, body)
     .then(res => {

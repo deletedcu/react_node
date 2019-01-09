@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Button from '../../components/Button'
 import { Link } from 'react-router-dom'
 
@@ -8,6 +9,7 @@ import imgFacebook from '../../assets/images/facebook_white.svg'
 import imgTwitter from '../../assets/images/twitter_white.svg'
 import imgInstagram from '../../assets/images/instagram_white.svg'
 import imgLogo from '../../assets/images/logo_white_text.png'
+import { showModal, ModalType } from '../../redux/actions/modal';
 
 class ComingSoon extends Component {
 
@@ -29,12 +31,18 @@ class ComingSoon extends Component {
 
   }
 
+  onContactUs = (e) => {
+    e.preventDefault()
+
+    this.props.dispatch(showModal(ModalType.contactUsModal))
+  }
+
   render () {
     return (
       <div className='div-comingsoon-container'>
         <div className='div-comingsoon-header'>
           <Link to='/how-it-works'>About</Link>
-          <Link to='/contact-us'>Contact</Link>
+          <a className='clickable' onClick={this.onContactUs}>Contact</a>
         </div>
 
         <div className='div-comingsoon-center'>
@@ -71,4 +79,4 @@ class ComingSoon extends Component {
   }
 }
 
-export default ComingSoon
+export default connect()(ComingSoon)

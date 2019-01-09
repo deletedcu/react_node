@@ -22,6 +22,7 @@ import { emptyCart } from '../../redux/actions/cart'
 import getStripeToken from '../../services/stripeToken'
 import checkout from '../../services/checkout'
 import { showNotification } from '../../services/notification'
+import { showModal, ModalType } from '../../redux/actions/modal';
 
 const CheckoutStep = {
   'account': 1,
@@ -238,6 +239,12 @@ class Checkout extends Component {
     })
   }
 
+  onContactUs = (e) => {
+    e.preventDefault()
+    
+    this.props.dispatch(showModal(ModalType.contactUsModal))
+  }
+
   /**
    * Render
    */
@@ -430,7 +437,7 @@ class Checkout extends Component {
             Need help? Visit the&nbsp;
             <Link to='/help-center'><span>Help Center</span></Link>
             &nbsp;or&nbsp;
-            <Link to='/contact-us'><span>Contact Us</span></Link>
+            <a className='clickable' onClick={this.onContactUs}><span>Contact Us</span></a>
           </div>
       </div>
     )

@@ -11,6 +11,7 @@ import './styles.css'
 
 import imgBanner from '../../assets/images/helpcenter_banner.png'
 import { hideSidebar } from '../../redux/actions/sideBar'
+import { showModal, ModalType } from '../../redux/actions/modal';
 
 class HelpCenter extends Component {
 
@@ -37,7 +38,7 @@ class HelpCenter extends Component {
   }
 
   onNeedHelp = () => {
-    this.props.history.push('/contact-us')
+    this.props.dispatch(showModal(ModalType.contactUsModal))
   }
 
   render () {

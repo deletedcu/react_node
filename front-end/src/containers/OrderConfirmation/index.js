@@ -8,6 +8,7 @@ import moment from 'moment'
 import './styles.css'
 import imgConfirm from '../../assets/images/confirm.svg'
 import imgShare from '../../assets/images/share.svg'
+import { showModal, ModalType } from '../../redux/actions/modal';
 
 class OrderConfirmation extends Component {
 
@@ -33,6 +34,12 @@ class OrderConfirmation extends Component {
 
   onShare = () => {
     
+  }
+
+  onContactUs = (e) => {
+    e.preventDefault()
+
+    this.props.dispatch(showModal(ModalType.contactUsModal))
   }
 
   render () {
@@ -86,7 +93,7 @@ class OrderConfirmation extends Component {
           Need help? Visit the&nbsp;
           <Link to='/help-center'><span>Help Center</span></Link>
           &nbsp;or&nbsp;
-          <Link to='/contact-us'><span>Contact Us</span></Link>
+          <a className='clickable' onClick={this.onContactUs}><span>Contact Us</span></a>
         </div>
       </div>
     )

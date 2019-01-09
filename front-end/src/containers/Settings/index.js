@@ -6,11 +6,18 @@ import SettingsMenu from './components/SettingsMenu'
 import './styles.css'
 
 import { hideSidebar } from '../../redux/actions/sideBar'
+import { showModal, ModalType } from '../../redux/actions/modal';
 
 class Settings extends Component {
 
   componentDidMount () {
     this.props.dispatch(hideSidebar())
+  }
+
+  onContactUs = (e) => {
+    e.preventDefault()
+
+    this.props.dispatch(showModal(ModalType.contactUsModal))
   }
 
   render () {
@@ -40,7 +47,7 @@ class Settings extends Component {
           Need help? Visit the&nbsp;
           <Link to='/help-center'><span>Help Center</span></Link>
           &nbsp;or&nbsp;
-          <Link to='/contact-us'><span>Contact Us</span></Link>
+          <a className='clickable' onClick={this.onContactUs}><span>Contact Us</span></a>
         </div>
       </div>
       :

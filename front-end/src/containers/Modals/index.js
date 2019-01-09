@@ -15,6 +15,7 @@ const AsyncJobApplyModal = asyncComponent(() => import('./JobApplyModal'))
 const AsyncInvitationModal = asyncComponent(() => import('./InvitationModal'))
 const AsyncShareExperienceModal = asyncComponent(() => import('./ShareExperienceModal'))
 const AsyncRemovePaymentModal = asyncComponent(() => import('./RemovePaymentMethodModal'))
+const AsyncContactUsModal = asyncComponent(() => import('./ContactUsModal'))
 
 /**
  * Routes
@@ -62,6 +63,9 @@ const Modal = (props) => {
 
       {/* Remove payment Modal */}
       { active === ModalType.removePaymentModal && <AsyncRemovePaymentModal /> }
+
+      {/* Contact Us Modal */}
+      { active === ModalType.contactUsModal && <AsyncContactUsModal /> }
     </div>
   )
 }
