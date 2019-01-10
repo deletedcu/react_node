@@ -12,12 +12,15 @@ class EditProfile extends Component {
     super(props)
 
     this.state = {
-      firstName: props.user.user.first_name,
-      lastName: props.user.user.last_name,
+      name: `${props.user.user.first_name} ${props.user.user.last_name}`,
       deliveryAddress: props.user.user.shipping_address,
       phone: props.user.user.phone,
       email: props.user.user.email,
-      password: '',
+
+      editName: '',
+      editDeliveryAddress: '',
+      editPhone: '',
+      editPassword: '',
 
       isEditMode: false,
     }
@@ -25,8 +28,7 @@ class EditProfile extends Component {
 
   componentWillReceiveProps ({ user }) {
     this.setState({
-      firstName: user.user.first_name,
-      lastName: user.user.last_name,
+      name: `${user.user.first_name} ${user.user.last_name}`,
       deliveryAddress: user.user.shipping_address,
       phone: user.user.phone,
       email: user.user.email,
@@ -37,16 +39,20 @@ class EditProfile extends Component {
   onEdit = () => {
     if (this.state.isEditMode) {
       // should save changes
+      const { editName, editPassword, editPhone, editDeliveryAddress, email, name, phone, deliveryAddress } = this.state
+
+      let nameParts = editName ? editName.split(' ') : name.split(' ')
+
       this.props.dispatch(updateUserProfile(this.props.user.user.token, {
-        first_name: this.state.firstName,
-        last_name: this.state.lastName,
-        shipping_address: this.state.deliveryAddress,
-        phone: this.state.phone,
-        email: this.state.email,
+        first_name: nameParts[0],
+        last_name: nameParts.length > 1 ? nameParts[1] : '',
+        shipping_address: editDeliveryAddress || deliveryAddress,
+        phone: editPhone || phone,
+        email: email,
       }))
 
-      if (this.state.password) {
-        this.props.dispatch(updatePassword(this.props.user.user.token, this.state.password))
+      if (this.state.editPassword) {
+        this.props.dispatch(updatePassword(this.props.user.user.token, editPassword))
       }
 
       this.setState({
@@ -55,18 +61,12 @@ class EditProfile extends Component {
     } else {
       this.setState({
         isEditMode: true,
-        password: '',
+        editName: '',
+        editPassword: '',
+        editDeliveryAddress: '',
+        editPhone: '',
       })
     }
-  }
-
-  onChangePassword = () => {
-    this.setState({
-      isEditMode: true,
-      password: '',
-    }, () => {
-      this.refs.passwordInput.focus()
-    })
   }
 
   onChange = (e) => {
@@ -76,54 +76,64 @@ class EditProfile extends Component {
   }
 
   render () {
-    const { firstName, lastName, password, deliveryAddress, phone, email, isEditMode } = this.state
+    const { 
+      isEditMode,
+      name, deliveryAddress, phone, email,
+      editName, editDeliveryAddress, editPhone, editPassword,
+    } = this.state
 
     return (
       <div className='div-edit-profile-container'>
         <div className='div-profile-info'>
-          <div className='div-profile-info-title-list'>
-            <div className='div-profile-info-title'>Name</div>
-            <div className='div-profile-info-title'>Delivery Address</div>
-            <div className='div-profile-info-title'>Phone Number</div>
-            <div className='div-profile-info-title'>Email Address</div>
-            <div className='div-profile-info-title'>Password</div>
+          <div className='div-title'>Account Information</div>
+
+          <div className='div-profile-input'>
+            <span className='span-input-title'>Email</span>
+            <span className='span-input-value'>{ email }</span>
           </div>
 
-          { !isEditMode ?
-            <div className='div-profile-info-text-list'>
-              <div className='div-profile-info-text'>{`${firstName} ${lastName}`}</div>
-              <div className='div-profile-info-text'>{deliveryAddress || '-'}</div>
-              <div className='div-profile-info-text'>{phone || '-'}</div>
-              <div className='div-profile-info-text'>{email}</div>
-              <div className='div-profile-info-text password'>⬤⬤⬤⬤⬤⬤⬤⬤</div>
-            </div>
-            :
-            <div className='div-profile-info-input-list'>
-              <div className='div-profile-info-double-input'>
-                <input name='firstName' value={firstName} onChange={this.onChange} required/>
-                <input name='lastName' value={lastName} onChange={this.onChange} required/>
-              </div>
-              <div className='div-profile-info-input'>
-                <input name='deliveryAddress' value={deliveryAddress} onChange={this.onChange} required/>
-              </div>
-              <div className='div-profile-info-input'>
-                <input type='tel' name='phone' value={phone} onChange={this.onChange} required/>
-              </div>
-              <div className='div-profile-info-input'>
-                <input className='input-readonly' type='email' name='email' value={email} onChange={this.onChange} required readOnly/>
-              </div>
-              <div className='div-profile-info-input'>
-                <input ref='passwordInput' type='password' name='password' value={password} onChange={this.onChange}/>
-              </div>
-            </div>
-          }
-        </div>
+          <div className='div-profile-input'>
+            <span className='span-input-title'>Password</span>
+            {
+              isEditMode ?
+              <input name='editPassword' value={editPassword} placeholder='⬤⬤⬤⬤⬤⬤⬤⬤' onChange={this.onChange}/>
+              :
+              <span className='span-input-value'>⬤⬤⬤⬤⬤⬤⬤⬤</span>
+            }
+          </div>
 
-        { !isEditMode ?
-          <Button className='btn-edit' onClick={this.onEdit}>Edit</Button>
-          :
-          <Button className='btn-save' onClick={this.onSave}>Save</Button>
-        }
+          <div className='div-profile-input'>
+            <span className='span-input-title'>Name</span>
+            {
+              isEditMode ?
+              <input name='editName' value={editName} placeholder={name} onChange={this.onChange}/>
+              :
+              <span className='span-input-value'>{name}</span>
+            }
+          </div>
+
+          <div className='div-profile-input'>
+            <span className='span-input-title'>Delivery Address</span>
+            {
+              isEditMode ?
+              <input name='editDeliveryAddress' value={editDeliveryAddress} placeholder={deliveryAddress} onChange={this.onChange}/>
+              :
+              <span className='span-input-value'>{deliveryAddress}</span>
+            }
+          </div>
+
+          <div className='div-profile-input'>
+            <span className='span-input-title'>Phone Numer</span>
+            {
+              isEditMode ?
+              <input type='tel' name='editPhone' value={editPhone} placeholder={phone} onChange={this.onChange}/>
+              :
+              <span className='span-input-value'>{phone}</span>
+            }
+          </div>
+
+          <Button onClick={this.onEdit}>{ isEditMode ? 'Save' : 'Edit Account'}</Button>
+        </div>
       </div>
     )
   }
