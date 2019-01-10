@@ -44,10 +44,10 @@
       display: inline-block;
       background-color: #FAFBFC;
       border-radius: 7px;
-      border: 2.5px solid #DCDCDE;
+      border: 1px solid #DCDCDE;
       text-align: center;
-      padding: 20px 50px;
-      font-size: $small-font-size;
+      padding: 25px 35px;
+      font-size: $small-font-size - 1;
 
       a {
         color: $green-secondary;

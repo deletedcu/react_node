@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import './styles.css'
 
@@ -56,7 +57,7 @@ class CommonQuestions extends Component {
         </div>
         <div className='div-check-faq-container'>
           <div className='div-check-faq'>
-            Have other questions? <a className='clickable'>Check out our FAQs</a>
+            Have other questions? <Link to='/help-center' className='clickable'>Check out our FAQs</Link>
           </div>
         </div>
       </div>

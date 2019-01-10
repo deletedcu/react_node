@@ -26,7 +26,7 @@ class MealPlan extends Component {
           <img src={ this.props.image } alt='plan'/>
         </div>
 
-        <div className='div-meal-plan-start-price'>{`Starting at $${this.props.startPrice} per Serving`}</div>
+        <div className='div-meal-plan-start-price'>Starting at <span>{`$${this.props.startPrice}`}</span> per Serving</div>
 
         <div className='div-meal-plan-total-price'>{`$${this.props.totalPrice} + FREE Shipping`}</div>
 
