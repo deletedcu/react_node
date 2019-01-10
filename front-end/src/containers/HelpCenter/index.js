@@ -50,7 +50,10 @@ class HelpCenter extends Component {
         <div className='div-help-center-banner'>
           <LazyImage className='img-banner' src={ imgBanner } disableSpinner={true} />
           <div className='div-help-center-title'>
-            Hi. How can we help?
+            SEARCH OUR KNOWLEDGE BASE
+          </div>
+          <div className='div-help-center-subtitle'>
+            Popular topics: <span>Using Meal Preferences, What is Mealpost? Redeeming a Gift Card</span>
           </div>
           <div className='div-help-center-search'>
             <HelpSearchBar onChange={this.onSearchChange}/>

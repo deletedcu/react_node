@@ -9,10 +9,23 @@
     .div-help-center-title {
       position: relative;
       text-align: center;
-      font-size: 38px;
+      font-size: 33px;
       font-family: 'Montserrat-SemiBold';
       top: calc(50% - 40px);
       transform: translateY(-50%);
+    }
+
+    .div-help-center-subtitle {
+      position: relative;
+      text-align: center;
+      font-size: $mobile-regular-font-size - 1;
+      font-family: 'Montserrat-Medium';
+      top: calc(50% - 50px);
+      transform: translateY(-50%);
+
+      span {
+        color: #47944A;
+      }
     }
 
     .div-help-center-search {
@@ -21,7 +34,7 @@
       top: calc(50% - 30px);
       transform: translateX(-50%);
       padding: 0 30px;
-      width: 860px;
+      width: 484px;
       max-width: 100%;
     }    
   }
@@ -73,14 +86,14 @@
         font-family: 'Inkfree';
         font-size: 27px;
         color: #333333;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
       }
 
       .btn-need-help {
-        width: 111px;
-        height: 33.6px;
-        font-size: $mobile-small-font-size + 1;
-        font-family: 'Montserrat-SemiBold';
+        width: 169px;
+        height: 52px;
+        font-size: $mobile-regular-font-size + 1;
+        font-family: 'Montserrat-Medium';
         border-radius: 4px;
       } 
     }

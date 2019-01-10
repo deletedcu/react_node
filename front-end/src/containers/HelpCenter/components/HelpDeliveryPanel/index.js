@@ -4,7 +4,6 @@ import HelpText from '../HelpText'
 import './styles.css'
 
 import imgDelivery1 from '../../../../assets/images/help-delivery-1.png'
-import imgDelivery2 from '../../../../assets/images/help-delivery-2.png'
 
 class HelpDeliveryPanel extends Component {
 
@@ -30,12 +29,6 @@ class HelpDeliveryPanel extends Component {
               title='Can you deliver to my workplace?'
               content='Yes! As long as the address falls within our delivery window, we are able to deliver your food to your workplace, or any relevant address. Interested in being a b2b partner? Let us know here.'
             />
-          </div>
-        </div>
-
-        <div className='help-delivery-section'>
-          <img src={imgDelivery2} alt='delivery'/>
-          <div className='help-delivery-content'>
             <HelpText
               title='Does Mealpost Ship Orders?'
               content='We currently do not ship meals. We hope to extend our services towards shipping by the end of this year. Stay tuned!'
@@ -54,8 +47,6 @@ class HelpDeliveryPanel extends Component {
             />
           </div>
         </div>
-
-        <div className='separator'/>
       </div>
     )
   }
