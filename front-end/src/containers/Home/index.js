@@ -169,7 +169,7 @@ class Home extends Component {
 
           { 
             this.props.user.loggedIn &&
-            <Button className='btn-share-experience' onClick={this.onShareExperience}>Share your experience</Button>
+            <Button className='btn-share-experience' onClick={this.onShareExperience}>SHARE YOUR EXPERIENCE</Button>
           }
         </div>
 

@@ -13,7 +13,7 @@
   background-color: $bg-gray;
   border: 1px solid $border-gray;
   border-radius: 4px;
-  padding: 30px 40px 30px 25px;
+  padding: 30px 50px 20px 25px;
 
   .div-feedback-star {
     display: flex;
@@ -61,10 +61,11 @@
 
     .div-feedback-content {
       color: $text-light-gray;
-      font-size: $mobile-regular-font-size - 1;
+      font-size: $mobile-regular-font-size;
       overflow: hidden;
       text-align: left;
-      margin: 15px 20px 0 0;
+      margin-top: 10px;
+      line-height: 19px;
     }
   }
 }
