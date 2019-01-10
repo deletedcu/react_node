@@ -89,7 +89,7 @@ class ServiceAreas extends Component {
           </div>
           <div className='div-service-area-search'>
             <input name='zip' value={this.state.zip} onChange={this.onChange} placeholder='ZIP Code'/>
-            <Button onClick={this.onCheckAvailability}>Check Availability</Button>
+            <Button onClick={this.onCheckAvailability}>SEE MENU</Button>
           </div>
         </div>
 
