@@ -1,0 +1,46 @@
+@import "../../../../styles/variables/variables";
+
+.address-input {
+  .dropdown__trigger {
+    display: flex;
+    min-width: 123px;
+
+    .address-input-trigger {
+      font-size: $mobile-regular-font-size;
+      font-family: 'CeraPro-Medium';
+      color: $green-primary;
+    }
+  }
+
+  .dropdown__content {
+    background-color: white;
+    width: 225px;
+    height: 55px;
+    margin-left: -90px;
+    margin-top: 10px;
+    animation-name: dropdown-animation;
+    animation-duration: 0.5s;
+    transform-origin: left top;
+    z-index: $zindex-header;
+    overflow: hidden;
+    border: .2px solid $text-light-gray;
+    border-radius: 4px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.16);
+    
+    .div-address-input {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      img {
+        width: 14px;
+        margin-left: 15px;
+        margin-right: 10px;
+      }
+  
+      input {
+        font-size: $mobile-regular-font-size - 1.5;
+      }
+    }
+  }
+}

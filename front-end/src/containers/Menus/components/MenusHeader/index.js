@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { connect } from 'react-redux'
 import MenuFilter from '../MenuFilter'
 import MenuDatePicker from '../../../../components/MenuDatePicker'
+import MenuAddressInput from '../MenuAddressInput'
 
 import './styles.css'
 
@@ -46,9 +47,9 @@ class MenusHeader extends Component {
 
         <div className='div-menus-header-right'>
           <div className='div-zip-code'>
-            <img src={imgPinPoint} alt='pinpoint'/>
+            <img className='img-pinpoint' src={imgPinPoint} alt='pinpoint'/>
             <span className='span-title'>DELIVER TO: </span>
-            <span className='span-address'>Enter your address</span>
+            <MenuAddressInput />
           </div>
           
           <div className='div-search-container'>
