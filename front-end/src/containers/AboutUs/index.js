@@ -29,23 +29,11 @@ class AboutUs extends Component {
             <div className='about-us-description-title'>Packaging that really matter..</div>
             <div className='about-us-description-content'>Sometimes all it takes is a bit of effort from everyone. We are proud to announce that your meals arrive exclusively in unbleached plant fiber-based containers that biodegrade in two to four months at commercial composting facilities. Our Carrying Bags and Sleeves are made of 100% recycled paperboard making it easy for reuse or disposal.</div>
           </div>
-          <div className='about-us-description'>
-            <div className='about-us-description-title'>We believe in Transparency.</div>
-            <div className='about-us-description-content'>Each meal is nutritionist labeled with an ingredients list, heating instructions, and accurate nutrition facts.</div>
-          </div>
           <div className='about-us-description-single'>Pure food, pure nutrition, and purely delicious.</div>
           <LazyImage className='img-background-2' src={imgBanner2} disableSpinner={true} />
           <div className='about-us-description'>
-            <div className='about-us-description-title'>The Vision</div>
-            <div className='about-us-description-content'>We’re guided by the welfare of our customers and of our community. We believe that we can make the world a better place by delivering nutritious food in an environmentally and socially responsible way.</div>
-          </div>
-          <div className='about-us-description'>
-            <div className='about-us-description-title'>Our Thought Process..</div>
-            <div className='about-us-description-content'>We are curious to know how other busy people are eating these days. We found that most people are so focused on work and the demands of life that they don’t think about what they’re going to eat until they’re hungry. Waiting until we’re hungry means we don’t always make the best nutritional choices. We wanted to solve that problem, and because we’re serious about health, we knew there had to be a better way for busy people to eat.</div>
-          </div>
-          <div className='about-us-description'>
-            <div className='about-us-description-title'>Combining our shared values and rich backgrounds in technology</div>
-            <div className='about-us-description-content'>Ecological, socially responsible, and sustainable business practices are at the heart of everything we do, and our customers come first in every decision we make. Our aim is to ensure that you, our valued customers, trust us to provide you with the finest quality food and delivery service possible. That’s who we are – a team of dedicated perfectionists who developed a better way to eat. We combined farm to table quality and seriously delicious food with customer-centered on-demand convenience – so you can relax and do more of what you love.</div>
+            <div className='about-us-description-title'>Our Mission</div>
+            <div className='about-us-description-content'>Ecological, socially responsible, and sustainable business practices are at the heart of everything we do, and our customers come first in every decision we make. We're a team of dedicated perfectionists who developed a better way to eat. Combining farm to table quality and seriously delicious food with customer-centered on-demand convenience – so you can relax and do more of what you love.</div>
           </div>
 
           <div className='separator'/>

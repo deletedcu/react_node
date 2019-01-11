@@ -5,14 +5,14 @@
   flex-direction: column;
 
   .img-background {
-    height: 487px;
+    height: 495px;
     margin-bottom: 50px;
     margin-top: 15px;
   }
 
   .img-background-2 {
     width: 750px;
-    height: 526px;
+    height: 530px;
     margin: 80px auto 60px;
   }
 
@@ -31,7 +31,8 @@
     }
 
     .about-us-description-content {
-      font-size: $mobile-regular-font-size;
+      font-size: $mobile-regular-font-size + 1;
+      font-family: 'OpenSans-Regular';
     }
   }
 
@@ -44,8 +45,8 @@
 
   .separator {
     height: 3px;
-    background-color: $green-primary;
-    margin: 80px 0;
+    background-color: #333333;
+    margin: 80px 0 80px 40px;
   }
 
   .about-us-bottom {
@@ -53,7 +54,7 @@
     flex-direction: column;
     align-items: center;
     width: 500px;
-    margin: 100px auto;
+    margin: -40px auto 100px;
 
     .about-us-description {
       .about-us-description-title {
@@ -65,7 +66,7 @@
       width: 144px;
       height: 48px;
       border-radius: 5px;
-      border: 0.75px solid #3E8541;
+      border: 1px solid #3E8541;
       font-size: $mobile-regular-font-size - 1;
       font-family: 'Montserrat-Medium'; 
     }
