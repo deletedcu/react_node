@@ -82,7 +82,7 @@ class SettingsMenu extends Component {
             className='settings-menu-item clickable'
             onClick={ () => { this.onClickMenu(SettingsMenuItem.editProfile) } }
           >
-            <div>General</div>
+            <div>Profile</div>
             { activeItem === SettingsMenuItem.editProfile && <div className='settings-menu-item-underline'/> }
           </div>
 

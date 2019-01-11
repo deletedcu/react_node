@@ -64,7 +64,8 @@
     height: 46px;
     margin: 24px 43px 43px;
     font-size: $mobile-regular-font-size - 1;
-    border-radius: 6px;
+    font-family: 'Montserrat-Medium';
+    border-radius: 4px;
   }
 
   @media (max-width: 710px) {

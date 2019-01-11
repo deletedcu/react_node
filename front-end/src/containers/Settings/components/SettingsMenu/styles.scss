@@ -3,7 +3,7 @@
 .settings-menu {
   .settings-menu-regular {
     display: flex;
-    border-bottom: 1px solid #818080;
+    border-bottom: 1px solid #1C1C1C;
   }
 
   .settings-menu-responsive {
@@ -14,15 +14,14 @@
     text-align: center;
     color: $text-light-gray;
     width: 25%;
-    line-height: 60px;
+    line-height: 50px;
     margin-bottom: -2px;
-    font-size: $small-font-size + 1;
+    font-size: $small-font-size - 1;
   }
 
   .settings-menu-item-underline  {
     height: 10px;
-    border-radius: 5px;
-    background-color: $green-primary;
+    background-color: #47944A;
   }
 
   @media (max-width: 1023px) {

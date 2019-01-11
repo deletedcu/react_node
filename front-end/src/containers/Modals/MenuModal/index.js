@@ -192,7 +192,7 @@ class MenuModal extends Component {
               {/* Ingredients */}
               <div className='div-ingredients-list'>
                 <div className='div-ingredients-list-title'> 
-                  Ingredients
+                  INGREDIENTS
                 </div>
                 <div className='div-ingredients'>
                   { ReactHtmlParser(item.ingredients) }
@@ -217,9 +217,9 @@ class MenuModal extends Component {
               {/* Special instruction */}
               <div className='div-special-instructions'>
                 <div className='div-special-instructions-title'>
-                  Optional Item Requests
+                  ORDER NOTES
                 </div>
-                <textarea name='specialInstructions' className='input-special-instructions' value={this.state.specialInstructions} onChange={ this.onChange }/>
+                <textarea name='specialInstructions' className='input-special-instructions' value={this.state.specialInstructions} onChange={ this.onChange } placeholder="e.g. 'Make sure the steak is well done!'"/>
               </div>
 
               {!this.state.descriptionScrolled && <div className='div-opacity-layer-bottom'/>}

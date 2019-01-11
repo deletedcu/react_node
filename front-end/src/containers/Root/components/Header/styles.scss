@@ -78,20 +78,21 @@
     height: 36px;
 
     .div-login {
-      width: 120px;
+      width: 90px;
       height: 36px;
       margin: 0 10px;
       line-height: 36px;
       text-align: center;
       font-family: 'Montserrat-Medium';
-      font-size: $mobile-regular-font-size - 1;
+      font-size: $mobile-regular-font-size;
     }
 
     .button {
-      height: 45px;
+      height: 52px;
       width: 123px;
+      border-radius: 2px;
       box-shadow: $shadow-primary;
-      font-size: $mobile-regular-font-size;
+      font-size: $mobile-regular-font-size + 1;
       font-family: 'Montserrat-SemiBold';
     }
 

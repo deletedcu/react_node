@@ -135,6 +135,7 @@
       .div-menu-title {
         font-size: 25px;
         font-family: 'Montserrat-Bold';
+        color: #545252;
       }
 
       .div-menu-specialities {
@@ -171,13 +172,15 @@
 
         .div-ingredients-list-title {
           margin-bottom: 5px;
-          font-size: $mobile-regular-font-size + 1;
-          font-family: 'Montserrat-Bold';
+          font-size: $mobile-regular-font-size;
+          font-family: 'Montserrat-SemiBold';
+          color: #545252;
         }
 
         .div-ingredients {
           color: #6F6F6F;
           font-size: $mobile-regular-font-size;
+          font-family: 'OpenSans-Regular';
           margin-right: 5px;
           line-height: 25px;
         }
@@ -189,16 +192,19 @@
         margin: 0px 20px 20px 0;
 
         .div-special-instructions-title {
-          font-size: $mobile-regular-font-size + 1;
-          font-family: 'Montserrat-Bold';
+          font-size: $mobile-regular-font-size;
+          font-family: 'Montserrat-SemiBold';
+          color: #545252;
         }
 
         .input-special-instructions {
-          border-radius: 4px;
-          border: 1px solid #A0A0A0;
-          height: 40px;
-          margin-top: 15px;
-          padding: 5px;
+          font-size: $mobile-regular-font-size;
+          font-family: 'OpenSans-Regular';
+          border-radius: 3px;
+          border: 1px solid #CECECE;
+          height: 130px;
+          margin-top: 30px;
+          padding: 10px;
           resize: none;
         }
       }
@@ -342,7 +348,8 @@
       }
 
       .div-menu-modal-description {
-        max-height: unset;
+        max-height: 350px;
+        overflow-y: scroll;
 
         .div-menu-title {
           font-size: $regular-font-size;
@@ -402,7 +409,7 @@
             font-size: 14px;
           }
           .input-special-instructions {
-            height: 45px;
+            height: 100px;
             margin-top: 10px;
             font-size: 14px;
           }

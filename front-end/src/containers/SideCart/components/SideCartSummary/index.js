@@ -84,7 +84,7 @@ class SideCartSummary extends Component {
 
         {/* Checkout */}
         { checkoutAvailable &&
-          <Button className='btn-checkout' onClick={this.onCheckout}>Checkout</Button>
+          <Button className='btn-checkout' onClick={this.onCheckout}>CHECKOUT</Button>
         }
 
         {/* Separator */}
