@@ -30,7 +30,7 @@ class AuthForm extends Component {
 
   componentWillReceiveProps ({ user }) {
     if (this.props.user.user !== user.user && user.loggedIn) {
-      if (this.props.type === AuthFormType.login) {
+      if (this.props.type === AuthFormType.login && !this.props.pricing.activated) {
         this.props.history.push('/home')
       } else {
         this.props.history.push('/menus')
@@ -175,6 +175,7 @@ class AuthForm extends Component {
 function mapStateToProps(state) {
   return {
     user: state.user,
+    pricing: state.pricing,
   }
 }
 

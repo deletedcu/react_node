@@ -7,8 +7,19 @@ import CommonQuestions from './components/CommonQuestions'
 import './styles.css'
 
 import imgPlan from '../../assets/images/mealplan.png'
+import { beginPricingMode } from '../../redux/actions/pricing'
 
 class HowItWorks extends Component {
+
+  onSelectPlan = (mealCount) => {
+    this.props.dispatch(beginPricingMode(mealCount))
+
+    if (this.props.user.loggedIn) {
+      this.props.history.push('/menus')
+    } else {
+      this.props.history.push('/auth/signup')
+    }
+  }
 
   render () {
     return (
@@ -36,6 +47,7 @@ class HowItWorks extends Component {
                   image={ imgPlan }
                   startPrice='9.95'
                   totalPrice='39.90'
+                  onClick={() => this.onSelectPlan(4)}
                 />
               </div>
               <div className='div-meal-plan-wrapper col-12 col-lg-6'>
@@ -45,6 +57,7 @@ class HowItWorks extends Component {
                   image={ imgPlan }
                   startPrice='9.95'
                   totalPrice='59.70'
+                  onClick={() => this.onSelectPlan(6)}
                 />
               </div>
             </div>

@@ -5,12 +5,8 @@ import './styles.css'
 
 class MealPlan extends Component {
 
-  onSelectionChange = (selectedValue) => {
-
-  }
-
   onGrabOffer = () => {
-    
+    this.props.onClick()
   }
 
   render () {

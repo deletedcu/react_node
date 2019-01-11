@@ -6,6 +6,7 @@ import cart from './cart'
 import products from './products'
 import sideBar from './sideBar'
 import overlaySpinner from './overSpinner'
+import pricing from './pricing'
 
 export default combineReducers({
   modal,
@@ -14,4 +15,5 @@ export default combineReducers({
   cart,
   overlaySpinner,
   sideBar,
+  pricing,
 });

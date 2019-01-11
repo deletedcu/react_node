@@ -2,20 +2,22 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Button from '../../../../components/Button'
-// import RecommendedMenuSlider from '../RecommendedMenuSlider'
 
 import './styles.css'
-
-// import imgRecommended from '../../../../assets/images/recommended.svg'
+import { endPricingMode } from '../../../../redux/actions/pricing'
 
 class SideCartSummary extends Component {
 
   onCheckout = () => {
+    if (this.props.pricing.activated) {
+      this.props.dispatch(endPricingMode())
+    }
+
     this.props.onCheckout()
   }
 
   render () {
-    const { cart, user } = this.props
+    const { cart, user, pricing } = this.props
     const isCartEmpty = cart.items.length === 0
     const total = cart.items.reduce((sum, cartItem) => {
       return sum + cartItem.price[0]
@@ -24,6 +26,9 @@ class SideCartSummary extends Component {
     const taxes = 0
     const estimatedTotal = (total + delivery) * (100 + taxes) / 100
     const freeDelivery = total > 25 ? 0 : (25 - total)
+
+    const checkoutAvailable = !isCartEmpty && (!pricing.activated || pricing.mealCount === cart.items.length)
+    const mealCountDifference = pricing.mealCount - cart.items.length
 
     return (
       <div className='side-cart-summary'>
@@ -53,7 +58,7 @@ class SideCartSummary extends Component {
         </div>
 
         {/* Prices */}
-        { !isCartEmpty &&
+        { checkoutAvailable &&
           <div className='side-cart-summary-prices'>
             <div className='side-cart-summary-price'>
               <div className='side-cart-summary-price-title'>Subtotal</div>
@@ -78,7 +83,7 @@ class SideCartSummary extends Component {
         }
 
         {/* Checkout */}
-        { !isCartEmpty &&
+        { checkoutAvailable &&
           <Button className='btn-checkout' onClick={this.onCheckout}>Checkout</Button>
         }
 
@@ -89,6 +94,15 @@ class SideCartSummary extends Component {
         { !user.loggedIn && 
           <div className='side-cart-summary-bottom-link'>To manage your Mealpost account, <Link to='/auth/login'><span>Log in</span></Link> or <Link to='/auth/signup'><span>Sign up</span></Link> here.</div> 
         }
+
+        {/* Pricing mode instruction text */}
+        {
+          pricing.activated && !checkoutAvailable &&
+          <div className='side-cart-summary-pricing-instruction'>
+            <div className='side-cart-summary-separator'/>
+            { mealCountDifference > 0 ? `Please add ${mealCountDifference} meal to continue` : `Please remove ${-mealCountDifference} meal to continue` }
+          </div>
+        }
       </div>
     )
   }
@@ -98,6 +112,7 @@ function mapStateToProps(state) {
   return {
     user: state.user,
     cart: state.cart,
+    pricing: state.pricing,
   }
 }
 
