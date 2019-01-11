@@ -14,7 +14,7 @@
 
   .dropdown__content {
     background-color: white;
-    width: 225px;
+    width: 222px;
     height: 55px;
     margin-left: -90px;
     margin-top: 10px;
@@ -23,7 +23,7 @@
     transform-origin: left top;
     z-index: $zindex-header;
     overflow: hidden;
-    border: .2px solid $text-light-gray;
+    border: .5px solid #70707080;
     border-radius: 4px;
     box-shadow: 2px 2px 6px rgba(0,0,0,0.16);
     
@@ -33,9 +33,9 @@
       height: 100%;
 
       img {
-        width: 14px;
+        width: 13px;
         margin-left: 15px;
-        margin-right: 10px;
+        margin-right: 8px;
       }
   
       input {

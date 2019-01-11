@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdown'
 
 import 'react-simple-dropdown/styles/Dropdown.css'
@@ -86,6 +87,7 @@ class MenuFilter extends Component {
         <DropdownTrigger>
           <div className='menu-filter-dropdown-trigger clickable'>
             <img className='img-filter' src={isShown ? imgFilterHighlight : imgFilter} alt='filter'/>
+            <span className={classNames('span-title', {'highlighted': isShown})}>FILTERS</span>
           </div>
         </DropdownTrigger>
         <DropdownContent>

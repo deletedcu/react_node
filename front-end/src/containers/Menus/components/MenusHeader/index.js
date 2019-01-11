@@ -41,7 +41,6 @@ class MenusHeader extends Component {
       <div className={classNames('div-menus-header-container', {'div-menus-header-squizzed': false})}>
         <div className='div-menus-header-left'>
           <MenuFilter onChangeFilters={this.onChangeFilters}/>
-          <span className='span-title'>FILTERS</span>
           <MenuDatePicker onSelectDeliveryDate={this.onDateChange} forCheckoutPage={false}/>
         </div>
 
