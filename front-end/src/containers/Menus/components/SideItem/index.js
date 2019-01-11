@@ -55,7 +55,7 @@ class SideItem extends Component {
             { item.display_price }
           </div>
 
-          <div className='div-side-item-add clickable' onClick={ this.onIncrementPurchasedCount }>
+          <div className='div-side-item-add clickable' onClick={ this.onAddToCart }>
             Add
           </div>
         </div>
