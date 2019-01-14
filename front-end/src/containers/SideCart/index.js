@@ -12,6 +12,7 @@ import imgEmptyCart from '../../assets/images/empty_cart.svg'
 
 import { hideSidebar } from '../../redux/actions/sideBar'
 import { groupBy } from '../../utils'
+import { emptyCart } from '../../redux/actions/cart';
 
 class SideCart extends Component {
 
@@ -21,6 +22,10 @@ class SideCart extends Component {
 
   onClose = () => {
     this.props.dispatch(hideSidebar())
+  }
+
+  onClearAll = () => {
+    this.props.dispatch(emptyCart())
   }
 
   render () {
@@ -57,6 +62,9 @@ class SideCart extends Component {
             <img className='clickable' src={imgClose} alt='close' onClick={ this.onClose }/>
           </div>
         </div>
+
+        {/* Clear All button */}
+        <div className='div-clear-all clickable' onClick={this.onClearAll}>Clear All</div>
 
         {/* Cart Items Or Show Empty Cart */}
         { isCartEmpty ? 

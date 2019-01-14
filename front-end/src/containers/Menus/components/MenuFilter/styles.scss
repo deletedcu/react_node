@@ -3,7 +3,7 @@
 .menu-filter {
   .dropdown__trigger {
     .menu-filter-dropdown-trigger {
-      border: .2px solid $text-light-gray;
+      border: .5px solid #70707080;
       border-radius: 3px;
       box-shadow: 1px 1px 1px rgba(0,0,0,0.16);
       background-color: white;
@@ -22,7 +22,7 @@
         font-size: $mobile-regular-font-size - 1;
         font-family: 'CeraPro-Medium';
         color: $text-light-gray;
-        margin-left: 10px;
+        margin-left: 7px;
       }
 
       .highlighted {

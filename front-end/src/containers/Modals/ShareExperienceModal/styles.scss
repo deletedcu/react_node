@@ -109,6 +109,7 @@
     .share-success-subtitle {
       @extend %feedback-subtitle;
       text-align: center;
+      font-size: $mobile-regular-font-size - 1;
     }
   
     .btn-okay {

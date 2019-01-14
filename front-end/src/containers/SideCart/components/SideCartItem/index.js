@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import LazyImage from '../../../../components/LazyImage'
-import NumericCounter from '../../../../components/NumericCounter'
 import './styles.css'
 
+import imgRemove from '../../../../assets/images/close_gray.svg'
 import { addToCart, removeFromCart, removeAllFromCart } from '../../../../redux/actions/cart'
-// import { showNotification } from '../../../../services/notification'
 
 class SideCartItem extends Component {
 
@@ -37,16 +36,10 @@ class SideCartItem extends Component {
           <LazyImage className='img-item' src={ item.main_image }/>
           <div className='side-cart-item-info'>
             <div className='side-cart-item-title'>{ item.name }</div>
-            <div className='side-cart-item-counter-price'>
-              <NumericCounter
-                count={ count }
-                onIncrement={ this.onIncrementPurchasedCount }
-                onDecrement={ this.onDecrementPurchasedCount }
-              />
-              <span className='side-cart-item-price'>{ item.display_price }</span>
-            </div>
-            <div className='side-cart-item-remove clickable' onClick={ this.onRemove }>Remove</div>
+            <div className='side-cart-item-price'>{ item.display_price }</div>
+            <div className='side-cart-item-quantity'>{ `qty: ${count}` }</div>
           </div>
+          <img className='img-remove clickable' src={imgRemove} alt='cross' onClick={this.onRemove}/>
         </div>
         
         <div className='side-cart-item-separator'/>

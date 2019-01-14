@@ -13,9 +13,10 @@
   border-radius: 3px;
   overflow: hidden;
   background-color: $extra-light-gray;
-  padding: 30px 60px;
+  box-shadow: $shadow-primary;
+  padding: 35px 45px 45px;
 
-  width: 540px;
+  width: 515px;
 
   .invitation-modal-form {
     display: flex;
@@ -30,10 +31,10 @@
 
     .span-link {
       color: $text-primary;
-      font-size: $mobile-small-font-size + 2;
+      font-size: $mobile-regular-font-size - 2;
       font-family: 'Montserrat-SemiBold';
       text-decoration: underline;
-      margin-top: 30px;
+      margin-top: 25px;
     }
 
     .button {
@@ -41,7 +42,7 @@
       width: 100%;
       background-color: #515151;
       border-radius: 0;
-      margin-top: 20px;
+      margin-top: 13px;
       font-size: $mobile-regular-font-size - 1;
       font-family: 'Montserrat-SemiBold';
     }
@@ -49,11 +50,12 @@
     input {
       border: 1px solid $text-light-gray;
       background-color: transparent;
-      font-size: $mobile-regular-font-size - 2;
+      font-size: $mobile-regular-font-size;
+      font-family: 'OpenSans-Regular';
       padding: 0 15px;
-      height: 45px;
+      height: 50px;
       width: 100%;
-      margin-top: 17px;
+      margin-top: 16px;
     }
   }
 

@@ -33,7 +33,7 @@ class SideCartSummary extends Component {
     return (
       <div className='side-cart-summary'>
         {/* Separator */}
-        <div className='side-cart-summary-separator'/>
+        {/* <div className='side-cart-summary-separator'/> */}
 
         {/* Recommended */}
         {/* <div className='side-cart-summary-recommended'>
@@ -46,16 +46,18 @@ class SideCartSummary extends Component {
         </div> */}
 
         {/* Meal preference link */}
-        <div className='side-cart-summary-preferences'>
+        {/* <div className='side-cart-summary-preferences'>
           <Link to='/settings/meal_preference'>
             Meal Preferences
           </Link>
-        </div>
+        </div> */}
 
         {/* Away from free delivery */}
+        { (!pricing.activated || checkoutAvailable) &&
         <div className='side-cart-summary-free-delivery'>
           { freeDelivery !== 0 ? `$${freeDelivery.toFixed(2)} away from free delivery` : 'Free Delivery'}
         </div>
+        }
 
         {/* Prices */}
         { checkoutAvailable &&

@@ -116,7 +116,7 @@ class ShareExperienceModal extends Component {
             <div className='share-success-content'>
               <div className='share-success-title'>Success</div>
               <div className='share-success-subtitle'>Thank you for sharing your feedback! Your review is greatly appreciated.</div>
-              <Button className='btn-okay' onClick={this.onClose}>Ok</Button>
+              <Button className='btn-okay' onClick={this.onClose}>OK</Button>
             </div>
           }
         </div>

@@ -36,6 +36,13 @@
     border-bottom: unset;
   }
 
+  .div-clear-all {
+    color: #2F7E0E;
+    font-size: $mobile-regular-font-size - 2;
+    text-align: right;
+    padding: 8px 20px 0 0;
+  }
+
   .div-side-cart-empty {
     flex-grow: 1;
     display: flex;
@@ -44,7 +51,7 @@
     margin-top: 50px;
 
     .img-empty-cart {
-      height: 122px;
+      height: 176px;
     }
     .span-empty-title {
       font-size: $regular-font-size;
@@ -55,17 +62,16 @@
     }
     .span-empty-subtitle {
       font-family: 'Brandon-Regular';
-      font-size: 12px;
+      font-size: $regular-font-size;
       color: #272727;
       opacity: 0.84;
-      margin-top: 5px;
     }
   }
 
   .div-side-cart-items {
     flex-grow: 1;
     overflow-y: scroll;
-    padding: 0 40px;
+    padding: 0 20px;
   }
 
   @media (max-width: 414px) {

@@ -5,6 +5,7 @@
 
   .side-cart-item-content {
     display: flex;
+    align-items: center;
     
     .img-item {
       width: 133px;
@@ -15,48 +16,39 @@
 
     .side-cart-item-info {
       color: #242222;
-      margin-top: 5px;
+      margin-top: 2px;
       margin-left: 10px;
       flex-grow: 1;
+      height: 90px;
 
       .side-cart-item-title {
-        font-size: 12px;
+        font-size: $mobile-regular-font-size - 1.5;
         font-family: 'Montserrat-SemiBold';
       }
 
-      .side-cart-item-counter-price {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 10px;
-
-        .numeric-counter {
-          .numeric-counter-button {
-            width: 24px;
-            height: 24px;
-            line-height: 24px;
-          }
-          .numeric-counter-number {
-            font-size: 12px;
-          }
-        }
-
-        .side-cart-item-price {
-          font-size: 11px;
-        }
+      .side-cart-item-price, .side-cart-item-quantity {
+        font-size: $mobile-regular-font-size - 1;
+        font-family: 'OpenSans-Regular';
       }
 
-      .side-cart-item-remove {
-        margin-top: 10px;
-        font-size: $mobile-small-font-size;
+      .side-cart-item-price {
+        margin-top: 5px;
       }
+      .side-cart-item-quantity {
+        margin-top: -2px;
+      }
+    }
+
+    .img-remove {
+      height: 24px;
     }
   }
 
   .side-cart-item-separator {
     height: 1px;
     background-color: $text-light-gray;
-    margin: 20px 5px;
+    opacity: 0.5;
+    margin: 20px -20px;
   }
 
   @media (max-width: 414px) {

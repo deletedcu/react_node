@@ -29,7 +29,6 @@ $checkout-header-height: 72px;
     .div-step-number {
       color: $green-primary;
       border: 2px solid $green-primary;
-      background-color: white;
       text-align: center;
       line-height: 27px;
       font-size: $mobile-regular-font-size + 0.5;
@@ -46,6 +45,7 @@ $checkout-header-height: 72px;
     .div-checkout-step-title {
       color: $text-light-gray;
       font-size: $small-font-size;
+      font-family: 'Montserrat-Medium';
       margin-left: 10px;
     }
   }
@@ -62,6 +62,7 @@ $checkout-header-height: 72px;
         width: unset;
         height: 48px;
         border-radius: 4px;
+        border: 1px solid $green-secondary;
         margin: 20px 30px 20px 0;
         padding-left: 60px;
         padding-right: 60px;
