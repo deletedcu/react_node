@@ -87,7 +87,7 @@ class Header extends Component {
             }
             { !user.loggedIn && <div className='div-login clickable' onClick={this.onLogin}>Log In</div> }
             { !user.loggedIn && <Button onClick={this.onSignUp}>SIGN UP</Button> }
-            { !sideBar.visible &&
+            { pathName.includes('menus') && !sideBar.visible &&
               <Cart
                 highlighted={ false }
                 history={ history }
