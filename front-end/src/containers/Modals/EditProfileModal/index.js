@@ -18,10 +18,13 @@ class EditProfileModal extends Component {
     super(props)
 
     let { user } = props.user
+    const splitUserName = user.name.split(' ')
+    const userFirstName = splitUserName[0]
+    const userLastName = splitUserName.length > 1 ? splitUserName[1] : ''
     
     this.state = {
-      firstName: user.first_name,
-      lastName: user.last_name,
+      firstName: userFirstName,
+      lastName: userLastName,
 
       phone: user.phone || '',
       
@@ -69,8 +72,7 @@ class EditProfileModal extends Component {
     let { firstName, lastName, phone, street, apartment, city, state, zip } = this.state
 
     this.props.dispatch(updateUserProfile(this.props.user.user.token, {
-      first_name: firstName,
-      last_name: lastName,
+      name: `${firstName} ${lastName}`,
       phone: phone,
       shipping_address: apartment ? `${street}, ${apartment}, ${city}, ${state}, ${zip}` : `${street}, ${city}, ${state}, ${zip}` ,
     }))
@@ -88,9 +90,6 @@ class EditProfileModal extends Component {
     return (
       <ModalContainer darkMode={true}>
         <div className='edit-profile-modal' onClick={(e)=>e.stopPropagation()}>
-          {/* <div className='edit-profile-close'>
-            <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
-          </div> */}
 
           <div className='edit-profile-title'>Edit Profile</div>
           <div className='separator'/>

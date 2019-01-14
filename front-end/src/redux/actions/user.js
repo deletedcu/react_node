@@ -108,8 +108,6 @@ export function updateUserProfile(token, params) {
       },
       data: params,
     }).then((response) => {
-      showNotification('Successfully updated profile', 'success')
-      
       localStorage.setItem('token', response.data.user.token)
 
       dispatch({type: 'HIDE_OVERLAY_SPINNER'})

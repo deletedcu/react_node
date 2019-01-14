@@ -2,7 +2,7 @@ import config from '../config/config'
 import axios from 'axios'
 import urlEncode from 'form-urlencoded'
 
-const getStripeToken = (cardNumber, expiryDate, cvc, name) => {
+const getStripeToken = (cardNumber, expiryDate, cvc) => {
   return new Promise((resolve, reject) => {
     const expiryMonth = expiryDate.split('/')[0].replace(/\s/g, '')
     const expiryYear = expiryDate.split('/')[1].replace(/\s/g, '')
@@ -13,7 +13,6 @@ const getStripeToken = (cardNumber, expiryDate, cvc, name) => {
         exp_month: expiryMonth,
         exp_year: expiryYear,
         cvc: cvc,
-        name: name,
       },
     }
 

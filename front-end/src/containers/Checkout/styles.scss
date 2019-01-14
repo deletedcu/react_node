@@ -61,18 +61,21 @@ $page-padding: 70px;
       }
 
       .div-checkout-account {
-        .div-checkout-account-names {
+        .div-checkout-account-fullname {
           display: flex;
-          flex-direction: row;
-  
-          .div-checkout-account-firstname {
-            flex-grow: 1;
-            margin-right: 12px;
+          flex-direction: column;
+        }
+
+        .div-checkout-account-email-password {
+          display: flex;
+
+          .div-checkout-account-email {
+            width: 60%;
+            margin-right: 23px;
           }
 
-          .div-checkout-account-lastname {
+          .div-checkout-account-password {
             flex-grow: 1;
-            margin-left: 12px;
           }
         }
 
@@ -89,72 +92,42 @@ $page-padding: 70px;
           }
         }
   
-        .div-checkout-account-names, .div-checkout-account-email, .div-checkout-account-password {
+        .div-checkout-account-fullname, .div-checkout-account-email-password {
           margin-top: 20px;
         }
       }
 
       .div-checkout-address {
         .div-checkout-address-first-row {
-          .div-checkout-address-firstname {
-            width: 30%;
-            padding-right: 12px;
-          }
-
-          .div-checkout-address-lastname {
-            width: 30%;
-            padding-left: 12px;
-            padding-right: 12px;
+          .div-checkout-address-fullname {
+            width: 60%;
+            margin-right: 23px;
           }
 
           .div-checkout-address-contact-number {
-            width: 40%;
-            padding-left: 12px;
+            flex-grow: 1;
           }
         }
 
         .div-checkout-address-second-row {
           .div-checkout-address-street {
             width: 60%;
-            padding-right: 15px
-          }
-
-          .div-checkout-address-special-instructions {
-            width: 40%;
-            padding-left: 12px;
-
-            .div-special-instructions-title {
-              height: 30px;
-            }
-
-            input::-webkit-input-placeholder {
-              font-size: 18px;
-            }
-
-            .span-optional {
-              font-size: $mobile-regular-font-size - 1;
-              color: #BFBFBF;
-            }
-          }
-        }
-
-        .div-checkout-address-third-row {
-          margin-bottom: 50px;
-
-          .div-checkout-address-city {
-            width: 60%;
-            padding-right: 12px;
+            margin-right: 23px;
           }
 
           .div-checkout-address-state-zip {
+            width: calc(40% - 23px);
             display: flex;
             flex-direction: row;
-            width: 40%;
+
+            .div-checkout-address-zip {
+              width: 50%;
+              padding-right: 12px;
+            }
 
             .div-checkout-address-state {
               position: relative;
               width: 50%;
-              padding-left: 12px;
   
               display: flex;
               flex-direction: column;
@@ -181,10 +154,26 @@ $page-padding: 70px;
                 bottom: 20px;
               }
             }
-  
-            .div-checkout-address-zip {
-              width: 50%;
-              padding-left: 12px;
+          }
+        }
+
+        .div-checkout-address-third-row {
+          margin-bottom: 50px;
+
+          .div-checkout-address-special-instructions {
+            flex-grow: 1;
+
+            .div-special-instructions-title {
+              height: 30px;
+            }
+
+            input::-webkit-input-placeholder {
+              font-size: 18px;
+            }
+
+            .span-optional {
+              font-size: $mobile-regular-font-size - 1;
+              color: #BFBFBF;
             }
           }
         }
@@ -240,10 +229,6 @@ $page-padding: 70px;
                 }
               }
             }
-          }
-          
-          .div-checkout-payment-credit-card-name {
-            margin-left: 20px;
           }
         }
 
@@ -351,39 +336,29 @@ $page-padding: 70px;
         }
 
         .div-checkout-account {
-          .div-checkout-account-names {
-            flex-direction: column;
-
-            .div-checkout-account-firstname {
-              margin-right: 0;
-            }
-  
-            .div-checkout-account-lastname {
-              margin-left: 0;
-              margin-top: 15px;
-            }
-          }
-  
           .div-checkout-account-login {
             margin: 20px 0;
           }
+
+          .div-checkout-account-email-password {
+            flex-direction: column;
+
+            .div-checkout-account-email {
+              width: 100%;
+              margin-right: unset;
+            }
+          }
     
-          .div-checkout-account-names, .div-checkout-account-email, .div-checkout-account-password {
+          .div-checkout-account-fullname, .div-checkout-account-email, .div-checkout-account-password {
             margin-top: 15px;
           }
         }
   
         .div-checkout-address {
           .div-checkout-address-first-row {
-            .div-checkout-address-firstname {
+            .div-checkout-address-fullname {
               width: 100%;
               padding: 0;
-            }
-  
-            .div-checkout-address-lastname {
-              width: 100%;
-              padding: 0;
-              margin-top: 15px;
             }
   
             .div-checkout-address-contact-number {
@@ -399,25 +374,6 @@ $page-padding: 70px;
               padding: 0;
             }
   
-            .div-checkout-address-special-instructions {
-              width: 100%;
-              padding: 0;
-              margin-top: 15px;
-
-              .span-optional {
-                font-size: $mobile-small-font-size;
-              }
-            }
-          }
-  
-          .div-checkout-address-third-row {
-            margin-bottom: 25px;
-  
-            .div-checkout-address-city {
-              width: 100%;
-              padding: 0;
-            }
-
             .div-checkout-address-state-zip {
               width: 100%;
               margin-top: 15px;
@@ -438,6 +394,20 @@ $page-padding: 70px;
     
               .div-checkout-address-zip {
                 width: 50%;
+              }
+            }
+          }
+  
+          .div-checkout-address-third-row {
+            margin-bottom: 25px;
+
+            .div-checkout-address-special-instructions {
+              width: 100%;
+              padding: 0;
+              margin-top: 15px;
+
+              .span-optional {
+                font-size: $mobile-small-font-size;
               }
             }
           }
@@ -474,10 +444,6 @@ $page-padding: 70px;
                   }
                 }
               }
-            }
-            
-            .div-checkout-payment-credit-card-name {
-              margin: 15px 15px 25px 15px;
             }
           }
   

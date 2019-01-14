@@ -12,7 +12,7 @@ class EditProfile extends Component {
     super(props)
 
     this.state = {
-      name: `${props.user.user.first_name} ${props.user.user.last_name}`,
+      name: props.user.user.name,
       deliveryAddress: props.user.user.shipping_address,
       phone: props.user.user.phone,
       email: props.user.user.email,
@@ -28,7 +28,7 @@ class EditProfile extends Component {
 
   componentWillReceiveProps ({ user }) {
     this.setState({
-      name: `${user.user.first_name} ${user.user.last_name}`,
+      name: user.user.name,
       deliveryAddress: user.user.shipping_address,
       phone: user.user.phone,
       email: user.user.email,
@@ -41,11 +41,8 @@ class EditProfile extends Component {
       // should save changes
       const { editName, editPassword, editPhone, editDeliveryAddress, email, name, phone, deliveryAddress } = this.state
 
-      let nameParts = editName ? editName.split(' ') : name.split(' ')
-
       this.props.dispatch(updateUserProfile(this.props.user.user.token, {
-        first_name: nameParts[0],
-        last_name: nameParts.length > 1 ? nameParts[1] : '',
+        name: editName || name,
         shipping_address: editDeliveryAddress || deliveryAddress,
         phone: editPhone || phone,
         email: email,

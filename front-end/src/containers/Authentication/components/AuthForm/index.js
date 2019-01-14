@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Button from '../../../../components/Button'
@@ -19,8 +20,7 @@ class AuthForm extends Component {
     super (props)
 
     this.state = {
-      firstName: '',
-      lastName: '',
+      fullName: '',
       email: '',
       password: '',
       zip: '',
@@ -44,8 +44,7 @@ class AuthForm extends Component {
 
   signup = () => {
     this.props.dispatch(signupUser({
-      first_name: this.state.firstName,
-      last_name: this.state.lastName,
+      name: this.state.fullName,
       email: this.state.email,
       password: this.state.password,
       zip: this.state.zip,
@@ -86,34 +85,23 @@ class AuthForm extends Component {
     const isSignup = this.props.type === AuthFormType.signup
 
     return (
-      <div className='auth-form'>
+      <div className={classNames('auth-form', {'auth-form-transparent': isSignup })}>
         {/* Form header */}
-        <div className={ isSignup ? 'auth-form-header-normal' : 'auth-form-header-green'}>
-          <div className='auth-form-title'>
-            { isSignup ? 'Sign Up' : 'Log in' }
-          </div>
-
-          { 
-            isSignup && 
-            <div className='auth-form-switch'>
-              or <Link to='/auth/login'><span className='span-link' onClick={ this.onSwitchToLogin }>Log in</span></Link>
+        { !isSignup &&
+          <div className='auth-form-header'>
+            <div className='auth-form-title'>
+              { 'Log In' }
             </div>
-          }
-        </div>
+          </div>
+        }
 
         {/* Form fields */}
         <form className='auth-form-inputs'>
-          { 
+          {
             isSignup &&
-            <div className='auth-form-double-inputs'>
-              <div id='input_firstname' className='auth-form-input'>
-                <div className='auth-form-input-name'>FIRST NAME</div>
-                <input required type='text' name='firstName' value={this.state.firstName} onChange={this.onChange}/>
-              </div>
-              <div id='input_lastname' className='auth-form-input'>
-                <div className='auth-form-input-name'>LAST NAME</div>
-                <input required type='text' name='lastName' value={this.state.lastName} onChange={this.onChange}/>
-              </div>
+            <div className='auth-form-input'>
+              <div className='auth-form-input-name'>FULL NAME</div>
+              <input required type='text' name='fullName' value={this.state.fullName} onChange={this.onChange}/>
             </div>
           }
 
@@ -123,16 +111,16 @@ class AuthForm extends Component {
           </div>
 
           <div className='auth-form-input'>
-            <div className='auth-form-input-name'>PASSWORD</div>
+            <div className='auth-form-input-name'>{ isSignup ? 'CREATE A PASSWORD' : 'PASSWORD' }</div>
             <input required type='password' name='password' value={this.state.password} onChange={this.onChange}/>
           </div>
 
-          {/* { isSignup &&
+          { isSignup &&
             <div className='auth-form-input'>
               <div className='auth-form-input-name'>ZIP</div>
               <input required type='text' name='zip' value={this.state.zip} onChange={this.onChange}/>
             </div>
-          } */}
+          }
 
           { !isSignup && 
             <div className='auth-form-forgot-password'>
@@ -161,7 +149,11 @@ class AuthForm extends Component {
           By clicking above, you agree to our <Link to='/terms-of-service'><span className='span-link'>Terms of Use</span></Link> and consent to our <Link to='/terms-of-service'><span className='span-link'>Privacy Policy</span></Link>
           
           { 
-            !isSignup &&
+            isSignup ?
+            <div className='auth-form-footer-login'>
+              Have an account? <Link to='/auth/login'><span className='span-link'>Log In</span></Link>
+            </div>
+            :
             <div className='auth-form-footer-signup'>
               New to Mealpost? <Link to='/auth/signup'><span className='span-link'>Sign up</span></Link>
             </div>

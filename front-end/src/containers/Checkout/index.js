@@ -15,7 +15,7 @@ import './styles.css'
 import imgPaypal from '../../assets/images/paypal.svg'
 import imgDownArrow from '../../assets/images/down_arrow_green.svg'
 
-import { loginUser, signupUser } from '../../redux/actions/user'
+import { loginUser, signupUser, updateUserProfile } from '../../redux/actions/user'
 import { hideSidebar } from '../../redux/actions/sideBar'
 import { showOverlaySpinner, hideOverlaySpinner } from '../../redux/actions/overlaySpinner'
 import { emptyCart } from '../../redux/actions/cart'
@@ -50,24 +50,20 @@ class Checkout extends Component {
       currentStep: props.user.loggedIn ? CheckoutStep.address : CheckoutStep.account,
       currentPaymentOption: PaymentOption.stripe,
 
-      accountFirstName: '',
-      accountLastName: '',
+      accountName: '',
       emailAddress: '',
       password: '',
 
-      addressFirstName: props.user.loggedIn ? props.user.user.first_name : '',
-      addressLastName: props.user.loggedIn ? props.user.user.last_name : '',
-      contactNumber: props.user.loggedIn ? props.user.user.phone : '',
+      addressName: props.user.loggedIn ? (props.user.user.name || '') : '',
+      contactNumber: props.user.loggedIn ? (props.user.user.phone || '') : '',
       streetAddress: '',
       specialInstruction: '',
-      city: '',
       state: '',
-      zip: '',
+      zip: props.user.loggedIn ? (props.user.user.zip || '') : '',
 
       cardNumber: '',
       cardExpiry: '',
       cardCVC: '',
-      cardName: '',
 
       deliveryDate: new Date(),
     }
@@ -79,10 +75,9 @@ class Checkout extends Component {
     if (user.loggedIn && this.state.currentStep === CheckoutStep.account) {
       this.setState({
         currentStep: CheckoutStep.address,
-        addressFirstName: user.user.first_name,
-        addressLastName: user.user.last_name,
-        contactNumber: user.user.phone,
-        zip: user.user.zip,
+        addressName: user.user.name,
+        contactNumber: user.user.phone || '',
+        zip: user.user.zip || '',
       }, () => {
         this.updateAddress()
       })
@@ -97,7 +92,6 @@ class Checkout extends Component {
       if (!err) {
         this.setState({
           streetAddress: (addressObject.street_address1 || '') + ' ' + (addressObject.street_address2 || ''),
-          city: addressObject.city || '',
           state: addressObject.state || '',
           ...(addressObject.postal_code && { zip: addressObject.postal_code }),
         }, () => {
@@ -125,8 +119,7 @@ class Checkout extends Component {
       this.props.dispatch(signupUser({
         email: this.state.emailAddress,
         password: this.state.password,
-        first_name: this.state.accountFirstName,
-        last_name: this.state.accountLastName,
+        name: this.state.accountName,
       }))
     } else {
       // login
@@ -135,6 +128,16 @@ class Checkout extends Component {
   }
 
   onCompleteDeliveryAddress = () => {
+    const user = this.props.user.user
+    const { addressName, contactNumber, streetAddress, state, zip } = this.state
+
+    this.props.dispatch(updateUserProfile(user.token, {
+      name: addressName,
+      shipping_address: `${streetAddress}, ${state || document.getElementById('stateSelector').value}, ${zip}`,
+      phone: contactNumber,
+      email: user.email,
+    }))
+
     this.setState({
       currentStep: CheckoutStep.payment,  
     })
@@ -144,7 +147,7 @@ class Checkout extends Component {
     if (this.state.currentPaymentOption === PaymentOption.stripe) {
       // stripe
       // validation check
-      if (!this.state.cardNumber || !this.state.cardExpiry || !this.state.cardCVC || !this.state.cardName) {
+      if (!this.state.cardNumber || !this.state.cardExpiry || !this.state.cardCVC) {
         showNotification('Please fill out the form', 'error')
         return
       }
@@ -152,13 +155,14 @@ class Checkout extends Component {
       // retrieve stripe token
       this.props.dispatch(showOverlaySpinner())
 
-      getStripeToken(this.state.cardNumber, this.state.cardExpiry, this.state.cardCVC, this.state.cardName)
+      const splitAddressName = this.state.addressName.split(' ')
+
+      getStripeToken(this.state.cardNumber, this.state.cardExpiry, this.state.cardCVC)
         .then(tokenInfo => {
           checkout(this.props.user.user.token, this.props.cart.items, {
-            first_name: this.state.addressFirstName,
-            last_name: this.state.addressLastName,
+            first_name: splitAddressName[0],
+            last_name: splitAddressName.length > 1 ? splitAddressName[1] : '',
             line_1: this.state.streetAddress,
-            city: this.state.city,
             postcode: this.state.zip,
             county: this.state.state,
             country: 'US',
@@ -269,33 +273,29 @@ class Checkout extends Component {
                 number='1'
                 status={ currentStep === CheckoutStep.account ? CheckoutFormStatus.editing : CheckoutFormStatus.completed }
                 title='Create Account'
-                buttonTitle='Proceed to Delivery Info'
+                buttonTitle='PROCEED TO DELIVERY'
                 onSubmit={ this.onAuthenticate }
               >
                 <div className='div-checkout-section-content div-checkout-account'>
                   {/* First Name, Last Name => only visible in signup mode */}
                   { currentAccountMode === AccountMode.create &&
-                    <div className='div-checkout-account-names'>
-                      <div className='div-checkout-account-firstname'>
-                        <div><span className='span-input-title'>First Name</span></div>
-                        <div><input required type='text' name='accountFirstName' value={this.state.accountFirstName} onChange={this.onChange}/></div>
-                      </div>
-                      <div className='div-checkout-account-lastname'>
-                        <div><span className='span-input-title'>Last Name</span></div>
-                        <div><input required type='text' name='accountLastName' value={this.state.accountLastName} onChange={this.onChange}/></div>
-                      </div>
+                    <div className='div-checkout-account-fullname'>
+                      <div><span className='span-input-title'>Full Name</span></div>
+                      <div><input required type='text' name='accountName' value={this.state.accountName} onChange={this.onChange}/></div>
                     </div>
                   }
 
                   {/* Email, Password */}
-                  <div className='div-checkout-account-email'>
-                    <div><span className='span-input-title'>Email Address</span></div>
-                    <div><input required type='email' name='emailAddress' value={this.state.emailAddress} onChange={this.onChange}/></div>
-                  </div>
+                  <div className='div-checkout-account-email-password'>
+                    <div className='div-checkout-account-email'>
+                      <div><span className='span-input-title'>Email Address</span></div>
+                      <div><input required type='email' name='emailAddress' value={this.state.emailAddress} onChange={this.onChange}/></div>
+                    </div>
 
-                  <div className='div-checkout-account-password'>
-                    <div><span className='span-input-title'>Password</span></div>
-                    <div><input required type='password' name='password' value={this.state.password} onChange={this.onChange}/></div>
+                    <div className='div-checkout-account-password'>
+                      <div><span className='span-input-title'>Password</span></div>
+                      <div><input required type='password' name='password' value={this.state.password} onChange={this.onChange}/></div>
+                    </div>
                   </div>
 
                   {/* Login/Signup Button */}
@@ -312,19 +312,15 @@ class Checkout extends Component {
                 number='2'
                 status={ currentStep === CheckoutStep.address ? CheckoutFormStatus.editing : (currentStep === CheckoutStep.account ? CheckoutFormStatus.disabled : CheckoutFormStatus.completed) }
                 title='Delivery Address'
-                buttonTitle='Proceed to Payment Info'
+                buttonTitle='PROCEED TO PAYMENT'
                 onSubmit={ this.onCompleteDeliveryAddress }
               >
                 <div className='div-checkout-section-content div-checkout-address'> 
                   {/* First Name, Last Name, Contact Number */}
                   <div className='div-checkout-address-first-row'>
-                    <div className='div-checkout-address-firstname'>
-                      <div><span className='span-input-title'>First Name</span></div>
-                      <div><input required type='text' name='addressFirstName' value={this.state.addressFirstName} onChange={this.onChange}/></div>
-                    </div>
-                    <div className='div-checkout-address-lastname'>
-                      <div><span className='span-input-title'>Last Name</span></div>
-                      <div><input required type='text' name='addressLastName' value={this.state.addressLastName} onChange={this.onChange}/></div>
+                    <div className='div-checkout-address-fullname'>
+                      <div><span className='span-input-title'>Full Name</span></div>
+                      <div><input required type='text' name='addressName' value={this.state.addressName} onChange={this.onChange}/></div>
                     </div>
                     <div className='div-checkout-address-contact-number'>
                       <div><span className='span-input-title'>Contact Number</span></div>
@@ -332,34 +328,30 @@ class Checkout extends Component {
                     </div>
                   </div>
 
-                  {/* Street, special instructions */}
+                  {/* Street, state and zip */}
                   <div className='div-checkout-address-second-row'>
                     <div className='div-checkout-address-street'>
                       <div><span className='span-input-title'>Street Address</span></div>
                       <div><input required type='text' name='streetAddress' value={this.state.streetAddress} onChange={this.onChange}/></div>
                     </div>
-                    <div className='div-checkout-address-special-instructions'>
-                      <div className='div-special-instructions-title'><span className='span-input-title'>Special Instructions </span><span className='span-optional'>(OPTIONAL)</span></div>
-                      <div><input type='text' name='specialInstruction' value={this.state.specialInstruction} onChange={this.onChange}/></div>
-                    </div>
-                  </div>
-
-                  {/* City, State, Zip */}
-                  <div className='div-checkout-address-third-row'>
-                    <div className='div-checkout-address-city'>
-                      <div><span className='span-input-title'>City</span></div>
-                      <div><input required type='text' name='city' value={this.state.city} onChange={this.onChange}/></div>
-                    </div>
                     <div className='div-checkout-address-state-zip'>
+                      <div className='div-checkout-address-zip'>
+                        <div><span className='span-input-title'>Zip Code</span></div>
+                        <div><input required type='text' name='zip' value={this.state.zip} onChange={this.onChange}/></div>
+                      </div>
                       <div className='div-checkout-address-state'>
                         <div><span className='span-input-title'>State</span></div>
                         <SelectUSState id='stateSelector' className='select-us-state' value={this.state.state} onChange={ this.onSelectState }/>
                         <img src={imgDownArrow} alt='arrow'/>
                       </div>
-                      <div className='div-checkout-address-zip'>
-                        <div><span className='span-input-title'>Zip</span></div>
-                        <div><input required type='text' name='zip' value={this.state.zip} onChange={this.onChange}/></div>
-                      </div>
+                    </div>
+                  </div>
+
+                  {/* Special instructions */}
+                  <div className='div-checkout-address-third-row'>
+                    <div className='div-checkout-address-special-instructions'>
+                      <div className='div-special-instructions-title'><span className='span-input-title'>Special Instructions </span><span className='span-optional'>(OPTIONAL)</span></div>
+                      <div><input type='text' name='specialInstruction' value={this.state.specialInstruction} onChange={this.onChange}/></div>
                     </div>
                   </div>
                 </div>
@@ -369,8 +361,8 @@ class Checkout extends Component {
               <CheckoutStepForm
                 number='3'
                 status={ currentStep === CheckoutStep.payment ? CheckoutFormStatus.editing : CheckoutFormStatus.disabled }
-                title='Payment Info'
-                buttonTitle='Complete Order'
+                title='Payment Details'
+                buttonTitle='PLACE ORDER'
                 onSubmit={ this.onCompleteOrder }
               >
                 <div className='div-checkout-section-content div-checkout-payment'>
@@ -380,7 +372,7 @@ class Checkout extends Component {
                       checked={ currentPaymentOption === PaymentOption.stripe }
                       onCheckChange={ (checked) => this.onPaymentOptionChange(PaymentOption.stripe, checked) }
                     >
-                      Credit Card
+                      Add a payment method
                     </RadioButton>
                     <div className='div-checkout-payment-credit-card-number'>
                       <div><span className='span-input-title'>Card Number</span></div>
@@ -393,10 +385,6 @@ class Checkout extends Component {
                           containerStyle={{width: '100%'}}
                         />
                       </div>
-                    </div>
-                    <div className='div-checkout-payment-credit-card-name'>
-                      <div><span className='span-input-title'>Name On Card</span></div>
-                      <div><input type='text' name='cardName' value={this.state.cardName} onChange={this.onChange}/></div>
                     </div>
                   </div>
 

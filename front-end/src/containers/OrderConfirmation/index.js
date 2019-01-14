@@ -57,7 +57,7 @@ class OrderConfirmation extends Component {
               <span>Order Confirmed</span>
             </div>
             <div className='div-order-confirm-form-detail'>
-              <div className='div-order-confirm-form-greeting'>{`Hello, ${user.user.first_name}`}</div>
+              <div className='div-order-confirm-form-greeting'>{`Hello, ${user.user.name}`}</div>
               <div className='div-order-confirm-form-description'>Your order is being processed and you should receive a confirmation from us shortly.</div>
               
               <div className='div-order-confirm-form-info-list'>

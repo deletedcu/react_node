@@ -38,8 +38,7 @@ exports.login = (email, password) => {
           status: 200,
           user: {
             email: user.email,
-            first_name: user.first_name,
-            last_name: user.last_name,
+            name: user.name,
             shipping_address: user.shipping_address,
             phone: user.phone,
             zip: user.zip,
@@ -58,11 +57,10 @@ exports.login = (email, password) => {
  * Sign up Function
  * @param {string} email 
  * @param {string} password 
- * @param {string} firstName 
- * @param {string} lastName 
+ * @param {string} name
  * @param {string} zip
  */
-exports.register = (email, password, firstName, lastName, zip) => {
+exports.register = (email, password, name, zip) => {
   return new Promise((resolve, reject) => {
     // check if user already exists
     User.findOne({ email_lowercased: email.toLowerCase() }).exec((err, matchingUser) => {
@@ -80,7 +78,7 @@ exports.register = (email, password, firstName, lastName, zip) => {
 
       // create customer
       Moltin.Customers.Create({
-        name: `${firstName} ${lastName}`,
+        name: `${name}`,
         email: email,
       }).then(customer => {
         // create user
@@ -90,8 +88,7 @@ exports.register = (email, password, firstName, lastName, zip) => {
           email: email,
           email_lowercased: email.toLowerCase(),
           hashed_password: hash,
-          first_name: firstName,
-          last_name: lastName,
+          name: name,
           zip: zip,
           customer_id: customer.data.id,
         };
@@ -109,8 +106,7 @@ exports.register = (email, password, firstName, lastName, zip) => {
               user: {
                 email: user.email,
                 email_lowercased: user.email_lowercased,
-                first_name: user.first_name,
-                last_name: user.last_name,
+                name: user.name,
                 zip: user.zip,
                 token: jwt.sign(user.email, config.jwtSecret, {}),
               },
@@ -149,8 +145,7 @@ exports.authenticate = (request) => {
           status: 200,
           user: {
             email: user.email,
-            first_name: user.first_name,
-            last_name: user.last_name,
+            name: user.name,
             shipping_address: user.shipping_address,
             phone: user.phone,
             zip: user.zip,
@@ -173,14 +168,17 @@ exports.updateProfile = (request) => {
     const currentEmail = checkToken(request);
 
     if (currentEmail) {
-      let { first_name, last_name, phone, shipping_address, email } = request.body;
+      let { name, phone, shipping_address, email, zip } = request.body;
       let user = {
         email: email,
-        first_name: first_name,
-        last_name: last_name,
+        name: name,
         phone: phone,
         shipping_address: shipping_address,
       };
+
+      if (zip) {
+        user.zip = zip;
+      }
 
       User.findOneAndUpdate(
         { email_lowercased: currentEmail.toLowerCase() },
@@ -198,8 +196,7 @@ exports.updateProfile = (request) => {
               message: 'User has been updated',
               user: {
                 email: newUser.email,
-                first_name: newUser.first_name,
-                last_name: newUser.last_name,
+                name: newUser.name,
                 shipping_address: newUser.shipping_address,
                 phone: newUser.phone,
                 zip: newUser.zip,
@@ -264,8 +261,7 @@ exports.updatePassword = (request) => {
                   message: 'User has been updated',
                   user: {
                     email: newUser.email,
-                    first_name: newUser.first_name,
-                    last_name: newUser.last_name,
+                    name: newUser.name,
                     shipping_address: newUser.shipping_address,
                     phone: newUser.phone,
                     zip: newUser.zip,
