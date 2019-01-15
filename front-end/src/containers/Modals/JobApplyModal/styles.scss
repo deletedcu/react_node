@@ -11,48 +11,42 @@
   background: white;
   border-radius: 6px;
   box-shadow: $shadow-primary;
-  padding: 30px 100px 40px;
+  padding: 30px 35px 30px;
   color: $text-light-gray;
 
-  width: 1080px;
-  height: 800px;
-
-  .job-apply-close {
-    .img-close {
-      height: 20px;
-      float: right;
-      margin-right: -50px;
-    }
-  }
+  width: 686px;
+  height: 610px;
 
   .job-apply-title {
     color: #414141;
     font-family: 'Montserrat-Bold';
+    font-size: $small-font-size - 1;
   }
 
   .job-apply-form {
     margin-top: 20px;
     margin-bottom: 30px;
     overflow-y: scroll;
+    font-size: $mobile-regular-font-size;
 
     input, textarea {
       width: 100%;
-      height: 80px;
+      height: 47px;
       border: 1px solid $light-green-primary;
       border-radius: 4px;
-      font-size: $footer-secondary-font-size;
       color: $text-light-gray;
       caret-color: $green-primary;
-      margin-top: 10px;
+      margin-top: 3px;
       resize: none;
-      padding: 20px;
+      padding: 15px;
+      font-size: $mobile-regular-font-size + 1;
 
       &:focus {
         border: 1px solid $green-primary;
       }
     }
     textarea {
-      height: 175px;
+      height: 129px;
     }
 
     .input-file-uploader {
@@ -65,8 +59,10 @@
     }
 
     .btn-attach {
-      width: 169px;
+      width: unset;
+      min-width: 169px;
       height: 52px;
+      padding: 0 20px;
       border-radius: 4px;
       border: .75px solid #3E8541;
       margin-top: 10px;
@@ -79,32 +75,40 @@
       justify-content: space-between;
 
       .job-apply-form-single-input {
-        width: calc(50% - 20px);
+        width: calc(50% - 12px);
       }
     }
 
     .job-apply-form-single-input {
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .job-apply-form-description {
-      width: 80%;
+      width: calc(100% - 30px);
+      color: black;
+      font-size: $mobile-regular-font-size + 1;
     }
 
     .job-apply-form-selection-group {
       margin-top: 30px;
+
       .job-apply-form-selection-group-title {
         color: $text-light-gray;
+        font-family: 'Montserrat-Medium';
       }
+
       .checkbox {
-        margin-left: 20px;
-        margin-top: 20px;
+        margin-left: 10px;
+        margin-top: 15px;
+
         img {
-          height: 30px;
+          height: 20px;
           border-radius: 2px;
+          margin-right: 8px;
         }
         span {
           color: $text-light-gray;
+          font-size: $mobile-regular-font-size + 1;
         }
       }
     }
@@ -123,6 +127,7 @@
       border-radius: 4px;
       font-size: $mobile-regular-font-size + 1;
       font-family: 'Montserrat-Medium';
+      background-color: #3D3D3D;
     }
 
     .btn-move {
@@ -132,7 +137,6 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 30px;
-      background-color: #3D3D3D;
       .img-move {
         height: 15px;
       }

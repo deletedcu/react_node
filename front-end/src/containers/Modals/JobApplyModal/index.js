@@ -5,7 +5,6 @@ import Button from '../../../components/Button'
 import Checkbox, { CheckboxType } from '../../../components/Checkbox'
 
 import './styles.css'
-import imgClose from '../../../assets/images/close_button.svg'
 import imgPrev from '../../../assets/images/prev.svg'
 import imgNext from '../../../assets/images/next.svg'
 
@@ -34,7 +33,11 @@ class JobApplyModal extends Component {
       why: '',
       linkedin: '',
       website: '',
+      relocate: '',
       ethnicity: 0,
+      gender: 0,
+      sexOrientation: 0,
+      armyVeteran: 0,
       resumeFile: null,
       coverletterFile: null,
     }
@@ -49,6 +52,24 @@ class JobApplyModal extends Component {
   onEthnicityChange = (selectedIndex) => {
     this.setState({
       ethnicity: selectedIndex,
+    })
+  }
+
+  onGenderChange = (selectedIndex) => {
+    this.setState({
+      gender: selectedIndex,
+    })
+  }
+
+  onSexOrientationChange = (selectedIndex) => {
+    this.setState({
+      sexOrientation: selectedIndex,
+    })
+  }
+
+  onArmyVeteranChange = (selectedIndex) => {
+    this.setState({
+      armyVeteran: selectedIndex,
     })
   }
 
@@ -121,16 +142,11 @@ class JobApplyModal extends Component {
   }
 
   render () {
-    const { currentStep, ethnicity } = this.state
+    const { currentStep, coverletterFile, resumeFile, ethnicity, gender, sexOrientation, armyVeteran } = this.state
 
     return (
       <ModalContainer darkMode={true}>
         <div className='job-apply-modal' onClick={(e)=>e.stopPropagation()}>
-          {/* Header */}
-          <div className='job-apply-close'>
-            <img className='img-close clickable' src={imgClose} alt='close' onClick={this.onClose}/>
-          </div>
-
           <div className='job-apply-title'>
             { currentStep === JobApplyStep.personalInfo ? 'APPLY FOR THIS JOB' : ( currentStep === JobApplyStep.additionalInfo ? 'ADDITIONAL INFO' : 'DIVERSITY SURVEY' ) }
           </div>
@@ -169,12 +185,12 @@ class JobApplyModal extends Component {
               <div className='job-apply-form-double-input'>
                 <div className='job-apply-form-single-input'>
                   <div className='job-apply-form-input-title'>RESUME/CV*</div>
-                  <Button className='btn-attach' onClick={this.onAttachResume}>ATTACH</Button>
+                  <Button className='btn-attach' onClick={this.onAttachResume}>{ resumeFile ? 'Resume Attached!' : 'ATTACH' }</Button>
                   <input className='input-file-uploader' ref='resumeInput' type='file' onChange={this.onUploadResume}/>
                 </div>
                 <div className='job-apply-form-single-input'>
                   <div className='job-apply-form-input-title'>COVER LETTER*</div>
-                  <Button className='btn-attach' onClick={this.onAttachCoverLetter}>ATTACH</Button>
+                  <Button className='btn-attach' onClick={this.onAttachCoverLetter}>{ coverletterFile ? 'Cover Letter Attached' : 'ATTACH' }</Button>
                   <input className='input-file-uploader' ref='coverletterInput' type='file' onChange={this.onUploadCoverLetter}/>
                 </div>
               </div>
@@ -198,6 +214,11 @@ class JobApplyModal extends Component {
                 <div className='job-apply-form-input-title'>Website</div>
                 <input type='url' name='website' value={this.state.website} onChange={this.onChange}/>
               </div>
+
+              <div className='job-apply-form-single-input'>
+                <div className='job-apply-form-input-title'>Are you willing to relocate to our San Francisco office?</div>
+                <input type='text' name='relocate' value={this.state.relocate} onChange={this.onChange}/>
+              </div>
             </div>
           }
 
@@ -213,7 +234,7 @@ class JobApplyModal extends Component {
                 impact the outcome of your application.
               </div>
               <div className='job-apply-form-selection-group'>
-                <div className='job-apply-form-selection-group-title'>SELECT ETHNICITY/RACE</div>
+                <div className='job-apply-form-selection-group-title'>PLEASE SELECT YOUR ETHNICITY/RACE:</div>
                 <Checkbox type={CheckboxType.square} checked={ethnicity === 0} onCheckChange={(checked) => this.onEthnicityChange(0)}>African-American/Black</Checkbox>
                 <Checkbox type={CheckboxType.square} checked={ethnicity === 1} onCheckChange={(checked) => this.onEthnicityChange(1)}>American Indian or Alaska Native</Checkbox>
                 <Checkbox type={CheckboxType.square} checked={ethnicity === 2} onCheckChange={(checked) => this.onEthnicityChange(2)}>Asian</Checkbox>
@@ -223,6 +244,26 @@ class JobApplyModal extends Component {
                 <Checkbox type={CheckboxType.square} checked={ethnicity === 6} onCheckChange={(checked) => this.onEthnicityChange(6)}>Native Hawaiian or Pacific Islander</Checkbox>
                 <Checkbox type={CheckboxType.square} checked={ethnicity === 7} onCheckChange={(checked) => this.onEthnicityChange(7)}>Caucasian/White</Checkbox>
                 <Checkbox type={CheckboxType.square} checked={ethnicity === 8} onCheckChange={(checked) => this.onEthnicityChange(8)}>Prefer not to answer</Checkbox>
+              </div>
+              <div className='job-apply-form-selection-group'>
+                <div className='job-apply-form-selection-group-title'>PLEASE SELECT YOUR GENDER:</div>
+                <Checkbox type={CheckboxType.square} checked={gender === 0} onCheckChange={(checked) => this.onGenderChange(0)}>Female</Checkbox>
+                <Checkbox type={CheckboxType.square} checked={gender === 1} onCheckChange={(checked) => this.onGenderChange(1)}>Male</Checkbox>
+                <Checkbox type={CheckboxType.square} checked={gender === 2} onCheckChange={(checked) => this.onGenderChange(2)}>Non-binary</Checkbox>
+                <Checkbox type={CheckboxType.square} checked={gender === 3} onCheckChange={(checked) => this.onGenderChange(3)}>Prefer not to answer</Checkbox>
+              </div>
+              <div className='job-apply-form-selection-group'>
+                <div className='job-apply-form-selection-group-title'>PLEASE SELECT YOUR SEXUAL ORIENTATION:</div>
+                <Checkbox type={CheckboxType.square} checked={sexOrientation === 0} onCheckChange={(checked) => this.onSexOrientationChange(0)}>Straight/Heterosexual</Checkbox>
+                <Checkbox type={CheckboxType.square} checked={sexOrientation === 1} onCheckChange={(checked) => this.onSexOrientationChange(1)}>Gay/Lesbian</Checkbox>
+                <Checkbox type={CheckboxType.square} checked={sexOrientation === 2} onCheckChange={(checked) => this.onSexOrientationChange(2)}>Bisexual</Checkbox>
+                <Checkbox type={CheckboxType.square} checked={sexOrientation === 3} onCheckChange={(checked) => this.onSexOrientationChange(3)}>Asexual</Checkbox>
+                <Checkbox type={CheckboxType.square} checked={sexOrientation === 4} onCheckChange={(checked) => this.onSexOrientationChange(4)}>Prefer not to answer</Checkbox>
+              </div>
+              <div className='job-apply-form-selection-group'>
+                <div className='job-apply-form-selection-group-title'>ARE YOU A VETERAN OF THE U.S. ARMED FORCES?</div>
+                <Checkbox type={CheckboxType.square} checked={armyVeteran === 0} onCheckChange={(checked) => this.onArmyVeteranChange(0)}>Yes</Checkbox>
+                <Checkbox type={CheckboxType.square} checked={armyVeteran === 1} onCheckChange={(checked) => this.onArmyVeteranChange(1)}>No</Checkbox>
               </div>
             </div>
           }
