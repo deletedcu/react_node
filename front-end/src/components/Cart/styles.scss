@@ -9,7 +9,7 @@
   border-radius: 10px;
 
   img {
-    height: 24px;
+    height: 30px;
     margin-right: 10px;
   }
 
@@ -34,8 +34,13 @@
 }
 
 .div-cart-highlighted {
-  border: unset;
-  background-color: $green-primary;
+  background-color: transparent;
+  padding: unset;
+  border-color: transparent;
+
+  img {
+    margin: unset;
+  }
 
   span {
     color: white;

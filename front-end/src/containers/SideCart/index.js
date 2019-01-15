@@ -7,7 +7,6 @@ import SideCartSummary from './components/SideCartSummary'
 
 import './styles.css'
 
-import imgClose from '../../assets/images/close_button.svg'
 import imgEmptyCart from '../../assets/images/empty_cart.svg'
 
 import { hideSidebar } from '../../redux/actions/sideBar'
@@ -50,21 +49,17 @@ class SideCart extends Component {
       <div className='div-side-cart-container'>
         {/* SideBar Header */}
         <div className={classNames('div-side-cart-header', {'div-side-cart-header-no-border': isCartEmpty})}>
-          <div className='div-side-cart-header-left'>
-            <Cart
-              history={ history }
-              highlighted={ true }
-            />
-            { !isCartEmpty && <span className='div-side-cart-header-title'>YOUR CART</span> }
-          </div>
-          
-          <div className='div-side-cart-header-right'>
-            <img className='clickable' src={imgClose} alt='close' onClick={ this.onClose }/>
-          </div>
+          <Cart
+            history={ history }
+            highlighted={ true }
+          />
+          { !isCartEmpty && <span className='div-side-cart-header-title'>YOUR CART</span> }
         </div>
 
         {/* Clear All button */}
+        { !isCartEmpty &&
         <div className='div-clear-all clickable' onClick={this.onClearAll}>Clear All</div>
+        }
 
         {/* Cart Items Or Show Empty Cart */}
         { isCartEmpty ? 

@@ -36,7 +36,9 @@ class Cart extends Component {
     return (
       <div className={classNames('div-cart', 'clickable', {'div-cart-highlighted': this.props.highlighted})} onClick={ this.onClickCart }>
         <img className='img-cart' src={imgCart} alt='cart'/>
-        <span>{ this.state.purchasedCount }</span>
+        { !this.props.highlighted &&
+          <span>{ this.state.purchasedCount }</span>
+        }
       </div>
     )
   }
