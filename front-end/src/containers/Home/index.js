@@ -12,7 +12,6 @@ import BottomForm from './components/BottomForm'
 import './styles.css'
 
 import imgBanner from '../../assets/images/banner.png';
-import imgArrowRight from '../../assets/images/arrow-right.svg'
 import imgOrders from '../../assets/images/menu.gif'
 import imgTrack from '../../assets/images/track.gif'
 import imgReceive from '../../assets/images/deliver.png'
@@ -67,7 +66,11 @@ class Home extends Component {
   }
 
   onShareExperience = () => {
-    this.props.dispatch(showModal(ModalType.shareExperienceModal))
+    if (this.props.user.loggedIn) {
+      this.props.dispatch(showModal(ModalType.shareExperienceModal))
+    } else {
+      this.props.history.push('/auth/signup')
+    }
   }
 
   render () {
@@ -105,17 +108,15 @@ class Home extends Component {
                 featuredMenuItems.map((featuredMenuItem, index) => {
                   return (
                     <div key={index} className='div-featured-menu-wrapper col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3'>
-                      <FeaturedMenu item={featuredMenuItem} />
+                      <FeaturedMenu 
+                        item={featuredMenuItem} 
+                        history={this.props.history}
+                      />
                     </div>
                   )
                 })
               }
             </div>
-          </div>
-          <div className='div-all-products-container'>
-            <Button className='btn-all-products' onClick={ this.onViewAllProducts }>
-              <span>View All Products</span><img src={imgArrowRight} alt='arrow_right'/>
-            </Button>
           </div>
         </div>
 
@@ -167,10 +168,7 @@ class Home extends Component {
             </Slider>
           </div>
 
-          { 
-            this.props.user.loggedIn &&
-            <Button className='btn-share-experience' onClick={this.onShareExperience}>Share Your Experience</Button>
-          }
+          <Button className='btn-share-experience' onClick={this.onShareExperience}>Share Your Experience</Button>
         </div>
 
         {/* Location Search */}

@@ -9,7 +9,6 @@ import './styles.css'
 import { updateUserProfile } from '../../../redux/actions/user'
 import { closeModal } from '../../../redux/actions/modal'
 
-// import imgClose from '../../../assets/images/close_button.svg'
 import imgDownArrow from '../../../assets/images/down_arrow_green.svg'
 
 class EditProfileModal extends Component {

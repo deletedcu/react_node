@@ -6,8 +6,6 @@ import './styles.css'
 
 import { closeModal } from '../../../redux/actions/modal'
 
-// import imgClose from '../../../assets/images/close_button.svg'
-
 class OrderCancelModal extends Component {
 
   onCancelOrder = () => {

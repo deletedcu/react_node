@@ -77,7 +77,7 @@ class SideCartSummary extends Component {
               <div className='side-cart-summary-price-value'>{ taxes }</div>
             </div>
 
-            <div className='side-cart-summary-price'>
+            <div className='side-cart-summary-price bold'>
               <div className='side-cart-summary-price-title'>ESTIMATED TOTAL</div>
               <div className='side-cart-summary-price-value'>{`$${estimatedTotal.toFixed(2)}`}</div>
             </div>

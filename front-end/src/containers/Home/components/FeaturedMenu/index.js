@@ -15,9 +15,12 @@ class FeaturedMenu extends Component {
   }
 
   onQuickOrder = () => {
-    this.props.dispatch(addToCart(this.props.item))
-
-    // showNotification('Added to cart', 'success')
+    if (this.props.user.loggedIn) {
+      this.props.dispatch(addToCart(this.props.item))
+      this.props.history.push('/menus')
+    } else {
+      this.props.history.push('/auth/signup')
+    }
   }
 
   render () {
@@ -61,6 +64,7 @@ class FeaturedMenu extends Component {
 
 function mapStateToProps(state) {
   return {
+    user: state.user,
   }
 }
 

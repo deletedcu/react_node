@@ -8,7 +8,6 @@ import MenuAddressInput from '../MenuAddressInput'
 import './styles.css'
 
 import imgSearch from '../../../../assets/images/search.svg'
-import imgPinPoint from '../../../../assets/images/pinpoint.svg'
 
 class MenusHeader extends Component {
 
@@ -46,7 +45,6 @@ class MenusHeader extends Component {
 
         <div className='div-menus-header-right'>
           <div className='div-zip-code'>
-            <img className='img-pinpoint' src={imgPinPoint} alt='pinpoint'/>
             <span className='span-title'>DELIVER TO: </span>
             <MenuAddressInput />
           </div>

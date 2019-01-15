@@ -69,35 +69,6 @@
         margin-top: 30px;
       }
     }
-
-    .div-all-products-container {
-      text-align: center;
-      margin-top: 60px;
-
-      .btn-all-products {
-        width: 247px;
-        height: 53px;
-        border-radius: 5px;
-        font-size: $mobile-regular-font-size - 1;
-        font-family: 'Montserrat-Medium';
-        border: .75px solid #3E8541;
-        
-        img {
-          width: 20px;
-          height: 20px;
-          margin-left: 40px;
-        }
-      }
-
-      @media (max-width: 710px) {
-        width: calc(100% - 80px);
-        margin-left: 40px;
-    
-        .btn-all-products {
-          width: 100%;
-        }
-      }
-    }
   }
 
   .div-how-it-works-container {
@@ -186,12 +157,15 @@
     }
 
     .btn-share-experience {
+      color: $green-secondary;
+      background-color: #FAFBFC;
+      box-shadow: unset;
       font-size: $mobile-regular-font-size - 1;
       font-family: 'Montserrat-Medium';
-      border: .75px solid #3E8541;
-      border-radius: 5px;
-      width: 247px;
-      height: 53px;
+      border: 1px solid #B7CBB8;
+      border-radius: 4px;
+      width: 208px;
+      height: 48px;
       margin-top: 40px;
       margin-left: 50%;
       transform: translateX(-50%);

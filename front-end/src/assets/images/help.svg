@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 22"><defs><style>.a{fill:#fff;}.b{fill:#333;font-size:18px;font-family:Montserrat-Regular, Montserrat;}</style></defs><g transform="translate(-880 -3428)"><circle class="a" cx="10" cy="10" r="10" transform="translate(880 3429)"/><text class="b" transform="translate(886 3445)"><tspan x="0" y="0">?</tspan></text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="Group_1" data-name="Group 1" transform="translate(-573.084 -368.442)">
+    <g id="Group_228" data-name="Group 228" transform="translate(573.084 367.443)">
+      <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="10" cy="10" rx="10" ry="10" transform="translate(0 0.999)" fill="#fff"/>
+      <text id="_" data-name="?" transform="translate(6 16.001)" fill="#333" font-size="14" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">?</tspan></text>
+    </g>
+  </g>
+</svg>

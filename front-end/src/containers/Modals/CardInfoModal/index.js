@@ -6,8 +6,6 @@ import Button from '../../../components/Button'
 
 import './styles.css'
 
-// import imgClose from '../../../assets/images/close_button.svg'
-
 import { closeModal } from '../../../redux/actions/modal'
 
 class CardInfoModal extends Component {

@@ -58,6 +58,11 @@
       justify-content: space-between;
       font-size: $mobile-regular-font-size - 1;
     }
+
+    .bold {
+      font-size: $mobile-regular-font-size + 0.5;
+      font-family: 'Montserrat-Medium';
+    }
   }
 
   .btn-checkout {

@@ -12,7 +12,6 @@ import ExpandableDescription from './component/ExpandableDescription'
 
 import './styles.css'
 
-// import imgClose from '../../../assets/images/close_button.svg'
 import imgHighProtein from '../../../assets/images/high-protein.svg'
 import imgGlutenFree from '../../../assets/images/gluten-free.svg'
 import imgLowFat from '../../../assets/images/low-fat.png'

@@ -3,7 +3,7 @@ import FacebookLogin from 'react-facebook-login'
 
 import './styles.css'
 
-import imgFacebook from '../../../../assets/images/facebook_green.svg'
+import imgFacebook from '../../../../assets/images/google.svg'
 
 const FacebookButton = (props) => {
   return (
@@ -13,7 +13,7 @@ const FacebookButton = (props) => {
       callback={ props.callback }
       cssClass='facebook-button'
       icon={<img src={imgFacebook} alt='fb'/>}
-      textButton='CONTINUE WITH FACEBOOK'
+      textButton='CONTINUE WITH GOOGLE'
     />
   )
 }

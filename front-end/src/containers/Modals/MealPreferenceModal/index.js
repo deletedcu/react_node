@@ -7,7 +7,7 @@ import RadioButton from '../../../components/RadioButton'
 import Checkbox, { CheckboxType } from '../../../components/Checkbox'
 
 import './styles.css'
-import imgClose from '../../../assets/images/close_button.svg'
+import imgClose from '../../../assets/images/close_gray.svg'
 
 import { closeModal } from '../../../redux/actions/modal'
 
