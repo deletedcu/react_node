@@ -13,14 +13,11 @@
 
   .div-comingsoon-header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: 60px 100px;
-    
-    a {
-      color: white;
-      font-size: $mobile-regular-font-size;
-      font-family: 'Montserrat-Bold';
-      margin-left: 30px;
+
+    .img-logo {
+      height: 45px;
     }
   }
 
@@ -31,23 +28,23 @@
     align-items: center;
 
     .div-comingsoon-center-content {
-      width: 500px;
+      width: 486px;
       font-size: $small-font-size - 1;
 
-      .img-logo {
-        height: 50px;
-        margin-bottom: 45px;  
-        margin-left: 50%;
-        transform: translateX(-50%);
+      .div-comingsoon-title, .div-comingsoon-subtitle {
+        color: white;
+        font-family: 'Montserrat-SemiBold';
+        text-align: center;
       }
 
-      .div-note {
-        background-color: white;
-        border-radius: 3px;
-        padding: 20px;
-        padding-right: 60px;
-        color: #6B86A8;
-        margin-bottom: 25px;
+      .div-comingsoon-title {
+        font-size: 30px;
+        margin-bottom: 15px;
+      }
+
+      .div-comingsoon-subtitle {
+        font-size: $small-font-size - 1;
+        margin-bottom: 60px;
       }
 
       .div-input {
@@ -71,45 +68,39 @@
           font-size: $small-font-size;
         }
       }
-    }
-  }
 
-  .div-comingsoon-social-links {
-    display: flex;
-    justify-content: center;
-    padding: 75px 0;
-
-    img {
-      height: 23px;
-      margin: 0 8px;
+      .div-comingsoon-social-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 70px;
+    
+        img {
+          height: 24px;
+          margin: 0 8px;
+        }
+      }
     }
   }
 
   .div-comingsoon-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 35px 80px;
 
-    .div-comingsoon-bottom-left {
-      display: flex;
-      align-items: center;
-
-      a, span {
-        color: #AFAFAF;
-        font-size: $small-font-size;
-      }
-
-      .separator {
-        height: 15px;
-        background-color: white;
-        width: 1px;
-        margin: 0 20px;
-      }
+    a, span {
+      color: #AFAFAF;
+      font-size: $small-font-size - 1;
     }
 
-    .img-globe {
-      height: 20px;
+    .separator {
+      height: 15px;
+      background-color: white;
+      width: 1px;
+      margin: 0 20px;
     }
   }
 }

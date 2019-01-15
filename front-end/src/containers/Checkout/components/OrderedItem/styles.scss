@@ -19,6 +19,12 @@ $ordered-item-size: 78px;
     color: $text-light-gray;
     font-size: $mobile-regular-font-size;
     font-family: 'Montserrat-Medium';
+
+    .ordered-item-info-count {
+      font-size: $mobile-regular-font-size - 1;
+      color: #959BA2;
+      padding-left: 10px;
+    }
   }
 
   @media (max-width: 710px) {

@@ -9,8 +9,7 @@ const OrderedItem = (props) => {
     <div className={ classNames('ordered-item', props.className) } style={ props.style }>
       <LazyImage className='img-item' src={ props.image }/>
       <div className='ordered-item-info'>
-        <div>{ props.title }</div>
-        <div className='ordered-item-info-count'>{ props.count }</div>
+        <div>{ props.title }<span className='ordered-item-info-count'>{ props.count }</span></div>
       </div>
     </div>
   )

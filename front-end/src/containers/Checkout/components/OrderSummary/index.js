@@ -17,6 +17,7 @@ class OrderSummary extends Component {
     super(props)
 
     this.state = {
+      promoCodeEnabled: false,
       showPromoCode: false,
       promoCode: '',
       deliveryDate: props.deliveryDate,
@@ -42,6 +43,12 @@ class OrderSummary extends Component {
       deliveryDate: date,
     }, () => {
       this.onDateChange(date)
+    })
+  }
+
+  onEnablePromoCode = () => {
+    this.setState({
+      promoCodeEnabled: true,
     })
   }
 
@@ -104,19 +111,22 @@ class OrderSummary extends Component {
             <span className='span-light-gray'>FREE</span>
           </div>
 
-          {/* Promo Code Input */}
-          { this.state.showPromoCode &&
-          <div className='order-summary-promo-price'>
-            <span className='span-promo-price-title'>Add Gift Card or Promo Code</span>
-            <span className='span-promo-price-value'>-$35.00</span>
-          </div>
-          }
-
-          { !this.state.showPromoCode &&
-            <div className='order-summary-promo-input'>
-              <input type='text' placeholder='Add Gift Card or Promo Code' name='promoCode' value={ this.state.promoCode } onChange={ this.onChange }/>
-              <span className={ classNames('clickable', {'span-apply-active': this.state.promoCode }) } onClick={ this.onApplyPromoCode }>APPLY</span>
-            </div>
+          { 
+            this.state.promoCodeEnabled ?
+            (
+              this.state.showPromoCode ? 
+              <div className='order-summary-promo-price'>
+                <span className='span-promo-price-title'>{`Promo Code (${this.state.promoCode})`}</span>
+                <span className='span-promo-price-value'>-$35.00</span>
+              </div>
+              :
+              <div className='order-summary-promo-input'>
+                <input type='text' placeholder='Add Gift Card or Promo Code' name='promoCode' value={ this.state.promoCode } onChange={ this.onChange }/>
+                <span className={ classNames('clickable', {'span-apply-active': this.state.promoCode }) } onClick={ this.onApplyPromoCode }>APPLY</span>
+              </div>
+            )
+            :
+            <div className='order-summary-promo-enable clickable' onClick={this.onEnablePromoCode}>Add Gift Card or Promo Code</div>
           }
 
           {/* Separator */}

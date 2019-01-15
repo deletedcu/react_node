@@ -62,32 +62,26 @@ $order-summary-header-height: 70px;
       color: #ACACAC;
     }
 
+    .order-summary-promo-enable, .order-summary-promo-input, .order-summary-promo-price {
+      font-size: $mobile-regular-font-size - 1;
+      padding: 0 $padding;
+      margin: $margin 0;
+      font-family: 'Montserrat-Bold';
+    }
+
+    .order-summary-promo-enable {
+      color: #266D16;
+    }
+
     .order-summary-promo-price {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 0 $padding;
-      margin: $margin 0;
+      align-items: center;    
       color: #266D16;
-
-      .span-promo-price-title {
-        font-family: 'Montserrat-Bold';
-        font-size: $mobile-regular-font-size - 1;
-        margin-left: 15px;
-      }
-
-      .span-promo-price-value {
-        font-size: $mobile-regular-font-size;
-        font-family: 'Montserrat-Medium';
-      }
     }
 
     .order-summary-promo-input {
       position: relative;
-      margin-top: $margin;
-      margin-bottom: $padding - 10px;
-      padding-left: $padding - 10px;
-      padding-right: $padding - 10px;
 
       input {
         width: calc(100% - 170px);
@@ -96,8 +90,6 @@ $order-summary-header-height: 70px;
         padding-bottom: 3px;
         margin-right: 180px;
         caret-color: $text-light-gray;
-        font-size: $mobile-regular-font-size - 1;
-        font-family: 'Montserrat-Bold';
         border-bottom: 1px solid $text-light-gray;
       }
 
@@ -110,6 +102,7 @@ $order-summary-header-height: 70px;
         color: #56B05A;
         text-align: center;
         border-radius: 5px;
+        font-family: 'Montserrat-Medium';
       }
     }
 
@@ -197,6 +190,10 @@ $order-summary-header-height: 70px;
       .order-summary-info-block, .order-summary-info-block-highlighted {
         padding-left: 20px;
         padding-right: 20px;
+      }
+
+      .order-summary-promo-enable {
+        padding: 0 20px;
       }
 
       .order-summary-promo-input {
