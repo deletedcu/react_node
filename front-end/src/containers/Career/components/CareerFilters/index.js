@@ -9,7 +9,6 @@ class CareerFilters extends Component {
     return (
       <div className='career-filters'>
         <span className='career-filters-title'>FILTER BY: </span>
-        <CareerFilter type='CITY'/>
         <CareerFilter type='TEAM'/>
         <CareerFilter type='WORK TYPE'/>
       </div>
