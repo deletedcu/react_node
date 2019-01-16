@@ -27,26 +27,28 @@
 
   .div-how-it-works-title {
     font-size: $large-font-size - 2;
-    font-family: 'Montserrat-SemiBold';
+    font-family: 'Montserrat-Bold';
     color: $text-black;
     text-align: left;
+    line-height: 100px;
   }
 
   .div-how-it-works-description {
-    font-size: $footer-primary-font-size + 1;
-    color: $text-light-gray;
+    font-size: $regular-font-size + 2;
+    color: #515551;
     text-align: left;
     margin-top: 50px;
+    line-height: 50px;
   }
 
   .btn-learn-more {
     background-color: transparent;
     border: 1px solid #18AD1F;
     color: $green-primary;
-    font-size: $mobile-regular-font-size;
+    font-size: $mobile-regular-font-size + 2;
     font-family: 'Montserrat-Medium';
-    width: 194px;
-    height: 53px;
+    width: 200px;
+    height: 54.8px;
     border-radius: 32px;
     box-shadow: unset;
     margin-top: 40px;
@@ -132,11 +134,13 @@
 
       .div-how-it-works-title {
         font-size: $medium-font-size;
+        line-height: 50px;
       }
 
       .div-how-it-works-description {
         font-size: $small-font-size;
         margin-top: 20px;
+        line-height: 25px;
       }
 
       .btn-learn-more {

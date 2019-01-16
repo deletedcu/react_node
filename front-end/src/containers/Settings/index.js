@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import routes from './routes'
 import SettingsMenu from './components/SettingsMenu'
 import './styles.css'
@@ -40,14 +40,6 @@ class Settings extends Component {
           <div className='div-settings-page'>
             { routes }
           </div>
-        </div>
-  
-        {/* Footer - Contact us */}
-        <div className='div-settings-contact'>
-          Need help? Visit the&nbsp;
-          <Link to='/help-center'><span>Help Center</span></Link>
-          &nbsp;or&nbsp;
-          <a className='clickable' onClick={this.onContactUs}><span>Contact Us</span></a>
         </div>
       </div>
       :

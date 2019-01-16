@@ -7,7 +7,7 @@ import './styles.css'
 export const Languages = {
   English: 'English',
   Espanol: 'Español (LA)',
-  Portugues: 'Português (BRASIL)',
+  Portugues: 'Português',
   Deutsch: 'Deutsch',
   Japan: '日本語',
   Korea: '한국어',

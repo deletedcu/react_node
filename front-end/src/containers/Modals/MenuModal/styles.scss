@@ -178,10 +178,10 @@
 
         .div-ingredients {
           color: #6F6F6F;
-          font-size: $mobile-regular-font-size;
+          font-size: $mobile-regular-font-size + 1;
           font-family: 'OpenSans-Regular';
           margin-right: 5px;
-          line-height: 25px;
+          line-height: 20px;
         }
       }
 
@@ -236,6 +236,8 @@
         height: 100%;
         margin-left: 10px;
         font-size: $mobile-regular-font-size;
+        font-family: 'Montserrat-Medium';
+        word-spacing: 3px;
       }
     }
 

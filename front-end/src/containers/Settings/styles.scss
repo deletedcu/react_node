@@ -21,20 +21,6 @@
     }
   }
 
-  .div-settings-contact {
-    padding: 90px 0 90px;
-    text-align: center;
-    background-color: #F1F1F1;
-    color: $text-light-gray;
-    font-size: $small-font-size - 1;
-    font-family: 'OpenSans-Regular';
-
-    span {
-      color: $green-primary;
-      text-decoration: underline;
-    }
-  }
-
   @media (max-width: 1024px) {
     .div-settings-body {
       margin-top: 50px;
@@ -47,10 +33,6 @@
     .div-settings-body {
       margin-top: 25px;
       margin-bottom: 25px;
-    }
-
-    .div-settings-contact {
-      padding: 50px 30px;
     }
   }
 }

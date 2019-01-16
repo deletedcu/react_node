@@ -26,7 +26,7 @@
   .job-apply-form {
     margin-top: 20px;
     margin-bottom: 30px;
-    overflow-y: scroll;
+    overflow: hidden;
     font-size: $mobile-regular-font-size;
 
     input, textarea {
@@ -145,5 +145,9 @@
     .btn-submit {
       @extend %button;
     }
+  }
+
+  .has-scroll {
+    overflow-y: scroll;
   }
 }

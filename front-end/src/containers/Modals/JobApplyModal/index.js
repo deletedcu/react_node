@@ -190,7 +190,7 @@ class JobApplyModal extends Component {
                 </div>
                 <div className='job-apply-form-single-input'>
                   <div className='job-apply-form-input-title'>COVER LETTER*</div>
-                  <Button className='btn-attach' onClick={this.onAttachCoverLetter}>{ coverletterFile ? 'Cover Letter Attached' : 'ATTACH' }</Button>
+                  <Button className='btn-attach' onClick={this.onAttachCoverLetter}>{ coverletterFile ? 'Cover Letter Attached!' : 'ATTACH' }</Button>
                   <input className='input-file-uploader' ref='coverletterInput' type='file' onChange={this.onUploadCoverLetter}/>
                 </div>
               </div>
@@ -224,7 +224,7 @@ class JobApplyModal extends Component {
 
           { 
             currentStep === JobApplyStep.diversitySurvey &&
-            <div className='job-apply-form'>
+            <div className='job-apply-form has-scroll'>
               <div className='job-apply-form-description'>
                 Mealpost is dedicated to creating and sustaining a diverse workplace. To achieve
                 this, we have some questions which will help us see how well we are doing, and

@@ -23,7 +23,9 @@
       position: relative;
       text-align: center;
       color: #5B5B5B;
-      font-size: $mobile-regular-font-size - 1;
+      font-size: $mobile-regular-font-size;
+      font-family: 'OpenSans-Regular';
+      line-height: 16px;
       top: calc(50% - 55px);
       transform: translateY(-50%);
     }

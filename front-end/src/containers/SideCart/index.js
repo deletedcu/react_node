@@ -49,10 +49,12 @@ class SideCart extends Component {
       <div className='div-side-cart-container'>
         {/* SideBar Header */}
         <div className={classNames('div-side-cart-header', {'div-side-cart-header-no-border': isCartEmpty})}>
-          <Cart
-            history={ history }
-            highlighted={ true }
-          />
+          { !isCartEmpty &&
+            <Cart
+              history={ history }
+              // highlighted={ true }
+            />
+          }
           { !isCartEmpty && <span className='div-side-cart-header-title'>YOUR CART</span> }
         </div>
 

@@ -61,11 +61,12 @@
 
     .div-feedback-content {
       color: $text-light-gray;
-      font-size: $mobile-regular-font-size;
+      font-size: $mobile-regular-font-size + 1;
+      font-family: 'OpenSans-Regular';
       overflow: hidden;
       text-align: left;
       margin-top: 10px;
-      line-height: 19px;
+      line-height: 18px;
     }
   }
 }

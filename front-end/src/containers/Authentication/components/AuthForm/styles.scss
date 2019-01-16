@@ -118,6 +118,9 @@
     margin-top: 20px;
     font-size: $mobile-regular-font-size;
     font-family: 'OpenSans-Regular';
+    line-height: 20px;
+    word-spacing: 0;
+    letter-spacing: 0;
 
     .auth-form-footer-signup, .auth-form-footer-login {
       margin-top: 20px;
