@@ -42,8 +42,7 @@ class HowItWorks extends Component {
               <div className='div-meal-plan-wrapper col-12 col-lg-6'>
                 <MealPlan
                   title='Single Plan'
-                  subtitle1='Minimum'
-                  subtitle2='4 MEALS / Week'
+                  mealCount={4}
                   image={ imgPlan }
                   startPrice='9.95'
                   totalPrice='39.90'
@@ -53,7 +52,7 @@ class HowItWorks extends Component {
               <div className='div-meal-plan-wrapper col-12 col-lg-6'>
                 <MealPlan
                   title='Family Plan'
-                  subtitle2='6 MEALS / Week'
+                  mealCount={6}
                   image={ imgPlan }
                   startPrice='9.95'
                   totalPrice='59.70'
