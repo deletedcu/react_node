@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import LazyImage from '../../components/LazyImage'
-import GiftCardGroup from './components/GiftCardGroup'
+import classNames from 'classnames'
+import Button from '../../components/Button'
 import GiftCardPanel from './components/GiftCardPanel'
-import GiftCardForm from './components/GiftCardForm'
+import GiftDatePicker from './components/GiftDatePicker'
 
 import './styles.css'
-import imgBanner from '../../assets/images/banner_1.png'
+import imgNext from '../../assets/images/next.svg'
+
+const GiftCardStep = {
+  PriceForm: 0,
+  RecipientForm: 1,
+  PersonalMessageForm: 2, 
+}
 
 class GiftCards extends Component {
 
@@ -14,7 +19,14 @@ class GiftCards extends Component {
     super(props)
 
     this.state = {
+      step: GiftCardStep.PriceForm,
+      
       price: 60,
+      fromName: '',
+      toName: '',
+      email: '',
+      personalMessage: '',
+      forMe: false,
     }
   }
 
@@ -24,11 +36,35 @@ class GiftCards extends Component {
     })
   }
 
-  onRedeemCode = () => {
-    this.props.history.push('/settings/redeem_credit')
+  onChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  onNextToRecipientForm = () => {
+    this.setState({
+      step: GiftCardStep.RecipientForm,
+    })
+  }
+
+  onNextToPersonalMessage = (e) => {
+    e.preventDefault()
+
+    this.setState({
+      step: GiftCardStep.PersonalMessageForm,
+    })
+  }
+
+  onCheckout = (e) => {
+    e.preventDefault()
+
+    // TODO
   }
 
   render () {
+    const { fromName, toName, email, forMe, personalMessage, step } = this.state
+
     return (
       <div>
         {/* Desktop Layout */}
@@ -47,38 +83,67 @@ class GiftCards extends Component {
 
           {/* Content */}
           <div className='div-giftcards-content'>
-            <GiftCardPanel onChange={this.onChangePrice} onRedeemCode={this.onRedeemCode}/>
-            <GiftCardForm/>
-          </div>
-        </div>
-
-        {/* Mobile Responsive */}
-        <div className='responsive-giftcards-container'>
-          {/* Banner and Title */}
-          <div className='div-giftcards-banner'>
-            <LazyImage className='img-banner' src={ imgBanner } disableSpinner={true} />
-            <div className='div-giftcards-title'>
-              Give the gift of Mealpost
-              <div className='div-giftcards-subtitle'>
-                Treat your friends and family to most delicious gift of all.
+            {/* Price selection form */}
+            { 
+              step === GiftCardStep.PriceForm && 
+              <div className='giftcard-form'>
+                <div className='giftcard-form-title'>Choose Amount</div>
+                <GiftCardPanel onChange={this.onChangePrice}/>
+                <Button className='btn-next' onClick={this.onNextToRecipientForm}><span>Next</span><img src={imgNext} alt='next'/></Button>
               </div>
-            </div>
-          </div>
+            }
 
-          <div className='div-giftcards-content'>
-            {/* Gift Cards */}
-            <GiftCardGroup onChange={this.onChangePrice}/>
+            {/* Recipient input form */}
+            { 
+              step === GiftCardStep.RecipientForm &&
+              <div className='giftcard-form'>
+                <div className='giftcard-form-title'>Who is it for?</div>
+                <div className='giftcard-form-for'>
+                  <span className={classNames('clickable', {'has-bottom-border': !forMe})} onClick={()=>this.setState({forMe: false})}>A Friend</span>
+                  <span className={classNames('clickable', {'has-bottom-border': forMe})} onClick={()=>this.setState({forMe: true})}>For Me</span>
+                </div>
 
-            {/* Form */}
-            <GiftCardForm/>
+                { forMe ?
+                  <Button type='submit' className='btn-next' onClick={this.onNextToPersonalMessage}><span>Next</span><img src={imgNext} alt='next'/></Button>
+                  :
+                  <form onSubmit={this.onNextToPersonalMessage}>
+                    <div className='gift-card-form-name'>From</div>
+                    <input className='form-input' required type='text' name='fromName' value={fromName} onChange={this.onChange}/>
 
-            {/* Redeem link */}
-            <Link to='/settings/redeem_credit' className='link-redeem-code'>Redeem your code.</Link>
-          </div>
-          
-          {/* Bottom note */}
-          <div className='div-giftcards-bottom'>
-            Gift Cards are non-refundable (unless required by law) and are subject to our Gift Card Terms. Your payment card will be charged at the time of purchase. Add a personalized note, or send them a surprise! Treat your friends and family to the perfect gift of delicious food.
+                    <div className='gift-card-form-name'>Send Gift To</div>
+                    <input className='form-input' required type='text' name='toName' value={toName} onChange={this.onChange} placeholder={`Recipient's Name`}/>
+
+                    <input className='form-input' required type='email' name='email' value={email} onChange={this.onChange} placeholder={`Recipient's Email`}/>
+
+                    <Button type='submit' className='btn-next'><span>Next</span><img src={imgNext} alt='next'/></Button>
+                  </form>
+                }
+              </div>
+            }
+
+            {/* Personal Message Form */}
+            {
+              step === GiftCardStep.PersonalMessageForm &&
+              <div className='giftcard-form'>
+                <div className='giftcard-form-title'>Add a personalized message</div>
+                <form onSubmit={this.onCheckout}>
+                  <div className='gift-card-form-message'>
+                    <div className='gift-card-form-message-title'>Your Message (optional)</div>
+                    <textarea name='personalMessage' value={personalMessage} onChange={this.onChange}/>
+                  </div>
+
+                  <div className='gift-card-form-datepicker'>
+                    <div className='gift-card-form-datepicker-title'>Delivery Date</div>
+                    <GiftDatePicker onChange={this.onDateChange}/>
+                  </div>
+
+                  <Button type='submit' className='btn-checkout'>CHECKOUT</Button>
+                </form>
+                <div className='giftcard-form-bottom'>
+                  Gift Cards are subject to our Terms and Conditions. Gift Cards will never expire, and will be redeemable via our Website, Mobile App, or anywhere Mealpost is available. This card is non-reloadable and, cannot be redeemed for cash, refunded, or returned.
+                </div>
+              </div>
+            }
           </div>
         </div>
       </div>

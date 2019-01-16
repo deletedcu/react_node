@@ -20,79 +20,158 @@
       margin: 30px 20px 0;
       max-width: 550px;
       color: $text-light-gray;
-      font-size: $mobile-regular-font-size;
-      line-height: 33px;
+      font-size: $mobile-regular-font-size + 1;
+      font-family: 'OpenSans-Regular';
+      line-height: 30px;
     }
   }
 
   .div-giftcards-content {
+    width: 674px;
     margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    .giftcard-panel {
-      width: 420px;
-    }
+    .giftcard-form {
+      padding: 50px 120px 45px;
+      border: 1px solid rgba(112, 112, 112, 0.36);
+      background-color: white;
 
-    .gift-card-form {
-      width: 420px;
-      margin-top: 20px;
-    }
-  }
-
-  @media (max-width: 710px) {
-    display: none;
-  }
-}
-
-.responsive-giftcards-container {
-  display: none;
-
-  @media (max-width: 710px) {
-    display: block;
-
-    .div-giftcards-banner {
-      position: relative;
-      height: 350px;
-
-      .div-giftcards-title {
-        position: relative;
+      .giftcard-form-title {
+        font-size: $footer-secondary-font-size + 2;
+        font-family: 'Montserrat-SemiBold';
         text-align: center;
-        font-size: $regular-font-size;
-        top: 50%;
-        transform: translateY(-50%);
-        font-family: 'Montserrat-Regular';
+      }
 
-        .div-giftcards-subtitle {
-          margin-top: 20px;
+      .giftcard-panel {
+        margin-top: 30px;
+      }
+
+      %input-field {
+        display: block;
+        width: 426px;
+        border-radius: 4px;
+        border: 1px solid $text-light-gray;
+        padding: 12px;
+        font-size: $mobile-regular-font-size;
+        font-family: 'OpenSans-Regular';
+        margin: 5px 0 10px;
+    
+        &::placeholder {
+          color: #5B5B5B50;
+          opacity: 1;
+        }
+        
+        &:-ms-input-placeholder {
+            color: #B7CBB8;
+        }
+        
+        &::-ms-input-placeholder {
+            color: #B7CBB8;
+        }
+      }
+    
+      .form-input {
+        @extend %input-field;
+        height: 46px;
+      }
+    
+      textarea {
+        @extend %input-field;
+        height: 90px;
+        resize: none;
+      }
+    
+      .gift-card-form-name {
+        color: $text-light-gray;
+        font-size: $mobile-regular-font-size;
+        font-family: 'Montserrat-Medium';
+      }
+
+      .giftcard-form-for {
+        width: 167px;
+        margin: 30px auto 20px;
+        display: flex;
+        border-bottom: 1px solid rgba(28, 28, 28, .85);
+        
+        span {
+          width: 50%;
+          padding-bottom: 15px;
+          font-size: $mobile-regular-font-size;
+          font-family: 'Montserrat-Medium';
+          text-align: center;
+        }
+
+        .has-bottom-border {
+          border-bottom: 4px solid #47944A;
+        }
+      }
+
+      .gift-card-form-datepicker {
+        margin-top: 10px;
+    
+        .gift-card-form-datepicker-title {
+          color: $text-light-gray;
+          font-size: $mobile-regular-font-size;
+        }
+
+        input {
+          @extend %input-field;
+          height: 46px;
+        }
+      }
+    
+      .gift-card-form-message {
+        margin-top: 10px;
+    
+        .gift-card-form-message-title {
           color: $text-light-gray;
           font-size: $mobile-regular-font-size;
         }
       }
-    }
 
-    .div-giftcards-content {
-      padding: 40px 30px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .gift-card-form {
+      .button {
+        font-family: 'Montserrat-Medium';
+        border-radius: 4px;
+        padding: 0 30px;
+      }
+    
+      .btn-checkout {
         width: 100%;
-      }
-
-      .link-redeem-code {
-        color: $green-secondary;
+        height: 46px;
+        color: white;
+        margin-top: 15px;
+        border: 1px solid $green-secondary;
         font-size: $mobile-regular-font-size;
-        margin-top: 20px;
       }
-    }
 
-    .div-giftcards-bottom {
-      margin: 20px 38px 60px;
-      font-size: 12px;
-      color: $text-light-gray;
+      .btn-next {
+        margin: 30px auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 169px;
+        height: 52px;
+        background-color: #3D3D3D;
+        font-size: $mobile-regular-font-size + 1;
+
+        img {
+          height: 15px;
+        }
+      }
+
+      form {
+        margin-top: 10px;
+
+        .btn-next {
+          margin-top: 48px;
+        }
+      }
+
+      .giftcard-form-bottom {
+        color: $text-light-gray;
+        font-family: 'OpenSans-Regular';
+        font-size: $mobile-regular-font-size - 2.5;
+        margin: 10px 40px 0;
+      }
     }
   }
 }
