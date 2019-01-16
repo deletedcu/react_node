@@ -4,7 +4,8 @@ $page-padding: 70px;
 
 .div-checkout-container {
   background-color: #F1F1F1;
-  padding-top: 70px;
+  padding: 70px 0;
+  min-height: 100vh;
 
   .div-checkout-wrapper {
     max-width: 1200px;
@@ -267,24 +268,6 @@ $page-padding: 70px;
     }
   }
 
-  .div-checkout-separator {
-    width: 100vw;
-    height: 1px;
-    background-color: $text-light-gray;
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .div-help-container {
-    padding: 100px 0;
-    text-align: center;
-
-    span {
-      color: $green-primary;
-      text-decoration: underline;
-    }
-  }
-
   @media (max-width: 1440px) {
     padding: $page-padding 20px 0 20px;
 
@@ -463,12 +446,6 @@ $page-padding: 70px;
           }
         }
       }
-    }
-
-    .div-help-container {
-      padding-top: 30px;
-      padding-bottom: 60px;
-      font-size: $mobile-regular-font-size;
     }
   }
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import moment from 'moment'
 import classNames from 'classnames'
 import addressParser from 'parse-address-string'
@@ -166,7 +165,10 @@ class Checkout extends Component {
             postcode: this.state.zip,
             county: this.state.state,
             country: 'US',
-            instructions: `Delivery Date: ${moment(this.state.deliveryDate).format('YYYY-MM-DD')}, Special Instructions: ${this.state.specialInstruction}`,
+            instructions: {
+              delivery_date: moment(this.state.deliveryDate).format('YYYY-MM-DD'),
+              special_instructions: this.state.specialInstruction || '--',
+            }
           }, tokenInfo).then(orderId => {
             const deliveryDate = this.state.deliveryDate.toUTCString()
             const totalPrice = this.orderSummary.totalPrice.toFixed(2)
@@ -416,17 +418,6 @@ class Checkout extends Component {
             </div>
           </div>
         </div>
-
-        {/* Separator */}
-        <div className='div-checkout-separator'/>
-
-          {/* Help/Contact Instruction */}
-          <div className='div-help-container'>
-            Need help? Visit the&nbsp;
-            <Link to='/help-center'><span>Help Center</span></Link>
-            &nbsp;or&nbsp;
-            <a className='clickable' onClick={this.onContactUs}><span>Contact Us</span></a>
-          </div>
       </div>
     )
   }
