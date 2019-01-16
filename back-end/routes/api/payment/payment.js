@@ -2,6 +2,7 @@ const Moltin = require('../../../helpers/moltin');
 const checkToken = require('../../../helpers/checkToken');
 const config = require('../../../config/config');
 const User = require('../../../models/user');
+const Order = require('../../../models/order');
 
 exports.payWithStripe = (request) => {
   return new Promise((resolve, reject) => {
@@ -32,7 +33,19 @@ exports.payWithStripe = (request) => {
           payment: token,
         })
         .then(() => {
-          resolve({ status: 200, message: 'Successfully processed payment'});
+          Order.findOneAndUpdate(
+            { order_id: order_id },
+            {
+              status: 'complete',
+            },
+            (err, updatedOrder) => {
+              if (err) {
+                console.log(err);
+                reject({ status: 500, message: 'Internal Server Error...' });
+              } else {
+                resolve({ status: 200, message: 'Successfully processed payment'});
+              }
+            });
         })
         .catch(err => {
           console.log(err);

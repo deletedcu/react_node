@@ -2,6 +2,7 @@ const Moltin = require('../../../helpers/moltin');
 const checkToken = require('../../../helpers/checkToken');
 const config = require('../../../config/config');
 const User = require('../../../models/user');
+const Order = require('../../../models/order');
 
 exports.getCart = (request) => {
   return new Promise((resolve, reject) => {
@@ -172,12 +173,49 @@ exports.checkout = (request) => {
           return;
         }
 
-        const { billing } = request.body;
+        let { billing } = request.body;
+        const { delivery_date, special_instructions } = billing.instructions;
+        billing.instructions = `Delivery Date: ${delivery_date}, Special Instructions: ${special_instructions}`;
 
         Moltin.Cart(user.customer_id)
           .Checkout(user.customer_id, billing)
           .then(order => {
-            resolve({ status: 200, order: order });
+            return Moltin.Orders.With('items').Get(order.data.id);
+          })
+          .then(order => {
+            new Order({
+              order_id: order.data.id,
+              user: {
+                user_id: user,
+                name: user.name,
+                email: user.email,
+              },
+              shipping_info: {
+                address: `${billing.line_1} ${billing.line_2 || ''}`,
+                zip: billing.postcode,
+                state: billing.county,
+                delivery_date: delivery_date,
+              },
+              special_instruction: special_instructions,
+              status: order.data.status,
+              total_price: order.data.meta.display_price.with_tax.formatted,
+              products: order.included.items.map(item => {
+                return {
+                  product_id: item.product_id,
+                  product_name: item.name,
+                  quantity: item.quantity,
+                  unit_price: item.meta.display_price.with_tax.unit.formatted,
+                  total_price: item.meta.display_price.with_tax.value.formatted,
+                }
+              }),
+            }).save((err) => {
+              if (err) {
+                console.log(err);
+                reject({ status: 500, message: 'Internal Server Error...' });
+              } else {
+                resolve({ status: 200, order: order });
+              }
+            });
           })
           .catch(err => {
             console.log(err);

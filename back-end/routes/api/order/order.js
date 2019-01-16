@@ -63,21 +63,36 @@ exports.rateOrder = (request) => {
 
         const { order_id, product_id, rate, feedback, canReply } = request.body; 
 
-        new OrderFeedback({
-          user: user,
-          order_id: order_id,
-          product_id: product_id,
-          rate: rate,
-          feedback: feedback,
-          canReply: canReply,
-        }).save(err => {
-          if (err) {
+        Moltin.Products.Get(product_id)
+          .then(product => {
+            new OrderFeedback({
+              user: {
+                user_id: user,
+                name: user.name,
+                email: user.email,
+              },
+              order_id: order_id,
+              product: {
+                product_id: product_id,
+                name: product.data.name,
+                price: product.data.meta.display_price.without_tax.formatted,
+              },
+              rate: rate,
+              feedback: feedback,
+              canReply: canReply,
+            }).save(err => {
+              if (err) {
+                console.log(err);
+                reject({ status: 500, message: 'Internal Server Error' });
+              } else {
+                resolve({ status: 200, message: 'Feedback has been saved'});
+              }
+            });
+          })
+          .catch(err => {
             console.log(err);
             reject({ status: 500, message: 'Internal Server Error' });
-          } else {
-            resolve({ status: 200, message: 'Feedback has been saved'});
-          }
-        });
+          });
       });
     } else {
       reject({ status: 401, message: 'Unauthorized request!'});

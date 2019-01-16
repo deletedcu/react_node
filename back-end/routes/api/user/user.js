@@ -304,7 +304,12 @@ exports.rate = (request) => {
         const { rate, feedback, canReply } = request.body; 
 
         new UserFeedback({
-          user: user,
+          user: {
+            user_id: user,
+            customer_id: user.customer_id,
+            name: user.name,
+            email: user.email,
+          },
           rate: rate,
           feedback: feedback,
           canReply: canReply,

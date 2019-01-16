@@ -2,7 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userFeedbackSchema = mongoose.Schema({
-  user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  user: {
+    user_id: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+    customer_id: String,
+    name: String,
+    email: String,
+  },
   
   rate: Number,
   feedback: String,
