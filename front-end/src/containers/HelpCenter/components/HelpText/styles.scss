@@ -1,23 +1,38 @@
 @import "../../../../styles/variables/variables";
 
 .help-text {
-  display: flex;
-  flex-direction: column;
+  padding: 35px 0;
 
-  .help-text-title {
-    font-size: $regular-font-size - 1;
-    font-family: 'Montserrat-SemiBold';
-    margin-bottom: 5px;
-    // margin-left: 15px;
+  .help-text-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .help-text-title {
+      font-size: $small-font-size + 1;
+      font-family: 'Montserrat-Medium';
+      margin-left: 25px;
+    }
+
+    .img-triangle {
+      height: 25px;
+    }
   }
+  
 
   .help-text-content {
+    width: 60%;
     font-family: 'OpenSans-Regular';
-    font-size: $mobile-regular-font-size - 1;
+    font-size: $mobile-regular-font-size + 1;
+    margin: 20px 0 20px;
 
     a {
       color: $green-secondary;
       text-decoration: underline;
     }
   }
+}
+
+.help-text-underlined {
+  border-bottom: 1px solid #CBC7C7;
 }

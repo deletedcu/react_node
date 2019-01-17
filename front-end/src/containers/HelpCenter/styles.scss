@@ -1,6 +1,9 @@
 @import "../../styles/variables/variables";
 
 .div-help-center-container {
+  background-color: #EFF4F8;
+  padding-bottom: 10px;
+  min-height: 100vh;
 
   .div-help-center-banner {
     position: relative;
@@ -13,6 +16,8 @@
       font-family: 'Montserrat-SemiBold';
       top: calc(50% - 40px);
       transform: translateY(-50%);
+      line-height: 40px;
+      letter-spacing: 3px;
     }
 
     .div-help-center-subtitle {
@@ -20,8 +25,9 @@
       text-align: center;
       font-size: $mobile-regular-font-size - 1;
       font-family: 'Montserrat-Medium';
-      top: calc(50% - 50px);
+      top: calc(50% - 48px);
       transform: translateY(-50%);
+      line-height: 16px;
 
       span {
         color: #47944A;
@@ -31,71 +37,38 @@
     .div-help-center-search {
       position: relative;
       left: 50%;
-      top: calc(50% - 30px);
+      top: calc(50% - 23px);
       transform: translateX(-50%);
       padding: 0 30px;
-      width: 484px;
+      width: 544px;
       max-width: 100%;
     }    
   }
 
   .div-help-center {
-    margin-top: 120px;
+    padding-bottom: 150px;
 
     .div-help-center-content {
       max-width: 1330px;
-
-      .div-help-center-header {
-        display: flex;
-
-        .span-header-title {
-          font-size: 30px;
-          font-family: 'CeraPro-Bold';
-          margin-right: 50px;
-        }
-
-        .div-help-center-header-tabs {
-          display: flex;
-          flex-grow: 1;
-          border-bottom: 1px solid #1C1C1C;
-
-          .span-tab {
-            font-size: $mobile-regular-font-size;
-            font-family: 'Montserrat-Medium';
-            width: 80px;
-            text-align: center;
-            margin-top: 5px;
-          }
-
-          .span-tab-selected {
-            border-bottom: 4px solid #47944A;
-          }
-        }
-      }
-    }
-    
-
-    .div-still-need-help {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 60px;
-      margin-bottom: 100px;
 
-      .span-need-help {
-        font-family: 'Inkfree';
-        font-size: 27px;
-        color: #333333;
-        margin-bottom: 25px;
+      .div-tabs {
+        margin-right: 20px;
+
+        .help-tabitem {
+          margin-bottom: 10px;
+        }
       }
 
-      .btn-need-help {
-        width: 169px;
-        height: 52px;
-        font-size: $mobile-regular-font-size + 1;
-        font-family: 'Montserrat-Medium';
-        border-radius: 4px;
-      } 
+      .div-tab-contents {
+        flex-grow: 1;
+        background-color: white;
+        padding: 55px 120px 55px 55px;
+
+        .help-text-group {
+          margin-bottom: 60px;
+        }
+      }
     }
   }
 

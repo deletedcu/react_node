@@ -11,10 +11,6 @@
     border: 0.5px solid rgba(25,25,25,0.55);
     padding: 0 20px 0 45px;
     font-size: $mobile-regular-font-size - 2;
-
-    &:focus {
-      border: 3px solid $green-primary;
-    }
   }
 
   .img-search {

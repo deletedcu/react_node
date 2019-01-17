@@ -1,0 +1,29 @@
+@import "../../../../styles/variables/variables";
+
+.help-text-group {
+  .help-text-group-header {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    span {
+      font-family: 'Montserrat-Bold';
+      font-size: 32px;
+    }
+  }
+
+  .help-text-group-date {
+    margin-top: 10px;
+    margin-left: 60px;
+    font-size: $mobile-regular-font-size + 1;
+    color: #9F9F9F;
+  }
+
+  .help-text-group-content {
+    padding-left: 50px;
+  }
+}
