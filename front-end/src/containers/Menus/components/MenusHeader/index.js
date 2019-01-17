@@ -38,20 +38,22 @@ class MenusHeader extends Component {
   render () {
     return (
       <div className={classNames('div-menus-header-container', {'div-menus-header-squizzed': false})}>
-        <div className='div-menus-header-left'>
-          <MenuFilter onChangeFilters={this.onChangeFilters}/>
-          <MenuDatePicker onSelectDeliveryDate={this.onDateChange} forCheckoutPage={false}/>
-        </div>
-
-        <div className='div-menus-header-right'>
-          <div className='div-zip-code'>
-            <span className='span-title'>DELIVER TO: </span>
-            <MenuAddressInput />
+        <div className='container'>
+          <div className='div-menus-header-left'>
+            <MenuFilter onChangeFilters={this.onChangeFilters}/>
+            <MenuDatePicker onSelectDeliveryDate={this.onDateChange} forCheckoutPage={false}/>
           </div>
-          
-          <div className='div-search-container'>
-            <input type='text' placeholder='Search Menu' onChange={ this.onChangeSearchText } value={ this.state.searchText }/>
-            <img src={imgSearch} alt='search'/>
+
+          <div className='div-menus-header-right'>
+            <div className='div-zip-code'>
+              <span className='span-title'>DELIVER TO: </span>
+              <MenuAddressInput />
+            </div>
+            
+            <div className='div-search-container'>
+              <input type='text' placeholder='Search Menu' onChange={ this.onChangeSearchText } value={ this.state.searchText }/>
+              <img src={imgSearch} alt='search'/>
+            </div>
           </div>
         </div>
       </div>

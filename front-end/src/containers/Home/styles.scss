@@ -10,6 +10,7 @@
   .div-banner-container {
     position: relative;
     height: 620px;
+    max-width: 1366px;
 
     .div-banner-center {
       position: absolute;
@@ -31,6 +32,7 @@
 
     @media (max-width: 710px) {
       max-height: 350px;
+      max-width: 100% !important;
     }
   }
 

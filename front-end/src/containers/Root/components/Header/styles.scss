@@ -3,10 +3,15 @@
 .app-header {
   transition: all ease-out 0.1s;
 
+  .container {
+    max-width: 1400px;
+    height: 78px;
+    padding: 0 20px;
+  }
+
   .img-logo {
     float: left;
     height: 36px;
-    margin-left: 60px;
     margin-top: 21px;
   }
 
@@ -42,6 +47,7 @@
     }
     .div-help-center-title {
       font-family: 'Montserrat-Bold';
+      font-size: $small-font-size + 1;
     }
   }
 
@@ -74,7 +80,6 @@
     float: right;
     align-items: center;
     margin-top: 21px;
-    margin-right: 40px;
     height: 36px;
 
     .div-login {
@@ -110,10 +115,6 @@
   }
 
   @media (max-width: 1200px) {
-    .img-logo {
-      margin-left: 40px;
-    }
-
     .img-flow {
       height: 30px;
     }
@@ -126,7 +127,6 @@
     }
 
     .div-buttons {
-      margin-right: 30px;
       margin-top: 20px;
       height: 36px;
 
@@ -168,8 +168,11 @@
   }
 
   @media (max-width: 710px) {
+    .container {
+      max-width: 100% !important;
+    }
+
     .img-logo {
-      margin-left: 22px;
       margin-top: 21px;
       height: 18px;
     }
@@ -195,7 +198,6 @@
     }
 
     .div-buttons {
-      margin-right: 22px;
       margin-top: 18px;
       height: 25px;
       

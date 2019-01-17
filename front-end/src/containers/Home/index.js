@@ -88,7 +88,7 @@ class Home extends Component {
     return (
       <div className='div-home-container'>
         {/* Banner */}
-        <div className='div-banner-container'>
+        <div className='div-banner-container container'>
           <LazyImage className='img-banner' src={ imgBanner } disableSpinner={true} />
 
           <div className='div-banner-center'>

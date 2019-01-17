@@ -25,6 +25,10 @@
     }
   }
 
+  .no-left-margin {
+    margin-left: unset;
+  }
+
   .div-footer-top-section-button-separator {
     color: white;
     font-size: $small-font-size;

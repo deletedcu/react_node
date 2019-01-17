@@ -4,21 +4,23 @@
   display: flex;
   flex-direction: column;
   font-size: $footer-primary-font-size;
+
+  .container {
+    max-width: 1366px;
+  }
   
   .div-footer-top-container {
     height: 73px;
     display: flex;
     flex-direction: row;
     z-index: 1;
-    padding-left: 27px;
 
     .language-dropdown {
-      background-color: $bg-footer-secondary;
       margin-left: auto;
     }
 
-    @media (max-width: 1510px) {
-      padding-left: 0;
+    @media (max-width: 1366px) {
+      padding-left: 20px;
     }
   }
 
@@ -36,7 +38,7 @@
       margin-right: 77px;
       img {
         height: 34px;
-        margin: 38px 0 0 77px;
+        margin: 38px 0 0 0;
       }
 
       @media (max-width: 1700px) {
@@ -47,7 +49,7 @@
         margin-right: 20px;
         margin-top: -10px;
         img {
-          margin-left: 30px;
+          margin-left: 20px;
         }
       }
     }
@@ -55,7 +57,7 @@
     .div-footer-middle-links-group {
       display: flex;
       flex-direction: column;
-      margin: 38px 70px 0px 70px;
+      margin: 38px 60px 0px 60px;
 
       .footer-middle-links-header {
         font-size: $small-font-size + 1;
@@ -141,18 +143,19 @@
 
     .div-footer-bottom-links {
       position: absolute;
+      left: 50%;
       top: 50%;
-      transform: translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
 
       .footer-bottom-link {
         color: #AFAFAF;
-        margin-left: 68px;
+        margin-right: 68px;
         cursor: pointer;
         font-size: $small-font-size - 2;
       }
 
-      @media (max-width: 1510px) {
-        margin-left: -30px;
+      @media (max-width: 1366px) {
+        padding-left: 20px;
       }
     }
   }

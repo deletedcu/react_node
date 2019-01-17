@@ -50,6 +50,7 @@ class Header extends Component {
     
     return (
       <div className={classNames('app-header', {'app-header-squizzed': false})}>
+        <div className='container'>
         <img className='img-logo clickable' src={imgLogo} alt='logo' onClick={this.onClickLogo}/>
 
         { pathName.includes('auth/signup') && <img className='img-flow' src={imgFlow} alt='flow'/> }
@@ -95,6 +96,7 @@ class Header extends Component {
             }
           </div>
         }
+        </div>
       </div>
     )
   }

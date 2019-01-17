@@ -1,6 +1,7 @@
 @import "../../styles/variables/variables";
 
 .div-meal-plans-container {
+  background-color: #FAFBFC;
 
   .div-meal-plans-banner {
     position: relative;
@@ -57,9 +58,9 @@
 
   .div-meal-plans-info {
     display: flex;
-    justify-content: space-evenly;
-    background-color: #FAFBFC;
+    justify-content: space-between;
     align-items: center;
+    max-width: 1400px;
 
     .quote-container {
       max-width: 340px;

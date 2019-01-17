@@ -64,7 +64,7 @@ class HowItWorks extends Component {
         </div>
 
         {/* Info */}
-        <div className='div-meal-plans-info'>
+        <div className='div-meal-plans-info container'>
           <Quote
             quote={`"I just moved into a new home. MP really help saved dinner for my family!"`}
             author='Heather'

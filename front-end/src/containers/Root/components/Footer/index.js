@@ -35,12 +35,13 @@ class Footer extends Component {
     return (
       <div className='app-footer'>
         {/* Top Section */}
-        <div className='div-footer-top-container'>
+        <div className='div-footer-top-container container'>
           <FooterTopSectionButton
             image={imgAdvertise}
             title='Advertise'
             hasSeparator={true}
             onClick={this.onAdvertise}
+            ignoreLeftSpace={true}
           />
           <FooterTopSectionButton
             image={imgGiftCard}
@@ -62,7 +63,7 @@ class Footer extends Component {
         </div>
 
         {/* Middle Section */}
-        <div className='div-footer-middle-container'>
+        <div className='div-footer-middle-container container'>
           <div className='div-footer-middle-logo'>
             <img src={imgLogo} alt='logo'/>
           </div>
@@ -118,7 +119,7 @@ class Footer extends Component {
 
         {/* Bottom Section */}
         <div className='div-footer-bottom-container'>
-          <div className='div-footer-bottom-links'>
+          <div className='div-footer-bottom-links container'>
             <Link to='/terms-of-service'><span className='footer-bottom-link'>Terms of Service</span></Link>
             <Link to='/terms-of-service'><span className='footer-bottom-link'>Privacy</span></Link>
             <span className='footer-bottom-link'>©2018 Mealpost.com</span>

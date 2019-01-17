@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 
 import './styles.css'
 
@@ -11,13 +12,11 @@ class FooterTopSectionButton extends Component {
   }
 
   render () {
-    const image = this.props.image
-    const title = this.props.title
-    const hasSeparator = this.props.hasSeparator
+    const { image, title, hasSeparator, ignoreLeftSpace } = this.props
 
     return (
       <div className='div-footer-top-section-button-container'>
-        <div className='div-footer-top-section-button clickable' onClick={this.onClick}>
+        <div className={classNames('div-footer-top-section-button', 'clickable', {'no-left-margin': ignoreLeftSpace})} onClick={this.onClick}>
           <img src={image} alt='icon'/>
           <span>{ title }</span>
         </div>
