@@ -76,8 +76,10 @@
 
   .side-cart-summary-bottom-link {
     margin: 20px 0;
-    font-size: $mobile-small-font-size;
-    span {
+    font-size: $mobile-regular-font-size - 2;
+    text-align: center;
+    
+    span {  
       font-family: 'Montserrat-Bold';
       color: #242222;
     }

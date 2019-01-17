@@ -109,7 +109,9 @@
     .share-success-subtitle {
       @extend %feedback-subtitle;
       text-align: center;
-      font-size: $mobile-regular-font-size - 1;
+      font-size: $mobile-regular-font-size + 1;
+      font-family: 'OpenSans-Regular';
+      line-height: 20px;
     }
   
     .btn-okay {

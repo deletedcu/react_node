@@ -16,7 +16,9 @@
 
   .div-service-feature-description {
     color: $text-light-gray;
-    font-size: $mobile-regular-font-size;
+    font-size: $mobile-regular-font-size + 1;
+    font-family: 'OpenSans-Regular';
+    line-height: 20px;
     margin-top: 25px;
   }
 }
