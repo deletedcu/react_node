@@ -235,9 +235,10 @@
         width: 194px;
         height: 100%;
         margin-left: 10px;
-        font-size: $mobile-regular-font-size;
+        font-size: $mobile-regular-font-size + 1;
         font-family: 'Montserrat-Medium';
-        word-spacing: 3px;
+        border: .75px solid #3E8541;
+        border-radius: 4px;
       }
     }
 

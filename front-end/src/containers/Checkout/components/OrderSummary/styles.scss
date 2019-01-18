@@ -22,6 +22,7 @@ $order-summary-header-height: 70px;
 
     .order-summary-title {
       color: $text-light-gray;
+      font-family: 'Montserrat-SemiBold';
     }
   }
 
@@ -56,6 +57,10 @@ $order-summary-header-height: 70px;
       @extend %order-summary-info-block;
       font-family: 'Montserrat-Medium';
       color: $green-primary;
+    }
+
+    .span-info-title {
+      font-family: 'Montserrat-Medium';
     }
 
     .span-light-gray {
@@ -135,6 +140,7 @@ $order-summary-header-height: 70px;
       flex-direction: row;
       justify-content: space-between;
       font-size: $small-font-size;
+      font-family: 'Montserrat-SemiBold';
 
       .order-summary-items-title {
         color: $text-light-gray;  

@@ -15,42 +15,42 @@ class CommonQuestions extends Component {
           <div className='row'>
             <div className='div-common-questions-pannel left col-12 col-xl-6'>
               <div className='div-question-title'>
-                When and Where do you Deliver?
-              </div>
-              <div className='div-question-answer'>
-                Currently, we deliver Sundays to multiple cities throughout the Bay Area. We plan to open delivery days to 2-3 times a week, and should start to roll out this new schedule sometime this year. See if we deliver to you.
-              </div>
-              <div className='div-question-title'>
-                Are your meals frozen?
-              </div>
-              <div className='div-question-answer'>
-                Not a chance. Our meals are marinated then cooked fresh one night before delivery. Meals are  refridgerated and kept in an insulated box during transit. When you are ready to eat, heat up, and enjoy.
-              </div>
-              <div className='div-question-title'>
-                Can I customize my meals?
-              </div>
-              <div className='div-question-answer'>
-                Definitely. Your meals are completely customizable to be exactly how you want it. Mix and Match Meal Plans and Featured Dishes to figure out which format is better for you. Looking for Low Carb meals? Let us know!
-              </div>
-            </div>
-            <div className='div-common-questions-pannel right col-12 col-xl-6'>
-              <div className='div-question-title'>
                 What is Mealpost exactly?
               </div>
               <div className='div-question-answer'>
                 Mealpost is a weekly based meal delivery service that serves fresh, never frozen meals. Our vision is to help individuals grow and achieve their life goals through precise dieting. Ease and Taste doesn't usually go hand in hand, but we're obviously an exception.
               </div>
               <div className='div-question-title'>
-                Ordering Process
+                Where do you source your ingredients?
               </div>
               <div className='div-question-answer'>
-                Once you place an order, expect an email from us with details regarding your delivery. A Mealpost courier will pick up your chilled meals and deliver them directly to your provided address. Can't accept a delivery? Contact us here and let us know ASAP.
+                We work exclusively with local and family-owned farms and businesses who engage eco-friendly processes in procuring only the freshest and highest quality ingredients. We value these relationships and fully understand that meals are only as good as the ingredients that comprise them.
               </div>
               <div className='div-question-title'>
-                Recyclable Packaging
+                Deliciously Healthy?
               </div>
               <div className='div-question-answer'>
-                Yes! All of our packaging including our sleeves, bags, and containers are all recyclable!  We are proud to move towards a more sustainability initiative. Mealpost trays are certified compostable by the Biodegradable Products Institute and meet ASTM standards for compostability.
+                We understand how crucial great taste is to the success of eating healthy. We also understand that this ability to create these innovative and nutritious meals is a result of highly trained culinary experts working with only the freshest and highest quality of ingredients.
+              </div>
+            </div>
+            <div className='div-common-questions-pannel right col-12 col-xl-6'>
+              <div className='div-question-title'>
+                Do you accommodate specific diets?
+              </div>
+              <div className='div-question-answer'>
+                We take pride in the fact that our meals can be tailor-made for those with an assortment of allergies or specific dietary restrictions. Our diverse menu, there are lots of options around which to build delicious and nutritious meals from.
+              </div>
+              <div className='div-question-title'>
+               Are your meals frozen?
+              </div>
+              <div className='div-question-answer'>
+                Not a chance. Our meals are marinated then cooked fresh by top rated local chefs before delivery. Meals are refrigerated and kept in an insulated box during transit. When you are ready to eat, heat up, and enjoy.
+              </div>
+              <div className='div-question-title'>
+                Are your meals pre-portioned?
+              </div>
+              <div className='div-question-answer'>
+                Our pre-portioned, heat-and-serve meals completely remove the guesswork, frustration, and time involved with cooking. No more two-hour forays into the kitchen to prepare and cook the food. No more guessing about your meal’s nutritional content. Spend time with those who matter, and let us take care of dinner.
               </div>
             </div>
           </div>

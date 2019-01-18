@@ -37,6 +37,25 @@
   .div-order-history-items {
     min-height: 300px;
     margin-top: 10px;
+
+    .div-no-order {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 80px;
+
+      img {
+        width: 209px;
+        margin-left: 12px;
+        margin-bottom: 40px;
+      }
+
+      span {
+        color: #A7A7A7;
+        opacity: 0.65;
+        font-family: 'Brandon-Medium';
+      }
+    }
   }
 
   .btn-load-more {

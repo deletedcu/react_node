@@ -65,7 +65,7 @@ class Footer extends Component {
         {/* Middle Section */}
         <div className='div-footer-middle-container container'>
           <div className='div-footer-middle-logo'>
-            <img src={imgLogo} alt='logo'/>
+            <Link to='/home'><img className='clickable' src={imgLogo} alt='logo'/></Link>
           </div>
 
           <div className='div-footer-middle-links-group'>

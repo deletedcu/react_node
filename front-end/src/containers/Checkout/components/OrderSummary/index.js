@@ -99,15 +99,15 @@ class OrderSummary extends Component {
         <div className='order-summary-info'>
           {/* Date / Price Info */}
           <div className='order-summary-info-block'>
-            <span>Delivery Day</span>
-              <MenuDatePicker onSelectDeliveryDate={this.onDateChange} forCheckoutPage={true}/>
+            <span className='span-info-title'>Delivery Day</span>
+            <MenuDatePicker onSelectDeliveryDate={this.onDateChange} forCheckoutPage={true}/>
           </div>
           <div className='order-summary-info-block'>
-            <span>6 Meals Per Week</span>
+            <span className='span-info-title'>6 Meals Per Week</span>
             <span className='span-light-gray'>{`$${this.totalPrice.toFixed(2)}`}</span>
           </div>
           <div className='order-summary-info-block'>
-            <span>Shipping</span>
+            <span className='span-info-title'>Shipping</span>
             <span className='span-light-gray'>FREE</span>
           </div>
 

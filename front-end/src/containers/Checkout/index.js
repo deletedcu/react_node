@@ -282,7 +282,7 @@ class Checkout extends Component {
                   {/* First Name, Last Name => only visible in signup mode */}
                   { currentAccountMode === AccountMode.create &&
                     <div className='div-checkout-account-fullname'>
-                      <div><span className='span-input-title'>Full Name</span></div>
+                      <div><span className='span-input-title'>FULL NAME</span></div>
                       <div><input required type='text' name='accountName' value={this.state.accountName} onChange={this.onChange}/></div>
                     </div>
                   }
@@ -290,12 +290,12 @@ class Checkout extends Component {
                   {/* Email, Password */}
                   <div className='div-checkout-account-email-password'>
                     <div className='div-checkout-account-email'>
-                      <div><span className='span-input-title'>Email Address</span></div>
+                      <div><span className='span-input-title'>EMAIL ADDRESS</span></div>
                       <div><input required type='email' name='emailAddress' value={this.state.emailAddress} onChange={this.onChange}/></div>
                     </div>
 
                     <div className='div-checkout-account-password'>
-                      <div><span className='span-input-title'>Password</span></div>
+                      <div><span className='span-input-title'>PASSWORD</span></div>
                       <div><input required type='password' name='password' value={this.state.password} onChange={this.onChange}/></div>
                     </div>
                   </div>
@@ -321,11 +321,11 @@ class Checkout extends Component {
                   {/* First Name, Last Name, Contact Number */}
                   <div className='div-checkout-address-first-row'>
                     <div className='div-checkout-address-fullname'>
-                      <div><span className='span-input-title'>Full Name</span></div>
+                      <div><span className='span-input-title'>FULL NAME</span></div>
                       <div><input required type='text' name='addressName' value={this.state.addressName} onChange={this.onChange}/></div>
                     </div>
                     <div className='div-checkout-address-contact-number'>
-                      <div><span className='span-input-title'>Contact Number</span></div>
+                      <div><span className='span-input-title'>CONTACT NUMBER</span></div>
                       <div><input required type='text' name='contactNumber' value={this.state.contactNumber} onChange={this.onChange}/></div>
                     </div>
                   </div>
@@ -333,16 +333,16 @@ class Checkout extends Component {
                   {/* Street, state and zip */}
                   <div className='div-checkout-address-second-row'>
                     <div className='div-checkout-address-street'>
-                      <div><span className='span-input-title'>Street Address</span></div>
+                      <div><span className='span-input-title'>ADDRESS</span></div>
                       <div><input required type='text' name='streetAddress' value={this.state.streetAddress} onChange={this.onChange}/></div>
                     </div>
                     <div className='div-checkout-address-state-zip'>
                       <div className='div-checkout-address-zip'>
-                        <div><span className='span-input-title'>Zip Code</span></div>
+                        <div><span className='span-input-title'>ZIP</span></div>
                         <div><input required type='text' name='zip' value={this.state.zip} onChange={this.onChange}/></div>
                       </div>
                       <div className='div-checkout-address-state'>
-                        <div><span className='span-input-title'>State</span></div>
+                        <div><span className='span-input-title'>STATE</span></div>
                         <SelectUSState id='stateSelector' className='select-us-state' value={this.state.state} onChange={ this.onSelectState }/>
                         <img src={imgDownArrow} alt='arrow'/>
                       </div>
@@ -352,7 +352,7 @@ class Checkout extends Component {
                   {/* Special instructions */}
                   <div className='div-checkout-address-third-row'>
                     <div className='div-checkout-address-special-instructions'>
-                      <div className='div-special-instructions-title'><span className='span-input-title'>Special Instructions </span><span className='span-optional'>(OPTIONAL)</span></div>
+                      <div className='div-special-instructions-title'><span className='span-input-title'>DELIVERY INSTRUCTIONS </span><span className='span-optional'>(OPTIONAL)</span></div>
                       <div><input type='text' name='specialInstruction' value={this.state.specialInstruction} onChange={this.onChange}/></div>
                     </div>
                   </div>

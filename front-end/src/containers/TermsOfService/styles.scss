@@ -52,7 +52,9 @@
       font-size: 15px;
       .div-terms-of-service-paragraph {
         margin-bottom: 20px;
-        font-size: $mobile-regular-font-size;
+        font-size: $mobile-regular-font-size + 1;
+        font-family: 'OpenSans-Regular';
+        line-height: 20px;
       }
 
       .div-terms-of-service-subtitle {

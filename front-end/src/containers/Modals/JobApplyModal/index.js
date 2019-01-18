@@ -23,7 +23,7 @@ class JobApplyModal extends Component {
     super(props)
 
     this.state = {
-      currentStep: JobApplyStep.personalInfo,
+      currentStep: JobApplyStep.diversitySurvey,
 
       firstName: '',
       lastName: '',
@@ -34,10 +34,10 @@ class JobApplyModal extends Component {
       linkedin: '',
       website: '',
       relocate: '',
-      ethnicity: 0,
-      gender: 0,
-      sexOrientation: 0,
-      armyVeteran: 0,
+      ethnicity: -1,
+      gender: -1,
+      sexOrientation: -1,
+      armyVeteran: -1,
       resumeFile: null,
       coverletterFile: null,
     }
