@@ -170,14 +170,11 @@ class Checkout extends Component {
               special_instructions: this.state.specialInstruction || '--',
             }
           }, tokenInfo).then(orderId => {
-            const deliveryDate = this.state.deliveryDate.toUTCString()
-            const totalPrice = this.orderSummary.totalPrice.toFixed(2)
-
             showNotification('Successfully processed your order', 'success')
             
             this.props.dispatch(hideOverlaySpinner())
             this.props.dispatch(emptyCart())
-            this.props.history.push(`/order-confirm?order_id=${orderId}&delivery_date=${deliveryDate}&total_price=${totalPrice}`)
+            this.props.history.push(`/order-confirm?order_id=${orderId}`)
           }).catch(err => {
             showNotification(err, 'error')
             this.props.dispatch(hideOverlaySpinner())

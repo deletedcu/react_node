@@ -18,3 +18,21 @@ export const fetchOrderHistory = (token) => {
     })
   })
 }
+
+export const fetchOrder = (token, orderId) => {
+  return new Promise((resolve, reject) => {
+    axios.request({
+      url: `/order/info/${orderId}`,
+      baseURL: config.apiBaseUrl,
+      method: 'get',
+      headers: {
+        'x-access-token': token
+      }
+    }).then((response) => {
+      resolve(response.data)
+    }).catch((err) => {
+      console.log(err)
+      reject(err)
+    })
+  })
+}

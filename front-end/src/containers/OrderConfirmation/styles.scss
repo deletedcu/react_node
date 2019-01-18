@@ -2,168 +2,165 @@
 
 .div-order-confirm-container {
   background-color: #F1F1F1;
+  min-height: 100vh;
+  display: flex;
 
-  .div-order-confirm-boxes {
-    padding: 120px 0;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    width: 530px;
+  .div-order-confirm-form {
+    margin: 120px auto;
+    width: 494px;
+    background-color: white;
+    box-shadow: 0 0 4px rgba(0,0,0,0.16);
 
-    .div-order-confirm-form {
-      background-color: white;
-      border: 1px solid #B7CBB8;
-
-      .div-order-confirm-form-header {
-        height: 156px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #F2FFF3;
-        border-bottom: 1px solid #B7CBB8;
-
-        img {
-          height: 78px;
-        }
-        span {
-          color: #4EAC53;
-          font-size: $small-font-size + 1;
-          margin-top: 15px;
-        }
-      }
-
-      .div-order-confirm-form-detail {
-        padding: 40px 100px 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .div-order-confirm-form-greeting {
-          font-size: 36px;
-          font-family: 'Montserrat-SemiBold'; 
-        }
-
-        .div-order-confirm-form-description {
-          text-align: center;
-          font-family: 'OpenSans-Regular';
-          font-size: $mobile-regular-font-size + 1;
-          color: $text-light-gray;
-          margin-top: 15px;
-        }
-
-        .div-order-confirm-form-info-list {
-          width: 100%;
-          margin: 35px 0;
-
-          .div-order-confirm-form-info {
-            display: flex;
-            justify-content: space-between;
-            color: $text-light-gray;
-            font-size: $mobile-regular-font-size;
-            font-family: 'Montserrat-Medium';
-  
-            span {
-              width: calc(50% - 15px);
-            }
-  
-            .div-order-confirm-form-info-title {
-              text-align: right;
-            }
-            .div-order-confirm-form-info-value {
-              text-align: left;
-            }
-          }
-        }
-
-        .div-order-confirm-form-buttons {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-
-          .button {
-            width: 151px;
-            height: 41px;
-            font-size: $mobile-regular-font-size;
-            border-radius: 2px;
-            margin: 0 8px;
-          }
-        }
-      }
+    .separator {
+      width: calc(100% - 70px);
+      height: 1px;
+      margin: 0 auto;
+      background-color: #B7CBB8;
     }
 
-    .div-order-confirm-share {
-      margin-top: 30px;
-      padding-top: 20px;
-      background-color: white;
-      border: 1px solid #B7CBB8;
+    .div-order-confirm-form-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 160px;
 
-      .div-order-confirm-share-title {
-        font-family: 'Montserrat-SemiBold';
-        margin-left: 50px;
+      span {
+        max-width: 230px;
       }
 
-      .div-order-confirm-share-description {
-        font-size: $mobile-regular-font-size;
+      .span-title {
+        font-family: 'Brandon-Bold';
+        font-size: 25px;
+        text-align: center;
+        line-height: 30px;
+        margin-bottom: 20px;
+      }
+
+      .span-subtitle {
         font-family: 'OpenSans-Regular';
+        font-size: $mobile-regular-font-size;
         color: $text-light-gray;
-        margin-right: 40px;
-        margin-top: 10px;
-        margin-left: 50px;
+        text-align: center;
+      }
+    }
+
+    .div-order-confirm-form-detail {
+      padding: 35px;
+
+      .order-delivery-date {
+        font-family: 'Montserrat-Bold';
+        font-size: $mobile-regular-font-size;
+        line-height: 20px;
+        margin-bottom: 20px;
       }
 
-      .div-order-confirm-share-code {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 25px 0;
+      .order-info-list {
+        margin-left: 25px;
 
-        .div-order-confirm-share-code-title {
-          color: #C7C5C5;
-          font-size: $mobile-regular-font-size - 1;
-          font-family: 'Montserrat-SemiBold';
-        }
-        .div-order-confirm-share-code-value {
-          width: 220px;
-          height: 52px;
-          margin-top: 5px;
-          line-height: 52px;
-          text-align: center;
-          background-color: #F1F1F1;
-          font-size: 22px;
-          font-family: 'Montserrat-SemiBold';
-          border: 1px dashed #C7C5C5;
+        .order-info {
+          margin-bottom: 25px;
+          display: flex;
+          align-items: flex-start;
+
+          img {
+            margin-top: 4px;
+            margin-right: 10px;
+            width: 12px;
+          }
+
+          span {
+            font-family: 'OpenSans-Regular';
+            font-size: $mobile-regular-font-size;
+            color: $text-light-gray;
+            line-height: 20px;
+          }
+
+          div {
+            display: flex;
+            flex-direction: column;
+          }
         }
       }
 
-      .btn-share {
-        width: 100%;
-        height: 61px;
-        background-color: #515151;
-        font-size: $mobile-regular-font-size - 2;
-        font-family: 'Montserrat-SemiBold';
-        border-radius: unset;
+      .order-history-link {
+        font-size: $mobile-regular-font-size - 1;
+        font-family: 'Montserrat-Medium';
+        margin-left: 20px;
 
-        img {
-          height: 18px;
-          margin-right: 15px;
+        a {
+          color: $green-primary;
         }
       }
     }
   }
 
-  .div-separator {
-    width: 100%;
-    height: 1px;
-    background-color: $text-light-gray;
-  }
+  .div-order-confirm-share {
+    margin-top: 30px;
+    padding: 0 35px;
 
-  .div-help-container {
-    padding: 100px 0;
-    text-align: center;
+    .order-share-title {
+      font-family: 'Montserrat-Bold';
+      font-size: $mobile-regular-font-size;
+      line-height: 20px;
+      margin-bottom: 25px;
+    }
 
-    span {
-      color: $green-primary;
-      text-decoration: underline;
+    .order-share-description {
+      line-height: 17px;
+      font-size: $mobile-regular-font-size;
+      font-family: 'OpenSans-Regular';
+      color: $text-light-gray;
+      margin-bottom: 30px;
+    }
+
+    .order-referral-link {
+      .order-referral-link-title {
+        font-size: $mobile-regular-font-size;
+        color: $text-light-gray;
+        font-family: 'Montserrat-Bold';
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .order-referral-link-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 62px;
+        border: 1px solid #F3F3F3;
+        padding: 0 25px 0 18px;
+        margin-bottom: 34px;
+
+        input {
+          font-size: $mobile-regular-font-size;
+          font-family: 'OpenSans-Regular';
+          color: $text-light-gray;
+          flex-grow: 1;
+        }
+
+        img {
+          height: 20px;
+        }
+      }
+    }
+
+    .btn-share {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(100% + 70px);
+      height: 61px;
+      margin-left: -35px;
+      background-color: #515151;
+      font-size: $mobile-regular-font-size - 1;
+      font-family: 'Montserrat-SemiBold';
+      border-radius: unset;
+
+      img {
+        height: 18px;
+        margin-right: 15px;
+      }
     }
   }
 }

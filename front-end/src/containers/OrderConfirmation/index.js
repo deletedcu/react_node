@@ -6,9 +6,13 @@ import { connect } from 'react-redux'
 import moment from 'moment'
 
 import './styles.css'
-import imgConfirm from '../../assets/images/confirm.svg'
+import imgClock from '../../assets/images/order-date.svg'
+import imgLocation from '../../assets/images/order-location.svg'
+import imgItems from '../../assets/images/order-items.svg'
 import imgShare from '../../assets/images/share.svg'
-import { showModal, ModalType } from '../../redux/actions/modal';
+import imgCopy from '../../assets/images/copy.svg'
+import { showNotification } from '../../services/notification';
+import { fetchOrder } from '../../services/orderHistory';
 
 class OrderConfirmation extends Component {
 
@@ -18,82 +22,103 @@ class OrderConfirmation extends Component {
     let queryParams = qs.parse(this.props.location.search.replace('?', ''))
 
     this.state = {
-      deliveryDate: queryParams.delivery_date || '',
       orderId: queryParams.order_id || '',
-      totalPrice: queryParams.total_price || '',
+      deliveryDate: '',
+      name: '--',
+      address1: '--',
+      address2: '--',
+      items: [],
     }
   }
 
-  onManageOrders = () => {
-    this.props.history.push('/settings/order_history')
+  componentDidMount () {
+    fetchOrder(this.props.user.user.token, this.state.orderId)
+      .then(res => {
+        const order = res.order
+
+        this.setState({
+          deliveryDate: moment(order.shipping_info.delivery_date).format('MMMM DD, YYYY'),
+          name: order.user.name,
+          address1: order.shipping_info.address,
+          address2: `${order.shipping_info.state} ${order.shipping_info.zip}`,
+          items: order.products,
+        })
+      })
+      .catch(err => {
+        showNotification('Failed to fetch order details', 'error');
+      });
   }
 
-  onBackToStore = () => {
-    this.props.history.push('/home')
+  onCopyReferralLink = () => {
+    this.refs.referralLink.select()
+    document.execCommand('copy')
+
+    showNotification('Referral link copied to clipboard', 'info')
   }
 
   onShare = () => {
-    
-  }
-
-  onContactUs = (e) => {
-    e.preventDefault()
-
-    this.props.dispatch(showModal(ModalType.contactUsModal))
+    window.open('mailto:', 'this')
   }
 
   render () {
-    const { deliveryDate, orderId, totalPrice } = this.state
-    const { user } = this.props
+    const { deliveryDate, name, address1, address2, items } = this.state
 
     return (
       <div className='div-order-confirm-container'>
-        {/* Boxes */}
-        <div className='div-order-confirm-boxes'>
-          {/* Order Confirmation Form */}
-          <div className='div-order-confirm-form'>
-            <div className='div-order-confirm-form-header'>
-              <img src={imgConfirm} alt='confirm'/>
-              <span>Order Confirmed</span>
-            </div>
-            <div className='div-order-confirm-form-detail'>
-              <div className='div-order-confirm-form-greeting'>{`Hello, ${user.user.name}`}</div>
-              <div className='div-order-confirm-form-description'>Your order is being processed and you should receive a confirmation from us shortly.</div>
-              
-              <div className='div-order-confirm-form-info-list'>
-                <div className='div-order-confirm-form-info'><span className='div-order-confirm-form-info-title'>Order #</span><span className='div-order-confirm-form-info-value'>{orderId}</span></div>
-                <div className='div-order-confirm-form-info'><span className='div-order-confirm-form-info-title'>Total</span><span className='div-order-confirm-form-info-value'>{`$${totalPrice}`}</span></div>
-                <div className='div-order-confirm-form-info'><span className='div-order-confirm-form-info-title'>Delivery Date</span><span className='div-order-confirm-form-info-value'>{moment(deliveryDate).format('MMMM D, YYYY')}</span></div>
-              </div>
-          
-              <div className='div-order-confirm-form-buttons'>
-                <Button className='btn-manage-orders' onClick={this.onManageOrders}>Manage Orders</Button>
-                <Button className='btn-back-to-store' onClick={this.onBackToStore}>Back To Store</Button>
-              </div>
-            </div>
+        <div className='div-order-confirm-form'>
+          {/* Header */}
+          <div className='div-order-confirm-form-header'>
+            <span className='span-title'>YOUR ORDER HAS BEEN PLACED</span>
+            <span className='span-subtitle'>A confirmation email is on its way</span>
           </div>
+
+          <div className='separator'/>
+
+          {/* Detail */}
+          <div className='div-order-confirm-form-detail'>
+            <div className='order-delivery-date'>{ deliveryDate }</div>
+            <div className='order-info-list'>
+              <div className='order-info'>
+                <img src={imgClock} alt='clock'/>
+                <span>Delivery between 2-3PM</span>
+              </div>
+              <div className='order-info'>
+                <img src={imgLocation} alt='location'/>
+                <div>
+                  <span>{ name }</span>
+                  <span>{ address1 }</span>
+                  <span>{ address2 }</span>
+                </div>
+              </div>
+              <div className='order-info'>
+                <img src={imgItems} alt='items'/>
+                <div>
+                  {
+                    items.map((item, index) => {
+                      return <span key={index}>{`${item.product_name} x${item.quantity}`}</span>
+                    })
+                  }
+                </div>
+              </div>
+            </div>
+            <div className='order-history-link'><Link to='/settings/order_history'>View or manage your order</Link></div>
+          </div>
+
+          <div className='separator'/>
 
           {/* Refer & Share */}
           <div className='div-order-confirm-share'>
-            <div className='div-order-confirm-share-title'>Refer Friends & Earn</div>
-            <div className='div-order-confirm-share-description'>Ask your friends to signup with your referral code and place an order. Once done, both you and your friend each earn $10 Mealpost Credit.  </div>
-            <div className='div-order-confirm-share-code'>
-              <div className='div-order-confirm-share-code-title'>YOUR REFERRAL CODE</div>
-              <div className='div-order-confirm-share-code-value'>AB1234</div>
+            <div className='order-share-title'>Refer Friends & Earn</div>
+            <div className='order-share-description'>Ask your friends to sign up with your referral code and place an order. Once completed, both you and your friend each earn $20.</div>
+            <div className='order-referral-link'>
+              <div className='order-referral-link-title'>YOUR REFERRAL LINK</div>
+              <div className='order-referral-link-box'>
+                <input ref='referralLink' value='https://www.mealpost.io/referral/LANFEV' readOnly/>
+                <img className='clickable' src={imgCopy} alt='copy' onClick={this.onCopyReferralLink}/>
+              </div>
             </div>
             <Button className='btn-share' onClick={this.onShare}><img src={imgShare} alt='share'/><span>SHARE NOW</span></Button>
           </div>
-        </div>
-
-        {/* Separator */}
-        <div className='div-separator'/>
-
-        {/* Help/Contact Instruction */}
-        <div className='div-help-container'>
-          Need help? Visit the&nbsp;
-          <Link to='/help-center'><span>Help Center</span></Link>
-          &nbsp;or&nbsp;
-          <a className='clickable' onClick={this.onContactUs}><span>Contact Us</span></a>
         </div>
       </div>
     )
