@@ -71,8 +71,10 @@ class SideCart extends Component {
           <span className='span-empty-subtitle'>Add items to get started</span>
         </div>
         :
-        <div className='div-side-cart-items'>
-          { sideCartItems }
+        <div className='div-side-cart-items-container'>
+          <div className='div-side-cart-items'>
+            { sideCartItems }
+          </div>
         </div>
         }
 

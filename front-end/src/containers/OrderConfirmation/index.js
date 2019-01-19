@@ -85,7 +85,7 @@ class OrderConfirmation extends Component {
               <div className='order-info'>
                 <img src={imgLocation} alt='location'/>
                 <div>
-                  <span>{ name }</span>
+                  <span className='name'>{ name }</span>
                   <span>{ address1 }</span>
                   <span>{ address2 }</span>
                 </div>
