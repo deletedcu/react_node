@@ -11,4 +11,10 @@
   @media (min-width: 1440px) {
     max-width: 1440px;
   }
+  
+  @media (max-width: 710px) {
+    .row .col-12 {
+      margin-bottom: 50px;
+    }
+  }
 }

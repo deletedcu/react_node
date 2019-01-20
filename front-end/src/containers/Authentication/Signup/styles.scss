@@ -83,21 +83,26 @@
   }
 
   @media (max-width: 710px) {
+    padding-left: unset;
+    padding-right: unset;
+
     .div-signup-description {
-      margin: 30px 30px 0 30px;
+      margin: 10px 50px 0 50px;
 
       .div-signup-description-title {
-        font-size: $regular-font-size;
+        font-size: $regular-font-size + 3;
+        font-family: 'Montserrat-SemiBold';
       }
 
       .div-signup-description-text {
-        font-size: $mobile-regular-font-size;
-        margin-top: 20px;
+        font-size: $mobile-regular-font-size - 1.5;
+        margin-top: 5px;
       }
     }
 
     .div-signup-form-container {
-      margin-top: 40px;
+      margin: unset;
+      max-width: 100% !important;
 
       .div-signup-form {
         padding: 0;
@@ -110,8 +115,8 @@
     }
 
     .div-signup-features-container {
-      margin-top: 60px;
-      margin-bottom: 40px;
+      margin-top: 30px;
+      margin-bottom: unset;
     }
   }
 }
