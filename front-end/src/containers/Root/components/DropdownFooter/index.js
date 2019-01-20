@@ -63,7 +63,7 @@ class DropdownFooter extends Component {
         <div className='div-footer-bottom'>
           <Link to='/terms-of-service'><span className='span-bottom-link'>Terms of Service</span></Link>
           <Link to='/terms-of-service'><span className='span-bottom-link'>Privacy</span></Link>
-          <span className='span-bottom-link'>©2018 Mealpost.com</span>
+          <Link to='/home'><span className='span-bottom-link'>©2018 Mealpost.com</span></Link>
         </div>
       </div>
     )

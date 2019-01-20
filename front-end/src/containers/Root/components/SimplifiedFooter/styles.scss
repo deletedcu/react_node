@@ -42,4 +42,34 @@
       height: 18px;
     }
   }
+
+  @media (max-width: 710px) {
+    height: 91px;
+    justify-content: center;
+
+    .simplified-footer-left {
+      margin-left: unset;
+      .img-logo {
+        display: none;
+      }
+
+      .simplified-footer-links {
+        margin: unset;
+
+        .link {
+          font-size: $mobile-small-font-size + 2;
+          line-height: 91px;
+          margin: 0 15px;
+        }
+
+        .separator {
+          display: none;
+        }
+      }
+    }
+
+    .simplified-footer-right {
+      display: none;
+    }
+  }
 }
