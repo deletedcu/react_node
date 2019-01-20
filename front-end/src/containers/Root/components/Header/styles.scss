@@ -82,6 +82,11 @@
     margin-top: 21px;
     height: 36px;
 
+    .desktop-buttons{
+      display: flex;
+      align-items: center;
+    }
+
     .div-login {
       width: 90px;
       height: 36px;
@@ -205,6 +210,11 @@
       margin-top: 18px;
       height: 25px;
       float: none;
+      justify-content: space-between;
+
+      .desktop-buttons{
+        display: none;
+      }
       
       .dropdown {
         .settings-dropdown-trigger span {
