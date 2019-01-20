@@ -81,28 +81,42 @@ class SettingsDropdown extends Component {
               <span>Log Out</span>
             </div>
           </div>
-          <div className = 'mobile'>
-            <div className='div-menu clickable' onClick={ this.onEditProfile }>
-              <span>My Account</span>
+          {this.props.loggedIn &&
+            <div className = 'mobile'>
+              <div class = 'div-menu-items'>
+                <div className='div-menu clickable' onClick={ this.onEditProfile }>
+                  <span>My Account</span>
+                </div>
+                <div className='div-menu clickable' onClick={ this.onOrderHistory }>
+                  <span>Order History</span>
+                </div>
+                <div className='div-menu clickable' onClick={ this.onLogout }>
+                  <span>Weekly Menu</span>
+                </div>
+                <div className='div-menu clickable' onClick={ this.onLogout }>
+                  <span>Meal Preferences</span>
+                </div>
+                <div className='div-menu clickable' onClick={ this.onLogout }>
+                  <span>Redeem</span>
+                </div>
+              </div>
+              <div class = 'div-menu-last-item' onClick={ this.onLogout }>
+                <span>Log Out</span>
+              </div>
             </div>
-            <div className='div-menu clickable' onClick={ this.onOrderHistory }>
-              <span>Sign up</span>
+          }
+          {!this.props.loggedIn &&
+            <div className = 'mobile'>
+              <div class = 'div-menu-items'>
+                <div className='div-menu clickable' onClick={ this.onLogIn }>
+                  <span>Log In</span>
+                </div>
+                <div className='div-menu clickable noborder' onClick={ this.onSignUp }>
+                  <span>Sign Up</span>
+                </div>
+              </div>
             </div>
-            <div className='div-menu clickable' onClick={ this.onLogout }>
-              <span>Log In</span>
-            </div>
-            <div className='div-menu clickable' onClick={ this.onLogout }>
-              <span>Log Out</span>
-            </div>
-            <div className='div-menu clickable' onClick={ this.onLogout }>
-              <span>On The Menu</span>
-            </div>
-            <div className='div-menu clickable' onClick={ this.onLogout }>
-              <span>Pricing</span>
-            </div><div className='div-menu clickable' onClick={ this.onLogout }>
-              <span>Gifts</span>
-            </div>
-          </div>
+          }
         </DropdownContent>
       </Dropdown>
     )

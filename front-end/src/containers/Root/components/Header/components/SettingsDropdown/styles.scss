@@ -46,6 +46,23 @@
 
     .mobile{
       display: none;
+
+      .div-menu{
+        border-bottom: 1px solid #ddd;
+        &.noborder{
+          border: none;
+        }
+      }
+
+      .div-menu-last-item {
+        display: flex;
+        padding: 10px 0;
+        justify-content: center;
+        span{
+          font-size: 12px;
+          font-family: 'Montserrat-Bold';
+        }
+      }
     }
 
     .div-menu {
@@ -71,7 +88,9 @@
 
   @media (max-width: 710px) {
     .dropdown__content {
-      margin-left: -20px;
+      margin-left: -15px;
+      border-radius: 0;
+      box-shadow: 0px -1px 4px #aaa;
 
       .mobile{
         display: block;
