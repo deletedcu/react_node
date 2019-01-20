@@ -84,4 +84,48 @@
   .img-prize {
     height: 147px;
   }
+
+  @media (max-width: 710px) {
+    top: 25px;
+    left: 20px;
+    transform: unset;
+    width: calc(100% - 40px);
+    padding: 20px 35px 25px;
+
+    .img-prize {
+      height: 108px;
+    }
+
+    .invitation-modal-header {
+      .invitation-modal-title {
+        font-size: $mobile-regular-font-size - 1;
+      }
+
+      .invitation-modal-description {
+        font-size: $mobile-regular-font-size - 1;
+        width: 90%;
+      }
+    }
+
+    .invitation-modal-form {
+      .span-title {
+        font-family: 'Montserrat-SemiBold';
+        font-size: $mobile-regular-font-size - 1;
+      }
+
+      input {
+        height: 39px;
+        font-size: $mobile-small-font-size + 2;
+      }
+
+      .button {
+        height: 45px;
+        font-size: $mobile-regular-font-size - 2;
+      }
+
+      .span-link {
+        font-size: $mobile-small-font-size + 2;
+      }
+    }
+  }
 }
