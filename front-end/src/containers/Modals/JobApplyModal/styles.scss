@@ -23,92 +23,100 @@
     font-size: $small-font-size - 1;
   }
 
-  .job-apply-form {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    overflow: hidden;
-    font-size: $mobile-regular-font-size;
+  .job-apply-form-container{
+    overflow:hidden;
+    margin-left: -17px;
+    position: relative;
+    display: flex;
+    .job-apply-form {
+      position: relative;
+      right: -17px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      overflow-y: scroll;
+      font-size: $mobile-regular-font-size;
 
-    input, textarea {
-      width: 100%;
-      height: 47px;
-      border: 1px solid $light-green-primary;
-      border-radius: 4px;
-      color: $text-light-gray;
-      caret-color: $green-primary;
-      margin-top: 3px;
-      resize: none;
-      padding: 15px;
-      font-size: $mobile-regular-font-size + 1;
-
-      &:focus {
-        border: 1px solid $green-primary;
-      }
-    }
-    textarea {
-      height: 129px;
-    }
-
-    .input-file-uploader {
-      visibility: hidden;
-      border: unset;
-      width: 0;
-      height: 0;
-      padding: unset;
-      margin: unset,
-    }
-
-    .btn-attach {
-      width: unset;
-      min-width: 169px;
-      height: 52px;
-      padding: 0 20px;
-      border-radius: 4px;
-      border: .75px solid #3E8541;
-      margin-top: 10px;
-      font-size: $mobile-regular-font-size + 1;
-      font-family: 'Montserrat-Medium';
-    }
-
-    .job-apply-form-double-input {
-      display: flex;
-      justify-content: space-between;
-
-      .job-apply-form-single-input {
-        width: calc(50% - 12px);
-      }
-    }
-
-    .job-apply-form-single-input {
-      margin-bottom: 25px;
-    }
-
-    .job-apply-form-description {
-      width: calc(100% - 30px);
-      color: black;
-      font-size: $mobile-regular-font-size + 1;
-    }
-
-    .job-apply-form-selection-group {
-      margin-top: 30px;
-
-      .job-apply-form-selection-group-title {
+      input, textarea {
+        width: 100%;
+        height: 47px;
+        border: 1px solid $light-green-primary;
+        border-radius: 4px;
         color: $text-light-gray;
+        caret-color: $green-primary;
+        margin-top: 3px;
+        resize: none;
+        padding: 15px;
+        font-size: $mobile-regular-font-size + 1;
+
+        &:focus {
+          border: 1px solid $green-primary;
+        }
+      }
+      textarea {
+        height: 129px;
+      }
+
+      .input-file-uploader {
+        visibility: hidden;
+        border: unset;
+        width: 0;
+        height: 0;
+        padding: unset;
+        margin: unset,
+      }
+
+      .btn-attach {
+        width: unset;
+        min-width: 169px;
+        height: 52px;
+        padding: 0 20px;
+        border-radius: 4px;
+        border: .75px solid #3E8541;
+        margin-top: 10px;
+        font-size: $mobile-regular-font-size + 1;
         font-family: 'Montserrat-Medium';
       }
 
-      .checkbox {
-        margin-left: 10px;
-        margin-top: 15px;
+      .job-apply-form-double-input {
+        display: flex;
+        justify-content: space-between;
 
-        img {
-          height: 20px;
-          border-radius: 2px;
-          margin-right: 8px;
+        .job-apply-form-single-input {
+          width: calc(50% - 12px);
         }
-        span {
+      }
+
+      .job-apply-form-single-input {
+        margin-bottom: 25px;
+      }
+
+      .job-apply-form-description {
+        width: calc(100% - 30px);
+        color: black;
+        font-size: $mobile-regular-font-size + 1;
+      }
+
+      .job-apply-form-selection-group {
+        margin-top: 30px;
+
+        .job-apply-form-selection-group-title {
           color: $text-light-gray;
-          font-size: $mobile-regular-font-size + 1;
+          font-family: 'Montserrat-Medium';
+        }
+
+        .checkbox {
+          margin-left: 10px;
+          margin-top: 15px;
+
+          img {
+            height: 20px;
+            border-radius: 2px;
+            margin-right: 8px;
+          }
+          span {
+            color: $text-light-gray;
+            font-size: $mobile-regular-font-size + 1;
+          }
         }
       }
     }

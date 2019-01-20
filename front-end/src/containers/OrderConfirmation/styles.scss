@@ -74,6 +74,10 @@
             font-size: $mobile-regular-font-size;
             color: $text-light-gray;
             line-height: 20px;
+
+            &.name{
+              text-transform: uppercase;
+            }
           }
 
           div {
