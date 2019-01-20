@@ -122,7 +122,7 @@ class Footer extends Component {
           <div className='div-footer-bottom-links container'>
             <Link to='/terms-of-service'><span className='footer-bottom-link'>Terms of Service</span></Link>
             <Link to='/terms-of-service'><span className='footer-bottom-link'>Privacy</span></Link>
-            <span className='footer-bottom-link'>©2018 Mealpost.com</span>
+            <Link to='/home'><span className='footer-bottom-link'>©2018 Mealpost.com</span></Link>
           </div>
         </div>
       </div>

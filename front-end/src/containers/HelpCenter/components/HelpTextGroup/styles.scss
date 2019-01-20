@@ -26,4 +26,28 @@
   .help-text-group-content {
     padding-left: 50px;
   }
+
+  @media (max-width: 1200px) {
+    .help-text-group-content {
+      padding-left: unset;
+    }
+
+    .help-text-group-header {
+      img {
+        margin-right: 5px;
+      }
+  
+      span {
+        font-size: $mobile-regular-font-size;
+        font-family: 'Montserrat-SemiBold';
+        margin-top: -8px;
+      }
+    }
+  
+    .help-text-group-date {
+      margin-top: -15px;
+      margin-left: 55px;
+      font-size: $mobile-regular-font-size - 2;
+    }
+  }
 }

@@ -46,10 +46,9 @@
   }
 
   .div-help-center {
-    padding-bottom: 150px;
-
     .div-help-center-content {
       max-width: 1330px;
+      padding: 0 20px;
       display: flex;
 
       .div-tabs {
@@ -72,15 +71,69 @@
     }
   }
 
+  .div-help-center-bottom {
+    margin: 100px 0;
+    text-align: center;
+    font-size: $mobile-regular-font-size - 1;
+    font-family: 'OpenSans-Bold';
+    color: #333D47;
+
+    .light {
+      font-family: 'OpenSans-Regular';
+
+      .link {
+        color: $green-primary;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .div-help-center {
+      .div-help-center-content {
+        .div-tab-contents {
+          padding: 20px 30px;
+        }
+      }
+    }
+  }
+
 
   @media (max-width: 710px) {
     .div-help-center-banner {
-      max-height: 350px;
+      display: none;
+    }
 
-      .div-help-center-title {
-        font-size: $regular-font-size;
-        top: calc(50% - 60px)
+    .div-help-center {
+      padding-top: 60px;
+      padding-bottom: 25px;
+  
+      .div-help-center-content {
+        max-width: calc(100% - 50px) !important;
+        flex-direction: column;
+        align-items: center;
+        padding: unset;
+  
+        .div-tabs {
+          margin: unset;
+  
+          .help-tabitem {
+            margin-bottom: 8px;
+          }
+        }
+  
+        .div-tab-contents {
+          margin-top: 15px;
+          padding: 10px 25px;
+  
+          .help-text-group {
+            margin-bottom: 10px;
+          }
+        }
       }
+    }
+
+    .div-help-center-bottom {
+      margin: 30px 20px;
     }
   }
 }

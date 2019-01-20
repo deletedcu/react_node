@@ -21,4 +21,20 @@
     line-height: 20px;
     margin-top: 25px;
   }
+
+  @media (max-width: 710px) {
+    .img-service-feature {
+      height: 32px;
+    }
+
+    .div-service-feature-title {
+      margin-top: 43px;
+      font-size: $mobile-regular-font-size - 1;
+    }
+
+    .div-service-feature-description {
+      margin-top: 40px;
+      font-size: $mobile-regular-font-size - 2;
+    }
+  }
 }

@@ -26,9 +26,38 @@
 
     .span-subtitle {
       font-size: $mobile-regular-font-size - 1;
-      font-family: 'montserrat-Regular';
+      font-family: 'Montserrat-Regular';
       color: #9F9F9F;
       line-height: 16px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    width: 320px;
+    height: 84px;
+    padding-top: 5px;
+
+    .img-tabitem {
+      height: 49px;
+      margin-right: 5px;
+    }
+  
+    .help-tabitem-info {
+      display: flex;
+      flex-direction: column;
+      padding-top: 10px;
+  
+      .span-title {
+        font-size: $mobile-regular-font-size;
+        line-height: 17px;
+        margin-bottom: 8px;
+      }
+  
+      .span-subtitle {
+        font-size: $mobile-regular-font-size - 2;
+        color: #9F9F9F;
+        line-height: 14px;
+      }
     }
   }
 }

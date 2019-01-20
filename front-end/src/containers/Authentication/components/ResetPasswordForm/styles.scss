@@ -83,14 +83,18 @@
   }
 
   @media (max-width: 710px) {
+    border: unset;
+    background-color: unset;
+    box-shadow: unset;
+
     .reset-password-form-header {
-      height: 80px;
-      line-height: 80px;
+      height: 50px;
+      line-height: 50px;
 
       .reset-password-form-header-title {
-        font-size: $regular-font-size;
-        font-family: 'Montserrat-Regular';
-        color: $text-primary;
+        font-size: $regular-font-size + 3;
+        font-family: 'Montserrat-SemiBold';
+        color: #4B4B4B;
       }
     }
 
@@ -98,11 +102,15 @@
       .reset-password-form-input {
         margin-top: 15px;
         padding: 0 20px;
-        font-size: $mobile-regular-font-size;
+        
+        span {
+          font-size: $mobile-regular-font-size - 1;
+          font-family: 'Montserrat-Medium';
+        }
   
         input {
-          height: 50px;
-          font-size: $mobile-regular-font-size;
+          height: 52px;
+          font-size: $mobile-regular-font-size - 1;
           padding: 20px 15px;
         }
       }
@@ -111,8 +119,10 @@
         margin-left: 20px;
         margin-right: 20px;
         width: calc(100% - 40px);
-        height: 50px;
-        font-size: $mobile-regular-font-size;
+        height: 52px;
+        font-size: $mobile-regular-font-size - 1;
+        font-family: 'Montserrat-Medium';
+        border: 1px solid $green-secondary;
       }
     }
 

@@ -128,26 +128,20 @@
   }
 
   @media (max-width: 710px) {
-    padding-left: 15px;
-    padding-right: 15px;
+    box-shadow: unset;
+    border: unset;
+    background-color: #FAFBFD;
+    padding: 40px 15px 30px;
 
-    .auth-form-header-normal {
-      .auth-form-title {
-        font-size: $regular-font-size;
-      }
-
-      .auth-form-switch {
-        font-size: $small-font-size;
-      }
-    }
-
-    .auth-form-header-green {
+    .auth-form-header {
       margin: -30px -15px 0 -15px;
       border-bottom: unset;
+      line-height: 50px;
+      height: 50px;
 
       .auth-form-title {
-        font-size: $regular-font-size;
-        font-family: 'Montserrat-Regular';
+        font-size: $regular-font-size + 3;
+        font-family: 'Montserrat-SemiBold';
         color: $text-primary;
       }
     }
@@ -157,19 +151,25 @@
       
       .auth-form-input {
         margin-top: 15px;
-        font-size: $mobile-regular-font-size;
+
+        .auth-form-input-name {
+          font-size: $mobile-regular-font-size - 1;
+          font-family: 'Montserrat-Medium';
+        }
   
         input {
-          height: 50px;
-          font-size: $mobile-regular-font-size;
+          height: 52px;
           padding: 20px 15px;
+          font-size: $mobile-regular-font-size - 1;
         }
       }
   
       .btn-continue {
         margin-top: 15x;
-        height: 50px;
-        font-size: $mobile-regular-font-size;
+        height: 52px;
+        font-size: $mobile-regular-font-size - 2;
+        font-family: 'Montserrat-Medium';
+        border: 1px solid $green-secondary;
       }
 
       .auth-form-double-inputs {
@@ -182,8 +182,18 @@
       }
 
       .auth-form-forgot-password {
+        margin-top: 25px;
+        
+        .checkbox img {
+          height: 18px;
+        }
+
+        .checkbox span {
+          font-size: $mobile-regular-font-size - 1.5;
+        }
+
         .span-forgot-password {
-          font-size: $mobile-regular-font-size;
+          font-size: $mobile-regular-font-size - 1.5;
         }
       }
     }
@@ -192,7 +202,7 @@
       margin-top: 15px;
     
       span {
-        font-size: $small-font-size;
+        font-size: $mobile-regular-font-size - 1.5;
       }
     }
   
@@ -201,12 +211,16 @@
     }
   
     .auth-form-footer {
+      padding: 0 5px;
       text-align: center;
-      margin-top: 30px;
-      font-size: $small-font-size;
+      margin-top: 20px;
+      font-size: $mobile-regular-font-size - 2;
+      color: #A1A1A1;
 
       .auth-form-footer-signup, .auth-form-footer-login {
-        font-size: $small-font-size;
+        font-size: $mobile-regular-font-size - 3;
+        color: $text-light-gray;
+        margin-top: 15px;
       }
     }
   }

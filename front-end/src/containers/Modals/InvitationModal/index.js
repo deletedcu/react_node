@@ -52,7 +52,7 @@ class InvitationModal extends Component {
             <div className='span-title'>REFER FRIENDS & EARN</div>
             <input type='email' name='email1' value={this.state.email1} onChange={this.onChange} placeholder='Enter email addresses'/>
             <input type='email' name='email2' value={this.state.email2} onChange={this.onChange} placeholder='Enter email addresses'/>
-            <Button className='btn-send-invite' onClick={this.onSendInvite}>Send Invites</Button>
+            <Button className='btn-send-invite' onClick={this.onSendInvite}>SEND INVITES</Button>
             <span className='span-link clickable' onClick={this.onRedeemCredit}>Redeem your Credits</span>
           </div>
         </div>
