@@ -174,7 +174,11 @@
 
     .img-logo {
       margin-top: 21px;
-      height: 18px;
+      height: 25px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
     }
 
     .img-min-flow {
@@ -200,10 +204,15 @@
     .div-buttons {
       margin-top: 18px;
       height: 25px;
+      float: none;
       
       .dropdown {
         .settings-dropdown-trigger span {
           font-size: $mobile-regular-font-size;
+        }
+
+        .settings-dropdown-trigger.mobile img{
+          height: 25px;
         }
       }
       
@@ -240,6 +249,9 @@
         }
         .settings-dropdown-trigger img {
           height: 15px;
+        }
+        .settings-dropdown-trigger.mobile img{
+          height: 25px;
         }
       }
 
