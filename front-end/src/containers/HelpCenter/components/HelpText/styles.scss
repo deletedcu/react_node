@@ -31,6 +31,27 @@
       text-decoration: underline;
     }
   }
+
+  @media (max-width: 1200px) {
+    padding: 20px 0;
+
+    .help-text-header {
+      .help-text-title {
+        font-size: $mobile-regular-font-size + 1;
+        margin-left: 15px;
+      }
+  
+      .img-triangle {
+        height: 25px;
+      }
+    } 
+  
+    .help-text-content {
+      width: 100%;
+      font-size: $mobile-regular-font-size - 2;
+      margin: 10px 20px 10px 0;
+    }
+  }
 }
 
 .help-text-underlined {

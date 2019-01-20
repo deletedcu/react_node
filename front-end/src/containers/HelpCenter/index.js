@@ -45,7 +45,7 @@ class HelpCenter extends Component {
     })
   }
 
-  onNeedHelp = () => {
+  onContactUs = () => {
     this.props.dispatch(showModal(ModalType.contactUsModal))
   }
 
@@ -246,7 +246,11 @@ class HelpCenter extends Component {
 
           </div>
         </div>
-        
+
+        {/* Bottom Link */}
+        <div className='div-help-center-bottom'>
+          Can't find what you're looking for? <span className='light'>We're here to help! <span className='link clickable' onClick={this.onContactUs}>Contact Us</span>.</span>
+        </div>
       </div>
     )
   }
