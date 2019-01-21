@@ -63,6 +63,36 @@ class SettingsDropdown extends Component {
     this.props.onSignUp()
   }
 
+  onWeeklyMenu = () => {
+    this.refs.settingsDropdown.hide()
+    this.props.onWeeklyMenu()
+  }
+
+  onMealPreferences = () => {
+    this.refs.settingsDropdown.hide()
+    this.props.onMealPreferences()
+  }
+
+  onRedeem = () => {
+    this.refs.settingsDropdown.hide()
+    this.props.onRedeem()
+  }
+
+  onHelp = () => {
+    this.refs.settingsDropdown.hide()
+    this.props.onHelp()
+  }
+
+  onGifts = () => {
+    this.refs.settingsDropdown.hide()
+    this.props.onGifts()
+  }
+
+  onPricing = () => {
+    this.refs.settingsDropdown.hide()
+    this.props.onPricing()
+  }
+
   render () {
     const { isShown } = this.state
     return (
@@ -96,23 +126,23 @@ class SettingsDropdown extends Component {
               <div className = 'mobile'>
                 <div class = 'div-menu-items'>
                   <div className='div-menu clickable' onClick={ this.onEditProfile }>
-                    <span>My Account</span>
+                    <span>MY ACCOUNT</span>
                   </div>
                   <div className='div-menu clickable' onClick={ this.onOrderHistory }>
-                    <span>Order History</span>
+                    <span>ORDER HISTORY</span>
                   </div>
-                  <div className='div-menu clickable' onClick={ this.onLogout }>
-                    <span>Weekly Menu</span>
+                  <div className='div-menu clickable' onClick={ this.onWeeklyMenu }>
+                    <span>WEEKLY MENU</span>
                   </div>
-                  <div className='div-menu clickable' onClick={ this.onLogout }>
-                    <span>Meal Preferences</span>
+                  <div className='div-menu clickable' onClick={ this.onMealPreferences }>
+                    <span>MEAL PREFERENCES</span>
                   </div>
-                  <div className='div-menu clickable' onClick={ this.onLogout }>
-                    <span>Redeem</span>
+                  <div className='div-menu clickable' onClick={ this.onRedeem }>
+                    <span>REDEEM</span>
                   </div>
                 </div>
                 <div class = 'div-menu-last-item' onClick={ this.onLogout }>
-                  <span>Log Out</span>
+                  <span>LOG OUT</span>
                 </div>
               </div>
             </DropdownContent>
@@ -129,11 +159,23 @@ class SettingsDropdown extends Component {
               <div className = 'mobile'>
                 <div class = 'div-menu-items'>
                   <div className='div-menu clickable' onClick={ this.onLogIn }>
-                    <span>Log In</span>
+                    <span>LOG IN</span>
                   </div>
-                  <div className='div-menu clickable noborder' onClick={ this.onSignUp }>
-                    <span>Sign Up</span>
+                  <div className='div-menu clickable' onClick={ this.onSignUp }>
+                    <span>SIGN UP</span>
                   </div>
+                  <div className='div-menu clickable' onClick={ this.onWeeklyMenu }>
+                    <span>WEEKLY MENU</span>
+                  </div>
+                  <div className='div-menu clickable' onClick={ this.onPricing }>
+                    <span>PRICING</span>
+                  </div>
+                  <div className='div-menu clickable' onClick={ this.onGifts }>
+                    <span>GIFTS</span>
+                  </div>
+                  <div class = 'div-menu-last-item' onClick={ this.onHelp }>
+                  <span>HELP & CONTACT</span>
+                </div>
                 </div>
               </div>
             </DropdownContent>

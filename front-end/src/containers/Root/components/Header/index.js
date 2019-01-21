@@ -40,6 +40,30 @@ class Header extends Component {
     this.props.history.push('/settings/payment_method')
   }
 
+  onWeeklyMenu = () => {
+    this.props.history.push('/menus')
+  }
+
+  onMealPreferences = () => {
+    this.props.history.push('/settings/meal_preference')
+  }
+
+  onRedeem = () => {
+    this.props.history.push('/settings/redeem_credit')
+  }
+
+  onHelp = () => {
+    this.props.history.push('/help-center')
+  }
+
+  onPricing = () => {
+    this.props.history.push('/how-it-works')
+  }
+
+  onGifts = () => {
+    this.props.history.push('/gift-cards')
+  }
+
   onLogout = () => {
     this.props.dispatch(logoutUser())
     this.props.history.replace('/home')
@@ -51,12 +75,17 @@ class Header extends Component {
     return (
       <div className={classNames('app-header', {'app-header-squizzed': false})}>
         <div className='container'>
-        <img className='img-logo clickable' src={imgLogo} alt='logo' onClick={this.onClickLogo}/>
+
+        { 
+          !pathName.includes('auth/signup') &&
+          <img className='img-logo clickable' src={imgLogo} alt='logo' onClick={this.onClickLogo}/>
+        }
 
         { pathName.includes('auth/signup') && <img className='img-flow' src={imgFlow} alt='flow'/> }
         { pathName.includes('auth/signup') && <img className='img-min-flow' src={imgMinimizedFlow} alt='flow'/> }
 
-        { !pathName.includes('auth/signup') && !pathName.includes('help-center') && !pathName.includes('terms-of-service') &&
+        { 
+          !pathName.includes('auth/signup') && !pathName.includes('help-center') && !pathName.includes('terms-of-service') &&
           <div className='div-links'>
             <Link to='/menus'><span className={classNames('clickable', {'div-link-selected': pathName.includes('menus')})}>ON THE MENU</span></Link>
             <Link to='/how-it-works'><span className={classNames('clickable', {'div-link-selected': pathName.includes('how-it-works')})}>PRICING</span></Link>
@@ -82,10 +111,16 @@ class Header extends Component {
               onEditProfile={ this.onEditProfile }
               onPaymentMethod={ this.onPaymentMethod }
               onOrderHistory={ this.onOrderHistory }
+              onWeeklyMenu={ this.onWeeklyMenu }
+              onMealPreferences={ this.onMealPreferences }
+              onRedeem={ this.onRedeem }
               onLogout={ this.onLogout }
-              onLogIn = {this.onLogin}
-              onSignUp = {this.onSignUp}
-              loggedIn = { user.loggedIn }
+              onLogIn={ this.onLogin }
+              onSignUp={ this.onSignUp }
+              onHelp={ this.onHelp }
+              onGifts={ this.onGifts }
+              onPricing={ this.onPricing }
+              loggedIn={ user.loggedIn }
             />
             <div class='desktop-buttons'>
               { !user.loggedIn && <div className='div-login clickable' onClick={this.onLogin}>Log In</div> }

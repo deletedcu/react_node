@@ -187,7 +187,9 @@
     }
 
     .img-min-flow {
-      right: 20px;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
       height: 18px;
     }
 
