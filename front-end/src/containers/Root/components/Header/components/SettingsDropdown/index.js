@@ -124,7 +124,7 @@ class SettingsDropdown extends Component {
                 </div>
               </div>
               <div className = 'mobile'>
-                <div class = 'div-menu-items'>
+                <div className='div-menu-items'>
                   <div className='div-menu clickable' onClick={ this.onEditProfile }>
                     <span>MY ACCOUNT</span>
                   </div>
@@ -141,7 +141,7 @@ class SettingsDropdown extends Component {
                     <span>REDEEM</span>
                   </div>
                 </div>
-                <div class = 'div-menu-last-item' onClick={ this.onLogout }>
+                <div className='div-menu-last-item clickable' onClick={ this.onLogout }>
                   <span>LOG OUT</span>
                 </div>
               </div>
@@ -156,8 +156,8 @@ class SettingsDropdown extends Component {
               </div>
             </DropdownTrigger>
             <DropdownContent onMouseLeave={this.onMouseLeave}>
-              <div className = 'mobile'>
-                <div class = 'div-menu-items'>
+              <div className='mobile'>
+                <div className='div-menu-items'>
                   <div className='div-menu clickable' onClick={ this.onLogIn }>
                     <span>LOG IN</span>
                   </div>
@@ -173,7 +173,7 @@ class SettingsDropdown extends Component {
                   <div className='div-menu clickable' onClick={ this.onGifts }>
                     <span>GIFTS</span>
                   </div>
-                  <div class = 'div-menu-last-item' onClick={ this.onHelp }>
+                  <div className='div-menu-last-item clickable' onClick={ this.onHelp }>
                   <span>HELP & CONTACT</span>
                 </div>
                 </div>
