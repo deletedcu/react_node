@@ -78,16 +78,19 @@ class Header extends Component {
         
         { !pathName.includes('auth') && !pathName.includes('how-it-works') &&
           <div className='div-buttons'>
-            { user.loggedIn && 
-              <SettingsDropdown
-                onEditProfile={ this.onEditProfile }
-                onPaymentMethod={ this.onPaymentMethod }
-                onOrderHistory={ this.onOrderHistory }
-                onLogout={ this.onLogout }
-              /> 
-            }
-            { !user.loggedIn && <div className='div-login clickable' onClick={this.onLogin}>Log In</div> }
-            { !user.loggedIn && <Button onClick={this.onSignUp}>SIGN UP</Button> }
+            <SettingsDropdown
+              onEditProfile={ this.onEditProfile }
+              onPaymentMethod={ this.onPaymentMethod }
+              onOrderHistory={ this.onOrderHistory }
+              onLogout={ this.onLogout }
+              onLogIn = {this.onLogin}
+              onSignUp = {this.onSignUp}
+              loggedIn = { user.loggedIn }
+            />
+            <div class='desktop-buttons'>
+              { !user.loggedIn && <div className='div-login clickable' onClick={this.onLogin}>Log In</div> }
+              { !user.loggedIn && <Button onClick={this.onSignUp}>SIGN UP</Button> }
+            </div>
             { pathName.includes('menus') && !sideBar.visible &&
               <Cart
                 highlighted={ false }

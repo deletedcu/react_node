@@ -46,6 +46,8 @@
   .order-feedback-header-section {
     @extend %order-feedback-section;
     padding: 40px 45px 37px 28px;
+    position: relative;
+    z-index: 99999;
 
     .order-feedback-title {
       @extend %feedback-title;

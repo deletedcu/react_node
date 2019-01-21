@@ -6,6 +6,7 @@ import 'react-simple-dropdown/styles/Dropdown.css'
 import './styles.css'
 
 import imgTriangle from '../../../../../../assets/images/dropdown_triangle.svg'
+import hamburgerMenu from '../../../../../../assets/images/hamburger_menu.svg'
 import imgTriangleReverse from '../../../../../../assets/images/dropdown_triangle_reverse.svg'
 import imgEditProfile from '../../../../../../assets/images/edit_profile.png'
 import imgOrderHistory from '../../../../../../assets/images/order_history.png'
@@ -52,31 +53,93 @@ class SettingsDropdown extends Component {
     this.props.onLogout()
   }
 
+  onLogIn = () => {
+    this.refs.settingsDropdown.hide()
+    this.props.onLogIn()
+  }
+
+  onSignUp = () => {
+    this.refs.settingsDropdown.hide()
+    this.props.onSignUp()
+  }
+
   render () {
     const { isShown } = this.state
     return (
-      <Dropdown ref='settingsDropdown' className='settings-dropdown' onShow={() => this.onToggle(true)} onHide={() => this.onToggle(false)}>
-        <DropdownTrigger>
-          <div className='settings-dropdown-trigger clickable' onMouseEnter={this.onMouseEnter}>
-            <span className={classNames({'span-highlighted': isShown})}>My Account</span>
-            <img src={ isShown ? imgTriangleReverse : imgTriangle } alt='hamburger'/>
-          </div>
-        </DropdownTrigger>
-        <DropdownContent onMouseLeave={this.onMouseLeave}>
-          <div className='div-menu clickable' onClick={ this.onEditProfile }>
-            <img src={imgEditProfile} alt='edit'/>
-            <span>Account Settings</span>
-          </div>
-          <div className='div-menu clickable' onClick={ this.onOrderHistory }>
-            <img src={imgOrderHistory} alt='history'/>
-            <span>Order History</span>
-          </div>
-          <div className='div-menu clickable' onClick={ this.onLogout }>
-            <img src={imgLogout} alt='logout'/>
-            <span>Log Out</span>
-          </div>
-        </DropdownContent>
-      </Dropdown>
+      <div>
+        {this.props.loggedIn &&
+          <Dropdown ref='settingsDropdown' className='settings-dropdown' onShow={() => this.onToggle(true)} onHide={() => this.onToggle(false)}>
+            <DropdownTrigger>
+              <div className='settings-dropdown-trigger desktop clickable' onMouseEnter={this.onMouseEnter}>
+                <span className={classNames({'span-highlighted': isShown})}>My Account</span>
+                <img src={ isShown ? imgTriangleReverse : imgTriangle } alt='hamburger'/>
+              </div>
+              <div className='settings-dropdown-trigger mobile clickable' onMouseEnter={this.onMouseEnter}>
+                <img src={hamburgerMenu} alt='hamburger' />
+              </div>
+            </DropdownTrigger>
+            <DropdownContent onMouseLeave={this.onMouseLeave}>
+              <div className = 'desktop'>
+                <div className='div-menu clickable' onClick={ this.onEditProfile }>
+                  <img src={imgEditProfile} alt='edit'/>
+                  <span>Account Settings</span>
+                </div>
+                <div className='div-menu clickable' onClick={ this.onOrderHistory }>
+                  <img src={imgOrderHistory} alt='history'/>
+                  <span>Order History</span>
+                </div>
+                <div className='div-menu clickable' onClick={ this.onLogout }>
+                  <img src={imgLogout} alt='logout'/>
+                  <span>Log Out</span>
+                </div>
+              </div>
+              <div className = 'mobile'>
+                <div class = 'div-menu-items'>
+                  <div className='div-menu clickable' onClick={ this.onEditProfile }>
+                    <span>My Account</span>
+                  </div>
+                  <div className='div-menu clickable' onClick={ this.onOrderHistory }>
+                    <span>Order History</span>
+                  </div>
+                  <div className='div-menu clickable' onClick={ this.onLogout }>
+                    <span>Weekly Menu</span>
+                  </div>
+                  <div className='div-menu clickable' onClick={ this.onLogout }>
+                    <span>Meal Preferences</span>
+                  </div>
+                  <div className='div-menu clickable' onClick={ this.onLogout }>
+                    <span>Redeem</span>
+                  </div>
+                </div>
+                <div class = 'div-menu-last-item' onClick={ this.onLogout }>
+                  <span>Log Out</span>
+                </div>
+              </div>
+            </DropdownContent>
+          </Dropdown>
+        }
+        {!this.props.loggedIn &&
+          <Dropdown ref='settingsDropdown' className='settings-dropdown' onShow={() => this.onToggle(true)} onHide={() => this.onToggle(false)}>
+            <DropdownTrigger>
+              <div className='settings-dropdown-trigger mobile clickable' onMouseEnter={this.onMouseEnter}>
+                <img src={hamburgerMenu} alt='hamburger' />
+              </div>
+            </DropdownTrigger>
+            <DropdownContent onMouseLeave={this.onMouseLeave}>
+              <div className = 'mobile'>
+                <div class = 'div-menu-items'>
+                  <div className='div-menu clickable' onClick={ this.onLogIn }>
+                    <span>Log In</span>
+                  </div>
+                  <div className='div-menu clickable noborder' onClick={ this.onSignUp }>
+                    <span>Sign Up</span>
+                  </div>
+                </div>
+              </div>
+            </DropdownContent>
+          </Dropdown>
+        }
+      </div>
     )
   }
 }
