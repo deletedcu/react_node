@@ -45,4 +45,7 @@ Happy to have you on board and working to to help implement the foundational pie
     <!-- Node.js -->
     <img src="https://img.shields.io/badge/Node.js-339933?flat=plastic&logo=node.js&logoColor=white" height="32" alt="Node.js" />
     &nbsp;
+    <!-- Stripe -->
+    <img src="https://img.shields.io/badge/Stripe-008cdd?flat=plastic&logo=stripe&logoColor=white" height="32" alt="Stripe" />
+    &nbsp;
 </p>
