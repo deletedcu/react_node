@@ -39,10 +39,10 @@ Happy to have you on board and working to to help implement the foundational pie
     <!-- Jest -->
     <img src="https://img.shields.io/badge/Jest-c21325?flat=plastic&logo=jest&logoColor=white" height="32" alt="Jest" />
     &nbsp;
-    <!-- Xcode -->
-    <img src="https://img.shields.io/badge/Xcode-147efb?flat=plastic&logo=xcode&logoColor=white" height="32" alt="Xcode" />
+    <!-- JSON -->
+    <img src="https://img.shields.io/badge/JSON-000000?flat=plastic&logo=json&logoColor=white" height="32" alt="JSON" />
     &nbsp;
-    <!-- Android Studio -->
-    <img src="https://img.shields.io/badge/Android%20Studio-3ddc84?flat=plastic&logo=android%20studio&logoColor=white" height="32" alt="Android Studio" />
+    <!-- Node.js -->
+    <img src="https://img.shields.io/badge/Node.js-339933?flat=plastic&logo=node.js&logoColor=white" height="32" alt="Node.js" />
     &nbsp;
 </p>
