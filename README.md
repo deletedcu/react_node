@@ -27,11 +27,11 @@ Happy to have you on board and working to to help implement the foundational pie
     <!-- React Router -->
     <img src="https://img.shields.io/badge/React%20Router-ca4245?flat=plastic&logo=react%20router&logoColor=white" height="32" alt="React Router" />
     &nbsp;
-    <!-- Bluetooth -->
-    <img src="https://img.shields.io/badge/Bluetooth-0082fc?flat=plastic&logo=bluetooth&logoColor=white" height="32" alt="Bluetooth" />
+    <!-- JavaScript -->
+    <img src="https://img.shields.io/badge/JavaScript-f7df1e?flat=plastic&logo=javascript&logoColor=black" height="32" alt="JavaScript" />
     &nbsp;
-    <!-- Chart.js -->
-    <img src="https://img.shields.io/badge/Chart.js-ff6384?flat=plastic&logo=chart.js&logoColor=white" height="32" alt="Chart.js" />
+    <!-- CSS3 -->
+    <img src="https://img.shields.io/badge/CSS3-1572b6?flat=plastic&logo=css3&logoColor=white" height="32" alt="CSS3" />
     &nbsp;
     <!-- Babel -->
     <img src="https://img.shields.io/badge/Babel-f9dc3e?flat=plastic&logo=Babel&logoColor=black" height="32" alt="Babel" />
